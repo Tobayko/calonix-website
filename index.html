@@ -3243,6 +3243,16 @@
                 }
                 rafId = requestAnimationFrame(step);
             }
+
+            // Center showcase on desktop after images load
+            function centerShowcase() {
+                if (window.innerWidth >= 768) {
+                    const overflow = container.scrollWidth - container.clientWidth;
+                    if (overflow > 0) container.scrollLeft = overflow / 2;
+                }
+            }
+            window.addEventListener('load', centerShowcase);
+            window.addEventListener('resize', centerShowcase);
         })();
 
         // ---- Smooth scroll for anchor links ----
