@@ -21,6 +21,7 @@
     <meta name="twitter:title" content="Calonix | SHK-Software für Heizlastberechnung & Digitales Aufmaß" />
     <meta name="twitter:description"
         content="Die Planungssoftware für Heizungsbauer, TGA-Planer und Architekten. Digitales Aufmaß aus PDF-Plänen, normgerechte Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung." />
+    <script defer src="/_vercel/insights/script.js"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
@@ -328,7 +329,7 @@
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(69,222,231,0.08) 0%, transparent 70%);
+            background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(69, 222, 231, 0.08) 0%, transparent 70%);
         }
 
         .showcase-platform-glow {
@@ -338,7 +339,7 @@
             transform: translateX(-50%);
             width: 320px;
             height: 40px;
-            background: radial-gradient(ellipse at center, rgba(69,222,231,0.25) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(69, 222, 231, 0.25) 0%, transparent 70%);
             pointer-events: none;
             filter: blur(8px);
         }
@@ -346,7 +347,7 @@
         .showcase-featured-phone {
             position: relative;
             z-index: 2;
-            filter: drop-shadow(0 40px 80px rgba(0,0,0,0.7)) drop-shadow(0 0 40px rgba(69,222,231,0.15));
+            filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(69, 222, 231, 0.15));
             transition: filter 0.4s ease;
         }
 
@@ -355,23 +356,25 @@
             flex-shrink: 0;
             border-radius: 40px;
             background: #0d1111;
-            border: 1.5px solid rgba(69,222,231,0.25);
+            border: 1.5px solid rgba(69, 222, 231, 0.25);
             box-shadow:
-                0 0 0 1px rgba(255,255,255,0.06),
-                inset 0 0 0 1px rgba(255,255,255,0.04);
+                0 0 0 1px rgba(255, 255, 255, 0.06),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.04);
             overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.25,1,0.5,1);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
             width: 240px;
         }
 
         .phone-mockup--featured {
             width: 260px;
             border-radius: 44px;
-            border-color: rgba(69,222,231,0.35);
+            border-color: rgba(69, 222, 231, 0.35);
         }
 
         @media (min-width: 640px) {
-            .phone-mockup--featured { width: 300px; }
+            .phone-mockup--featured {
+                width: 300px;
+            }
         }
 
         /* Dynamic island / notch */
@@ -386,7 +389,7 @@
             background: #0d1111;
             border-radius: 99px;
             z-index: 10;
-            border: 1.5px solid rgba(255,255,255,0.06);
+            border: 1.5px solid rgba(255, 255, 255, 0.06);
         }
 
         .phone-mockup img {
@@ -431,7 +434,7 @@
 
         .showcase-active-desc {
             font-size: 0.85rem;
-            color: rgba(187,201,202,0.8);
+            color: rgba(187, 201, 202, 0.8);
         }
 
         /* Thumbnails row */
@@ -454,8 +457,8 @@
             gap: 8px;
             padding: 10px 8px;
             border-radius: 18px;
-            border: 1.5px solid rgba(255,255,255,0.07);
-            background: rgba(255,255,255,0.025);
+            border: 1.5px solid rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.025);
             cursor: pointer;
             transition: all 0.2s ease;
             outline: none;
@@ -463,15 +466,15 @@
         }
 
         .showcase-thumb:hover {
-            border-color: rgba(69,222,231,0.35);
-            background: rgba(69,222,231,0.06);
+            border-color: rgba(69, 222, 231, 0.35);
+            background: rgba(69, 222, 231, 0.06);
             transform: translateY(-2px);
         }
 
         .showcase-thumb.active {
-            border-color: rgba(69,222,231,0.55);
-            background: rgba(69,222,231,0.1);
-            box-shadow: 0 0 16px rgba(69,222,231,0.15);
+            border-color: rgba(69, 222, 231, 0.55);
+            background: rgba(69, 222, 231, 0.1);
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.15);
         }
 
         .showcase-thumb-img {
@@ -479,7 +482,7 @@
             aspect-ratio: 9/19.5;
             border-radius: 10px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .showcase-thumb-img img {
@@ -494,13 +497,13 @@
             font-family: var(--font-headline, 'Space Grotesk', sans-serif);
             font-weight: 600;
             letter-spacing: 0.04em;
-            color: rgba(187,201,202,0.7);
+            color: rgba(187, 201, 202, 0.7);
             text-transform: uppercase;
             white-space: nowrap;
         }
 
         .showcase-thumb.active .showcase-thumb-label {
-            color: rgba(69,222,231,0.9);
+            color: rgba(69, 222, 231, 0.9);
         }
 
         /* Stats Counter */
@@ -1556,7 +1559,8 @@
                             <span class="material-symbols-outlined text-blue-400 text-3xl">document_scanner</span>
                         </div>
                         <h3 class="font-headline font-bold text-2xl text-white mb-2">Automatische Grundriss-Erkennung
-                            <span class="text-blue-400 text-lg ml-2 font-normal tracking-wide">(PDF Scan)</span></h3>
+                            <span class="text-blue-400 text-lg ml-2 font-normal tracking-wide">(PDF Scan)</span>
+                        </h3>
                         <h4 class="text-blue-300 font-medium mb-4">Digitales Raumaufmaß in Rekordzeit</h4>
                         <p class="text-on-surface-variant leading-relaxed">
                             Schluss mit nervigem Abtippen von Raummaßen: Du lädst einfach den Bauplan des Architekten
@@ -2011,10 +2015,8 @@
                 <div class="showcase-featured-phone" id="featuredPhone">
                     <div class="phone-mockup phone-mockup--featured">
                         <div class="phone-screen">
-                            <img id="featuredImg"
-                                src="Calonix Screenshots/Mobil/Homescreen.png"
-                                alt="Calonix App Screen"
-                                loading="eager" />
+                            <img id="featuredImg" src="Calonix Screenshots/Mobil/Homescreen.png"
+                                alt="Calonix App Screen" loading="eager" />
                         </div>
                     </div>
                 </div>
@@ -2047,13 +2049,15 @@
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 3)">
                         <div class="showcase-thumb-img">
-                            <img src="Calonix Screenshots/Mobil/Hydraulischer Abgleich.png" alt="Hydraulischer Abgleich" loading="lazy" />
+                            <img src="Calonix Screenshots/Mobil/Hydraulischer Abgleich.png" alt="Hydraulischer Abgleich"
+                                loading="lazy" />
                         </div>
                         <span class="showcase-thumb-label">Hyd. Abgleich</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 4)">
                         <div class="showcase-thumb-img">
-                            <img src="Calonix Screenshots/Mobil/Materialberechnung.png" alt="Stückliste" loading="lazy" />
+                            <img src="Calonix Screenshots/Mobil/Materialberechnung.png" alt="Stückliste"
+                                loading="lazy" />
                         </div>
                         <span class="showcase-thumb-label">Stückliste</span>
                     </button>
