@@ -1,0 +1,23 @@
+{
+  "name": "calonix-website",
+  "version": "1.0.0",
+  "description": "Calonix website with Vercel Web Analytics",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tobayko/calonix-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tobayko/calonix-website/issues"
+  },
+  "homepage": "https://github.com/Tobayko/calonix-website#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
