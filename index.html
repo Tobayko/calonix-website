@@ -314,40 +314,79 @@
             transition-delay: 0.5s;
         }
 
-        /* App Showcase */
+        /* ---- Featured Showcase ---- */
+        .showcase-featured-section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 16px 60px;
+            overflow: hidden;
+        }
+
+        .showcase-ambient {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(69,222,231,0.08) 0%, transparent 70%);
+        }
+
+        .showcase-platform-glow {
+            position: absolute;
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            height: 40px;
+            background: radial-gradient(ellipse at center, rgba(69,222,231,0.25) 0%, transparent 70%);
+            pointer-events: none;
+            filter: blur(8px);
+        }
+
+        .showcase-featured-phone {
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 40px 80px rgba(0,0,0,0.7)) drop-shadow(0 0 40px rgba(69,222,231,0.15));
+            transition: filter 0.4s ease;
+        }
+
         .phone-mockup {
             position: relative;
             flex-shrink: 0;
-            border-radius: 36px;
-            background: #111;
-            border: 2px solid rgba(69, 222, 231, 0.3);
+            border-radius: 40px;
+            background: #0d1111;
+            border: 1.5px solid rgba(69,222,231,0.25);
             box-shadow:
-                0 0 0 1px rgba(255, 255, 255, 0.05),
-                0 30px 80px -10px rgba(0, 0, 0, 0.8),
-                0 0 40px -5px rgba(69, 222, 231, 0.15);
+                0 0 0 1px rgba(255,255,255,0.06),
+                inset 0 0 0 1px rgba(255,255,255,0.04);
             overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+            transition: transform 0.4s cubic-bezier(0.25,1,0.5,1);
+            width: 240px;
         }
 
-        .phone-mockup:hover {
-            transform: translateY(-12px) scale(1.03) !important;
-            box-shadow:
-                0 0 0 1px rgba(69, 222, 231, 0.2),
-                0 50px 100px -10px rgba(0, 0, 0, 0.9),
-                0 0 60px -5px rgba(69, 222, 231, 0.35);
+        .phone-mockup--featured {
+            width: 260px;
+            border-radius: 44px;
+            border-color: rgba(69,222,231,0.35);
         }
 
+        @media (min-width: 640px) {
+            .phone-mockup--featured { width: 300px; }
+        }
+
+        /* Dynamic island / notch */
         .phone-mockup::before {
             content: '';
             position: absolute;
-            top: 10px;
+            top: 12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.15);
+            width: 80px;
+            height: 26px;
+            background: #0d1111;
             border-radius: 99px;
             z-index: 10;
+            border: 1.5px solid rgba(255,255,255,0.06);
         }
 
         .phone-mockup img {
@@ -355,107 +394,113 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 34px;
+            border-radius: 38px;
         }
 
         .phone-screen {
             width: 100%;
             aspect-ratio: 9/19.5;
             overflow: hidden;
-            border-radius: 34px;
+            border-radius: 38px;
         }
 
-        .showcase-track {
-            display: flex;
-            gap: 32px;
-            padding: 40px 60px;
-            align-items: flex-end;
-            min-width: min-content;
-            margin: 0 auto;
+        /* Transition for featured image */
+        #featuredImg {
+            transition: opacity 0.25s ease;
         }
 
-        @media (min-width: 768px) {
-            .showcase-track {
-                justify-content: center;
-            }
+        #featuredImg.fading {
+            opacity: 0;
         }
 
-        .showcase-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Alternating tilt */
-        .showcase-item:nth-child(odd) .phone-mockup {
-            transform: rotate(-4deg) translateY(0);
-        }
-
-        .showcase-item:nth-child(even) .phone-mockup {
-            transform: rotate(3deg) translateY(-20px);
-        }
-
-        .showcase-item:nth-child(3n) .phone-mockup {
-            transform: rotate(-2deg) translateY(10px);
-        }
-
-        .showcase-label {
+        /* Active label */
+        .showcase-active-label {
+            margin-top: 28px;
             text-align: center;
-            max-width: 200px;
-        }
-
-        .showcase-container {
-            overflow-x: auto;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(69, 222, 231, 0.3) transparent;
-            -webkit-overflow-scrolling: touch;
-            cursor: grab;
-            user-select: none;
-        }
-
-        .showcase-container:active {
-            cursor: grabbing;
-        }
-
-        .showcase-container::-webkit-scrollbar {
-            height: 4px;
-        }
-
-        .showcase-container::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 99px;
-        }
-
-        .showcase-container::-webkit-scrollbar-thumb {
-            background: rgba(69, 222, 231, 0.3);
-            border-radius: 99px;
-        }
-
-        /* Gradient mask for scroll fade */
-        .showcase-wrapper {
+            z-index: 2;
             position: relative;
         }
 
-        .showcase-wrapper::before,
-        .showcase-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 80px;
-            z-index: 10;
-            pointer-events: none;
+        .showcase-active-title {
+            font-family: var(--font-headline, 'Space Grotesk', sans-serif);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 4px;
         }
 
-        .showcase-wrapper::before {
-            left: 0;
-            background: linear-gradient(to right, #0b0e0e, transparent);
+        .showcase-active-desc {
+            font-size: 0.85rem;
+            color: rgba(187,201,202,0.8);
         }
 
-        .showcase-wrapper::after {
-            right: 0;
-            background: linear-gradient(to left, #0b0e0e, transparent);
+        /* Thumbnails row */
+        .showcase-thumbs-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 680px;
+            z-index: 2;
+            position: relative;
+            padding: 0 16px;
+        }
+
+        .showcase-thumb {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 8px;
+            border-radius: 18px;
+            border: 1.5px solid rgba(255,255,255,0.07);
+            background: rgba(255,255,255,0.025);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            outline: none;
+            min-width: 66px;
+        }
+
+        .showcase-thumb:hover {
+            border-color: rgba(69,222,231,0.35);
+            background: rgba(69,222,231,0.06);
+            transform: translateY(-2px);
+        }
+
+        .showcase-thumb.active {
+            border-color: rgba(69,222,231,0.55);
+            background: rgba(69,222,231,0.1);
+            box-shadow: 0 0 16px rgba(69,222,231,0.15);
+        }
+
+        .showcase-thumb-img {
+            width: 48px;
+            aspect-ratio: 9/19.5;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .showcase-thumb-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-thumb-label {
+            font-size: 9px;
+            font-family: var(--font-headline, 'Space Grotesk', sans-serif);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: rgba(187,201,202,0.7);
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .showcase-thumb.active .showcase-thumb-label {
+            color: rgba(69,222,231,0.9);
         }
 
         /* Stats Counter */
@@ -819,22 +864,6 @@
             font-family: 'Space Grotesk', sans-serif;
         }
 
-        /* ---- Phone Mockup Responsive ---- */
-        .phone-mockup {
-            width: 180px;
-        }
-
-        @media (min-width: 768px) {
-            .phone-mockup {
-                width: 200px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .phone-mockup {
-                width: 220px;
-            }
-        }
 
         /* iPad / Tablet Fixes */
         @media (min-width: 768px) and (max-width: 1024px) {
@@ -1970,133 +1999,77 @@
                 </p>
             </div>
 
-            <!-- Scrollable Showcase -->
-            <div class="showcase-wrapper reveal">
-                <div class="showcase-container" id="showcaseContainer">
-                    <div class="showcase-track">
+            <!-- Featured Showcase -->
+            <div class="showcase-featured-section reveal">
+                <!-- Ambient glow -->
+                <div class="showcase-ambient"></div>
 
-                        <!-- 1: Homescreen -->
-                        <div class="showcase-item">
-                            <div class="phone-mockup">
-                                <div class="phone-screen">
-                                    <img src="Calonix Screenshots/Mobil/Homescreen.png"
-                                        alt="Calonix Homescreen – Alle Projekte auf einen Blick" loading="lazy" />
-                                </div>
-                            </div>
-                            <div class="showcase-label">
-                                <div class="text-primary font-headline font-semibold text-sm tracking-wide mb-1">
-                                    Homescreen</div>
-                                <div class="text-gray-400 text-xs leading-relaxed">Alle Projekte und Tools auf einen
-                                    Blick</div>
-                            </div>
+                <!-- Platform glow under phone -->
+                <div class="showcase-platform-glow"></div>
+
+                <!-- Featured Phone -->
+                <div class="showcase-featured-phone" id="featuredPhone">
+                    <div class="phone-mockup phone-mockup--featured">
+                        <div class="phone-screen">
+                            <img id="featuredImg"
+                                src="Calonix Screenshots/Mobil/Homescreen.png"
+                                alt="Calonix App Screen"
+                                loading="eager" />
                         </div>
-
-                        <!-- 2: Fachassistent -->
-                        <div class="showcase-item">
-                            <div class="phone-mockup" style="border-color: rgba(96,165,250,0.3);">
-                                <div class="phone-screen">
-                                    <img src="Calonix Screenshots/Mobil/Ki-Chatbot.png"
-                                        alt="Calonix Fachassistent – Sofortantworten auf Baustelle" loading="lazy" />
-                                </div>
-                            </div>
-                            <div class="showcase-label">
-                                <div class="text-blue-400 font-headline font-semibold text-sm tracking-wide mb-1">
-                                    Fachassistent</div>
-                                <div class="text-gray-400 text-xs leading-relaxed">Sofortantworten auf Normen direkt vor
-                                    Ort</div>
-                            </div>
-                        </div>
-
-                        <!-- 3: Import Review -->
-                        <div class="showcase-item">
-                            <div class="phone-mockup">
-                                <div class="phone-screen">
-                                    <img src="Calonix Screenshots/Mobil/Import Review.png"
-                                        alt="Calonix PDF-Import – Baupläne sofort digitalisieren" loading="lazy" />
-                                </div>
-                            </div>
-                            <div class="showcase-label">
-                                <div class="text-primary font-headline font-semibold text-sm tracking-wide mb-1">
-                                    PDF-Import</div>
-                                <div class="text-gray-400 text-xs leading-relaxed">Baupläne automatisch digitalisieren
-                                    und prüfen</div>
-                            </div>
-                        </div>
-
-                        <!-- 4: Hydraulischer Abgleich -->
-                        <div class="showcase-item">
-                            <div class="phone-mockup" style="border-color: rgba(121,217,230,0.3);">
-                                <div class="phone-screen">
-                                    <img src="Calonix Screenshots/Mobil/Hydraulischer Abgleich.png"
-                                        alt="Calonix Hydraulischer Abgleich – Präzise nach Norm" loading="lazy" />
-                                </div>
-                            </div>
-                            <div class="showcase-label">
-                                <div class="text-tertiary font-headline font-semibold text-sm tracking-wide mb-1">
-                                    Hydraulischer Abgleich</div>
-                                <div class="text-gray-400 text-xs leading-relaxed">Präzise Berechnung nach geltender
-                                    Norm</div>
-                            </div>
-                        </div>
-
-                        <!-- 5: Materialberechnung -->
-                        <div class="showcase-item">
-                            <div class="phone-mockup">
-                                <div class="phone-screen">
-                                    <img src="Calonix Screenshots/Mobil/Materialberechnung.png"
-                                        alt="Calonix Stückliste – Automatisch aus der Planung" loading="lazy" />
-                                </div>
-                            </div>
-                            <div class="showcase-label">
-                                <div class="text-primary font-headline font-semibold text-sm tracking-wide mb-1">
-                                    Stückliste</div>
-                                <div class="text-gray-400 text-xs leading-relaxed">Automatisch aus der Planung generiert
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 6: Diagramme -->
-                        <div class="showcase-item">
-                            <div class="phone-mockup" style="border-color: rgba(96,165,250,0.3);">
-                                <div class="phone-screen">
-                                    <img src="Calonix Screenshots/Mobil/Diagramme.png"
-                                        alt="Calonix Visualisierung – Heizlastkurven auf einen Blick" loading="lazy" />
-                                </div>
-                            </div>
-                            <div class="showcase-label">
-                                <div class="text-blue-400 font-headline font-semibold text-sm tracking-wide mb-1">
-                                    Visualisierung</div>
-                                <div class="text-gray-400 text-xs leading-relaxed">Heizlastkurven klar und verständlich
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 7: Tools Übersicht -->
-                        <div class="showcase-item">
-                            <div class="phone-mockup">
-                                <div class="phone-screen">
-                                    <img src="Calonix Screenshots/Mobil/Tools Übersicht.png"
-                                        alt="Calonix Tool-Übersicht – Alles an einem Ort" loading="lazy" />
-                                </div>
-                            </div>
-                            <div class="showcase-label">
-                                <div class="text-primary font-headline font-semibold text-sm tracking-wide mb-1">
-                                    Tool-Übersicht</div>
-                                <div class="text-gray-400 text-xs leading-relaxed">Alle Werkzeuge übersichtlich an einem
-                                    Ort</div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-            </div>
 
-            <!-- Scroll hint -->
-            <div class="text-center mt-6 reveal">
-                <span class="text-gray-600 text-xs font-body flex items-center justify-center gap-2">
-                    <span class="material-symbols-outlined text-base" style="font-size: 16px;">swipe</span>
-                    Seitwärts scrollen um mehr zu sehen
-                </span>
+                <!-- Active screen label -->
+                <div class="showcase-active-label">
+                    <div class="showcase-active-title" id="activeLabelTitle">Homescreen</div>
+                    <div class="showcase-active-desc" id="activeLabelDesc">Alle Projekte und Tools auf einen Blick</div>
+                </div>
+
+                <!-- Thumbnail navigation -->
+                <div class="showcase-thumbs-row">
+                    <button class="showcase-thumb active" onclick="switchScreen(this, 0)">
+                        <div class="showcase-thumb-img">
+                            <img src="Calonix Screenshots/Mobil/Homescreen.png" alt="Homescreen" loading="lazy" />
+                        </div>
+                        <span class="showcase-thumb-label">Homescreen</span>
+                    </button>
+                    <button class="showcase-thumb" onclick="switchScreen(this, 1)">
+                        <div class="showcase-thumb-img">
+                            <img src="Calonix Screenshots/Mobil/Ki-Chatbot.png" alt="Assistent" loading="lazy" />
+                        </div>
+                        <span class="showcase-thumb-label">Assistent</span>
+                    </button>
+                    <button class="showcase-thumb" onclick="switchScreen(this, 2)">
+                        <div class="showcase-thumb-img">
+                            <img src="Calonix Screenshots/Mobil/Import Review.png" alt="PDF-Import" loading="lazy" />
+                        </div>
+                        <span class="showcase-thumb-label">PDF-Import</span>
+                    </button>
+                    <button class="showcase-thumb" onclick="switchScreen(this, 3)">
+                        <div class="showcase-thumb-img">
+                            <img src="Calonix Screenshots/Mobil/Hydraulischer Abgleich.png" alt="Hydraulischer Abgleich" loading="lazy" />
+                        </div>
+                        <span class="showcase-thumb-label">Hyd. Abgleich</span>
+                    </button>
+                    <button class="showcase-thumb" onclick="switchScreen(this, 4)">
+                        <div class="showcase-thumb-img">
+                            <img src="Calonix Screenshots/Mobil/Materialberechnung.png" alt="Stückliste" loading="lazy" />
+                        </div>
+                        <span class="showcase-thumb-label">Stückliste</span>
+                    </button>
+                    <button class="showcase-thumb" onclick="switchScreen(this, 5)">
+                        <div class="showcase-thumb-img">
+                            <img src="Calonix Screenshots/Mobil/Diagramme.png" alt="Diagramme" loading="lazy" />
+                        </div>
+                        <span class="showcase-thumb-label">Diagramme</span>
+                    </button>
+                    <button class="showcase-thumb" onclick="switchScreen(this, 6)">
+                        <div class="showcase-thumb-img">
+                            <img src="Calonix Screenshots/Mobil/Tools Übersicht.png" alt="Tools" loading="lazy" />
+                        </div>
+                        <span class="showcase-thumb-label">Tools</span>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -3178,91 +3151,35 @@
             }
         }
 
-        // ---- Draggable Showcase Scroll ----
-        (function () {
-            const container = document.getElementById('showcaseContainer');
-            if (!container) return;
+        // ---- Showcase Screen Switcher ----
+        const showcaseData = [
+            { src: 'Calonix Screenshots/Mobil/Homescreen.png', title: 'Homescreen', desc: 'Alle Projekte und Tools auf einen Blick' },
+            { src: 'Calonix Screenshots/Mobil/Ki-Chatbot.png', title: 'Fachassistent', desc: 'Sofortantworten auf Normen direkt vor Ort' },
+            { src: 'Calonix Screenshots/Mobil/Import Review.png', title: 'PDF-Import', desc: 'Grundriss hochladen – Räume werden automatisch erkannt' },
+            { src: 'Calonix Screenshots/Mobil/Hydraulischer Abgleich.png', title: 'Hydraulischer Abgleich', desc: 'Normgerechter Abgleich nach DIN EN 12831' },
+            { src: 'Calonix Screenshots/Mobil/Materialberechnung.png', title: 'Stückliste', desc: 'Automatische Materialberechnung auf Knopfdruck' },
+            { src: 'Calonix Screenshots/Mobil/Diagramme.png', title: 'Diagramme', desc: 'Heizlast und Verbrauch visuell auf einen Blick' },
+            { src: 'Calonix Screenshots/Mobil/Tools Übersicht.png', title: 'Tools', desc: 'Alle Werkzeuge übersichtlich an einem Ort' },
+        ];
 
-            let isDragging = false;
-            let startX = 0;
-            let scrollLeft = 0;
-            let velocity = 0;
-            let lastX = 0;
-            let rafId = null;
+        function switchScreen(btn, index) {
+            document.querySelectorAll('.showcase-thumb').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
 
-            container.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startX = e.pageX - container.offsetLeft;
-                scrollLeft = container.scrollLeft;
-                lastX = e.pageX;
-                velocity = 0;
-                cancelAnimationFrame(rafId);
-                container.style.cursor = 'grabbing';
-            });
+            const data = showcaseData[index];
+            const img = document.getElementById('featuredImg');
+            const title = document.getElementById('activeLabelTitle');
+            const desc = document.getElementById('activeLabelDesc');
 
-            container.addEventListener('mouseleave', () => {
-                if (isDragging) {
-                    isDragging = false;
-                    container.style.cursor = 'grab';
-                    startMomentum();
-                }
-            });
-
-            container.addEventListener('mouseup', () => {
-                isDragging = false;
-                container.style.cursor = 'grab';
-                startMomentum();
-            });
-
-            container.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                velocity = e.pageX - lastX;
-                lastX = e.pageX;
-                const x = e.pageX - container.offsetLeft;
-                const walk = x - startX;
-                container.scrollLeft = scrollLeft - walk;
-            });
-
-            // Touch support
-            let touchStartX = 0;
-            let touchScrollLeft = 0;
-
-            container.addEventListener('touchstart', (e) => {
-                touchStartX = e.touches[0].pageX;
-                touchScrollLeft = container.scrollLeft;
-                cancelAnimationFrame(rafId);
-            }, { passive: true });
-
-            container.addEventListener('touchmove', (e) => {
-                const x = e.touches[0].pageX;
-                const walk = touchStartX - x;
-                container.scrollLeft = touchScrollLeft + walk;
-            }, { passive: true });
-
-            function startMomentum() {
-                if (Math.abs(velocity) < 0.5) return;
-
-                function step() {
-                    container.scrollLeft -= velocity;
-                    velocity *= 0.95;
-                    if (Math.abs(velocity) > 0.5) {
-                        rafId = requestAnimationFrame(step);
-                    }
-                }
-                rafId = requestAnimationFrame(step);
-            }
-
-            // Center showcase on desktop after images load
-            function centerShowcase() {
-                if (window.innerWidth >= 768) {
-                    const overflow = container.scrollWidth - container.clientWidth;
-                    if (overflow > 0) container.scrollLeft = overflow / 2;
-                }
-            }
-            window.addEventListener('load', centerShowcase);
-            window.addEventListener('resize', centerShowcase);
-        })();
+            img.classList.add('fading');
+            setTimeout(() => {
+                img.src = data.src;
+                img.alt = data.title;
+                title.textContent = data.title;
+                desc.textContent = data.desc;
+                img.classList.remove('fading');
+            }, 250);
+        }
 
         // ---- Smooth scroll for anchor links ----
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
