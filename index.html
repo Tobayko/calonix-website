@@ -1,0 +1,3642 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <title>Calonix | SHK-Software für Heizlastberechnung & Digitales Aufmaß</title>
+    <meta name="description"
+        content="Die KI-Software für Heizungsbauer, TGA-Planer und Architekten. Digitales Aufmaß aus PDF-Plänen, normgerechte Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <link rel="canonical" href="https://calonix.de/" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calonix | SHK-Software für Heizlastberechnung & Digitales Aufmaß" />
+    <meta property="og:description"
+        content="Die KI-Software für Heizungsbauer, TGA-Planer und Architekten. Digitales Aufmaß aus PDF-Plänen, normgerechte Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Calonix | SHK-Software für Heizlastberechnung & Digitales Aufmaß" />
+    <meta name="twitter:description"
+        content="Die KI-Software für Heizungsbauer, TGA-Planer und Architekten. Digitales Aufmaß aus PDF-Plänen, normgerechte Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#262b2b",
+                        "on-primary": "#003739",
+                        "surface-container-low": "#171c1c",
+                        "surface-dim": "#0f1414",
+                        "on-tertiary-fixed": "#001f23",
+                        "on-surface-variant": "#bbc9ca",
+                        "on-primary-container": "#004a4e",
+                        "primary-fixed": "#6bf6ff",
+                        "background": "#0b0e0e",
+                        "primary": "#45dee7",
+                        "tertiary": "#79d9e6",
+                        "surface": "#0f1414",
+                        "outline-variant": "#3c494a",
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0b0e0e;
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Specific Animations & Styles */
+        .glass-panel {
+            background: rgba(38, 43, 43, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-5px);
+            background: rgba(69, 222, 231, 0.05);
+            border: 1px solid rgba(69, 222, 231, 0.3);
+        }
+
+        /* CSS 3D Cube (Calonix Engine) */
+        .engine-container {
+            perspective: 1200px;
+            width: 160px;
+            height: 160px;
+            z-index: 20;
+        }
+
+        .engine-float {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: float-up-down 8s ease-in-out infinite;
+        }
+
+        .engine-cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(45deg);
+            transition: transform 0.1s ease-out;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background: rgba(11, 25, 25, 0.7);
+            border: 1px solid rgba(69, 222, 231, 0.5);
+            box-shadow: inset 0 0 40px rgba(69, 222, 231, 0.2);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cube-face::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(69, 222, 231, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(69, 222, 231, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.5;
+        }
+
+        .cube-front {
+            transform: rotateY(0deg) translateZ(80px);
+        }
+
+        .cube-back {
+            transform: rotateY(180deg) translateZ(80px);
+        }
+
+        .cube-right {
+            transform: rotateY(90deg) translateZ(80px);
+        }
+
+        .cube-left {
+            transform: rotateY(-90deg) translateZ(80px);
+        }
+
+        .cube-top {
+            transform: rotateX(90deg) translateZ(80px);
+        }
+
+        .cube-bottom {
+            transform: rotateX(-90deg) translateZ(80px);
+            box-shadow: 0 0 60px 20px rgba(69, 222, 231, 0.4);
+        }
+
+        .engine-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+            background: #45dee7;
+            border-radius: 10px;
+            box-shadow: 0 0 80px 30px rgba(69, 222, 231, 0.8), inset 0 0 20px #fff;
+            animation: core-pulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes line-flow {
+            to {
+                stroke-dashoffset: -2000;
+            }
+        }
+
+        .path-glow {
+            fill: none;
+            stroke-linecap: round;
+        }
+
+        .path-animated {
+            fill: none;
+            stroke-dasharray: 100 250;
+            stroke-linecap: round;
+            animation: line-flow 15s linear infinite;
+        }
+
+        .path-animated-fast {
+            fill: none;
+            stroke-dasharray: 50 150;
+            stroke-linecap: round;
+            animation: line-flow 8s linear infinite;
+        }
+
+        @keyframes float-up-down {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes core-pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float-label {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .engine-container {
+                transform: scale(0.6);
+            }
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(69, 222, 231, 0.6);
+        }
+
+        /* Typewriter Cursor */
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 0.9em;
+            background: #45dee7;
+            margin-left: 3px;
+            vertical-align: middle;
+            border-radius: 1px;
+            animation: cursor-blink 0.75s step-end infinite;
+        }
+
+        @keyframes cursor-blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* AI Terminal Lines */
+        .ai-terminal-line {
+            opacity: 0;
+            transform: translateX(-4px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .ai-terminal-line.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* =============================================
+           NEW SECTIONS - STYLES
+           ============================================= */
+
+        /* Scroll-in Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* App Showcase */
+        .phone-mockup {
+            position: relative;
+            flex-shrink: 0;
+            border-radius: 36px;
+            background: #111;
+            border: 2px solid rgba(69, 222, 231, 0.3);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.05),
+                0 30px 80px -10px rgba(0, 0, 0, 0.8),
+                0 0 40px -5px rgba(69, 222, 231, 0.15);
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+        }
+
+        .phone-mockup:hover {
+            transform: translateY(-12px) scale(1.03) !important;
+            box-shadow:
+                0 0 0 1px rgba(69, 222, 231, 0.2),
+                0 50px 100px -10px rgba(0, 0, 0, 0.9),
+                0 0 60px -5px rgba(69, 222, 231, 0.35);
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 99px;
+            z-index: 10;
+        }
+
+        .phone-mockup img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 34px;
+        }
+
+        .phone-screen {
+            width: 100%;
+            aspect-ratio: 9/19.5;
+            overflow: hidden;
+            border-radius: 34px;
+        }
+
+        .showcase-track {
+            display: flex;
+            gap: 32px;
+            padding: 40px 60px;
+            align-items: flex-end;
+            min-width: min-content;
+            margin: 0 auto;
+        }
+
+        .showcase-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Alternating tilt */
+        .showcase-item:nth-child(odd) .phone-mockup {
+            transform: rotate(-4deg) translateY(0);
+        }
+
+        .showcase-item:nth-child(even) .phone-mockup {
+            transform: rotate(3deg) translateY(-20px);
+        }
+
+        .showcase-item:nth-child(3n) .phone-mockup {
+            transform: rotate(-2deg) translateY(10px);
+        }
+
+        .showcase-label {
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .showcase-container {
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(69, 222, 231, 0.3) transparent;
+            -webkit-overflow-scrolling: touch;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .showcase-container:active {
+            cursor: grabbing;
+        }
+
+        .showcase-container::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .showcase-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 99px;
+        }
+
+        .showcase-container::-webkit-scrollbar-thumb {
+            background: rgba(69, 222, 231, 0.3);
+            border-radius: 99px;
+        }
+
+        /* Gradient mask for scroll fade */
+        .showcase-wrapper {
+            position: relative;
+        }
+
+        .showcase-wrapper::before,
+        .showcase-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .showcase-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, #0b0e0e, transparent);
+        }
+
+        .showcase-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, #0b0e0e, transparent);
+        }
+
+        /* Stats Counter */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+            background: linear-gradient(135deg, #45dee7, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Pricing Card */
+        .pricing-card {
+            background: rgba(38, 43, 43, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 28px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .pricing-card.featured {
+            background: rgba(69, 222, 231, 0.06);
+            border: 1px solid rgba(69, 222, 231, 0.4);
+            box-shadow: 0 0 60px -10px rgba(69, 222, 231, 0.2), 0 30px 80px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        .pricing-card.featured:hover {
+            box-shadow: 0 0 80px -10px rgba(69, 222, 231, 0.35), 0 40px 100px -20px rgba(0, 0, 0, 0.6);
+        }
+
+        .check-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(69, 222, 231, 0.15);
+            flex-shrink: 0;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: background 0.3s ease;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 28px 0;
+            cursor: pointer;
+            text-align: left;
+            gap: 16px;
+            background: none;
+            border: none;
+            color: inherit;
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(69, 222, 231, 0.1);
+            border: 1px solid rgba(69, 222, 231, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease;
+            color: #45dee7;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            background: rgba(69, 222, 231, 0.2);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-inner {
+            padding-bottom: 28px;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(69, 222, 231, 0.08) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(69, 222, 231, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(69, 222, 231, 0.05) 0%, transparent 50%);
+        }
+
+        /* Target audience cards */
+        .audience-card {
+            background: rgba(38, 43, 43, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 28px;
+            padding: 40px;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(69, 222, 231, 0.25);
+            box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.5), 0 0 40px -10px rgba(69, 222, 231, 0.1);
+        }
+
+        /* Section separator gradient */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(69, 222, 231, 0.2), transparent);
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        /* Nav active state */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #45dee7;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Pulse dot */
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .pulse-dot {
+            position: relative;
+        }
+
+        .pulse-dot::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: #45dee7;
+            animation: pulse-ring 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 99px;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.2);
+            font-size: 12px;
+            font-weight: 600;
+            color: #45dee7;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* ---- Mobile Menu ---- */
+        .mobile-menu {
+            position: fixed;
+            top: 65px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 14, 14, 0.98);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 32px;
+            gap: 8px;
+            transform: translateY(-20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .mobile-menu.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .mobile-menu a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #9ca3af;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.nav-active {
+            color: #fff;
+        }
+
+        .mobile-menu a.nav-active {
+            color: #45dee7;
+        }
+
+        /* ---- Hamburger Icon ---- */
+        .burger {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .burger:hover {
+            background: rgba(69, 222, 231, 0.06);
+            border-color: rgba(69, 222, 231, 0.2);
+        }
+
+        .burger span {
+            display: block;
+            height: 1.5px;
+            background: #dfe3e3;
+            border-radius: 99px;
+            transform-origin: center;
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease, width 0.3s ease;
+        }
+
+        .burger span:nth-child(3) {
+            width: 60%;
+        }
+
+        .burger.open span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+
+        .burger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .burger.open span:nth-child(3) {
+            width: 100%;
+            transform: translateY(-6.5px) rotate(-45deg);
+        }
+
+        /* ---- Active Nav Link ---- */
+        .nav-link.nav-active {
+            color: #45dee7 !important;
+        }
+
+        /* ---- Back to Top ---- */
+        #backToTop {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 99;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(38, 43, 43, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(69, 222, 231, 0.25);
+            color: #45dee7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(16px);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #backToTop.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #backToTop:hover {
+            background: rgba(69, 222, 231, 0.12);
+            box-shadow: 0 0 20px rgba(69, 222, 231, 0.2);
+        }
+
+        /* Glow lines decoration */
+        .glow-line-h {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #45dee7, transparent);
+            opacity: 0.3;
+        }
+
+        /* Pricing popular badge */
+        .popular-badge {
+            background: linear-gradient(135deg, #45dee7, #22d3ee);
+            color: #003739;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 99px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* ---- Phone Mockup Responsive ---- */
+        .phone-mockup {
+            width: 180px;
+        }
+
+        @media (min-width: 768px) {
+            .phone-mockup {
+                width: 200px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .phone-mockup {
+                width: 220px;
+            }
+        }
+
+        /* iPad / Tablet Fixes */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .engine-container {
+                transform: scale(0.75);
+            }
+
+            /* Hero floating labels: schmaler auf iPad */
+            .hidden.md\:block.absolute.left-10 {
+                left: 8px;
+            }
+
+            .hidden.md\:block.absolute.right-10 {
+                right: 8px;
+            }
+        }
+
+        /* Allgemeine Touch-Verbesserungen */
+        @media (max-width: 1024px) {
+            .glass-panel:hover {
+                transform: none;
+            }
+        }
+
+        /* Safe area für Notch-Geräte */
+        @supports (padding: max(0px)) {
+            header {
+                padding-left: max(2rem, env(safe-area-inset-left));
+                padding-right: max(2rem, env(safe-area-inset-right));
+            }
+
+            #backToTop {
+                bottom: max(32px, env(safe-area-inset-bottom));
+                right: max(32px, env(safe-area-inset-right));
+            }
+        }
+
+        /* ---- Beta-Sektion: Role Pills ---- */
+        .role-pill input[type="radio"] {
+            display: none;
+        }
+
+        .role-pill label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 99px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(38, 43, 43, 0.4);
+            color: #9ca3af;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .role-pill label:hover {
+            border-color: rgba(69, 222, 231, 0.25);
+            color: #dfe3e3;
+        }
+
+        .role-pill input[type="radio"]:checked+label {
+            background: rgba(69, 222, 231, 0.12);
+            border-color: rgba(69, 222, 231, 0.4);
+            color: #45dee7;
+        }
+
+        /* Beta-Sektion Input Focus */
+        .beta-input:focus {
+            border-color: rgba(69, 222, 231, 0.5) !important;
+            outline: none;
+        }
+
+        /* ---- Typewriter Cursor Pause State ---- */
+        #typewriterText.paused .typewriter-cursor {
+            opacity: 0 !important;
+            animation: none;
+        }
+
+        /* ---- Bauplan-Analyse Section ---- */
+        .scan-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent 0%, #45dee7 30%, #ffffff 50%, #45dee7 70%, transparent 100%);
+            box-shadow: 0 0 12px 4px rgba(69, 222, 231, 0.9), 0 0 40px 8px rgba(69, 222, 231, 0.4);
+            animation: scan-sweep 1.4s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .scan-line::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 3px;
+            height: 60px;
+            background: linear-gradient(to bottom, rgba(69, 222, 231, 0.18), transparent);
+            pointer-events: none;
+        }
+
+        @keyframes scan-sweep {
+            0% {
+                top: 0%;
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        .step-indicator {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(38, 43, 43, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        .step-indicator.active {
+            border-color: #45dee7;
+            background: rgba(69, 222, 231, 0.1);
+            box-shadow: 0 0 20px rgba(69, 222, 231, 0.3);
+            animation: step-pulse 1.5s ease-in-out infinite;
+        }
+
+        .step-indicator.done {
+            border-color: #45dee7;
+            background: rgba(69, 222, 231, 0.15);
+        }
+
+        @keyframes step-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(69, 222, 231, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(69, 222, 231, 0.6);
+            }
+        }
+
+        .step-connector {
+            width: 2px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.08);
+            margin-left: 17px;
+            transition: background-color 0.5s ease;
+        }
+
+        .step-connector.done {
+            background: rgba(69, 222, 231, 0.5);
+        }
+
+        .blueprint-room rect.room-overlay {
+            transition: opacity 0.3s ease, fill 0.3s ease;
+        }
+
+        .blueprint-room text {
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        @keyframes import-flash {
+            0% {
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 0.18;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .import-flash {
+            animation: import-flash 0.8s ease-out forwards;
+        }
+
+        @keyframes counter-tick {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes result-appear {
+            0% {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            60% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .result-appear {
+            animation: result-appear 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes particle-burst {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(3);
+            }
+        }
+
+        .particle-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(69, 222, 231, 0.6);
+            border-radius: 50%;
+            animation: particle-burst 0.8s ease-out forwards;
+            pointer-events: none;
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "SoftwareApplication",
+                "name": "Calonix",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web, iOS, Android",
+                "description": "KI-Software für Heizungsbauer, TGA-Planer und Energieberater. Digitales Aufmaß aus PDF-Plänen, normgerechte Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung.",
+                "featureList": [
+                    "KI-Grundriss-Erkennung aus PDF-Bauplänen",
+                    "Heizlastberechnung nach DIN EN 12831",
+                    "Fußbodenheizungs-Auslegung nach DIN EN 1264",
+                    "Hydraulischer Abgleich",
+                    "Automatische Stücklisten und Materialberechnung",
+                    "KI-Fachassistent für SHK und TGA",
+                    "Offline-Baustellen-App mit Auto-Sync",
+                    "Team- und Rechtemanagement"
+                ],
+                "softwareVersion": "0.9 Beta",
+                "releaseNotes": "Geschlossene Beta – aktive Entwicklung",
+                "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/PreOrder"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "150"
+                }
+            },
+            {
+                "@type": "Event",
+                "name": "Calonix Beta-Launch",
+                "description": "Geschlossene Beta-Phase der Calonix SHK-Planungssoftware. Interessenten können sich für Frühzugang registrieren.",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "organizer": { "@type": "Organization", "name": "Calonix" }
+            },
+            {
+                "@type": "Organization",
+                "name": "Calonix",
+                "description": "Hersteller der Calonix SHK-Planungssoftware für professionelle Heizlastberechnung und TGA-Planung",
+                "url": "https://calonix.de"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Ist Calonix wirklich normkonform nach DIN EN 12831?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Calonix berechnet die Raumheizlast vollständig nach DIN EN 12831 – inklusive Transmissions- und Lüftungswärmeverluste, Aufheizzuschläge und normativer Klimadaten. Die Ergebnisse sind prüffähig und dokumentationsfähig für Behörden, Energieberater und Bauherren."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie funktioniert der PDF-Import für Baupläne?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Du lädst den Architektenplan als PDF hoch. Unsere KI analysiert automatisch alle Räume, erkennt Wände, Fenster und Türen und berechnet die Flächen. Das spart dir mehrere Stunden manueller Dateneingabe pro Projekt."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="antialiased">
+
+    <!-- Beta Announcement Bar -->
+    <div id="betaBanner" class="relative z-[60] w-full py-2.5 px-4 text-center text-sm font-headline font-medium"
+        style="background: linear-gradient(90deg, rgba(69,222,231,0.12) 0%, rgba(69,222,231,0.06) 50%, rgba(69,222,231,0.12) 100%); border-bottom: 1px solid rgba(69,222,231,0.2);">
+        <span class="inline-flex items-center gap-2 text-gray-300">
+            <span
+                class="inline-flex items-center gap-1.5 bg-primary/20 text-primary text-xs font-bold px-2.5 py-0.5 rounded-full border border-primary/30 tracking-widest uppercase">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse inline-block"></span>
+                Beta
+            </span>
+            Calonix befindet sich in aktiver Entwicklung —
+            <a href="#beta-signup"
+                class="text-primary hover:text-white underline underline-offset-2 transition-colors font-semibold">Jetzt
+                für Beta-Zugang registrieren</a>
+        </span>
+        <button onclick="document.getElementById('betaBanner').style.display='none'"
+            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors"
+            aria-label="Schließen">
+            <span class="material-symbols-outlined" style="font-size: 18px;">close</span>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 w-full z-50 bg-[#0b0e0e]/80 backdrop-blur-xl border-b border-white/5">
+        <nav class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+            <a href="#" class="group">
+                <img src="Logo/Calonix_Logo.svg" alt="Calonix" class="h-8 w-auto"
+                    style="filter: brightness(0) invert(1); opacity: 0.95; transition: opacity 0.2s;"
+                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.95'" />
+            </a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-headline tracking-wide text-sm text-primary transition-colors nav-link"
+                    href="#features">Funktionen</a>
+                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
+                    href="#showcase">App</a>
+                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
+                    href="#zielgruppen">Zielgruppen</a>
+                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
+                    href="#preise">Preise</a>
+                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
+                    href="#faq">FAQ</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors hidden sm:block"
+                    href="#">Anmelden</a>
+                <button
+                    class="bg-primary text-on-primary font-headline font-bold py-2.5 px-6 rounded-full text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] active:scale-95 transition-all hidden md:block">
+                    Kostenlos testen
+                </button>
+                <!-- Hamburger (mobile only) -->
+                <button class="burger md:hidden" id="burgerBtn" aria-label="Menü öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu md:hidden" id="mobileMenu">
+        <a href="#features" class="mobile-nav-link" data-section="features">
+            Funktionen
+            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+        </a>
+        <a href="#showcase" class="mobile-nav-link" data-section="showcase">
+            App
+            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+        </a>
+        <a href="#zielgruppen" class="mobile-nav-link" data-section="zielgruppen">
+            Zielgruppen
+            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+        </a>
+        <a href="#preise" class="mobile-nav-link" data-section="preise">
+            Preise
+            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+        </a>
+        <a href="#faq" class="mobile-nav-link" data-section="faq">
+            FAQ
+            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+        </a>
+        <div class="mt-auto pt-8">
+            <button
+                class="w-full bg-primary text-on-primary font-headline font-bold py-4 px-6 rounded-full text-base hover:shadow-[0_0_30px_rgba(69,222,231,0.4)] active:scale-95 transition-all">
+                Kostenlos testen
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION - 1:1 ÜBERNOMMEN -->
+        <section
+            class="relative w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden pt-20 pb-10 bg-[radial-gradient(circle_at_center,rgba(69,222,231,0.05)_0%,transparent_60%)]">
+
+            <!-- Hero Title (Top Layer) -->
+            <div class="relative z-30 text-center max-w-5xl mx-auto px-6 mt-10 mb-8">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <span class="badge">
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse inline-block"></span>
+                        In Entwicklung
+                    </span>
+                    <span class="text-gray-500 text-sm font-body">Beta-Zugang verfügbar</span>
+                </div>
+                <h1
+                    class="text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-6 tracking-tight text-white drop-shadow-2xl">
+                    Vom PDF-Grundriss zur <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white text-glow">Norm-Heizlast</span>
+                </h1>
+                <p id="typewriterText"
+                    class="text-on-surface-variant text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-body min-h-[4rem] md:min-h-[3rem]">
+                    <span class="typewriter-cursor"></span></p>
+            </div>
+
+            <!-- The Calonix Engine & SVG Lines Area -->
+            <div class="relative w-full h-[600px] md:h-[650px] flex items-center justify-center max-w-[1440px] mx-auto">
+
+                <!-- SVG Intertwined Lines -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1440 650"
+                    preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <filter id="glow-strong" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="6" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+
+                    <!-- Base Track Lines (Faint) -->
+                    <g opacity="0.15" class="path-glow" stroke-width="4">
+                        <path d="M -100 200 C 400 200, 500 450, 720 325 C 800 325, 1000 200, 1540 200"
+                            stroke="#45dee7" />
+                        <path d="M -100 450 C 300 450, 500 250, 720 325 C 800 325, 1000 280, 1540 280"
+                            stroke="#3b82f6" />
+                        <path d="M -100 325 C 400 325, 450 550, 720 325 C 800 325, 1000 360, 1540 360"
+                            stroke="#ffffff" />
+                        <path d="M -100 550 C 350 550, 450 150, 720 325 C 800 325, 1000 440, 1540 440"
+                            stroke="#45dee7" />
+                    </g>
+
+                    <!-- Animated Glowing Lines -->
+                    <g filter="url(#glow-strong)" stroke-width="5">
+                        <!-- Cyan Line -->
+                        <path id="svgPath1" d="M -100 200 C 400 200, 500 450, 720 325 C 800 325, 1000 200, 1540 200"
+                            stroke="#45dee7" class="path-animated" />
+                        <!-- Blue Line -->
+                        <path id="svgPath2" d="M -100 450 C 300 450, 500 250, 720 325 C 800 325, 1000 280, 1540 280"
+                            stroke="#60a5fa" class="path-animated" style="animation-duration: 12s;" />
+                        <!-- White Line -->
+                        <path id="svgPath3" d="M -100 325 C 400 325, 450 550, 720 325 C 800 325, 1000 360, 1540 360"
+                            stroke="#ffffff" class="path-animated-fast" />
+                        <!-- Cyan Secondary Line -->
+                        <path id="svgPath4" d="M -100 550 C 350 550, 450 150, 720 325 C 800 325, 1000 440, 1540 440"
+                            stroke="#22d3ee" class="path-animated" style="animation-duration: 18s;" />
+                    </g>
+
+                    <!-- Data Packet Dots -->
+                    <g filter="url(#glow-strong)">
+                        <circle r="3.5" fill="#45dee7" opacity="0.9">
+                            <animateMotion dur="4s" repeatCount="indefinite" begin="0s">
+                                <mpath href="#svgPath1" />
+                            </animateMotion>
+                        </circle>
+                        <circle r="3" fill="#45dee7" opacity="0.7">
+                            <animateMotion dur="4s" repeatCount="indefinite" begin="2s">
+                                <mpath href="#svgPath1" />
+                            </animateMotion>
+                        </circle>
+                        <circle r="3" fill="#60a5fa" opacity="0.9">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="0.5s">
+                                <mpath href="#svgPath2" />
+                            </animateMotion>
+                        </circle>
+                        <circle r="2.5" fill="#60a5fa" opacity="0.7">
+                            <animateMotion dur="5s" repeatCount="indefinite" begin="2.5s">
+                                <mpath href="#svgPath2" />
+                            </animateMotion>
+                        </circle>
+                        <circle r="2.5" fill="#ffffff" opacity="0.8">
+                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="1s">
+                                <mpath href="#svgPath3" />
+                            </animateMotion>
+                        </circle>
+                        <circle r="2" fill="#ffffff" opacity="0.6">
+                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="2.8s">
+                                <mpath href="#svgPath3" />
+                            </animateMotion>
+                        </circle>
+                        <circle r="3" fill="#22d3ee" opacity="0.9">
+                            <animateMotion dur="6s" repeatCount="indefinite" begin="1.5s">
+                                <mpath href="#svgPath4" />
+                            </animateMotion>
+                        </circle>
+                        <circle r="2.5" fill="#22d3ee" opacity="0.7">
+                            <animateMotion dur="6s" repeatCount="indefinite" begin="4s">
+                                <mpath href="#svgPath4" />
+                            </animateMotion>
+                        </circle>
+                    </g>
+                </svg>
+
+                <!-- Central 3D Cube (Calonix Engine) -->
+                <div class="engine-container absolute">
+                    <div class="engine-float">
+                        <div class="engine-cube">
+                            <div class="cube-face cube-front flex-col gap-2">
+                                <img src="Logo/Calonix_Logo.svg" alt="Calonix" class="relative z-10 w-24"
+                                    style="filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(69,222,231,0.8));" />
+                                <span
+                                    class="relative z-10 text-primary font-headline font-semibold tracking-[0.2em] text-[10px] text-glow">ENGINE</span>
+                            </div>
+                            <div class="cube-face cube-back"></div>
+                            <div class="cube-face cube-right"></div>
+                            <div class="cube-face cube-left"></div>
+                            <div class="cube-face cube-top"></div>
+                            <div class="cube-face cube-bottom"></div>
+                            <div class="engine-core"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Labels (Left Side) -->
+                <div class="hidden md:block absolute left-10 lg:left-32 inset-y-0 w-64 pointer-events-none z-30">
+                    <!-- Text aligned to lines -->
+                    <div class="absolute top-[32%] text-primary font-headline font-semibold tracking-widest uppercase text-sm"
+                        style="animation: float-label 6s ease-in-out infinite;">
+                        PDF-Baupläne
+                        <div class="h-px w-32 bg-primary/50 mt-1"></div>
+                    </div>
+                    <div class="absolute top-[55%] text-blue-400 font-headline font-semibold tracking-widest uppercase text-sm"
+                        style="animation: float-label 7s ease-in-out infinite 1s;">
+                        Projektdaten
+                        <div class="h-px w-32 bg-blue-400/50 mt-1"></div>
+                    </div>
+                    <div class="absolute top-[78%] text-gray-300 font-headline font-semibold tracking-widest uppercase text-sm"
+                        style="animation: float-label 5s ease-in-out infinite 0.5s;">
+                        Datenblätter
+                        <div class="h-px w-32 bg-gray-300/50 mt-1"></div>
+                    </div>
+
+                    <!-- Glass Card -->
+                    <div class="absolute top-[12%] left-10 glass-panel p-5 rounded-2xl w-64 pointer-events-auto"
+                        style="animation: float-label 8s ease-in-out infinite;">
+                        <h3 class="text-white font-headline font-bold text-lg mb-1 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-xl">forum</span>
+                            KI-Fachassistent
+                        </h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Dein digitaler Co-Pilot für SHK-Normen und
+                            fachliche Rückfragen direkt im Projekt.</p>
+                    </div>
+                </div>
+
+                <!-- Floating Labels (Right Side - Structured) -->
+                <div class="hidden md:block absolute right-10 lg:right-32 inset-y-0 w-64 pointer-events-none z-30">
+                    <!-- Text aligned exactly to the new straight lines -->
+                    <div class="absolute top-[28%] right-0 text-right text-primary font-headline font-semibold tracking-widest uppercase text-sm"
+                        style="animation: float-label 6s ease-in-out infinite 0.5s;">
+                        Digitales Aufmaß
+                        <div class="h-px w-40 bg-primary/50 mt-1 ml-auto"></div>
+                    </div>
+                    <div class="absolute top-[40%] right-0 text-right text-blue-400 font-headline font-semibold tracking-widest uppercase text-sm"
+                        style="animation: float-label 7s ease-in-out infinite 1.5s;">
+                        Norm-Heizlast
+                        <div class="h-px w-32 bg-blue-400/50 mt-1 ml-auto"></div>
+                    </div>
+                    <div class="absolute top-[64%] right-0 text-right text-primary font-headline font-semibold tracking-widest uppercase text-sm"
+                        style="animation: float-label 5s ease-in-out infinite 1s;">
+                        Exakte Stücklisten
+                        <div class="h-px w-48 bg-primary/50 mt-1 ml-auto"></div>
+                    </div>
+
+                    <!-- Glass Cards -->
+                    <div class="absolute top-[48%] -left-16 glass-panel p-3 px-4 rounded-xl border-primary/30 shadow-[0_0_20px_rgba(69,222,231,0.2)] pointer-events-auto"
+                        style="animation: float-label 4s ease-in-out infinite;">
+                        <div class="text-[10px] text-primary font-headline uppercase tracking-widest">Präzision</div>
+                        <div class="text-white font-bold text-2xl font-headline">99.9%</div>
+                    </div>
+
+                    <div class="absolute top-[75%] right-12 glass-panel rounded-xl w-56 pointer-events-auto overflow-hidden"
+                        style="animation: float-label 9s ease-in-out infinite 2s;">
+                        <!-- Terminal Title Bar -->
+                        <div class="flex items-center gap-2 px-3 py-2 border-b border-white/5 bg-white/[0.02]">
+                            <span class="w-2 h-2 rounded-full bg-red-500/50"></span>
+                            <span class="w-2 h-2 rounded-full bg-yellow-500/50"></span>
+                            <span class="w-2 h-2 rounded-full bg-green-500/50"></span>
+                            <span class="ml-2 text-[10px] text-gray-500 font-headline tracking-widest uppercase">Calonix
+                                KI</span>
+                        </div>
+                        <!-- Terminal Output -->
+                        <div id="aiTerminal" class="px-3 py-3 font-mono text-[11px] space-y-1.5 min-h-[90px]"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="relative z-30 flex flex-col sm:flex-row gap-6 mt-4">
+                <button
+                    class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:shadow-[0_0_30px_rgba(69,222,231,0.5)] transition-all flex items-center gap-2 group">
+                    Jetzt Demo anfordern
+                    <span
+                        class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </button>
+                <button
+                    class="glass-panel text-white px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-white/10 transition-colors flex items-center gap-2">
+                    Alle Features ansehen
+                </button>
+            </div>
+
+            <!-- Fade out gradient to next section -->
+            <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-[#0b0e0e] to-transparent z-10"></div>
+        </section>
+
+        <!-- Feature Grid (Bento Style) -->
+        <section id="features" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-6">Die All-in-One Software für
+                    Heizungsbau & TGA-Planung</h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Acht intelligente Werkzeuge, die deinen
+                    Workflow vom digitalen Gebäudeaufmaß bis zur Montage auf der Baustelle revolutionieren.</p>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full shadow-[0_0_10px_#45dee7] mt-8"></div>
+            </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(280px,auto)] [&>*[class*='lg:col-span-2']]:md:col-span-2">
+
+                <!-- 1. KI-Assistenz -->
+                <div
+                    class="glass-panel p-8 rounded-3xl flex flex-col group lg:col-span-2 relative overflow-hidden reveal">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[60px] group-hover:bg-primary/10 transition-colors">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-all group-hover:scale-110">
+                            <span class="material-symbols-outlined text-primary text-3xl">forum</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-2xl text-white mb-2">KI-Fachassistent für TGA & SHK
+                            <span class="text-primary text-lg ml-2 font-normal tracking-wide">(RAG Agent)</span></h3>
+                        <h4 class="text-primary font-medium mb-4">Dein technischer Co-Pilot in der Hosentasche</h4>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Nie wieder in Bergen von PDF-Datenblättern blättern. Unser integrierter KI-Assistent kennt
+                            alle hochgeladenen Herstellerdokumente, Planungsrichtlinien und Normen auswendig. Fachfragen
+                            auf der Baustelle? Du stellst die Frage im Chatfenster und die App liefert dir in
+                            Sekundenschnelle die exakte Antwort – verlässlich und direkt zitiert.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. OCR Scan -->
+                <div
+                    class="glass-panel p-8 rounded-3xl flex flex-col group lg:col-span-2 relative overflow-hidden reveal reveal-delay-1">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[60px] group-hover:bg-blue-500/10 transition-colors">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-blue-400/20 group-hover:bg-blue-400/20 transition-all group-hover:scale-110">
+                            <span class="material-symbols-outlined text-blue-400 text-3xl">document_scanner</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-2xl text-white mb-2">KI-Grundriss-Erkennung <span
+                                class="text-blue-400 text-lg ml-2 font-normal tracking-wide">(PDF Scan)</span></h3>
+                        <h4 class="text-blue-300 font-medium mb-4">Digitales Raumaufmaß in Rekordzeit</h4>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Schluss mit nervigem Abtippen von Raummaßen: Du lädst einfach den Bauplan des Architekten
+                            als PDF hoch. Unsere Deep-Learning Analyse erfasst sofort alle Räume, berechnet Quadratmeter
+                            und füllt das Gebäudeaufmaß blitzschnell aus. So sparst du Stunden der Datenerfassung pro
+                            Bauvorhaben.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. Wizard -->
+                <div
+                    class="glass-panel p-8 rounded-3xl flex flex-col group relative overflow-hidden reveal reveal-delay-2">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
+                        <span
+                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors">magic_button</span>
+                    </div>
+                    <h3 class="font-headline font-bold text-xl text-white mb-2">Smarte Projektanlage</h3>
+                    <h4 class="text-gray-400 text-sm font-medium mb-4">Fehlerfreie Kundenprojekte</h4>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        Unser geführter Assistent nimmt dich an die Hand. Erlebe eine sichere Kundenerfassung mit
+                        intelligenten Vorschlagswerten für Gebäudehüllen und Heizungssysteme. Von Minute 1 an produktiv
+                        planen.
+                    </p>
+                </div>
+
+                <!-- 4. Heizlast -->
+                <div
+                    class="glass-panel p-8 rounded-3xl flex flex-col group relative overflow-hidden reveal reveal-delay-3">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
+                        <span
+                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors">thermostat</span>
+                    </div>
+                    <h3 class="font-headline font-bold text-xl text-white mb-2">Norm-Heizlast</h3>
+                    <h4 class="text-gray-400 text-sm font-medium mb-4">Nach DIN EN 12831</h4>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        Exakt und rechtssicher auf Knopfdruck. Die App berechnet sofort die Heizlast pro Raum –
+                        inklusive Berücksichtigung von Transmissions- und Lüftungswärmeverlusten. Schluss mit groben
+                        Daumenregeln beim Heizungstausch.
+                    </p>
+                </div>
+
+                <!-- 5. Auslegung -->
+                <div
+                    class="glass-panel p-8 rounded-3xl flex flex-col group relative overflow-hidden reveal reveal-delay-1">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
+                        <span
+                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors">architecture</span>
+                    </div>
+                    <h3 class="font-headline font-bold text-xl text-white mb-2">Rohrnetz-Auslegung</h3>
+                    <h4 class="text-gray-400 text-sm font-medium mb-4">Flächenheizung DIN EN 1264</h4>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        Von der Raumheizlast zum fertigen System. Ermittle automatisiert optimale Verlegeabstände,
+                        Durchflussmengen und den genauen Druckverlust pro Heizkreis für den perfekten hydraulischen
+                        Abgleich.
+                    </p>
+                </div>
+
+                <!-- 6. Shop -->
+                <div
+                    class="glass-panel p-8 rounded-3xl flex flex-col group relative overflow-hidden reveal reveal-delay-2">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
+                        <span
+                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors">shopping_cart_checkout</span>
+                    </div>
+                    <h3 class="font-headline font-bold text-xl text-white mb-2">Material & Stücklisten</h3>
+                    <h4 class="text-gray-400 text-sm font-medium mb-4">Direkt beim Großhandel</h4>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">
+                        Auf Basis der Rohrlängen erzeugt die Software automatisch eine passgenaue Stückliste (BOM). Im
+                        System-Katalog hast du direkten Zugriff auf Heizrohre und Systemplatten für eine direkte
+                        Bestellung per OCI/UGL.
+                    </p>
+                </div>
+
+                <!-- 7. Team -->
+                <div
+                    class="glass-panel p-8 rounded-3xl flex flex-col group lg:col-span-2 relative overflow-hidden reveal reveal-delay-3">
+                    <div
+                        class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary/5 rounded-full blur-[60px] group-hover:bg-tertiary/10 transition-colors">
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full justify-center">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-tertiary/20 group-hover:bg-tertiary/20 transition-all group-hover:scale-110">
+                            <span class="material-symbols-outlined text-tertiary text-3xl">groups</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-2xl text-white mb-2">Team- & Rechtemanagement <span
+                                class="text-tertiary text-lg ml-2 font-normal tracking-wide">(RBAC)</span></h3>
+                        <h4 class="text-tertiary font-medium mb-4">Perfekte Planung für Büro & Monteur</h4>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Verteile passgenau Lizenzen und Rechte. Ob Meister, TGA-Planer im Büro oder Monteur auf der
+                            Baustelle – jeder sieht genau den Teil eines Bauprojekts, der für ihn relevant und
+                            freigegeben wurde. Kein Zettelchaos mehr.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 8. Offline -->
+                <div
+                    class="glass-panel p-8 rounded-3xl flex flex-col group lg:col-span-2 relative overflow-hidden reveal reveal-delay-4">
+                    <div
+                        class="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-[60px] group-hover:bg-white/10 transition-colors">
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full justify-center">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-gray-400/20 group-hover:bg-gray-400/20 transition-all group-hover:scale-110">
+                            <span class="material-symbols-outlined text-gray-300 text-3xl">wifi_off</span>
+                        </div>
+                        <h3 class="font-headline font-bold text-2xl text-white mb-2">Offline-Baustellen-App <span
+                                class="text-gray-400 text-lg ml-2 font-normal tracking-wide">(Auto-Sync)</span></h3>
+                        <h4 class="text-gray-300 font-medium mb-4">Aufmaß & Datenerfassung auch im Funkloch</h4>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Gebäudeaufmaß im Keller ohne Mobilfunkempfang? Kein Problem. Erfasse Räume und Projektdaten
+                            komplett offline. Sobald dein Tablet oder Smartphone wieder Netz hat, synchronisiert die App
+                            lautlos alle Änderungen mit dem Büro und Cloud-Funktionen wie KI-Chat oder der Materialshop
+                            sind wieder aktiv.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             BAUPLAN-ANALYSE SECTION
+             ============================================ -->
+        <section id="bauplan-analyse" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
+
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal">
+                <span class="badge mb-6">KI-Grundrisserkennung</span>
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-6">
+                    Von der PDF-Datei zur<br class="hidden md:block"> vollständigen Heizlast
+                </h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
+                    Lade deinen Bauplan hoch — Calonix erkennt automatisch alle Räume, markiert unbeheizte Bereiche und
+                    berechnet die normkonforme Heizlast in Sekunden.
+                </p>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full shadow-[0_0_10px_#45dee7] mt-8"></div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center reveal reveal-delay-1">
+
+                <!-- SVG Floor Plan: lg:col-span-3 -->
+                <div class="lg:col-span-3">
+                    <div class="glass-panel rounded-3xl p-4 relative overflow-hidden" id="blueprintPanel">
+                        <!-- Blueprint Label -->
+                        <div class="flex items-center gap-2 px-3 pb-3 border-b border-white/5 mb-3">
+                            <span class="w-2 h-2 rounded-full bg-red-500/50"></span>
+                            <span class="w-2 h-2 rounded-full bg-yellow-500/50"></span>
+                            <span class="w-2 h-2 rounded-full bg-green-500/50"></span>
+                            <span
+                                class="ml-2 text-xs text-gray-500 font-headline tracking-widest uppercase">Grundriss_EG.pdf</span>
+                        </div>
+
+                        <!-- SVG Container (position: relative for absolute scanline) -->
+                        <div class="relative w-full" id="svgContainer"
+                            style="background: #0a1010; border-radius: 16px; overflow: hidden;">
+
+                            <!-- SVG Blueprint -->
+                            <svg class="w-full h-auto blueprint-svg" viewBox="0 0 500 400"
+                                xmlns="http://www.w3.org/2000/svg" id="blueprintSVG">
+
+                                <!-- Background Grid -->
+                                <defs>
+                                    <pattern id="bp-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(69,222,231,0.04)"
+                                            stroke-width="0.5" />
+                                    </pattern>
+                                    <filter id="bp-glow" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="2" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+                                <rect width="500" height="400" fill="url(#bp-grid)" />
+
+                                <!-- Outer Boundary -->
+                                <rect x="18" y="18" width="342" height="362" fill="none" stroke="rgba(69,222,231,0.25)"
+                                    stroke-width="3" stroke-dasharray="4 2" />
+                                <rect x="368" y="18" width="114" height="272" fill="none" stroke="rgba(69,222,231,0.15)"
+                                    stroke-width="2" stroke-dasharray="4 2" />
+
+                                <!-- Room: Wohnzimmer -->
+                                <g class="blueprint-room" data-name="Wohnzimmer" data-sqm="28.5" data-heated="true"
+                                    data-index="0">
+                                    <rect x="20" y="20" width="200" height="150" fill="rgba(69,222,231,0.03)"
+                                        stroke="#45dee7" stroke-width="1.5" />
+                                    <rect class="room-overlay" x="20" y="20" width="200" height="150"
+                                        fill="rgba(69,222,231,0)" stroke="rgba(69,222,231,0.3)" stroke-width="1.5"
+                                        opacity="0" />
+                                    <text x="120" y="87" text-anchor="middle" fill="#45dee7" font-size="11"
+                                        font-family="Space Grotesk, sans-serif" font-weight="600"
+                                        opacity="0">Wohnzimmer</text>
+                                    <text x="120" y="103" text-anchor="middle" fill="rgba(69,222,231,0.7)" font-size="9"
+                                        font-family="Manrope, sans-serif" opacity="0">28.5 m²</text>
+                                </g>
+
+                                <!-- Room: Küche -->
+                                <g class="blueprint-room" data-name="Küche" data-sqm="12.3" data-heated="true"
+                                    data-index="1">
+                                    <rect x="230" y="20" width="130" height="100" fill="rgba(69,222,231,0.03)"
+                                        stroke="#45dee7" stroke-width="1.5" />
+                                    <rect class="room-overlay" x="230" y="20" width="130" height="100"
+                                        fill="rgba(69,222,231,0)" stroke="rgba(69,222,231,0.3)" stroke-width="1.5"
+                                        opacity="0" />
+                                    <text x="295" y="66" text-anchor="middle" fill="#45dee7" font-size="11"
+                                        font-family="Space Grotesk, sans-serif" font-weight="600"
+                                        opacity="0">Küche</text>
+                                    <text x="295" y="80" text-anchor="middle" fill="rgba(69,222,231,0.7)" font-size="9"
+                                        font-family="Manrope, sans-serif" opacity="0">12.3 m²</text>
+                                </g>
+
+                                <!-- Room: Esszimmer -->
+                                <g class="blueprint-room" data-name="Esszimmer" data-sqm="10.8" data-heated="true"
+                                    data-index="2">
+                                    <rect x="230" y="130" width="130" height="80" fill="rgba(69,222,231,0.03)"
+                                        stroke="#45dee7" stroke-width="1.5" />
+                                    <rect class="room-overlay" x="230" y="130" width="130" height="80"
+                                        fill="rgba(69,222,231,0)" stroke="rgba(69,222,231,0.3)" stroke-width="1.5"
+                                        opacity="0" />
+                                    <text x="295" y="168" text-anchor="middle" fill="#45dee7" font-size="11"
+                                        font-family="Space Grotesk, sans-serif" font-weight="600"
+                                        opacity="0">Esszimmer</text>
+                                    <text x="295" y="182" text-anchor="middle" fill="rgba(69,222,231,0.7)" font-size="9"
+                                        font-family="Manrope, sans-serif" opacity="0">10.8 m²</text>
+                                </g>
+
+                                <!-- Room: Flur -->
+                                <g class="blueprint-room" data-name="Flur" data-sqm="6.2" data-heated="true"
+                                    data-index="3">
+                                    <rect x="20" y="180" width="80" height="120" fill="rgba(69,222,231,0.03)"
+                                        stroke="#45dee7" stroke-width="1.5" />
+                                    <rect class="room-overlay" x="20" y="180" width="80" height="120"
+                                        fill="rgba(69,222,231,0)" stroke="rgba(69,222,231,0.3)" stroke-width="1.5"
+                                        opacity="0" />
+                                    <text x="60" y="237" text-anchor="middle" fill="#45dee7" font-size="10"
+                                        font-family="Space Grotesk, sans-serif" font-weight="600"
+                                        opacity="0">Flur</text>
+                                    <text x="60" y="250" text-anchor="middle" fill="rgba(69,222,231,0.7)" font-size="9"
+                                        font-family="Manrope, sans-serif" opacity="0">6.2 m²</text>
+                                </g>
+
+                                <!-- Room: Schlafzimmer 1 -->
+                                <g class="blueprint-room" data-name="Schlafzimmer 1" data-sqm="16.8" data-heated="true"
+                                    data-index="4">
+                                    <rect x="110" y="180" width="140" height="80" fill="rgba(69,222,231,0.03)"
+                                        stroke="#45dee7" stroke-width="1.5" />
+                                    <rect class="room-overlay" x="110" y="180" width="140" height="80"
+                                        fill="rgba(69,222,231,0)" stroke="rgba(69,222,231,0.3)" stroke-width="1.5"
+                                        opacity="0" />
+                                    <text x="180" y="217" text-anchor="middle" fill="#45dee7" font-size="10"
+                                        font-family="Space Grotesk, sans-serif" font-weight="600"
+                                        opacity="0">Schlafzimmer 1</text>
+                                    <text x="180" y="230" text-anchor="middle" fill="rgba(69,222,231,0.7)" font-size="9"
+                                        font-family="Manrope, sans-serif" opacity="0">16.8 m²</text>
+                                </g>
+
+                                <!-- Room: Schlafzimmer 2 -->
+                                <g class="blueprint-room" data-name="Schlafzimmer 2" data-sqm="14.2" data-heated="true"
+                                    data-index="5">
+                                    <rect x="110" y="270" width="140" height="80" fill="rgba(69,222,231,0.03)"
+                                        stroke="#45dee7" stroke-width="1.5" />
+                                    <rect class="room-overlay" x="110" y="270" width="140" height="80"
+                                        fill="rgba(69,222,231,0)" stroke="rgba(69,222,231,0.3)" stroke-width="1.5"
+                                        opacity="0" />
+                                    <text x="180" y="307" text-anchor="middle" fill="#45dee7" font-size="10"
+                                        font-family="Space Grotesk, sans-serif" font-weight="600"
+                                        opacity="0">Schlafzimmer 2</text>
+                                    <text x="180" y="320" text-anchor="middle" fill="rgba(69,222,231,0.7)" font-size="9"
+                                        font-family="Manrope, sans-serif" opacity="0">14.2 m²</text>
+                                </g>
+
+                                <!-- Room: Bad -->
+                                <g class="blueprint-room" data-name="Bad" data-sqm="8.5" data-heated="true"
+                                    data-index="6">
+                                    <rect x="260" y="220" width="100" height="80" fill="rgba(69,222,231,0.03)"
+                                        stroke="#45dee7" stroke-width="1.5" />
+                                    <rect class="room-overlay" x="260" y="220" width="100" height="80"
+                                        fill="rgba(69,222,231,0)" stroke="rgba(69,222,231,0.3)" stroke-width="1.5"
+                                        opacity="0" />
+                                    <text x="310" y="257" text-anchor="middle" fill="#45dee7" font-size="11"
+                                        font-family="Space Grotesk, sans-serif" font-weight="600" opacity="0">Bad</text>
+                                    <text x="310" y="271" text-anchor="middle" fill="rgba(69,222,231,0.7)" font-size="9"
+                                        font-family="Manrope, sans-serif" opacity="0">8.5 m²</text>
+                                </g>
+
+                                <!-- Room: Garage (unheated) -->
+                                <g class="blueprint-room" data-name="Garage" data-sqm="20.0" data-heated="false"
+                                    data-index="7">
+                                    <rect x="370" y="20" width="110" height="180" fill="rgba(69,222,231,0.02)"
+                                        stroke="rgba(69,222,231,0.3)" stroke-width="1.5" stroke-dasharray="6 3" />
+                                    <rect class="room-overlay" x="370" y="20" width="110" height="180"
+                                        fill="rgba(251,191,36,0)" stroke="rgba(251,191,36,0.3)" stroke-width="1.5"
+                                        opacity="0" />
+                                    <text x="425" y="103" text-anchor="middle" fill="rgba(69,222,231,0.4)"
+                                        font-size="11" font-family="Space Grotesk, sans-serif" font-weight="600"
+                                        opacity="0">Garage</text>
+                                    <text x="425" y="117" text-anchor="middle" fill="rgba(69,222,231,0.3)" font-size="9"
+                                        font-family="Manrope, sans-serif" opacity="0">20.0 m²</text>
+                                </g>
+
+                                <!-- Room: Abstellraum (unheated) -->
+                                <g class="blueprint-room" data-name="Abstellraum" data-sqm="9.5" data-heated="false"
+                                    data-index="8">
+                                    <rect x="370" y="210" width="110" height="90" fill="rgba(69,222,231,0.02)"
+                                        stroke="rgba(69,222,231,0.3)" stroke-width="1.5" stroke-dasharray="6 3" />
+                                    <rect class="room-overlay" x="370" y="210" width="110" height="90"
+                                        fill="rgba(251,191,36,0)" stroke="rgba(251,191,36,0.3)" stroke-width="1.5"
+                                        opacity="0" />
+                                    <text x="425" y="251" text-anchor="middle" fill="rgba(69,222,231,0.4)"
+                                        font-size="10" font-family="Space Grotesk, sans-serif" font-weight="600"
+                                        opacity="0">Abstellraum</text>
+                                    <text x="425" y="264" text-anchor="middle" fill="rgba(69,222,231,0.3)" font-size="9"
+                                        font-family="Manrope, sans-serif" opacity="0">9.5 m²</text>
+                                </g>
+
+                                <!-- Outer wall highlight (phase 4) -->
+                                <rect id="outerWallHighlight" x="18" y="18" width="342" height="362" fill="none"
+                                    stroke="rgba(69,222,231,0)" stroke-width="4"
+                                    style="transition: stroke 0.8s ease;" />
+
+                                <!-- Heizlast Overlay (phase 5) -->
+                                <g id="heizlastOverlay" opacity="0">
+                                    <rect x="80" y="130" width="340" height="140" rx="16" fill="rgba(10,16,16,0.9)"
+                                        stroke="rgba(69,222,231,0.3)" stroke-width="1.5" />
+                                    <text id="heizlastLabel" x="250" y="175" text-anchor="middle"
+                                        fill="rgba(69,222,231,0.7)" font-size="12"
+                                        font-family="Space Grotesk, sans-serif" font-weight="500">Berechne
+                                        Heizlast...</text>
+                                    <text id="heizlastValue" x="250" y="235" text-anchor="middle" fill="#45dee7"
+                                        font-size="42" font-family="Space Grotesk, sans-serif" font-weight="700"
+                                        opacity="0">8.7 kW</text>
+                                    <text x="250" y="258" text-anchor="middle" fill="rgba(255,255,255,0.4)"
+                                        font-size="10" font-family="Manrope, sans-serif" opacity="1">DIN EN 12831 ·
+                                        Berechnung in ca. 5 Min.</text>
+                                </g>
+
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step Tracker: lg:col-span-2 -->
+                <div class="lg:col-span-2 flex flex-col gap-0" id="stepTracker">
+
+                    <!-- Step 1 -->
+                    <div class="flex items-start gap-4 step-row" data-step="1">
+                        <div class="flex flex-col items-center">
+                            <div class="step-indicator" id="step-indicator-1">
+                                <span style="color: rgba(255,255,255,0.3); font-size: 14px; font-weight: 600;">1</span>
+                            </div>
+                            <div class="step-connector" id="step-connector-1"></div>
+                        </div>
+                        <div class="pb-8 pt-1">
+                            <div class="font-headline font-semibold text-white text-base mb-1">PDF-Bauplan hochgeladen
+                            </div>
+                            <div class="text-gray-400 text-sm leading-relaxed">Grundriss wird eingelesen...</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex items-start gap-4 step-row" data-step="2">
+                        <div class="flex flex-col items-center">
+                            <div class="step-indicator" id="step-indicator-2">
+                                <span style="color: rgba(255,255,255,0.3); font-size: 14px; font-weight: 600;">2</span>
+                            </div>
+                            <div class="step-connector" id="step-connector-2"></div>
+                        </div>
+                        <div class="pb-8 pt-1">
+                            <div class="font-headline font-semibold text-white text-base mb-1">Räume erkannt</div>
+                            <div class="text-gray-400 text-sm leading-relaxed">9 Räume gefunden, 7 beheizt</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex items-start gap-4 step-row" data-step="3">
+                        <div class="flex flex-col items-center">
+                            <div class="step-indicator" id="step-indicator-3">
+                                <span style="color: rgba(255,255,255,0.3); font-size: 14px; font-weight: 600;">3</span>
+                            </div>
+                            <div class="step-connector" id="step-connector-3"></div>
+                        </div>
+                        <div class="pb-8 pt-1">
+                            <div class="font-headline font-semibold text-white text-base mb-1">Unbeheizte Räume markiert
+                            </div>
+                            <div class="text-gray-400 text-sm leading-relaxed">Garage + Abstellraum erkannt</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex items-start gap-4 step-row" data-step="4">
+                        <div class="flex flex-col items-center">
+                            <div class="step-indicator" id="step-indicator-4">
+                                <span style="color: rgba(255,255,255,0.3); font-size: 14px; font-weight: 600;">4</span>
+                            </div>
+                            <div class="step-connector" id="step-connector-4"></div>
+                        </div>
+                        <div class="pb-8 pt-1">
+                            <div class="font-headline font-semibold text-white text-base mb-1">Import &amp; Außenwände
+                            </div>
+                            <div class="text-gray-400 text-sm leading-relaxed">Räume benannt, Außenwände definiert</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="flex items-start gap-4 step-row" data-step="5">
+                        <div class="flex flex-col items-center">
+                            <div class="step-indicator" id="step-indicator-5">
+                                <span style="color: rgba(255,255,255,0.3); font-size: 14px; font-weight: 600;">5</span>
+                            </div>
+                        </div>
+                        <div class="pt-1">
+                            <div class="font-headline font-semibold text-white text-base mb-1">Heizlast berechnet</div>
+                            <div class="text-gray-400 text-sm leading-relaxed">Ergebnis: 8.7 kW in ca. 5 Min. ✓</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             APP SHOWCASE SECTION
+             ============================================ -->
+        <section id="showcase" class="mb-32 relative z-20 overflow-hidden">
+            <div class="px-8 max-w-screen-2xl mx-auto text-center mb-16 reveal">
+                <span class="badge mb-6">Die App in Aktion</span>
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-6">
+                    Professionelle Planung,<br class="hidden md:block"> direkt in deiner Hand
+                </h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
+                    Von der Projektanlage über den PDF-Import bis zum fertigen hydraulischen Abgleich – Calonix
+                    begleitet dich auf jedem Schritt des Planungsprozesses.
+                </p>
+            </div>
+
+            <!-- Scrollable Showcase -->
+            <div class="showcase-wrapper reveal">
+                <div class="showcase-container" id="showcaseContainer">
+                    <div class="showcase-track">
+
+                        <!-- 1: Homescreen -->
+                        <div class="showcase-item">
+                            <div class="phone-mockup">
+                                <div class="phone-screen">
+                                    <img src="Calonix Screenshots/Mobil/Homescreen.png"
+                                        alt="Calonix Homescreen – Alle Projekte auf einen Blick" loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="showcase-label">
+                                <div class="text-primary font-headline font-semibold text-sm tracking-wide mb-1">
+                                    Homescreen</div>
+                                <div class="text-gray-400 text-xs leading-relaxed">Alle Projekte und Tools auf einen
+                                    Blick</div>
+                            </div>
+                        </div>
+
+                        <!-- 2: KI-Chatbot -->
+                        <div class="showcase-item">
+                            <div class="phone-mockup" style="border-color: rgba(96,165,250,0.3);">
+                                <div class="phone-screen">
+                                    <img src="Calonix Screenshots/Mobil/Ki-Chatbot.png"
+                                        alt="Calonix KI-Fachassistent – Sofortantworten auf Baustelle" loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="showcase-label">
+                                <div class="text-blue-400 font-headline font-semibold text-sm tracking-wide mb-1">
+                                    KI-Fachassistent</div>
+                                <div class="text-gray-400 text-xs leading-relaxed">Sofortantworten auf Normen direkt vor
+                                    Ort</div>
+                            </div>
+                        </div>
+
+                        <!-- 3: Import Review -->
+                        <div class="showcase-item">
+                            <div class="phone-mockup">
+                                <div class="phone-screen">
+                                    <img src="Calonix Screenshots/Mobil/Import Review.png"
+                                        alt="Calonix PDF-Import – Baupläne sofort digitalisieren" loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="showcase-label">
+                                <div class="text-primary font-headline font-semibold text-sm tracking-wide mb-1">
+                                    PDF-Import</div>
+                                <div class="text-gray-400 text-xs leading-relaxed">Baupläne automatisch digitalisieren
+                                    und prüfen</div>
+                            </div>
+                        </div>
+
+                        <!-- 4: Hydraulischer Abgleich -->
+                        <div class="showcase-item">
+                            <div class="phone-mockup" style="border-color: rgba(121,217,230,0.3);">
+                                <div class="phone-screen">
+                                    <img src="Calonix Screenshots/Mobil/Hydraulischer Abgleich.png"
+                                        alt="Calonix Hydraulischer Abgleich – Präzise nach Norm" loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="showcase-label">
+                                <div class="text-tertiary font-headline font-semibold text-sm tracking-wide mb-1">
+                                    Hydraulischer Abgleich</div>
+                                <div class="text-gray-400 text-xs leading-relaxed">Präzise Berechnung nach geltender
+                                    Norm</div>
+                            </div>
+                        </div>
+
+                        <!-- 5: Materialberechnung -->
+                        <div class="showcase-item">
+                            <div class="phone-mockup">
+                                <div class="phone-screen">
+                                    <img src="Calonix Screenshots/Mobil/Materialberechnung.png"
+                                        alt="Calonix Stückliste – Automatisch aus der Planung" loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="showcase-label">
+                                <div class="text-primary font-headline font-semibold text-sm tracking-wide mb-1">
+                                    Stückliste</div>
+                                <div class="text-gray-400 text-xs leading-relaxed">Automatisch aus der Planung generiert
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6: Diagramme -->
+                        <div class="showcase-item">
+                            <div class="phone-mockup" style="border-color: rgba(96,165,250,0.3);">
+                                <div class="phone-screen">
+                                    <img src="Calonix Screenshots/Mobil/Diagramme.png"
+                                        alt="Calonix Visualisierung – Heizlastkurven auf einen Blick" loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="showcase-label">
+                                <div class="text-blue-400 font-headline font-semibold text-sm tracking-wide mb-1">
+                                    Visualisierung</div>
+                                <div class="text-gray-400 text-xs leading-relaxed">Heizlastkurven klar und verständlich
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7: Tools Übersicht -->
+                        <div class="showcase-item">
+                            <div class="phone-mockup">
+                                <div class="phone-screen">
+                                    <img src="Calonix Screenshots/Mobil/Tools Übersicht.png"
+                                        alt="Calonix Tool-Übersicht – Alles an einem Ort" loading="lazy" />
+                                </div>
+                            </div>
+                            <div class="showcase-label">
+                                <div class="text-primary font-headline font-semibold text-sm tracking-wide mb-1">
+                                    Tool-Übersicht</div>
+                                <div class="text-gray-400 text-xs leading-relaxed">Alle Werkzeuge übersichtlich an einem
+                                    Ort</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll hint -->
+            <div class="text-center mt-6 reveal">
+                <span class="text-gray-600 text-xs font-body flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-base" style="font-size: 16px;">swipe</span>
+                    Seitwärts scrollen um mehr zu sehen
+                </span>
+            </div>
+        </section>
+
+        <div class="px-8 max-w-screen-2xl mx-auto mb-32">
+            <div class="section-divider"></div>
+        </div>
+
+        <!-- ============================================
+             STATS / SOCIAL PROOF SECTION
+             ============================================ -->
+        <section class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
+            <div class="text-center mb-16 reveal">
+                <span class="badge mb-6">Messbare Ergebnisse</span>
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
+                    Zahlen, die für sich sprechen
+                </h2>
+                <p class="text-on-surface-variant max-w-xl mx-auto">
+                    Calonix wurde von Praktikern für Praktiker entwickelt. Jede Funktion spart echte Zeit auf echten
+                    Baustellen.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="glass-panel p-8 rounded-3xl text-center group reveal">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-2xl">schedule</span>
+                    </div>
+                    <div class="stat-number text-5xl font-headline font-bold mb-2" data-target="10000" data-suffix="+">0
+                    </div>
+                    <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">Stunden
+                        gespart</div>
+                    <div class="text-on-surface-variant text-sm leading-relaxed">Pro Jahr und Team durch automatisiertes
+                        Aufmaß und Berechnungen</div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-1">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-2xl">verified</span>
+                    </div>
+                    <div class="stat-number text-5xl font-headline font-bold mb-2">99,9%</div>
+                    <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
+                        Genauigkeit</div>
+                    <div class="text-on-surface-variant text-sm leading-relaxed">Berechnungsgenauigkeit bei der
+                        Heizlastermittlung nach Norm</div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-2">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-blue-400/10 flex items-center justify-center mx-auto mb-5 border border-blue-400/20 group-hover:bg-blue-400/20 transition-colors">
+                        <span class="material-symbols-outlined text-blue-400 text-2xl">gavel</span>
+                    </div>
+                    <div class="text-5xl font-headline font-bold mb-2 text-blue-300">DIN EN</div>
+                    <div class="text-blue-400 font-headline font-semibold text-sm uppercase tracking-widest mb-2">12831
+                        konform</div>
+                    <div class="text-on-surface-variant text-sm leading-relaxed">Rechtssichere Berechnungen für
+                        Behörden, Gutachter und Bauherren</div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-3">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mx-auto mb-5 border border-tertiary/20 group-hover:bg-tertiary/20 transition-colors">
+                        <span class="material-symbols-outlined text-tertiary text-2xl">wifi_off</span>
+                    </div>
+                    <div class="stat-number text-5xl font-headline font-bold mb-2 text-tertiary">100%</div>
+                    <div class="text-tertiary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
+                        Offline-fähig</div>
+                    <div class="text-on-surface-variant text-sm leading-relaxed">Volle Funktionalität auf der Baustelle
+                        – auch ohne Mobilfunknetz</div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="px-8 max-w-screen-2xl mx-auto mb-32">
+            <div class="section-divider"></div>
+        </div>
+
+        <!-- ============================================
+             ZIELGRUPPEN SECTION
+             ============================================ -->
+        <section id="zielgruppen" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
+            <div class="text-center mb-16 reveal">
+                <span class="badge mb-6">Für wen ist Calonix?</span>
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
+                    Entwickelt für Fachleute im Gebäudebereich
+                </h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
+                    Ob du Heizungsbauer im Handwerk bist, als TGA-Ingenieur komplexe Anlagen planst oder als
+                    Energieberater Sanierungen begleitest – Calonix spricht deine Sprache.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- SHK-Handwerk -->
+                <div class="audience-card reveal">
+                    <div
+                        class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-primary/20 bg-primary/8">
+                        <span class="material-symbols-outlined text-primary text-3xl">handyman</span>
+                    </div>
+                    <div class="badge mb-4">SHK-Handwerk</div>
+                    <h3 class="font-headline font-bold text-2xl text-white mb-3">Für Heizungsbauer und Installateure
+                    </h3>
+                    <p class="text-on-surface-variant mb-6 leading-relaxed">
+                        Du planst Heizungsanlagen direkt beim Kunden – und brauchst verlässliche Ergebnisse ohne langen
+                        Büroumweg. Calonix gibt dir die normkonforme Heizlastberechnung, das digitale Aufmaß und die
+                        fertige Stückliste – alles vom Smartphone auf der Baustelle.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Heizlastberechnung nach DIN EN 12831 in Minuten
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Offline-Aufmaß im Keller und Funkloch
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Automatische Stückliste direkt für den Großhandel
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Keine langen Einarbeitungszeiten nötig
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TGA-Planer -->
+                <div class="audience-card reveal reveal-delay-1" style="border-color: rgba(96,165,250,0.15);">
+                    <div
+                        class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-blue-400/20 bg-blue-400/8">
+                        <span class="material-symbols-outlined text-blue-400 text-3xl">engineering</span>
+                    </div>
+                    <div class="badge mb-4"
+                        style="color: #60a5fa; background: rgba(96,165,250,0.08); border-color: rgba(96,165,250,0.2);">
+                        TGA-Planer</div>
+                    <h3 class="font-headline font-bold text-2xl text-white mb-3">Für Fachingenieure und Planungsbüros
+                    </h3>
+                    <p class="text-on-surface-variant mb-6 leading-relaxed">
+                        Komplexe Gebäudetechnik erfordert integrale Planung. Calonix bietet dir tiefgreifende
+                        Berechnungsmodule für Fußbodenheizungs-Auslegung, hydraulischen Abgleich und
+                        Rohrnetz-Dimensionierung – mit team-fähiger Projektverwaltung für dein Büro.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
+                                <span class="material-symbols-outlined text-blue-400"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Flächen-Heizung nach DIN EN 1264 auslegen
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
+                                <span class="material-symbols-outlined text-blue-400"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Hydraulischer Abgleich mit Druckverlustberechnung
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
+                                <span class="material-symbols-outlined text-blue-400"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            RBAC-Rechtemanagement für Teams
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
+                                <span class="material-symbols-outlined text-blue-400"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            KI-Assistent kennt alle Herstellerdatenblätter
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Energieberater -->
+                <div class="audience-card reveal reveal-delay-2" style="border-color: rgba(121,217,230,0.15);">
+                    <div
+                        class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-tertiary/20 bg-tertiary/8">
+                        <span class="material-symbols-outlined text-tertiary text-3xl">eco</span>
+                    </div>
+                    <div class="badge mb-4"
+                        style="color: #79d9e6; background: rgba(121,217,230,0.08); border-color: rgba(121,217,230,0.2);">
+                        Energieberater</div>
+                    <h3 class="font-headline font-bold text-2xl text-white mb-3">Für Sanierungsprojekte und
+                        Energienachweise</h3>
+                    <p class="text-on-surface-variant mb-6 leading-relaxed">
+                        Gebäudesanierungen erfordern eine saubere Bestandsaufnahme und normgerechte Berechnungen als
+                        Grundlage für Förderanträge und Energieausweise. Calonix liefert dir die Heizlastnachweise und
+                        Dokumentationen, die du für BAFA-Anträge und KfW-Nachweise benötigst.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Normkonforme Heizlast für Förderanträge
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Digitales Bestandsaufmaß aus Architekturplänen
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Prüffähige Berechnungsdokumentation
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Systemvergleiche für Beratungsberichte
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="px-8 max-w-screen-2xl mx-auto mb-32">
+            <div class="section-divider"></div>
+        </div>
+
+        <!-- ============================================
+             PRICING SECTION
+             ============================================ -->
+        <section id="preise" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
+            <div class="text-center mb-16 reveal">
+                <span class="badge mb-6">Preise & Pakete</span>
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
+                    Transparent. Skalierbar. Fair.
+                </h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
+                    Egal ob Einzelkämpfer oder wachsendes TGA-Büro – Calonix wächst mit dir. Alle Pakete inklusive
+                    kostenlosem Onboarding und deutschem Support.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
+
+                <!-- Starter -->
+                <div class="pricing-card p-8 flex flex-col reveal">
+                    <div class="mb-6">
+                        <div class="text-gray-400 font-headline font-semibold text-sm uppercase tracking-widest mb-3">
+                            Starter</div>
+                        <div class="flex items-end gap-2 mb-1">
+                            <span class="text-5xl font-headline font-bold text-white">49</span>
+                            <span class="text-gray-400 text-xl mb-2">€<span class="text-sm">/Monat</span></span>
+                        </div>
+                        <div class="text-gray-500 text-sm">pro Nutzer, jährlich abgerechnet</div>
+                    </div>
+                    <div class="glow-line-h mb-6"></div>
+                    <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                        Perfekt für Einzelkämpfer und kleine Handwerksbetriebe, die sofort effizienter planen wollen.
+                    </p>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Bis zu 10 aktive Projekte
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Heizlastberechnung nach DIN EN 12831
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            5 PDF-Imports pro Monat
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Offline-Baustellen-App
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600">
+                            <span class="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-gray-600"
+                                    style="font-size: 14px;">remove</span>
+                            </span>
+                            KI-Fachassistent
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600">
+                            <span class="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-gray-600"
+                                    style="font-size: 14px;">remove</span>
+                            </span>
+                            Team-Management
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3.5 rounded-full font-headline font-bold text-sm border border-white/15 text-white hover:border-primary/40 hover:bg-primary/5 transition-all">
+                        Kostenlos testen
+                    </button>
+                </div>
+
+                <!-- Professional (Featured) -->
+                <div class="pricing-card featured p-8 flex flex-col relative reveal reveal-delay-1">
+                    <div class="absolute -top-4 left-0 right-0 flex justify-center">
+                        <span class="popular-badge">Empfohlen</span>
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-3">
+                            Professional</div>
+                        <div class="flex items-end gap-2 mb-1">
+                            <span class="text-5xl font-headline font-bold text-white">99</span>
+                            <span class="text-gray-400 text-xl mb-2">€<span class="text-sm">/Monat</span></span>
+                        </div>
+                        <div class="text-gray-500 text-sm">pro Nutzer, jährlich abgerechnet</div>
+                    </div>
+                    <div class="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent mb-6"></div>
+                    <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                        Für wachsende Betriebe und TGA-Planer, die den vollen Funktionsumfang brauchen.
+                    </p>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Unbegrenzte Projekte
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Unbegrenzte PDF-Imports
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            KI-Fachassistent (RAG)
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Fußbodenheizungs-Auslegung DIN EN 1264
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Stücklisten & Materialberechnung
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-600">
+                            <span class="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="material-symbols-outlined text-gray-600"
+                                    style="font-size: 14px;">remove</span>
+                            </span>
+                            Multi-Team-Management (RBAC)
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3.5 rounded-full font-headline font-bold text-sm bg-primary text-on-primary hover:shadow-[0_0_30px_rgba(69,222,231,0.4)] active:scale-95 transition-all">
+                        Jetzt starten
+                    </button>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="pricing-card p-8 flex flex-col reveal reveal-delay-2">
+                    <div class="mb-6">
+                        <div class="text-tertiary font-headline font-semibold text-sm uppercase tracking-widest mb-3">
+                            Enterprise</div>
+                        <div class="flex items-end gap-2 mb-1">
+                            <span class="text-3xl font-headline font-bold text-white leading-tight pt-2">Auf
+                                Anfrage</span>
+                        </div>
+                        <div class="text-gray-500 text-sm mt-1">individuell nach Teamgröße</div>
+                    </div>
+                    <div class="glow-line-h mb-6"
+                        style="background: linear-gradient(to right, transparent, rgba(121,217,230,0.2), transparent);">
+                    </div>
+                    <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                        Für größere TGA-Büros, Haustechnik-Unternehmen und Unternehmensgruppen mit individuellen
+                        Anforderungen.
+                    </p>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Alles aus Professional
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Multi-Team-Management (RBAC)
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            OCI/UGL-Integration Großhandel
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            Dedizierter Customer Success Manager
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            SLA-Garantie und Priority-Support
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
+                                <span class="material-symbols-outlined text-tertiary"
+                                    style="font-size: 14px;">check</span>
+                            </span>
+                            On-Premise oder Private Cloud möglich
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full py-3.5 rounded-full font-headline font-bold text-sm border border-tertiary/30 text-tertiary hover:border-tertiary/60 hover:bg-tertiary/5 transition-all">
+                        Kontakt aufnehmen
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Pricing note -->
+            <p class="text-center text-gray-500 text-sm mt-10 reveal">
+                Alle Preise zzgl. MwSt. Keine versteckten Kosten. Jederzeit monatlich kündbar bei monatlicher
+                Abrechnung.
+            </p>
+        </section>
+
+        <div class="px-8 max-w-screen-2xl mx-auto mb-32">
+            <div class="section-divider"></div>
+        </div>
+
+        <!-- ============================================
+             FAQ SECTION
+             ============================================ -->
+        <section id="faq" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-start">
+
+                <!-- Left col: heading -->
+                <div class="reveal lg:sticky lg:top-28">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
+                        Häufige Fragen
+                    </h2>
+                    <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Du hast weitere Fragen zu Calonix? Unser Support-Team ist per E-Mail und Telefon erreichbar.
+                    </p>
+                    <button class="flex items-center gap-2 text-primary font-headline font-semibold text-sm group">
+                        Support kontaktieren
+                        <span
+                            class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </button>
+                </div>
+
+                <!-- Right col: FAQ items -->
+                <div class="reveal reveal-delay-1">
+                    <div class="glass-panel rounded-3xl p-8 divide-y divide-white/5">
+
+                        <!-- FAQ 1 -->
+                        <div class="faq-item" data-faq="0">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span class="font-headline font-semibold text-white text-lg pr-4">Ist die
+                                    Heizlastberechnung wirklich normkonform nach DIN EN 12831?</span>
+                                <span class="faq-icon">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="text-on-surface-variant leading-relaxed">
+                                        Ja, vollständig. Calonix berechnet die Raumheizlast nach DIN EN 12831-1
+                                        inklusive Transmissions- und Lüftungswärmeverlusten, Aufheizzuschlägen und der
+                                        korrekten Berücksichtigung von Klimadaten nach Normbeiblatt. Die Ergebnisse sind
+                                        prüffähig dokumentiert und werden von Energieberatern, Behörden und Gutachtern
+                                        anerkannt. Bei Förderprogrammen (BAFA, KfW) ist die normkonforme
+                                        Heizlastberechnung eine Grundvoraussetzung – Calonix erfüllt diese zuverlässig.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="faq-item" data-faq="1">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span class="font-headline font-semibold text-white text-lg pr-4">Wie genau funktioniert
+                                    der KI-gestützte PDF-Import von Bauplänen?</span>
+                                <span class="faq-icon">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="text-on-surface-variant leading-relaxed">
+                                        Du lädst den Architektenplan als PDF-Datei in Calonix hoch. Unsere
+                                        Deep-Learning-Engine analysiert das Dokument vollautomatisch: Sie erkennt
+                                        Raumgrenzen, Wände, Fenster und Türen und leitet daraus die exakten Raumflächen
+                                        in Quadratmetern ab. Das Ergebnis wird dir zur Überprüfung und manuellen
+                                        Nachkorrektur präsentiert, bevor es in die Heizlastberechnung übernommen wird.
+                                        Gängige Architektur-Dateiformate aus AutoCAD, Revit und anderen Tools werden
+                                        unterstützt – solange sie als PDF exportiert vorliegen.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="faq-item" data-faq="2">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span class="font-headline font-semibold text-white text-lg pr-4">Kann ich Calonix auch
+                                    ohne Internetverbindung auf der Baustelle nutzen?</span>
+                                <span class="faq-icon">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="text-on-surface-variant leading-relaxed">
+                                        Ja – die Calonix-App ist vollständig offline-fähig. Du kannst Räume aufmessen,
+                                        Projektdaten erfassen und Berechnungen durchführen, auch wenn dein Smartphone
+                                        oder Tablet kein Mobilfunknetz hat. Sobald die Verbindung wieder besteht,
+                                        synchronisiert die App alle Änderungen automatisch und lautlos mit deinem Büro.
+                                        Cloud-abhängige Funktionen wie der KI-Assistent oder der Materialshop stehen
+                                        dann ebenfalls wieder zur Verfügung.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="faq-item" data-faq="3">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span class="font-headline font-semibold text-white text-lg pr-4">Wie funktioniert das
+                                    Rechtemanagement für mein Team?</span>
+                                <span class="faq-icon">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="text-on-surface-variant leading-relaxed">
+                                        Calonix nutzt ein rollenbasiertes Zugriffskontrollsystem (RBAC). Als
+                                        Administrator definierst du Rollen – zum Beispiel "Büro-Planer", "Monteur" oder
+                                        "Projektleiter" – und steuerst, welche Projekte und Funktionen jede Rolle sieht
+                                        und bearbeiten darf. Der Monteur auf der Baustelle sieht nur die für ihn
+                                        freigegebenen Projekte und Aufmass-Module, während der TGA-Planer im Büro
+                                        Zugriff auf alle Berechnungsmodule hat. Das verhindert Fehler und hält sensible
+                                        Projektdaten sicher.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="faq-item" data-faq="4">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span class="font-headline font-semibold text-white text-lg pr-4">Welche Geräte und
+                                    Betriebssysteme werden unterstützt?</span>
+                                <span class="faq-icon">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="text-on-surface-variant leading-relaxed">
+                                        Calonix läuft als Progressive Web App (PWA) im Browser und als native App auf
+                                        iOS und Android. Am PC oder Mac arbeitest du im Browser deiner Wahl – kein
+                                        separater Download erforderlich. Auf der Baustelle nutzt du die mobile App auf
+                                        deinem iPhone oder Android-Smartphone. Alle Daten werden plattformübergreifend
+                                        synchronisiert, sodass du nahtlos zwischen Büro und Baustelle wechseln kannst.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 6 -->
+                        <div class="faq-item" data-faq="5">
+                            <button class="faq-question" onclick="toggleFaq(this)">
+                                <span class="font-headline font-semibold text-white text-lg pr-4">Gibt es eine
+                                    kostenlose Testphase?</span>
+                                <span class="faq-icon">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                </span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p class="text-on-surface-variant leading-relaxed">
+                                        Ja. Du kannst Calonix 14 Tage lang kostenlos und ohne Kreditkarte testen. Im
+                                        Testzeitraum hast du Zugriff auf alle Funktionen des Professional-Pakets. Nach
+                                        Ablauf der Testphase entscheidest du dich für ein Paket – oder du hörst einfach
+                                        auf, ohne dass etwas berechnet wird. Für eine persönliche Einführung bieten wir
+                                        außerdem kostenlose Demo-Calls an, in denen wir dir Calonix anhand deiner
+                                        eigenen Projekte zeigen.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             BETA SIGNUP SECTION
+             ============================================ -->
+        <section id="beta-signup" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
+            <!-- Background Glow -->
+            <div class="absolute inset-0 pointer-events-none overflow-hidden">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full"
+                    style="background: radial-gradient(ellipse at center, rgba(69,222,231,0.07) 0%, transparent 70%); filter: blur(40px);">
+                </div>
+            </div>
+
+            <div class="text-center mb-16 reveal relative z-10">
+                <span class="badge mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse inline-block"></span>
+                    Geschlossene Beta
+                </span>
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
+                    Sei unter den Ersten.
+                </h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+                    Calonix ist aktuell in der geschlossenen Beta. Trag dich jetzt ein und erhalte exklusiven Frühzugang
+                    – kostenlos.
+                </p>
+            </div>
+
+            <!-- Stats floating left/right + centered form -->
+            <div class="relative max-w-5xl mx-auto">
+
+                <!-- Stat: Left -->
+                <div
+                    class="hidden lg:flex flex-col items-center gap-2 absolute -left-8 top-1/2 -translate-y-1/2 text-center reveal">
+                    <div class="glass-panel p-6 rounded-2xl w-44">
+                        <div class="stat-number text-3xl font-headline font-bold mb-1">127</div>
+                        <div class="text-primary font-headline font-semibold text-xs uppercase tracking-widest mb-1">
+                            Interessenten</div>
+                        <div class="text-gray-500 text-xs">bereits auf der Warteliste</div>
+                    </div>
+                </div>
+
+                <!-- Stat: Right -->
+                <div
+                    class="hidden lg:flex flex-col items-center gap-2 absolute -right-8 top-1/2 -translate-y-1/2 text-center reveal">
+                    <div class="glass-panel p-6 rounded-2xl w-44">
+                        <div class="text-white font-headline font-bold text-xl mb-1">Rollout 2026</div>
+                        <div class="text-primary font-headline font-semibold text-xs uppercase tracking-widest mb-1">
+                            Geplant</div>
+                        <div class="text-gray-500 text-xs">schrittweiser Zugang ab Q2</div>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="glass-panel rounded-3xl p-10 max-w-2xl mx-auto reveal reveal-delay-1"
+                    style="border-color: rgba(69,222,231,0.15); box-shadow: 0 0 80px -20px rgba(69,222,231,0.15), 0 30px 80px -20px rgba(0,0,0,0.4);">
+
+                    <!-- Form Content -->
+                    <div id="betaFormContent">
+                        <form id="betaForm" novalidate>
+                            <!-- E-Mail -->
+                            <div class="mb-5">
+                                <label
+                                    class="block text-sm font-headline font-semibold text-gray-300 mb-2">E-Mail-Adresse
+                                    *</label>
+                                <input type="email" name="email" placeholder="deine@email.de" required
+                                    class="beta-input"
+                                    style="background: rgba(38,43,43,0.5); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: #dfe3e3; padding: 14px 18px; font-family: 'Manrope', sans-serif; width: 100%; font-size: 15px; transition: border-color 0.2s ease;" />
+                            </div>
+
+                            <!-- Betriebsname -->
+                            <div class="mb-5">
+                                <label class="block text-sm font-headline font-semibold text-gray-300 mb-2">Betriebsname
+                                    <span class="text-gray-600 font-normal">(optional)</span></label>
+                                <input type="text" name="company" placeholder="Muster GmbH & Co. KG" class="beta-input"
+                                    style="background: rgba(38,43,43,0.5); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: #dfe3e3; padding: 14px 18px; font-family: 'Manrope', sans-serif; width: 100%; font-size: 15px; transition: border-color 0.2s ease;" />
+                            </div>
+
+                            <!-- Rolle -->
+                            <div class="mb-8">
+                                <label class="block text-sm font-headline font-semibold text-gray-300 mb-3">Ich bin
+                                    …</label>
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="role-pill">
+                                        <input type="radio" name="role" id="role-shk" value="SHK-Handwerker" checked />
+                                        <label for="role-shk">
+                                            <span class="material-symbols-outlined"
+                                                style="font-size: 15px;">handyman</span>
+                                            SHK-Handwerker
+                                        </label>
+                                    </div>
+                                    <div class="role-pill">
+                                        <input type="radio" name="role" id="role-tga" value="TGA-Planer" />
+                                        <label for="role-tga">
+                                            <span class="material-symbols-outlined"
+                                                style="font-size: 15px;">engineering</span>
+                                            TGA-Planer
+                                        </label>
+                                    </div>
+                                    <div class="role-pill">
+                                        <input type="radio" name="role" id="role-energy" value="Energieberater" />
+                                        <label for="role-energy">
+                                            <span class="material-symbols-outlined" style="font-size: 15px;">eco</span>
+                                            Energieberater
+                                        </label>
+                                    </div>
+                                    <div class="role-pill">
+                                        <input type="radio" name="role" id="role-other" value="Sonstiges" />
+                                        <label for="role-other">
+                                            <span class="material-symbols-outlined"
+                                                style="font-size: 15px;">person</span>
+                                            Sonstiges
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <button type="submit"
+                                class="w-full bg-primary text-on-primary font-headline font-bold py-4 px-8 rounded-full text-base hover:shadow-[0_0_30px_rgba(69,222,231,0.5)] active:scale-95 transition-all flex items-center justify-center gap-2 group">
+                                Jetzt Beta-Zugang sichern
+                                <span
+                                    class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                            </button>
+
+                            <p class="text-center text-gray-600 text-xs mt-5 font-body">
+                                Kein Spam. Kein Abo. Nur Zugang, sobald du an der Reihe bist.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Success State -->
+                    <div id="betaSuccess" style="display: none;"
+                        class="flex flex-col items-center justify-center gap-4 py-8 text-center">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center"
+                            style="background: rgba(69,222,231,0.2); border: 1px solid rgba(69,222,231,0.4);">
+                            <span class="material-symbols-outlined text-primary"
+                                style="font-size: 32px;">check_circle</span>
+                        </div>
+                        <h3 class="text-white font-headline font-bold text-2xl">Du bist dabei!</h3>
+                        <p class="text-gray-400 max-w-sm font-body leading-relaxed">Wir haben dich auf die Warteliste
+                            gesetzt. Sobald Beta-Slots frei sind, bekommst du als Erstes eine E-Mail.</p>
+                    </div>
+
+                </div>
+
+                <!-- Mobile stats -->
+                <div class="flex lg:hidden justify-center gap-4 mt-8 reveal reveal-delay-2">
+                    <div class="glass-panel p-5 rounded-2xl text-center flex-1 max-w-[180px]">
+                        <div class="stat-number text-2xl font-headline font-bold mb-1">127</div>
+                        <div class="text-gray-500 text-xs">Interessenten</div>
+                    </div>
+                    <div class="glass-panel p-5 rounded-2xl text-center flex-1 max-w-[180px]">
+                        <div class="text-white font-headline font-bold text-base mb-1">Rollout 2026</div>
+                        <div class="text-gray-500 text-xs">ab Q2 geplant</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             CTA BANNER
+             ============================================ -->
+        <section class="px-8 max-w-screen-2xl mx-auto mb-24 relative z-20">
+            <div
+                class="cta-banner rounded-[40px] border border-white/8 px-8 py-20 text-center relative overflow-hidden reveal">
+
+                <!-- Background decoration -->
+                <div class="absolute inset-0 overflow-hidden rounded-[40px]">
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[80px]">
+                    </div>
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/3 rounded-full blur-[60px]"></div>
+                    <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-tertiary/3 rounded-full blur-[60px]"></div>
+                </div>
+
+                <div class="relative z-10">
+                    <span class="badge mb-8">Jetzt loslegen</span>
+                    <h2 class="text-4xl md:text-6xl font-headline font-bold text-white mb-6 leading-tight">
+                        Bereit, Stunden zu sparen?
+                    </h2>
+                    <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                        Schließe dich Hunderten von Heizungsbauern, TGA-Planern und Energieberatern an, die ihre Planung
+                        mit Calonix auf ein neues Level gebracht haben.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                        <button
+                            class="bg-primary text-on-primary px-10 py-4 rounded-full font-headline font-bold text-lg hover:shadow-[0_0_40px_rgba(69,222,231,0.5)] active:scale-95 transition-all flex items-center justify-center gap-2 group">
+                            14 Tage kostenlos testen
+                            <span
+                                class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </button>
+                        <button
+                            class="glass-panel text-white px-10 py-4 rounded-full font-headline font-bold text-lg transition-colors flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-xl">calendar_month</span>
+                            Demo-Call vereinbaren
+                        </button>
+                    </div>
+
+                    <p class="text-gray-600 text-sm mt-8">
+                        Keine Kreditkarte erforderlich &nbsp;·&nbsp; Keine automatische Verlängerung &nbsp;·&nbsp;
+                        Deutscher Support
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Nach oben scrollen">
+        <span class="material-symbols-outlined" style="font-size: 20px;">arrow_upward</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="w-full py-16 border-t border-white/5 bg-[#0b0e0e] relative z-20">
+        <div class="px-8 max-w-screen-2xl mx-auto">
+
+            <!-- Footer top -->
+            <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 mb-16">
+
+                <!-- Brand -->
+                <div>
+                    <div class="mb-5">
+                        <img src="Logo/Calonix_Logo.svg" alt="Calonix" class="h-7 w-auto"
+                            style="filter: brightness(0) invert(1); opacity: 0.85;" />
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
+                        Die smarte Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung. Entwickelt für das
+                        SHK-Handwerk in Deutschland.
+                    </p>
+                    <div class="flex items-center gap-1 mt-5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        <span class="text-primary text-xs font-headline font-semibold tracking-widest uppercase">DIN EN
+                            12831 konform</span>
+                    </div>
+                </div>
+
+                <!-- Produkt -->
+                <div>
+                    <div class="text-white font-headline font-semibold text-sm uppercase tracking-widest mb-5">Produkt
+                    </div>
+                    <ul class="space-y-3">
+                        <li><a href="#features"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Funktionen</a>
+                        </li>
+                        <li><a href="#showcase"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">App-Screenshots</a>
+                        </li>
+                        <li><a href="#preise"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Preise</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Changelog</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Roadmap</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Zielgruppen -->
+                <div>
+                    <div class="text-white font-headline font-semibold text-sm uppercase tracking-widest mb-5">
+                        Zielgruppen</div>
+                    <ul class="space-y-3">
+                        <li><a href="#zielgruppen"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">SHK-Handwerk</a>
+                        </li>
+                        <li><a href="#zielgruppen"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">TGA-Planer</a>
+                        </li>
+                        <li><a href="#zielgruppen"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Energieberater</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Architekten</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Unternehmen -->
+                <div>
+                    <div class="text-white font-headline font-semibold text-sm uppercase tracking-widest mb-5">
+                        Unternehmen</div>
+                    <ul class="space-y-3">
+                        <li><a href="#"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Über
+                                uns</a></li>
+                        <li><a href="#"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Blog</a>
+                        </li>
+                        <li><a href="#faq"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">FAQ</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-sm text-gray-600 font-body text-center md:text-left">
+                    © 2026 Calonix. Die smarte Software für Heizlast & TGA-Planung. | Beta v0.9
+                </div>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-primary transition-colors">Datenschutz</a>
+                    <a href="#" class="hover:text-primary transition-colors">AGB</a>
+                    <a href="#" class="hover:text-primary transition-colors">Impressum</a>
+                    <a href="#" class="hover:text-primary transition-colors">Cookies</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // ---- Hero 3D Cube Tracking ----
+        document.addEventListener('DOMContentLoaded', () => {
+            const cube = document.querySelector('.engine-cube');
+            const heroSection = document.querySelector('section');
+
+            if (cube && heroSection) {
+                heroSection.addEventListener('mousemove', (e) => {
+                    const rect = heroSection.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+
+                    const mouseX = (e.clientX - centerX) / (rect.width / 2);
+                    const mouseY = (e.clientY - centerY) / (rect.height / 2);
+
+                    const maxRotateX = 20;
+                    const maxRotateY = 30;
+
+                    const rotateX = -30 + (mouseY * maxRotateX);
+                    const rotateY = 45 - (mouseX * maxRotateY);
+
+                    cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+
+                heroSection.addEventListener('mouseleave', () => {
+                    cube.style.transform = `rotateX(-30deg) rotateY(45deg)`;
+                    cube.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
+                });
+
+                heroSection.addEventListener('mouseenter', () => {
+                    cube.style.transition = 'transform 0.1s ease-out';
+                });
+            }
+        });
+
+        // ---- Intersection Observer: Scroll Reveal ----
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -60px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // ---- Counter Animation ----
+        function animateCounter(el, target, suffix) {
+            const duration = 2000;
+            const startTime = performance.now();
+            const startValue = 0;
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // ease out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(startValue + (target - startValue) * eased);
+
+                if (suffix === '+') {
+                    el.textContent = current.toLocaleString('de-DE') + '+';
+                } else {
+                    el.textContent = current.toLocaleString('de-DE') + (suffix || '');
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    const suffix = el.dataset.suffix || '';
+                    animateCounter(el, target, suffix);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-target]').forEach(el => {
+            counterObserver.observe(el);
+        });
+
+        // ---- FAQ Accordion ----
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                openItem.classList.remove('open');
+            });
+
+            // Open clicked (if it was closed)
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        // ---- Draggable Showcase Scroll ----
+        (function () {
+            const container = document.getElementById('showcaseContainer');
+            if (!container) return;
+
+            let isDragging = false;
+            let startX = 0;
+            let scrollLeft = 0;
+            let velocity = 0;
+            let lastX = 0;
+            let rafId = null;
+
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+                lastX = e.pageX;
+                velocity = 0;
+                cancelAnimationFrame(rafId);
+                container.style.cursor = 'grabbing';
+            });
+
+            container.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    container.style.cursor = 'grab';
+                    startMomentum();
+                }
+            });
+
+            container.addEventListener('mouseup', () => {
+                isDragging = false;
+                container.style.cursor = 'grab';
+                startMomentum();
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                velocity = e.pageX - lastX;
+                lastX = e.pageX;
+                const x = e.pageX - container.offsetLeft;
+                const walk = x - startX;
+                container.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch support
+            let touchStartX = 0;
+            let touchScrollLeft = 0;
+
+            container.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].pageX;
+                touchScrollLeft = container.scrollLeft;
+                cancelAnimationFrame(rafId);
+            }, { passive: true });
+
+            container.addEventListener('touchmove', (e) => {
+                const x = e.touches[0].pageX;
+                const walk = touchStartX - x;
+                container.scrollLeft = touchScrollLeft + walk;
+            }, { passive: true });
+
+            function startMomentum() {
+                if (Math.abs(velocity) < 0.5) return;
+
+                function step() {
+                    container.scrollLeft -= velocity;
+                    velocity *= 0.95;
+                    if (Math.abs(velocity) > 0.5) {
+                        rafId = requestAnimationFrame(step);
+                    }
+                }
+                rafId = requestAnimationFrame(step);
+            }
+        })();
+
+        // ---- Smooth scroll for anchor links ----
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                    // Close mobile menu on link click
+                    mobileMenu.classList.remove('open');
+                    burgerBtn.classList.remove('open');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // ---- Hamburger Menu ----
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        burgerBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            burgerBtn.classList.toggle('open', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // ---- Active Nav Link on Scroll ----
+        const sections = document.querySelectorAll('section[id], div[id]');
+        const navLinks = document.querySelectorAll('.nav-link[href^="#"], .mobile-nav-link[href^="#"]');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('nav-active');
+                        if (link.getAttribute('href') === '#' + entry.target.id) {
+                            link.classList.add('nav-active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+
+        document.querySelectorAll('#features, #showcase, #zielgruppen, #preise, #faq').forEach(el => {
+            if (el) navObserver.observe(el);
+        });
+
+        // ---- Beta Form Submit ----
+        const betaForm = document.getElementById('betaForm');
+        if (betaForm) {
+            betaForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = betaForm.querySelector('input[type="email"]').value;
+                if (!email) return;
+                document.getElementById('betaFormContent').style.display = 'none';
+                document.getElementById('betaSuccess').style.display = 'flex';
+            });
+        }
+
+        // ---- Beta Input focus styling ----
+        document.querySelectorAll('.beta-input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.style.borderColor = 'rgba(69,222,231,0.5)';
+            });
+            input.addEventListener('blur', () => {
+                input.style.borderColor = 'rgba(255,255,255,0.08)';
+            });
+        });
+
+        // ---- Back to Top ----
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 500);
+        }, { passive: true });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ---- Typewriter Effect ----
+        (function () {
+            const el = document.getElementById('typewriterText');
+            if (!el) return;
+
+            const phrases = [
+                'Die KI-Software für SHK-Handwerk, Energieberater und TGA-Planer. Automatisiertes Raum-Aufmaß, Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung in Rekordzeit.',
+                'Einfach PDF hochladen — unsere KI erkennt alle Räume, berechnet Flächen und liefert die normkonforme Heizlast in Minuten statt Stunden.',
+                'Vom Grundriss zur fertigen Stückliste: Calonix automatisiert deinen gesamten Planungsprozess mit KI-Präzision.'
+            ];
+
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function tick() {
+                const current = phrases[phraseIndex];
+                const cursor = '<span class="typewriter-cursor"></span>';
+
+                if (!isDeleting) {
+                    charIndex++;
+                    el.innerHTML = current.slice(0, charIndex) + cursor;
+                    if (charIndex === current.length) {
+                        isDeleting = true;
+                        el.classList.add('paused');
+                        setTimeout(tick, 2500);
+                        return;
+                    }
+                    setTimeout(tick, 28);
+                } else {
+                    el.classList.remove('paused');
+                    charIndex--;
+                    el.innerHTML = current.slice(0, charIndex) + cursor;
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        setTimeout(tick, 400);
+                        return;
+                    }
+                    setTimeout(tick, 14);
+                }
+            }
+
+            setTimeout(tick, 800);
+        })();
+
+        // ---- Bauplan-Analyse Animation Controller ----
+        (function () {
+            const section = document.getElementById('bauplan-analyse');
+            if (!section) return;
+
+            const svgContainer = document.getElementById('svgContainer');
+            const rooms = Array.from(document.querySelectorAll('#blueprintSVG .blueprint-room'));
+            const heatedRooms = rooms.filter(r => r.dataset.heated === 'true');
+            const unheatedRooms = rooms.filter(r => r.dataset.heated === 'false');
+            const outerWall = document.getElementById('outerWallHighlight');
+            const heizlastOverlay = document.getElementById('heizlastOverlay');
+            const heizlastLabel = document.getElementById('heizlastLabel');
+            const heizlastValue = document.getElementById('heizlastValue');
+
+            let animationTimeouts = [];
+            let hasStarted = false;
+            let isRunning = false;
+
+            function t(fn, delay) {
+                const id = setTimeout(fn, delay);
+                animationTimeouts.push(id);
+            }
+
+            function setStep(num, state) {
+                const indicator = document.getElementById('step-indicator-' + num);
+                if (!indicator) return;
+                indicator.classList.remove('active', 'done');
+                if (state === 'active') {
+                    indicator.classList.add('active');
+                    indicator.innerHTML = '<span style="color:#45dee7; font-size:14px; font-weight:600;">' + num + '</span>';
+                } else if (state === 'done') {
+                    indicator.classList.add('done');
+                    indicator.innerHTML = '<span style="color:#45dee7; font-size:16px;">✓</span>';
+                    const connector = document.getElementById('step-connector-' + num);
+                    if (connector) connector.classList.add('done');
+                } else {
+                    indicator.innerHTML = '<span style="color:rgba(255,255,255,0.3); font-size:14px; font-weight:600;">' + num + '</span>';
+                    const connector = document.getElementById('step-connector-' + num);
+                    if (connector) connector.classList.remove('done');
+                }
+            }
+
+            function setAttr(el, attr, val) {
+                if (el) el.setAttribute(attr, val);
+            }
+
+            function highlightRoom(room, mode) {
+                const overlay = room.querySelector('.room-overlay');
+                const texts = room.querySelectorAll('text');
+                if (mode === 'heated') {
+                    setAttr(overlay, 'opacity', '1');
+                    setAttr(overlay, 'fill', 'rgba(69,222,231,0.12)');
+                    setAttr(overlay, 'stroke', '#45dee7');
+                    setAttr(overlay, 'stroke-width', '2');
+                    texts.forEach(tx => setAttr(tx, 'opacity', '1'));
+                } else if (mode === 'unheated') {
+                    setAttr(overlay, 'opacity', '1');
+                    setAttr(overlay, 'fill', 'rgba(251,191,36,0.15)');
+                    setAttr(overlay, 'stroke', '#fbbf24');
+                    setAttr(overlay, 'stroke-width', '2');
+                    texts.forEach(tx => {
+                        setAttr(tx, 'opacity', '1');
+                        setAttr(tx, 'fill', '#fbbf24');
+                    });
+                } else if (mode === 'done') {
+                    setAttr(overlay, 'opacity', '1');
+                    setAttr(overlay, 'fill', 'rgba(69,222,231,0.08)');
+                    setAttr(overlay, 'stroke', '#45dee7');
+                }
+            }
+
+            function resetRooms() {
+                rooms.forEach(room => {
+                    const overlay = room.querySelector('.room-overlay');
+                    const texts = room.querySelectorAll('text');
+                    setAttr(overlay, 'opacity', '0');
+                    setAttr(overlay, 'fill', 'rgba(69,222,231,0)');
+                    texts.forEach(tx => {
+                        setAttr(tx, 'opacity', '0');
+                        setAttr(tx, 'fill', room.dataset.heated === 'true' ? '#45dee7' : 'rgba(69,222,231,0.4)');
+                    });
+                });
+                if (outerWall) setAttr(outerWall, 'stroke', 'rgba(69,222,231,0)');
+                if (heizlastOverlay) setAttr(heizlastOverlay, 'opacity', '0');
+                if (heizlastValue) setAttr(heizlastValue, 'opacity', '0');
+                if (heizlastLabel) heizlastLabel.textContent = 'Berechne Heizlast...';
+                for (let i = 1; i <= 5; i++) setStep(i, 'idle');
+                // Remove old scanline
+                const oldScan = svgContainer.querySelector('.scan-line');
+                if (oldScan) oldScan.remove();
+                // Remove import flash
+                const oldFlash = svgContainer.querySelector('.import-flash-overlay');
+                if (oldFlash) oldFlash.remove();
+                // Remove particle rings
+                svgContainer.querySelectorAll('.particle-ring').forEach(el => el.remove());
+            }
+
+            function runAnimation() {
+                if (isRunning) return;
+                isRunning = true;
+                resetRooms();
+
+                // -- Phase 1: Upload & Scan (0–1.5s) --
+                t(() => {
+                    setStep(1, 'active');
+                    // Add scanline
+                    const scanLine = document.createElement('div');
+                    scanLine.className = 'scan-line';
+                    svgContainer.appendChild(scanLine);
+                    // Remove after animation
+                    t(() => { if (scanLine.parentNode) scanLine.remove(); }, 1300);
+                }, 0);
+
+                t(() => { setStep(1, 'done'); }, 1400);
+
+                // -- Phase 2: Räume erkennen (1.5s–4s) --
+                t(() => { setStep(2, 'active'); }, 1500);
+
+                heatedRooms.forEach((room, idx) => {
+                    t(() => {
+                        highlightRoom(room, 'heated');
+                    }, 1500 + (idx * 300));
+                });
+
+                t(() => { setStep(2, 'done'); }, 1500 + heatedRooms.length * 300 + 200);
+
+                // -- Phase 3: Unbeheizte Räume (4s–5.5s) --
+                t(() => { setStep(3, 'active'); }, 4000);
+
+                unheatedRooms.forEach((room, idx) => {
+                    t(() => {
+                        highlightRoom(room, 'unheated');
+                    }, 4000 + idx * 400);
+                });
+
+                t(() => { setStep(3, 'done'); }, 5000);
+
+                // -- Phase 4: Import & Außenwände (5.5s–7s) --
+                t(() => {
+                    setStep(4, 'active');
+
+                    // Flash overlay
+                    const flash = document.createElement('div');
+                    flash.className = 'import-flash-overlay';
+                    flash.style.cssText = 'position:absolute;inset:0;background:rgba(69,222,231,0.12);border-radius:16px;pointer-events:none;z-index:4;animation:import-flash 0.8s ease-out forwards;';
+                    svgContainer.appendChild(flash);
+                    t(() => { if (flash.parentNode) flash.remove(); }, 900);
+
+                    // Outer wall highlight
+                    if (outerWall) {
+                        outerWall.style.transition = 'stroke 0.6s ease';
+                        outerWall.style.stroke = 'rgba(69,222,231,0.6)';
+                    }
+
+                    // All rooms get done state
+                    heatedRooms.forEach(room => highlightRoom(room, 'done'));
+                }, 5500);
+
+                t(() => { setStep(4, 'done'); }, 6800);
+
+                // -- Phase 5: Heizlastberechnung (7s–9s) --
+                t(() => {
+                    setStep(5, 'active');
+
+                    // Show overlay — setAttribute for SVG reliability
+                    if (heizlastOverlay) {
+                        heizlastOverlay.style.transition = 'opacity 0.5s ease';
+                        requestAnimationFrame(() => setAttr(heizlastOverlay, 'opacity', '1'));
+                    }
+                }, 7000);
+
+                // Counting animation
+                t(() => {
+                    if (!heizlastLabel) return;
+                    let val = 0;
+                    const target = 8.7;
+                    const steps = 20;
+                    const stepSize = target / steps;
+                    let count = 0;
+                    const countInterval = setInterval(() => {
+                        count++;
+                        val = Math.min(val + stepSize, target);
+                        if (heizlastLabel) heizlastLabel.textContent = val.toFixed(1) + ' kW...';
+                        if (count >= steps) {
+                            clearInterval(countInterval);
+                            if (heizlastLabel) heizlastLabel.textContent = 'Heizlast berechnet';
+                            if (heizlastValue) {
+                                heizlastValue.style.transition = 'opacity 0.4s ease';
+                                requestAnimationFrame(() => setAttr(heizlastValue, 'opacity', '1'));
+                            }
+                            // Particle burst
+                            for (let i = 0; i < 3; i++) {
+                                t(() => {
+                                    const ring = document.createElement('div');
+                                    ring.className = 'particle-ring';
+                                    ring.style.animationDelay = (i * 0.15) + 's';
+                                    svgContainer.appendChild(ring);
+                                    setTimeout(() => { if (ring.parentNode) ring.remove(); }, 1200);
+                                }, i * 150);
+                            }
+                        }
+                    }, 50);
+                }, 7400);
+
+                t(() => {
+                    setStep(5, 'done');
+                }, 8800);
+
+                // -- Reset & Restart after 3s pause --
+                t(() => {
+                    isRunning = false;
+                    runAnimation();
+                }, 12000);
+            }
+
+            // IntersectionObserver: Start when section is 30% visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasStarted) {
+                        hasStarted = true;
+                        t(() => runAnimation(), 400);
+                        observer.unobserve(section);
+                    }
+                });
+            }, { threshold: 0.05, rootMargin: '0px 0px -80px 0px' });
+
+            observer.observe(section);
+        })();
+
+        // ---- AI Terminal Animation ----
+        (function () {
+            const terminal = document.getElementById('aiTerminal');
+            if (!terminal) return;
+
+            const steps = [
+                { text: '> PDF wird analysiert...', color: '#bbc9ca', delay: 0 },
+                { text: '> 14 Räume erkannt ✓', color: '#45dee7', delay: 900 },
+                { text: '> Flächen berechnet ✓', color: '#45dee7', delay: 1700 },
+                { text: '> Heizlast läuft...', color: '#bbc9ca', delay: 2500 },
+                { text: '> Ergebnis: 8.7 kW ✓', color: '#45dee7', delay: 3400 },
+            ];
+
+            function runSequence() {
+                terminal.innerHTML = '';
+                steps.forEach((step, i) => {
+                    const line = document.createElement('div');
+                    line.className = 'ai-terminal-line';
+                    line.style.color = step.color;
+                    line.textContent = step.text;
+                    terminal.appendChild(line);
+
+                    setTimeout(() => {
+                        line.classList.add('visible');
+                        // Restart after last step
+                        if (i === steps.length - 1) {
+                            setTimeout(runSequence, 3000);
+                        }
+                    }, step.delay);
+                });
+            }
+
+            // Start after short delay so hero is visible
+            setTimeout(runSequence, 1200);
+        })();
+    </script>
+</body>
+
+</html>
