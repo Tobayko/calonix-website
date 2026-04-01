@@ -2682,6 +2682,20 @@
 
     </main>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
+            <div class="text-sm text-gray-400">
+                <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
+                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="datenschutz.html" class="text-primary hover:underline">Datenschutzerklärung</a>.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
+                <button id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Back to Top Button -->
     <button id="backToTop" aria-label="Nach oben scrollen">
         <span class="material-symbols-outlined" style="font-size: 20px;">arrow_upward</span>
@@ -3359,6 +3373,58 @@
 
             // Start after short delay so hero is visible
             setTimeout(runSequence, 1200);
+        })();
+        // ---- Cookie Consent Logic ----
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            
+            if (!banner) return;
+
+            const consent = localStorage.getItem('ga_consent');
+            
+            if (!consent) {
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                }, 1000);
+            } else if (consent === 'granted') {
+                loadGoogleAnalytics();
+            }
+
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'granted');
+                    banner.classList.add('translate-y-full');
+                    loadGoogleAnalytics();
+                });
+            }
+
+            if (declineBtn) {
+                declineBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'denied');
+                    banner.classList.add('translate-y-full');
+                });
+            }
+
+            function loadGoogleAnalytics() {
+                if (document.getElementById('ga-script')) return;
+
+                const script1 = document.createElement('script');
+                script1.async = true;
+                script1.id = 'ga-script';
+                script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-NCWCYR2X69';
+                document.head.appendChild(script1);
+
+                const script2 = document.createElement('script');
+                script2.innerHTML = `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-NCWCYR2X69');
+                `;
+                document.head.appendChild(script2);
+            }
         })();
     </script>
 </body>
