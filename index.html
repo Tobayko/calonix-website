@@ -24,6 +24,25 @@
     <script defer src="/_vercel/insights/script.js"></script>
     <!-- Lokales Tailwind CSS inkl. Fonts (DSGVO-konform, keine externen Requests) -->
     <link rel="stylesheet" href="assets/tailwind.css" />
+
+    <!-- Default Google Consent Mode v2 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCWCYR2X69"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NCWCYR2X69');
+    </script>
+
     <style>
         body {
             background-color: #0b0e0e;
@@ -3374,7 +3393,7 @@
             // Start after short delay so hero is visible
             setTimeout(runSequence, 1200);
         })();
-        // ---- Cookie Consent Logic ----
+        // ---- Cookie Consent Logic (Google Consent Mode v2) ----
         (function () {
             const banner = document.getElementById('cookie-banner');
             const acceptBtn = document.getElementById('cookie-accept');
@@ -3389,14 +3408,14 @@
                     banner.classList.remove('translate-y-full');
                 }, 1000);
             } else if (consent === 'granted') {
-                loadGoogleAnalytics();
+                updateGoogleAnalyticsStatus('granted');
             }
 
             if (acceptBtn) {
                 acceptBtn.addEventListener('click', () => {
                     localStorage.setItem('ga_consent', 'granted');
                     banner.classList.add('translate-y-full');
-                    loadGoogleAnalytics();
+                    updateGoogleAnalyticsStatus('granted');
                 });
             }
 
@@ -3404,26 +3423,16 @@
                 declineBtn.addEventListener('click', () => {
                     localStorage.setItem('ga_consent', 'denied');
                     banner.classList.add('translate-y-full');
+                    updateGoogleAnalyticsStatus('denied');
                 });
             }
 
-            function loadGoogleAnalytics() {
-                if (document.getElementById('ga-script')) return;
-
-                const script1 = document.createElement('script');
-                script1.async = true;
-                script1.id = 'ga-script';
-                script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-NCWCYR2X69';
-                document.head.appendChild(script1);
-
-                const script2 = document.createElement('script');
-                script2.innerHTML = `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', 'G-NCWCYR2X69');
-                `;
-                document.head.appendChild(script2);
+            function updateGoogleAnalyticsStatus(status) {
+                if(status === 'granted') {
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'granted'
+                    });
+                }
             }
         })();
     </script>
