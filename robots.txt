@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://prometo.app/sitemap.xml

@@ -1,0 +1,22 @@
+{
+  "name": "Prometo",
+  "short_name": "Prometo",
+  "description": "SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung.",
+  "lang": "de-DE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0e0e",
+  "theme_color": "#0b0e0e",
+  "icons": [
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

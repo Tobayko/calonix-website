@@ -4,34 +4,57 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
-    <title>Prometo | App für Heizlastberechnung & Digitales Aufmaß</title>
+    <title>Prometo | Heizlastberechnung & Digitales Aufmaß für SHK</title>
     <meta name="description"
-        content="Die App-Alternative zu Bluebeam. Digitales Gebäudeaufmaß aus PDFs & strukturierte Heizlastberechnung nach DIN 12831 für SHK. Jetzt sichern." />
-    <meta name="robots" content="index, follow" />
+        content="Prometo digitalisiert Aufmaß und Heizlastberechnung nach DIN EN 12831 für SHK-Betriebe und TGA-Planer." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://prometo.app/" />
-    
-    <!-- Favicons -->
-    <link rel="icon" href="assets/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Prometo | App für Heizlastberechnung & Digitales Aufmaß" />
-    <meta property="og:description"
-        content="Die App-Alternative zu Bluebeam. Digitales Gebäudeaufmaß aus PDFs & strukturierte Heizlastberechnung nach DIN 12831 für SHK. Jetzt sichern." />
-    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://prometo.app/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <meta property="og:locale" content="de_DE" />
-    <!-- Twitter Card -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Prometo | Heizlastberechnung & Digitales Aufmaß für SHK" />
+    <meta property="og:description"
+        content="Prometo digitalisiert Aufmaß und Heizlastberechnung nach DIN EN 12831 für SHK-Betriebe und TGA-Planer." />
+    <meta property="og:url" content="https://prometo.app/" />
+    <meta property="og:image" content="https://prometo.app/assets/og-image.png" />
+    <meta property="og:image:alt" content="Prometo App für Heizlastberechnung und digitales Aufmaß" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="720" />
+    <meta property="og:image:height" content="1600" />
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Prometo | App für Heizlastberechnung & Digitales Aufmaß" />
+    <meta name="twitter:title" content="Prometo | Heizlastberechnung & Digitales Aufmaß für SHK" />
     <meta name="twitter:description"
-        content="Die App-Alternative zu Bluebeam. Digitales Gebäudeaufmaß aus PDFs & strukturierte Heizlastberechnung nach DIN 12831 für SHK. Jetzt sichern." />
-    <script defer src="/_vercel/insights/script.js"></script>
+        content="Prometo digitalisiert Aufmaß und Heizlastberechnung nach DIN EN 12831 für SHK-Betriebe und TGA-Planer." />
+    <meta name="twitter:image" content="https://prometo.app/assets/og-image.png" />
+    <meta name="twitter:image:alt" content="Prometo App für Heizlastberechnung und digitales Aufmaß" />
+
+    <script>
+      if (!/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) {
+        const insightsScript = document.createElement('script');
+        insightsScript.defer = true;
+        insightsScript.src = '/_vercel/insights/script.js';
+        document.head.appendChild(insightsScript);
+      }
+    </script>
     <!-- Lokales Tailwind CSS inkl. Fonts (DSGVO-konform, keine externen Requests) -->
-    <link rel="stylesheet" href="assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
 
     <!-- Default Google Consent Mode v2 -->
     <script>
@@ -43,15 +66,6 @@
         'ad_user_data': 'denied',
         'ad_personalization': 'denied'
       });
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCWCYR2X69"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-NCWCYR2X69');
     </script>
 
     <style>
@@ -65,6 +79,11 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        section[id],
+        div[id] {
+            scroll-margin-top: 96px;
         }
 
         /* Hero Specific Animations & Styles */
@@ -457,14 +476,15 @@
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            padding: 10px 8px;
+            padding: 12px 10px;
             border-radius: 18px;
             border: 1.5px solid rgba(255, 255, 255, 0.07);
             background: rgba(255, 255, 255, 0.025);
             cursor: pointer;
             transition: all 0.2s ease;
             outline: none;
-            min-width: 66px;
+            min-width: 72px;
+            min-height: 92px;
         }
 
         .showcase-thumb:hover {
@@ -495,13 +515,14 @@
         }
 
         .showcase-thumb-label {
-            font-size: 9px;
+            font-size: 11px;
             font-family: var(--font-headline, 'Space Grotesk', sans-serif);
             font-weight: 600;
             letter-spacing: 0.04em;
             color: rgba(187, 201, 202, 0.7);
             text-transform: uppercase;
             white-space: nowrap;
+            line-height: 1.2;
         }
 
         .showcase-thumb.active .showcase-thumb-label {
@@ -768,8 +789,8 @@
             flex-direction: column;
             justify-content: center;
             gap: 5px;
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             cursor: pointer;
             padding: 4px;
             border-radius: 8px;
@@ -1134,6 +1155,31 @@
             90% { opacity: 1; }
             100% { left: 100%; opacity: 0; }
         }
+
+        main > section:not(:first-of-type),
+        #seo-faq {
+            content-visibility: auto;
+            contain-intrinsic-size: 900px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
     </style>
 
     <!-- Schema.org JSON-LD -->
@@ -1142,49 +1188,104 @@
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "SoftwareApplication",
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
                 "name": "Prometo",
+                "url": "https://prometo.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/apple-touch-icon.png"
+                },
+                "image": "https://prometo.app/assets/og-image.png",
+                "description": "Prometo ist eine SHK-Software für digitales Aufmaß, Heizlastberechnung und TGA-Planung.",
+                "email": "mailto:info@prometo.de",
+                "sameAs": [
+                    "https://linkedin.com/company/prometo-app",
+                    "https://instagram.com/prometo.app",
+                    "https://youtube.com/@prometo-app",
+                    "https://x.com/prometo-app",
+                    "https://facebook.com/prometo.app"
+                ],
+                "contactPoint": [
+                    {
+                        "@type": "ContactPoint",
+                        "contactType": "customer support",
+                        "email": "info@prometo.de",
+                        "availableLanguage": [
+                            "de"
+                        ]
+                    }
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/#webpage",
+                "url": "https://prometo.app/",
+                "name": "Prometo | Heizlastberechnung & Digitales Aufmaß für SHK",
+                "description": "Prometo digitalisiert Aufmaß und Heizlastberechnung nach DIN EN 12831 für SHK-Betriebe und TGA-Planer.",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "about": {
+                    "@id": "https://prometo.app/#software"
+                }
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://prometo.app/#software",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
                 "applicationCategory": "BusinessApplication",
+                "applicationSubCategory": "SHK-Software für Heizlastberechnung und digitales Aufmaß",
                 "operatingSystem": "Web, iOS, Android",
-                "description": "Planungssoftware für Heizungsbauer, TGA-Planer und Energieberater. Digitales Aufmaß aus PDF-Plänen, strukturierte Heizlastberechnung angelehnt an DIN EN 12831 und Fußbodenheizungs-Auslegung.",
+                "inLanguage": "de-DE",
+                "browserRequirements": "Aktueller Webbrowser oder mobile App",
+                "isAccessibleForFree": true,
+                "description": "Prometo ist eine SHK-Software für digitales Aufmaß aus PDF-Plänen, strukturierte Heizlastberechnung angelehnt an DIN EN 12831 und mobile Projektarbeit auf der Baustelle.",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://prometo.app/#beta-signup",
+                    "price": "0",
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/PreOrder"
+                },
                 "featureList": [
-                    "Automatische Grundriss-Erkennung aus PDF-Bauplänen",
+                    "Digitales Gebäudeaufmaß aus PDF-Plänen",
                     "Heizlastberechnung angelehnt an DIN EN 12831",
                     "Fußbodenheizungs-Auslegung angelehnt an DIN EN 1264",
                     "Hydraulischer Abgleich",
                     "Automatische Stücklisten und Materialberechnung",
                     "Fachassistent für SHK und TGA",
-                    "Offline-Baustellen-App mit Auto-Sync",
+                    "Offline-Baustellen-App mit automatischer Synchronisierung",
                     "Team- und Rechtemanagement"
                 ],
-                "softwareVersion": "0.9 Beta",
-                "releaseNotes": "Geschlossene Beta – aktive Entwicklung",
-                "offers": {
-                    "@type": "Offer",
-                    "priceCurrency": "EUR",
-                    "availability": "https://schema.org/PreOrder"
-                },
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.9",
-                    "reviewCount": "150"
-                }
-            },
-            {
-                "@type": "Event",
-                "name": "Prometo Beta-Launch",
-                "description": "Geschlossene Beta-Phase der Prometo SHK-Planungssoftware. Interessenten können sich für Frühzugang registrieren.",
-                "eventStatus": "https://schema.org/EventScheduled",
-                "organizer": { "@type": "Organization", "name": "Prometo" }
-            },
-            {
-                "@type": "Organization",
-                "name": "Prometo",
-                "description": "Hersteller der Prometo SHK-Planungssoftware für professionelle Heizlastberechnung und TGA-Planung",
-                "url": "https://prometo.de"
+                "screenshot": [
+                    "https://prometo.app/assets/showcase/featured/homescreen.webp",
+                    "https://prometo.app/assets/showcase/featured/assistant.webp",
+                    "https://prometo.app/assets/showcase/featured/import-review.webp",
+                    "https://prometo.app/assets/showcase/featured/hydraulic-balance.webp",
+                    "https://prometo.app/assets/showcase/featured/materials.webp",
+                    "https://prometo.app/assets/showcase/featured/diagrams.webp",
+                    "https://prometo.app/assets/showcase/featured/tools.webp"
+                ]
             },
             {
                 "@type": "FAQPage",
+                "@id": "https://prometo.app/#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -1200,6 +1301,62 @@
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "Du lädst den Architektenplan als PDF hoch. Prometo analysiert automatisch alle Räume, erkennt Wände, Fenster und Türen und berechnet die Flächen. Das spart dir mehrere Stunden manueller Dateneingabe pro Projekt."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Kann ich Prometo auch ohne Internetverbindung auf der Baustelle nutzen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Die Prometo-App ist offline-fähig. Du kannst Räume aufmessen, Projektdaten erfassen und Berechnungen durchführen, auch wenn auf der Baustelle kein Mobilfunknetz verfügbar ist. Sobald wieder eine Verbindung besteht, werden Änderungen automatisch synchronisiert."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie funktioniert das Rechtemanagement für mein Team?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo nutzt ein rollenbasiertes Rechtemanagement. Administratoren definieren Rollen wie Büro-Planer, Monteur oder Projektleiter und steuern, welche Projekte und Funktionen jede Rolle sehen und bearbeiten darf."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Welche Geräte und Betriebssysteme werden unterstützt?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo läuft als Web-App im Browser und als mobile Anwendung auf iOS und Android. Damit kannst du im Büro am Desktop arbeiten und auf der Baustelle mit Smartphone oder Tablet weiterarbeiten."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wann kann ich Prometo nutzen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo befindet sich aktuell in aktiver Entwicklung. Du kannst dich für den Early Access anmelden und wirst informiert, sobald Beta-Plätze oder die App verfügbar sind."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Warum ist eine Software für die Heizlastberechnung besser als Excel?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Eine strukturierte Software reduziert manuelle Fehler, dokumentiert Berechnungsschritte sauberer und beschleunigt die Planung. Prometo automatisiert Aufmaß, Flächen und Heizlastschritte, die in Excel oft aufwendig und fehleranfällig bleiben."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie schneidet Prometo als Bluebeam Alternative für Handwerker ab?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Bluebeam ist ein allgemeines PDF-Werkzeug für die Baubranche. Prometo ist speziell auf SHK-Aufmaß, Heizlast und TGA-Planung ausgerichtet und damit auf die typischen Abläufe von Heizungsbauern, Installateuren und Planungsbüros zugeschnitten."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Lässt sich die App für das digitale Aufmaß auch auf dem iPad nutzen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Prometo ist für mobile Endgeräte optimiert und kann für digitales Aufmaß direkt auf Tablet oder iPad genutzt werden. So lassen sich Räume und Bauteile direkt auf der Baustelle erfassen."
                         }
                     }
                 ]
@@ -1226,7 +1383,7 @@
                 für Beta-Zugang registrieren</a>
         </span>
         <button onclick="document.getElementById('betaBanner').style.display='none'"
-            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors w-10 h-10 rounded-full flex items-center justify-center"
             aria-label="Schließen">
             <span class="material-symbols-outlined" style="font-size: 18px;">close</span>
         </button>
@@ -1235,12 +1392,14 @@
     <!-- Header -->
     <header class="sticky top-0 w-full z-50 bg-[#0b0e0e]/80 backdrop-blur-xl border-b border-white/5">
         <nav class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
-            <a href="#" class="group relative inline-block overflow-hidden h-8">
-    <div class="absolute top-0 bottom-0 w-[4px] z-20 bg-cyan-400 blur-[2px] opacity-0"
-         style="box-shadow: 0 0 15px 5px rgba(34, 211, 238, 0.8); animation: wand-sweep 1.5s cubic-bezier(0.25,1,0.5,1) 0.5s forwards;"></div>
-    <img src="Logo/Wort-Bild.svg" alt="Prometo" class="h-8 w-auto relative z-10" 
-         style="filter: brightness(0) invert(1); clip-path: inset(0 100% 0 0); animation: prometo-text-reveal 1.5s cubic-bezier(0.25,1,0.5,1) 0.5s forwards;" />
-</a>
+            <a href="/" aria-label="Zur Startseite von Prometo"
+                class="group relative inline-block overflow-hidden h-8">
+                <div class="absolute top-0 bottom-0 w-[4px] z-20 bg-cyan-400 blur-[2px] opacity-0"
+                    style="box-shadow: 0 0 15px 5px rgba(34, 211, 238, 0.8); animation: wand-sweep 1.5s cubic-bezier(0.25,1,0.5,1) 0.5s forwards;">
+                </div>
+                <img src="Logo/Wort-Bild.svg" alt="Prometo" class="h-8 w-auto relative z-10" width="230" height="37"
+                    style="filter: brightness(0) invert(1); clip-path: inset(0 100% 0 0); animation: prometo-text-reveal 1.5s cubic-bezier(0.25,1,0.5,1) 0.5s forwards;" />
+            </a>
             <div class="hidden md:flex items-center gap-10">
                 <a class="font-headline tracking-wide text-sm text-primary transition-colors nav-link"
                     href="#features">Funktionen</a>
@@ -1254,13 +1413,14 @@
             </div>
             <div class="flex items-center gap-4">
                 <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors hidden sm:block"
-                    href="#">Anmelden</a>
+                    href="#beta-signup">Beta anfragen</a>
                 <button
                     class="bg-primary text-on-primary font-headline font-bold py-2.5 px-6 rounded-full text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] active:scale-95 transition-all hidden md:block" onclick="document.getElementById('beta-signup').scrollIntoView({behavior:'smooth'})">
                     Early Access sichern
                 </button>
                 <!-- Hamburger (mobile only) -->
-                <button class="burger md:hidden" id="burgerBtn" aria-label="Menü öffnen">
+                <button class="burger md:hidden" id="burgerBtn" aria-label="Menü öffnen" aria-controls="mobileMenu"
+                    aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -2036,8 +2196,9 @@
                 <div class="showcase-featured-phone" id="featuredPhone">
                     <div class="phone-mockup phone-mockup--featured">
                         <div class="phone-screen">
-                            <img id="featuredImg" src="Prometo Screenshots/Mobil/Homescreen.png"
-                                alt="Prometo App Screen" loading="eager" />
+                            <img id="featuredImg" src="assets/showcase/featured/homescreen.webp"
+                                alt="Prometo Homescreen mit Projekten und Werkzeugen" loading="lazy" decoding="async"
+                                width="720" height="1600" />
                         </div>
                     </div>
                 </div>
@@ -2052,45 +2213,50 @@
                 <div class="showcase-thumbs-row">
                     <button class="showcase-thumb active" onclick="switchScreen(this, 0)">
                         <div class="showcase-thumb-img">
-                            <img src="Prometo Screenshots/Mobil/Homescreen.png" alt="Homescreen" loading="lazy" />
+                            <img src="assets/showcase/thumbs/homescreen.webp" alt="Homescreen" loading="lazy"
+                                decoding="async" width="192" height="426" />
                         </div>
                         <span class="showcase-thumb-label">Homescreen</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 1)">
                         <div class="showcase-thumb-img">
-                            <img src="Prometo Screenshots/Mobil/Ki-Chatbot.png" alt="Assistent" loading="lazy" />
+                            <img src="assets/showcase/thumbs/assistant.webp" alt="Fachassistent" loading="lazy"
+                                decoding="async" width="192" height="426" />
                         </div>
                         <span class="showcase-thumb-label">Assistent</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 2)">
                         <div class="showcase-thumb-img">
-                            <img src="Prometo Screenshots/Mobil/Import Review.png" alt="PDF-Import" loading="lazy" />
+                            <img src="assets/showcase/thumbs/import-review.webp" alt="PDF-Import" loading="lazy"
+                                decoding="async" width="192" height="426" />
                         </div>
                         <span class="showcase-thumb-label">PDF-Import</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 3)">
                         <div class="showcase-thumb-img">
-                            <img src="Prometo Screenshots/Mobil/Hydraulischer Abgleich.png" alt="Hydraulischer Abgleich"
-                                loading="lazy" />
+                            <img src="assets/showcase/thumbs/hydraulic-balance.webp" alt="Hydraulischer Abgleich"
+                                loading="lazy" decoding="async" width="192" height="426" />
                         </div>
                         <span class="showcase-thumb-label">Hyd. Abgleich</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 4)">
                         <div class="showcase-thumb-img">
-                            <img src="Prometo Screenshots/Mobil/Materialberechnung.png" alt="Stückliste"
-                                loading="lazy" />
+                            <img src="assets/showcase/thumbs/materials.webp" alt="Stückliste" loading="lazy"
+                                decoding="async" width="192" height="426" />
                         </div>
                         <span class="showcase-thumb-label">Stückliste</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 5)">
                         <div class="showcase-thumb-img">
-                            <img src="Prometo Screenshots/Mobil/Diagramme.png" alt="Diagramme" loading="lazy" />
+                            <img src="assets/showcase/thumbs/diagrams.webp" alt="Diagramme" loading="lazy"
+                                decoding="async" width="192" height="426" />
                         </div>
                         <span class="showcase-thumb-label">Diagramme</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 6)">
                         <div class="showcase-thumb-img">
-                            <img src="Prometo Screenshots/Mobil/Tools Übersicht.png" alt="Tools" loading="lazy" />
+                            <img src="assets/showcase/thumbs/tools.webp" alt="Tools" loading="lazy" decoding="async"
+                                width="192" height="426" />
                         </div>
                         <span class="showcase-thumb-label">Tools</span>
                     </button>
@@ -2356,11 +2522,12 @@
                     <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
                         Du hast weitere Fragen zu Prometo? Unser Support-Team ist per E-Mail und Telefon erreichbar.
                     </p>
-                    <button class="flex items-center gap-2 text-primary font-headline font-semibold text-sm group">
+                    <a href="mailto:info@prometo.de?subject=Prometo%20Support"
+                        class="inline-flex items-center gap-2 text-primary font-headline font-semibold text-sm group">
                         Support kontaktieren
                         <span
                             class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Right col: FAQ items -->
@@ -2631,7 +2798,7 @@
                             </p>
                             <p class="text-center text-gray-600 text-xs mt-2 font-body">
                                 Mit dem Absenden erklärst du dich mit der Verarbeitung deiner Daten gemäß unserer
-                                <a href="datenschutz.html" class="text-primary/70 hover:text-primary underline transition-colors">Datenschutzerklärung</a> einverstanden.
+                                <a href="datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white transition-colors">Datenschutzerklärung</a> einverstanden.
                             </p>
                         </form>
                     </div>
@@ -2717,7 +2884,7 @@
         <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
             <div class="text-sm text-gray-400">
                 <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
-                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="datenschutz.html" class="text-primary hover:underline">Datenschutzerklärung</a>.
+                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
             </div>
             <div class="flex items-center gap-3 shrink-0">
                 <button id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
@@ -2734,10 +2901,10 @@
     <!-- Footer -->
     
     <!-- SEO FAQ Section -->
-    <section class="py-24 relative overflow-hidden" id="faq">
+    <section class="py-24 relative overflow-hidden" id="seo-faq" aria-labelledby="seo-faq-heading">
         <div class="max-w-4xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-headline font-bold mb-6">Häufige Fragen <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">zur SHK-Software</span></h2>
+                <h2 id="seo-faq-heading" class="text-4xl md:text-5xl font-headline font-bold mb-6">Häufige Fragen <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">zur SHK-Software</span></h2>
                 <p class="text-xl text-gray-400">Alles rund um Digitales Aufmaß, DIN EN 12831 und den Umstieg von Excel oder Bluebeam.</p>
             </div>
             
@@ -2780,7 +2947,7 @@
                         <img src="Logo/Standard.svg" alt="Prometo" class="h-7 w-auto"
                             style="filter: brightness(0) invert(1); opacity: 0.85;" />
                     </div>
-                    <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
                         Die smarte Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung. Entwickelt für das
                         SHK-Handwerk in Deutschland.
                     </p>
@@ -2797,17 +2964,17 @@
                     </div>
                     <ul class="space-y-3">
                         <li><a href="#features"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Funktionen</a>
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Funktionen</a>
                         </li>
                         <li><a href="#showcase"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">App-Screenshots</a>
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">App-Screenshots</a>
                         </li>
 
-                        <li><a href="#"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Changelog</a>
+                        <li><a href="#beta-signup"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Beta-Status</a>
                         </li>
-                        <li><a href="#"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Roadmap</a>
+                        <li><a href="mailto:info@prometo.de?subject=Prometo%20Roadmap"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Roadmap</a>
                         </li>
                     </ul>
                 </div>
@@ -2818,16 +2985,16 @@
                         Zielgruppen</div>
                     <ul class="space-y-3">
                         <li><a href="#zielgruppen"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">SHK-Handwerk</a>
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">SHK-Handwerk</a>
                         </li>
                         <li><a href="#zielgruppen"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">TGA-Planer</a>
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">TGA-Planer</a>
                         </li>
                         <li><a href="#zielgruppen"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Energieberater</a>
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Energieberater</a>
                         </li>
-                        <li><a href="#"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Architekten</a>
+                        <li><a href="#zielgruppen"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Architekten</a>
                         </li>
                     </ul>
                 </div>
@@ -2837,17 +3004,17 @@
                     <div class="text-white font-headline font-semibold text-sm uppercase tracking-widest mb-5">
                         Unternehmen</div>
                     <ul class="space-y-3">
-                        <li><a href="#"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Über
-                                uns</a></li>
-                        <li><a href="#"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Blog</a>
+                        <li><a href="mailto:info@prometo.de?subject=%C3%9Cber%20Prometo"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Über
+                                Prometo</a></li>
+                        <li><a href="mailto:info@prometo.de?subject=Prometo%20Blog"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Blog</a>
                         </li>
                         <li><a href="#faq"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">FAQ</a>
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">FAQ</a>
                         </li>
-                        <li><a href="#"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Kontakt</a>
+                        <li><a href="mailto:info@prometo.de"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Kontakt</a>
                         </li>
                     </ul>
                 </div>
@@ -2856,12 +3023,21 @@
 
             <!-- Footer bottom -->
             <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="text-sm text-gray-600 font-body text-center md:text-left">
+                <div class="text-sm text-gray-400 font-body text-center md:text-left">
                     © 2026 Prometo. Die smarte Software für Heizlast & TGA-Planung. | Beta v0.9
                 </div>
-                <div class="flex gap-6 text-sm text-gray-500">
-                    <a href="datenschutz.html" class="hover:text-primary transition-colors">Datenschutz</a>
+                <div class="flex gap-4 md:gap-6 text-sm text-gray-400 items-center">
+                    <div class="flex gap-3">
+                        <a href="https://linkedin.com/company/prometo-app" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors" title="LinkedIn">LinkedIn</a>
+                        <a href="https://instagram.com/prometo.app" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors" title="Instagram">Instagram</a>
+                        <a href="https://youtube.com/@prometo-app" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors" title="YouTube">YouTube</a>
+                        <a href="https://x.com/prometo-app" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors" title="X (Twitter)">X</a>
+                        <a href="https://facebook.com/prometo.app" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors" title="Facebook">Facebook</a>
+                    </div>
+                    
+                    <div class="h-4 w-px bg-white/10 hidden md:block"></div>
 
+                    <a href="datenschutz.html" class="hover:text-primary transition-colors">Datenschutz</a>
                     <a href="impressum.html" class="hover:text-primary transition-colors">Impressum</a>
                 </div>
             </div>
@@ -2873,12 +3049,65 @@
          JAVASCRIPT
          ============================================ -->
     <script>
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+        const canAnimate = !prefersReducedMotion && !isCoarsePointer;
+        const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
+        let gaLoaded = false;
+
+        function loadGoogleAnalytics() {
+            if (gaLoaded) return;
+
+            gaLoaded = true;
+
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID, {
+                anonymize_ip: true
+            });
+        }
+
+        const iconMap = {
+            add: '+',
+            architecture: '▦',
+            arrow_forward: '→',
+            arrow_upward: '↑',
+            check: '✓',
+            check_circle: '✓',
+            close: '×',
+            document_scanner: '▤',
+            eco: '◍',
+            engineering: '◈',
+            forum: '✦',
+            gavel: '◆',
+            groups: '◉',
+            handyman: '✚',
+            magic_button: '✦',
+            person: '●',
+            schedule: '◷',
+            shopping_cart_checkout: '▣',
+            thermostat: '◉',
+            verified: '✓',
+            wifi_off: '◌'
+        };
+
+        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+            const symbol = iconMap[icon.textContent.trim()] || '•';
+            icon.textContent = symbol;
+            icon.classList.add('icon-ready');
+            icon.setAttribute('aria-hidden', 'true');
+        });
+
         // ---- Hero 3D Cube Tracking ----
         document.addEventListener('DOMContentLoaded', () => {
             const cube = document.querySelector('.engine-cube');
             const heroSection = document.querySelector('section');
 
-            if (cube && heroSection) {
+            if (cube && heroSection && canAnimate) {
                 heroSection.addEventListener('mousemove', (e) => {
                     const rect = heroSection.getBoundingClientRect();
                     const centerX = rect.left + rect.width / 2;
@@ -2920,9 +3149,15 @@
             rootMargin: '0px 0px -60px 0px'
         });
 
-        document.querySelectorAll('.reveal').forEach(el => {
-            revealObserver.observe(el);
-        });
+        if (prefersReducedMotion) {
+            document.querySelectorAll('.reveal').forEach(el => {
+                el.classList.add('visible');
+            });
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => {
+                revealObserver.observe(el);
+            });
+        }
 
         // ---- Counter Animation ----
         function animateCounter(el, target, suffix) {
@@ -2964,34 +3199,71 @@
         }, { threshold: 0.5 });
 
         document.querySelectorAll('[data-target]').forEach(el => {
+            if (prefersReducedMotion) {
+                const suffix = el.dataset.suffix || '';
+                el.textContent = `${parseInt(el.dataset.target).toLocaleString('de-DE')}${suffix}`;
+                return;
+            }
+
             counterObserver.observe(el);
         });
 
         // ---- FAQ Accordion ----
+        function setFaqState(item, isOpen) {
+            const button = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            item.classList.toggle('open', isOpen);
+
+            if (button) {
+                button.setAttribute('aria-expanded', String(isOpen));
+            }
+
+            if (answer) {
+                answer.setAttribute('aria-hidden', String(!isOpen));
+            }
+        }
+
+        document.querySelectorAll('.faq-item').forEach((item, index) => {
+            const button = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const answerId = `faq-answer-${index}`;
+
+            if (answer) {
+                answer.id = answerId;
+                answer.setAttribute('aria-hidden', 'true');
+            }
+
+            if (button) {
+                button.setAttribute('aria-controls', answerId);
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+
         function toggleFaq(btn) {
             const item = btn.closest('.faq-item');
             const isOpen = item.classList.contains('open');
 
             // Close all
             document.querySelectorAll('.faq-item.open').forEach(openItem => {
-                openItem.classList.remove('open');
+                setFaqState(openItem, false);
             });
 
             // Open clicked (if it was closed)
             if (!isOpen) {
-                item.classList.add('open');
+                setFaqState(item, true);
             }
         }
 
         // ---- Showcase Screen Switcher ----
         const showcaseData = [
-            { src: 'Prometo Screenshots/Mobil/Homescreen.png', title: 'Homescreen', desc: 'Alle Projekte und Tools auf einen Blick' },
-            { src: 'Prometo Screenshots/Mobil/Ki-Chatbot.png', title: 'Fachassistent', desc: 'Sofortantworten auf Normen direkt vor Ort' },
-            { src: 'Prometo Screenshots/Mobil/Import Review.png', title: 'PDF-Import', desc: 'Grundriss hochladen – Räume werden automatisch erkannt' },
-            { src: 'Prometo Screenshots/Mobil/Hydraulischer Abgleich.png', title: 'Hydraulischer Abgleich', desc: 'Strukturierter Abgleich nach DIN-Vorgaben' },
-            { src: 'Prometo Screenshots/Mobil/Materialberechnung.png', title: 'Stückliste', desc: 'Automatische Materialberechnung auf Knopfdruck' },
-            { src: 'Prometo Screenshots/Mobil/Diagramme.png', title: 'Diagramme', desc: 'Heizlast und Verbrauch visuell auf einen Blick' },
-            { src: 'Prometo Screenshots/Mobil/Tools Übersicht.png', title: 'Tools', desc: 'Alle Werkzeuge übersichtlich an einem Ort' },
+            { src: 'assets/showcase/featured/homescreen.webp', alt: 'Prometo Homescreen mit Projekten und Werkzeugen', title: 'Homescreen', desc: 'Alle Projekte und Tools auf einen Blick' },
+            { src: 'assets/showcase/featured/assistant.webp', alt: 'Prometo Fachassistent in der App', title: 'Fachassistent', desc: 'Sofortantworten auf Normen direkt vor Ort' },
+            { src: 'assets/showcase/featured/import-review.webp', alt: 'Prometo PDF-Import mit Grundriss-Erkennung', title: 'PDF-Import', desc: 'Grundriss hochladen – Räume werden automatisch erkannt' },
+            { src: 'assets/showcase/featured/hydraulic-balance.webp', alt: 'Prometo Ansicht für hydraulischen Abgleich', title: 'Hydraulischer Abgleich', desc: 'Strukturierter Abgleich nach DIN-Vorgaben' },
+            { src: 'assets/showcase/featured/materials.webp', alt: 'Prometo Stückliste und Materialberechnung', title: 'Stückliste', desc: 'Automatische Materialberechnung auf Knopfdruck' },
+            { src: 'assets/showcase/featured/diagrams.webp', alt: 'Prometo Diagramme für Heizlast und Verbrauch', title: 'Diagramme', desc: 'Heizlast und Verbrauch visuell auf einen Blick' },
+            { src: 'assets/showcase/featured/tools.webp', alt: 'Prometo Tools-Übersicht in der App', title: 'Tools', desc: 'Alle Werkzeuge übersichtlich an einem Ort' },
         ];
 
         function switchScreen(btn, index) {
@@ -3006,7 +3278,7 @@
             img.classList.add('fading');
             setTimeout(() => {
                 img.src = data.src;
-                img.alt = data.title;
+                img.alt = data.alt;
                 title.textContent = data.title;
                 desc.textContent = data.desc;
                 img.classList.remove('fading');
@@ -3025,6 +3297,7 @@
                     // Close mobile menu on link click
                     mobileMenu.classList.remove('open');
                     burgerBtn.classList.remove('open');
+                    burgerBtn.setAttribute('aria-expanded', 'false');
                     document.body.style.overflow = '';
                 }
             });
@@ -3037,6 +3310,7 @@
         burgerBtn.addEventListener('click', () => {
             const isOpen = mobileMenu.classList.toggle('open');
             burgerBtn.classList.toggle('open', isOpen);
+            burgerBtn.setAttribute('aria-expanded', String(isOpen));
             document.body.style.overflow = isOpen ? 'hidden' : '';
         });
 
@@ -3105,6 +3379,11 @@
                 'Vom Grundriss zur fertigen Stückliste: Prometo automatisiert deinen gesamten Planungsprozess mit höchster Präzision.'
             ];
 
+            if (!canAnimate) {
+                el.innerHTML = phrases[0];
+                return;
+            }
+
             let phraseIndex = 0;
             let charIndex = 0;
             let isDeleting = false;
@@ -3144,6 +3423,8 @@
         (function () {
             const section = document.getElementById('bauplan-analyse');
             if (!section) return;
+
+            if (!canAnimate) return;
 
             const svgContainer = document.getElementById('svgContainer');
             const rooms = Array.from(document.querySelectorAll('#blueprintSVG .blueprint-room'));
@@ -3374,6 +3655,15 @@
             const terminal = document.getElementById('aiTerminal');
             if (!terminal) return;
 
+            if (!canAnimate) {
+                terminal.innerHTML = `
+                    <div class="ai-terminal-line visible" style="color:#45dee7;">&gt; PDF analysiert ✓</div>
+                    <div class="ai-terminal-line visible" style="color:#45dee7;">&gt; Räume erkannt ✓</div>
+                    <div class="ai-terminal-line visible" style="color:#45dee7;">&gt; Heizlast berechnet: 8.7 kW ✓</div>
+                `;
+                return;
+            }
+
             const steps = [
                 { text: '> PDF wird analysiert...', color: '#bbc9ca', delay: 0 },
                 { text: '> 14 Räume erkannt ✓', color: '#45dee7', delay: 900 },
@@ -3445,6 +3735,14 @@
                         'ad_storage': 'granted',
                         'ad_user_data': 'granted',
                         'ad_personalization': 'granted'
+                    });
+                    loadGoogleAnalytics();
+                } else {
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'denied',
+                        'ad_storage': 'denied',
+                        'ad_user_data': 'denied',
+                        'ad_personalization': 'denied'
                     });
                 }
             }
