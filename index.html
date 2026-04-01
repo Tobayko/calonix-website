@@ -4,59 +4,26 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
-    <title>Calonix | SHK-Software für Heizlastberechnung & Digitales Aufmaß</title>
+    <title>Prometo | Heizlastberechnung Software (DIN EN 12831) & Digitales Aufmaß App</title>
     <meta name="description"
-        content="Die Planungssoftware für Heizungsbauer, TGA-Planer und Architekten. Digitales Aufmaß aus PDF-Plänen, normgerechte Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung." />
+        content="Die einfache Alternative zu Bluebeam & Excel. Digitales Gebäudeaufmaß aus PDF-Grundrissen und rechtssichere Norm-Heizlastberechnung nach DIN EN 12831 für das SHK-Handwerk." />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0b0e0e" />
-    <link rel="canonical" href="https://calonix.de/" />
+    <link rel="canonical" href="https://prometo.de/" />
     <!-- Open Graph -->
-    <meta property="og:title" content="Calonix | SHK-Software für Heizlastberechnung & Digitales Aufmaß" />
+    <meta property="og:title" content="Prometo | Heizlastberechnung Software (DIN EN 12831) & Digitales Aufmaß App" />
     <meta property="og:description"
-        content="Die Planungssoftware für Heizungsbauer, TGA-Planer und Architekten. Digitales Aufmaß aus PDF-Plänen, normgerechte Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung." />
+        content="Die einfache Alternative zu Bluebeam & Excel. Digitales Gebäudeaufmaß aus PDF-Grundrissen und rechtssichere Norm-Heizlastberechnung nach DIN EN 12831 für das SHK-Handwerk." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Calonix | SHK-Software für Heizlastberechnung & Digitales Aufmaß" />
+    <meta name="twitter:title" content="Prometo | Heizlastberechnung Software (DIN EN 12831) & Digitales Aufmaß App" />
     <meta name="twitter:description"
-        content="Die Planungssoftware für Heizungsbauer, TGA-Planer und Architekten. Digitales Aufmaß aus PDF-Plänen, normgerechte Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung." />
+        content="Die einfache Alternative zu Bluebeam & Excel. Digitales Gebäudeaufmaß aus PDF-Grundrissen und rechtssichere Norm-Heizlastberechnung nach DIN EN 12831 für das SHK-Handwerk." />
     <script defer src="/_vercel/insights/script.js"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
-
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "surface-container-high": "#262b2b",
-                        "on-primary": "#003739",
-                        "surface-container-low": "#171c1c",
-                        "surface-dim": "#0f1414",
-                        "on-tertiary-fixed": "#001f23",
-                        "on-surface-variant": "#bbc9ca",
-                        "on-primary-container": "#004a4e",
-                        "primary-fixed": "#6bf6ff",
-                        "background": "#0b0e0e",
-                        "primary": "#45dee7",
-                        "tertiary": "#79d9e6",
-                        "surface": "#0f1414",
-                        "outline-variant": "#3c494a",
-                    },
-                    fontFamily: {
-                        "headline": ["Space Grotesk", "sans-serif"],
-                        "body": ["Manrope", "sans-serif"],
-                    },
-                },
-            },
-        }
-    </script>
+    <!-- Lokales Tailwind CSS inkl. Fonts (DSGVO-konform, keine externen Requests) -->
+    <link rel="stylesheet" href="assets/tailwind.css" />
     <style>
         body {
             background-color: #0b0e0e;
@@ -86,7 +53,7 @@
             border: 1px solid rgba(69, 222, 231, 0.3);
         }
 
-        /* CSS 3D Cube (Calonix Engine) */
+        /* CSS 3D Cube (Prometo Engine) */
         .engine-container {
             perspective: 1200px;
             width: 160px;
@@ -1128,6 +1095,16 @@
             animation: particle-burst 0.8s ease-out forwards;
             pointer-events: none;
         }
+        @keyframes prometo-text-reveal {
+            0% { clip-path: inset(0 100% 0 0); }
+            100% { clip-path: inset(0 0 0 0); }
+        }
+        @keyframes wand-sweep {
+            0% { left: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { left: 100%; opacity: 0; }
+        }
     </style>
 
     <!-- Schema.org JSON-LD -->
@@ -1137,7 +1114,7 @@
         "@graph": [
             {
                 "@type": "SoftwareApplication",
-                "name": "Calonix",
+                "name": "Prometo",
                 "applicationCategory": "BusinessApplication",
                 "operatingSystem": "Web, iOS, Android",
                 "description": "Planungssoftware für Heizungsbauer, TGA-Planer und Energieberater. Digitales Aufmaß aus PDF-Plänen, normgerechte Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung.",
@@ -1166,26 +1143,26 @@
             },
             {
                 "@type": "Event",
-                "name": "Calonix Beta-Launch",
-                "description": "Geschlossene Beta-Phase der Calonix SHK-Planungssoftware. Interessenten können sich für Frühzugang registrieren.",
+                "name": "Prometo Beta-Launch",
+                "description": "Geschlossene Beta-Phase der Prometo SHK-Planungssoftware. Interessenten können sich für Frühzugang registrieren.",
                 "eventStatus": "https://schema.org/EventScheduled",
-                "organizer": { "@type": "Organization", "name": "Calonix" }
+                "organizer": { "@type": "Organization", "name": "Prometo" }
             },
             {
                 "@type": "Organization",
-                "name": "Calonix",
-                "description": "Hersteller der Calonix SHK-Planungssoftware für professionelle Heizlastberechnung und TGA-Planung",
-                "url": "https://calonix.de"
+                "name": "Prometo",
+                "description": "Hersteller der Prometo SHK-Planungssoftware für professionelle Heizlastberechnung und TGA-Planung",
+                "url": "https://prometo.de"
             },
             {
                 "@type": "FAQPage",
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Ist Calonix wirklich normkonform nach DIN EN 12831?",
+                        "name": "Ist Prometo wirklich normkonform nach DIN EN 12831?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Ja. Calonix berechnet die Raumheizlast vollständig nach DIN EN 12831 – inklusive Transmissions- und Lüftungswärmeverluste, Aufheizzuschläge und normativer Klimadaten. Die Ergebnisse sind prüffähig und dokumentationsfähig für Behörden, Energieberater und Bauherren."
+                            "text": "Ja. Prometo berechnet die Raumheizlast vollständig nach DIN EN 12831 – inklusive Transmissions- und Lüftungswärmeverluste, Aufheizzuschläge und normativer Klimadaten. Die Ergebnisse sind prüffähig und dokumentationsfähig für Behörden, Energieberater und Bauherren."
                         }
                     },
                     {
@@ -1193,7 +1170,7 @@
                         "name": "Wie funktioniert der PDF-Import für Baupläne?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Du lädst den Architektenplan als PDF hoch. Calonix analysiert automatisch alle Räume, erkennt Wände, Fenster und Türen und berechnet die Flächen. Das spart dir mehrere Stunden manueller Dateneingabe pro Projekt."
+                            "text": "Du lädst den Architektenplan als PDF hoch. Prometo analysiert automatisch alle Räume, erkennt Wände, Fenster und Türen und berechnet die Flächen. Das spart dir mehrere Stunden manueller Dateneingabe pro Projekt."
                         }
                     }
                 ]
@@ -1214,7 +1191,7 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse inline-block"></span>
                 Beta
             </span>
-            Calonix befindet sich in aktiver Entwicklung —
+            Prometo befindet sich in aktiver Entwicklung —
             <a href="#beta-signup"
                 class="text-primary hover:text-white underline underline-offset-2 transition-colors font-semibold">Jetzt
                 für Beta-Zugang registrieren</a>
@@ -1229,11 +1206,12 @@
     <!-- Header -->
     <header class="sticky top-0 w-full z-50 bg-[#0b0e0e]/80 backdrop-blur-xl border-b border-white/5">
         <nav class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
-            <a href="#" class="group">
-                <img src="Logo/Calonix_Logo.svg" alt="Calonix" class="h-8 w-auto"
-                    style="filter: brightness(0) invert(1); opacity: 0.95; transition: opacity 0.2s;"
-                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.95'" />
-            </a>
+            <a href="#" class="group relative inline-block overflow-hidden h-8">
+    <div class="absolute top-0 bottom-0 w-[4px] z-20 bg-cyan-400 blur-[2px] opacity-0"
+         style="box-shadow: 0 0 15px 5px rgba(34, 211, 238, 0.8); animation: wand-sweep 1.5s cubic-bezier(0.25,1,0.5,1) 0.5s forwards;"></div>
+    <img src="Logo/Wort-Bild.svg" alt="Prometo" class="h-8 w-auto relative z-10" 
+         style="filter: brightness(0) invert(1); clip-path: inset(0 100% 0 0); animation: prometo-text-reveal 1.5s cubic-bezier(0.25,1,0.5,1) 0.5s forwards;" />
+</a>
             <div class="hidden md:flex items-center gap-10">
                 <a class="font-headline tracking-wide text-sm text-primary transition-colors nav-link"
                     href="#features">Funktionen</a>
@@ -1241,8 +1219,7 @@
                     href="#showcase">App</a>
                 <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
                     href="#zielgruppen">Zielgruppen</a>
-                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
-                    href="#preise">Preise</a>
+
                 <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
                     href="#faq">FAQ</a>
             </div>
@@ -1277,10 +1254,7 @@
             Zielgruppen
             <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
         </a>
-        <a href="#preise" class="mobile-nav-link" data-section="preise">
-            Preise
-            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
-        </a>
+
         <a href="#faq" class="mobile-nav-link" data-section="faq">
             FAQ
             <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
@@ -1309,8 +1283,8 @@
                 </div>
                 <h1
                     class="text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-6 tracking-tight text-white">
-                    Vom PDF-Grundriss zur <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">Norm-Heizlast</span>
+                    Software für Heizlast & <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">Digitales Aufmaß</span>
                 </h1>
                 <p id="typewriterText"
                     class="text-on-surface-variant text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-body min-h-[180px] sm:min-h-[110px] md:min-h-[80px] lg:min-h-[60px]">
@@ -1318,7 +1292,7 @@
                 </p>
             </div>
 
-            <!-- The Calonix Engine & SVG Lines Area -->
+            <!-- The Prometo Engine & SVG Lines Area -->
             <div class="relative w-full h-[600px] md:h-[650px] flex items-center justify-center max-w-[1440px] mx-auto">
 
                 <!-- SVG Intertwined Lines -->
@@ -1400,12 +1374,12 @@
                     </g>
                 </svg>
 
-                <!-- Central 3D Cube (Calonix Engine) -->
+                <!-- Central 3D Cube (Prometo Engine) -->
                 <div class="engine-container absolute">
                     <div class="engine-float">
                         <div class="engine-cube">
                             <div class="cube-face cube-front flex-col gap-2">
-                                <img src="Logo/Calonix_Logo.svg" alt="Calonix" class="relative z-10 w-24"
+                                <img src="Logo/Standard.svg" alt="Prometo" class="relative z-10 w-24"
                                     style="filter: brightness(0) invert(1);" />
                                 <span
                                     class="relative z-10 text-primary font-headline font-semibold tracking-[0.2em] text-[10px]">ENGINE</span>
@@ -1484,7 +1458,7 @@
                             <span class="w-2 h-2 rounded-full bg-red-500/50"></span>
                             <span class="w-2 h-2 rounded-full bg-yellow-500/50"></span>
                             <span class="w-2 h-2 rounded-full bg-green-500/50"></span>
-                            <span class="ml-2 text-[10px] text-gray-500 font-headline tracking-widest uppercase">Calonix
+                            <span class="ml-2 text-[10px] text-gray-500 font-headline tracking-widest uppercase">Prometo
                                 Assistent</span>
                         </div>
                         <!-- Terminal Output -->
@@ -1701,7 +1675,7 @@
                     Von der PDF-Datei zur<br class="hidden md:block"> vollständigen Heizlast
                 </h2>
                 <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
-                    Lade deinen Bauplan hoch — Calonix erkennt automatisch alle Räume, markiert unbeheizte Bereiche und
+                    Lade deinen Bauplan hoch — Prometo erkennt automatisch alle Räume, markiert unbeheizte Bereiche und
                     berechnet die normkonforme Heizlast in Sekunden.
                 </p>
                 <div class="h-1 w-24 bg-primary mx-auto rounded-full shadow-[0_0_10px_#45dee7] mt-8"></div>
@@ -2016,7 +1990,7 @@
                     Professionelle Planung,<br class="hidden md:block"> direkt in deiner Hand
                 </h2>
                 <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
-                    Von der Projektanlage über den PDF-Import bis zum fertigen hydraulischen Abgleich – Calonix
+                    Von der Projektanlage über den PDF-Import bis zum fertigen hydraulischen Abgleich – Prometo
                     begleitet dich auf jedem Schritt des Planungsprozesses.
                 </p>
             </div>
@@ -2033,8 +2007,8 @@
                 <div class="showcase-featured-phone" id="featuredPhone">
                     <div class="phone-mockup phone-mockup--featured">
                         <div class="phone-screen">
-                            <img id="featuredImg" src="Calonix Screenshots/Mobil/Homescreen.png"
-                                alt="Calonix App Screen" loading="eager" />
+                            <img id="featuredImg" src="Prometo Screenshots/Mobil/Homescreen.png"
+                                alt="Prometo App Screen" loading="eager" />
                         </div>
                     </div>
                 </div>
@@ -2049,45 +2023,45 @@
                 <div class="showcase-thumbs-row">
                     <button class="showcase-thumb active" onclick="switchScreen(this, 0)">
                         <div class="showcase-thumb-img">
-                            <img src="Calonix Screenshots/Mobil/Homescreen.png" alt="Homescreen" loading="lazy" />
+                            <img src="Prometo Screenshots/Mobil/Homescreen.png" alt="Homescreen" loading="lazy" />
                         </div>
                         <span class="showcase-thumb-label">Homescreen</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 1)">
                         <div class="showcase-thumb-img">
-                            <img src="Calonix Screenshots/Mobil/Ki-Chatbot.png" alt="Assistent" loading="lazy" />
+                            <img src="Prometo Screenshots/Mobil/Ki-Chatbot.png" alt="Assistent" loading="lazy" />
                         </div>
                         <span class="showcase-thumb-label">Assistent</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 2)">
                         <div class="showcase-thumb-img">
-                            <img src="Calonix Screenshots/Mobil/Import Review.png" alt="PDF-Import" loading="lazy" />
+                            <img src="Prometo Screenshots/Mobil/Import Review.png" alt="PDF-Import" loading="lazy" />
                         </div>
                         <span class="showcase-thumb-label">PDF-Import</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 3)">
                         <div class="showcase-thumb-img">
-                            <img src="Calonix Screenshots/Mobil/Hydraulischer Abgleich.png" alt="Hydraulischer Abgleich"
+                            <img src="Prometo Screenshots/Mobil/Hydraulischer Abgleich.png" alt="Hydraulischer Abgleich"
                                 loading="lazy" />
                         </div>
                         <span class="showcase-thumb-label">Hyd. Abgleich</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 4)">
                         <div class="showcase-thumb-img">
-                            <img src="Calonix Screenshots/Mobil/Materialberechnung.png" alt="Stückliste"
+                            <img src="Prometo Screenshots/Mobil/Materialberechnung.png" alt="Stückliste"
                                 loading="lazy" />
                         </div>
                         <span class="showcase-thumb-label">Stückliste</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 5)">
                         <div class="showcase-thumb-img">
-                            <img src="Calonix Screenshots/Mobil/Diagramme.png" alt="Diagramme" loading="lazy" />
+                            <img src="Prometo Screenshots/Mobil/Diagramme.png" alt="Diagramme" loading="lazy" />
                         </div>
                         <span class="showcase-thumb-label">Diagramme</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 6)">
                         <div class="showcase-thumb-img">
-                            <img src="Calonix Screenshots/Mobil/Tools Übersicht.png" alt="Tools" loading="lazy" />
+                            <img src="Prometo Screenshots/Mobil/Tools Übersicht.png" alt="Tools" loading="lazy" />
                         </div>
                         <span class="showcase-thumb-label">Tools</span>
                     </button>
@@ -2109,7 +2083,7 @@
                     Zahlen, die für sich sprechen
                 </h2>
                 <p class="text-on-surface-variant max-w-xl mx-auto">
-                    Calonix wurde von Praktikern für Praktiker entwickelt. Jede Funktion spart echte Zeit auf echten
+                    Prometo wurde von Praktikern für Praktiker entwickelt. Jede Funktion spart echte Zeit auf echten
                     Baustellen.
                 </p>
             </div>
@@ -2177,13 +2151,13 @@
              ============================================ -->
         <section id="zielgruppen" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
             <div class="text-center mb-16 reveal">
-                <span class="badge mb-6">Für wen ist Calonix?</span>
+                <span class="badge mb-6">Für wen ist Prometo?</span>
                 <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
                     Entwickelt für Fachleute im Gebäudebereich
                 </h2>
                 <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
                     Ob du Heizungsbauer im Handwerk bist, als TGA-Ingenieur komplexe Anlagen planst oder als
-                    Energieberater Sanierungen begleitest – Calonix spricht deine Sprache.
+                    Energieberater Sanierungen begleitest – Prometo spricht deine Sprache.
                 </p>
             </div>
 
@@ -2200,7 +2174,7 @@
                     </h3>
                     <p class="text-on-surface-variant mb-6 leading-relaxed">
                         Du planst Heizungsanlagen direkt beim Kunden – und brauchst verlässliche Ergebnisse ohne langen
-                        Büroumweg. Calonix gibt dir die normkonforme Heizlastberechnung, das digitale Aufmaß und die
+                        Büroumweg. Prometo gibt dir die normkonforme Heizlastberechnung, das digitale Aufmaß und die
                         fertige Stückliste – alles vom Smartphone auf der Baustelle.
                     </p>
                     <ul class="space-y-3">
@@ -2247,7 +2221,7 @@
                     <h3 class="font-headline font-bold text-2xl text-white mb-3">Für Fachingenieure und Planungsbüros
                     </h3>
                     <p class="text-on-surface-variant mb-6 leading-relaxed">
-                        Komplexe Gebäudetechnik erfordert integrale Planung. Calonix bietet dir tiefgreifende
+                        Komplexe Gebäudetechnik erfordert integrale Planung. Prometo bietet dir tiefgreifende
                         Berechnungsmodule für Fußbodenheizungs-Auslegung, hydraulischen Abgleich und
                         Rohrnetz-Dimensionierung – mit team-fähiger Projektverwaltung für dein Büro.
                     </p>
@@ -2296,7 +2270,7 @@
                         Energienachweise</h3>
                     <p class="text-on-surface-variant mb-6 leading-relaxed">
                         Gebäudesanierungen erfordern eine saubere Bestandsaufnahme und normgerechte Berechnungen als
-                        Grundlage für Förderanträge und Energieausweise. Calonix liefert dir die Heizlastnachweise und
+                        Grundlage für Förderanträge und Energieausweise. Prometo liefert dir die Heizlastnachweise und
                         Dokumentationen, die du für BAFA-Anträge und KfW-Nachweise benötigst.
                     </p>
                     <ul class="space-y-3">
@@ -2339,237 +2313,6 @@
         </div>
 
         <!-- ============================================
-             PRICING SECTION
-             ============================================ -->
-        <section id="preise" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
-            <div class="text-center mb-16 reveal">
-                <span class="badge mb-6">Preise & Pakete</span>
-                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
-                    Transparent. Skalierbar. Fair.
-                </h2>
-                <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
-                    Egal ob Einzelkämpfer oder wachsendes TGA-Büro – Calonix wächst mit dir. Alle Pakete inklusive
-                    kostenlosem Onboarding und deutschem Support.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
-
-                <!-- Starter -->
-                <div class="pricing-card p-8 flex flex-col reveal">
-                    <div class="mb-6">
-                        <div class="text-gray-400 font-headline font-semibold text-sm uppercase tracking-widest mb-3">
-                            Starter</div>
-                        <div class="flex items-end gap-2 mb-1">
-                            <span class="text-5xl font-headline font-bold text-white">49</span>
-                            <span class="text-gray-400 text-xl mb-2">€<span class="text-sm">/Monat</span></span>
-                        </div>
-                        <div class="text-gray-500 text-sm">pro Nutzer, jährlich abgerechnet</div>
-                    </div>
-                    <div class="glow-line-h mb-6"></div>
-                    <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
-                        Perfekt für Einzelkämpfer und kleine Handwerksbetriebe, die sofort effizienter planen wollen.
-                    </p>
-                    <ul class="space-y-3 mb-8 flex-1">
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Bis zu 10 aktive Projekte
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Heizlastberechnung nach DIN EN 12831
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            5 PDF-Imports pro Monat
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Offline-Baustellen-App
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                            <span class="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="material-symbols-outlined text-gray-600"
-                                    style="font-size: 14px;">remove</span>
-                            </span>
-                            Fachassistent
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                            <span class="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="material-symbols-outlined text-gray-600"
-                                    style="font-size: 14px;">remove</span>
-                            </span>
-                            Team-Management
-                        </li>
-                    </ul>
-                    <button
-                        class="w-full py-3.5 rounded-full font-headline font-bold text-sm border border-white/15 text-white hover:border-primary/40 hover:bg-primary/5 transition-all">
-                        Kostenlos testen
-                    </button>
-                </div>
-
-                <!-- Professional (Featured) -->
-                <div class="pricing-card featured p-8 flex flex-col relative reveal reveal-delay-1">
-                    <div class="absolute -top-4 left-0 right-0 flex justify-center">
-                        <span class="popular-badge">Empfohlen</span>
-                    </div>
-                    <div class="mb-6">
-                        <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-3">
-                            Professional</div>
-                        <div class="flex items-end gap-2 mb-1">
-                            <span class="text-5xl font-headline font-bold text-white">99</span>
-                            <span class="text-gray-400 text-xl mb-2">€<span class="text-sm">/Monat</span></span>
-                        </div>
-                        <div class="text-gray-500 text-sm">pro Nutzer, jährlich abgerechnet</div>
-                    </div>
-                    <div class="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent mb-6"></div>
-                    <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
-                        Für wachsende Betriebe und TGA-Planer, die den vollen Funktionsumfang brauchen.
-                    </p>
-                    <ul class="space-y-3 mb-8 flex-1">
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Unbegrenzte Projekte
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Unbegrenzte PDF-Imports
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Fachassistent (RAG)
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Fußbodenheizungs-Auslegung DIN EN 1264
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Stücklisten & Materialberechnung
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                            <span class="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <span class="material-symbols-outlined text-gray-600"
-                                    style="font-size: 14px;">remove</span>
-                            </span>
-                            Multi-Team-Management (RBAC)
-                        </li>
-                    </ul>
-                    <button
-                        class="w-full py-3.5 rounded-full font-headline font-bold text-sm bg-primary text-on-primary hover:shadow-[0_0_30px_rgba(69,222,231,0.4)] active:scale-95 transition-all">
-                        Jetzt starten
-                    </button>
-                </div>
-
-                <!-- Enterprise -->
-                <div class="pricing-card p-8 flex flex-col reveal reveal-delay-2">
-                    <div class="mb-6">
-                        <div class="text-tertiary font-headline font-semibold text-sm uppercase tracking-widest mb-3">
-                            Enterprise</div>
-                        <div class="flex items-end gap-2 mb-1">
-                            <span class="text-3xl font-headline font-bold text-white leading-tight pt-2">Auf
-                                Anfrage</span>
-                        </div>
-                        <div class="text-gray-500 text-sm mt-1">individuell nach Teamgröße</div>
-                    </div>
-                    <div class="glow-line-h mb-6"
-                        style="background: linear-gradient(to right, transparent, rgba(121,217,230,0.2), transparent);">
-                    </div>
-                    <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
-                        Für größere TGA-Büros, Haustechnik-Unternehmen und Unternehmensgruppen mit individuellen
-                        Anforderungen.
-                    </p>
-                    <ul class="space-y-3 mb-8 flex-1">
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Alles aus Professional
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Multi-Team-Management (RBAC)
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            OCI/UGL-Integration Großhandel
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            Dedizierter Customer Success Manager
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            SLA-Garantie und Priority-Support
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-on-surface-variant">
-                            <span class="check-icon mt-0.5 flex-shrink-0" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
-                            </span>
-                            On-Premise oder Private Cloud möglich
-                        </li>
-                    </ul>
-                    <button
-                        class="w-full py-3.5 rounded-full font-headline font-bold text-sm border border-tertiary/30 text-tertiary hover:border-tertiary/60 hover:bg-tertiary/5 transition-all">
-                        Kontakt aufnehmen
-                    </button>
-                </div>
-
-            </div>
-
-            <!-- Pricing note -->
-            <p class="text-center text-gray-500 text-sm mt-10 reveal">
-                Alle Preise zzgl. MwSt. Keine versteckten Kosten. Jederzeit monatlich kündbar bei monatlicher
-                Abrechnung.
-            </p>
-        </section>
-
-        <div class="px-8 max-w-screen-2xl mx-auto mb-32">
-            <div class="section-divider"></div>
-        </div>
-
-        <!-- ============================================
              FAQ SECTION
              ============================================ -->
         <section id="faq" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
@@ -2582,7 +2325,7 @@
                         Häufige Fragen
                     </h2>
                     <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
-                        Du hast weitere Fragen zu Calonix? Unser Support-Team ist per E-Mail und Telefon erreichbar.
+                        Du hast weitere Fragen zu Prometo? Unser Support-Team ist per E-Mail und Telefon erreichbar.
                     </p>
                     <button class="flex items-center gap-2 text-primary font-headline font-semibold text-sm group">
                         Support kontaktieren
@@ -2607,12 +2350,12 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p class="text-on-surface-variant leading-relaxed">
-                                        Ja, vollständig. Calonix berechnet die Raumheizlast nach DIN EN 12831-1
+                                        Ja, vollständig. Prometo berechnet die Raumheizlast nach DIN EN 12831-1
                                         inklusive Transmissions- und Lüftungswärmeverlusten, Aufheizzuschlägen und der
                                         korrekten Berücksichtigung von Klimadaten nach Normbeiblatt. Die Ergebnisse sind
                                         prüffähig dokumentiert und werden von Energieberatern, Behörden und Gutachtern
                                         anerkannt. Bei Förderprogrammen (BAFA, KfW) ist die normkonforme
-                                        Heizlastberechnung eine Grundvoraussetzung – Calonix erfüllt diese zuverlässig.
+                                        Heizlastberechnung eine Grundvoraussetzung – Prometo erfüllt diese zuverlässig.
                                     </p>
                                 </div>
                             </div>
@@ -2630,7 +2373,7 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p class="text-on-surface-variant leading-relaxed">
-                                        Du lädst den Architektenplan als PDF-Datei in Calonix hoch. Unsere
+                                        Du lädst den Architektenplan als PDF-Datei in Prometo hoch. Unsere
                                         Analyse-Engine analysiert das Dokument vollautomatisch: Sie erkennt
                                         Raumgrenzen, Wände, Fenster und Türen und leitet daraus die exakten Raumflächen
                                         in Quadratmetern ab. Das Ergebnis wird dir zur Überprüfung und manuellen
@@ -2645,7 +2388,7 @@
                         <!-- FAQ 3 -->
                         <div class="faq-item" data-faq="2">
                             <button class="faq-question" onclick="toggleFaq(this)">
-                                <span class="font-headline font-semibold text-white text-lg pr-4">Kann ich Calonix auch
+                                <span class="font-headline font-semibold text-white text-lg pr-4">Kann ich Prometo auch
                                     ohne Internetverbindung auf der Baustelle nutzen?</span>
                                 <span class="faq-icon">
                                     <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
@@ -2654,7 +2397,7 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p class="text-on-surface-variant leading-relaxed">
-                                        Ja – die Calonix-App ist vollständig offline-fähig. Du kannst Räume aufmessen,
+                                        Ja – die Prometo-App ist vollständig offline-fähig. Du kannst Räume aufmessen,
                                         Projektdaten erfassen und Berechnungen durchführen, auch wenn dein Smartphone
                                         oder Tablet kein Mobilfunknetz hat. Sobald die Verbindung wieder besteht,
                                         synchronisiert die App alle Änderungen automatisch und lautlos mit deinem Büro.
@@ -2677,7 +2420,7 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p class="text-on-surface-variant leading-relaxed">
-                                        Calonix nutzt ein rollenbasiertes Zugriffskontrollsystem (RBAC). Als
+                                        Prometo nutzt ein rollenbasiertes Zugriffskontrollsystem (RBAC). Als
                                         Administrator definierst du Rollen – zum Beispiel "Büro-Planer", "Monteur" oder
                                         "Projektleiter" – und steuerst, welche Projekte und Funktionen jede Rolle sieht
                                         und bearbeiten darf. Der Monteur auf der Baustelle sieht nur die für ihn
@@ -2701,7 +2444,7 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p class="text-on-surface-variant leading-relaxed">
-                                        Calonix läuft als Progressive Web App (PWA) im Browser und als native App auf
+                                        Prometo läuft als Progressive Web App (PWA) im Browser und als native App auf
                                         iOS und Android. Am PC oder Mac arbeitest du im Browser deiner Wahl – kein
                                         separater Download erforderlich. Auf der Baustelle nutzt du die mobile App auf
                                         deinem iPhone oder Android-Smartphone. Alle Daten werden plattformübergreifend
@@ -2723,11 +2466,11 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p class="text-on-surface-variant leading-relaxed">
-                                        Ja. Du kannst Calonix 14 Tage lang kostenlos und ohne Kreditkarte testen. Im
+                                        Ja. Du kannst Prometo 14 Tage lang kostenlos und ohne Kreditkarte testen. Im
                                         Testzeitraum hast du Zugriff auf alle Funktionen des Professional-Pakets. Nach
                                         Ablauf der Testphase entscheidest du dich für ein Paket – oder du hörst einfach
                                         auf, ohne dass etwas berechnet wird. Für eine persönliche Einführung bieten wir
-                                        außerdem kostenlose Demo-Calls an, in denen wir dir Calonix anhand deiner
+                                        außerdem kostenlose Demo-Calls an, in denen wir dir Prometo anhand deiner
                                         eigenen Projekte zeigen.
                                     </p>
                                 </div>
@@ -2760,7 +2503,7 @@
                     Sei unter den Ersten.
                 </h2>
                 <p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
-                    Calonix ist aktuell in der geschlossenen Beta. Trag dich jetzt ein und erhalte exklusiven Frühzugang
+                    Prometo ist aktuell in der geschlossenen Beta. Trag dich jetzt ein und erhalte exklusiven Frühzugang
                     – kostenlos.
                 </p>
             </div>
@@ -2865,6 +2608,10 @@
                             <p class="text-center text-gray-600 text-xs mt-5 font-body">
                                 Kein Spam. Kein Abo. Nur Zugang, sobald du an der Reihe bist.
                             </p>
+                            <p class="text-center text-gray-600 text-xs mt-2 font-body">
+                                Mit dem Absenden erklärst du dich mit der Verarbeitung deiner Daten gemäß unserer
+                                <a href="datenschutz.html" class="text-primary/70 hover:text-primary underline transition-colors">Datenschutzerklärung</a> einverstanden.
+                            </p>
                         </form>
                     </div>
 
@@ -2921,7 +2668,7 @@
                     </h2>
                     <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
                         Schließe dich Hunderten von Heizungsbauern, TGA-Planern und Energieberatern an, die ihre Planung
-                        mit Calonix auf ein neues Level gebracht haben.
+                        mit Prometo auf ein neues Level gebracht haben.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-5 justify-center">
@@ -2955,7 +2702,43 @@
     </button>
 
     <!-- Footer -->
-    <footer class="w-full py-16 border-t border-white/5 bg-[#0b0e0e] relative z-20">
+    
+    <!-- SEO FAQ Section -->
+    <section class="py-24 relative overflow-hidden" id="faq">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-headline font-bold mb-6">Häufige Fragen <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">zur SHK-Software</span></h2>
+                <p class="text-xl text-gray-400">Alles rund um Digitales Aufmaß, DIN EN 12831 und den Umstieg von Excel oder Bluebeam.</p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/5 bg-[#171c1c]/50">
+                    <h3 class="text-xl font-headline font-bold text-white mb-3">Warum ist eine Software für die Heizlastberechnung (DIN EN 12831) besser als Excel?</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        Veraltete Excel-Tabellen sind oft fehleranfällig und rechtlich nicht abgesichert. Eine normgerechte Heizlastberechnungs-Software wie Prometo wird kontinuierlich auf Updates der DIN EN 12831 geprüft. So vermeidest du Haftungsrisiken bei der Auslegung von Wärmepumpen oder Heizkörpern und planst immer fördermittelgerecht.
+                    </p>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/5 bg-[#171c1c]/50">
+                    <h3 class="text-xl font-headline font-bold text-white mb-3">Wie schneidet Prometo als Bluebeam Alternative für Handwerker ab?</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        Bluebeam Revu ist ein mächtiges PDF-Tool für die generelle Baubranche, aber oft zu komplex und teuer für einfache SHK-Aufmaße. Prometo ist speziell als digitales Gebäudeaufmaß für das SHK-Handwerk entwickelt. Keine Einarbeitungszeit – lade deinen PDF-Grundriss hoch und starte sofort mit der Erfassung von Räumen und Bauteilen für deine Heizlast.
+                    </p>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/5 bg-[#171c1c]/50">
+                    <h3 class="text-xl font-headline font-bold text-white mb-3">Lässt sich die App für das digitale Aufmaß auch auf dem iPad nutzen?</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                        Ja, Prometo ist für mobile Endgeräte optimiert. Du kannst das digitale Aufmaß direkt auf der Baustelle per Tablet oder iPad durchführen. Die Raumskizzen und erfassten Wände werden in Echtzeit in das 3D-Modell übertragen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<footer class="w-full py-16 border-t border-white/5 bg-[#0b0e0e] relative z-20">
         <div class="px-8 max-w-screen-2xl mx-auto">
 
             <!-- Footer top -->
@@ -2964,7 +2747,7 @@
                 <!-- Brand -->
                 <div>
                     <div class="mb-5">
-                        <img src="Logo/Calonix_Logo.svg" alt="Calonix" class="h-7 w-auto"
+                        <img src="Logo/Standard.svg" alt="Prometo" class="h-7 w-auto"
                             style="filter: brightness(0) invert(1); opacity: 0.85;" />
                     </div>
                     <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
@@ -2989,9 +2772,7 @@
                         <li><a href="#showcase"
                                 class="text-gray-500 hover:text-primary text-sm transition-colors font-body">App-Screenshots</a>
                         </li>
-                        <li><a href="#preise"
-                                class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Preise</a>
-                        </li>
+
                         <li><a href="#"
                                 class="text-gray-500 hover:text-primary text-sm transition-colors font-body">Changelog</a>
                         </li>
@@ -3046,13 +2827,12 @@
             <!-- Footer bottom -->
             <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
                 <div class="text-sm text-gray-600 font-body text-center md:text-left">
-                    © 2026 Calonix. Die smarte Software für Heizlast & TGA-Planung. | Beta v0.9
+                    © 2026 Prometo. Die smarte Software für Heizlast & TGA-Planung. | Beta v0.9
                 </div>
                 <div class="flex gap-6 text-sm text-gray-500">
-                    <a href="#" class="hover:text-primary transition-colors">Datenschutz</a>
-                    <a href="#" class="hover:text-primary transition-colors">AGB</a>
-                    <a href="#" class="hover:text-primary transition-colors">Impressum</a>
-                    <a href="#" class="hover:text-primary transition-colors">Cookies</a>
+                    <a href="datenschutz.html" class="hover:text-primary transition-colors">Datenschutz</a>
+
+                    <a href="impressum.html" class="hover:text-primary transition-colors">Impressum</a>
                 </div>
             </div>
 
@@ -3175,13 +2955,13 @@
 
         // ---- Showcase Screen Switcher ----
         const showcaseData = [
-            { src: 'Calonix Screenshots/Mobil/Homescreen.png', title: 'Homescreen', desc: 'Alle Projekte und Tools auf einen Blick' },
-            { src: 'Calonix Screenshots/Mobil/Ki-Chatbot.png', title: 'Fachassistent', desc: 'Sofortantworten auf Normen direkt vor Ort' },
-            { src: 'Calonix Screenshots/Mobil/Import Review.png', title: 'PDF-Import', desc: 'Grundriss hochladen – Räume werden automatisch erkannt' },
-            { src: 'Calonix Screenshots/Mobil/Hydraulischer Abgleich.png', title: 'Hydraulischer Abgleich', desc: 'Normgerechter Abgleich nach DIN EN 12831' },
-            { src: 'Calonix Screenshots/Mobil/Materialberechnung.png', title: 'Stückliste', desc: 'Automatische Materialberechnung auf Knopfdruck' },
-            { src: 'Calonix Screenshots/Mobil/Diagramme.png', title: 'Diagramme', desc: 'Heizlast und Verbrauch visuell auf einen Blick' },
-            { src: 'Calonix Screenshots/Mobil/Tools Übersicht.png', title: 'Tools', desc: 'Alle Werkzeuge übersichtlich an einem Ort' },
+            { src: 'Prometo Screenshots/Mobil/Homescreen.png', title: 'Homescreen', desc: 'Alle Projekte und Tools auf einen Blick' },
+            { src: 'Prometo Screenshots/Mobil/Ki-Chatbot.png', title: 'Fachassistent', desc: 'Sofortantworten auf Normen direkt vor Ort' },
+            { src: 'Prometo Screenshots/Mobil/Import Review.png', title: 'PDF-Import', desc: 'Grundriss hochladen – Räume werden automatisch erkannt' },
+            { src: 'Prometo Screenshots/Mobil/Hydraulischer Abgleich.png', title: 'Hydraulischer Abgleich', desc: 'Normgerechter Abgleich nach DIN EN 12831' },
+            { src: 'Prometo Screenshots/Mobil/Materialberechnung.png', title: 'Stückliste', desc: 'Automatische Materialberechnung auf Knopfdruck' },
+            { src: 'Prometo Screenshots/Mobil/Diagramme.png', title: 'Diagramme', desc: 'Heizlast und Verbrauch visuell auf einen Blick' },
+            { src: 'Prometo Screenshots/Mobil/Tools Übersicht.png', title: 'Tools', desc: 'Alle Werkzeuge übersichtlich an einem Ort' },
         ];
 
         function switchScreen(btn, index) {
@@ -3247,7 +3027,7 @@
             });
         }, { rootMargin: '-30% 0px -60% 0px' });
 
-        document.querySelectorAll('#features, #showcase, #zielgruppen, #preise, #faq').forEach(el => {
+        document.querySelectorAll('#features, #showcase, #zielgruppen, #faq').forEach(el => {
             if (el) navObserver.observe(el);
         });
 
@@ -3290,9 +3070,9 @@
             if (!el) return;
 
             const phrases = [
-                'Die Planungssoftware für SHK-Handwerk, Energieberater und TGA-Planer. Automatisiertes Raum-Aufmaß, Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung in Rekordzeit.',
-                'Einfach PDF hochladen — Calonix erkennt automatisch alle Räume, berechnet Flächen und liefert die normkonforme Heizlast in Minuten statt Stunden.',
-                'Vom Grundriss zur fertigen Stückliste: Calonix automatisiert deinen gesamten Planungsprozess mit höchster Präzision.'
+                'Sicherer als alte Excel-Tabellen. Einfacher als komplexe Bausoftware wie Bluebeam.<br>Die Komplettlösung für rechtssichere Heizlastberechnung (DIN EN 12831). Automatisiertes Raum-Aufmaß, Heizlastberechnung nach DIN EN 12831 und Fußbodenheizungs-Auslegung in Rekordzeit.',
+                'Einfach PDF hochladen — Prometo erkennt automatisch alle Räume, berechnet Flächen und liefert die normkonforme Heizlast in Minuten statt Stunden.',
+                'Vom Grundriss zur fertigen Stückliste: Prometo automatisiert deinen gesamten Planungsprozess mit höchster Präzision.'
             ];
 
             let phraseIndex = 0;

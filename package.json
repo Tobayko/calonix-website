@@ -1,0 +1,32 @@
+{
+  "name": "webseite-calonix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i input.css -o assets/tailwind.css --minify",
+    "dev": "npx @tailwindcss/cli -i input.css -o assets/tailwind.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tobayko/calonix-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Tobayko/calonix-website/issues"
+  },
+  "homepage": "https://github.com/Tobayko/calonix-website#readme",
+  "dependencies": {
+    "@fontsource/manrope": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "@tailwindcss/cli": "^4.2.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.11",
+    "material-symbols": "^0.43.0",
+    "tailwindcss": "^4.2.2"
+  }
+}

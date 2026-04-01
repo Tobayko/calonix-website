@@ -1,3 +1,20 @@
 .DS_Store
 **/.DS_Store
 .claude/
+
+# Node / Build
+node_modules/
+package-lock.json
+
+# Lighthouse reports
+lighthouse-*.json
+
+# Python scripts (internal tooling)
+fix_all.py
+fix_logo.py
+seo_inject.py
+
+# Tailwind source (output assets/tailwind.css is what gets deployed)
+input.css
+tailwind.config.js
+
