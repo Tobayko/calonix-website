@@ -2730,12 +2730,20 @@
                     <!-- Form Content -->
                     <div id="betaFormContent">
                         <form id="betaForm" novalidate>
+                            <div aria-hidden="true"
+                                style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">
+                                <label for="beta-website">Website</label>
+                                <input id="beta-website" type="text" name="website" tabindex="-1"
+                                    autocomplete="off" />
+                            </div>
+
                             <!-- E-Mail -->
                             <div class="mb-5">
                                 <label
                                     class="block text-sm font-headline font-semibold text-gray-300 mb-2">E-Mail-Adresse
                                     *</label>
                                 <input type="email" name="email" placeholder="deine@email.de" required
+                                    autocomplete="email"
                                     class="beta-input"
                                     style="background: rgba(38,43,43,0.5); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: #dfe3e3; padding: 14px 18px; font-family: 'Manrope', sans-serif; width: 100%; font-size: 15px; transition: border-color 0.2s ease;" />
                             </div>
@@ -2744,7 +2752,8 @@
                             <div class="mb-5">
                                 <label class="block text-sm font-headline font-semibold text-gray-300 mb-2">Betriebsname
                                     <span class="text-gray-600 font-normal">(optional)</span></label>
-                                <input type="text" name="company" placeholder="Muster GmbH & Co. KG" class="beta-input"
+                                <input type="text" name="company" placeholder="Muster GmbH & Co. KG"
+                                    autocomplete="organization" class="beta-input"
                                     style="background: rgba(38,43,43,0.5); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: #dfe3e3; padding: 14px 18px; font-family: 'Manrope', sans-serif; width: 100%; font-size: 15px; transition: border-color 0.2s ease;" />
                             </div>
 
@@ -2788,12 +2797,14 @@
                             </div>
 
                             <!-- Submit -->
-                            <button type="submit"
+                            <button id="betaSubmitButton" type="submit"
                                 class="w-full bg-primary text-on-primary font-headline font-bold py-4 px-8 rounded-full text-base hover:shadow-[0_0_30px_rgba(69,222,231,0.5)] active:scale-95 transition-all flex items-center justify-center gap-2 group">
-                                Jetzt Beta-Zugang sichern
+                                <span id="betaSubmitLabel">Beta-Zugang anfragen</span>
                                 <span
                                     class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
                             </button>
+                            <p id="betaFormStatus" class="text-center text-sm mt-4 font-body" style="display: none;">
+                            </p>
 
                             <p class="text-center text-gray-600 text-xs mt-5 font-body">
                                 Kein Spam. Kein Abo. Nur Zugang, sobald du an der Reihe bist.
@@ -2813,9 +2824,9 @@
                             <span class="material-symbols-outlined text-primary"
                                 style="font-size: 32px;">check_circle</span>
                         </div>
-                        <h3 class="text-white font-headline font-bold text-2xl">Du bist dabei!</h3>
-                        <p class="text-gray-400 max-w-sm font-body leading-relaxed">Wir haben dich auf die Warteliste
-                            gesetzt. Sobald Beta-Slots frei sind, bekommst du als Erstes eine E-Mail.</p>
+                        <h3 class="text-white font-headline font-bold text-2xl">Anfrage abgeschickt</h3>
+                        <p class="text-gray-400 max-w-sm font-body leading-relaxed">Wir haben deine Beta-Anfrage
+                            erhalten und melden uns, sobald neue Plätze frei werden.</p>
                     </div>
 
                 </div>
@@ -3339,13 +3350,88 @@
 
         // ---- Beta Form Submit ----
         const betaForm = document.getElementById('betaForm');
+        const betaFormContent = document.getElementById('betaFormContent');
+        const betaSuccess = document.getElementById('betaSuccess');
+        const betaSubmitButton = document.getElementById('betaSubmitButton');
+        const betaSubmitLabel = document.getElementById('betaSubmitLabel');
+        const betaFormStatus = document.getElementById('betaFormStatus');
         if (betaForm) {
-            betaForm.addEventListener('submit', (e) => {
+            const defaultSubmitLabel = betaSubmitLabel ? betaSubmitLabel.textContent : 'Beta-Zugang anfragen';
+
+            betaForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const email = betaForm.querySelector('input[type="email"]').value;
-                if (!email) return;
-                document.getElementById('betaFormContent').style.display = 'none';
-                document.getElementById('betaSuccess').style.display = 'flex';
+                const formData = new FormData(betaForm);
+                const email = String(formData.get('email') || '').trim();
+
+                if (!email || !betaForm.reportValidity()) {
+                    return;
+                }
+
+                const company = String(formData.get('company') || '').trim() || '-';
+                const role = String(formData.get('role') || '').trim() || '-';
+
+                if (betaFormStatus) {
+                    betaFormStatus.style.display = 'none';
+                    betaFormStatus.textContent = '';
+                    betaFormStatus.innerHTML = '';
+                }
+
+                if (betaSubmitButton) {
+                    betaSubmitButton.disabled = true;
+                    betaSubmitButton.style.opacity = '0.7';
+                    betaSubmitButton.style.cursor = 'wait';
+                }
+
+                if (betaSubmitLabel) {
+                    betaSubmitLabel.textContent = 'Wird gesendet...';
+                }
+
+                try {
+                    const response = await fetch('/api/beta-signup', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            email,
+                            company,
+                            role,
+                            website: String(formData.get('website') || '').trim()
+                        })
+                    });
+
+                    const result = await response.json().catch(() => ({}));
+
+                    if (!response.ok) {
+                        throw new Error(result.error || 'Die Anfrage konnte nicht gesendet werden.');
+                    }
+
+                    betaForm.reset();
+                    if (betaFormContent) {
+                        betaFormContent.style.display = 'none';
+                    }
+                    if (betaSuccess) {
+                        betaSuccess.style.display = 'flex';
+                    }
+                } catch (error) {
+                    if (betaFormStatus) {
+                        betaFormStatus.style.display = 'block';
+                        betaFormStatus.style.color = '#fca5a5';
+                        betaFormStatus.innerHTML = 'Die Anfrage konnte gerade nicht direkt gesendet werden. Bitte versuche es gleich noch einmal oder schreibe an <a href="mailto:info@prometo.app?subject=Prometo%20Beta-Anfrage" class="text-primary underline underline-offset-2 hover:text-white transition-colors">info@prometo.app</a>.';
+                    }
+                    console.error(error);
+                } finally {
+                    if (betaSubmitButton) {
+                        betaSubmitButton.disabled = false;
+                        betaSubmitButton.style.opacity = '';
+                        betaSubmitButton.style.cursor = '';
+                    }
+
+                    if (betaSubmitLabel) {
+                        betaSubmitLabel.textContent = defaultSubmitLabel;
+                    }
+                }
             });
         }
 

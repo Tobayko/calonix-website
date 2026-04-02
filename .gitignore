@@ -4,6 +4,9 @@
 
 # Node / Build
 node_modules/
+.env
+.env.*
+!.env.example
 
 # Lighthouse reports
 lighthouse-*.json
