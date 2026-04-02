@@ -1,5 +1,5 @@
 {
-  "name": "webseite-calonix",
+  "name": "prometo-website",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tobayko/calonix-website.git"
+    "url": "git+https://github.com/Tobayko/prometo-website.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Tobayko/calonix-website/issues"
+    "url": "https://github.com/Tobayko/prometo-website/issues"
   },
-  "homepage": "https://github.com/Tobayko/calonix-website#readme",
+  "homepage": "https://github.com/Tobayko/prometo-website#readme",
   "dependencies": {
     "@fontsource/manrope": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
