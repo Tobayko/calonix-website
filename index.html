@@ -3373,7 +3373,6 @@
                 if (betaFormStatus) {
                     betaFormStatus.style.display = 'none';
                     betaFormStatus.textContent = '';
-                    betaFormStatus.innerHTML = '';
                 }
 
                 if (betaSubmitButton) {
@@ -3418,7 +3417,13 @@
                     if (betaFormStatus) {
                         betaFormStatus.style.display = 'block';
                         betaFormStatus.style.color = '#fca5a5';
-                        betaFormStatus.innerHTML = 'Die Anfrage konnte gerade nicht direkt gesendet werden. Bitte versuche es gleich noch einmal oder schreibe an <a href="mailto:info@prometo.app?subject=Prometo%20Beta-Anfrage" class="text-primary underline underline-offset-2 hover:text-white transition-colors">info@prometo.app</a>.';
+                        betaFormStatus.textContent = 'Die Anfrage konnte gerade nicht direkt gesendet werden. Bitte versuche es gleich noch einmal oder schreibe an ';
+                        const fallbackLink = document.createElement('a');
+                        fallbackLink.href = 'mailto:info@prometo.app?subject=Prometo%20Beta-Anfrage';
+                        fallbackLink.className = 'text-primary underline underline-offset-2 hover:text-white transition-colors';
+                        fallbackLink.textContent = 'info@prometo.app';
+                        betaFormStatus.appendChild(fallbackLink);
+                        betaFormStatus.append('.');
                     }
                     console.error(error);
                 } finally {
