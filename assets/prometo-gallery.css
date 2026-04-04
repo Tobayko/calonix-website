@@ -1,0 +1,308 @@
+.prometo-shot,
+.prometo-shot-host {
+    position: relative;
+}
+
+figure img[src^="/assets/prometo-screenshots/"]:not(#featuredImg),
+.hero-media-card img[src^="/assets/prometo-screenshots/"] {
+    display: block;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+    margin-inline: auto;
+    object-fit: contain;
+    object-position: center center;
+}
+
+figure img[src^="/assets/prometo-screenshots/"][width="1080"][height="2400"]:not(#featuredImg),
+.hero-media-card img[src^="/assets/prometo-screenshots/"][width="1080"][height="2400"] {
+    max-width: min(100%, 17rem);
+    max-height: clamp(18rem, 38vw, 31rem);
+}
+
+figure img[src^="/assets/prometo-screenshots/"][width="2560"][height="1600"] {
+    max-height: clamp(10.5rem, 16vw, 15rem);
+}
+
+.prometo-shot__trigger {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: zoom-in;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.prometo-shot__trigger:focus-visible {
+    outline: 2px solid rgba(107, 246, 255, 0.88);
+    outline-offset: 6px;
+}
+
+.prometo-shot__media {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        radial-gradient(circle at top, rgba(69, 222, 231, 0.12), rgba(69, 222, 231, 0) 52%),
+        linear-gradient(180deg, rgba(9, 13, 13, 0.94), rgba(18, 24, 24, 0.82));
+    padding: clamp(0.9rem, 1.8vw, 1.2rem);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.prometo-shot__media img {
+    display: block;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100%;
+    margin-inline: auto;
+    object-fit: contain;
+    object-position: center center;
+    transition: transform 0.25s ease;
+}
+
+.prometo-shot__zoom {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    align-self: flex-start;
+    border-radius: 999px;
+    border: 1px solid rgba(69, 222, 231, 0.16);
+    background: rgba(69, 222, 231, 0.08);
+    padding: 0.42rem 0.7rem;
+    color: #dffbfd;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.prometo-shot__zoom::before {
+    content: "+";
+    color: #6bf6ff;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.prometo-shot__trigger:hover .prometo-shot__media,
+.prometo-shot__trigger:focus-visible .prometo-shot__media {
+    border-color: rgba(69, 222, 231, 0.28);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+}
+
+.prometo-shot__trigger:hover .prometo-shot__media img,
+.prometo-shot__trigger:focus-visible .prometo-shot__media img {
+    transform: translateY(-2px);
+}
+
+.prometo-shot-host--phone .prometo-shot__media {
+    min-height: clamp(19rem, 36vw, 28rem);
+}
+
+.prometo-shot-host--phone .prometo-shot__media img {
+    max-width: min(100%, 17rem);
+    max-height: clamp(18rem, 38vw, 31rem);
+}
+
+.prometo-shot-host--tablet .prometo-shot__media {
+    min-height: clamp(11.5rem, 17vw, 15rem);
+}
+
+.prometo-shot-host--tablet .prometo-shot__media img {
+    max-height: clamp(10.5rem, 16vw, 15rem);
+}
+
+.prometo-shot-host--hero .prometo-shot__trigger {
+    gap: 0;
+}
+
+.prometo-shot-host--hero .prometo-shot__media {
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.prometo-shot-host--hero .prometo-shot__zoom {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    align-self: auto;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.prometo-lightbox-open {
+    overflow: hidden;
+}
+
+.prometo-lightbox[hidden] {
+    display: none;
+}
+
+.prometo-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 140;
+    display: grid;
+    place-items: center;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.prometo-lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 8, 8, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.prometo-lightbox__dialog {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: min(100%, 72rem);
+    max-height: 100%;
+    overflow: hidden;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(17, 23, 23, 0.98), rgba(10, 14, 14, 0.98));
+    box-shadow: 0 32px 100px rgba(0, 0, 0, 0.55);
+}
+
+.prometo-lightbox__toolbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1rem 0;
+}
+
+.prometo-lightbox__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.prometo-lightbox__close:focus-visible {
+    outline: 2px solid rgba(107, 246, 255, 0.88);
+    outline-offset: 4px;
+}
+
+.prometo-lightbox__content {
+    display: grid;
+    gap: 1rem;
+    padding: 0 1rem 1rem;
+}
+
+.prometo-lightbox__media {
+    display: flex;
+    min-height: min(74vh, 44rem);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        radial-gradient(circle at top, rgba(69, 222, 231, 0.12), rgba(69, 222, 231, 0) 55%),
+        linear-gradient(180deg, rgba(7, 11, 11, 0.98), rgba(17, 23, 23, 0.94));
+    padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.prometo-lightbox__image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: min(72vh, 52rem);
+    object-fit: contain;
+    object-position: center center;
+}
+
+.prometo-lightbox[data-shot-type="phone"] .prometo-lightbox__image {
+    max-width: min(100%, 25rem);
+}
+
+.prometo-lightbox__meta {
+    display: grid;
+    gap: 0.4rem;
+    padding: 0 0.25rem 0.25rem;
+}
+
+.prometo-lightbox__title {
+    color: #ffffff;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.prometo-lightbox__caption {
+    color: #aeb8b8;
+    font-size: 0.96rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+    .prometo-shot-host--phone .prometo-shot__media {
+        min-height: 18rem;
+    }
+
+    .prometo-shot-host--phone .prometo-shot__media img {
+        max-width: min(100%, 15rem);
+        max-height: 24rem;
+    }
+
+    .prometo-shot-host--tablet .prometo-shot__media {
+        min-height: 10rem;
+    }
+
+    .prometo-shot-host--tablet .prometo-shot__media img {
+        max-height: 12rem;
+    }
+
+    .prometo-shot-host--hero .prometo-shot__zoom {
+        right: 0.85rem;
+        bottom: 0.85rem;
+    }
+
+    .prometo-lightbox {
+        padding: 0.85rem;
+    }
+
+    .prometo-lightbox__dialog {
+        border-radius: 1.5rem;
+    }
+
+    .prometo-lightbox__media {
+        min-height: 0;
+        max-height: 68vh;
+    }
+
+    .prometo-lightbox__image {
+        max-height: 60vh;
+    }
+}

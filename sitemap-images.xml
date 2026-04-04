@@ -65,9 +65,9 @@
       <image:caption>Projektbasis für neue Heizlast-Projekte direkt mobil anlegen.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp</image:loc>
-      <image:title>Prometo Heizlast App Projektübersicht</image:title>
-      <image:caption>Projektübersicht mit Schnellzugriffen und aktuellen Heizlast-Projekten.</image:caption>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp</image:loc>
+      <image:title>Prometo Heizlast App Import-Review</image:title>
+      <image:caption>Erkannte Räume und Etagen vor der weiteren Heizlastbearbeitung in der App prüfen.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp</image:loc>
@@ -78,6 +78,16 @@
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp</image:loc>
       <image:title>Prometo Heizlast App Heizkreisdetail</image:title>
       <image:caption>Heizkreisdetail mit Durchflusswerten für die mobile Einregulierung.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp</image:loc>
+      <image:title>Prometo Heizlast App Tablet-Abgleich</image:title>
+      <image:caption>EG-Verteiler und Raumübersicht für den hydraulischen Abgleich auf dem Tablet.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/tablet/hydraulischer-abgleich-og-verteiler.webp</image:loc>
+      <image:title>Prometo Heizlast App Tablet-Abgleich OG</image:title>
+      <image:caption>Durchflusswerte und Heizkreise für das Obergeschoss im Tablet-Modus prüfen.</image:caption>
     </image:image>
   </url>
   <url>
@@ -152,9 +162,9 @@
       <image:caption>Projektbasis mobil in der Prometo App anlegen.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp</image:loc>
-      <image:title>Prometo Startseite Screenshot</image:title>
-      <image:caption>Projektübersicht mit Schnellzugriffen und Projektliste.</image:caption>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/tablet/projektassistent-berechnungsweg.webp</image:loc>
+      <image:title>Prometo Tablet Berechnungsweg</image:title>
+      <image:caption>Profi-, Quick- und KI-Wizard direkt nach der Projektanlage im Tablet-Layout wählen.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp</image:loc>
@@ -180,6 +190,11 @@
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-ki-analyse.webp</image:loc>
       <image:title>Prometo Bauplan-Analyse läuft</image:title>
       <image:caption>Fortschrittsanzeige der KI-Auswertung beim planbasierten Import.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-ki-bereit.webp</image:loc>
+      <image:title>Prometo Bauplan-Import auf dem Tablet</image:title>
+      <image:caption>Projektart, Strategie und KI-Start in der breiten Tablet-Ansicht vorbereiten.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-raeume.webp</image:loc>
@@ -225,11 +240,6 @@
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp</image:loc>
       <image:title>Prometo Heizkreisdetail Screenshot</image:title>
       <image:caption>Hydraulischer Abgleich mit Port- und Durchflusswerten.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://prometo.app/assets/prometo-screenshots/tablet/startseite.webp</image:loc>
-      <image:title>Prometo Tablet Startseite</image:title>
-      <image:caption>Tablet-Homescreen mit Seitennavigation und Projektübersicht.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/tablet/projektassistent-projektbasis.webp</image:loc>

@@ -33,8 +33,8 @@
     <meta property="og:description"
         content="Geschlossene Beta für Heizlast auf Basis von PDF-Grundrissen: mobil, planbasiert und für SHK-Prozesse gedacht." />
     <meta property="og:url" content="https://prometo.app/heizlastberechnung/app/" />
-    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp" />
-    <meta property="og:image:alt" content="Prometo Projektübersicht der Heizlast App auf dem Smartphone" />
+    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp" />
+    <meta property="og:image:alt" content="Prometo Projektassistent der Heizlast App auf dem Smartphone" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1080" />
     <meta property="og:image:height" content="2400" />
@@ -43,11 +43,12 @@
     <meta name="twitter:title" content="Heizlastberechnung App für SHK & Baustelle | Prometo" />
     <meta name="twitter:description"
         content="Geschlossene Beta für Heizlast auf Basis von PDF-Grundrissen: mobil, planbasiert und für SHK-Prozesse gedacht." />
-    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp" />
-    <meta name="twitter:image:alt" content="Prometo Projektübersicht der Heizlast App auf dem Smartphone" />
+    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp" />
+    <meta name="twitter:image:alt" content="Prometo Projektassistent der Heizlast App auf dem Smartphone" />
 
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
+    <link rel="stylesheet" href="/assets/prometo-gallery.css" />
     <style>
         body {
             background:
@@ -173,7 +174,7 @@
                 },
                 "primaryImageOfPage": {
                     "@type": "ImageObject",
-                    "url": "https://prometo.app/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp"
+                    "url": "https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
                 }
             },
             {
@@ -285,9 +286,11 @@
                     <div class="hero-visual reveal reveal-delay-2">
                         <div class="ambient-orb ambient-orb--a"></div>
                         <div class="ambient-orb ambient-orb--b"></div>
-                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6">
-                            <img src="/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp"
-                                alt="Prometo Projektübersicht auf dem Smartphone mit Schnellzugriffen und Heizlast-Projekt"
+                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6"
+                            data-lightbox-title="Projektassistent für neue Heizlast-Projekte"
+                            data-lightbox-caption="Projektname, Adresse und Geocoding lassen sich direkt mobil erfassen, bevor der weitere SHK-Workflow startet.">
+                            <img src="/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
+                                alt="Prometo Projektassistent auf dem Smartphone mit Adresse, Projektname und Geocoding"
                                 width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async"
                                 class="hero-device mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
                         </div>
@@ -376,13 +379,13 @@
                         </figcaption>
                     </figure>
                     <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp"
-                            alt="Prometo Projektübersicht mit Schnellzugriffen und Heizlast-Projekt auf dem Smartphone"
+                        <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
+                            alt="Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Smartphone"
                             width="1080" height="2400" loading="lazy" decoding="async"
                             class="w-full rounded-[1.5rem] border border-white/8" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Projektübersicht mobil prüfen</strong>
-                            Team-Dashboard, Tagesroute und aktuelle Projekte bleiben von der Startseite aus erreichbar.
+                            <strong class="block text-white font-headline font-bold mb-1">Projekt aus dem Plan heraus prüfen</strong>
+                            Erkannte Räume und Etagen werden vor der weiteren Heizlastbearbeitung direkt in der App kontrolliert.
                         </figcaption>
                     </figure>
                     <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-2 lift-on-hover">
@@ -599,6 +602,7 @@
         </div>
     </footer>
     <script src="/assets/page-effects.js" defer></script>
+    <script src="/assets/prometo-gallery.js" defer></script>
 </body>
 
 </html>
