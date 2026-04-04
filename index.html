@@ -54,6 +54,7 @@
         document.head.appendChild(insightsScript);
       }
     </script>
+    <link rel="preload" href="/assets/tailwind.css" as="style" />
     <!-- Lokales Tailwind CSS inkl. Fonts (DSGVO-konform, keine externen Requests) -->
     <link rel="stylesheet" href="/assets/tailwind.css" />
 
@@ -1147,20 +1148,51 @@
             pointer-events: none;
         }
         @keyframes prometo-text-reveal {
-            0% { clip-path: inset(0 100% 0 0); }
-            100% { clip-path: inset(0 0 0 0); }
+            0% {
+                opacity: 0;
+                transform: translate3d(-10px, 0, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
         }
         @keyframes wand-sweep {
-            0% { left: 0%; opacity: 0; }
+            0% {
+                transform: translate3d(0, 0, 0);
+                opacity: 0;
+            }
             10% { opacity: 1; }
             90% { opacity: 1; }
-            100% { left: 100%; opacity: 0; }
+            100% {
+                transform: translate3d(var(--wand-travel-distance, 230px), 0, 0);
+                opacity: 0;
+            }
+        }
+
+        .brand-wand {
+            will-change: transform, opacity;
+            animation: wand-sweep 1.5s cubic-bezier(0.25,1,0.5,1) 0.5s forwards;
+        }
+
+        .brand-mark {
+            will-change: transform, opacity;
+            opacity: 0;
+            transform: translate3d(-10px, 0, 0);
+            animation: prometo-text-reveal 0.95s cubic-bezier(0.25, 1, 0.5, 1) 0.55s forwards;
         }
 
         main > section:not(:first-of-type),
         #seo-faq {
             content-visibility: auto;
             contain-intrinsic-size: 900px;
+        }
+
+        @media (max-width: 767px) {
+            .hero-animated-tracks,
+            .hero-packets {
+                display: none;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -1387,11 +1419,11 @@
         <nav class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
             <a href="/" aria-label="Zur Startseite von Prometo"
                 class="group relative inline-block overflow-hidden h-8">
-                <div class="absolute top-0 bottom-0 w-[4px] z-20 bg-cyan-400 blur-[2px] opacity-0"
-                    style="box-shadow: 0 0 15px 5px rgba(34, 211, 238, 0.8); animation: wand-sweep 1.5s cubic-bezier(0.25,1,0.5,1) 0.5s forwards;">
+                <div class="brand-wand absolute top-0 bottom-0 w-[4px] z-20 bg-cyan-400 blur-[2px] opacity-0"
+                    style="box-shadow: 0 0 15px 5px rgba(34, 211, 238, 0.8);">
                 </div>
-                <img src="Logo/Wort-Bild.svg" alt="Prometo" class="h-8 w-auto relative z-10" width="230" height="37"
-                    style="filter: brightness(0) invert(1); clip-path: inset(0 100% 0 0); animation: prometo-text-reveal 1.5s cubic-bezier(0.25,1,0.5,1) 0.5s forwards;" />
+                <img src="Logo/Wort-Bild.svg" alt="Prometo" class="brand-mark h-8 w-auto relative z-10" width="230" height="37"
+                    style="filter: brightness(0) invert(1);" />
             </a>
             <div class="hidden md:flex items-center gap-10">
                 <a class="font-headline tracking-wide text-sm text-primary transition-colors nav-link"
@@ -1504,7 +1536,7 @@
                     </g>
 
                     <!-- Animated Glowing Lines -->
-                    <g stroke-width="5">
+                    <g stroke-width="5" class="hero-animated-tracks">
                         <!-- Cyan Line -->
                         <path id="svgPath1" d="M -100 200 C 400 200, 500 450, 720 325 C 800 325, 1000 200, 1540 200"
                             stroke="#45dee7" class="path-animated" />
@@ -1520,7 +1552,7 @@
                     </g>
 
                     <!-- Data Packet Dots -->
-                    <g>
+                    <g class="hero-packets">
                         <circle r="3.5" fill="#45dee7" opacity="0.9">
                             <animateMotion dur="4s" repeatCount="indefinite" begin="0s">
                                 <mpath href="#svgPath1" />
