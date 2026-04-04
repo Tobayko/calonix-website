@@ -47,6 +47,7 @@
     <meta name="twitter:image:alt" content="Prometo Material- und Projektübersicht für Heizlast-Schätzungen" />
 
     <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
         body {
             background:
@@ -268,29 +269,64 @@
                     <span aria-current="page">Schätzwerte</span>
                 </nav>
 
-                <div class="max-w-4xl">
-                    <span class="badge mb-6">Schätzwerte</span>
-                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                        Heizlast schätzen: Schätzwerte, W/m² und Grenzen der Überschlagsrechnung
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
-                        Für die erste Projektorientierung kann eine grobe Heizlast-Schätzung sinnvoll sein. Diese Seite
-                        zeigt, wie W/m²-Werte eingeordnet werden, welche Größenordnungen typisch sind und ab wann die
-                        Schätzung nicht mehr reicht.
-                    </p>
-                    <div class="formula-box text-white text-lg font-headline font-bold mb-6">
-                        Heizlast ≈ Wohnfläche × spezifische Heizlast in W/m²
+                <div class="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+                    <div class="reveal">
+                        <span class="badge mb-6">Schätzwerte</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Heizlast schätzen: Schätzwerte, W/m² und Grenzen der Überschlagsrechnung
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+                            Für die erste Projektorientierung kann eine grobe Heizlast-Schätzung sinnvoll sein. Diese Seite
+                            zeigt, wie W/m²-Werte eingeordnet werden, welche Größenordnungen typisch sind und ab wann die
+                            Schätzung nicht mehr reicht.
+                        </p>
+                        <div class="formula-box text-white text-lg font-headline font-bold mb-6">
+                            Heizlast ≈ Wohnfläche × spezifische Heizlast in W/m²
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed max-w-3xl">
+                            Wichtig: Die Formel ist nur ein Überschlag. Sie ersetzt keine raumweise oder methodische
+                            Heizlastberechnung.
+                        </p>
                     </div>
-                    <p class="text-sm text-gray-400 leading-relaxed max-w-3xl">
-                        Wichtig: Die Formel ist nur ein Überschlag. Sie ersetzt keine raumweise oder methodische
-                        Heizlastberechnung.
-                    </p>
+                    <div class="glass-panel story-panel rounded-[2rem] p-6 reveal reveal-delay-1">
+                        <div class="range-grid">
+                            <div class="range-row">
+                                <span class="range-label">Altbau</span>
+                                <div class="range-track"><span class="range-fill" style="--fill: 88%;"></span></div>
+                                <span class="range-value">100-150 W/m²</span>
+                            </div>
+                            <div class="range-row">
+                                <span class="range-label">Bestand</span>
+                                <div class="range-track"><span class="range-fill" style="--fill: 68%;"></span></div>
+                                <span class="range-value">70-100 W/m²</span>
+                            </div>
+                            <div class="range-row">
+                                <span class="range-label">saniert</span>
+                                <div class="range-track"><span class="range-fill" style="--fill: 48%;"></span></div>
+                                <span class="range-value">50-70 W/m²</span>
+                            </div>
+                            <div class="range-row">
+                                <span class="range-label">Neubau</span>
+                                <div class="range-track"><span class="range-fill" style="--fill: 34%;"></span></div>
+                                <span class="range-value">30-50 W/m²</span>
+                            </div>
+                        </div>
+                        <div class="formula-pills">
+                            <span class="formula-pill">Flaeche</span>
+                            <span class="formula-pill">W/m²-Wert</span>
+                            <span class="formula-pill">grobe kW-Einordnung</span>
+                        </div>
+                        <p class="section-note">
+                            Die Balken zeigen typische Groessenordnungen fuer den ersten Ueberblick. Je heterogener ein
+                            Projekt wird, desto frueher reicht die reine Flaechenlogik nicht mehr.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="px-6 pb-8 md:pb-12">
-            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] overflow-hidden">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] overflow-hidden reveal">
                 <div class="overflow-x-auto">
                     <table class="w-full min-w-[720px]">
                         <thead>
@@ -329,14 +365,14 @@
 
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-                <div>
+                <div class="reveal">
                     <span class="badge mb-6">Beispiele</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Drei einfache Überschlagsbeispiele
                     </h2>
                 </div>
                 <div class="space-y-5">
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
                         <h3 class="text-xl font-bold text-white mb-3">Altbau, 150 m²</h3>
                         <p class="text-gray-400 leading-relaxed">
                             150 m² × 120 W/m² = <strong class="text-white">18.000 W</strong><br />
@@ -344,14 +380,14 @@
                             Bestandsfällen liegen kann.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
                         <h3 class="text-xl font-bold text-white mb-3">Teilsanierter Bestand, 120 m²</h3>
                         <p class="text-gray-400 leading-relaxed">
                             120 m² × 85 W/m² = <strong class="text-white">10.200 W</strong><br />
                             Ein sinnvoller Orientierungswert für die Vorqualifikation, aber keine raumweise Aussage.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
                         <h3 class="text-xl font-bold text-white mb-3">Gut sanierter Bestand, 140 m²</h3>
                         <p class="text-gray-400 leading-relaxed">
                             140 m² × 60 W/m² = <strong class="text-white">8.400 W</strong><br />
@@ -365,21 +401,21 @@
 
         <section class="px-6 pb-16 md:pb-24">
             <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-3">
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Wann Schätzen sinnvoll ist</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Für erste Budgetgespräche, Vorqualifikation oder eine grobe Einordnung im frühen Projektstadium
                         kann der W/m²-Ansatz sinnvoll sein.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Wann es kritisch wird</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Bei Wärmepumpe, Heizflächenauslegung, Sanierungsentscheidungen oder sehr heterogenen Räumen ist
                         eine reine Flächenlogik oft zu grob.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Wie du sauber weitergehst</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Wenn die Schätzung nicht mehr reicht, hilft dir die Seite
@@ -392,14 +428,14 @@
 
         <section class="px-6 pb-16 md:pb-24" id="faq">
             <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl">
+                <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">FAQ</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Häufige Fragen zu Heizlast-Schätzwerten
                     </h2>
                 </div>
                 <div class="space-y-4">
-                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
                         <summary class="text-lg font-headline font-bold text-gray-200">Welche W/m²-Werte sind typische Schätzbereiche?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Grob liegen viele unsanierte Altbauten bei etwa 100 bis 150 W/m², teilsanierte Bestände
@@ -407,14 +443,14 @@
                             bei 30 bis 50 W/m².
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Wann reicht der W/m²-Ansatz nicht mehr aus?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Sobald raumweise Unterschiede wichtig werden oder eine belastbare Systementscheidung ansteht,
                             solltest du eine strukturierte Berechnung bevorzugen.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Wo finde ich die Formeln hinter der Methode?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Dafür ist die Seite
@@ -441,6 +477,7 @@
             </div>
         </div>
     </footer>
+    <script src="/assets/page-effects.js" defer></script>
 </body>
 
 </html>

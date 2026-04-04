@@ -47,6 +47,7 @@
     <meta name="twitter:image:alt" content="Prometo Heizlast App mit planbasiertem Workflow" />
 
     <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
         body {
             background:
@@ -237,7 +238,7 @@
                 </nav>
 
                 <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-                    <div>
+                    <div class="reveal">
                         <span class="badge mb-6">Heizlast App</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
                             Heizlastberechnung App für SHK-Betriebe und Baustelle
@@ -258,7 +259,7 @@
                             </a>
                         </div>
                         <div class="grid gap-4 sm:grid-cols-2">
-                            <div class="glass-panel rounded-3xl p-5">
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
                                 <h2 class="text-xl font-bold text-white mb-2">Planbasiert</h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
                                     Der Einstieg erfolgt aus vorhandenen Grundrissen. Das passt zu vielen
@@ -266,7 +267,7 @@
                                     Planunterlagen.
                                 </p>
                             </div>
-                            <div class="glass-panel rounded-3xl p-5">
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
                                 <h2 class="text-xl font-bold text-white mb-2">Mobil weiterführbar</h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
                                     Projektstände lassen sich auf Baustelle und im Büro entlang derselben Struktur
@@ -276,11 +277,46 @@
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-[2rem] p-4 md:p-6">
-                        <img src="/assets/showcase/featured/hydraulic-balance.webp"
-                            alt="Prometo Heizlast App auf Basis von Grundriss und Raumdaten"
-                            width="720" height="1600" loading="eager" fetchpriority="high" decoding="async"
-                            class="mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                    <div class="hero-visual reveal reveal-delay-2">
+                        <div class="ambient-orb ambient-orb--a"></div>
+                        <div class="ambient-orb ambient-orb--b"></div>
+                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6">
+                            <img src="/assets/showcase/featured/hydraulic-balance.webp"
+                                alt="Prometo Heizlast App auf Basis von Grundriss und Raumdaten"
+                                width="720" height="1600" loading="eager" fetchpriority="high" decoding="async"
+                                class="hero-device mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                        </div>
+                        <div class="hero-chip hero-chip--top">
+                            <strong>Grundriss als Start</strong>
+                            <span>Heizlast beginnt direkt in der vorhandenen Planlogik</span>
+                        </div>
+                        <div class="hero-chip hero-chip--mid">
+                            <strong>Raeume bleiben verbunden</strong>
+                            <span>Bauteile, Eingaben und Raumdaten laufen in einem Modell zusammen</span>
+                        </div>
+                        <div class="hero-chip hero-chip--bottom">
+                            <strong>Fuer Baustelle und Buero</strong>
+                            <span>Pruefen, nachtragen und abstimmen ohne Medienbruch</span>
+                        </div>
+                        <div class="glass-panel signal-panel rounded-3xl p-4">
+                            <div class="signal-stack">
+                                <div class="signal-row">
+                                    <span class="signal-label">Grundriss</span>
+                                    <div class="signal-track"><span class="signal-fill" style="--fill: 90%;"></span></div>
+                                    <span class="signal-value">direkt</span>
+                                </div>
+                                <div class="signal-row">
+                                    <span class="signal-label">Raeume</span>
+                                    <div class="signal-track"><span class="signal-fill" style="--fill: 84%;"></span></div>
+                                    <span class="signal-value">strukturiert</span>
+                                </div>
+                                <div class="signal-row">
+                                    <span class="signal-label">Mobil</span>
+                                    <div class="signal-track"><span class="signal-fill" style="--fill: 80%;"></span></div>
+                                    <span class="signal-value">praxisnah</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -288,7 +324,7 @@
 
         <section class="px-6 pb-8 md:pb-12">
             <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-3">
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Warum eine Heizlast App?</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Viele SHK-Betriebe brauchen schnelle Orientierung und saubere Projektdaten zugleich. Eine App
@@ -296,14 +332,14 @@
                         Projektkontext eingebettet ist.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Warum dieser Workflow?</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Für viele SHK-Fälle ist ein sauberer PDF- und Grundriss-Workflow die passendere
                         Arbeitsgrundlage, weil vorhandene Pläne direkt weitergeführt werden können.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Warum raumweise Struktur?</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Räume, Außenbauteile und Randbedingungen bleiben in einem Modell verbunden. Das verbessert
@@ -315,14 +351,14 @@
 
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-                <div>
+                <div class="reveal">
                     <span class="badge mb-6">Praxis</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Wann die Heizlastberechnung App in der Praxis hilft
                     </h2>
                 </div>
-                <div class="space-y-5">
-                    <article class="glass-panel rounded-3xl p-6">
+                <div class="space-y-5 flow-strip">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover flow-step" data-step="1">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Fall 1</p>
                         <h3 class="text-xl font-bold text-white mb-3">Bestand mit vorhandenem Grundriss</h3>
                         <p class="text-gray-400 leading-relaxed">
@@ -330,7 +366,7 @@
                             einen separaten Erfassungsprozess aufzubauen.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover flow-step" data-step="2">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Fall 2</p>
                         <h3 class="text-xl font-bold text-white mb-3">Baustellenkorrekturen und Rückfragen</h3>
                         <p class="text-gray-400 leading-relaxed">
@@ -338,7 +374,7 @@
                             Projektstruktur weitergeführt werden können.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover flow-step" data-step="3">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Fall 3</p>
                         <h3 class="text-xl font-bold text-white mb-3">SHK-Team mit Büro und Monteur</h3>
                         <p class="text-gray-400 leading-relaxed">
@@ -352,14 +388,14 @@
 
         <section class="px-6 pb-16 md:pb-24">
             <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl">
+                <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">Weiterlesen</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Heizlast verstehen statt nur mobil bedienen
                     </h2>
                 </div>
                 <div class="grid gap-6 md:grid-cols-3">
-                    <article class="glass-panel rounded-3xl p-8">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                         <h3 class="text-2xl font-bold text-white mb-4">Heizlast-Hub</h3>
                         <p class="text-gray-400 leading-relaxed mb-6">
                             Der Überblick über Suchintentionen, Einsatzfälle und Tool-Typen rund um Heizlastberechnung.
@@ -368,7 +404,7 @@
                             Zum Hub
                         </a>
                     </article>
-                    <article class="glass-panel rounded-3xl p-8">
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                         <h3 class="text-2xl font-bold text-white mb-4">DIN EN 12831 erklärt</h3>
                         <p class="text-gray-400 leading-relaxed mb-6">
                             Mit Formeln und Beispielrechnung für Transmissions- und Lüftungsverluste.
@@ -377,7 +413,7 @@
                             Tutorial lesen
                         </a>
                     </article>
-                    <article class="glass-panel rounded-3xl p-8">
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
                         <h3 class="text-2xl font-bold text-white mb-4">Heizlast schätzen</h3>
                         <p class="text-gray-400 leading-relaxed mb-6">
                             W/m²-Schätzwerte, Beispiele und Grenzen der Überschlagsrechnung für den frühen Projektstart.
@@ -392,28 +428,28 @@
 
         <section class="px-6 pb-16 md:pb-24" id="faq">
             <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl">
+                <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">FAQ</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Häufige Fragen zur Heizlast App
                     </h2>
                 </div>
                 <div class="space-y-4">
-                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
                         <summary class="text-lg font-headline font-bold text-gray-200">Warum setzt Prometo auf Grundrisse als Arbeitsgrundlage?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Viele Projekte liegen bereits als PDF-Bauplan vor. Genau dort setzt Prometo an, damit
                             Raumstruktur und Heizlast ohne zusätzlichen Scan-Workflow weiterbearbeitet werden können.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Kann ich die App auch für Bestandsgebäude nutzen?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Ja. Besonders im Bestand ist ein planbasierter Workflow hilfreich, wenn Eingaben,
                             Korrekturen und Projektkommunikation zusammenlaufen sollen.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Wo finde ich die Formeln hinter der Heizlast?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Dafür ist die Seite
@@ -440,6 +476,7 @@
             </div>
         </div>
     </footer>
+    <script src="/assets/page-effects.js" defer></script>
 </body>
 
 </html>

@@ -47,6 +47,7 @@
     <meta name="twitter:image:alt" content="Prometo Diagrammansicht für Heizlastberechnung" />
 
     <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
         body {
             background:
@@ -273,30 +274,60 @@
                     <span aria-current="page">DIN EN 12831 erklärt</span>
                 </nav>
 
-                <div class="max-w-4xl">
-                    <span class="badge mb-6">Tutorial</span>
-                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                        Heizlastberechnung nach DIN EN 12831 einfach erklärt
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
-                        Diese Seite erklärt den Rechengedanken hinter der Heizlast didaktisch: Welche Rolle
-                        Transmissionswärmeverluste, Lüftungswärmeverluste und Aufheizzuschläge spielen und wie eine
-                        vereinfachte Beispielrechnung aufgebaut ist.
-                    </p>
-                    <div class="formula-box text-white text-lg font-headline font-bold mb-6">
-                        Φ<sub>HL</sub> ≈ Φ<sub>T</sub> + Φ<sub>V</sub> + Φ<sub>AH</sub>
+                <div class="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+                    <div class="reveal">
+                        <span class="badge mb-6">Tutorial</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Heizlastberechnung nach DIN EN 12831 einfach erklärt
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+                            Diese Seite erklärt den Rechengedanken hinter der Heizlast didaktisch: Welche Rolle
+                            Transmissionswärmeverluste, Lüftungswärmeverluste und Aufheizzuschläge spielen und wie eine
+                            vereinfachte Beispielrechnung aufgebaut ist.
+                        </p>
+                        <div class="formula-box text-white text-lg font-headline font-bold mb-6">
+                            Φ<sub>HL</sub> ≈ Φ<sub>T</sub> + Φ<sub>V</sub> + Φ<sub>AH</sub>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed max-w-3xl">
+                            Hinweis: Die Formeln auf dieser Seite dienen der verständlichen Erklärung. Sie ersetzen weder
+                            den Normtext noch die fachliche Anwendung im konkreten Projekt.
+                        </p>
                     </div>
-                    <p class="text-sm text-gray-400 leading-relaxed max-w-3xl">
-                        Hinweis: Die Formeln auf dieser Seite dienen der verständlichen Erklärung. Sie ersetzen weder
-                        den Normtext noch die fachliche Anwendung im konkreten Projekt.
-                    </p>
+                    <div class="glass-panel story-panel rounded-[2rem] p-6 reveal reveal-delay-1">
+                        <div class="bar-grid">
+                            <div class="bar-row">
+                                <span class="bar-label">Transmission</span>
+                                <div class="bar-track"><span class="bar-fill" style="--fill: 62%;"></span></div>
+                                <span class="bar-value">Bauteile</span>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">Lueftung</span>
+                                <div class="bar-track"><span class="bar-fill" style="--fill: 39%;"></span></div>
+                                <span class="bar-value">Luftwechsel</span>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">Zuschlag</span>
+                                <div class="bar-track"><span class="bar-fill" style="--fill: 18%;"></span></div>
+                                <span class="bar-value">optional</span>
+                            </div>
+                        </div>
+                        <div class="formula-pills">
+                            <span class="formula-pill">U × A × ΔT</span>
+                            <span class="formula-pill">0,34 × n × V × ΔT</span>
+                            <span class="formula-pill">didaktische Summe</span>
+                        </div>
+                        <p class="section-note">
+                            Die Grafik zeigt keine festen Normanteile, sondern macht sichtbar, aus welchen
+                            Verlustbausteinen die Heizlast in der vereinfachten Darstellung zusammengesetzt wird.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="px-6 pb-8 md:pb-12">
             <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">1. Überschlag vs. Methode</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Eine Überschlagsrechnung arbeitet oft mit W/m²-Werten. Die DIN-orientierte Betrachtung trennt
@@ -304,7 +335,7 @@
                         Heizlast raumweise nachvollziehbar.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">2. Temperaturdifferenz als Basis</h2>
                     <p class="text-gray-400 leading-relaxed">
                         In der vereinfachten Darstellung ist ΔT die Differenz zwischen Innen- und Außentemperatur.
@@ -316,7 +347,7 @@
 
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto grid gap-8 lg:grid-cols-3">
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Transmissionswärmeverlust</h2>
                     <div class="formula-box mb-5 font-headline text-white text-lg">
                         Φ<sub>T</sub> = Σ(U × A × ΔT)
@@ -327,7 +358,7 @@
                         größere Temperaturdifferenzen erhöhen den Verlust.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Lüftungswärmeverlust</h2>
                     <div class="formula-box mb-5 font-headline text-white text-lg">
                         Φ<sub>V</sub> ≈ 0,34 × n × V × ΔT
@@ -337,7 +368,7 @@
                         wird beschrieben, wie stark Wärme über Lüftung und Infiltration verloren geht.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Aufheizzuschlag</h2>
                     <div class="formula-box mb-5 font-headline text-white text-lg">
                         Φ<sub>HL</sub> ≈ Φ<sub>T</sub> + Φ<sub>V</sub> + Φ<sub>AH</sub>
@@ -352,7 +383,7 @@
 
         <section class="px-6 pb-16 md:pb-24">
             <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-                <div>
+                <div class="reveal">
                     <span class="badge mb-6">Beispielzimmer</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Vereinfachte Beispielrechnung für einen Raum
@@ -363,7 +394,7 @@
                     </p>
                 </div>
                 <div class="space-y-5">
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
                         <h3 class="text-xl font-bold text-white mb-3">Annahmen</h3>
                         <ul class="space-y-2 text-gray-400 leading-relaxed text-sm md:text-base">
                             <li>Raumfläche: 18 m²</li>
@@ -375,7 +406,7 @@
                             <li>Luftwechselrate: n = 0,5 1/h</li>
                         </ul>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
                         <h3 class="text-xl font-bold text-white mb-3">Transmissionsanteil</h3>
                         <p class="text-gray-400 leading-relaxed">
                             Außenwände: 22 × 0,35 × 32 = 246,4 W<br />
@@ -383,13 +414,13 @@
                             Vereinfachter Transmissionswärmeverlust: <strong class="text-white">387,2 W</strong>
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
                         <h3 class="text-xl font-bold text-white mb-3">Lüftungsanteil</h3>
                         <p class="text-gray-400 leading-relaxed">
                             0,34 × 0,5 × 45 × 32 = <strong class="text-white">244,8 W</strong>
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
                         <h3 class="text-xl font-bold text-white mb-3">Didaktische Summe</h3>
                         <p class="text-gray-400 leading-relaxed">
                             Φ<sub>HL</sub> ≈ 387,2 W + 244,8 W = <strong class="text-white">632 W</strong><br />
@@ -402,7 +433,7 @@
 
         <section class="px-6 pb-16 md:pb-24">
             <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-3">
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Was dieses Beispiel zeigt</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Heizlast ergibt sich nicht nur aus Fläche, sondern aus Bauteilen, U-Werten, Temperaturen und
@@ -410,14 +441,14 @@
                         ausfallen können.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Was noch fehlt</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Je nach Projekt spielen weitere Bauteile, angrenzende unbeheizte Bereiche, Nutzungsannahmen
                         und methodische Details eine Rolle. Genau deshalb ist dies nur eine Lehrseite.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Wie Prometo dazu passt</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Prometo ordnet Räume, Flächen und Randbedingungen planbasiert. Das hilft, die Logik hinter der
@@ -429,28 +460,28 @@
 
         <section class="px-6 pb-16 md:pb-24" id="faq">
             <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl">
+                <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">FAQ</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Häufige Fragen zur DIN EN 12831
                     </h2>
                 </div>
                 <div class="space-y-4">
-                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
                         <summary class="text-lg font-headline font-bold text-gray-200">Ist das hier der vollständige Normtext?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Nein. Diese Seite ist eine didaktische Erklärung. Sie ersetzt weder den Normtext noch die
                             fachliche Anwendung im konkreten Projekt.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Welche Formel wird für den Lüftungswärmeverlust erklärt?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Vereinfacht wird Φ<sub>V</sub> ≈ 0,34 × n × V × ΔT erläutert. Das ist eine didaktische
                             Formel für das Verständnis, nicht die vollständige Normanwendung.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Wie steige ich einfacher ein, wenn ich nur überschlagen will?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Dann starte mit
@@ -476,6 +507,7 @@
             </div>
         </div>
     </footer>
+    <script src="/assets/page-effects.js" defer></script>
 </body>
 
 </html>

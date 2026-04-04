@@ -47,6 +47,7 @@
     <meta name="twitter:image:alt" content="Prometo Tools Übersicht als Bluebeam Alternative für SHK" />
 
     <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
         body {
             background:
@@ -245,7 +246,7 @@
                 </nav>
 
                 <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-                    <div>
+                    <div class="reveal">
                         <span class="badge mb-6">Vergleich</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
                             Bluebeam Alternative für SHK und TGA
@@ -265,7 +266,7 @@
                                 Digitale Aufmaß App
                             </a>
                         </div>
-                        <div class="glass-panel rounded-3xl p-5">
+                        <div class="glass-panel rounded-3xl p-5 lift-on-hover">
                             <p class="text-sm text-gray-400 leading-relaxed">
                                 Hinweis zur Einordnung: Bluebeam ist eine Marke des jeweiligen Rechteinhabers. Diese
                                 Seite versteht sich als sachliche Vergleichsseite für Suchende aus dem SHK-Umfeld.
@@ -273,18 +274,86 @@
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-[2rem] p-4 md:p-6">
-                        <img src="/assets/showcase/featured/tools.webp"
-                            alt="Prometo Tools Übersicht für SHK-Prozesse"
-                            width="720" height="1600" loading="eager" fetchpriority="high" decoding="async"
-                            class="mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                    <div class="hero-visual reveal reveal-delay-2">
+                        <div class="ambient-orb ambient-orb--a"></div>
+                        <div class="ambient-orb ambient-orb--b"></div>
+                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6">
+                            <img src="/assets/showcase/featured/tools.webp"
+                                alt="Prometo Tools Uebersicht fuer SHK-Prozesse"
+                                width="720" height="1600" loading="eager" fetchpriority="high" decoding="async"
+                                class="hero-device mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                        </div>
+                        <div class="hero-chip hero-chip--top">
+                            <strong>SHK statt Generalist</strong>
+                            <span>Weniger allgemeines PDF-Markup, mehr Projektlogik fuer Handwerk und TGA</span>
+                        </div>
+                        <div class="hero-chip hero-chip--mid">
+                            <strong>Aufmass + Heizlast</strong>
+                            <span>Prometo endet nicht bei Markups, sondern fuehrt in Folgeschritte weiter</span>
+                        </div>
+                        <div class="hero-chip hero-chip--bottom">
+                            <strong>Baustelle inklusive</strong>
+                            <span>Mobile Nutzung ist Teil des Kern-Workflows und nicht nur Anhang</span>
+                        </div>
+                        <div class="glass-panel signal-panel rounded-3xl p-4">
+                            <div class="signal-stack">
+                                <div class="signal-row">
+                                    <span class="signal-label">SHK-Fokus</span>
+                                    <div class="signal-track"><span class="signal-fill" style="--fill: 88%;"></span></div>
+                                    <span class="signal-value">hoch</span>
+                                </div>
+                                <div class="signal-row">
+                                    <span class="signal-label">Projektlogik</span>
+                                    <div class="signal-track"><span class="signal-fill" style="--fill: 84%;"></span></div>
+                                    <span class="signal-value">raumweise</span>
+                                </div>
+                                <div class="signal-row">
+                                    <span class="signal-label">Folgepfade</span>
+                                    <div class="signal-track"><span class="signal-fill" style="--fill: 81%;"></span></div>
+                                    <span class="signal-value">Heizlast</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="px-6 pb-12 md:pb-16">
-            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] overflow-hidden">
+            <div class="max-w-screen-xl mx-auto grid gap-8 xl:grid-cols-[0.82fr_1.18fr] mb-8">
+                <div class="glass-panel story-panel rounded-[2rem] p-6 reveal">
+                    <div class="compare-grid">
+                        <div class="compare-row">
+                            <span class="compare-name">SHK-Fokus</span>
+                            <div class="compare-meter"><span class="compare-fill compare-fill--prometo" style="--fill: 90%;"></span></div>
+                            <div class="compare-meter"><span class="compare-fill compare-fill--generic" style="--fill: 42%;"></span></div>
+                        </div>
+                        <div class="compare-row">
+                            <span class="compare-name">Baustelle</span>
+                            <div class="compare-meter"><span class="compare-fill compare-fill--prometo" style="--fill: 82%;"></span></div>
+                            <div class="compare-meter"><span class="compare-fill compare-fill--generic" style="--fill: 48%;"></span></div>
+                        </div>
+                        <div class="compare-row">
+                            <span class="compare-name">Folgeprozesse</span>
+                            <div class="compare-meter"><span class="compare-fill compare-fill--prometo" style="--fill: 87%;"></span></div>
+                            <div class="compare-meter"><span class="compare-fill compare-fill--generic" style="--fill: 36%;"></span></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-[1fr_1fr] gap-3 mt-4">
+                        <span class="compare-caption">Prometo</span>
+                        <span class="compare-caption">allgemeine PDF-Tools</span>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-1">
+                    <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">Vergleich auf einen Blick</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Die Balken visualisieren keine objektiven Scores, sondern den Schwerpunkt der beiden
+                        Werkzeugklassen aus Sicht typischer SHK-Suchintentionen: Fokus, Baustellennahe und direkte
+                        Weiterverarbeitung.
+                    </p>
+                </div>
+            </div>
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] overflow-hidden reveal reveal-delay-2">
                 <div class="overflow-x-auto">
                     <table class="w-full min-w-[720px]">
                         <thead>
@@ -323,7 +392,7 @@
 
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-3">
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Wenn du SHK statt Generalisten-Workflow suchst</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Viele Suchende brauchen nicht jedes PDF-Feature der Welt, sondern eine Lösung für
@@ -331,7 +400,7 @@
                         positioniert.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Wenn Aufmaß und Heizlast zusammengehören</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Die Vergleichsseite macht den Unterschied klar: Prometo endet nicht bei Markups, sondern
@@ -339,7 +408,7 @@
                         <a href="/heizlastberechnung/" class="text-primary underline underline-offset-2">Heizlastberechnung</a>.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">Wenn die Baustelle mitdenken soll</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Für Handwerk und Sanierung ist mobile Nutzung kein Extra. Deshalb ist Prometo enger an der
@@ -351,7 +420,7 @@
 
         <section class="px-6 pb-16 md:pb-24">
             <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-                <div>
+                <div class="reveal">
                     <span class="badge mb-6">Warum diese Seite ranken kann</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Vergleichsseiten funktionieren nur, wenn sie Suchenden wirklich helfen
@@ -362,8 +431,8 @@
                         dem Handwerk.
                     </p>
                 </div>
-                <div class="space-y-5">
-                    <article class="glass-panel rounded-3xl p-6">
+                <div class="space-y-5 flow-strip">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover flow-step" data-step="1">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Nutzen 1</p>
                         <h3 class="text-xl font-bold text-white mb-3">Klare Einordnung statt pauschaler Behauptung</h3>
                         <p class="text-gray-400 leading-relaxed">
@@ -371,7 +440,7 @@
                             SHK-spezifische Lösung wie Prometo Vorteile bringt.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover flow-step" data-step="2">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Nutzen 2</p>
                         <h3 class="text-xl font-bold text-white mb-3">Relevante Folgepfade im Cluster</h3>
                         <p class="text-gray-400 leading-relaxed">
@@ -380,7 +449,7 @@
                             oder strukturierter Heizlast. Diese Wege sind intern sauber verlinkt.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover flow-step" data-step="3">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Nutzen 3</p>
                         <h3 class="text-xl font-bold text-white mb-3">Bessere Passung für SHK-Suchintention</h3>
                         <p class="text-gray-400 leading-relaxed">
@@ -394,28 +463,28 @@
 
         <section class="px-6 pb-16 md:pb-24" id="faq">
             <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl">
+                <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">FAQ</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Häufige Fragen zur Bluebeam Alternative
                     </h2>
                 </div>
                 <div class="space-y-4">
-                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
                         <summary class="text-lg font-headline font-bold text-gray-200">Wann ist Prometo die bessere Bluebeam Alternative?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Vor allem dann, wenn du im SHK- oder TGA-Kontext arbeitest und mehr brauchst als
                             PDF-Markups: also strukturiertes Aufmaß, Raumdaten und Heizlastlogik.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Ist der Vergleich trotzdem fair?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Ja. Die Seite stellt nicht in Abrede, dass allgemeine PDF-Tools ihre Stärken haben. Sie
                             beschreibt nur klar, warum Prometo für SHK-orientierte Anwendungsfälle passender sein kann.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Kann ich mit Prometo mehr als PDFs markieren?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Ja. Genau darin liegt der Kern der Alternative: Aufmaßdaten sind der Startpunkt eines
@@ -427,7 +496,7 @@
         </section>
 
         <section class="px-6 pb-20 md:pb-28">
-            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
                 <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
                     <div>
                         <span class="badge mb-6">Nächster Schritt</span>
@@ -473,6 +542,7 @@
             </div>
         </div>
     </footer>
+    <script src="/assets/page-effects.js" defer></script>
 </body>
 
 </html>

@@ -47,6 +47,7 @@
     <meta name="twitter:image:alt" content="Prometo Oberfläche für PDF-Import und digitales Aufmaß" />
 
     <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
         body {
             background:
@@ -244,7 +245,7 @@
                 </nav>
 
                 <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-                    <div>
+                    <div class="reveal">
                         <span class="badge mb-6">Digitales Aufmaß</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
                             Digitale Aufmaß App für PDF-Grundrisse und Baustelle
@@ -265,14 +266,14 @@
                             </a>
                         </div>
                         <div class="grid gap-4 sm:grid-cols-2">
-                            <div class="glass-panel rounded-3xl p-5">
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
                                 <h2 class="text-xl font-bold text-white mb-2">Vom PDF ins Projekt</h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
                                     Statt bloßer Markierung im Plan werden Räume und Bauteile direkt in ein strukturiertes
                                     Projekt überführt.
                                 </p>
                             </div>
-                            <div class="glass-panel rounded-3xl p-5">
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
                                 <h2 class="text-xl font-bold text-white mb-2">Für Tablet und iPad</h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
                                     Mobile Erfassung auf der Baustelle sorgt dafür, dass Korrekturen dort landen, wo sie
@@ -282,11 +283,46 @@
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-[2rem] p-4 md:p-6">
-                        <img src="/assets/showcase/featured/import-review.webp"
-                            alt="Prometo Bildschirm mit PDF-Import und digitalem Aufmaß"
-                            width="720" height="1600" loading="eager" fetchpriority="high" decoding="async"
-                            class="mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                    <div class="hero-visual reveal reveal-delay-2">
+                        <div class="ambient-orb ambient-orb--a"></div>
+                        <div class="ambient-orb ambient-orb--b"></div>
+                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6">
+                            <img src="/assets/showcase/featured/import-review.webp"
+                                alt="Prometo Bildschirm mit PDF-Import und digitalem Aufmass"
+                                width="720" height="1600" loading="eager" fetchpriority="high" decoding="async"
+                                class="hero-device mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                        </div>
+                        <div class="hero-chip hero-chip--top">
+                            <strong>PDF rein</strong>
+                            <span>Plan oeffnen und direkt als Projektbasis verwenden</span>
+                        </div>
+                        <div class="hero-chip hero-chip--mid">
+                            <strong>Raeume statt Markups</strong>
+                            <span>Aufmass wird strukturiert, nicht nur eingezeichnet</span>
+                        </div>
+                        <div class="hero-chip hero-chip--bottom">
+                            <strong>Baustelle mitgedacht</strong>
+                            <span>Aenderungen landen dort, wo sie spaeter weiterverarbeitet werden</span>
+                        </div>
+                        <div class="glass-panel signal-panel rounded-3xl p-4">
+                            <div class="signal-stack">
+                                <div class="signal-row">
+                                    <span class="signal-label">Plan</span>
+                                    <div class="signal-track"><span class="signal-fill" style="--fill: 91%;"></span></div>
+                                    <span class="signal-value">PDF</span>
+                                </div>
+                                <div class="signal-row">
+                                    <span class="signal-label">Aufmass</span>
+                                    <div class="signal-track"><span class="signal-fill" style="--fill: 86%;"></span></div>
+                                    <span class="signal-value">raumweise</span>
+                                </div>
+                                <div class="signal-row">
+                                    <span class="signal-label">Weitergabe</span>
+                                    <div class="signal-track"><span class="signal-fill" style="--fill: 78%;"></span></div>
+                                    <span class="signal-value">Heizlast</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -294,7 +330,7 @@
 
         <section class="px-6 pb-8 md:pb-12">
             <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-3">
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">1. Schneller Einstieg aus dem Plan</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Wer nach einer Aufmaß App sucht, sucht selten nur ein Zeichenwerkzeug. In der Praxis zählt,
@@ -302,7 +338,7 @@
                         überführt werden kann.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">2. Besser für spätere Berechnungen</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Ein digitales Aufmaß wird besonders wertvoll, wenn die Daten später für Heizlast,
@@ -310,7 +346,7 @@
                         ausgelegt.
                     </p>
                 </article>
-                <article class="glass-panel rounded-3xl p-8">
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
                     <h2 class="text-2xl font-bold text-white mb-4">3. Baustellentauglich statt bürolastig</h2>
                     <p class="text-gray-400 leading-relaxed">
                         Die Seite beantwortet deshalb bewusst Suchintentionen wie "Aufmaß App iPad" oder
@@ -323,7 +359,7 @@
 
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-                <div>
+                <div class="reveal">
                     <span class="badge mb-6">Praxisablauf</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Wie die Aufmaß App im Alltag eingesetzt wird
@@ -333,8 +369,8 @@
                         ersten Plan bis zur sauberen Weitergabe der Daten in Heizlast- und Projektprozesse.
                     </p>
                 </div>
-                <div class="space-y-5">
-                    <article class="glass-panel rounded-3xl p-6">
+                <div class="space-y-5 flow-strip">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover flow-step" data-step="1">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 1</p>
                         <h3 class="text-xl font-bold text-white mb-3">PDF öffnen und Projekt strukturieren</h3>
                         <p class="text-gray-400 leading-relaxed">
@@ -342,7 +378,7 @@
                             Bauteilen und nachvollziehbaren Informationen.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover flow-step" data-step="2">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 2</p>
                         <h3 class="text-xl font-bold text-white mb-3">Vor Ort ergänzen statt später nachpflegen</h3>
                         <p class="text-gray-400 leading-relaxed">
@@ -350,7 +386,7 @@
                             doppelte Erfassung im Büro.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover flow-step" data-step="3">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 3</p>
                         <h3 class="text-xl font-bold text-white mb-3">Daten direkt weiterverwenden</h3>
                         <p class="text-gray-400 leading-relaxed">
@@ -364,7 +400,7 @@
 
         <section class="px-6 pb-16 md:pb-24">
             <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl">
+                <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">Einsatzfelder</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Wann eine digitale Aufmaß App besonders stark ist</h2>
                     <p class="text-lg text-gray-400 leading-relaxed">
@@ -373,21 +409,21 @@
                     </p>
                 </div>
                 <div class="grid gap-6 md:grid-cols-3">
-                    <article class="glass-panel rounded-3xl p-8">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                         <h3 class="text-2xl font-bold text-white mb-4">Sanierungen im Bestand</h3>
                         <p class="text-gray-400 leading-relaxed">
                             Wenn Räume, Nischen und Bauteilanschlüsse vom Standard abweichen, hilft eine strukturierte
                             Erfassung mehr als lose Screenshots.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-8">
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                         <h3 class="text-2xl font-bold text-white mb-4">Aufmaß mit Team</h3>
                         <p class="text-gray-400 leading-relaxed">
                             Sobald Büro und Baustelle beteiligt sind, werden klare Zustände, Notizen und
                             Synchronisation wichtiger als reine Zeichenfunktionen.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-8">
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
                         <h3 class="text-2xl font-bold text-white mb-4">iPad-Workflows im SHK-Betrieb</h3>
                         <p class="text-gray-400 leading-relaxed">
                             Viele Betriebe suchen ausdrücklich nach einer Aufmaß App für iPad. Prometo adressiert diese
@@ -400,28 +436,28 @@
 
         <section class="px-6 pb-16 md:pb-24" id="faq">
             <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl">
+                <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">FAQ</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Häufige Fragen zur digitalen Aufmaß App
                     </h2>
                 </div>
                 <div class="space-y-4">
-                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
                         <summary class="text-lg font-headline font-bold text-gray-200">Kann ich mit Prometo direkt aus PDF-Grundrissen aufmessen?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Ja. Die Seite ist genau auf diesen Einstieg ausgerichtet: PDF rein, Räume und Bauteile
                             strukturiert erfassen, später für weitere Arbeitsschritte weiterverwenden.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Läuft die App auch auf Tablet oder iPad?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Ja. Die mobile Nutzung ist ein zentraler Teil des Produkts und keine nachträgliche
                             Zusatzfunktion.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Ist Prometo nur ein PDF-Tool?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Nein. Der Unterschied zu klassischen PDF-Markup-Tools liegt darin, dass Aufmaßdaten später
@@ -433,7 +469,7 @@
         </section>
 
         <section class="px-6 pb-20 md:pb-28">
-            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
                 <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
                     <div>
                         <span class="badge mb-6">Nächster Schritt</span>
@@ -479,6 +515,7 @@
             </div>
         </div>
     </footer>
+    <script src="/assets/page-effects.js" defer></script>
 </body>
 
 </html>
