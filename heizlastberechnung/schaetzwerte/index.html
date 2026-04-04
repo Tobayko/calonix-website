@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Heizlast schätzen: W/m², Beispiele und Grenzen | Prometo</title>
+    <meta name="description"
+        content="Heizlast schätzen mit W/m²: typische Orientierungswerte für Altbau, Bestand und Neubau plus klare Grenzen der Überschlagsrechnung." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/heizlastberechnung/schaetzwerte/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlastberechnung/schaetzwerte/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlastberechnung/schaetzwerte/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Heizlast schätzen: W/m², Beispiele und Grenzen | Prometo" />
+    <meta property="og:description"
+        content="W/m²-Schätzwerte für Altbau, teilsanierten Bestand, sanierten Bestand und Neubau plus klare Einordnung, wann Schätzen nicht mehr reicht." />
+    <meta property="og:url" content="https://prometo.app/heizlastberechnung/schaetzwerte/" />
+    <meta property="og:image" content="https://prometo.app/assets/showcase/featured/materials.webp" />
+    <meta property="og:image:alt" content="Prometo Material- und Projektübersicht für Heizlast-Schätzungen" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="720" />
+    <meta property="og:image:height" content="1600" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Heizlast schätzen: W/m², Beispiele und Grenzen | Prometo" />
+    <meta name="twitter:description"
+        content="W/m²-Schätzwerte für Altbau, teilsanierten Bestand, sanierten Bestand und Neubau plus klare Einordnung, wann Schätzen nicht mehr reicht." />
+    <meta name="twitter:image" content="https://prometo.app/assets/showcase/featured/materials.webp" />
+    <meta name="twitter:image:alt" content="Prometo Material- und Projektübersicht für Heizlast-Schätzungen" />
+
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top right, rgba(69, 222, 231, 0.12), transparent 40%),
+                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        th {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .formula-box {
+            border-radius: 1.5rem;
+            border: 1px solid rgba(69, 222, 231, 0.16);
+            background: rgba(69, 222, 231, 0.06);
+            padding: 1.25rem;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: #fff;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/"
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/heizlastberechnung/schaetzwerte/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Heizlastberechnung",
+                        "item": "https://prometo.app/heizlastberechnung/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Heizlast schätzen",
+                        "item": "https://prometo.app/heizlastberechnung/schaetzwerte/"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/heizlastberechnung/schaetzwerte/#webpage",
+                "url": "https://prometo.app/heizlastberechnung/schaetzwerte/",
+                "name": "Heizlast schätzen: W/m², Beispiele und Grenzen | Prometo",
+                "description": "Heizlast schätzen mit W/m²: typische Orientierungswerte für Altbau, Bestand und Neubau plus klare Grenzen der Überschlagsrechnung.",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/heizlastberechnung/schaetzwerte/#breadcrumb"
+                }
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://prometo.app/heizlastberechnung/schaetzwerte/#howto",
+                "name": "Heizlast mit W pro Quadratmeter überschlagen",
+                "description": "Einfache Überschlagsrechnung für eine erste Einordnung der Heizlast mit Wohnfläche und spezifischem Schätzwert.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "Gebäudetyp grob einordnen",
+                        "text": "Ordne das Gebäude einem Zustand wie unsanierter Altbau, teilsanierter Bestand, sanierter Bestand oder Neubau zu."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Spezifischen Schätzwert auswählen",
+                        "text": "Wähle einen konservativen Orientierungswert in W pro Quadratmeter passend zum Zustand des Gebäudes."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Wohnfläche mit W pro Quadratmeter multiplizieren",
+                        "text": "Die grobe Heizlast ergibt sich aus Wohnfläche mal spezifischer Heizlast."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Ergebnis als Orientierung einordnen",
+                        "text": "Das Ergebnis ist kein Ersatz für eine raumweise Berechnung, sondern nur ein erster Richtwert."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/heizlastberechnung/schaetzwerte/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Welche W/m²-Werte sind typische Schätzbereiche?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Typische Orientierungsbereiche liegen grob bei etwa 100 bis 150 W/m² für unsanierte Altbauten, 70 bis 100 W/m² für teilsanierte Bestände, 50 bis 70 W/m² für gut sanierte Bestände und 30 bis 50 W/m² für viele Neubauten."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wann reicht die Schätzung nicht mehr aus?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Spätestens bei Wärmepumpe, raumweiser Auslegung, Sanierungsentscheidung oder komplexen Bestandsprojekten sollte eine strukturierte Berechnung die bessere Grundlage sein."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wo finde ich die didaktische Formel-Erklärung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Dafür ist die Seite Heizlastberechnung nach DIN EN 12831 einfach erklärt gedacht."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Demo anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heizlastberechnung</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">Schätzwerte</span>
+                </nav>
+
+                <div class="max-w-4xl">
+                    <span class="badge mb-6">Schätzwerte</span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                        Heizlast schätzen: Schätzwerte, W/m² und Grenzen der Überschlagsrechnung
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+                        Für die erste Projektorientierung kann eine grobe Heizlast-Schätzung sinnvoll sein. Diese Seite
+                        zeigt, wie W/m²-Werte eingeordnet werden, welche Größenordnungen typisch sind und ab wann die
+                        Schätzung nicht mehr reicht.
+                    </p>
+                    <div class="formula-box text-white text-lg font-headline font-bold mb-6">
+                        Heizlast ≈ Wohnfläche × spezifische Heizlast in W/m²
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-3xl">
+                        Wichtig: Die Formel ist nur ein Überschlag. Sie ersetzt keine raumweise oder methodische
+                        Heizlastberechnung.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-8 md:pb-12">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[720px]">
+                        <thead>
+                            <tr class="border-b border-white/8">
+                                <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Gebäudezustand</th>
+                                <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Typischer Orientierungsbereich</th>
+                                <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Einordnung</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm md:text-base">
+                            <tr class="border-b border-white/6">
+                                <td class="px-6 py-5 text-white font-semibold">Unsanierter Altbau</td>
+                                <td class="px-6 py-5 text-gray-300">ca. 100 bis 150 W/m²</td>
+                                <td class="px-6 py-5 text-gray-400">Hohe Verluste, starke Streuung je nach Fenster, Dämmung und Nutzung</td>
+                            </tr>
+                            <tr class="border-b border-white/6">
+                                <td class="px-6 py-5 text-white font-semibold">Teilsanierter Bestand</td>
+                                <td class="px-6 py-5 text-gray-300">ca. 70 bis 100 W/m²</td>
+                                <td class="px-6 py-5 text-gray-400">Oft sinnvoll für erste Orientierung, aber nicht für finale Auslegung</td>
+                            </tr>
+                            <tr class="border-b border-white/6">
+                                <td class="px-6 py-5 text-white font-semibold">Gut sanierter Bestand</td>
+                                <td class="px-6 py-5 text-gray-300">ca. 50 bis 70 W/m²</td>
+                                <td class="px-6 py-5 text-gray-400">Deutlich niedriger, aber immer noch projektabhängig</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-5 text-white font-semibold">Neubau</td>
+                                <td class="px-6 py-5 text-gray-300">ca. 30 bis 50 W/m²</td>
+                                <td class="px-6 py-5 text-gray-400">Oft deutlich niedriger, trotzdem nicht pauschal zu verallgemeinern</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+                <div>
+                    <span class="badge mb-6">Beispiele</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Drei einfache Überschlagsbeispiele
+                    </h2>
+                </div>
+                <div class="space-y-5">
+                    <article class="glass-panel rounded-3xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Altbau, 150 m²</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            150 m² × 120 W/m² = <strong class="text-white">18.000 W</strong><br />
+                            Das entspricht grob 18 kW Heizlast und zeigt, wie hoch die Leistung in unsanierten
+                            Bestandsfällen liegen kann.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Teilsanierter Bestand, 120 m²</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            120 m² × 85 W/m² = <strong class="text-white">10.200 W</strong><br />
+                            Ein sinnvoller Orientierungswert für die Vorqualifikation, aber keine raumweise Aussage.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Gut sanierter Bestand, 140 m²</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            140 m² × 60 W/m² = <strong class="text-white">8.400 W</strong><br />
+                            Gerade bei Wärmepumpe oder Heizflächenauslegung wäre der nächste Schritt dann eine
+                            strukturiertere Berechnung.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-3">
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Wann Schätzen sinnvoll ist</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Für erste Budgetgespräche, Vorqualifikation oder eine grobe Einordnung im frühen Projektstadium
+                        kann der W/m²-Ansatz sinnvoll sein.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Wann es kritisch wird</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Bei Wärmepumpe, Heizflächenauslegung, Sanierungsentscheidungen oder sehr heterogenen Räumen ist
+                        eine reine Flächenlogik oft zu grob.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Wie du sauber weitergehst</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Wenn die Schätzung nicht mehr reicht, hilft dir die Seite
+                        <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">DIN EN 12831 einfach erklärt</a>
+                        beim methodischen Einstieg.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="faq">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Häufige Fragen zu Heizlast-Schätzwerten
+                    </h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Welche W/m²-Werte sind typische Schätzbereiche?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Grob liegen viele unsanierte Altbauten bei etwa 100 bis 150 W/m², teilsanierte Bestände
+                            oft bei 70 bis 100 W/m², gut sanierte Bestände eher bei 50 bis 70 W/m² und viele Neubauten
+                            bei 30 bis 50 W/m².
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wann reicht der W/m²-Ansatz nicht mehr aus?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Sobald raumweise Unterschiede wichtig werden oder eine belastbare Systementscheidung ansteht,
+                            solltest du eine strukturierte Berechnung bevorzugen.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wo finde ich die Formeln hinter der Methode?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Dafür ist die Seite
+                            <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">Heizlastberechnung nach DIN EN 12831 einfach erklärt</a>
+                            gedacht.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
+                <a href="/digitales-aufmass-app.html" class="hover:text-white transition-colors">Digitale Aufmaß App</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

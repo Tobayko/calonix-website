@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Heizlastberechnung nach DIN EN 12831 einfach erklärt | Prometo</title>
+    <meta name="description"
+        content="Heizlastberechnung nach DIN EN 12831 einfach erklärt: Formeln, Beispielrechnung und die Unterschiede zwischen Schätzung und Methode." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/heizlastberechnung/din-12831/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlastberechnung/din-12831/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlastberechnung/din-12831/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Heizlastberechnung nach DIN EN 12831 einfach erklärt | Prometo" />
+    <meta property="og:description"
+        content="Mit Formeln, Rechenweg und Beispielzimmer: Transmissionswärmeverlust, Lüftungswärmeverlust und Grenzen der Vereinfachung." />
+    <meta property="og:url" content="https://prometo.app/heizlastberechnung/din-12831/" />
+    <meta property="og:image" content="https://prometo.app/assets/showcase/featured/diagrams.webp" />
+    <meta property="og:image:alt" content="Prometo Diagrammansicht für Heizlastberechnung" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="720" />
+    <meta property="og:image:height" content="1600" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Heizlastberechnung nach DIN EN 12831 einfach erklärt | Prometo" />
+    <meta name="twitter:description"
+        content="Mit Formeln, Rechenweg und Beispielzimmer: Transmissionswärmeverlust, Lüftungswärmeverlust und Grenzen der Vereinfachung." />
+    <meta name="twitter:image" content="https://prometo.app/assets/showcase/featured/diagrams.webp" />
+    <meta name="twitter:image:alt" content="Prometo Diagrammansicht für Heizlastberechnung" />
+
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(69, 222, 231, 0.12), transparent 40%),
+                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        th {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .formula-box {
+            border-radius: 1.5rem;
+            border: 1px solid rgba(69, 222, 231, 0.16);
+            background: rgba(69, 222, 231, 0.06);
+            padding: 1.25rem;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: #fff;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/"
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/heizlastberechnung/din-12831/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Heizlastberechnung",
+                        "item": "https://prometo.app/heizlastberechnung/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "DIN EN 12831 erklärt",
+                        "item": "https://prometo.app/heizlastberechnung/din-12831/"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/heizlastberechnung/din-12831/#webpage",
+                "url": "https://prometo.app/heizlastberechnung/din-12831/",
+                "name": "Heizlastberechnung nach DIN EN 12831 einfach erklärt | Prometo",
+                "description": "Heizlastberechnung nach DIN EN 12831 einfach erklärt: Formeln, Beispielrechnung und die Unterschiede zwischen Schätzung und Methode.",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/heizlastberechnung/din-12831/#breadcrumb"
+                }
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://prometo.app/heizlastberechnung/din-12831/#howto",
+                "name": "Heizlastberechnung nach DIN EN 12831 einfach erklärt",
+                "description": "Didaktische Erklärung von Transmissionswärmeverlust, Lüftungswärmeverlust und vereinfachter Beispielrechnung.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "Innen- und Außentemperaturen festlegen",
+                        "text": "Zuerst werden die anzusetzenden Innen- und Außentemperaturen bestimmt. Daraus ergibt sich die Temperaturdifferenz ΔT."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Bauteilflächen und U-Werte erfassen",
+                        "text": "Für Außenwände, Fenster und weitere relevante Flächen werden die Größe A und der Wärmedurchgangskoeffizient U angesetzt."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Transmissionswärmeverlust berechnen",
+                        "text": "Die Transmissionsverluste werden vereinfacht als Summe aus U × A × ΔT über die relevanten Außenbauteile beschrieben."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Lüftungswärmeverlust ergänzen",
+                        "text": "Mit Luftwechselrate n, Raumvolumen V und ΔT lässt sich der Lüftungsanteil vereinfacht abschätzen."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Gesamtheizlast als didaktische Summe bilden",
+                        "text": "Vereinfacht ergibt sich die Heizlast als Summe aus Transmissionswärmeverlust, Lüftungswärmeverlust und gegebenenfalls einem Aufheizzuschlag."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/heizlastberechnung/din-12831/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Ist diese Seite der vollständige Normtext der DIN EN 12831?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Die Seite ist eine didaktische Erklärung und ersetzt weder den Normtext noch die projektspezifische fachliche Anwendung."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Welche Formel wird für den Transmissionswärmeverlust erklärt?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Vereinfacht wird der Transmissionswärmeverlust als Summe aus U-Wert mal Fläche mal Temperaturdifferenz über die relevanten Außenbauteile beschrieben."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wann reicht eine didaktische Beispielrechnung nicht mehr aus?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sobald konkrete Projektentscheidungen, raumweise Auslegung oder komplexe Randbedingungen anstehen, braucht es eine strukturierte und fachlich geprüfte Berechnungsgrundlage."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Schätzwerte</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Demo anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heizlastberechnung</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">DIN EN 12831 erklärt</span>
+                </nav>
+
+                <div class="max-w-4xl">
+                    <span class="badge mb-6">Tutorial</span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                        Heizlastberechnung nach DIN EN 12831 einfach erklärt
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+                        Diese Seite erklärt den Rechengedanken hinter der Heizlast didaktisch: Welche Rolle
+                        Transmissionswärmeverluste, Lüftungswärmeverluste und Aufheizzuschläge spielen und wie eine
+                        vereinfachte Beispielrechnung aufgebaut ist.
+                    </p>
+                    <div class="formula-box text-white text-lg font-headline font-bold mb-6">
+                        Φ<sub>HL</sub> ≈ Φ<sub>T</sub> + Φ<sub>V</sub> + Φ<sub>AH</sub>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-3xl">
+                        Hinweis: Die Formeln auf dieser Seite dienen der verständlichen Erklärung. Sie ersetzen weder
+                        den Normtext noch die fachliche Anwendung im konkreten Projekt.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-8 md:pb-12">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Überschlag vs. Methode</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Eine Überschlagsrechnung arbeitet oft mit W/m²-Werten. Die DIN-orientierte Betrachtung trennt
+                        dagegen systematisch nach Wärmeverlusten über Bauteile und über Luftwechsel. Dadurch wird die
+                        Heizlast raumweise nachvollziehbar.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">2. Temperaturdifferenz als Basis</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        In der vereinfachten Darstellung ist ΔT die Differenz zwischen Innen- und Außentemperatur.
+                        Beispiel: 20 °C innen und -12 °C außen ergeben ΔT = 32 K.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto grid gap-8 lg:grid-cols-3">
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Transmissionswärmeverlust</h2>
+                    <div class="formula-box mb-5 font-headline text-white text-lg">
+                        Φ<sub>T</sub> = Σ(U × A × ΔT)
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        U steht für den Wärmedurchgangskoeffizienten, A für die Fläche des jeweiligen Bauteils. Die
+                        Summe läuft über alle relevanten Außenbauteile. Größere Flächen, schlechtere U-Werte oder
+                        größere Temperaturdifferenzen erhöhen den Verlust.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Lüftungswärmeverlust</h2>
+                    <div class="formula-box mb-5 font-headline text-white text-lg">
+                        Φ<sub>V</sub> ≈ 0,34 × n × V × ΔT
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        In der didaktischen Näherung steht n für die Luftwechselrate und V für das Raumvolumen. Damit
+                        wird beschrieben, wie stark Wärme über Lüftung und Infiltration verloren geht.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Aufheizzuschlag</h2>
+                    <div class="formula-box mb-5 font-headline text-white text-lg">
+                        Φ<sub>HL</sub> ≈ Φ<sub>T</sub> + Φ<sub>V</sub> + Φ<sub>AH</sub>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Je nach Betrachtung wird zusätzlich ein Aufheizzuschlag berücksichtigt. Auf dieser Seite wird er
+                        nur als eigener Baustein eingeordnet, nicht als vollständige Normberechnung ausformuliert.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+                <div>
+                    <span class="badge mb-6">Beispielzimmer</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Vereinfachte Beispielrechnung für einen Raum
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Das Beispiel ist bewusst reduziert, damit der Rechengedanke klar wird. Es ersetzt keine
+                        vollständige Normanwendung.
+                    </p>
+                </div>
+                <div class="space-y-5">
+                    <article class="glass-panel rounded-3xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Annahmen</h3>
+                        <ul class="space-y-2 text-gray-400 leading-relaxed text-sm md:text-base">
+                            <li>Raumfläche: 18 m²</li>
+                            <li>Raumhöhe: 2,5 m</li>
+                            <li>Volumen V: 45 m³</li>
+                            <li>Innen: 20 °C, außen: -12 °C, also ΔT = 32 K</li>
+                            <li>Außenwände gesamt: 22 m² bei U = 0,35 W/m²K</li>
+                            <li>Fenster: 4 m² bei U = 1,10 W/m²K</li>
+                            <li>Luftwechselrate: n = 0,5 1/h</li>
+                        </ul>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Transmissionsanteil</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Außenwände: 22 × 0,35 × 32 = 246,4 W<br />
+                            Fenster: 4 × 1,10 × 32 = 140,8 W<br />
+                            Vereinfachter Transmissionswärmeverlust: <strong class="text-white">387,2 W</strong>
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Lüftungsanteil</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            0,34 × 0,5 × 45 × 32 = <strong class="text-white">244,8 W</strong>
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Didaktische Summe</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Φ<sub>HL</sub> ≈ 387,2 W + 244,8 W = <strong class="text-white">632 W</strong><br />
+                            Ein möglicher Aufheizzuschlag wäre zusätzlich gesondert zu betrachten.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-3">
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Was dieses Beispiel zeigt</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Heizlast ergibt sich nicht nur aus Fläche, sondern aus Bauteilen, U-Werten, Temperaturen und
+                        Lüftung. Das erklärt, warum zwei Räume mit gleicher Quadratmeterzahl sehr unterschiedlich
+                        ausfallen können.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Was noch fehlt</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Je nach Projekt spielen weitere Bauteile, angrenzende unbeheizte Bereiche, Nutzungsannahmen
+                        und methodische Details eine Rolle. Genau deshalb ist dies nur eine Lehrseite.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Wie Prometo dazu passt</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Prometo ordnet Räume, Flächen und Randbedingungen planbasiert. Das hilft, die Logik hinter der
+                        Berechnung nicht nur rechnerisch, sondern auch projektbezogen nachvollziehbar zu halten.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="faq">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Häufige Fragen zur DIN EN 12831
+                    </h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ist das hier der vollständige Normtext?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Nein. Diese Seite ist eine didaktische Erklärung. Sie ersetzt weder den Normtext noch die
+                            fachliche Anwendung im konkreten Projekt.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Welche Formel wird für den Lüftungswärmeverlust erklärt?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Vereinfacht wird Φ<sub>V</sub> ≈ 0,34 × n × V × ΔT erläutert. Das ist eine didaktische
+                            Formel für das Verständnis, nicht die vollständige Normanwendung.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wie steige ich einfacher ein, wenn ich nur überschlagen will?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Dann starte mit
+                            <a href="/heizlastberechnung/schaetzwerte/" class="text-primary underline underline-offset-2">Heizlast schätzen mit W/m²</a>.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Schätzwerte</a>
+                <a href="/bluebeam-alternative.html" class="hover:text-white transition-colors">Bluebeam Alternative</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

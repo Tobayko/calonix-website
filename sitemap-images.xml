@@ -20,11 +20,35 @@
     </image:image>
   </url>
   <url>
-    <loc>https://prometo.app/heizlastberechnung-software.html</loc>
+    <loc>https://prometo.app/heizlastberechnung/</loc>
     <image:image>
       <image:loc>https://prometo.app/assets/showcase/featured/hydraulic-balance.webp</image:loc>
       <image:title>Heizlastberechnung in Prometo</image:title>
-      <image:caption>Hydraulischer Abgleich und strukturierte Heizlast in Prometo</image:caption>
+      <image:caption>Planbasierte Heizlastberechnung und Projektstruktur in Prometo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://prometo.app/heizlastberechnung/app/</loc>
+    <image:image>
+      <image:loc>https://prometo.app/assets/showcase/featured/hydraulic-balance.webp</image:loc>
+      <image:title>Prometo Heizlast App</image:title>
+      <image:caption>Mobile Heizlastberechnung auf Basis von Grundrissen und Raumdaten</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://prometo.app/heizlastberechnung/din-12831/</loc>
+    <image:image>
+      <image:loc>https://prometo.app/assets/showcase/featured/diagrams.webp</image:loc>
+      <image:title>DIN EN 12831 erklärt</image:title>
+      <image:caption>Didaktische Formeln und Beispielrechnung zur Heizlastberechnung</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://prometo.app/heizlastberechnung/schaetzwerte/</loc>
+    <image:image>
+      <image:loc>https://prometo.app/assets/showcase/featured/materials.webp</image:loc>
+      <image:title>Heizlast schätzen mit W pro Quadratmeter</image:title>
+      <image:caption>Schätzwerte und Beispielrechnungen für frühe Projektphasen</image:caption>
     </image:image>
   </url>
   <url>

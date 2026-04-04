@@ -1,3 +1,30 @@
 {
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/heizlastberechnung-software.html",
+      "destination": "/heizlastberechnung/",
+      "permanent": true
+    },
+    {
+      "source": "/heizlastberechnung",
+      "destination": "/heizlastberechnung/",
+      "permanent": true
+    },
+    {
+      "source": "/heizlastberechnung/app",
+      "destination": "/heizlastberechnung/app/",
+      "permanent": true
+    },
+    {
+      "source": "/heizlastberechnung/din-12831",
+      "destination": "/heizlastberechnung/din-12831/",
+      "permanent": true
+    },
+    {
+      "source": "/heizlastberechnung/schaetzwerte",
+      "destination": "/heizlastberechnung/schaetzwerte/",
+      "permanent": true
+    }
+  ]
 }

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Heizlastberechnung App für SHK & Baustelle | Prometo</title>
+    <meta name="description"
+        content="Prometo ist die Heizlastberechnung App für SHK-Betriebe: planbasiert aus PDF-Grundrissen, mobil und raumweise strukturiert." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/heizlastberechnung/app/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlastberechnung/app/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlastberechnung/app/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Heizlastberechnung App für SHK & Baustelle | Prometo" />
+    <meta property="og:description"
+        content="Heizlast auf Basis von PDF-Grundrissen: mobil, planbasiert und für SHK-Prozesse gedacht." />
+    <meta property="og:url" content="https://prometo.app/heizlastberechnung/app/" />
+    <meta property="og:image" content="https://prometo.app/assets/showcase/featured/hydraulic-balance.webp" />
+    <meta property="og:image:alt" content="Prometo Heizlast App mit planbasiertem Workflow" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="720" />
+    <meta property="og:image:height" content="1600" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Heizlastberechnung App für SHK & Baustelle | Prometo" />
+    <meta name="twitter:description"
+        content="Heizlast auf Basis von PDF-Grundrissen: mobil, planbasiert und für SHK-Prozesse gedacht." />
+    <meta name="twitter:image" content="https://prometo.app/assets/showcase/featured/hydraulic-balance.webp" />
+    <meta name="twitter:image:alt" content="Prometo Heizlast App mit planbasiertem Workflow" />
+
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top right, rgba(69, 222, 231, 0.12), transparent 40%),
+                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: #fff;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/apple-touch-icon.png"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/heizlastberechnung/app/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Heizlastberechnung",
+                        "item": "https://prometo.app/heizlastberechnung/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Heizlastberechnung App",
+                        "item": "https://prometo.app/heizlastberechnung/app/"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/heizlastberechnung/app/#webpage",
+                "url": "https://prometo.app/heizlastberechnung/app/",
+                "name": "Heizlastberechnung App für SHK & Baustelle | Prometo",
+                "description": "Prometo ist die Heizlastberechnung App für SHK-Betriebe: planbasiert aus PDF-Grundrissen, mobil und raumweise strukturiert.",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/heizlastberechnung/app/#breadcrumb"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/heizlastberechnung/app/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Warum setzt Prometo auf PDF-Pläne und Grundrisse?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Viele SHK-Projekte starten mit vorhandenen Bauplänen und Grundrissen. Prometo nutzt genau diese Grundlage, damit Räume, Heizlast und Projektdaten ohne zusätzlichen Scan-Workflow weitergeführt werden können."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist die Heizlast App nur für das Büro gedacht?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Die Seite richtet sich bewusst an Büro und Baustelle. Mobile Nutzung hilft bei Prüfung, Nachträgen und Abstimmung entlang derselben Projektstruktur."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Kann ich die App für Bestandsprojekte nutzen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Gerade im Bestand ist der planbasierte Workflow hilfreich, wenn Grundriss, Raumstruktur und Nachbearbeitung in einem Prozess zusammenlaufen sollen."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
+                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Schätzwerte</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Heizlast-Demo anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heizlastberechnung</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">App</span>
+                </nav>
+
+                <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">Heizlast App</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Heizlastberechnung App für SHK-Betriebe und Baustelle
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
+                            Prometo ist für SHK-Teams gedacht, die Heizlast nicht isoliert rechnen wollen, sondern
+                            direkt aus PDF-Grundrissen, Raumdaten und Projektlogik ableiten. Die App ist mobil nutzbar,
+                            damit Büro und Baustelle auf derselben Grundlage arbeiten können.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a href="/#beta-signup"
+                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                Heizlast App testen
+                            </a>
+                            <a href="/heizlastberechnung/"
+                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                Zum Heizlast-Hub
+                            </a>
+                        </div>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="glass-panel rounded-3xl p-5">
+                                <h2 class="text-xl font-bold text-white mb-2">Planbasiert</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Der Einstieg erfolgt aus vorhandenen Grundrissen. Das passt zu vielen
+                                    Handwerksprojekten besser als ein zusätzlicher Erfassungsschritt außerhalb der
+                                    Planunterlagen.
+                                </p>
+                            </div>
+                            <div class="glass-panel rounded-3xl p-5">
+                                <h2 class="text-xl font-bold text-white mb-2">Mobil weiterführbar</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Projektstände lassen sich auf Baustelle und im Büro entlang derselben Struktur
+                                    prüfen, ergänzen und abstimmen.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-[2rem] p-4 md:p-6">
+                        <img src="/assets/showcase/featured/hydraulic-balance.webp"
+                            alt="Prometo Heizlast App auf Basis von Grundriss und Raumdaten"
+                            width="720" height="1600" loading="eager" fetchpriority="high" decoding="async"
+                            class="mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-8 md:pb-12">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-3">
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Warum eine Heizlast App?</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Viele SHK-Betriebe brauchen schnelle Orientierung und saubere Projektdaten zugleich. Eine App
+                        ist dann stark, wenn sie nicht nur Eingaben sammelt, sondern in den Grundriss- und
+                        Projektkontext eingebettet ist.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Warum dieser Workflow?</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Für viele SHK-Fälle ist ein sauberer PDF- und Grundriss-Workflow die passendere
+                        Arbeitsgrundlage, weil vorhandene Pläne direkt weitergeführt werden können.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Warum raumweise Struktur?</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Räume, Außenbauteile und Randbedingungen bleiben in einem Modell verbunden. Das verbessert
+                        Nachvollziehbarkeit und reduziert Tool-Wechsel zwischen Aufmaß und Heizlast.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+                <div>
+                    <span class="badge mb-6">Praxis</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Wann die Heizlastberechnung App in der Praxis hilft
+                    </h2>
+                </div>
+                <div class="space-y-5">
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Fall 1</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Bestand mit vorhandenem Grundriss</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Wenn ein PDF-Plan bereits vorliegt, ist es effizienter, direkt daraus zu arbeiten statt erst
+                            einen separaten Erfassungsprozess aufzubauen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Fall 2</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Baustellenkorrekturen und Rückfragen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Mobile Nutzung ist vor allem dann stark, wenn Änderungen und Prüfungen an derselben
+                            Projektstruktur weitergeführt werden können.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Fall 3</p>
+                        <h3 class="text-xl font-bold text-white mb-3">SHK-Team mit Büro und Monteur</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Wenn mehrere Personen beteiligt sind, gewinnt eine App dann, wenn Räume, Eingaben und
+                            Projektzustände nachvollziehbar bleiben.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl">
+                    <span class="badge mb-6">Weiterlesen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Heizlast verstehen statt nur mobil bedienen
+                    </h2>
+                </div>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Heizlast-Hub</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Der Überblick über Suchintentionen, Einsatzfälle und Tool-Typen rund um Heizlastberechnung.
+                        </p>
+                        <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Zum Hub
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">DIN EN 12831 erklärt</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Mit Formeln und Beispielrechnung für Transmissions- und Lüftungsverluste.
+                        </p>
+                        <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Tutorial lesen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Heizlast schätzen</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            W/m²-Schätzwerte, Beispiele und Grenzen der Überschlagsrechnung für den frühen Projektstart.
+                        </p>
+                        <a href="/heizlastberechnung/schaetzwerte/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Schätzwerte ansehen
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="faq">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Häufige Fragen zur Heizlast App
+                    </h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Warum setzt Prometo auf Grundrisse als Arbeitsgrundlage?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Viele Projekte liegen bereits als PDF-Bauplan vor. Genau dort setzt Prometo an, damit
+                            Raumstruktur und Heizlast ohne zusätzlichen Scan-Workflow weiterbearbeitet werden können.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Kann ich die App auch für Bestandsgebäude nutzen?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Ja. Besonders im Bestand ist ein planbasierter Workflow hilfreich, wenn Eingaben,
+                            Korrekturen und Projektkommunikation zusammenlaufen sollen.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wo finde ich die Formeln hinter der Heizlast?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Dafür ist die Seite
+                            <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">Heizlastberechnung nach DIN EN 12831 einfach erklärt</a>
+                            gedacht.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
+                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Schätzwerte</a>
+                <a href="/digitales-aufmass-app.html" class="hover:text-white transition-colors">Digitale Aufmaß App</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
