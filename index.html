@@ -33,18 +33,18 @@
     <meta property="og:description"
         content="Prometo ist die geschlossene Beta für digitales Aufmaß und Heizlastberechnung angelehnt an DIN EN 12831 für SHK-Betriebe und TGA-Planer." />
     <meta property="og:url" content="https://prometo.app/" />
-    <meta property="og:image" content="https://prometo.app/assets/og-image.png" />
-    <meta property="og:image:alt" content="Prometo App für Heizlastberechnung und digitales Aufmaß" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="720" />
-    <meta property="og:image:height" content="1600" />
+    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp" />
+    <meta property="og:image:alt" content="Prometo Projektübersicht auf dem Smartphone mit Schnellzugriffen und Projektliste" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="2400" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Prometo | Heizlastberechnung & Digitales Aufmaß für SHK" />
     <meta name="twitter:description"
         content="Prometo ist die geschlossene Beta für digitales Aufmaß und Heizlastberechnung angelehnt an DIN EN 12831 für SHK-Betriebe und TGA-Planer." />
-    <meta name="twitter:image" content="https://prometo.app/assets/og-image.png" />
-    <meta name="twitter:image:alt" content="Prometo App für Heizlastberechnung und digitales Aufmaß" />
+    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp" />
+    <meta name="twitter:image:alt" content="Prometo Projektübersicht auf dem Smartphone mit Schnellzugriffen und Projektliste" />
 
     <script>
       if (!/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) {
@@ -1270,6 +1270,10 @@
                 "isPartOf": {
                     "@id": "https://prometo.app/#website"
                 },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/prometo-screenshots/mobile/projektuebersicht-startseite.webp"
+                },
                 "about": {
                     "@id": "https://prometo.app/#software"
                 }
@@ -1299,13 +1303,12 @@
                     "Team- und Rechtemanagement in der geschlossenen Beta"
                 ],
                 "screenshot": [
-                    "https://prometo.app/assets/showcase/featured/homescreen.webp",
-                    "https://prometo.app/assets/showcase/featured/assistant.webp",
-                    "https://prometo.app/assets/showcase/featured/import-review.webp",
-                    "https://prometo.app/assets/showcase/featured/hydraulic-balance.webp",
-                    "https://prometo.app/assets/showcase/featured/materials.webp",
-                    "https://prometo.app/assets/showcase/featured/diagrams.webp",
-                    "https://prometo.app/assets/showcase/featured/tools.webp"
+                    "https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp",
+                    "https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp",
+                    "https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp",
+                    "https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp",
+                    "https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp",
+                    "https://prometo.app/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
                 ]
             },
             {
@@ -2275,73 +2278,77 @@
                 <div class="showcase-platform-glow"></div>
 
                 <!-- Featured Phone -->
-                <div class="showcase-featured-phone" id="featuredPhone">
+                <figure class="showcase-featured-phone" id="featuredPhone">
                     <div class="phone-mockup phone-mockup--featured">
                         <div class="phone-screen">
-                            <img id="featuredImg" src="assets/showcase/featured/homescreen.webp"
-                                alt="Prometo Homescreen mit Projekten und Werkzeugen" loading="lazy" decoding="async"
-                                width="720" height="1600" />
+                            <img id="featuredImg" src="/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
+                                alt="Prometo Projektassistent auf dem Smartphone mit Feldern für Projektname, Adresse und Fertigstellung"
+                                loading="lazy" decoding="async" width="1080" height="2400" />
                         </div>
                     </div>
-                </div>
-
-                <!-- Active screen label -->
-                <div class="showcase-active-label">
-                    <div class="showcase-active-title" id="activeLabelTitle">Homescreen</div>
-                    <div class="showcase-active-desc" id="activeLabelDesc">Alle Projekte und Tools auf einen Blick</div>
-                </div>
+                    <figcaption class="showcase-active-label">
+                        <div class="showcase-active-title" id="activeLabelTitle">Projektstart</div>
+                        <div class="showcase-active-desc" id="activeLabelDesc">Projektbasis mobil erfassen und neue Heizlast-Projekte direkt aus der App anlegen</div>
+                    </figcaption>
+                </figure>
 
                 <!-- Thumbnail navigation -->
                 <div class="showcase-thumbs-row">
                     <button class="showcase-thumb active" onclick="switchScreen(this, 0)">
                         <div class="showcase-thumb-img">
-                            <img src="assets/showcase/thumbs/homescreen.webp" alt="Homescreen" loading="lazy"
-                                decoding="async" width="192" height="426" />
+                            <img src="/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
+                                alt="Projektstart in der Prometo App" loading="lazy" decoding="async" width="108"
+                                height="240" />
                         </div>
-                        <span class="showcase-thumb-label">Homescreen</span>
+                        <span class="showcase-thumb-label">Projektstart</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 1)">
                         <div class="showcase-thumb-img">
-                            <img src="assets/showcase/thumbs/assistant.webp" alt="Fachassistent" loading="lazy"
-                                decoding="async" width="192" height="426" />
+                            <img src="/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp"
+                                alt="Bauplan-Import in der Prometo App" loading="lazy" decoding="async" width="108"
+                                height="240" />
                         </div>
-                        <span class="showcase-thumb-label">Assistent</span>
+                        <span class="showcase-thumb-label">Import</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 2)">
                         <div class="showcase-thumb-img">
-                            <img src="assets/showcase/thumbs/import-review.webp" alt="PDF-Import" loading="lazy"
-                                decoding="async" width="192" height="426" />
+                            <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
+                                alt="Import-Review der erkannten Räume in Prometo" loading="lazy" decoding="async"
+                                width="108" height="240" />
                         </div>
-                        <span class="showcase-thumb-label">PDF-Import</span>
+                        <span class="showcase-thumb-label">Review</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 3)">
                         <div class="showcase-thumb-img">
-                            <img src="assets/showcase/thumbs/hydraulic-balance.webp" alt="Hydraulischer Abgleich"
-                                loading="lazy" decoding="async" width="192" height="426" />
+                            <img src="/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp"
+                                alt="Schnellschätzung der Heizlast in Prometo" loading="lazy" decoding="async"
+                                width="108" height="240" />
                         </div>
-                        <span class="showcase-thumb-label">Hyd. Abgleich</span>
+                        <span class="showcase-thumb-label">Schätzung</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 4)">
                         <div class="showcase-thumb-img">
-                            <img src="assets/showcase/thumbs/materials.webp" alt="Stückliste" loading="lazy"
-                                decoding="async" width="192" height="426" />
+                            <img src="/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp"
+                                alt="Heizlast-Heatmap in der Prometo App" loading="lazy" decoding="async"
+                                width="108" height="240" />
                         </div>
-                        <span class="showcase-thumb-label">Stückliste</span>
+                        <span class="showcase-thumb-label">Heatmap</span>
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 5)">
                         <div class="showcase-thumb-img">
-                            <img src="assets/showcase/thumbs/diagrams.webp" alt="Diagramme" loading="lazy"
-                                decoding="async" width="192" height="426" />
+                            <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
+                                alt="Hydraulischer Abgleich in der Prometo App" loading="lazy" decoding="async"
+                                width="108" height="240" />
                         </div>
-                        <span class="showcase-thumb-label">Diagramme</span>
+                        <span class="showcase-thumb-label">Abgleich</span>
                     </button>
-                    <button class="showcase-thumb" onclick="switchScreen(this, 6)">
-                        <div class="showcase-thumb-img">
-                            <img src="assets/showcase/thumbs/tools.webp" alt="Tools" loading="lazy" decoding="async"
-                                width="192" height="426" />
-                        </div>
-                        <span class="showcase-thumb-label">Tools</span>
-                    </button>
+                </div>
+
+                <div class="mt-8 text-center relative z-10">
+                    <a href="/app-workflows.html"
+                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
+                        Alle App-Workflows ansehen
+                    </a>
                 </div>
             </div>
         </section>
@@ -3139,6 +3146,9 @@
                         <li><a href="#showcase"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">App-Screenshots</a>
                         </li>
+                        <li><a href="/app-workflows.html"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">App-Workflows</a>
+                        </li>
                         <li><a href="/heizlastberechnung/"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Heizlastberechnung App</a>
                         </li>
@@ -3167,6 +3177,9 @@
                         </li>
                         <li><a href="/heizlastberechnung/schaetzwerte/"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Heizlast schätzen mit W/m²</a>
+                        </li>
+                        <li><a href="/app-workflows.html"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Prometo App Screenshots</a>
                         </li>
                         <li><a href="digitales-aufmass-app.html"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">PDF-Aufmaß & iPad</a>
@@ -3452,13 +3465,42 @@
 
         // ---- Showcase Screen Switcher ----
         const showcaseData = [
-            { src: 'assets/showcase/featured/homescreen.webp', alt: 'Prometo Homescreen mit Projekten und Werkzeugen', title: 'Homescreen', desc: 'Alle Projekte und Tools auf einen Blick' },
-            { src: 'assets/showcase/featured/assistant.webp', alt: 'Prometo Fachassistent in der App', title: 'Fachassistent', desc: 'Normen und Projektdaten als Arbeitsgrundlage direkt vor Ort' },
-            { src: 'assets/showcase/featured/import-review.webp', alt: 'Prometo PDF-Import mit Grundriss-Erkennung', title: 'PDF-Import', desc: 'PDF-Grundriss hochladen und Räume zur Prüfung übernehmen' },
-            { src: 'assets/showcase/featured/hydraulic-balance.webp', alt: 'Prometo Ansicht für hydraulischen Abgleich', title: 'Hydraulischer Abgleich', desc: 'Strukturierter Abgleich nach DIN-Vorgaben' },
-            { src: 'assets/showcase/featured/materials.webp', alt: 'Prometo Stückliste und Materialberechnung', title: 'Stückliste', desc: 'Stückliste und Materiallogik für die weitere Bearbeitung' },
-            { src: 'assets/showcase/featured/diagrams.webp', alt: 'Prometo Diagramme für Heizlast und Verbrauch', title: 'Diagramme', desc: 'Heizlast und Verbrauch visuell auf einen Blick' },
-            { src: 'assets/showcase/featured/tools.webp', alt: 'Prometo Tools-Übersicht in der App', title: 'Tools', desc: 'Alle Werkzeuge übersichtlich an einem Ort' },
+            {
+                src: '/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp',
+                alt: 'Prometo Projektassistent auf dem Smartphone mit Feldern für Projektname, Adresse und Fertigstellung',
+                title: 'Projektstart',
+                desc: 'Projektbasis mobil erfassen und neue Heizlast-Projekte direkt aus der App anlegen'
+            },
+            {
+                src: '/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp',
+                alt: 'Prometo Bauplan-Import auf dem Smartphone mit PDF-Upload und KI-bereiter Startansicht',
+                title: 'Bauplan-Import',
+                desc: 'PDF-Grundrisse hochladen und die KI für Etagen- und Raumerkennung vorbereiten'
+            },
+            {
+                src: '/assets/prometo-screenshots/mobile/bauplan-import-review.webp',
+                alt: 'Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Smartphone',
+                title: 'Import-Review',
+                desc: 'Erkannte Räume vor der Übernahme prüfen und Import-Issues transparent nachvollziehen'
+            },
+            {
+                src: '/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp',
+                alt: 'Prometo Schnellberechnung mit Heizlast-Schätzergebnis in drei Szenarien auf dem Smartphone',
+                title: 'Schnellschätzung',
+                desc: 'Optimistische, mittlere und konservative Heizlast als belastbare Angebotsgrundlage vergleichen'
+            },
+            {
+                src: '/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp',
+                alt: 'Prometo Projektdetail mit farbcodierter Heizlast-Heatmap auf dem Smartphone',
+                title: 'Heatmap',
+                desc: 'Raumweise Heizlastverteilung visuell prüfen und Auffälligkeiten direkt im Projekt erkennen'
+            },
+            {
+                src: '/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp',
+                alt: 'Prometo Hydraulischer Abgleich mit Heizkreisdetail und Durchflusswerten auf dem Smartphone',
+                title: 'Hydraulischer Abgleich',
+                desc: 'Heizkreis, Port und Soll-Durchfluss direkt am Verteiler mit mobilen Detailwerten abstimmen'
+            }
         ];
 
         function switchScreen(btn, index) {

@@ -33,18 +33,18 @@
     <meta property="og:description"
         content="W/m²-Schätzwerte für Altbau, teilsanierten Bestand, sanierten Bestand und Neubau plus klare Einordnung, wann Schätzen nicht mehr reicht." />
     <meta property="og:url" content="https://prometo.app/heizlastberechnung/schaetzwerte/" />
-    <meta property="og:image" content="https://prometo.app/assets/showcase/featured/materials.webp" />
-    <meta property="og:image:alt" content="Prometo Material- und Projektübersicht für Heizlast-Schätzungen" />
+    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" />
+    <meta property="og:image:alt" content="Prometo Schnellberechnung mit Heizlast-Schätzergebnis in drei Szenarien auf dem Smartphone" />
     <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:width" content="720" />
-    <meta property="og:image:height" content="1600" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="2400" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Heizlast schätzen: W/m², Beispiele und Grenzen | Prometo" />
     <meta name="twitter:description"
         content="W/m²-Schätzwerte für Altbau, teilsanierten Bestand, sanierten Bestand und Neubau plus klare Einordnung, wann Schätzen nicht mehr reicht." />
-    <meta name="twitter:image" content="https://prometo.app/assets/showcase/featured/materials.webp" />
-    <meta name="twitter:image:alt" content="Prometo Material- und Projektübersicht für Heizlast-Schätzungen" />
+    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" />
+    <meta name="twitter:image:alt" content="Prometo Schnellberechnung mit Heizlast-Schätzergebnis in drei Szenarien auf dem Smartphone" />
 
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
@@ -174,6 +174,10 @@
                 },
                 "breadcrumb": {
                     "@id": "https://prometo.app/heizlastberechnung/schaetzwerte/#breadcrumb"
+                },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp"
                 }
             },
             {
@@ -350,6 +354,83 @@
             </div>
         </section>
 
+        <section class="px-6 pb-16 md:pb-20" id="schaetz-flow">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="max-w-3xl mb-10 reveal">
+                    <span class="badge mb-6">Schnellberechnung</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        So sieht die Heizlast-Schätzung in Prometo aus
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Die Schnellberechnung führt von importierten Räumen über Außenhülle und Richtwerte bis zum
+                        Schätzergebnis und der Übergabe in den weiteren SHK-Workflow.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+                    <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/schnellberechnung-raeume.webp"
+                            alt="Prometo Schnellberechnung mit importierten Räumen und Flächen auf dem Smartphone"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">1. Räume prüfen</strong>
+                            Name, Fläche und Raumtyp werden nach dem Planimport für die Schätzung kontrolliert.
+                        </figcaption>
+                    </figure>
+                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/schnellberechnung-aussenhuelle.webp"
+                            alt="Prometo Schnellberechnung mit Außenhülle und Außenwänden pro Raum auf dem Smartphone"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">2. Außenhülle erfassen</strong>
+                            Außenwände und Kellerlage je Raum liefern die Grundlage für eine belastbarere Schätzung.
+                        </figcaption>
+                    </figure>
+                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-2 lift-on-hover">
+                        <img src="/assets/prometo-screenshots/tablet/schnellberechnung-richtwerte.webp"
+                            alt="Prometo Schnellberechnung auf dem Tablet mit W-pro-Quadratmeter-Richtwerten und Slidern"
+                            width="2560" height="1600" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">3. Richtwerte verfeinern</strong>
+                            Auf dem Tablet lassen sich W/m²-Werte raumspezifisch mit Schiebereglern nachjustieren.
+                        </figcaption>
+                    </figure>
+                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-3 lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp"
+                            alt="Prometo Heizlast-Schätzergebnis mit optimistisch, mittel und konservativ auf dem Smartphone"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">4. Ergebnis vergleichen</strong>
+                            Drei Lastkorridore machen die Größenordnung für Angebot und Systementscheidung sofort sichtbar.
+                        </figcaption>
+                    </figure>
+                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-3 lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/schnellberechnung-uebergabe.webp"
+                            alt="Prometo Schnellberechnung mit Übergabe zu Systementscheidung, Materialberechnung und hydraulischem Abgleich"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">5. Direkt weitergeben</strong>
+                            Die Schätzung geht ohne Medienbruch in Systementscheidung, Materiallogik und Abgleich über.
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="mt-10 flex flex-wrap gap-4 reveal">
+                    <a href="/app-workflows.html"
+                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
+                        Heizlast-Schätzung im Ablauf ansehen
+                    </a>
+                    <a href="/heizlastberechnung/app/"
+                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
+                        Zur Heizlast App
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section id="tabelle" class="px-6 pb-8 md:pb-12">
             <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] overflow-hidden reveal">
                 <div class="overflow-x-auto">
@@ -497,6 +578,7 @@
                 <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
                 <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
                 <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
+                <a href="/app-workflows.html" class="hover:text-white transition-colors">App-Workflows</a>
                 <a href="/digitales-aufmass-app.html" class="hover:text-white transition-colors">Digitale Aufmaß App</a>
                 <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
             </div>
