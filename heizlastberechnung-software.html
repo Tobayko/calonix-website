@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Heizlastberechnung Software für SHK | Prometo</title>
+    <meta name="description"
+        content="Prometo bündelt digitales Aufmaß, Heizlastberechnung nach DIN EN 12831 und mobile Projektarbeit für SHK-Betriebe." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/heizlastberechnung-software.html" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlastberechnung-software.html" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlastberechnung-software.html" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Heizlastberechnung Software für SHK | Prometo" />
+    <meta property="og:description"
+        content="Digitale Heizlastberechnung mit Raumstruktur, PDF-Aufmaß und mobilen Workflows für SHK und TGA." />
+    <meta property="og:url" content="https://prometo.app/heizlastberechnung-software.html" />
+    <meta property="og:image" content="https://prometo.app/assets/showcase/featured/hydraulic-balance.webp" />
+    <meta property="og:image:alt" content="Prometo Ansicht für Heizlastberechnung und hydraulischen Abgleich" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="720" />
+    <meta property="og:image:height" content="1600" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Heizlastberechnung Software für SHK | Prometo" />
+    <meta name="twitter:description"
+        content="Digitale Heizlastberechnung mit Raumstruktur, PDF-Aufmaß und mobilen Workflows für SHK und TGA." />
+    <meta name="twitter:image" content="https://prometo.app/assets/showcase/featured/hydraulic-balance.webp" />
+    <meta name="twitter:image:alt" content="Prometo Ansicht für Heizlastberechnung und hydraulischen Abgleich" />
+
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top, rgba(69, 222, 231, 0.10), transparent 42%),
+                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .faq-item[open] summary {
+            color: #fff;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .eyebrow-link {
+            color: #45dee7;
+            text-decoration: none;
+        }
+
+        .eyebrow-link:hover {
+            color: #ffffff;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/apple-touch-icon.png"
+                },
+                "image": "https://prometo.app/assets/og-image.png",
+                "description": "Prometo ist eine SHK-Software für digitales Aufmaß, Heizlastberechnung und TGA-Planung.",
+                "sameAs": [
+                    "https://linkedin.com/company/prometo-app",
+                    "https://instagram.com/prometo.app",
+                    "https://youtube.com/@prometo-app",
+                    "https://x.com/prometo-app",
+                    "https://facebook.com/prometo.app"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/heizlastberechnung-software.html#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Heizlastberechnung Software",
+                        "item": "https://prometo.app/heizlastberechnung-software.html"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/heizlastberechnung-software.html#webpage",
+                "url": "https://prometo.app/heizlastberechnung-software.html",
+                "name": "Heizlastberechnung Software für SHK | Prometo",
+                "description": "Prometo bündelt digitales Aufmaß, Heizlastberechnung nach DIN EN 12831 und mobile Projektarbeit für SHK-Betriebe.",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/heizlastberechnung-software.html#breadcrumb"
+                },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/showcase/featured/hydraulic-balance.webp"
+                },
+                "about": {
+                    "@type": "Thing",
+                    "name": "Heizlastberechnung Software für SHK"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/heizlastberechnung-software.html#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Kann ich mit Prometo Heizlasten raumweise dokumentieren?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Prometo arbeitet raumbezogen und kombiniert Geometrie, Bauteile und Heizlastwerte in einer strukturierten Projektlogik. So lassen sich Eingaben besser prüfen als in losen Excel-Tabellen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Orientiert sich Prometo an der DIN EN 12831?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Die Berechnungslogik ist eng an die DIN EN 12831 angelehnt. Prometo ist nicht als offizielle Zertifizierung zu verstehen, sondern als digitale, nachvollziehbare Arbeitsgrundlage für die Heizlastermittlung."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Für wen ist die Heizlastberechnung Software gedacht?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die Software richtet sich an SHK-Betriebe, TGA-Planer, Sanierungsprojekte und Teams, die Aufmaß, Heizlast und Baustelleninformationen in einem Prozess zusammenführen möchten."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/digitales-aufmass-app.html" class="hover:text-white transition-colors">Digitales Aufmaß</a>
+                <a href="/bluebeam-alternative.html" class="hover:text-white transition-colors">Bluebeam Alternative</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Demo anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="eyebrow-link">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">Heizlastberechnung Software</span>
+                </nav>
+
+                <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">SHK-Software</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Heizlastberechnung Software für SHK-Betriebe
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
+                            Prometo verbindet digitales Aufmaß, strukturierte Heizlastberechnung und mobile
+                            Projektarbeit in einem Workflow. Statt unverbundener Excel-Dateien arbeitest du mit einer
+                            nachvollziehbaren Raumstruktur, die speziell für Heizungsbau, Sanierung und TGA gedacht ist.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a href="/#beta-signup"
+                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                Early Access sichern
+                            </a>
+                            <a href="/digitales-aufmass-app.html"
+                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                Mehr zum digitalen Aufmaß
+                            </a>
+                        </div>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="glass-panel rounded-3xl p-5">
+                                <h2 class="text-xl font-bold text-white mb-2">Weniger Medienbrüche</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    PDF-Aufmaß, Heizlastwerte und Projektnotizen bleiben in einer Struktur statt auf
+                                    mehreren Tools verteilt.
+                                </p>
+                            </div>
+                            <div class="glass-panel rounded-3xl p-5">
+                                <h2 class="text-xl font-bold text-white mb-2">Schneller prüfbar</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Räume, Bauteile und Eingaben sind sauber gegliedert. Das reduziert typische Fehler
+                                    bei Übergaben und Nacharbeiten.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-[2rem] p-4 md:p-6">
+                        <img src="/assets/showcase/featured/hydraulic-balance.webp"
+                            alt="Prometo Oberfläche für Heizlastberechnung und hydraulischen Abgleich"
+                            width="720" height="1600" loading="eager" fetchpriority="high" decoding="async"
+                            class="mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-8 md:pb-12">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-3">
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Projekt sauber aufsetzen</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Gute Heizlastsoftware beginnt nicht erst bei der Formel. Entscheidend ist, dass Räume,
+                        Bauteile, Fenster, Türen und Nutzungseinheiten logisch zusammenhängen. Genau diese
+                        Strukturierung schafft die Grundlage für belastbare Ergebnisse.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">2. Normlogik verständlich abbilden</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Wer für SHK plant, braucht keine Blackbox. Prometo orientiert sich an der DIN EN 12831 und
+                        macht Werte, Annahmen und Räume nachvollziehbar, damit Projekte intern schneller geprüft werden
+                        können.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Büro und Baustelle verbinden</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        In vielen Betrieben entstehen Daten im Büro und Korrekturen auf der Baustelle. Eine moderne
+                        Heizlastberechnung Software muss beides zusammenführen, statt neue Reibungsverluste zu
+                        erzeugen.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+                <div>
+                    <span class="badge mb-6">Workflow</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        So läuft ein Heizlast-Projekt mit Prometo
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Die Seite ist bewusst für Menschen geschrieben, die nach einer praxistauglichen Lösung suchen:
+                        weniger Toolwechsel, weniger Nachpflege, mehr Klarheit von der ersten PDF bis zur finalen
+                        Auslegung.
+                    </p>
+                </div>
+                <div class="space-y-5">
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 1</p>
+                        <h3 class="text-xl font-bold text-white mb-3">PDF importieren und Räume erfassen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Das digitale Aufmaß startet direkt auf Basis des Plans. Räume und Bauteile werden
+                            systematisch erfasst, statt später aus mehreren Tabellen zusammengesucht zu werden.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 2</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Bauteile und Randbedingungen ergänzen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Außenwände, Fenster, Decken oder angrenzende unbeheizte Bereiche werden direkt am Raum
+                            dokumentiert. Das macht die Heizlastberechnung intern nachvollziehbar.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 3</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Heizlast und Folgeaufgaben ableiten</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Auf Basis der strukturierten Eingaben lassen sich Heizlast, Verteilung und weitere
+                            Planungsschritte schneller vorbereiten. Besonders bei Sanierungen spart das Zeit.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 4</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Mit Team und Baustelle synchron bleiben</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Änderungen aus dem Feld fließen zurück in das Projekt. Dadurch bleiben Büro, Monteur und
+                            Planung näher an derselben Datenbasis.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl">
+                    <span class="badge mb-6">Zielgruppen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Für wen sich die Seite besonders lohnt</h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Suchanfragen wie "Heizlastberechnung Software", "Heizlast App" oder "SHK Software DIN 12831"
+                        kommen meist aus drei klaren Situationen. Deshalb ist Prometo genau auf diese Fälle beschrieben.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Heizungsbauer</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Für Betriebe, die Wärmepumpen oder Heizflächen nicht mehr auf Grundlage unübersichtlicher
+                            Tabellen dimensionieren wollen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">TGA-Planung</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Für Büros, die strukturierte Projektübergaben brauchen und Daten nicht erst manuell in
+                            mehrere Tools übertragen möchten.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Sanierungsprojekte</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Für Bestandsgebäude, bei denen sauberes Aufmaß, nachvollziehbare Raumdaten und mobile
+                            Erfassung besonders wichtig sind.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="faq">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Häufige Fragen zur Heizlastberechnung Software
+                    </h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Kann ich mit Prometo Heizlasten raumweise dokumentieren?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Ja. Räume, Bauteile und Eingaben bleiben in einer Projektlogik organisiert. Das ist gerade
+                            dann hilfreich, wenn mehrere Personen an einem Projekt arbeiten oder Rückfragen aus der
+                            Baustelle zurückkommen.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Orientiert sich Prometo an der DIN EN 12831?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Ja. Die Berechnungslogik ist eng an der DIN EN 12831 orientiert. Die Seite kommuniziert das
+                            bewusst transparent und nicht als offizielle Normzertifizierung.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ist Prometo eher für App oder Büro gedacht?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Beides. Die Software ist für SHK-Büroarbeit ausgelegt, lässt sich aber mit der
+                            <a href="/digitales-aufmass-app.html" class="text-primary underline underline-offset-2">digitalen Aufmaß App</a>
+                            sinnvoll auf die Baustelle verlängern.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-20 md:pb-28">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12">
+                <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+                    <div>
+                        <span class="badge mb-6">Nächster Schritt</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
+                            Heizlastberechnung, Aufmaß und Baustellen-Workflow in einem System
+                        </h2>
+                        <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
+                            Wenn du nicht nur eine Formel, sondern einen belastbaren Prozess suchst, passt Prometo zu
+                            deiner Suchintention deutlich besser als eine isolierte Tabellenlösung.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-4 text-sm text-gray-400">
+                            <a href="/digitales-aufmass-app.html" class="text-primary hover:text-white transition-colors">
+                                Digitale Aufmaß App
+                            </a>
+                            <a href="/bluebeam-alternative.html" class="text-primary hover:text-white transition-colors">
+                                Bluebeam Alternative
+                            </a>
+                            <a href="/" class="text-primary hover:text-white transition-colors">
+                                Zur Startseite
+                            </a>
+                        </div>
+                    </div>
+                    <a href="/#beta-signup"
+                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                        Beta-Zugang anfragen
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/digitales-aufmass-app.html" class="hover:text-white transition-colors">Digitales Aufmaß</a>
+                <a href="/bluebeam-alternative.html" class="hover:text-white transition-colors">Bluebeam Alternative</a>
+                <a href="/datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

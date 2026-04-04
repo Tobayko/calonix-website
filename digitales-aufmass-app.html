@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Digitale Aufmaß App für PDF-Grundrisse | Prometo</title>
+    <meta name="description"
+        content="Prometo ist die digitale Aufmaß App für PDF-Pläne, Räume, Bauteile und mobile Datenerfassung auf der Baustelle." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/digitales-aufmass-app.html" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/digitales-aufmass-app.html" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/digitales-aufmass-app.html" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Digitale Aufmaß App für PDF-Grundrisse | Prometo" />
+    <meta property="og:description"
+        content="Raumaufmaß, PDF-Import und mobile Baustellen-Erfassung in einer App für SHK und TGA." />
+    <meta property="og:url" content="https://prometo.app/digitales-aufmass-app.html" />
+    <meta property="og:image" content="https://prometo.app/assets/showcase/featured/import-review.webp" />
+    <meta property="og:image:alt" content="Prometo Oberfläche für PDF-Import und digitales Aufmaß" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="720" />
+    <meta property="og:image:height" content="1600" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Digitale Aufmaß App für PDF-Grundrisse | Prometo" />
+    <meta name="twitter:description"
+        content="Raumaufmaß, PDF-Import und mobile Baustellen-Erfassung in einer App für SHK und TGA." />
+    <meta name="twitter:image" content="https://prometo.app/assets/showcase/featured/import-review.webp" />
+    <meta name="twitter:image:alt" content="Prometo Oberfläche für PDF-Import und digitales Aufmaß" />
+
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top right, rgba(69, 222, 231, 0.10), transparent 38%),
+                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: #fff;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/apple-touch-icon.png"
+                },
+                "sameAs": [
+                    "https://linkedin.com/company/prometo-app",
+                    "https://instagram.com/prometo.app",
+                    "https://youtube.com/@prometo-app",
+                    "https://x.com/prometo-app",
+                    "https://facebook.com/prometo.app"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/digitales-aufmass-app.html#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Digitale Aufmaß App",
+                        "item": "https://prometo.app/digitales-aufmass-app.html"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/digitales-aufmass-app.html#webpage",
+                "url": "https://prometo.app/digitales-aufmass-app.html",
+                "name": "Digitale Aufmaß App für PDF-Grundrisse | Prometo",
+                "description": "Prometo ist die digitale Aufmaß App für PDF-Pläne, Räume, Bauteile und mobile Datenerfassung auf der Baustelle.",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/digitales-aufmass-app.html#breadcrumb"
+                },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/showcase/featured/import-review.webp"
+                },
+                "about": {
+                    "@type": "Thing",
+                    "name": "Digitale Aufmaß App"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/digitales-aufmass-app.html#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Kann ich mit Prometo direkt aus PDF-Grundrissen aufmessen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Prometo ist für den Einstieg aus PDF-Plänen gedacht und führt Räume, Bauteile und Projektinfos in einer strukturierten Oberfläche zusammen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Läuft die App auch auf Tablet oder iPad?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Die Seite beschreibt Prometo als mobile Lösung für Tablet, iPad und Smartphone, damit Aufmaß und Datenerfassung nicht nur am Büroarbeitsplatz stattfinden."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Warum ist eine Aufmaß App besser als manuelle Planmarkierungen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Weil Geometrie, Räume und Folgeschritte direkt digital erfasst werden. Das spart Nacharbeit, wenn Daten später für Heizlast oder Projektabstimmungen gebraucht werden."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/heizlastberechnung-software.html" class="hover:text-white transition-colors">Heizlast</a>
+                <a href="/bluebeam-alternative.html" class="hover:text-white transition-colors">Bluebeam Alternative</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Demo anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">Digitale Aufmaß App</span>
+                </nav>
+
+                <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">Digitales Aufmaß</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Digitale Aufmaß App für PDF-Grundrisse und Baustelle
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
+                            Prometo ist für Teams gedacht, die Aufmaß nicht länger in Screenshots, Papiernotizen oder
+                            verstreuten PDF-Kommentaren organisieren wollen. Die App verknüpft Grundriss, Räume,
+                            Bauteile und Folgeaufgaben in einem digitalen Ablauf.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a href="/#beta-signup"
+                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                Early Access sichern
+                            </a>
+                            <a href="/heizlastberechnung-software.html"
+                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                Heizlast Software ansehen
+                            </a>
+                        </div>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="glass-panel rounded-3xl p-5">
+                                <h2 class="text-xl font-bold text-white mb-2">Vom PDF ins Projekt</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Statt bloßer Markierung im Plan werden Räume und Bauteile direkt in ein strukturiertes
+                                    Projekt überführt.
+                                </p>
+                            </div>
+                            <div class="glass-panel rounded-3xl p-5">
+                                <h2 class="text-xl font-bold text-white mb-2">Für Tablet und iPad</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Mobile Erfassung auf der Baustelle sorgt dafür, dass Korrekturen dort landen, wo sie
+                                    entstehen.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-[2rem] p-4 md:p-6">
+                        <img src="/assets/showcase/featured/import-review.webp"
+                            alt="Prometo Bildschirm mit PDF-Import und digitalem Aufmaß"
+                            width="720" height="1600" loading="eager" fetchpriority="high" decoding="async"
+                            class="mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-8 md:pb-12">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-3">
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Schneller Einstieg aus dem Plan</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Wer nach einer Aufmaß App sucht, sucht selten nur ein Zeichenwerkzeug. In der Praxis zählt,
+                        wie schnell ein PDF-Grundriss in ein bearbeitbares Projekt mit Räumen, Wänden und Öffnungen
+                        überführt werden kann.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">2. Besser für spätere Berechnungen</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Ein digitales Aufmaß wird besonders wertvoll, wenn die Daten später für Heizlast,
+                        Sanierungsplanung oder Materiallogik weiterverwendet werden können. Genau darauf ist Prometo
+                        ausgelegt.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Baustellentauglich statt bürolastig</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Die Seite beantwortet deshalb bewusst Suchintentionen wie "Aufmaß App iPad" oder
+                        "digitales Aufmaß Baustelle". Die mobile Nutzung ist kein Nebenschauplatz, sondern Kern des
+                        Produkts.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+                <div>
+                    <span class="badge mb-6">Praxisablauf</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Wie die Aufmaß App im Alltag eingesetzt wird
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Statt nur Produktmarketing aufzuzählen, beschreibt diese Seite den tatsächlichen Einsatz: vom
+                        ersten Plan bis zur sauberen Weitergabe der Daten in Heizlast- und Projektprozesse.
+                    </p>
+                </div>
+                <div class="space-y-5">
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 1</p>
+                        <h3 class="text-xl font-bold text-white mb-3">PDF öffnen und Projekt strukturieren</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Der Plan bildet den Einstieg, aber das Ziel ist ein belastbares Projektmodell mit Räumen,
+                            Bauteilen und nachvollziehbaren Informationen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 2</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Vor Ort ergänzen statt später nachpflegen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Auf Tablet oder Smartphone lassen sich Änderungen dort eintragen, wo sie auffallen. Das spart
+                            doppelte Erfassung im Büro.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 3</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Daten direkt weiterverwenden</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Das Aufmaß ist kein isolierter Export, sondern die Grundlage für weitere Arbeitsschritte wie
+                            die <a href="/heizlastberechnung-software.html" class="text-primary underline underline-offset-2">Heizlastberechnung</a>.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl">
+                    <span class="badge mb-6">Einsatzfelder</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Wann eine digitale Aufmaß App besonders stark ist</h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Nicht jede Baustelle ist identisch. Die Suchanfragen hinter diesem Thema kommen oft aus
+                        wiederkehrenden Situationen, in denen klassische PDF-Markups an Grenzen stoßen.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Sanierungen im Bestand</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Wenn Räume, Nischen und Bauteilanschlüsse vom Standard abweichen, hilft eine strukturierte
+                            Erfassung mehr als lose Screenshots.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Aufmaß mit Team</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Sobald Büro und Baustelle beteiligt sind, werden klare Zustände, Notizen und
+                            Synchronisation wichtiger als reine Zeichenfunktionen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">iPad-Workflows im SHK-Betrieb</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Viele Betriebe suchen ausdrücklich nach einer Aufmaß App für iPad. Prometo adressiert diese
+                            Suchintention mit einer mobil gedachten Bedienung.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="faq">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Häufige Fragen zur digitalen Aufmaß App
+                    </h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item glass-panel rounded-3xl p-6" open>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Kann ich mit Prometo direkt aus PDF-Grundrissen aufmessen?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Ja. Die Seite ist genau auf diesen Einstieg ausgerichtet: PDF rein, Räume und Bauteile
+                            strukturiert erfassen, später für weitere Arbeitsschritte weiterverwenden.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Läuft die App auch auf Tablet oder iPad?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Ja. Die mobile Nutzung ist ein zentraler Teil des Produkts und keine nachträgliche
+                            Zusatzfunktion.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ist Prometo nur ein PDF-Tool?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Nein. Der Unterschied zu klassischen PDF-Markup-Tools liegt darin, dass Aufmaßdaten später
+                            direkt in Heizlast- und Projektlogik übergehen können.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-20 md:pb-28">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12">
+                <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+                    <div>
+                        <span class="badge mb-6">Nächster Schritt</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
+                            Aufmaß nicht isoliert denken, sondern als Startpunkt des ganzen Projekts
+                        </h2>
+                        <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
+                            Genau dafür ist Prometo beschrieben: erst digitales Aufmaß, dann strukturierte Weiterarbeit
+                            in Heizlast, Planung und Baustellenkoordination.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-4 text-sm text-gray-400">
+                            <a href="/heizlastberechnung-software.html" class="text-primary hover:text-white transition-colors">
+                                Heizlastberechnung Software
+                            </a>
+                            <a href="/bluebeam-alternative.html" class="text-primary hover:text-white transition-colors">
+                                Bluebeam Alternative
+                            </a>
+                            <a href="/" class="text-primary hover:text-white transition-colors">
+                                Zur Startseite
+                            </a>
+                        </div>
+                    </div>
+                    <a href="/#beta-signup"
+                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                        Beta-Zugang anfragen
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/heizlastberechnung-software.html" class="hover:text-white transition-colors">Heizlast</a>
+                <a href="/bluebeam-alternative.html" class="hover:text-white transition-colors">Bluebeam Alternative</a>
+                <a href="/datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

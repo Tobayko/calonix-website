@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://prometo.app/</loc>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/" />
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://prometo.app/sitemap-pages.xml</loc>
+    <lastmod>2026-04-04</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://prometo.app/sitemap-images.xml</loc>
+    <lastmod>2026-04-04</lastmod>
+  </sitemap>
+</sitemapindex>

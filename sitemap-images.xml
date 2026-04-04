@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://prometo.app/</loc>
+    <image:image>
+      <image:loc>https://prometo.app/assets/og-image.png</image:loc>
+      <image:title>Prometo OG Image</image:title>
+      <image:caption>Prometo für Heizlastberechnung und digitales Aufmaß</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/showcase/featured/homescreen.webp</image:loc>
+      <image:title>Prometo Homescreen</image:title>
+      <image:caption>Prometo App Homescreen mit Projekten und Werkzeugen</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/showcase/featured/assistant.webp</image:loc>
+      <image:title>Prometo Fachassistent</image:title>
+      <image:caption>Fachassistent für SHK und TGA in Prometo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://prometo.app/heizlastberechnung-software.html</loc>
+    <image:image>
+      <image:loc>https://prometo.app/assets/showcase/featured/hydraulic-balance.webp</image:loc>
+      <image:title>Heizlastberechnung in Prometo</image:title>
+      <image:caption>Hydraulischer Abgleich und strukturierte Heizlast in Prometo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://prometo.app/digitales-aufmass-app.html</loc>
+    <image:image>
+      <image:loc>https://prometo.app/assets/showcase/featured/import-review.webp</image:loc>
+      <image:title>Digitales Aufmaß mit Prometo</image:title>
+      <image:caption>PDF-Import und digitales Gebäudeaufmaß mit Prometo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://prometo.app/bluebeam-alternative.html</loc>
+    <image:image>
+      <image:loc>https://prometo.app/assets/showcase/featured/tools.webp</image:loc>
+      <image:title>Prometo Tools Übersicht</image:title>
+      <image:caption>Prometo als Bluebeam Alternative für SHK und TGA</image:caption>
+    </image:image>
+  </url>
+</urlset>
