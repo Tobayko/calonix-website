@@ -95,6 +95,12 @@
             background: #45dee7;
             box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
         }
+
+        .tablet-abgleich-focus {
+            border: 1px solid rgba(69, 222, 231, 0.18);
+            background: linear-gradient(180deg, rgba(69, 222, 231, 0.08), rgba(15, 20, 20, 0.72));
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.22);
+        }
     </style>
 
     <script type="application/ld+json">
@@ -400,7 +406,7 @@
                         Zur Heizlast App
                     </a>
                 </div>
-                <div class="grid gap-6 md:grid-cols-2">
+                <div class="grid gap-6 md:grid-cols-2 screenshot-rail">
                     <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
                         <img src="/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
                             alt="Prometo Projektassistent mit Eingabefeldern für Projektname, Adresse und Fertigstellung auf dem Smartphone"
@@ -440,7 +446,7 @@
                         Zur Aufmaß App
                     </a>
                 </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5 screenshot-rail screenshot-rail--wide">
                     <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
                         <img src="/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp"
                             alt="Prometo Bauplan-Import mit KI-bereiter Startansicht und PDF-Upload auf dem Smartphone"
@@ -510,7 +516,7 @@
                         Zu den Schätzwerten
                     </a>
                 </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5 screenshot-rail screenshot-rail--wide">
                     <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
                         <img src="/assets/prometo-screenshots/mobile/schnellberechnung-raeume.webp"
                             alt="Prometo Schnellberechnung mit importierten Räumen und Flächen auf dem Smartphone"
@@ -580,7 +586,7 @@
                         Zur Heizlastberechnung
                     </a>
                 </div>
-                <div class="grid gap-6 md:grid-cols-3">
+                <div class="grid gap-6 md:grid-cols-3 screenshot-rail screenshot-rail--wide">
                     <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
                         <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
                             alt="Prometo Projektdetail mit Heizlastergebnissen und Bivalenzpunkt-Diagramm"
@@ -620,9 +626,9 @@
                 <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-10 reveal">
                     <div class="max-w-3xl">
                         <span class="badge mb-6">Hydraulischer Abgleich</span>
-                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Verteiler, Heizkreise und Durchflusswerte mobil prüfen</h2>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Verteiler, Heizkreise und Durchflusswerte auf Smartphone und Tablet prüfen</h2>
                         <p class="text-lg text-gray-400 leading-relaxed">
-                            Temperaturdifferenz, Port-Zuordnung und Soll-Durchfluss lassen sich direkt am Projekt und am Verteiler ablesen.
+                            Temperaturdifferenz, Port-Zuordnung und Soll-Durchfluss lassen sich direkt am Projekt und am Verteiler ablesen. Der Tablet-Modus bietet dabei besonders viel Kontext für die Einregulierung je Etage.
                         </p>
                     </div>
                     <a href="/heizlastberechnung/app/"
@@ -630,27 +636,7 @@
                         Hydraulischen Abgleich in der App sehen
                     </a>
                 </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-                    <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-einstellungen.webp"
-                            alt="Prometo Hydraulischer Abgleich mit Delta-T, Vorlauf und Rücklauf auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Abgleich-Einstellungen</strong>
-                            Delta-T, Vorlauf, Rücklauf und Raumfilter bilden den Einstieg in die Verteilungslogik.
-                        </figcaption>
-                    </figure>
-                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
-                            alt="Prometo Heizkreisdetail mit Soll-Durchfluss und Port-Zuordnung auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Heizkreisdetail am Port</strong>
-                            Verteiler, Port und Soll-Durchfluss sind pro Heizkreis direkt ablesbar.
-                        </figcaption>
-                    </figure>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4 screenshot-rail screenshot-rail--wide">
                     <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-2 lift-on-hover">
                         <img src="/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp"
                             alt="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet"
@@ -671,6 +657,63 @@
                             Die Tablet-Ansicht unterstützt den Abgleich je Etage mit Verteiler- und Raumdaten zugleich.
                         </figcaption>
                     </figure>
+                    <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-einstellungen.webp"
+                            alt="Prometo Hydraulischer Abgleich mit Delta-T, Vorlauf und Rücklauf auf dem Smartphone"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">Abgleich-Einstellungen mobil</strong>
+                            Delta-T, Vorlauf, Rücklauf und Raumfilter bilden den Einstieg in die Verteilungslogik.
+                        </figcaption>
+                    </figure>
+                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
+                            alt="Prometo Heizkreisdetail mit Soll-Durchfluss und Port-Zuordnung auf dem Smartphone"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">Heizkreisdetail am Port</strong>
+                            Verteiler, Port und Soll-Durchfluss sind pro Heizkreis direkt ablesbar.
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="tablet-abgleich-focus rounded-[2rem] p-6 md:p-8 mt-10 reveal reveal-delay-1">
+                    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+                        <div>
+                            <span class="badge mb-6">Tablet-Fokus</span>
+                            <h3 class="text-2xl md:text-4xl font-bold text-white mb-5">
+                                Der hydraulische Abgleich wirkt auf dem Tablet am stärksten
+                            </h3>
+                            <p class="text-lg text-gray-300 leading-relaxed">
+                                Auf dem Tablet bleiben Verteilerbild, Raumleistungen und Durchflusswerte gleichzeitig
+                                sichtbar. Das macht den Prometo-Workflow besonders praktisch für Büroabstimmung,
+                                Einregulierung und die Übergabe auf der Baustelle.
+                            </p>
+                        </div>
+                        <div class="grid gap-6 md:grid-cols-2 screenshot-rail screenshot-rail--wide">
+                            <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
+                                <img src="/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp"
+                                    alt="Prometo Tablet-Modus des hydraulischen Abgleichs mit EG-Verteiler"
+                                    width="2560" height="1600" loading="lazy" decoding="async"
+                                    class="w-full rounded-[1.5rem] border border-white/8" />
+                                <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                                    <strong class="block text-white font-headline font-bold mb-1">EG-Verteiler</strong>
+                                    Raumübersicht und Statuspunkte bleiben in einer Bildschirmbreite lesbar.
+                                </figcaption>
+                            </figure>
+                            <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
+                                <img src="/assets/prometo-screenshots/tablet/hydraulischer-abgleich-og-verteiler.webp"
+                                    alt="Prometo Tablet-Modus des hydraulischen Abgleichs mit OG-Verteiler"
+                                    width="2560" height="1600" loading="lazy" decoding="async"
+                                    class="w-full rounded-[1.5rem] border border-white/8" />
+                                <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                                    <strong class="block text-white font-headline font-bold mb-1">OG-Verteiler</strong>
+                                    Gesamtdurchfluss und Heizkreise je Etage bleiben direkt vergleichbar.
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -690,7 +733,7 @@
                         Tablet-Workflow ansehen
                     </a>
                 </div>
-                <div class="grid gap-6 md:grid-cols-3">
+                <div class="grid gap-6 md:grid-cols-3 screenshot-rail screenshot-rail--wide">
                     <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
                         <img src="/assets/prometo-screenshots/tablet/startseite.webp"
                             alt="Prometo Tablet-Startseite mit Seitennavigation und Projektübersicht"

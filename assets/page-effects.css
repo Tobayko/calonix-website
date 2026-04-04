@@ -50,6 +50,9 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-media-card::before {
@@ -64,6 +67,13 @@
 .hero-device {
     position: relative;
     z-index: 1;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: min(78vh, 52rem);
+    margin-inline: auto;
+    object-fit: contain;
+    object-position: center center;
     transform: translateZ(0);
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform;
@@ -488,6 +498,27 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+    scrollbar-width: none;
+}
+
+.jump-links::-webkit-scrollbar {
+    display: none;
+}
+
+.screenshot-rail > figure {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.screenshot-rail > figure img {
+    display: block;
+    width: auto !important;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+    object-fit: contain;
+    object-position: center center;
 }
 
 .jump-link {
@@ -596,6 +627,10 @@
 }
 
 @media (max-width: 767px) {
+    .hero-device {
+        max-height: min(68vh, 38rem);
+    }
+
     .bar-row,
     .range-row,
     .signal-row {
@@ -610,6 +645,43 @@
 
     .compare-row {
         grid-template-columns: 1fr;
+    }
+
+    .jump-links {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.35rem;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .jump-link {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
+
+    .screenshot-rail {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(84vw, 1fr);
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        padding: 0 0.25rem 0.35rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .screenshot-rail::-webkit-scrollbar {
+        display: none;
+    }
+
+    .screenshot-rail--wide {
+        grid-auto-columns: minmax(92vw, 1fr);
+    }
+
+    .screenshot-rail > figure {
+        scroll-snap-align: start;
     }
 }
 
