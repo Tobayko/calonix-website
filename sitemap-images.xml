@@ -56,15 +56,7 @@
     <image:image>
       <image:loc>https://prometo.app/assets/showcase/featured/import-review.webp</image:loc>
       <image:title>Digitales Aufmaß mit Prometo</image:title>
-      <image:caption>PDF-Import und digitales Gebäudeaufmaß mit Prometo</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://prometo.app/bluebeam-alternative.html</loc>
-    <image:image>
-      <image:loc>https://prometo.app/assets/showcase/featured/tools.webp</image:loc>
-      <image:title>Prometo Tools Übersicht</image:title>
-      <image:caption>Prometo als Bluebeam Alternative für SHK und TGA</image:caption>
+      <image:caption>Digitales PDF-Aufmaß und mobiles Gebäudeaufmaß für SHK mit Prometo</image:caption>
     </image:image>
   </url>
 </urlset>
