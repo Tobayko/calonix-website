@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
     <title>Heizlastberechnung App für SHK & Baustelle | Prometo</title>
     <meta name="description"
-        content="Heizlastberechnung App für SHK auf iOS und Android: planbasiert aus PDF-Grundrissen, raumweise strukturiert, hydraulischer Abgleich und Materialbestellung – an DIN EN 12831 angelehnt." />
+        content="Heizlastberechnung App für SHK auf iOS und Android: Projekt-Wizard, Plan-Import, Planstudio, raumweise Heizlast, Flächensystem, Hydraulik und Material – an DIN EN 12831 angelehnt." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -31,7 +31,7 @@
     <meta property="og:site_name" content="Prometo" />
     <meta property="og:title" content="Heizlastberechnung App für SHK & Baustelle | Prometo" />
     <meta property="og:description"
-        content="Heizlastberechnung App für SHK auf iOS und Android: planbasiert aus PDF-Grundrissen, raumweise strukturiert, hydraulischer Abgleich und Materialbestellung – an DIN EN 12831 angelehnt." />
+        content="Heizlastberechnung App für SHK auf iOS und Android: Projekt-Wizard, Plan-Import, Planstudio, raumweise Heizlast, Flächensystem, Hydraulik und Material – an DIN EN 12831 angelehnt." />
     <meta property="og:url" content="https://prometo.app/heizlastberechnung/app/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp" />
     <meta property="og:image:alt" content="Prometo Projektassistent der Heizlast App auf dem Smartphone" />
@@ -42,7 +42,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Heizlastberechnung App für SHK & Baustelle | Prometo" />
     <meta name="twitter:description"
-        content="Heizlastberechnung App für SHK auf iOS und Android: planbasiert aus PDF-Grundrissen, raumweise strukturiert, hydraulischer Abgleich und Materialbestellung – an DIN EN 12831 angelehnt." />
+        content="Heizlastberechnung App für SHK auf iOS und Android: Projekt-Wizard, Plan-Import, Planstudio, raumweise Heizlast, Flächensystem, Hydraulik und Material – an DIN EN 12831 angelehnt." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp" />
     <meta name="twitter:image:alt" content="Prometo Projektassistent der Heizlast App auf dem Smartphone" />
 
@@ -170,7 +170,7 @@
                 "@id": "https://prometo.app/heizlastberechnung/app/#webpage",
                 "url": "https://prometo.app/heizlastberechnung/app/",
                 "name": "Heizlastberechnung App für SHK & Baustelle | Prometo",
-                "description": "Heizlastberechnung App für SHK auf iOS und Android: planbasiert aus PDF-Grundrissen, raumweise strukturiert, hydraulischer Abgleich und Materialbestellung – an DIN EN 12831 angelehnt.",
+                "description": "Heizlastberechnung App für SHK auf iOS und Android: Projekt-Wizard, Plan-Import, Planstudio, raumweise Heizlast, Flächensystem, Hydraulik und Material – an DIN EN 12831 angelehnt.",
                 "inLanguage": "de-DE",
                 "isPartOf": {
                     "@id": "https://prometo.app/#website"
@@ -229,6 +229,8 @@
                 <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
                 <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
                 <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
+                <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
+                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
                 <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
                 <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Schätzwerte</a>
             </nav>
@@ -257,7 +259,7 @@
                             Heizlastberechnung App für SHK-Betriebe und Baustelle
                         </h1>
                         <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
-                            Prometo ist für SHK-Teams gedacht, die Heizlast nicht isoliert rechnen wollen, sondern direkt aus PDF-Grundrissen, Raumdaten und Projektlogik ableiten. Die App läuft mobil auf iOS und Android – damit Büro und Baustelle auf derselben Grundlage arbeiten.
+                            Prometo ist für SHK-Teams gedacht, die Heizlast nicht isoliert rechnen wollen, sondern als Teil eines gemeinsamen Projektmodells aus Wizard, Plan-Import, Planstudio, Systementscheidung, Flächensystem und Hydraulik weiterführen. Die App läuft mobil auf iOS und Android – damit Büro und Baustelle auf derselben Grundlage arbeiten.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-10">
                             <a href="/#beta-signup"
@@ -273,16 +275,15 @@
                             <div class="glass-panel rounded-3xl p-5 lift-on-hover">
                                 <h2 class="text-xl font-bold text-white mb-2">Planbasiert</h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
-                                    Der Einstieg erfolgt aus vorhandenen Grundrissen. Das passt zu vielen
-                                    Handwerksprojekten besser als ein zusätzlicher Erfassungsschritt außerhalb der
-                                    Planunterlagen.
+                                    Der Einstieg erfolgt aus vorhandenen Grundrissen. Plan-Import und Planstudio
+                                    übernehmen, prüfen und ergänzen Raumdaten direkt im Projekt.
                                 </p>
                             </div>
                             <div class="glass-panel rounded-3xl p-5 lift-on-hover">
                                 <h2 class="text-xl font-bold text-white mb-2">Mobil weiterführbar</h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
                                     Projektstände lassen sich auf Baustelle und im Büro entlang derselben Struktur
-                                    prüfen, ergänzen und abstimmen.
+                                    prüfen, ergänzen und in Heizlast, EN-1264-Auslegung und Hydraulik weiterführen.
                                 </p>
                             </div>
                         </div>
@@ -368,8 +369,8 @@
                         Die Heizlast App im Projektablauf für Smartphone und Tablet
                     </h2>
                     <p class="text-lg text-gray-400 leading-relaxed">
-                        Diese Screenshots zeigen, wie Prometo Projektstart, Heizlast-Ergebnis und hydraulischen Abgleich
-                        über Smartphone und Tablet in einem SHK-Workflow zusammenführt.
+                        Diese Screenshots zeigen, wie Prometo Projektstart, Plan-Review, Heizlast-Ergebnis und
+                        hydraulische Ableitung über Smartphone und Tablet in einem SHK-Workflow zusammenführt.
                     </p>
                 </div>
                 <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3 screenshot-rail screenshot-rail--wide">
@@ -390,7 +391,7 @@
                             class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">Projekt aus dem Plan heraus prüfen</strong>
-                            Erkannte Räume und Etagen werden vor der weiteren Heizlastbearbeitung direkt in der App kontrolliert.
+                            Erkannte Räume und Etagen werden vor Heizlast, Flächensystem und Hydraulik direkt in der App kontrolliert.
                         </figcaption>
                     </figure>
                     <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-2 lift-on-hover">
@@ -523,7 +524,7 @@
                         Heizlast verstehen statt nur mobil bedienen
                     </h2>
                 </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-6">
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                         <h3 class="text-2xl font-bold text-white mb-4">Was ist Heizlast?</h3>
                         <p class="text-gray-400 leading-relaxed mb-6">
@@ -540,6 +541,24 @@
                         </p>
                         <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
                             Abgleich verstehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Fußbodenheizung auslegen</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Verlegeabstand, Heizkreise, EN 1264 und der Weg von der Heizlast zum Verlegeplan.
+                        </p>
+                        <a href="/fussbodenheizung-auslegen/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Auslegung ansehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Wärmeerzeuger einordnen</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Systemwahl fachlich sauber zwischen Wärmepumpe, Wärmenetz, Biomasse und Verteilung einordnen.
+                        </p>
+                        <a href="/waermeerzeuger/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Wärmeerzeuger verstehen
                         </a>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
@@ -618,6 +637,8 @@
                 <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
                 <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
                 <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
+                <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
+                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
                 <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
                 <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Schätzwerte</a>
                 <a href="/app-workflows.html" class="hover:text-white transition-colors">App-Workflows</a>

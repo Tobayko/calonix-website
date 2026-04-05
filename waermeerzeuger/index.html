@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Wärmeerzeuger für Wohngebäude: Arten, Auswahl und Einordnung der Wärmepumpe | Prometo</title>
+    <meta name="description"
+        content="Wärmeerzeuger fachlich einordnen: Wärmepumpe, Wärmenetz, Biomasse, Hybrid und Solarthermie im Wohngebäude. Was bei Heizlast, Vorlauftemperatur, Heizflächen und Hydraulik wirklich zählt." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/waermeerzeuger/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/waermeerzeuger/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/waermeerzeuger/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title"
+        content="Wärmeerzeuger für Wohngebäude: Arten, Auswahl und Einordnung der Wärmepumpe | Prometo" />
+    <meta property="og:description"
+        content="Wärmepumpe, Wärmenetz, Biomasse, Hybrid und Solarthermie fachlich einordnen. Diese Seite erklärt, wie Heizlast, Vorlauftemperatur, Heizflächen und Hydraulik zur Systementscheidung beitragen." />
+    <meta property="og:url" content="https://prometo.app/waermeerzeuger/" />
+    <meta property="og:image"
+        content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
+    <meta property="og:image:alt"
+        content="Prometo Projektdetail mit Heizlast und Bivalenzpunkt als Grundlage für die Einordnung von Wärmeerzeugern" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="2400" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title"
+        content="Wärmeerzeuger für Wohngebäude: Arten, Auswahl und Einordnung der Wärmepumpe | Prometo" />
+    <meta name="twitter:description"
+        content="Wärmeerzeuger im Wohngebäude richtig einordnen: Technologien, Auswahlkriterien und der Zusammenhang mit Heizlast, Vorlauftemperatur und Heizflächen." />
+    <meta name="twitter:image"
+        content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
+    <meta name="twitter:image:alt"
+        content="Prometo Projektdetail mit Heizlast und Bivalenzpunkt als Grundlage für die Einordnung von Wärmeerzeugern" />
+
+    <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(69, 222, 231, 0.12), transparent 40%),
+                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: #fff;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/apple-touch-icon.png"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/waermeerzeuger/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Wärmeerzeuger",
+                        "item": "https://prometo.app/waermeerzeuger/"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/waermeerzeuger/#webpage",
+                "url": "https://prometo.app/waermeerzeuger/",
+                "name": "Wärmeerzeuger für Wohngebäude: Arten, Auswahl und Einordnung der Wärmepumpe | Prometo",
+                "description": "Informationsseite zu Wärmepumpe, Wärmenetz, Biomasse, Hybrid und Solarthermie sowie zu Heizlast, Vorlauftemperatur, Heizflächen und Hydraulik als Auswahlkriterien.",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/waermeerzeuger/#breadcrumb"
+                }
+            },
+            {
+                "@type": "Article",
+                "@id": "https://prometo.app/waermeerzeuger/#article",
+                "headline": "Wärmeerzeuger für Wohnraumheizung: Systeme richtig einordnen",
+                "description": "Leitfaden zur Auswahl von Wärmeerzeugern im Wohngebäude mit Fokus auf Heizlast, Vorlauftemperatur, Heizflächen, Hydraulik und Systemfit.",
+                "author": {
+                    "@type": "Organization",
+                    "@id": "https://prometo.app/#organization"
+                },
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                },
+                "datePublished": "2026-04-05",
+                "dateModified": "2026-04-05",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/waermeerzeuger/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Ist Wärmeerzeuger nur ein anderes Wort für Wärmepumpe?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Die Wärmepumpe ist ein wichtiger Wärmeerzeuger, aber fachlich nur eine von mehreren Technologien wie Wärmenetzanschluss, Biomasse oder Hybridlösungen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Welche Kriterien sind für die Auswahl entscheidend?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Entscheidend sind vor allem Heizlast, erforderliche Vorlauftemperatur, vorhandene Heizflächen, Hydraulik, Gebäudezustand, Platz, Schall und lokale Infrastruktur."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Braucht eine Wärmepumpe zwingend eine Fußbodenheizung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Niedrige benötigte Systemtemperaturen helfen, aber entscheidend ist der gesamte Systemfit aus Heizlast, Wärmeverteilung und Gebäudekontext."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Kann Solarthermie allein ein Wärmeerzeuger für die Raumheizung sein?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Im Wohngebäude wird Solarthermie meist ergänzend eingesetzt. Als alleinige Lösung für die Raumheizung ist sie eher ein Sonderfall und stark vom Projekt abhängig."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ersetzt Prometo die Rechts- oder Förderberatung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Prometo liefert die technische Arbeitsgrundlage aus Heizlast, Flächensystem und Hydraulik. Rechts- und Förderfragen bleiben projektspezifisch zu prüfen."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
+                <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
+                <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlastberechnung</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Demo anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">Wärmeerzeuger</span>
+                </nav>
+
+                <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+                    <div class="reveal">
+                        <span class="badge mb-6">Wärmeerzeuger</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Wärmeerzeuger für Wohnraumheizung: Systeme richtig einordnen
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
+                            Fachlich ist der Wärmeerzeuger nur ein Teil des Gesamtsystems. Ob Wärmepumpe, Wärmenetz,
+                            Biomasse oder Hybridlösung sinnvoll ist, hängt von Heizlast, Vorlauftemperatur,
+                            Heizflächen, Hydraulik, Gebäudezustand und lokaler Infrastruktur ab.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a href="/#beta-signup"
+                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                Demo anfragen
+                            </a>
+                            <a href="/heizlast/"
+                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                Zur Heizlast
+                            </a>
+                        </div>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
+                                <h2 class="text-xl font-bold text-white mb-2">Systemfit statt Schlagwort</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Kein Wärmeerzeuger ist losgelöst von Heizflächen, Hydraulik und Gebäudelogik zu
+                                    bewerten.
+                                </p>
+                            </div>
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
+                                <h2 class="text-xl font-bold text-white mb-2">Wärmepumpe wichtig, aber nicht allein</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Die Wärmepumpe ist zentral, fachlich aber nur eine von mehreren möglichen
+                                    Technologien.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-2">
+                        <div class="glass-panel rounded-[2rem] p-4 md:p-6">
+                            <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
+                                alt="Prometo Projektdetail mit Heizlast und Bivalenzpunkt als Grundlage für die Einordnung von Wärmeerzeugern"
+                                width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async"
+                                class="mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                    <span class="badge mb-6">Begriff</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Was ist ein Wärmeerzeuger?
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Technisch bezeichnet der Begriff den Teil des Heizsystems, der Wärme erzeugt. Dazu gehören
+                        etwa Verbrennung, elektrische Widerstandsheizung oder die Nutzung von Umweltwärme aus Luft,
+                        Wasser oder Erdreich.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Für die Planung reicht diese Einzelbetrachtung aber nicht. Zur Raumheizung gehören immer auch
+                        Verteilung, Regelung und Heizflächen.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal reveal-delay-1 lift-on-hover">
+                    <span class="badge mb-6">Kurzantwort</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Welche Wärmeerzeuger sind im Wohngebäude relevant?
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Praktisch relevant sind heute vor allem Wärmepumpe, Wärmenetzanschluss, Biomasseheizung und in
+                        bestimmten Konstellationen Hybridlösungen. Solarthermie wird meist ergänzend gedacht und nicht
+                        als alleinige Lösung für die Raumheizung.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Welche Option passt, entscheidet nicht der Technologietrend allein, sondern der konkrete
+                        Systemfit im Gebäude.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="optionen">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Optionen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Welche Wärmeerzeuger im Wohngebäude typischerweise infrage kommen
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Die Auswahl sollte technologieoffen bleiben, aber fachlich sortiert sein. Nicht jedes Gebäude
+                        hat dieselben Voraussetzungen.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Wärmepumpe</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Ein zentraler Wärmeerzeuger für Wohngebäude, besonders stark bei niedrigen
+                            Systemtemperaturen und gut abgestimmter Wärmeverteilung.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Wärmenetz</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Relevant dort, wo ein Netz verfügbar ist und die Anschlussbedingungen zum Projekt passen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Biomasse</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Kann in passenden Projekten sinnvoll sein, verlangt aber eine saubere Einordnung von
+                            Lagerung, Emissionen, Brennstofflogik und Standort.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Hybrid und Solarthermie</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Hybridlösungen oder ergänzende Solarthermie können sinnvoll sein, wenn monovalente
+                            Varianten nicht sauber zum Gebäude passen.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="auswahl">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Auswahlkriterien</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Worauf es bei der Auswahl wirklich ankommt
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Die beste Technologie auf dem Papier hilft wenig, wenn sie nicht zu Last, Verteilung und
+                        Gebäudelogik passt.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Heizlast</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Sie bestimmt die erforderliche Leistung und ist damit die zentrale Grundlage für jede
+                            Erzeugerentscheidung.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Vorlauftemperatur</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Je niedriger die notwendige Systemtemperatur, desto größer wird oft die Auswahl an
+                            effizienten Lösungen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Heizflächen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Fußbodenheizung, Wandflächen oder Heizkörper wirken direkt auf die Eignung des
+                            Wärmeerzeugers zurück.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Hydraulik</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Verteilung, Kreiswerte, Durchflüsse und Abgleich sind Teil der Systementscheidung, nicht
+                            nur Inbetriebnahme-Themen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Gebäude und Standort</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Bestand, Dämmniveau, Platz, Schall, Lagerflächen und lokale Infrastruktur verändern die
+                            technische Einordnung stark.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Projektkontext</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Neubau, Sanierung, Teilmodernisierung oder Netzverfügbarkeit verlangen jeweils andere
+                            Prioritäten.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="waermepumpe">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                    <span class="badge mb-6">Wärmepumpe</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Die Wärmepumpe richtig einordnen
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Die Wärmepumpe ist heute ein besonders wichtiger Wärmeerzeuger für Wohngebäude. Sie sollte
+                        aber nicht mit dem gesamten Heizungssystem gleichgesetzt werden.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Ob sie passt, hängt vor allem von Heizlast, benötigter Vorlauftemperatur, Wärmeverteilung und
+                        hydraulischer Abstimmung ab. Fußbodenheizung ist dabei ein starker Partner, aber keine
+                        zwingende Voraussetzung in jedem Einzelfall.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal reveal-delay-1 lift-on-hover">
+                    <span class="badge mb-6">Verteilung</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Wärmeerzeuger und Wärmeverteilung müssen zusammenpassen
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Ein effizienter Wärmeerzeuger bleibt schwach, wenn die Verteilung nicht passt. Deshalb gehören
+                        Heizflächen, Vorlauftemperatur und hydraulischer Abgleich immer in dieselbe Betrachtung.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Mehr dazu auf
+                        <a href="/fussbodenheizung-auslegen/" class="text-primary underline underline-offset-2">Fußbodenheizung auslegen</a>
+                        und
+                        <a href="/hydraulischer-abgleich/" class="text-primary underline underline-offset-2">Hydraulischer Abgleich</a>.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="fehler">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Planungsfehler</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Typische Fehler bei der Einordnung von Wärmeerzeugern
+                    </h2>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Erzeugerwahl ohne Heizlast</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Ohne belastbare Lastbasis bleibt die Dimensionierung unscharf.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Heizflächen nicht prüfen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Vorlauftemperaturen und Verteilung sind für die Technologieentscheidung zentral.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Hydraulik ausblenden</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Erzeuger, Verteiler und Soll-Durchflüsse wirken immer zusammen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Pauschale Rechtsaussagen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Rechtliche und förderbezogene Aussagen müssen projekt- und zeitbezogen geprüft werden.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="prometo">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                <div class="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+                    <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
+                        alt="Prometo Projektdetail mit Heizlast und Bivalenzpunkt als Arbeitsgrundlage für die Einordnung von Wärmeerzeugern"
+                        width="1080" height="2400" loading="lazy" decoding="async"
+                        class="w-full max-w-sm mx-auto rounded-[1.75rem] border border-white/8" />
+                    <div>
+                        <span class="badge mb-6">Prometo im Einsatz</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                            So unterstützt Prometo die Entscheidung zum Wärmeerzeuger
+                        </h2>
+                        <p class="text-lg text-gray-400 leading-relaxed mb-4">
+                            Prometo hilft bei der technischen Arbeitsgrundlage für die Erzeugerentscheidung:
+                            raumweise Heizlast, Flächensystem, Systemparameter, Verlegeabstände, Heizkreislogik und
+                            hydraulische Ableitung greifen im selben Projektmodell zusammen.
+                        </p>
+                        <p class="text-gray-500 leading-relaxed mb-6">
+                            Die App ersetzt damit weder die Rechtsberatung noch die projektspezifische
+                            Herstellerdimensionierung, liefert aber die fachlich belastbare Basis für die
+                            Systementscheidung.
+                        </p>
+                        <div class="flex flex-wrap gap-4 text-sm">
+                            <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">
+                                Heizlastberechnung ansehen
+                            </a>
+                            <a href="/fussbodenheizung-auslegen/" class="text-primary hover:text-white transition-colors">
+                                Fußbodenheizung auslegen
+                            </a>
+                            <a href="/app-workflows.html" class="text-primary hover:text-white transition-colors">
+                                App-Workflows ansehen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="weiterlesen">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Weiterlesen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Die wichtigsten Seiten rund um Systemwahl, Fläche und Abgleich
+                    </h2>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlast einfach erklärt</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Die Lastbasis, ohne die keine saubere Systementscheidung möglich ist.
+                        </p>
+                        <a href="/heizlast/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Heizlast verstehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Fußbodenheizung auslegen</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Verlegeabstand, Heizkreise und EN 1264 auf Basis realer Lasten.
+                        </p>
+                        <a href="/fussbodenheizung-auslegen/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Auslegung ansehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Hydraulischer Abgleich erklärt</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Verteiler, Soll-Durchflüsse und Einregulierung fachlich einordnen.
+                        </p>
+                        <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Abgleich verstehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlastberechnung für SHK</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Der Workflow von Plan-Import über Heizlast bis Material und Systemlogik.
+                        </p>
+                        <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Heizlast-Hub ansehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlast App für SHK</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Wenn du Systementscheidungen mobil auf derselben Datenbasis weiterführen willst.
+                        </p>
+                        <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Heizlast App ansehen
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="faq">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Häufige Fragen zu Wärmeerzeugern
+                    </h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ist Wärmeerzeuger nur ein anderes Wort für Wärmepumpe?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Nein. Die Wärmepumpe ist ein wichtiger Wärmeerzeuger, aber fachlich nur eine von mehreren
+                            Optionen für die Raumheizung.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Worauf kommt es bei der Auswahl zuerst an?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Auf Heizlast, erforderliche Systemtemperatur, Wärmeverteilung und den konkreten
+                            Gebäudekontext. Erst daraus ergibt sich, welche Technologie sinnvoll wirkt.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Braucht eine Wärmepumpe zwingend eine Fußbodenheizung?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Nein. Niedrige Systemtemperaturen helfen, aber entscheidend ist der gesamte Systemfit aus
+                            Last, Heizflächen und Hydraulik.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Kann Solarthermie allein die Raumheizung übernehmen?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Im Wohngebäude wird Solarthermie meist ergänzend eingesetzt. Als alleiniger Wärmeerzeuger
+                            ist sie eher ein Sonderfall.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ersetzt Prometo die Rechts- oder Förderberatung?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Nein. Prometo liefert die technische Arbeitsgrundlage aus Heizlast, Flächensystem und
+                            Hydraulik. Rechtliche und förderbezogene Fragen bleiben projektspezifisch zu prüfen.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast</a>
+                <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
+                <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
+                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
+            <div class="text-sm text-gray-400">
+                <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
+                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
+                <button id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
+        let gaLoaded = false;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied' });
+        function loadGoogleAnalytics() {
+            if (gaLoaded) return; gaLoaded = true;
+            const script = document.createElement('script'); script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script); gtag('js', new Date()); gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+        }
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            if (!banner) return;
+            const consent = localStorage.getItem('ga_consent');
+            if (!consent) { setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000); }
+            else if (consent === 'granted') { gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' }); loadGoogleAnalytics(); }
+            if (acceptBtn) { acceptBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'granted'); banner.classList.add('translate-y-full'); gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' }); loadGoogleAnalytics(); }); }
+            if (declineBtn) { declineBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'denied'); banner.classList.add('translate-y-full'); }); }
+        })();
+    </script>
+    <script src="/assets/page-effects.js" defer></script>
+</body>
+
+</html>

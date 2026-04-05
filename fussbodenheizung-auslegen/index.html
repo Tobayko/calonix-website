@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Fußbodenheizung auslegen: Verlegeabstand, Heizkreise, EN 1264 | Prometo</title>
+    <meta name="description"
+        content="Fußbodenheizung auslegen: Welche Daten sind nötig, wie hängen Heizlast, Verlegeabstand, Heizkreise und EN 1264 zusammen und wie passt das zu Wärmeerzeuger und hydraulischem Abgleich?" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/fussbodenheizung-auslegen/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/fussbodenheizung-auslegen/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/fussbodenheizung-auslegen/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Fußbodenheizung auslegen: Verlegeabstand, Heizkreise, EN 1264 | Prometo" />
+    <meta property="og:description"
+        content="Von Heizlast und Systemtemperaturen zum Verlegeplan: Eingaben, Verlegeabstand, Heizkreise, EN 1264 und der Bezug zu Wärmeerzeuger und hydraulischem Abgleich." />
+    <meta property="og:url" content="https://prometo.app/fussbodenheizung-auslegen/" />
+    <meta property="og:image"
+        content="https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" />
+    <meta property="og:image:alt"
+        content="Prometo Schnellberechnung mit Heizlast-Ergebnis auf dem Smartphone als Grundlage für die Flächensystem-Auslegung" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="2400" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fußbodenheizung auslegen: Verlegeabstand, Heizkreise, EN 1264 | Prometo" />
+    <meta name="twitter:description"
+        content="Wie legt man eine Fußbodenheizung aus? Diese Seite erklärt Heizlast, Verlegeabstand, Heizkreise, EN 1264 und den Weg zum Verlegeplan." />
+    <meta name="twitter:image"
+        content="https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" />
+    <meta name="twitter:image:alt"
+        content="Prometo Schnellberechnung mit Heizlast-Ergebnis auf dem Smartphone als Grundlage für die Flächensystem-Auslegung" />
+
+    <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
+    <link rel="stylesheet" href="/assets/prometo-gallery.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(69, 222, 231, 0.12), transparent 40%),
+                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        th {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .answer-panel,
+        .jump-nav {
+            border-radius: 1.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(17, 22, 22, 0.82);
+            padding: 1.5rem;
+        }
+
+        .answer-label,
+        .jump-nav-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            margin-bottom: 1rem;
+        }
+
+        .jump-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .jump-link {
+            color: #dfe3e3;
+            transition: color 160ms ease;
+        }
+
+        .jump-link:hover {
+            color: #6bf6ff;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: #fff;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/apple-touch-icon.png"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/fussbodenheizung-auslegen/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Fußbodenheizung auslegen",
+                        "item": "https://prometo.app/fussbodenheizung-auslegen/"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/fussbodenheizung-auslegen/#webpage",
+                "url": "https://prometo.app/fussbodenheizung-auslegen/",
+                "name": "Fußbodenheizung auslegen: Verlegeabstand, Heizkreise, EN 1264 | Prometo",
+                "description": "Diese Seite erklärt, wie Heizlast, Verlegeabstand, Heizkreise, Systemtemperaturen und EN 1264 bei der Auslegung einer Fußbodenheizung zusammenhängen.",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/fussbodenheizung-auslegen/#breadcrumb"
+                },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp"
+                }
+            },
+            {
+                "@type": "Article",
+                "@id": "https://prometo.app/fussbodenheizung-auslegen/#article",
+                "headline": "Fußbodenheizung auslegen: von Heizlast und Systemdaten zum Verlegeplan",
+                "description": "Fachlicher Leitfaden zu Heizlast, Verlegeabstand, Heizkreisen, Systemtemperaturen, EN 1264 und zur Einordnung von Wärmeerzeugern.",
+                "author": {
+                    "@type": "Organization",
+                    "@id": "https://prometo.app/#organization"
+                },
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                },
+                "datePublished": "2026-04-05",
+                "dateModified": "2026-04-05",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/fussbodenheizung-auslegen/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Kann man eine Fußbodenheizung ohne Heizlast auslegen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Für eine belastbare Auslegung sollte die raumweise Heizlast bekannt sein. Ohne Lastbasis bleiben Verlegeabstand, Kreisanzahl und Systemtemperaturen schnell zu grob."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Welche Daten braucht man für die Auslegung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Typisch erforderlich sind raumweise Heizlast, gewünschte Raumtemperaturen, verfügbare Fläche, Bodenaufbau, Oberbelag, Systemtemperaturen und der gewählte Systemtyp."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was regelt die DIN EN 1264 bei der Fußbodenheizung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die Normenreihe behandelt unter anderem Wärmeleistung, Auslegung und Installation wassergeführter Fußbodenheizungen. Sie ist ein wichtiger Referenzrahmen für die Fachplanung."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist Fußbodenheizung nur für Wärmepumpen sinnvoll?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Fußbodenheizung passt besonders gut zu niedrigen Systemtemperaturen und damit oft zu Wärmepumpen, sie ist aber nicht ausschließlich auf diesen Wärmeerzeuger beschränkt."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ersetzt die App die Fachplanung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Prometo unterstützt die Fachplanung mit Heizlast, Systemparametern, EN-1264-bezogener Auslegung und Verlegeplan-Logik. Die fachliche Prüfung im konkreten Projekt bleibt erforderlich."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
+                <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
+                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlastberechnung</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Demo anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">Fußbodenheizung auslegen</span>
+                </nav>
+
+                <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+                    <div class="reveal">
+                        <span class="badge mb-6">Fußbodenheizung auslegen</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Fußbodenheizung auslegen: von Heizlast und Systemdaten zum Verlegeplan
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
+                            Eine Fußbodenheizung wird nicht über einen einzelnen Richtwert ausgelegt, sondern aus
+                            Raumheizlast, Systemtemperaturen, Bodenaufbau, Oberbelag, verfügbarer Fläche und
+                            Heizkreislogik. Genau daraus ergeben sich Verlegeabstand, Kreisanzahl, Kreislängen und die
+                            spätere hydraulische Einregulierung.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a href="/#beta-signup"
+                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                Demo anfragen
+                            </a>
+                            <a href="/heizlast/"
+                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                Heizlast verstehen
+                            </a>
+                        </div>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
+                                <h2 class="text-xl font-bold text-white mb-2">Heizlast zuerst</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Ohne raumweise Lastbasis bleiben Rohrabstand, Kreise und Vorlauf schnell zu grob.
+                                </p>
+                            </div>
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
+                                <h2 class="text-xl font-bold text-white mb-2">Fläche und Hydraulik zusammen denken</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Auslegung endet nicht am Bodenaufbau, sondern bei Kreisen, Volumenströmen und
+                                    Verteilerlogik.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-2">
+                        <div class="glass-panel rounded-[2rem] p-4 md:p-6">
+                            <img src="/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp"
+                                alt="Prometo Schnellberechnung mit Heizlast-Ergebnis auf dem Smartphone als Grundlage für die Flächensystem-Auslegung"
+                                width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async"
+                                class="mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-8 md:pb-12">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+                <article class="answer-panel reveal">
+                    <p class="answer-label">Kurzantwort</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                        Was bedeutet „Fußbodenheizung auslegen“ fachlich?
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Gemeint ist die abgestimmte Festlegung von Flächensystem, Verlegeabstand, Heizkreiszahl,
+                        Kreislängen, Systemtemperaturen und späteren Soll-Volumenströmen auf Basis der realen
+                        Raumanforderungen. Eine saubere Auslegung ist damit immer ein Zusammenspiel aus Heizlast,
+                        Flächengeometrie, Normbezug und Hydraulik.
+                    </p>
+                </article>
+                <aside class="jump-nav reveal reveal-delay-1" aria-labelledby="jump-nav-title">
+                    <p id="jump-nav-title" class="jump-nav-title">Direkt zu den wichtigsten Abschnitten</p>
+                    <div class="jump-links">
+                        <a href="#eingaben" class="jump-link">Welche Eingaben vorliegen müssen</a>
+                        <a href="#verlegeabstand" class="jump-link">Verlegeabstand und Heizkreise</a>
+                        <a href="#waermeerzeuger" class="jump-link">Wärmeerzeuger und Flächenheizung</a>
+                        <a href="#prometo" class="jump-link">So unterstützt Prometo</a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="eingaben" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Grundlagen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Welche Eingaben vor der Auslegung vorliegen müssen
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Für eine belastbare Auslegung reichen weder Quadratmeter noch ein pauschaler Rohrabstand. Die
+                        wichtigsten Eingaben hängen direkt miteinander zusammen.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Raumweise Heizlast</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Sie bestimmt, welche Leistung jede Fläche im Auslegungspunkt überhaupt abgeben muss. Ohne
+                            diese Basis bleibt die Flächenauslegung spekulativ.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Systemtemperaturen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Vorlauf, Rücklauf und gewünschte Raumtemperaturen beeinflussen die mittlere
+                            Oberflächentemperatur und damit die nutzbare Wärmeabgabe.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Bodenaufbau und Oberbelag</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Estrich, Aufbauhöhe, Dämmung und Belag wirken direkt auf den Wärmeübergang. Ein identischer
+                            Rohrabstand ist deshalb nicht automatisch in jedem Raum sinnvoll.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Verfügbare Heizfläche</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Türen, Einbauten, Randzonen und nutzbare Fläche entscheiden mit darüber, ob die
+                            erforderliche Leistung über den Boden allein erreichbar ist.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Systemtyp und Rohrlogik</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Nass- oder Trockensystem, Rohrdimension, Verlegeart und zulässige Kreislogik prägen die
+                            spätere Auslegung und Materialermittlung.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Hydraulischer Anschluss</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Kreiszahl, Kreislängen, Soll-Volumenströme und Verteilerbezug sollten von Anfang an
+                            mitgedacht werden, nicht erst bei der Inbetriebnahme.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="verlegeabstand" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                    <span class="badge mb-6">Verlegeabstand</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Verlegeabstand richtig bestimmen
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Der Verlegeabstand ist kein isolierter Wunschwert. Er reagiert auf Heizlast,
+                        Systemtemperaturen, Aufbau und Belag. Kleinere Abstände können die Leistung erhöhen, verändern
+                        aber zugleich Materialeinsatz, Kreislogik und Druckverhältnisse im Gesamtsystem.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Fachlich sauber ist deshalb nicht „möglichst eng“, sondern „zur Raumanforderung passend“. Genau
+                        hier liegt der Nutzen einer EN-1264-bezogenen Auslegung.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal reveal-delay-1 lift-on-hover">
+                    <span class="badge mb-6">Heizkreise</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Heizkreise auslegen: Anzahl, Länge und Soll-Volumenstrom
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Die Auslegung endet nicht bei der Fläche. Kreisanzahl und Kreislänge müssen so gewählt werden,
+                        dass die Wärmeabgabe erreichbar bleibt und der spätere Verteilerbetrieb praktikabel wird.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Deshalb gehört der Weg von der Heizlast zu Kreiswerten und Soll-Volumenströmen fachlich zur
+                        selben Aufgabe wie Rohrabstand und Systemtemperatur.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="norm">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Normbezug</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Was EN 1264 für die Auslegung bedeutet
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Die Normenreihe DIN EN 1264 ist ein zentraler Referenzrahmen für wassergeführte
+                        Fußbodenheizungen. Sie behandelt unter anderem Wärmeleistung, Auslegung und Installation. Für
+                        die Praxis bedeutet das: Die Auslegung sollte sich an einem klaren, nachvollziehbaren Verfahren
+                        orientieren und nicht an Einzelannahmen ohne Systembezug.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Wärmeabgabe</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Die Norm bietet einen belastbaren Rahmen für die Bestimmung und Vergleichbarkeit der
+                            Wärmeleistung unterschiedlicher Fußbodenheizungssysteme.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Auslegung</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Rohrabstand, Kreisanzahl, Kreislängen und Systemtemperaturen sollten daraus methodisch
+                            abgeleitet werden, nicht nur aus Erfahrungswerten.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Installation</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Auch die spätere Umsetzung auf der Baustelle bleibt Teil des Gesamtbilds. Die fachliche
+                            Prüfung im konkreten Projekt wird durch Software nicht ersetzt.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="waermeerzeuger" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                    <span class="badge mb-6">Systemfit</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Fußbodenheizung und Wärmeerzeuger zusammen denken
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Flächenheizungen passen gut zu niedrigen Systemtemperaturen und sind damit häufig ein starker
+                        Partner für Wärmepumpen. Fachlich sauberer ist aber der breitere Blick: Entscheidend ist nicht
+                        nur der Wärmeerzeuger, sondern das Zusammenspiel aus Heizlast, Verteilung, Regelung und
+                        verfügbaren Flächen.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Mehr dazu auf der Seite
+                        <a href="/waermeerzeuger/" class="text-primary underline underline-offset-2">Wärmeerzeuger</a>.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal reveal-delay-1 lift-on-hover">
+                    <span class="badge mb-6">Planungsfehler</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Typische Fehler bei der Auslegung
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Häufige Fehler sind eine Auslegung ohne saubere Raumlast, pauschale Verlegeabstände in allen
+                        Räumen, fehlende Beachtung von Aufbau und Belag oder das Ausblenden der späteren Hydraulik.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Genau diese Punkte werden kritisch, sobald Wärmeerzeuger, Verteiler und reale Baustellenlogik
+                        zusammenpassen müssen.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="prometo">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                <div class="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+                    <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
+                        alt="Prometo Import-Review mit Räumen und Etagen auf dem Smartphone als Startpunkt für Heizlast und Flächensystem"
+                        width="1080" height="2400" loading="lazy" decoding="async"
+                        class="w-full max-w-sm mx-auto rounded-[1.75rem] border border-white/8" />
+                    <div>
+                        <span class="badge mb-6">Prometo im Einsatz</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                            So unterstützt Prometo die Auslegung von Flächensystemen
+                        </h2>
+                        <p class="text-lg text-gray-400 leading-relaxed mb-4">
+                            Prometo verbindet Projekt-Wizard, Plan-Import, Planstudio, raumweise Heizlast,
+                            Anlageneinstellungen, EN-1264-bezogene Auslegung, Verlegeplan und hydraulische Ableitung in
+                            einem gemeinsamen Projektmodell.
+                        </p>
+                        <p class="text-gray-500 leading-relaxed mb-6">
+                            Die App liefert damit eine belastbare Arbeitsgrundlage für Auslegung und Nachweis. Die
+                            fachliche Prüfung im konkreten Projekt bleibt erforderlich.
+                        </p>
+                        <div class="flex flex-wrap gap-4 text-sm">
+                            <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">
+                                Heizlastberechnung ansehen
+                            </a>
+                            <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors">
+                                Hydraulischen Abgleich verstehen
+                            </a>
+                            <a href="/app-workflows.html" class="text-primary hover:text-white transition-colors">
+                                App-Workflows ansehen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="weiterlesen">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Weiterlesen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Die wichtigsten Seiten rund um Fläche, Heizlast und Systemwahl
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Wer die Auslegung einer Fußbodenheizung verstehen will, braucht meist auch den Blick auf
+                        Heizlast, Wärmeerzeuger und hydraulischen Abgleich.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlast einfach erklärt</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Die Grundlage für jede belastbare Flächenauslegung.
+                        </p>
+                        <a href="/heizlast/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Heizlast verstehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Hydraulischer Abgleich erklärt</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Wie Kreiswerte, Soll-Durchflüsse und Verteiler zur Raumlast passen.
+                        </p>
+                        <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Abgleich verstehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Wärmeerzeuger richtig einordnen</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Von Wärmepumpe bis Wärmenetz: Welche Verteilung zu welchem System passt.
+                        </p>
+                        <a href="/waermeerzeuger/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Wärmeerzeuger verstehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlastberechnung für SHK</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Der Workflow von Plan-Import über Heizlast bis Flächensystem und Material.
+                        </p>
+                        <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Heizlast-Hub ansehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlast App für SHK</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Wenn du Auslegung, Verlegeplan und Projektlogik mobil im Workflow sehen willst.
+                        </p>
+                        <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Heizlast App ansehen
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="faq">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Häufige Fragen zur Auslegung von Fußbodenheizungen
+                    </h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Kann man eine Fußbodenheizung ohne Heizlast auslegen?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Für grobe Orientierung ja, für eine belastbare Auslegung nicht empfehlenswert. Spätestens
+                            wenn Verlegeabstand, Wärmeerzeuger oder Nachweise relevant werden, ist die raumweise Last
+                            die bessere Grundlage.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Welche Daten braucht man mindestens?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Typisch notwendig sind Heizlast, Raumtemperatur, verfügbare Fläche, Bodenaufbau,
+                            Oberbelag, Systemtemperaturen und der geplante Systemtyp.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was bedeutet EN 1264 in der Praxis?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Die Normenreihe liefert den methodischen Rahmen für Wärmeleistung, Auslegung und
+                            Installation wassergeführter Fußbodenheizungen. Sie hilft, die Planung nachvollziehbar und
+                            vergleichbar zu halten.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ist Fußbodenheizung nur mit Wärmepumpe sinnvoll?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Nein. Sie ist besonders gut für niedrige Systemtemperaturen geeignet und deshalb oft eine
+                            starke Partnerin der Wärmepumpe, kann aber auch mit anderen Wärmeerzeugern kombiniert
+                            werden.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ersetzt Prometo die Fachplanung?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Nein. Prometo unterstützt die Fachplanung mit Heizlast, Systemparametern,
+                            EN-1264-bezogener Auslegung, Verlegeplan und hydraulischer Ableitung. Die fachliche Prüfung
+                            im konkreten Projekt bleibt erforderlich.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast</a>
+                <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
+                <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
+                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
+            <div class="text-sm text-gray-400">
+                <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
+                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
+                <button id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
+        let gaLoaded = false;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied' });
+        function loadGoogleAnalytics() {
+            if (gaLoaded) return; gaLoaded = true;
+            const script = document.createElement('script'); script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script); gtag('js', new Date()); gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+        }
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            if (!banner) return;
+            const consent = localStorage.getItem('ga_consent');
+            if (!consent) { setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000); }
+            else if (consent === 'granted') { gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' }); loadGoogleAnalytics(); }
+            if (acceptBtn) { acceptBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'granted'); banner.classList.add('translate-y-full'); gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' }); loadGoogleAnalytics(); }); }
+            if (declineBtn) { declineBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'denied'); banner.classList.add('translate-y-full'); }); }
+        })();
+    </script>
+    <script src="/assets/page-effects.js" defer></script>
+    <script src="/assets/prometo-gallery.js" defer></script>
+</body>
+
+</html>
