@@ -18,6 +18,22 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://prometo.app/heizlast/</loc>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlast/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlast/" />
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://prometo.app/hydraulischer-abgleich/</loc>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/hydraulischer-abgleich/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/hydraulischer-abgleich/" />
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://prometo.app/heizlastberechnung/app/</loc>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlastberechnung/app/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlastberechnung/app/" />

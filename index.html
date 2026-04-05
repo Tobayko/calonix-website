@@ -1809,14 +1809,20 @@
                     <div>
                         <span class="badge mb-6">Themeneinstieg</span>
                         <h2 id="topic-map-heading" class="text-3xl md:text-4xl font-headline font-bold text-white mb-5">
-                            Die wichtigsten Einstiege für Heizlast, DIN und digitales Aufmaß
+                            Die wichtigsten Einstiege für Heizlast, Abgleich, DIN und digitales Aufmaß
                         </h2>
                         <p class="text-on-surface-variant text-lg leading-relaxed max-w-3xl">
                             Wer Prometo zum ersten Mal besucht, soll direkt die passenden Themenpfade finden:
-                            planbasierte Heizlastberechnung, mobile SHK-Workflows, didaktische DIN-Erklärung und
-                            digitale Aufmaß-Prozesse aus PDF-Grundrissen.
+                            Heizlast-Grundlagen, hydraulischen Abgleich, planbasierte Heizlastberechnung, mobile
+                            SHK-Workflows, didaktische DIN-Erklärung und digitale Aufmaß-Prozesse aus PDF-Grundrissen.
                         </p>
                         <div class="mt-6 flex flex-wrap gap-4 text-sm text-gray-400">
+                            <a href="/heizlast/" class="text-primary hover:text-white transition-colors">
+                                Heizlast einfach erklärt
+                            </a>
+                            <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors">
+                                Hydraulischer Abgleich
+                            </a>
                             <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">
                                 Heizlastberechnung Hub
                             </a>
@@ -1829,6 +1835,14 @@
                         </div>
                     </div>
                     <div class="topic-map md:grid-cols-2 xl:grid-cols-3">
+                        <a href="/heizlast/" class="topic-map-card reveal">
+                            <strong>Heizlast einfach erklärt</strong>
+                            <p>Der informationsgetriebene Einstieg zu Definition, W/m²-Werten, Einflussfaktoren und Abgrenzung.</p>
+                        </a>
+                        <a href="/hydraulischer-abgleich/" class="topic-map-card reveal reveal-delay-1">
+                            <strong>Hydraulischer Abgleich erklärt</strong>
+                            <p>Für Suchintentionen zu Pflicht, Förderung, Waermepumpe, Verteiler und Durchflusswerten.</p>
+                        </a>
                         <a href="/heizlastberechnung/" class="topic-map-card reveal reveal-delay-1">
                             <strong>Heizlastberechnung mit Grundriss</strong>
                             <p>Kommerzieller Überblick zu PDF-Workflow, SHK-Einsatzfällen und planbasierter Positionierung.</p>
@@ -3086,15 +3100,39 @@
         <section id="seo-hub" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20" aria-labelledby="seo-hub-heading">
             <div class="text-center mb-16">
                 <h2 id="seo-hub-heading" class="text-4xl md:text-5xl font-headline font-bold mb-6">
-                    Der <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">Heizlast-Cluster</span> für SHK
+                    Der <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">Heizlast- und Abgleich-Cluster</span> für SHK
                 </h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    Jede Seite bedient eine andere Suchintention rund um Heizlastberechnung, App-Workflow, DIN-Einordnung
-                    und frühe Schätzwerte auf Basis von PDF-Grundrissen und Raumstruktur.
+                    Jede Seite bedient eine andere Suchintention rund um Heizlast, Heizlastberechnung, App-Workflow,
+                    hydraulischen Abgleich, DIN-Einordnung und frühe Schätzwerte auf Basis von PDF-Grundrissen und Raumstruktur.
                 </p>
             </div>
 
-            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                <article class="glass-panel p-8 rounded-3xl border border-white/5 bg-[#171c1c]/50">
+                    <span class="badge mb-5">Grundlage</span>
+                    <h3 class="text-2xl font-headline font-bold text-white mb-4">Heizlast einfach erklärt</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Für generische Suchanfragen nach Bedeutung, Berechnung, W/m²-Richtwerten und der Abgrenzung
+                        zu Wärmebedarf und Verbrauch.
+                    </p>
+                    <a href="/heizlast/" class="inline-flex items-center gap-2 text-primary font-headline font-semibold hover:text-white transition-colors">
+                        Heizlast verstehen
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </article>
+                <article class="glass-panel p-8 rounded-3xl border border-white/5 bg-[#171c1c]/50">
+                    <span class="badge mb-5">Abgleich</span>
+                    <h3 class="text-2xl font-headline font-bold text-white mb-4">Hydraulischer Abgleich erklärt</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Für Suchanfragen nach Ablauf, Pflicht, Verfahren A und B sowie der Bedeutung für Wärmepumpen
+                        und Heizflächen.
+                    </p>
+                    <a href="/hydraulischer-abgleich/" class="inline-flex items-center gap-2 text-primary font-headline font-semibold hover:text-white transition-colors">
+                        Abgleich verstehen
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </article>
                 <article class="glass-panel p-8 rounded-3xl border border-white/5 bg-[#171c1c]/50">
                     <span class="badge mb-5">Hub</span>
                     <h3 class="text-2xl font-headline font-bold text-white mb-4">Heizlastberechnung für SHK</h3>
@@ -3261,6 +3299,12 @@
                     <ul class="space-y-3">
                         <li><a href="/heizlastberechnung/"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Heizlastberechnung</a>
+                        </li>
+                        <li><a href="/heizlast/"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Heizlast einfach erklärt</a>
+                        </li>
+                        <li><a href="/hydraulischer-abgleich/"
+                                class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Hydraulischer Abgleich</a>
                         </li>
                         <li><a href="/heizlastberechnung/app/"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Heizlast App für SHK</a>

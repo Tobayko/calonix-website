@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Hydraulischer Abgleich einfach erklärt: Ablauf, Pflicht und Förderung | Prometo</title>
+    <meta name="description"
+        content="Was ist hydraulischer Abgleich? Einfach erklärt mit Ablauf, Heizkörper- und Fußbodenheizungsbezug, Wärmepumpe, Pflicht-/Förderkontext und dem Weg von Heizlast zu Durchflusswerten." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/hydraulischer-abgleich/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/hydraulischer-abgleich/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/hydraulischer-abgleich/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Hydraulischer Abgleich einfach erklärt: Ablauf, Pflicht und Förderung | Prometo" />
+    <meta property="og:description"
+        content="Definition, Ablauf, Wärmepumpe, Fußbodenheizung, GEG-/Förderkontext und der Weg von der Heizlast zum Durchfluss im Verteiler." />
+    <meta property="og:url" content="https://prometo.app/hydraulischer-abgleich/" />
+    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp" />
+    <meta property="og:image:alt" content="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="2560" />
+    <meta property="og:image:height" content="1600" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hydraulischer Abgleich einfach erklärt: Ablauf, Pflicht und Förderung | Prometo" />
+    <meta name="twitter:description"
+        content="Was ist hydraulischer Abgleich? Diese Seite erklärt Ablauf, Nutzen, Wärmepumpe, Fußbodenheizung und den Bezug zu Heizlast und Verteilern." />
+    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp" />
+    <meta name="twitter:image:alt" content="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet" />
+
+    <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
+    <link rel="stylesheet" href="/assets/prometo-gallery.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top right, rgba(69, 222, 231, 0.12), transparent 40%),
+                linear-gradient(180deg, #0b0e0e 0%, #101515 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        th {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .formula-box {
+            border-radius: 1.5rem;
+            border: 1px solid rgba(69, 222, 231, 0.16);
+            background: rgba(69, 222, 231, 0.06);
+            padding: 1.25rem;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: #fff;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/apple-touch-icon.png"
+                },
+                "description": "Prometo ist eine SHK-Software für digitales Aufmaß, Heizlastberechnung und TGA-Planung."
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/hydraulischer-abgleich/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Hydraulischer Abgleich",
+                        "item": "https://prometo.app/hydraulischer-abgleich/"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/hydraulischer-abgleich/#webpage",
+                "url": "https://prometo.app/hydraulischer-abgleich/",
+                "name": "Hydraulischer Abgleich einfach erklärt: Ablauf, Pflicht und Förderung | Prometo",
+                "description": "Was ist hydraulischer Abgleich? Einfach erklärt mit Ablauf, Heizkörper- und Fußbodenheizungsbezug, Wärmepumpe, Pflicht-/Förderkontext und dem Weg von Heizlast zu Durchflusswerten.",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/hydraulischer-abgleich/#breadcrumb"
+                },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp"
+                }
+            },
+            {
+                "@type": "Article",
+                "@id": "https://prometo.app/hydraulischer-abgleich/#article",
+                "headline": "Hydraulischer Abgleich einfach erklärt: Ablauf, Pflicht und Förderung",
+                "description": "Informationsseite zu Nutzen, Ablauf, Heizlastbezug, Wärmepumpe, Fußbodenheizung und dem aktuellen Pflicht- und Förderkontext des hydraulischen Abgleichs.",
+                "author": {
+                    "@type": "Organization",
+                    "@id": "https://prometo.app/#organization"
+                },
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                },
+                "datePublished": "2026-04-05",
+                "dateModified": "2026-04-05",
+                "inLanguage": "de-DE",
+                "mainEntityOfPage": {
+                    "@id": "https://prometo.app/hydraulischer-abgleich/#webpage"
+                }
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://prometo.app/hydraulischer-abgleich/#howto",
+                "name": "Hydraulischen Abgleich systematisch vorbereiten",
+                "description": "Von Heizlast und Raumdaten über Heizkreise und Verteiler bis zu Soll-Durchflusswerten und Dokumentation.",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "Wärmebedarf pro Raum einordnen",
+                        "text": "Am Anfang stehen Heizlast, Raumtemperaturen und die Frage, welche Leistung die einzelnen Räume tatsächlich brauchen."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Heizflächen und Heizkreise strukturieren",
+                        "text": "Danach werden Heizkörper oder Heizkreise, Verteiler, Ventile, Ports und relevante Systemdaten zusammengestellt."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Sollwerte für Durchfluss und Verteilung ableiten",
+                        "text": "Ziel ist, dass alle Heizflächen genau die Wassermenge bekommen, die sie für ihre Raumlast brauchen."
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Einstellungen prüfen und dokumentieren",
+                        "text": "Nach der Einregulierung werden Werte nachvollziehbar dokumentiert, damit der Zustand später geprüft und übergeben werden kann."
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/hydraulischer-abgleich/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Was ist hydraulischer Abgleich einfach erklärt?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Beim hydraulischen Abgleich wird die Wassermenge in Heizkörpern oder Heizkreisen so verteilt, dass jede Heizfläche die für ihren Raum benötigte Leistung erhält."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Warum ist hydraulischer Abgleich wichtig?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ohne hydraulischen Abgleich werden einzelne Heizflächen oft überversorgt und andere unterversorgt. Das verschlechtert Komfort, Effizienz und gerade bei Wärmepumpen auch die Systemperformance."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist hydraulischer Abgleich Pflicht?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Das hängt vom Gebäudetyp, der Maßnahme und vom aktuellen Rechtsrahmen ab. Im GEG- und Förderkontext spielt der hydraulische Abgleich weiterhin eine wichtige Rolle. Maßgeblich sind immer die aktuellen Gesetzes- und Förderunterlagen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Braucht eine Wärmepumpe einen hydraulischen Abgleich?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja, in der Praxis ist ein sauberer hydraulischer Abgleich für Wärmepumpen besonders wichtig, weil Vorlauftemperatur, Durchfluss und Raumverteilung stark auf die Effizienz wirken."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was kostet ein hydraulischer Abgleich?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die Kosten haengen stark von Anlagentyp, Datenlage, Anzahl der Heizkörper oder Heizkreise und dem nötigen Nachrüstaufwand ab. Ohne Projektdaten gibt es keinen seriösen Pauschalpreis."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlastberechnung</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/app-workflows.html#hydraulischer-abgleich" class="hover:text-white transition-colors">Abgleich-Workflow</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Demo anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">Hydraulischer Abgleich</span>
+                </nav>
+
+                <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+                    <div class="reveal">
+                        <span class="badge mb-6">Hydraulischer Abgleich</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Hydraulischer Abgleich einfach erklärt: Ablauf, Pflicht, Förderung
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-8">
+                            Der hydraulische Abgleich sorgt dafür, dass Heizkörper oder Heizkreise genau die
+                            Wassermenge bekommen, die sie für ihre Raumlast brauchen. Genau deshalb ist er eng mit
+                            <strong class="text-white">Heizlast, Wärmepumpe, Fußbodenheizung, Verteiler und
+                                Durchflusswerten</strong> verbunden.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a href="/heizlastberechnung/app/"
+                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                Abgleich in Prometo sehen
+                            </a>
+                            <a href="/app-workflows.html#hydraulischer-abgleich"
+                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                Workflow mit Screenshots
+                            </a>
+                        </div>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
+                                <h2 class="text-xl font-bold text-white mb-2">Mehr Komfort</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Räume werden gleichmäßiger versorgt, statt dass einzelne Heizflächen zu viel und
+                                    andere zu wenig Wasser bekommen.
+                                </p>
+                            </div>
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
+                                <h2 class="text-xl font-bold text-white mb-2">Besser für Wärmepumpen</h2>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Gerade bei niedrigen Systemtemperaturen zahlt sich eine saubere Verteilung stark in
+                                    Effizienz und Stabilität aus.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual reveal reveal-delay-2">
+                        <div class="ambient-orb ambient-orb--a"></div>
+                        <div class="ambient-orb ambient-orb--b"></div>
+                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6"
+                            data-lightbox-title="Hydraulischer Abgleich mit Verteilerblick"
+                            data-lightbox-caption="Im Tablet-Modus bleiben Verteiler, Raumleistungen und Durchflusswerte in einer Sicht zusammen.">
+                            <img src="/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp"
+                                alt="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet"
+                                width="2560" height="1600" loading="eager" fetchpriority="high" decoding="async"
+                                class="mx-auto rounded-[1.75rem] border border-white/8 w-full" />
+                        </div>
+                        <div class="hero-chip hero-chip--top">
+                            <strong>Raumlast als Basis</strong>
+                            <span>Hydraulischer Abgleich beginnt nicht am Ventil, sondern bei der benötigten Leistung je Raum.</span>
+                        </div>
+                        <div class="hero-chip hero-chip--mid">
+                            <strong>Durchfluss statt Bauchgefühl</strong>
+                            <span>Sollwerte, Ports und Verteiler werden nachvollziehbar statt nur grob eingeschätzt.</span>
+                        </div>
+                        <div class="hero-chip hero-chip--bottom">
+                            <strong>Büro und Baustelle</strong>
+                            <span>Abgleich, Kontrolle und Übergabe laufen am selben Projektstand.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 reveal">
+                    <div class="jump-links">
+                        <a href="#definition" class="jump-link">Was ist das?</a>
+                        <a href="#nutzen" class="jump-link">Warum ist es wichtig?</a>
+                        <a href="#ablauf" class="jump-link">Ablauf in Schritten</a>
+                        <a href="#pflicht" class="jump-link">Pflicht und Förderung</a>
+                        <a href="#waermepumpe" class="jump-link">Wärmepumpe und FBH</a>
+                        <a href="#faq" class="jump-link">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-8 md:pb-12">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+                <article class="glass-panel rounded-[2rem] p-8 reveal">
+                    <p class="text-xs uppercase tracking-[0.18em] text-primary mb-4">Kurzantwort</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                        Was ist hydraulischer Abgleich?
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Beim hydraulischen Abgleich wird die Heizungsanlage so eingestellt, dass jede Heizfläche genau
+                        die benötigte Wassermenge erhält. Das gilt für Heizkörper genauso wie für
+                        Fußbodenheizungs-Kreise. Ziel ist eine verteilte Leistung, die zur realen Raumlast passt.
+                    </p>
+                </article>
+                <aside class="glass-panel rounded-[2rem] p-8 reveal reveal-delay-1">
+                    <p class="text-xs uppercase tracking-[0.18em] text-primary mb-4">Suchintention</p>
+                    <div class="space-y-3 text-sm text-gray-300">
+                        <p>Die häufigsten Fragen rund um den hydraulischen Abgleich drehen sich um Definition, Pflicht,
+                            Förderung, Kosten, Wärmepumpe, Fußbodenheizung und den praktischen Ablauf.</p>
+                        <p>Genau diese Seite ist deshalb bewusst informational aufgebaut und verlinkt erst danach in die
+                            Software- und Workflow-Pfade von Prometo.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="definition" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-2">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">Hydraulischer Abgleich ist Verteilungslogik</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        In vielen Anlagen nimmt das Wasser den leichtesten Weg. Ohne Abgleich bekommen nahe oder
+                        hydraulisch günstige Heizflächen zu viel Durchfluss, während andere hinterherlaufen. Genau
+                        das führt zu ungleichen Temperaturen, unruhigem Betrieb und schlechter Effizienz.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">Heizlast und Abgleich gehören zusammen</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Damit ein Abgleich sinnvoll wird, braucht die Anlage eine Vorstellung davon, welche Leistung die
+                        Räume benötigen. Genau deshalb ist die Seite
+                        <a href="/heizlast/" class="text-primary underline underline-offset-2">Heizlast einfach erklärt</a>
+                        ein guter Einstieg vor der praktischen Verteilung am Heizkreis oder Heizkörper.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="nutzen" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Nutzen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Warum ist hydraulischer Abgleich wichtig?
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Der Abgleich ist nicht nur ein Technikdetail. Er greift direkt in Komfort, Regelbarkeit,
+                        Energieeffizienz und Anlagenverhalten ein.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Gleichmaessigere Raumtemperaturen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Weniger Überversorgung in günstigen Kreisen, weniger Unterversorgung in schwierigen
+                            Räumen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Bessere Effizienz</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Pumpenleistung, Verteilungsverluste und unnötig hohe Temperaturen lassen sich besser
+                            beherrschen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Wichtiger für Wärmepumpen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Niedrige Vorlauftemperaturen und saubere Volumenströme machen eine gute Hydraulik hier
+                            besonders wertvoll.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Nachvollziehbare Dokumentation</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Gerade im SHK-Alltag ist es hilfreich, wenn Verteiler, Ports, Durchflüsse und Raumbezug
+                            sauber festgehalten werden.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="ablauf" class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+                <div class="reveal">
+                    <span class="badge mb-6">Ablauf</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Wie läuft ein hydraulischer Abgleich praktisch ab?
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Der saubere Weg führt nicht direkt an den Verteiler, sondern über Lasten, Heizflächen,
+                        Systemdaten und Sollwerte. Genau hier liegt auch die Schnittstelle zu digitaler SHK-Software.
+                    </p>
+                </div>
+                <div class="space-y-5">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 1</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Raumlast und Temperaturanspruch verstehen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Grundlage ist die Frage, welche Leistung einzelne Räume benötigen. Ohne diese Basis bleibt
+                            der Abgleich oft nur eine grobe Schätzung.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 2</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Heizflächen, Kreise und Verteiler strukturieren</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Heizkörper, Fußbodenheizungs-Kreise, Ports, Verteiler und relevante Systemparameter müssen
+                            nachvollziehbar zusammenlaufen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 3</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Soll-Durchflüsse und Einstellungen ableiten</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Ziel ist, dass die Verteilung zur Raumlast passt. Gerade hier zaehlen Delta-T, Vorlauf,
+                            Rücklauf, Kreislängen und Heizflächenlogik.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 4</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Einstellen, prüfen und dokumentieren</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Ein hydraulischer Abgleich ist erst dann belastbar, wenn Sollwerte, Kreise und
+                            Verteilerzustände sauber dokumentiert und später wieder prüfbar sind.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="pflicht" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-3">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">Pflicht</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        <strong class="text-white">Stand 5. April 2026:</strong> Nach aktuellem Wortlaut von
+                        <strong class="text-white">§ 60c GEG</strong> ist der hydraulische Abgleich besonders im
+                        Zusammenhang mit der Inbetriebnahme wassergeführter Heizungsanlagen in größeren Gebäuden
+                        relevant, vor allem bei Objekten mit mindestens sechs Wohnungen oder sonstigen selbstständigen
+                        Nutzungseinheiten.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">Förderung</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Im Förderkontext ist der hydraulische Abgleich weiterhin ein zentrales Thema. Die aktuelle
+                        Einordnung zu §§ 60a bis 60c GEG verweist für den Nachweis auf die VdZ-Fachregel und den
+                        hydraulischen Abgleich nach <strong class="text-white">Verfahren B</strong>.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">Verfahren und Nachweis</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        In der Praxis begegnen SHK-Betrieben VdZ-Formulare, Verfahren A und B sowie
+                        dokumentationsfaehige Sollwerte. Welche Variante konkret gefordert ist, prüfst du immer am
+                        aktuellen Nachweisrahmen und nicht an alten Angebotsmustern oder vereinfachten Faustwerten.
+                    </p>
+                </article>
+            </div>
+            <div class="max-w-screen-xl mx-auto mt-10 glass-panel rounded-[2rem] p-8 reveal">
+                <span class="badge mb-6">Einordnung</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    Pflicht und Förderung ändern sich. Die Datenbasis sollte trotzdem immer sauber sein.
+                </h2>
+                <p class="text-lg text-gray-400 leading-relaxed mb-5">
+                    Auch wenn sich der aktuelle Pflicht- oder Foerderrahmen ändern kann, bleibt die technische Logik
+                    gleich: Ohne plausible Raumlasten, Heizflächen-Logik und nachvollziehbare Durchflusswerte wird der
+                    Abgleich weder fachlich stark noch dokumentationsfreundlich.
+                </p>
+                <p class="text-gray-400 leading-relaxed">
+                    Deshalb verlinkt Prometo den Abgleich bewusst an
+                    <a href="/heizlastberechnung/" class="text-primary underline underline-offset-2">Heizlastberechnung</a>,
+                    <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">DIN EN 12831</a>
+                    und konkrete
+                    <a href="/app-workflows.html#hydraulischer-abgleich" class="text-primary underline underline-offset-2">Workflow-Screens</a>.
+                </p>
+            </div>
+        </section>
+
+        <section id="waermepumpe" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Wärmepumpe und FBH</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Warum hydraulischer Abgleich bei Wärmepumpe und Fußbodenheizung besonders wichtig ist
+                    </h2>
+                </div>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Niedrige Temperaturen brauchen saubere Hydraulik</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Gerade Wärmepumpen spielen ihre Staerken bei niedrigen Vorlauftemperaturen aus. Das klappt
+                            nur stabil, wenn Verteilung und Volumenstrom zur Last passen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Fußbodenheizung ist kreisweise zu denken</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Im Verteiler werden Durchflüsse, Ports und Kreislogik sichtbar. Wer nur pauschal pro Etage
+                            denkt, verschenkt Genauigkeit im eigentlichen Betrieb.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Heizlast bleibt die Brücke</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Die benötigte Raumleistung bestimmt, welche Wassermenge sinnvoll ist. Darum führt der Weg
+                            oft über
+                            <a href="/heizlast/" class="text-primary underline underline-offset-2">Heizlast</a>
+                            und dann erst zum eigentlichen Abgleich.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="prometo">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                <div class="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+                    <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
+                        alt="Prometo Heizkreisdetail mit Soll-Durchfluss und Port-Zuordnung auf dem Smartphone"
+                        width="1080" height="2400" loading="lazy" decoding="async"
+                        class="w-full max-w-sm mx-auto rounded-[1.75rem] border border-white/8" />
+                    <div>
+                        <span class="badge mb-6">Prometo im Einsatz</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                            Von Heizlast und Raumstruktur direkt in den hydraulischen Abgleich
+                        </h2>
+                        <p class="text-lg text-gray-400 leading-relaxed mb-6">
+                            Prometo führt Grundriss, Raumdaten, Heizlast, Heizkreise und Verteilerlogik in einem
+                            Projektmodell zusammen. Dadurch wird der Abgleich nicht als isolierte Liste behandelt,
+                            sondern als Fortsetzung derselben Datenbasis.
+                        </p>
+                        <div class="flex flex-wrap gap-4 text-sm">
+                            <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">
+                                Heizlastberechnung ansehen
+                            </a>
+                            <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors">
+                                Heizlast App ansehen
+                            </a>
+                            <a href="/app-workflows.html#hydraulischer-abgleich" class="text-primary hover:text-white transition-colors">
+                                Abgleich-Workflow ansehen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="faq">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Häufige Fragen zum hydraulischen Abgleich
+                    </h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist hydraulischer Abgleich einfach erklärt?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Der hydraulische Abgleich verteilt das Heizungswasser so, dass jede Heizfläche die für
+                            ihren Raum benötigte Leistung bekommt. So werden Heizkörper oder Heizkreise nicht nur
+                            irgendwie warm, sondern passend zur Raumlast versorgt.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ist hydraulischer Abgleich Pflicht?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Das hängt vom Gebäude und der konkreten Maßnahme ab. Nach aktuellem Stand ist der
+                            hydraulische Abgleich im GEG besonders für die Inbetriebnahme wassergeführter
+                            Heizungsanlagen in größeren Gebäuden relevant. Für Förderfälle können zusätzlich
+                            eigene Nachweisanforderungen gelten.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Braucht eine Wärmepumpe einen hydraulischen Abgleich?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            In der Praxis ja, denn gerade Wärmepumpen profitieren stark von sauber eingestellten
+                            Volumenströmen, passenden Heizflächen und einer plausiblen Raumverteilung.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was kostet ein hydraulischer Abgleich?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Das laesst sich ohne Projektdaten nicht seriös pauschal angeben. Der Aufwand hängt davon
+                            ab, ob Heizkörper oder Fußbodenheizung vorliegen, wie gut die Bestandsdaten sind und ob
+                            Ventile, Pumpe oder weitere Bauteile angepasst werden müssen.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Welche Daten braucht man für einen sauberen Abgleich?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Typisch relevant sind Heizlast beziehungsweise Raumlast, Heizflächen, Systemtemperaturen,
+                            Ventile, Heizkreise, Verteiler, Kreislängen und die Soll-Durchflüsse. Genau deshalb ist
+                            der Abgleich selten sinnvoll als völlig losgeloester Arbeitsschritt.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-20 md:pb-28" id="weiterlesen">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Weiterlesen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Die wichtigsten Seiten rund um Abgleich, Heizlast und App-Workflow
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Diese Seite deckt die Grundfrage zum hydraulischen Abgleich ab. Für die angrenzenden Themen
+                        Heizlast, Methode und mobile Umsetzung sind diese Pfade am wichtigsten.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlast einfach erklärt</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Der Begriffseinstieg zu Raumlast, W/m2, Wärmepumpe und der Frage, warum der Abgleich ohne Lastbasis schwach bleibt.
+                        </p>
+                        <a href="/heizlast/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Heizlast verstehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlastberechnung für SHK</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Der Hub für den planbasierten Workflow von Grundriss über Heizlast bis Abgleich und Material.
+                        </p>
+                        <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Zum Heizlast-Hub
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">DIN EN 12831 erklärt</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Der methodische Einstieg, wenn du den Weg von der Lastberechnung zur späteren Verteilung besser verstehen willst.
+                        </p>
+                        <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            DIN-Tutorial lesen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Hydraulischer Abgleich in der App</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Wenn du Verteiler, Heizkreise und Soll-Durchflüsse nicht nur erklärt bekommen, sondern im Workflow sehen willst.
+                        </p>
+                        <a href="/app-workflows.html#hydraulischer-abgleich" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Screens und Workflow ansehen
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-10">
+            <div class="max-w-screen-xl mx-auto">
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    Rechtliche und förderbezogene Anforderungen können sich ändern. Maßgeblich sind immer die
+                    aktuellen Gesetzes- und Programmunterlagen. Die technische Verantwortung im konkreten Projekt bleibt
+                    beim Anwender.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast</a>
+                <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlastberechnung</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/app-workflows.html" class="hover:text-white transition-colors">App-Workflows</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
+            <div class="text-sm text-gray-400">
+                <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
+                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere
+                Informationen findest du in unserer <a href="/datenschutz.html"
+                    class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button id="cookie-decline"
+                    class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
+                <button id="cookie-accept"
+                    class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
+        let gaLoaded = false;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+
+        function loadGoogleAnalytics() {
+            if (gaLoaded) return;
+            gaLoaded = true;
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+        }
+
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            if (!banner) return;
+
+            const consent = localStorage.getItem('ga_consent');
+            if (!consent) {
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                }, 1000);
+            } else if (consent === 'granted') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted',
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+                loadGoogleAnalytics();
+            }
+
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'granted');
+                    banner.classList.add('translate-y-full');
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'granted',
+                        'ad_storage': 'granted',
+                        'ad_user_data': 'granted',
+                        'ad_personalization': 'granted'
+                    });
+                    loadGoogleAnalytics();
+                });
+            }
+
+            if (declineBtn) {
+                declineBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'denied');
+                    banner.classList.add('translate-y-full');
+                });
+            }
+        })();
+    </script>
+    <script src="/assets/page-effects.js" defer></script>
+    <script src="/assets/prometo-gallery.js" defer></script>
+</body>
+
+</html>
