@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Heizlastberechnung App: digital & an DIN EN 12831 orientiert | Prometo</title>
+    <title>Heizlastberechnung App für SHK: mobil & teamfähig | Prometo</title>
     <meta name="description"
-        content="Prometo ist die geschlossene Beta für planbasierte Heizlastberechnung aus PDF-Grundrissen: mobil, raumweise strukturiert und an DIN EN 12831 orientiert." />
+        content="Heizlastberechnung für SHK mobil auf iOS und Android: planbasiert, raumweise, hydraulischer Abgleich und Materialbestellung per App – an DIN EN 12831 angelehnt." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -29,9 +29,9 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Heizlastberechnung App: digital & an DIN EN 12831 orientiert | Prometo" />
+    <meta property="og:title" content="Heizlastberechnung App für SHK: mobil & teamfähig | Prometo" />
     <meta property="og:description"
-        content="Geschlossene Beta für planbasierte Heizlastberechnung aus PDF-Grundrissen für SHK-Betriebe, Bestand, Wärmepumpe und Sanierung." />
+        content="Heizlastberechnung für SHK mobil auf iOS und Android: planbasiert, raumweise, hydraulischer Abgleich und Materialbestellung per App – an DIN EN 12831 angelehnt." />
     <meta property="og:url" content="https://prometo.app/heizlastberechnung/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
     <meta property="og:image:alt" content="Prometo Projektdetail mit Heizlastergebnis und Bivalenzpunkt-Diagramm auf dem Smartphone" />
@@ -40,12 +40,13 @@
     <meta property="og:image:height" content="2400" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Heizlastberechnung App: digital & an DIN EN 12831 orientiert | Prometo" />
+    <meta name="twitter:title" content="Heizlastberechnung App für SHK: mobil & teamfähig | Prometo" />
     <meta name="twitter:description"
-        content="Geschlossene Beta für planbasierte Heizlastberechnung aus PDF-Grundrissen für SHK-Betriebe, Bestand, Wärmepumpe und Sanierung." />
+        content="Heizlastberechnung für SHK mobil auf iOS und Android: planbasiert, raumweise, hydraulischer Abgleich und Materialbestellung per App – an DIN EN 12831 angelehnt." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
     <meta name="twitter:image:alt" content="Prometo Projektdetail mit Heizlastergebnis und Bivalenzpunkt-Diagramm auf dem Smartphone" />
 
+    <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -174,8 +175,8 @@
                 "@type": "WebPage",
                 "@id": "https://prometo.app/heizlastberechnung/#webpage",
                 "url": "https://prometo.app/heizlastberechnung/",
-                "name": "Heizlastberechnung App: digital & an DIN EN 12831 orientiert | Prometo",
-                "description": "Prometo ist die geschlossene Beta für planbasierte Heizlastberechnung aus PDF-Grundrissen: mobil, raumweise strukturiert und an DIN EN 12831 orientiert.",
+                "name": "Heizlastberechnung App für SHK: mobil & teamfähig | Prometo",
+                "description": "Heizlastberechnung für SHK mobil auf iOS und Android: planbasiert, raumweise, hydraulischer Abgleich und Materialbestellung per App – an DIN EN 12831 angelehnt.",
                 "inLanguage": "de-DE",
                 "isPartOf": {
                     "@id": "https://prometo.app/#website"
@@ -200,8 +201,8 @@
                 "applicationSubCategory": "SHK-Software für planbasierte Heizlastberechnung",
                 "operatingSystem": "Web, iOS, Android",
                 "inLanguage": "de-DE",
-                "browserRequirements": "Aktueller Webbrowser oder geschlossene Beta-App",
-                "description": "Prometo unterstützt ausgewählte Beta-Tester bei planbasierter Heizlastberechnung aus PDF-Grundrissen, strukturiertem Aufmaß und mobiler Projektarbeit.",
+                "browserRequirements": "Aktueller Webbrowser oder iOS / Android App",
+                "description": "Prometo unterstützt SHK-Betriebe bei planbasierter Heizlastberechnung aus PDF-Grundrissen, strukturiertem Aufmaß, hydraulischem Abgleich und direkter Materialbestellung.",
                 "publisher": {
                     "@id": "https://prometo.app/#organization"
                 },
@@ -213,11 +214,19 @@
                     "availability": "https://schema.org/PreOrder"
                 },
                 "featureList": [
-                    "Planbasiertes Aufmaß aus PDF-Grundrissen",
-                    "Raumweise strukturierte Heizlastberechnung",
-                    "Arbeitslogik angelehnt an DIN EN 12831",
-                    "Mobile Projektprüfung und Baustellenabstimmung",
-                    "Projektstruktur für SHK, Bestand und Sanierung"
+                    "PDF-Import mit KI-Raumerkennung (Etagen und Räume automatisch)",
+                    "Raumweise Heizlastberechnung angelehnt an DIN EN 12831",
+                    "Transmissions- und Lüftungswärmeverluste, Standortbezug, Monatsprofil",
+                    "Qualitäts- und Plausibilitätsprüfung vor Folgephasen",
+                    "Hydraulischer Abgleich mit Heizkreis- und Verteilervisualisierung",
+                    "GEG-konforme Dokumentation des hydraulischen Abgleichs",
+                    "Fußbodenheizung Auslegung angelehnt an EN 1264-2 mit Nachweis-PDF",
+                    "Automatische Materialberechnung und Stücklisten-Erstellung",
+                    "OCI-Schnittstelle zum Großhandels-Webshop",
+                    "Norm-Report-PDF und Angebots-PDF direkt aus der App",
+                    "Varianten und Sensitivitätsanalyse (Tornado-Diagramm)",
+                    "Kollaboratives Arbeiten: Büro und Baustelle in Echtzeit",
+                    "iOS, Android und Web"
                 ]
             },
             {
@@ -255,6 +264,38 @@
                             "@type": "Answer",
                             "text": "Die Seite richtet sich an SHK-Betriebe, TGA-Planer, Sanierungsprojekte und Teams, die Heizlast, Grundriss und Projektstruktur in einem Prozess zusammenführen möchten."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist Prometo für Wärmepumpen-Projekte im Bestand geeignet?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja, gerade im Bestand ist eine strukturierte Heizlastberechnung besonders wertvoll. Prometo ermöglicht die raumweise Erfassung von Bauteilen, Flächen und Randbedingungen – eine belastbare Grundlage für die Auslegung von Wärmepumpen und Heizflächen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Kann ich mit Prometo den hydraulischen Abgleich durchführen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo unterstützt den hydraulischen Abgleich direkt im Anschluss an die Heizlastberechnung. Die Ergebnisse lassen sich GEG-konform dokumentieren. Die Einhaltung gesetzlicher Vorgaben liegt in der Verantwortung des Anwenders."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie funktioniert die Materialbestellung über Prometo?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo berechnet auf Basis der Heizlast automatisch den Materialbedarf und übergibt die Stückliste per OCI-Schnittstelle direkt in den Warenkorb des Großhändlers. So entfällt die manuelle Übernahme in ein separates Bestellsystem."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist die Heizlastberechnung mit Prometo für Förderanträge geeignet?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo orientiert sich an den Vorgaben der DIN EN 12831 und liefert eine nachvollziehbare, dokumentierbare Berechnungsgrundlage. Ob diese im konkreten Fall für einen Förderantrag ausreicht, hängt von den jeweiligen Förderrichtlinien ab. Alle Angaben ohne Gewähr."
+                        }
                     }
                 ]
             }
@@ -284,6 +325,8 @@
     </header>
 
     <main>
+
+        <!-- 1. HERO -->
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
                 <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
@@ -294,19 +337,17 @@
 
                 <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                     <div class="reveal">
-                        <span class="badge mb-6">Heizlastberechnung</span>
+                        <span class="badge mb-6">Heizlastberechnung App</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            Heizlastberechnung App für SHK: digital, planbasiert und an DIN EN 12831 orientiert
+                            Heizlastberechnung App für SHK: mobil, teamfähig, an DIN EN 12831 angelehnt
                         </h1>
                         <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
-                            In der geschlossenen Beta verbindet Prometo PDF-Grundriss, raumweise Struktur und mobile
-                            Projektarbeit in einem Workflow. Ausgewählte Tester nutzen diese Grundlage für Wärmepumpe,
-                            Sanierung und SHK-Planung entlang derselben Projektlogik.
+                            Prometo verbindet PDF-Grundriss, raumweise Heizlastberechnung, hydraulischen Abgleich und direkte Materialbestellung in einem durchgängigen Workflow. Büro und Monteur arbeiten in Echtzeit am selben Projekt – auf iOS und Android.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-10">
                             <a href="/#beta-signup"
                                 class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                                Heizlast App testen
+                                Demo anfragen
                             </a>
                             <a href="/heizlastberechnung/din-12831/"
                                 class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
@@ -317,15 +358,13 @@
                             <div class="glass-panel rounded-3xl p-5 lift-on-hover">
                                 <h2 class="text-xl font-bold text-white mb-2">Planbasiert mit PDF-Grundrissen</h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
-                                    Der Workflow startet mit PDF-Bauplänen und Grundrissen. Das passt zu vielen
-                                    SHK-Prozessen, die von vorhandenen Planunterlagen und Raumdaten ausgehen.
+                                    Der Workflow startet mit vorhandenen Bauplänen. KI erkennt Räume und Etagen automatisch – kein manuelles Eintippen von Grunddaten.
                                 </p>
                             </div>
                             <div class="glass-panel rounded-3xl p-5 lift-on-hover">
-                                <h2 class="text-xl font-bold text-white mb-2">Raumweise nachvollziehbar</h2>
+                                <h2 class="text-xl font-bold text-white mb-2">Hydraulischer Abgleich & Materialbestellung</h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
-                                    Räume, Bauteile und Randbedingungen bleiben in einer Projektlogik organisiert. Das
-                                    erleichtert Prüfung, Übergabe und Nacharbeit.
+                                    Nach der Heizlastberechnung direkt weiter zum hydraulischen Abgleich und zur Bestellung im Großhandel – GEG-konform dokumentierbar.
                                 </p>
                             </div>
                         </div>
@@ -343,33 +382,33 @@
                                 class="hero-device mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
                         </div>
                         <div class="hero-chip hero-chip--top">
-                            <strong>PDF-Plan rein</strong>
-                            <span>Grundriss als Ausgangspunkt fuer Raum- und Bauteillogik</span>
+                            <strong>PDF-Plan rein, KI erkennt Räume</strong>
+                            <span>Grundriss als Ausgangspunkt für Raum- und Bauteillogik</span>
                         </div>
                         <div class="hero-chip hero-chip--mid">
-                            <strong>Raeume sauber strukturieren</strong>
-                            <span>Randbedingungen, Flaechen und Zonen bleiben nachvollziehbar verbunden</span>
+                            <strong>Heizlast und hydraulischer Abgleich</strong>
+                            <span>Raumweise strukturiert, an DIN EN 12831 angelehnt</span>
                         </div>
                         <div class="hero-chip hero-chip--bottom">
-                            <strong>Ergebnis mobil pruefen</strong>
-                            <span>Projektbasis fuer Baustelle, Rueckfragen und naechste Entscheidung</span>
+                            <strong>Büro und Baustelle in Echtzeit</strong>
+                            <span>Monteur und Planer arbeiten am selben Projekt</span>
                         </div>
                         <div class="glass-panel signal-panel rounded-3xl p-4">
                             <div class="signal-stack">
                                 <div class="signal-row">
                                     <span class="signal-label">Plan</span>
                                     <div class="signal-track"><span class="signal-fill" style="--fill: 92%;"></span></div>
-                                    <span class="signal-value">PDF</span>
+                                    <span class="signal-value">PDF + KI</span>
                                 </div>
                                 <div class="signal-row">
-                                    <span class="signal-label">Struktur</span>
+                                    <span class="signal-label">Abgleich</span>
                                     <div class="signal-track"><span class="signal-fill" style="--fill: 86%;"></span></div>
-                                    <span class="signal-value">raumweise</span>
+                                    <span class="signal-value">GEG-konform</span>
                                 </div>
                                 <div class="signal-row">
-                                    <span class="signal-label">Pruefung</span>
+                                    <span class="signal-label">Team</span>
                                     <div class="signal-track"><span class="signal-fill" style="--fill: 82%;"></span></div>
-                                    <span class="signal-value">mobil</span>
+                                    <span class="signal-value">Echtzeit</span>
                                 </div>
                             </div>
                         </div>
@@ -378,120 +417,225 @@
             </div>
         </section>
 
-        <section class="px-6 pb-8 md:pb-12">
-            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-[1.1fr_0.9fr] mb-8 md:mb-12">
-                <article class="answer-panel reveal">
-                    <p class="answer-label">Kurzantwort</p>
-                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-                        Was bringt eine planbasierte Heizlastberechnung für SHK-Betriebe?
+        <!-- 2. FEATURES -->
+        <section class="px-6 pb-16 md:pb-24" id="features">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-12 max-w-3xl reveal">
+                    <span class="badge mb-6">Features</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Die komplette SHK-Lösung: Heizlast, Abgleich und Materialbestellung
                     </h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        Sie verbindet PDF-Grundriss, Räume und Heizlast in einem nachvollziehbaren Ablauf. Genau das
-                        ist für Bestand, Wärmepumpe und Baustellenabstimmung wertvoll, weil Büro und Baustelle auf
-                        derselben Projektgrundlage weiterarbeiten.
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Prometo deckt den gesamten Workflow von der ersten Planaufnahme bis zur Bestellung im Großhandel ab – ohne Medienbrüche, ohne doppelte Dateneingabe.
                     </p>
-                </article>
-                <aside class="jump-nav reveal reveal-delay-1" aria-labelledby="heizlast-jump-nav-title">
-                    <p id="heizlast-jump-nav-title" class="jump-nav-title">Direkt zu den wichtigsten Abschnitten</p>
-                    <div class="jump-links">
-                        <a href="#definition" class="jump-link">Was Heizlastberechnung bedeutet</a>
-                        <a href="#workflow" class="jump-link">Prometo-Workflow mit PDF-Grundriss</a>
-                        <a href="#vergleich" class="jump-link">Tool-Typen im Vergleich</a>
-                        <a href="#einsatz" class="jump-link">Einsatzfälle für SHK und Bestand</a>
-                        <a href="#cluster-pfade" class="jump-link">Weiterführende Ratgeber-Seiten</a>
-                    </div>
-                </aside>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">01</div>
+                        <h3 class="text-xl font-bold text-white mb-3">PDF-Import mit KI-Raumerkennung</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Grundriss hochladen, Räume und Etagen werden automatisch erkannt. Der Startpunkt für jeden Heizlast-Workflow ist der vorhandene Bauplan – nicht eine leere Eingabemaske.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">02</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Heizlastberechnung an DIN EN 12831 angelehnt</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Raumweise, strukturiert, nachvollziehbar. Prometo orientiert sich an den Vorgaben der DIN EN 12831 und liefert eine belastbare Grundlage für Heizflächen, Wärmepumpe und Systemauslegung.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">03</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Hydraulischer Abgleich (GEG-konform dokumentierbar)</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Direkt nach der Heizlastberechnung: Temperaturdifferenz, Heizkreise und Verteilereinstellungen festlegen. Die Dokumentation ist GEG-konform durchführbar – ohne separates Tool.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">04</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Materialberechnung mit Webshop-Schnittstelle</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Aus der Heizlast wird der Materialbedarf automatisch errechnet. Über die OCI-Schnittstelle landen die Positionen direkt im Warenkorb des Großhändlers – kein Abtippen, kein doppelter Aufwand.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">05</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Kollaboratives Arbeiten: Büro und Baustelle</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Büro und Monteur arbeiten in Echtzeit am selben Projekt. Rückfragen, Korrekturen und Statusupdates landen sofort in der App – nicht im Telefonnotiz-Chaos.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">06</div>
+                        <h3 class="text-xl font-bold text-white mb-3">iOS und Android – überall einsatzbereit</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Prometo läuft nativ auf iPhone und Android-Smartphone sowie auf dem iPad und Android-Tablet. Zusätzlich steht eine Web-Ansicht für den Desktop bereit.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">07</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Fußbodenheizung Auslegung nach EN 1264</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Prometo berechnet Rohrabstand, Kreisanzahl und Kreislängen auf Basis der Heizlast – angelehnt an EN 1264-2. Heizkurven-Visualisierung, Nachweis-Screen und PDF-Ausgabe sind direkt integriert.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">08</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Norm-Report und Angebots-PDF auf Knopfdruck</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Aus der fertigen Berechnung entstehen direkt ein Norm-Report-PDF und ein Angebots-PDF – für Förderanträge, Übergabe an den Kunden oder die interne Dokumentation.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">09</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Varianten & Sensitivitätsanalyse</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Verschiedene Projektausprägungen anlegen, vergleichen und per Tornado-Diagramm auswerten. Wie stark wirkt eine schlechtere Dämmung auf die Gesamtlast? Prometo zeigt es sofort.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section id="definition" class="px-6 pb-8 md:pb-12">
-            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-3">
-                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                    <h2 class="text-2xl font-bold text-white mb-4">Was ist Heizlastberechnung?</h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        Die Heizlast beschreibt die Wärmeleistung, die ein Gebäude oder einzelner Raum bei
-                        Auslegungsbedingungen braucht, damit die gewünschte Innentemperatur gehalten wird. Gerade bei
-                        Wärmepumpe, Bestand und Sanierung ist das die zentrale Planungsgröße.
+        <!-- 3. WARUM PROMETO -->
+        <section class="px-6 pb-16 md:pb-24" id="vorteile">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-12 max-w-3xl reveal">
+                    <span class="badge mb-6">Vorteile</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Warum SHK-Handwerker Prometo für die Heizlastberechnung nutzen
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Zeit auf der Baustelle ist das knappste Gut. Prometo ist so gebaut, dass der Workflow von der Planung bis zur Bestellung ohne Umwege läuft.
                     </p>
-                </article>
-                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                    <h2 class="text-2xl font-bold text-white mb-4">Warum nicht nur überschlagen?</h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        W/m²-Schätzwerte sind nützlich für erste Orientierung. Für raumweise Entscheidungen, die
-                        Auslegung von Heizflächen oder die Bewertung eines Bestandsprojekts braucht es aber mehr
-                        Struktur und belastbarere Annahmen.
-                    </p>
-                </article>
-                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                    <h2 class="text-2xl font-bold text-white mb-4">Warum planbasiert?</h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        Viele Handwerksprojekte starten nicht mit leerem Raum, sondern mit einem PDF-Grundriss. Wenn
-                        Aufmaß, Räume und Heizlast daraus direkt weitergeführt werden, entstehen weniger Medienbrüche.
-                    </p>
-                </article>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Zeit sparen: weniger Doppeleingaben</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Wer den Grundriss einmal importiert hat, muss Raumdaten nicht nochmals in ein Kalkulationsprogramm übertragen. Plan, Heizlast, Abgleich und Bestellung teilen dieselbe Datenbasis.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Kein Medienbruch bei der Materialbestellung</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Der errechnete Materialbedarf fließt direkt in den Webshop des Großhändlers. Keine handschriftliche Liste, kein Excel-Export, kein Tippen im Katalog.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Büro und Monteur am selben Projekt</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Wenn der Monteur auf der Baustelle eine Raumabmessung korrigiert, sieht das Büro es sofort. Kein Telefonieren, keine veralteten Versionen – ein Projekt, ein Datenstand.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-3">Dokumentierbare Grundlage für GEG-Anforderungen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Heizlastberechnung und hydraulischer Abgleich lassen sich GEG-konform dokumentieren – eine belastbare Grundlage für Förderanträge und Nachweispflichten. Alle Angaben ohne Gewähr.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
 
+        <!-- 4. SO FUNKTIONIERT'S -->
         <section id="workflow" class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
                 <div class="reveal">
                     <span class="badge mb-6">Workflow</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        So läuft die Heizlastberechnung mit Prometo
+                        In 5 Schritten von der Planung zur fertigen Heizlastberechnung
                     </h2>
                     <p class="text-lg text-gray-400 leading-relaxed">
-                        Die Seite fokussiert keinen theoretischen Idealprozess, sondern den Alltag von SHK-Betrieben:
-                        Plan öffnen, Räume strukturieren, Eingaben ergänzen, Ergebnisse prüfen und später auf der
-                        Baustelle wiederfinden.
+                        Kein theoretischer Idealprozess – sondern der Alltag von SHK-Betrieben: Plan öffnen, Räume prüfen, Heizlast berechnen, Abgleich und Bestellung direkt in der App erledigen.
                     </p>
                 </div>
                 <div class="space-y-5">
                     <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 1</p>
-                        <h3 class="text-xl font-bold text-white mb-3">PDF-Grundriss importieren</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">PDF-Grundriss importieren – KI erkennt Räume</h3>
                         <p class="text-gray-400 leading-relaxed">
-                            Der Einstieg beginnt planbasiert. Räume, Bauteile und Gebäudestruktur werden direkt aus dem
-                            vorhandenen Grundriss weitergedacht.
+                            Grundriss hochladen, Etagen und Räume werden automatisch erkannt und strukturiert. Der Import-Review gibt die Kontrolle zurück – kein Raum geht verloren.
                         </p>
                     </article>
                     <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 2</p>
-                        <h3 class="text-xl font-bold text-white mb-3">Räume und Randbedingungen strukturieren</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">Räume und Bauteile strukturieren</h3>
                         <p class="text-gray-400 leading-relaxed">
-                            Außenbauteile, Fenster, Lüftungssituation und angrenzende Bereiche werden am Raum
-                            dokumentiert. So bleibt die Logik der Berechnung nachvollziehbar.
+                            Außenbauteile, Fenster, U-Werte und Lüftungssituation werden raumweise erfasst. Die Logik bleibt nachvollziehbar – auch wenn das Projekt Wochen später weitergeführt wird.
                         </p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 3</p>
-                        <h3 class="text-xl font-bold text-white mb-3">Heizlast raumweise ableiten</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">Heizlastberechnung raumweise durchführen</h3>
                         <p class="text-gray-400 leading-relaxed">
-                            Auf Basis der strukturierten Eingaben entsteht eine Arbeitsgrundlage für Heizflächen,
-                            Wärmepumpe, Systemvergleich und weitere Projektschritte.
+                            Auf Basis der strukturierten Eingaben berechnet Prometo Transmissions- und Lüftungswärmeverluste raumweise – angelehnt an die Vorgaben der DIN EN 12831.
                         </p>
                     </article>
                     <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 4</p>
-                        <h3 class="text-xl font-bold text-white mb-3">Mobil prüfen und abstimmen</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">Hydraulischen Abgleich und Materialbestellung</h3>
                         <p class="text-gray-400 leading-relaxed">
-                            Änderungen auf der Baustelle oder Rückfragen aus dem Büro können an derselben Projektbasis
-                            weitergeführt werden, statt in separaten Notizen zu verschwinden.
+                            Direkt im Anschluss: Heizkreise und Verteilereinstellungen festlegen, Materialbedarf berechnen lassen und per OCI-Webshop-Schnittstelle direkt beim Großhändler bestellen.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 5</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Ergebnis mobil prüfen – Büro und Monteur in Echtzeit</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Der Monteur sieht auf der Baustelle dasselbe Projekt wie das Büro. Änderungen, Rückfragen und Korrekturen werden sofort synchronisiert – kein Versionen-Chaos mehr.
                         </p>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- 5. EINSATZFÄLLE -->
+        <section id="einsatz" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Einsatzfälle</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Für welche Projekte ist Prometo besonders geeignet?
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Der planbasierte Heizlast-Workflow ist überall dort stark, wo Struktur, Nachvollziehbarkeit und mobiles Arbeiten gefragt sind.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Wärmepumpen-Projekte im Bestand</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Gerade im Bestand reicht Bauchgefühl selten aus. Eine strukturierte Heizlastberechnung auf Basis des tatsächlichen Grundrisses liefert die belastbare Grundlage für die Wärmepumpen-Auslegung.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Sanierungen und Modernisierungen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Viele Sanierungsprojekte starten mit vorhandenen Plänen. Wer Heizlast und Materialberechnung direkt daraus ableitet, spart Übertragungsfehler und Doppelarbeit.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Neubau mit strukturierter Planung</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Im Neubau mit klaren Grundrissdaten entfaltet Prometo seine volle Stärke: raumweise Berechnung, hydraulischer Abgleich und Materialbestellung in einem durchgängigen Workflow.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SCREENSHOTS -->
         <section class="px-6 pb-16 md:pb-24" id="workflow-screens">
             <div class="max-w-screen-xl mx-auto">
                 <div class="max-w-3xl mb-10 reveal">
                     <span class="badge mb-6">App-Screenshots</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Vom Import zur Heizlast im echten Projekt
+                        Vom Import zur Heizlast – die App in der Praxis
                     </h2>
                     <p class="text-lg text-gray-400 leading-relaxed">
-                        Diese Prometo-Ansichten machen den planbasierten Heizlast-Workflow sichtbar:
-                        Raumimport prüfen, Heizlastergebnis auswerten, Heatmap lesen und den hydraulischen Abgleich vorbereiten.
+                        Diese Prometo-Ansichten zeigen den vollständigen Heizlast-Workflow:
+                        Raumimport prüfen, Heizlastergebnis auswerten, Heatmap lesen und den hydraulischen Abgleich direkt in der App durchführen.
                     </p>
                 </div>
                 <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5 screenshot-rail screenshot-rail--wide">
@@ -499,50 +643,50 @@
                         <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
                             alt="Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Smartphone"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
+                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Import-Review vor der Berechnung</strong>
-                            Räume und Etagen werden nach der KI-Auswertung sauber kontrolliert, bevor die Heizlast weitergeführt wird.
+                            <strong class="block text-white font-headline font-bold mb-1">KI-Import: Räume und Etagen erkannt</strong>
+                            Sauber kontrollieren, bevor die Heizlastberechnung weitergeführt wird. Kein Raum geht verloren.
                         </figcaption>
                     </figure>
                     <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
                         <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
                             alt="Prometo Projektdetail mit Heizlastergebnissen und Bivalenzpunkt-Diagramm auf dem Smartphone"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
+                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Heizlast im Projektdetail lesen</strong>
-                            Ergebniswerte, spezifische Last und Bivalenzpunkt bleiben direkt in der Projektansicht nachvollziehbar.
+                            <strong class="block text-white font-headline font-bold mb-1">Heizlastergebnis mit Bivalenzpunkt</strong>
+                            Gesamtlast, spezifische Last und Wärmepumpen-Auslegung auf einen Blick – mobil auf der Baustelle.
                         </figcaption>
                     </figure>
                     <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-2 lift-on-hover">
                         <img src="/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp"
                             alt="Prometo Heizlast-Heatmap mit farbcodierter Raumverteilung auf dem Smartphone"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
+                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Raumweise Heatmap auswerten</strong>
-                            Die farbcodierte Heizlastverteilung zeigt sofort, welche Räume höhere Wärmebedarfe aufweisen.
+                            <strong class="block text-white font-headline font-bold mb-1">Raumweise Heatmap: Schwachstellen sehen</strong>
+                            Farbcodierte Heizlastverteilung zeigt sofort, welche Räume besondere Aufmerksamkeit brauchen.
                         </figcaption>
                     </figure>
                     <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-3 lift-on-hover">
                         <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-einstellungen.webp"
                             alt="Prometo Hydraulischer Abgleich mit Einstellungen für Delta-T, Vorlauf und Rücklauf auf dem Smartphone"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
+                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Anschluss an den Abgleich</strong>
-                            Nach der Heizlast lassen sich Temperaturdifferenz, Verteilerstrategie und Raumfilter direkt weiterführen.
+                            <strong class="block text-white font-headline font-bold mb-1">Hydraulischer Abgleich direkt in der App</strong>
+                            Delta-T, Vorlauf, Rücklauf und Verteilereinstellungen – GEG-konform dokumentierbar ohne Zusatz-Tool.
                         </figcaption>
                     </figure>
                     <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-3 lift-on-hover">
                         <img src="/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp"
                             alt="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet"
                             width="2560" height="1600" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
+                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-center" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Tablet-Modus am Verteiler</strong>
-                            Der hydraulische Abgleich zeigt auf dem Tablet Heizkreise, Status und Raumwerte gleichzeitig.
+                            <strong class="block text-white font-headline font-bold mb-1">Tablet-Modus: Verteiler-Übersicht</strong>
+                            Heizkreise, Raumwerte und Status gleichzeitig sichtbar – ideal für die Arbeit am Verteiler.
                         </figcaption>
                     </figure>
                 </div>
@@ -559,172 +703,7 @@
             </div>
         </section>
 
-        <section id="vergleich" class="px-6 pb-16 md:pb-24">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="grid gap-8 xl:grid-cols-[0.9fr_1.1fr] xl:items-end mb-10">
-                    <div class="max-w-3xl reveal">
-                    <span class="badge mb-6">Vergleich</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Welche Tool-Typen es bei Heizlastberechnung gibt
-                    </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Der Markt ist stark besetzt. Deshalb vergleicht diese Seite nicht aggressiv einzelne Marken,
-                        sondern die typischen Lösungswege, zwischen denen SHK-Betriebe tatsächlich wählen.
-                    </p>
-                    </div>
-                    <div class="glass-panel story-panel rounded-[2rem] p-6 reveal reveal-delay-1">
-                        <div class="bar-grid">
-                            <div class="bar-row">
-                                <span class="bar-label">Ueberschlag</span>
-                                <div class="bar-track"><span class="bar-fill" style="--fill: 32%;"></span></div>
-                                <span class="bar-value">schnell, aber grob</span>
-                            </div>
-                            <div class="bar-row">
-                                <span class="bar-label">Profi-Software</span>
-                                <div class="bar-track"><span class="bar-fill" style="--fill: 58%;"></span></div>
-                                <span class="bar-value">tief, oft buerolastig</span>
-                            </div>
-                            <div class="bar-row">
-                                <span class="bar-label">Mobile Apps</span>
-                                <div class="bar-track"><span class="bar-fill" style="--fill: 64%;"></span></div>
-                                <span class="bar-value">praxisnah</span>
-                            </div>
-                            <div class="bar-row">
-                                <span class="bar-label">Prometo-Fit</span>
-                                <div class="bar-track"><span class="bar-fill" style="--fill: 86%;"></span></div>
-                                <span class="bar-value">Plan + Raum + Pruefung</span>
-                            </div>
-                        </div>
-                        <p class="section-note">
-                            Die Visualisierung zeigt nicht Marktanteile, sondern wie nah die einzelnen Tool-Typen am
-                            planbasierten SHK-Workflow liegen.
-                        </p>
-                    </div>
-                </div>
-                <div class="glass-panel rounded-[2rem] overflow-hidden reveal reveal-delay-2">
-                    <div class="overflow-x-auto">
-                        <table class="w-full min-w-[720px]">
-                            <thead>
-                                <tr class="border-b border-white/8">
-                                    <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Tool-Typ</th>
-                                    <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Stark bei</th>
-                                    <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Grenzen</th>
-                                    <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-primary">Prometo-Fit</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-sm md:text-base">
-                                <tr class="border-b border-white/6">
-                                    <td class="px-6 py-5 text-white font-semibold">Überschlagsrechner</td>
-                                    <td class="px-6 py-5 text-gray-300">Schnelle Vororientierung über W/m² oder einfache Eingaben</td>
-                                    <td class="px-6 py-5 text-gray-400">Zu grob für raumweise Auslegung und komplexeren Bestand</td>
-                                    <td class="px-6 py-5 text-gray-300">Gut für den Einstieg, aber nicht das Endziel</td>
-                                </tr>
-                                <tr class="border-b border-white/6">
-                                    <td class="px-6 py-5 text-white font-semibold">Klassische Profi-Software</td>
-                                    <td class="px-6 py-5 text-gray-300">Tiefe Fachlogik, Büro-Workflow, Spezialfälle</td>
-                                    <td class="px-6 py-5 text-gray-400">Oft schwerer, stärker desktoporientiert, weniger plannah im Alltag</td>
-                                    <td class="px-6 py-5 text-gray-300">Relevant, wenn viel Tiefe im Büro dominiert</td>
-                                </tr>
-                                <tr class="border-b border-white/6">
-                                    <td class="px-6 py-5 text-white font-semibold">Mobile Heizlast-Apps</td>
-                                    <td class="px-6 py-5 text-gray-300">Schnelligkeit, Baustelle, einfache mobile Workflows</td>
-                                    <td class="px-6 py-5 text-gray-400">Teilweise wenig Verknüpfung zum Grundriss und Projektkontext</td>
-                                    <td class="px-6 py-5 text-gray-300">Wichtiges Vergleichsfeld für Prometo</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-5 text-white font-semibold">Planbasierter All-in-One-Workflow</td>
-                                    <td class="px-6 py-5 text-gray-300">Grundriss, Räume, Heizlast und mobile Prüfung in einem Prozess</td>
-                                    <td class="px-6 py-5 text-gray-400">Braucht saubere Projektdisziplin und gute Planbasis</td>
-                                    <td class="px-6 py-5 text-gray-300">Genau hier positioniert sich Prometo</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="einsatz" class="px-6 pb-16 md:pb-24">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl reveal">
-                    <span class="badge mb-6">Einsatzfälle</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Wann der planbasierte Heizlast-Workflow besonders stark ist
-                    </h2>
-                </div>
-                <div class="grid gap-6 md:grid-cols-3">
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Wärmepumpe im Bestand</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Gerade im Bestand reicht Bauchgefühl selten aus. Wenn Räume, Bauteile und Nutzungszonen
-                            sauber strukturiert sind, wird die Systementscheidung belastbarer.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Sanierung mit PDF-Grundriss</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Viele Projekte starten mit vorhandenen Plänen. Dann ist es effizient, die Heizlast direkt
-                            auf dieser Grundlage zu strukturieren statt Informationen mehrfach zu übertragen.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Baustelle und Büro gemeinsam</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Wenn Rückfragen, Korrekturen und Entscheidungen in derselben Projektbasis stattfinden,
-                            sinkt der Abstimmungsaufwand zwischen Monteur und Büro.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="cluster-pfade" class="px-6 pb-16 md:pb-24">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl reveal">
-                    <span class="badge mb-6">Weiterlesen</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Die wichtigsten Ratgeber-Seiten im Heizlast-Cluster
-                    </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Der Cluster ist absichtlich auf unterschiedliche Suchintentionen verteilt: App-Suche,
-                        DIN-Erklärung und frühe Schätzwerte.
-                    </p>
-                </div>
-                <div class="grid gap-6 md:grid-cols-3">
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Heizlastberechnung App für SHK</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Für Suchende, die einen mobilen Workflow auf Basis von PDF-Grundrissen und Raumstruktur
-                            suchen.
-                        </p>
-                        <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            Heizlast App ansehen
-                        </a>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">DIN EN 12831 einfach erklärt</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Mit Formeln, Rechenweg und einem Beispielzimmer für die didaktische Einordnung von
-                            Transmissions- und Lüftungsverlusten.
-                        </p>
-                        <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            DIN-Tutorial lesen
-                        </a>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Heizlast schätzen mit W/m²</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Für erste Orientierung: typische Schätzbereiche nach Gebäudezustand, Beispiele und klare
-                            Grenzen der Überschlagsrechnung.
-                        </p>
-                        <a href="/heizlastberechnung/schaetzwerte/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            Schätzwerte prüfen
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
+        <!-- 7. FAQ -->
         <section class="px-6 pb-16 md:pb-24" id="faq">
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
@@ -735,75 +714,154 @@
                 </div>
                 <div class="space-y-4">
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
-                        <summary class="text-lg font-headline font-bold text-gray-200">Wie startet der Workflow mit Prometo?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist Heizlastberechnung und warum ist sie wichtig?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Prometo arbeitet planbasiert mit PDF-Bauplänen und Grundrissen. Das ist bewusst so
-                            gewählt, weil viele SHK-Projekte genau mit diesen Unterlagen starten.
+                            Die Heizlast gibt an, welche Wärmeleistung ein Gebäude oder Raum bei Auslegungstemperatur braucht, damit die gewünschte Raumtemperatur gehalten wird. Sie ist die zentrale Planungsgröße für die Auslegung von Heizflächen, Wärmepumpen und Heizkörpern. Wer hier zu grob schätzt, riskiert Unter- oder Überdimensionierung.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Orientiert sich Prometo an der DIN EN 12831?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Auf welchen Geräten läuft Prometo?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Ja. Die Arbeitslogik orientiert sich an der DIN EN 12831. Die fachliche Prüfung im konkreten
-                            Projekt bleibt aber weiterhin entscheidend.
+                            Prometo läuft als native App auf iOS (iPhone und iPad) und Android (Smartphone und Tablet). Zusätzlich steht eine Weboberfläche für den Desktop zur Verfügung. Der Workflow funktioniert damit sowohl im Büro als auch auf der Baustelle.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Wann reicht eine Heizlast-Schätzung nicht mehr aus?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Orientiert sich Prometo an der DIN EN 12831?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Für eine erste Einordnung kann eine Schätzung sinnvoll sein. Sobald Heizflächen,
-                            Wärmepumpe, raumweise Auslegung oder Sanierungsentscheidungen anstehen, ist eine
-                            strukturiertere Berechnung vorzuziehen.
+                            Ja. Die Berechnungslogik von Prometo ist an die Vorgaben der DIN EN 12831 angelehnt. Das bedeutet: Transmissionswärmeverluste und Lüftungswärmeverluste werden raumweise strukturiert erfasst und berechnet. Eine formale Zertifizierung befindet sich in Vorbereitung. Die fachliche Verantwortung im konkreten Projekt bleibt beim Anwender.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Welche Inhalte sollte ich mir als Nächstes anschauen?</summary>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ist die Heizlastberechnung für Förderanträge geeignet?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Wenn du die Methode verstehen willst, lies zuerst
-                            <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">DIN EN 12831 einfach erklärt</a>.
-                            Wenn du noch am Anfang stehst, ist
-                            <a href="/heizlastberechnung/schaetzwerte/" class="text-primary underline underline-offset-2">Heizlast schätzen mit W/m²</a>
-                            der bessere Einstieg.
+                            Prometo liefert eine nachvollziehbare, dokumentierbare Berechnungsgrundlage, die sich an der DIN EN 12831 orientiert. Ob diese im konkreten Förderfall ausreicht, hängt von den jeweiligen Förderrichtlinien und dem Prüfer ab. Alle Angaben ohne Gewähr.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wie funktioniert die Materialbestellung per Webshop-Schnittstelle?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Prometo errechnet auf Basis der Heizlastberechnung automatisch den Materialbedarf. Per OCI-Schnittstelle werden die Positionen direkt in den Warenkorb des Großhändlers übertragen. Das spart das manuelle Übertragen von Stücklisten und vermeidet Eingabefehler.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was bedeutet kollaboratives Arbeiten in Prometo?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Büro und Monteur arbeiten in Echtzeit am selben Projekt. Ändert der Monteur auf der Baustelle eine Raumabmessung, ist das sofort im Büro sichtbar – und umgekehrt. Kein Telefonieren, keine doppelten Versionen, kein Datenverlust.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Kann ich Prometo für den hydraulischen Abgleich nutzen?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Ja. Prometo unterstützt den hydraulischen Abgleich direkt im Anschluss an die Heizlastberechnung. Heizkreise, Verteilereinstellungen und Delta-T werden in der App festgelegt und lassen sich GEG-konform dokumentieren. Die Einhaltung aller gesetzlichen Vorgaben liegt in der Verantwortung des Anwenders.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wann reicht eine Schätzung nicht mehr aus?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Eine Schätzung über W/m² ist für die erste Orientierung sinnvoll. Sobald es um die konkrete Auslegung von Wärmepumpen, Heizflächen oder den hydraulischen Abgleich geht, braucht es eine strukturierte raumweise Berechnung. Spätestens bei Fördernachweisen oder der Sanierung im Bestand ist eine belastbare Grundlage unverzichtbar.
                         </p>
                     </details>
                 </div>
             </div>
         </section>
 
+        <!-- 8. CLUSTER-LINKS -->
+        <section id="cluster-pfade" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Weiterlesen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Die wichtigsten Ratgeber-Seiten im Heizlast-Cluster
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Tiefer einsteigen: App-Suche, DIN-Erklärung, Schätzwerte und digitales Aufmaß – alle Themen rund um die Heizlastberechnung im Handwerk.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlastberechnung App für SHK</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Mobiler Workflow auf Basis von PDF-Grundrissen und Raumstruktur – für Büro und Baustelle.
+                        </p>
+                        <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Heizlast App ansehen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">DIN EN 12831 einfach erklärt</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Mit Formeln, Rechenweg und einem Beispielzimmer – Transmissions- und Lüftungswärmeverluste verständlich.
+                        </p>
+                        <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            DIN-Tutorial lesen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Heizlast schätzen mit W/m²</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Typische Schätzbereiche nach Gebäudezustand und klare Grenzen der Überschlagsrechnung.
+                        </p>
+                        <a href="/heizlastberechnung/schaetzwerte/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Schätzwerte prüfen
+                        </a>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Digitales Aufmaß für SHK</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            PDF-Grundrisse importieren, Räume strukturieren und mobil auf der Baustelle erfassen.
+                        </p>
+                        <a href="/digitales-aufmass-app.html" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                            Aufmaß App ansehen
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. CTA-ABSCHLUSS -->
         <section class="px-6 pb-20 md:pb-28">
             <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
                 <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
                     <div>
-                        <span class="badge mb-6">Nächster Schritt</span>
+                        <span class="badge mb-6">Jetzt starten</span>
                         <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
-                            Heizlast, Grundriss und Projektlogik in einem SHK-Workflow zusammenführen
+                            Heizlastberechnung, Abgleich und Materialbestellung in einem SHK-Workflow
                         </h2>
                         <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
-                            Wenn du nach einer Heizlast-App suchst, die nicht nur schätzt, sondern den Grundriss als
-                            echte Arbeitsgrundlage nutzt, passt Prometo genau in diese Suchintention.
+                            Prometo ist die digitale Heizlastberechnung für SHK-Betriebe, die auf dem Handy genauso funktioniert wie im Büro – und Büro und Baustelle in Echtzeit verbindet.
                         </p>
-                        <div class="mt-6 flex flex-wrap gap-4 text-sm text-gray-400">
+                        <div class="mt-6 flex flex-wrap gap-4 text-sm">
                             <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors">
                                 Heizlastberechnung App
                             </a>
                             <a href="/digitales-aufmass-app.html" class="text-primary hover:text-white transition-colors">
-                                Digitale Aufmaß App
-                            </a>
-                            <a href="/app-workflows.html" class="text-primary hover:text-white transition-colors">
-                                App-Workflows
+                                Digitales Aufmaß
                             </a>
                             <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors">
                                 DIN EN 12831 erklärt
+                            </a>
+                            <a href="/heizlastberechnung/schaetzwerte/" class="text-primary hover:text-white transition-colors">
+                                Heizlast schätzen
                             </a>
                         </div>
                     </div>
                     <a href="/#beta-signup"
                         class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                        Beta-Zugang anfragen
+                        Demo anfragen
                     </a>
                 </div>
             </div>
         </section>
+
+        <!-- DISCLAIMER -->
+        <section class="px-6 pb-10">
+            <div class="max-w-screen-xl mx-auto">
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    Alle Angaben ohne Gewähr. Die Einhaltung gesetzlicher Vorgaben (GEG, DIN-Normen, Förderrichtlinien) liegt in der Verantwortung des Anwenders.
+                </p>
+            </div>
+        </section>
+
     </main>
 
     <footer class="border-t border-white/6 bg-[#0b0e0e]">
@@ -822,6 +880,72 @@
             </div>
         </div>
     </footer>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
+            <div class="text-sm text-gray-400">
+                <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
+                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
+                <button id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
+        let gaLoaded = false;
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+
+        function loadGoogleAnalytics() {
+            if (gaLoaded) return;
+            gaLoaded = true;
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+        }
+
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            if (!banner) return;
+            const consent = localStorage.getItem('ga_consent');
+            if (!consent) {
+                setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000);
+            } else if (consent === 'granted') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' });
+                loadGoogleAnalytics();
+            }
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'granted');
+                    banner.classList.add('translate-y-full');
+                    gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' });
+                    loadGoogleAnalytics();
+                });
+            }
+            if (declineBtn) {
+                declineBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'denied');
+                    banner.classList.add('translate-y-full');
+                });
+            }
+        })();
+    </script>
     <script src="/assets/page-effects.js" defer></script>
     <script src="/assets/prometo-gallery.js" defer></script>
 </body>

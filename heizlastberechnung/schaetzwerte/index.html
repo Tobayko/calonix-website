@@ -46,6 +46,7 @@
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" />
     <meta name="twitter:image:alt" content="Prometo Schnellberechnung mit Heizlast-Schätzergebnis in drei Szenarien auf dem Smartphone" />
 
+    <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -127,7 +128,16 @@
                 "@type": "Organization",
                 "@id": "https://prometo.app/#organization",
                 "name": "Prometo",
-                "url": "https://prometo.app/"
+                "url": "https://prometo.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/apple-touch-icon.png"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "info@prometo.app",
+                    "contactType": "customer support"
+                }
             },
             {
                 "@type": "WebSite",
@@ -238,6 +248,25 @@
                         }
                     }
                 ]
+            },
+            {
+                "@type": "Article",
+                "@id": "https://prometo.app/heizlastberechnung/schaetzwerte/#article",
+                "headline": "Heizlast schätzen: W/m², Beispiele und Grenzen",
+                "description": "Heizlast schätzen mit W/m²: typische Orientierungswerte für Altbau, Bestand und Neubau plus klare Grenzen der Überschlagsrechnung.",
+                "author": {
+                    "@type": "Organization",
+                    "@id": "https://prometo.app/#organization"
+                },
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                },
+                "datePublished": "2025-01-01",
+                "dateModified": "2026-04-05",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                }
             }
         ]
     }
@@ -317,13 +346,13 @@
                             </div>
                         </div>
                         <div class="formula-pills">
-                            <span class="formula-pill">Flaeche</span>
+                            <span class="formula-pill">Fläche</span>
                             <span class="formula-pill">W/m²-Wert</span>
                             <span class="formula-pill">grobe kW-Einordnung</span>
                         </div>
                         <p class="section-note">
-                            Die Balken zeigen typische Groessenordnungen fuer den ersten Ueberblick. Je heterogener ein
-                            Projekt wird, desto frueher reicht die reine Flaechenlogik nicht mehr.
+                            Die Balken zeigen typische Größenordnungen für den ersten Überblick. Je heterogener ein
+                            Projekt wird, desto früher reicht die reine Flächenlogik nicht mehr.
                         </p>
                     </div>
                 </div>
@@ -585,6 +614,43 @@
             </div>
         </div>
     </footer>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
+            <div class="text-sm text-gray-400">
+                <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
+                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
+                <button id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
+        let gaLoaded = false;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied' });
+        function loadGoogleAnalytics() {
+            if (gaLoaded) return; gaLoaded = true;
+            const script = document.createElement('script'); script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script); gtag('js', new Date()); gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+        }
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            if (!banner) return;
+            const consent = localStorage.getItem('ga_consent');
+            if (!consent) { setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000); }
+            else if (consent === 'granted') { gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' }); loadGoogleAnalytics(); }
+            if (acceptBtn) { acceptBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'granted'); banner.classList.add('translate-y-full'); gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' }); loadGoogleAnalytics(); }); }
+            if (declineBtn) { declineBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'denied'); banner.classList.add('translate-y-full'); }); }
+        })();
+    </script>
     <script src="/assets/page-effects.js" defer></script>
     <script src="/assets/prometo-gallery.js" defer></script>
 </body>

@@ -25,6 +25,16 @@
       "source": "/heizlastberechnung/schaetzwerte",
       "destination": "/heizlastberechnung/schaetzwerte/",
       "permanent": true
+    },
+    {
+      "source": "/digitales-aufmass",
+      "destination": "/digitales-aufmass-app.html",
+      "permanent": true
+    },
+    {
+      "source": "/digitales-aufmass/",
+      "destination": "/digitales-aufmass-app.html",
+      "permanent": true
     }
   ]
 }
