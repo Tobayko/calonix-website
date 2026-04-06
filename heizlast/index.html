@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Heizlast einfach erklärt: Bedeutung, Berechnung und W/m² | Prometo</title>
+    <title>Heizlast: Was ist sie, wie berechnet man sie? | Prometo</title>
     <meta name="description"
-        content="Was ist Heizlast? Einfach erklärt mit Definition, Formel, W/m²-Orientierung, Unterschied zum Heizwärmebedarf und der Bedeutung für Wärmepumpe und Heizflächen." />
+        content="Heizlast einfach erklärt: Definition, Einheit (Watt/kW), Formel Q = QT + QL, spezifische Heizlast W/m², Wärmepumpen-Auslegung und Berechnung mit Prometo." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -29,22 +29,22 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Heizlast einfach erklärt: Bedeutung, Berechnung und W/m² | Prometo" />
+    <meta property="og:title" content="Heizlast: Was ist sie, wie berechnet man sie? | Prometo" />
     <meta property="og:description"
-        content="Die Heizlast ist die notwendige Wärmeleistung eines Gebäudes oder Raums. Diese Seite erklärt Definition, Einflussfaktoren, W/m²-Schätzwerte und den Bezug zur Wärmepumpe." />
+        content="Heizlast einfach erklärt: Definition, Einheit (Watt/kW), Formel Q = QT + QL, spezifische Heizlast W/m², Wärmepumpen-Auslegung und Berechnung mit Prometo." />
     <meta property="og:url" content="https://prometo.app/heizlast/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
-    <meta property="og:image:alt" content="Prometo Projektdetail mit Heizlastergebnissen und Bivalenzpunkt-Diagramm auf dem Smartphone" />
+    <meta property="og:image:alt" content="Prometo zeigt Heizlastergebnis mit Bivalenzpunkt-Diagramm auf dem Smartphone" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1080" />
     <meta property="og:image:height" content="2400" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Heizlast einfach erklärt: Bedeutung, Berechnung und W/m² | Prometo" />
+    <meta name="twitter:title" content="Heizlast: Was ist sie, wie berechnet man sie? | Prometo" />
     <meta name="twitter:description"
-        content="Definition, Einflussfaktoren, W/m²-Schätzwerte und die Bedeutung der Heizlast für Wärmepumpe und Heizflächen." />
+        content="Heizlast einfach erklärt: Definition, Einheit (Watt/kW), Formel Q = QT + QL, spezifische Heizlast W/m², Wärmepumpen-Auslegung und Berechnung mit Prometo." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
-    <meta name="twitter:image:alt" content="Prometo Projektdetail mit Heizlastergebnissen und Bivalenzpunkt-Diagramm auf dem Smartphone" />
+    <meta name="twitter:image:alt" content="Prometo zeigt Heizlastergebnis mit Bivalenzpunkt-Diagramm auf dem Smartphone" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
@@ -53,7 +53,7 @@
     <style>
         body {
             background:
-                radial-gradient(circle at top left, rgba(69, 222, 231, 0.12), transparent 40%),
+                radial-gradient(circle at top, rgba(69, 222, 231, 0.12), transparent 42%),
                 linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
             color: #dfe3e3;
             font-family: 'Manrope', sans-serif;
@@ -103,7 +103,7 @@
             border-radius: 1.5rem;
             border: 1px solid rgba(69, 222, 231, 0.16);
             background: rgba(69, 222, 231, 0.06);
-            padding: 1.25rem;
+            padding: 1rem 1.25rem;
         }
 
         .faq-item summary {
@@ -117,6 +117,28 @@
 
         .faq-item[open] summary {
             color: #fff;
+        }
+
+        .richtwert-table th {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #45dee7;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .richtwert-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #dfe3e3;
+            font-size: 0.9rem;
+        }
+
+        .richtwert-table tr:last-child td {
+            border-bottom: none;
         }
     </style>
 
@@ -133,11 +155,20 @@
                     "@type": "ImageObject",
                     "url": "https://prometo.app/assets/apple-touch-icon.png"
                 },
+                "image": "https://prometo.app/assets/og-image.png",
+                "description": "Prometo ist eine SHK-Software für digitales Aufmaß, Heizlastberechnung und TGA-Planung.",
                 "contactPoint": {
                     "@type": "ContactPoint",
-                    "email": "info@prometo.app",
-                    "contactType": "customer support"
-                }
+                    "contactType": "customer support",
+                    "availableLanguage": "de"
+                },
+                "sameAs": [
+                    "https://linkedin.com/company/prometo-app",
+                    "https://instagram.com/prometo.app",
+                    "https://youtube.com/@prometo-app",
+                    "https://x.com/prometo-app",
+                    "https://facebook.com/prometo.app"
+                ]
             },
             {
                 "@type": "WebSite",
@@ -171,8 +202,8 @@
                 "@type": "WebPage",
                 "@id": "https://prometo.app/heizlast/#webpage",
                 "url": "https://prometo.app/heizlast/",
-                "name": "Heizlast einfach erklärt: Bedeutung, Berechnung und W/m² | Prometo",
-                "description": "Was ist Heizlast? Einfach erklärt mit Definition, Formel, W/m²-Orientierung, Unterschied zum Heizwärmebedarf und der Bedeutung für Wärmepumpe und Heizflächen.",
+                "name": "Heizlast: Was ist sie, wie berechnet man sie? | Prometo",
+                "description": "Heizlast einfach erklärt: Definition, Einheit (Watt/kW), Formel Q = QT + QL, spezifische Heizlast W/m², Wärmepumpen-Auslegung und Berechnung mit Prometo.",
                 "inLanguage": "de-DE",
                 "isPartOf": {
                     "@id": "https://prometo.app/#website"
@@ -188,48 +219,31 @@
             {
                 "@type": "Article",
                 "@id": "https://prometo.app/heizlast/#article",
-                "headline": "Heizlast einfach erklärt: Bedeutung, Berechnung und W/m²",
-                "description": "Definition, Einflussfaktoren, W/m²-Orientierung, Unterschied zum Heizwärmebedarf und Bedeutung für Wärmepumpe und Heizflächen.",
+                "headline": "Heizlast einfach erklärt: Definition, Formel, Einheit und Berechnung",
+                "description": "Heizlast einfach erklärt: Definition, Einheit (Watt/kW), Formel Q = QT + QL, spezifische Heizlast W/m², Wärmepumpen-Auslegung und Berechnung mit Prometo.",
+                "inLanguage": "de-DE",
+                "url": "https://prometo.app/heizlast/",
+                "isPartOf": {
+                    "@id": "https://prometo.app/heizlast/#webpage"
+                },
                 "author": {
-                    "@type": "Organization",
                     "@id": "https://prometo.app/#organization"
                 },
                 "publisher": {
                     "@id": "https://prometo.app/#organization"
                 },
-                "datePublished": "2026-04-05",
-                "dateModified": "2026-04-05",
-                "inLanguage": "de-DE",
-                "isPartOf": {
-                    "@id": "https://prometo.app/#website"
-                }
-            },
-            {
-                "@type": "HowTo",
-                "@id": "https://prometo.app/heizlast/#howto",
-                "name": "Heizlast schrittweise einordnen",
-                "description": "Didaktische Einordnung von Definition, Einflussfaktoren, W/m²-Schätzung und methodischer Berechnung der Heizlast.",
-                "step": [
-                    {
-                        "@type": "HowToStep",
-                        "name": "Gebäude- und Raumdaten einordnen",
-                        "text": "Zuerst werden Nutzung, Innen- und Außentemperaturen, Bauteile und Raumgrößen festgelegt."
-                    },
-                    {
-                        "@type": "HowToStep",
-                        "name": "Transmissions- und Lüftungsverluste verstehen",
-                        "text": "Die Heizlast ergibt sich aus Wärmeverlusten über Bauteile und Luftwechsel, gegebenenfalls ergänzt um Zuschläge."
-                    },
-                    {
-                        "@type": "HowToStep",
-                        "name": "W/m² nur als groben Überschlag nutzen",
-                        "text": "Ein W/m²-Wert kann eine schnelle Größenordnung liefern, ersetzt aber keine saubere raumweise Berechnung."
-                    },
-                    {
-                        "@type": "HowToStep",
-                        "name": "Für Auslegung und Wärmepumpe genauer rechnen",
-                        "text": "Wenn Heizflächen, Wärmepumpe oder Sanierungsentscheidungen anstehen, ist eine methodische und nachvollziehbare Berechnung die bessere Grundlage."
-                    }
+                "datePublished": "2026-04-06",
+                "dateModified": "2026-04-06",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
+                },
+                "about": [
+                    "Heizlast",
+                    "Heizlastberechnung",
+                    "DIN EN 12831",
+                    "Wärmepumpe",
+                    "Spezifische Heizlast"
                 ]
             },
             {
@@ -238,42 +252,66 @@
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Was ist Heizlast einfach erklärt?",
+                        "name": "Was ist die Heizlast eines Hauses?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Die Heizlast ist die Wärmeleistung, die ein Gebäude oder Raum unter Auslegungsbedingungen braucht, damit die gewünschte Raumtemperatur gehalten wird. Sie wird in Watt oder Kilowatt angegeben."
+                            "text": "Die Heizlast eines Hauses ist die maximale Wärmeleistung in Watt (W) oder Kilowatt (kW), die das Gebäude bei der kältesten zu erwartenden Außentemperatur (Normaußentemperatur) benötigt, um die gewünschte Innentemperatur zu halten. Sie setzt sich aus Transmissionswärmeverlusten durch die Gebäudehülle und Lüftungswärmeverlusten zusammen. Die Heizlast ist die zentrale Planungsgröße für die Dimensionierung von Wärmeerzeuger und Heizflächen."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Wofür braucht man die Heizlast?",
+                        "name": "Welche Einheit hat die Heizlast?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Die Heizlast ist eine zentrale Planungsgröße für Heizkörper, Fußbodenheizung, Wärmepumpe und Wärmeerzeuger. Sie hilft, Unter- und Überdimensionierung zu vermeiden."
+                            "text": "Die Heizlast wird in Watt (W) auf Raumebene und in Kilowatt (kW) auf Gebäudeebene angegeben. Für einen einzelnen Raum sind Werte von einigen Hundert bis mehreren tausend Watt typisch. Die spezifische Heizlast, die Gebäudeheizlast ins Verhältnis zur beheizten Wohnfläche setzt, wird in W/m² (Watt pro Quadratmeter) angegeben."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Reicht ein W pro Quadratmeter Wert aus?",
+                        "name": "Wie berechnet man die Heizlast?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Ein W pro Quadratmeter Wert reicht nur für eine grobe Vororientierung. Sobald raumweise Unterschiede oder eine konkrete Auslegung relevant werden, ist eine methodische Berechnung sinnvoller."
+                            "text": "Die Heizlast ergibt sich aus der Summe von Transmissions- und Lüftungswärmeverlusten: Q = QT + QV. Transmissionswärmeverluste (QT) hängen von Bauteilflächen, U-Werten und der Temperaturdifferenz zwischen innen und außen ab. Lüftungswärmeverluste (QV) berücksichtigen Luftwechselrate und Raumvolumen. Die Berechnungsmethode orientiert sich an DIN EN 12831."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Was ist der Unterschied zwischen Heizlast und Heizwärmebedarf?",
+                        "name": "Was ist die spezifische Heizlast?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Die Heizlast beschreibt die benötigte Leistung zu einem Auslegungspunkt. Der Heizwärmebedarf beschreibt dagegen die Energiemenge über einen Zeitraum, meist pro Jahr."
+                            "text": "Die spezifische Heizlast ist die Gebäudeheizlast bezogen auf die beheizte Wohnfläche, angegeben in W/m². Orientierungswerte aus der Praxis: Unsanierter Altbau 80–120 W/m², sanierter Bestand 40–70 W/m², Neubau nach GEG-Standard 20–40 W/m². Diese Werte ersetzen keine individuelle Heizlastberechnung."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Kann man Heizlast aus dem Verbrauch ableiten?",
+                        "name": "Wie hoch ist die Heizlast bei einer Wärmepumpe?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Verbrauchsdaten können als Plausibilitätscheck helfen, ersetzen aber keine saubere raumweise Heizlast. Wetter, Nutzerverhalten und Warmwasseranteile verzerren die direkte Ableitung."
+                            "text": "Für die Wärmepumpen-Auslegung ist die Gebäudeheizlast bei Normaußentemperatur die maßgebliche Kenngröße. Die Nennwärmeleistung der Wärmepumpe sollte möglichst nah an der tatsächlichen Heizlast liegen — Überdimensionierung führt zu häufigem Takten und Effizienzverlust. Zusätzlich ist der Bivalenzpunkt relevant: die Außentemperatur, ab der ein Heizstab zugeschaltet wird."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was ist der Unterschied zwischen Heizlast und Heizleistung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Heizlast beschreibt den Wärmebedarf des Gebäudes (Nachfrageseite). Heizleistung bezeichnet die Fähigkeit des Wärmeerzeugers, Wärme zu erzeugen (Angebotsseite). Das Ziel der Planung ist es, Heizlast und Heizleistung möglichst passgenau abzustimmen — ohne Überdimensionierung und ohne Unterversorgung."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wann muss die Heizlast berechnet werden?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Eine strukturierte Heizlastberechnung ist in der Regel erforderlich, wenn eine Wärmepumpe eingebaut oder getauscht wird, ein hydraulischer Abgleich (Verfahren A oder B) durchgeführt wird, Heizflächen raumweise ausgelegt werden oder eine Förderung (z. B. über BAFA oder KfW) beantragt wird. Ob eine bestimmte Berechnungsmethode für Förderanträge anerkannt wird, hängt von den jeweils gültigen Förderrichtlinien ab. Alle Angaben ohne Gewähr."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie schnell geht die Heizlastberechnung mit Prometo?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Mit Prometo startet der Workflow direkt aus dem vorhandenen PDF-Grundriss. Räume und Etagen werden automatisch erkannt, im Import-Review geprüft und in die Heizlastberechnung übergeben. Für ein typisches Einfamilienhaus mit strukturierten Plänen ist der Einstieg in die raumweise Berechnung deutlich schneller als bei vollständiger manueller Eingabe. Die tatsächliche Bearbeitungszeit hängt von Projektgröße, Planqualität und Detailtiefe der Eingaben ab."
                         }
                     }
                 ]
@@ -291,13 +329,14 @@
                     class="h-8 w-auto brightness-0 invert" />
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/heizlast/" class="text-primary" aria-current="page">Heizlast erklärt</a>
                 <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
                 <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
                 <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
-                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
-                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
-                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Schätzwerte</a>
                 <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831 erklärt</a>
+                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Heizlast schätzen</a>
             </nav>
             <a href="/#beta-signup"
                 class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
@@ -307,6 +346,8 @@
     </header>
 
     <main>
+
+        <!-- 1. HERO -->
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
                 <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
@@ -315,414 +356,498 @@
                     <span aria-current="page">Heizlast</span>
                 </nav>
 
-                <div class="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+                <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                     <div class="reveal">
-                        <span class="badge mb-6">Grundlagen</span>
+                        <span class="badge mb-6">Heizlast einfach erklärt</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            Heizlast einfach erklärt: Bedeutung, Berechnung und typische W/m²-Werte
+                            Heizlast: Definition, Formel, Einheit und Berechnung
                         </h1>
-                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
-                            Die Heizlast ist die Wärmeleistung, die ein Gebäude oder ein Raum unter
-                            Auslegungsbedingungen braucht, damit die gewünschte Innentemperatur gehalten wird. Genau
-                            deshalb ist sie eine der wichtigsten Größen für Heizkörper, Fußbodenheizung und
-                            Wärmepumpe.
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
+                            Die maximale Wärmeleistung, die ein Gebäude bei extremer Kälte benötigt — Grundlage für Wärmepumpe, Heizflächen und hydraulischen Abgleich.
                         </p>
-                        <div class="formula-box text-white text-lg font-headline font-bold mb-6">
-                            Heizlast ≈ Transmissionsverluste + Lüftungsverluste + ggf. Zuschläge
+                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a href="/heizlastberechnung/"
+                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                Heizlast berechnen mit Prometo
+                            </a>
+                            <a href="/heizlastberechnung/din-12831/"
+                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                DIN EN 12831 erklärt
+                            </a>
                         </div>
-                        <p class="text-sm text-gray-400 leading-relaxed max-w-3xl">
-                            Auf dieser Seite findest du die schnelle Einordnung. Für die methodische Vertiefung geht es
-                            weiter zu
-                            <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">DIN EN 12831 erklärt</a>
-                            und für grobe Orientierungswerte zu
-                            <a href="/heizlastberechnung/schaetzwerte/" class="text-primary underline underline-offset-2">Heizlast schätzen mit W/m²</a>.
-                        </p>
-                    </div>
-                    <div class="glass-panel rounded-[2rem] p-6 md:p-8 reveal reveal-delay-1">
                         <div class="grid gap-4 sm:grid-cols-2">
-                            <article class="rounded-3xl border border-white/8 bg-white/3 p-5">
-                                <p class="text-xs uppercase tracking-[0.18em] text-primary mb-3">Definition</p>
-                                <h2 class="text-xl font-bold text-white mb-2">Leistung statt Jahresenergie</h2>
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
+                                <h2 class="text-base font-bold text-white mb-2">Einheit: Watt und Kilowatt</h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
-                                    Heizlast wird in Watt oder Kilowatt angegeben. Sie beschreibt einen Leistungsbedarf,
-                                    nicht den jährlichen Verbrauch.
+                                    Heizlast wird in W (Räume) oder kW (Gebäude) angegeben. Die spezifische Heizlast in W/m² dient als schneller Orientierungswert für den Gebäudezustand.
                                 </p>
-                            </article>
-                            <article class="rounded-3xl border border-white/8 bg-white/3 p-5">
-                                <p class="text-xs uppercase tracking-[0.18em] text-primary mb-3">Wärmepumpe</p>
-                                <h2 class="text-xl font-bold text-white mb-2">Wichtige Auslegungsgröße</h2>
+                            </div>
+                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
+                                <h2 class="text-base font-bold text-white mb-2">Formel: Q = Q<sub class="text-primary">T</sub> + Q<sub class="text-primary">V</sub></h2>
                                 <p class="text-sm text-gray-400 leading-relaxed">
-                                    Wer die Heizlast zu grob schätzt, riskiert Unter- oder Überdimensionierung von
-                                    Wärmeerzeuger und Heizflächen.
+                                    Transmissionswärmeverluste plus Lüftungswärmeverluste ergeben die Raumheizlast. Auf Gebäudeebene werden alle Räume summiert.
                                 </p>
-                            </article>
-                            <article class="rounded-3xl border border-white/8 bg-white/3 p-5">
-                                <p class="text-xs uppercase tracking-[0.18em] text-primary mb-3">W/m²</p>
-                                <h2 class="text-xl font-bold text-white mb-2">Nur erste Orientierung</h2>
-                                <p class="text-sm text-gray-400 leading-relaxed">
-                                    W pro Quadratmeter hilft für den ersten Überblick, ersetzt aber keine belastbare
-                                    raumweise Berechnung.
-                                </p>
-                            </article>
-                            <article class="rounded-3xl border border-white/8 bg-white/3 p-5">
-                                <p class="text-xs uppercase tracking-[0.18em] text-primary mb-3">Praxis</p>
-                                <h2 class="text-xl font-bold text-white mb-2">Raumweise Unterschiede zählen</h2>
-                                <p class="text-sm text-gray-400 leading-relaxed">
-                                    Gleiche Wohnfläche bedeutet nicht automatisch gleiche Heizlast. Außenwände,
-                                    Fenster, Luftwechsel und Nutzung verändern das Ergebnis.
-                                </p>
-                            </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual reveal reveal-delay-2">
+                        <div class="ambient-orb ambient-orb--a"></div>
+                        <div class="ambient-orb ambient-orb--b"></div>
+                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6"
+                            data-lightbox-title="Heizlastergebnis mit Bivalenzpunkt in Prometo"
+                            data-lightbox-caption="Gesamtlast, spezifische Heizlast und Bivalenzpunkt auf einen Blick — direkt in der mobilen App.">
+                            <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
+                                alt="Prometo zeigt Heizlastergebnis, spezifische Heizlast und Bivalenzpunkt-Diagramm auf dem Smartphone"
+                                width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async"
+                                class="hero-device mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
+                        </div>
+                        <div class="hero-chip hero-chip--top">
+                            <strong>Raumweise Heizlast</strong>
+                            <span>Transmissions- und Lüftungsverluste getrennt ausgewiesen</span>
+                        </div>
+                        <div class="hero-chip hero-chip--mid">
+                            <strong>Spezifische Last in W/m²</strong>
+                            <span>Sofort sichtbar auf Raum- und Gebäudeebene</span>
+                        </div>
+                        <div class="hero-chip hero-chip--bottom">
+                            <strong>Bivalenzpunkt und Wärmepumpe</strong>
+                            <span>Auslegungsgrundlage direkt aus der Berechnung</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="px-6 pb-8 md:pb-12">
-            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-                <article class="glass-panel rounded-[2rem] p-8 reveal">
-                    <p class="text-xs uppercase tracking-[0.18em] text-primary mb-4">Kurzantwort</p>
-                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-                        Was ist Heizlast?
-                    </h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        Heizlast ist die notwendige Wärmezufuhr, damit ein Gebäude oder Raum die gewünschte
-                        Innenraumtemperatur auch bei Norm- oder Auslegungstemperaturen halten kann. Praktisch ist sie
-                        die Größe, nach der Heizflächen und Wärmeerzeuger dimensioniert werden.
-                    </p>
-                </article>
-                <aside class="glass-panel rounded-[2rem] p-8 reveal reveal-delay-1" aria-labelledby="heizlast-jump-nav-title">
-                    <p id="heizlast-jump-nav-title" class="text-xs uppercase tracking-[0.18em] text-primary mb-4">Direkt zu</p>
-                    <div class="flex flex-col gap-3 text-sm">
-                        <a href="#definition" class="text-gray-300 hover:text-white transition-colors">Definition und Abgrenzung</a>
-                        <a href="#faktoren" class="text-gray-300 hover:text-white transition-colors">Wovon die Heizlast abhängt</a>
-                        <a href="#schaetzen" class="text-gray-300 hover:text-white transition-colors">W/m²-Schätzung und Beispiele</a>
-                        <a href="#waermepumpe" class="text-gray-300 hover:text-white transition-colors">Bedeutung für die Wärmepumpe</a>
-                        <a href="#berechnen" class="text-gray-300 hover:text-white transition-colors">Genauer berechnen</a>
-                        <a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section id="definition" class="px-6 pb-16 md:pb-20">
-            <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-2">
-                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                    <h2 class="text-2xl font-bold text-white mb-4">Heizlast ist eine Leistungsgröße</h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        Die Heizlast wird in Watt oder Kilowatt angegeben. Sie beschreibt, wie viel Wärmeleistung in
-                        einer ungünstigen Auslegungssituation nötig ist, damit die Zieltemperatur im Raum gehalten
-                        werden kann.
-                    </p>
-                </article>
-                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                    <h2 class="text-2xl font-bold text-white mb-4">Nicht mit Heizwärmebedarf verwechseln</h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        Der Heizwärmebedarf beschreibt eine Energiemenge über einen Zeitraum, meist pro Jahr. Die
-                        Heizlast beschreibt dagegen den Leistungsbedarf an einem definierten Auslegungspunkt. Deshalb
-                        kann ein Gebäude einen moderaten Jahresbedarf haben, aber an kalten Tagen trotzdem eine klar
-                        definierte Spitzenleistung brauchen.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <section id="faktoren" class="px-6 py-16 md:py-24">
+        <!-- 2. WAS IST DIE HEIZLAST? -->
+        <section class="px-6 pb-16 md:pb-24" id="definition">
             <div class="max-w-screen-xl mx-auto">
-                <div class="max-w-3xl mb-10 reveal">
-                    <span class="badge mb-6">Einflussfaktoren</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Wovon hängt die Heizlast ab?
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Definition</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Was ist die Heizlast?
                     </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Gleiche Quadratmeterzahl, aber andere Heizlast: Genau das passiert in der Praxis ständig. Die
-                        wesentlichen Unterschiede entstehen durch Hülle, Temperaturdifferenz, Lüftung und die
-                        raumweise Situation.
+                    <p class="text-base text-gray-400 leading-relaxed">
+                        Die Heizlast (W / kW) beschreibt den <strong class="text-white">Auslegungsfall</strong>: wie viel Wärme ein Gebäude bei der kältesten Stunde des Jahres — der Normaußentemperatur — verliert. Keine Schätzgröße, sondern die Grundlage für jede Dimensionierungsentscheidung.
                     </p>
                 </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Bauteile und U-Werte</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Außenwände, Fenster, Dach, Boden und angrenzende unbeheizte Bereiche beeinflussen, wie viel
-                            Wärme über die Gebäudehülle verloren geht.
+
+                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="glass-panel rounded-2xl p-6 reveal lift-on-hover">
+                        <h3 class="text-base font-bold text-white mb-2">Raumheizlast</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Wärmeverlust eines einzelnen Raums — Basis für Heizkörper- und Flächenheizungsauslegung.
                         </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Innen und Außen</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Entscheidend ist die Temperaturdifferenz zwischen gewünschter Innentemperatur und
-                            angesetzter Außentemperatur. Größere Differenz bedeutet höhere Last.
+                    </div>
+                    <div class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-base font-bold text-white mb-2">Gebäudeheizlast</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Summe aller Raumheizlasten — bestimmt die Wärmepumpen- und Kesseldimensionierung.
                         </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Luftwechsel</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Lüftung, Infiltration und Gebäudeundichtheiten erhöhen den Wärmeverlust. Gerade im Bestand
-                            kann dieser Anteil spürbar sein.
+                    </div>
+                    <div class="glass-panel rounded-2xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-base font-bold text-white mb-2">Einheit: W und kW</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Räume in <strong class="text-white">Watt</strong>, Gebäude in <strong class="text-white">Kilowatt</strong>. Spezifische Last in W/m² als Schnellvergleich.
                         </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Raumweise Nutzung</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Bad, Schlafzimmer und Wohnraum haben oft unterschiedliche Temperaturen, Außenflächen und
-                            Randbedingungen. Darum ist die raumweise Betrachtung so wichtig.
+                    </div>
+                    <div class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover">
+                        <h3 class="text-base font-bold text-white mb-2">Last ≠ Leistung</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            <strong class="text-white">Heizlast</strong> = Bedarf des Gebäudes. <strong class="text-white">Heizleistung</strong> = Können des Erzeugers. Beide müssen passen.
                         </p>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="schaetzen" class="px-6 pb-16 md:pb-24">
-            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-                <div class="reveal">
-                    <span class="badge mb-6">W/m²</span>
+        <!-- 3. HEIZLAST BERECHNEN: FORMEL UND METHODE -->
+        <section class="px-6 pb-16 md:pb-24" id="formel">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Methode</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Heizlast grob schätzen: typische W/m²-Bereiche
+                        Heizlast berechnen: Formel und Methode
                     </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed mb-6">
-                        Für die erste Orientierung wird die Wohnfläche oft mit einem typischen W/m²-Wert multipliziert.
-                        Das liefert eine plausible Größenordnung, ersetzt aber keine belastbare raumweise Berechnung.
+                    <p class="text-base text-gray-400 leading-relaxed mb-4">
+                        Angelehnt an <strong class="text-white">DIN EN 12831</strong>: Raumheizlast = Transmissions- + Lüftungswärmeverluste. Die fachliche Verantwortung im konkreten Projekt bleibt beim Anwender.
                     </p>
-                    <div class="formula-box text-white text-lg font-headline font-bold mb-6">
-                        Heizlast ≈ Wohnfläche × spezifische Heizlast in W/m²
+                    <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
+                        DIN EN 12831 im Detail mit Formelbeispielen ansehen
+                    </a>
+                </div>
+
+                <div class="grid gap-8 lg:grid-cols-2">
+                    <div class="space-y-6">
+                        <div class="formula-box reveal">
+                            <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Grundformel Raumheizlast</p>
+                            <p class="text-2xl font-bold text-white font-headline mb-3">Q<sub class="text-primary text-lg">H,i</sub> = Q<sub class="text-primary text-lg">T,i</sub> + Q<sub class="text-primary text-lg">V,i</sub></p>
+                            <ul class="text-sm text-gray-400 space-y-1.5">
+                                <li><strong class="text-white">Q<sub>H,i</sub></strong> — Heizlast des Raumes i in Watt (W)</li>
+                                <li><strong class="text-white">Q<sub>T,i</sub></strong> — Transmissionswärmeverluste in W</li>
+                                <li><strong class="text-white">Q<sub>V,i</sub></strong> — Lüftungswärmeverluste in W</li>
+                            </ul>
+                        </div>
+
+                        <div class="formula-box reveal">
+                            <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Transmissionswärmeverluste</p>
+                            <p class="text-xl font-bold text-white font-headline mb-3">Q<sub class="text-primary">T</sub> = &Sigma; (A &times; U &times; &Delta;T)</p>
+                            <ul class="text-sm text-gray-400 space-y-1.5">
+                                <li><strong class="text-white">A</strong> — Bauteilfläche in m²</li>
+                                <li><strong class="text-white">U</strong> — Wärmedurchgangskoeffizient in W/(m²·K)</li>
+                                <li><strong class="text-white">&Delta;T</strong> — Temperaturdifferenz innen/außen in K</li>
+                            </ul>
+                        </div>
+
+                        <div class="formula-box reveal">
+                            <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Lüftungswärmeverluste</p>
+                            <p class="text-xl font-bold text-white font-headline mb-3">Q<sub class="text-primary">V</sub> = 0,34 &times; n &times; V &times; &Delta;T</p>
+                            <ul class="text-sm text-gray-400 space-y-1.5">
+                                <li><strong class="text-white">0,34</strong> — Wärmespeicherkapazität Luft in Wh/(m³·K)</li>
+                                <li><strong class="text-white">n</strong> — Luftwechselrate in 1/h</li>
+                                <li><strong class="text-white">V</strong> — Raumvolumen in m³</li>
+                                <li><strong class="text-white">&Delta;T</strong> — Temperaturdifferenz in K</li>
+                            </ul>
+                        </div>
                     </div>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Mehr Details und Grenzen des Überschlags findest du auf
-                        <a href="/heizlastberechnung/schaetzwerte/" class="text-primary underline underline-offset-2">Heizlast schätzen mit W/m²</a>.
+
+                    <div class="space-y-6">
+                        <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                            <h3 class="text-xl font-bold text-white mb-4">Die wichtigsten Einflussfaktoren auf die Heizlast</h3>
+                            <ul class="space-y-3 text-gray-400">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary font-bold text-lg leading-tight shrink-0">—</span>
+                                    <span><strong class="text-white">Normaußentemperatur:</strong> Je kälter das Auslegungsklima, desto höher die Temperaturdifferenz und damit die Heizlast. Deutschland hat mehrere Klimazonen mit unterschiedlichen Normaußentemperaturen.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary font-bold text-lg leading-tight shrink-0">—</span>
+                                    <span><strong class="text-white">U-Werte der Bauteile:</strong> Außenwände, Dach, Boden und Fenster — jedes Bauteil hat einen Wärmedurchgangskoeffizient, der maßgeblich die Transmissionsverluste bestimmt.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary font-bold text-lg leading-tight shrink-0">—</span>
+                                    <span><strong class="text-white">Fensterflächen und Ausrichtung:</strong> Große Fensterflächen erhöhen die Transmissionsverluste, können aber bei günstiger Südausrichtung solare Gewinne liefern.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary font-bold text-lg leading-tight shrink-0">—</span>
+                                    <span><strong class="text-white">Luftwechselrate:</strong> Undichte Gebäudehüllen oder geöffnete Fenster erhöhen die Lüftungswärmeverluste spürbar.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary font-bold text-lg leading-tight shrink-0">—</span>
+                                    <span><strong class="text-white">Raumlage:</strong> Eckräume, Dachgeschoss und erdberührende Böden haben höhere Verluste als innenliegende Räume.</span>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                            <h3 class="text-xl font-bold text-white mb-4">Wann ist eine Schätzung nicht ausreichend?</h3>
+                            <p class="text-gray-400 leading-relaxed mb-4">
+                                Schätzwerte in W/m² eignen sich für erste Einordnungen. Sobald eine Anlage konkret ausgelegt wird, ist eine strukturierte raumweise Berechnung die bessere Grundlage:
+                            </p>
+                            <ul class="space-y-2 text-gray-400">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary font-bold shrink-0">01</span>
+                                    <span>Wärmepumpen-Einbau oder -tausch</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary font-bold shrink-0">02</span>
+                                    <span>Raumweise Auslegung von Heizflächen</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary font-bold shrink-0">03</span>
+                                    <span>Hydraulischer Abgleich nach Verfahren A oder B</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-primary font-bold shrink-0">04</span>
+                                    <span>Förderantrag — je nach Förderrichtlinie erforderlich</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SPEZIFISCHE HEIZLAST W/m² -->
+        <section class="px-6 pb-16 md:pb-24" id="spezifische-heizlast">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Orientierungswerte</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Spezifische Heizlast in W/m²
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed mb-4">
+                        Die spezifische Heizlast setzt die Gebäudeheizlast ins Verhältnis zur beheizten Wohnfläche. Das Ergebnis in <strong class="text-white">W/m²</strong> erlaubt einen schnellen Vergleich zwischen Gebäuden und gibt SHK-Fachleuten eine erste Plausibilitätskontrolle.
+                    </p>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Hinweis: Die folgenden Werte sind Orientierungswerte aus der Praxis. Sie ersetzen keine individuelle Heizlastberechnung und hängen stark von Standort, Gebäudegröße, Nutzung und konkretem Sanierungsstand ab.
                     </p>
                 </div>
-                <div class="glass-panel rounded-[2rem] overflow-hidden reveal reveal-delay-1">
+
+                <div class="glass-panel rounded-3xl overflow-hidden reveal mb-8">
                     <div class="overflow-x-auto">
-                        <table class="w-full min-w-[720px]">
+                        <table class="richtwert-table w-full min-w-[600px]">
                             <thead>
-                                <tr class="border-b border-white/8">
-                                    <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Gebäudezustand</th>
-                                    <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Typische Tendenz</th>
-                                    <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Einordnung</th>
+                                <tr>
+                                    <th>Gebäudezustand</th>
+                                    <th>Orientierungswerte (W/m²)</th>
+                                    <th>Beispiel 150 m²</th>
+                                    <th>Hinweise</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-sm md:text-base">
-                                <tr class="border-b border-white/6">
-                                    <td class="px-6 py-5 text-white font-semibold">Unsanierter Altbau</td>
-                                    <td class="px-6 py-5 text-gray-300">eher hoher Wärmebedarf</td>
-                                    <td class="px-6 py-5 text-gray-400">Hohe Verluste und starke Streuung je nach Fenstern, Dämmung und Luftwechsel</td>
-                                </tr>
-                                <tr class="border-b border-white/6">
-                                    <td class="px-6 py-5 text-white font-semibold">Teilsanierter Bestand</td>
-                                    <td class="px-6 py-5 text-gray-300">mittlerer bis höherer Wärmebedarf</td>
-                                    <td class="px-6 py-5 text-gray-400">Oft brauchbar für eine erste Größenordnung, nicht für finale Auslegung</td>
-                                </tr>
-                                <tr class="border-b border-white/6">
-                                    <td class="px-6 py-5 text-white font-semibold">Gut sanierter Bestand</td>
-                                    <td class="px-6 py-5 text-gray-300">eher moderater Wärmebedarf</td>
-                                    <td class="px-6 py-5 text-gray-400">Spürbar niedriger, aber immer noch stark projektabhängig</td>
+                            <tbody>
+                                <tr>
+                                    <td><strong class="text-white">Unsanierter Altbau</strong> (vor 1978)</td>
+                                    <td class="text-primary font-bold">80 – 120 W/m²</td>
+                                    <td>12 – 18 kW</td>
+                                    <td>Ungedämmte Außenwände, einfache Verglasung typisch</td>
                                 </tr>
                                 <tr>
-                                    <td class="px-6 py-5 text-white font-semibold">Neubau</td>
-                                    <td class="px-6 py-5 text-gray-300">oft niedriger Wärmebedarf</td>
-                                    <td class="px-6 py-5 text-gray-400">Häufig deutlich niedriger, trotzdem nicht pauschal festzuschreiben</td>
+                                    <td><strong class="text-white">Teilsanierter Bestand</strong> (1978–2000)</td>
+                                    <td class="text-primary font-bold">50 – 80 W/m²</td>
+                                    <td>7,5 – 12 kW</td>
+                                    <td>Teilweise Dämmung, zweifache Verglasung</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-white">Sanierter Bestand / KfW-Effizienzhaus</strong></td>
+                                    <td class="text-primary font-bold">40 – 70 W/m²</td>
+                                    <td>6 – 10,5 kW</td>
+                                    <td>Gute Dämmung, Wärmerückgewinnung möglich</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-white">Neubau nach GEG-Standard</strong></td>
+                                    <td class="text-primary font-bold">20 – 40 W/m²</td>
+                                    <td>3 – 6 kW</td>
+                                    <td>Luftdichte Gebäudehülle, kontrollierte Lüftung</td>
+                                </tr>
+                                <tr>
+                                    <td><strong class="text-white">Passivhaus / KfW 40</strong></td>
+                                    <td class="text-primary font-bold">10 – 20 W/m²</td>
+                                    <td>1,5 – 3 kW</td>
+                                    <td>Sehr hohe Dämmung, Wärmebrückenfreiheit</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
-            <div class="max-w-screen-xl mx-auto mt-10 grid gap-6 md:grid-cols-3">
-                <article class="glass-panel rounded-3xl p-6 reveal lift-on-hover">
-                    <h3 class="text-xl font-bold text-white mb-3">Altbau im Erstgespräch</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        In unsanierten Beständen fällt die frühe Einordnung oft deutlich höher aus. Für das Erstgespräch
-                        reicht diese Tendenz, für die Auslegung aber nicht.
-                    </p>
-                </article>
-                <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
-                    <h3 class="text-xl font-bold text-white mb-3">Bestand in der Vorqualifikation</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Für die Vorqualifikation hilft häufig schon die Einordnung in einen mittleren bis höheren
-                        Bedarf. Eine belastbare raumweise Aussage entsteht dadurch noch nicht.
-                    </p>
-                </article>
-                <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
-                    <h3 class="text-xl font-bold text-white mb-3">Sanierter Bestand vor der Systemwahl</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Bei sanierten Gebäuden reicht die grobe Tendenz oft nicht mehr aus. Spätestens bei Wärmepumpe
-                        oder Heizflächenauslegung sollte der nächste Schritt genauer werden.
-                    </p>
-                </article>
+
+                <div class="grid gap-6 md:grid-cols-2 reveal">
+                    <div class="glass-panel rounded-3xl p-8 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Wann reichen Schätzwerte aus?</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Für eine erste Einordnung — ob eher eine kleine oder große Wärmepumpe in Frage kommt — sind W/m²-Werte ein hilfreicher Einstieg. Auch für Angebotsgespräche oder Vorqualifikationen ist der Überschlagsbereich nützlich.
+                        </p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-8 lift-on-hover">
+                        <h3 class="text-xl font-bold text-white mb-4">Wann reichen Schätzwerte nicht aus?</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Sobald es um die konkrete Auslegung geht — Wärmepumpe, Heizkörper, Fußbodenheizung, hydraulischer Abgleich — braucht es die raumweise Berechnung. Schätzwerte können Besonderheiten nicht abbilden: Ecklage, Dachgeschoss, Sanierungsstand einzelner Bauteile oder die lokale Klimazone.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 reveal">
+                    <a href="/heizlastberechnung/schaetzwerte/"
+                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
+                        Schätzwerte und Orientierungsbereiche im Detail
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section id="waermepumpe" class="px-6 pb-16 md:pb-24">
+        <!-- 5. HEIZLAST UND WÄRMEPUMPE -->
+        <section class="px-6 pb-16 md:pb-24" id="waermepumpe">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+                    <div class="reveal">
+                        <span class="badge mb-6">Wärmepumpe</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                            Heizlast und Wärmepumpe: Warum die Auslegung entscheidend ist
+                        </h2>
+                        <p class="text-lg text-gray-400 leading-relaxed mb-6">
+                            Bei keiner Heizungsart ist eine genaue Heizlastberechnung so kritisch wie bei der Wärmepumpe. Wärmepumpen arbeiten mit variablen Außentemperaturen und reagieren auf Fehler bei der Auslegung besonders empfindlich.
+                        </p>
+                        <p class="text-lg text-gray-400 leading-relaxed mb-8">
+                            Die Heizlast des Gebäudes bei Normaußentemperatur bestimmt, welche Wärmepumpenleistung benötigt wird. Hinzu kommt die Frage, ob und ab welcher Außentemperatur eine elektrische Zusatzheizung zugeschaltet werden muss — der sogenannte <strong class="text-white">Bivalenzpunkt</strong>.
+                        </p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="glass-panel rounded-2xl p-5 lift-on-hover">
+                                <h3 class="text-base font-bold text-white mb-2">Überdimensionierung vermeiden</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Eine zu groß gewählte Wärmepumpe taktet häufig: Sie schaltet an und aus, anstatt im effizienten Teillastbetrieb zu laufen. Das erhöht den Stromverbrauch, belastet das Gerät und verkürzt die Lebensdauer.
+                                </p>
+                            </div>
+                            <div class="glass-panel rounded-2xl p-5 lift-on-hover">
+                                <h3 class="text-base font-bold text-white mb-2">Unterdimensionierung ebenso kritisch</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Eine zu kleine Wärmepumpe kann an kalten Tagen die Raumtemperatur nicht halten. Der Heizstab springt dauerhaft an — das erhöht die Betriebskosten erheblich und macht den Effizienzgewinn zunichte.
+                                </p>
+                            </div>
+                            <div class="glass-panel rounded-2xl p-5 lift-on-hover">
+                                <h3 class="text-base font-bold text-white mb-2">Bivalenzpunkt richtig wählen</h3>
+                                <p class="text-sm text-gray-400 leading-relaxed">
+                                    Der Bivalenzpunkt liegt üblicherweise zwischen -5 °C und -7 °C. Oberhalb deckt die Wärmepumpe allein den Wärmebedarf. Unterhalb übernimmt oder unterstützt der Heizstab. Eine zu früh zugeschaltete Unterstützung erhöht die Betriebskosten unnötig.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-gray-500 leading-relaxed">
+                            Alle Angaben sind Orientierungswerte. Die konkrete Wärmepumpen-Dimensionierung sollte durch einen Fachbetrieb auf Basis einer individuellen Heizlastberechnung erfolgen.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6 reveal reveal-delay-1">
+                        <figure class="glass-panel rounded-3xl p-4 lift-on-hover">
+                            <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
+                                alt="Prometo App zeigt Heizlastergebnis mit Bivalenzpunkt-Diagramm und spezifischer Heizlast auf dem Smartphone"
+                                width="1080" height="2400" loading="lazy" decoding="async"
+                                class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
+                            <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                                <strong class="block text-white font-headline font-bold mb-1">Bivalenzpunkt direkt in der App</strong>
+                                Prometo zeigt Gebäudeheizlast, spezifische Last und den Bivalenzpunkt in einer Projektansicht — als Grundlage für die Wärmepumpen-Auslegung.
+                            </figcaption>
+                        </figure>
+
+                        <div class="formula-box">
+                            <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Orientierung Wärmepumpen-Dimensionierung</p>
+                            <p class="text-gray-300 leading-relaxed text-sm">
+                                Die Nennleistung der Wärmepumpe sollte der Gebäudeheizlast bei Normaußentemperatur entsprechen — oder leicht darunter liegen, wenn ein Heizstab als Bivalenzpartner eingeplant ist. Eine strukturierte Heizlastberechnung verhindert grobe Fehler bei der Geräteauswahl. Alle Angaben ohne Gewähr.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. APP-SCREENSHOTS -->
+        <section class="px-6 pb-16 md:pb-24" id="app-screenshots">
             <div class="max-w-screen-xl mx-auto">
                 <div class="max-w-3xl mb-10 reveal">
-                    <span class="badge mb-6">Wärmepumpe</span>
+                    <span class="badge mb-6">App-Ansichten</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Warum die Heizlast für Wärmepumpen so wichtig ist
+                        Heizlast berechnen mit Prometo — der Workflow in der Praxis
                     </h2>
                     <p class="text-lg text-gray-400 leading-relaxed">
-                        Wer eine Wärmepumpe auslegt, braucht keine schöne Zahl, sondern eine belastbare. Die Heizlast
-                        hilft dabei, die richtige Leistungsgröße und passende Heizflächen zu wählen.
+                        Vom PDF-Grundriss zur raumweisen Heizlast: Diese Prometo-Ansichten zeigen den typischen Berechnungsablauf — Planübernahme, Raumstruktur prüfen, Heizlast auswerten und Wärmepumpen-Auslegung direkt ableiten.
                     </p>
                 </div>
-                <div class="grid gap-6 md:grid-cols-3">
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Unterdimensionierung vermeiden</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Ist die Heizlast zu niedrig angesetzt, fehlt bei tiefen Außentemperaturen Leistung. Das
-                            kann Komfortprobleme und unerwünschte Spitzenlasten verursachen.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Überdimensionierung vermeiden</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Ist sie zu hoch angesetzt, wird Technik schnell unnötig groß. Das verteuert das System und
-                            verschlechtert nicht selten das Betriebsverhalten.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Bestand sauber bewerten</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Gerade bei Sanierungen reichen Wohnfläche oder Bauchgefühl selten aus. Eine nachvollziehbare
-                            Heizlast ist die bessere Grundlage für die Systementscheidung.
-                        </p>
-                    </article>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4 screenshot-rail screenshot-rail--wide">
+                    <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
+                            alt="Prometo Import-Review: erkannte Räume und Etagen aus dem PDF-Grundriss auf dem Smartphone"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">Schritt 1: Grundriss importieren</strong>
+                            PDF hochladen, Räume und Etagen automatisch erkennen und im Review prüfen — bevor die Heizlastberechnung startet.
+                        </figcaption>
+                    </figure>
+                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/schnellberechnung-aussenhuelle.webp"
+                            alt="Prometo: Eingabe von Außenhülle und Bauteilen für die Heizlastberechnung auf dem Smartphone"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">Schritt 2: Bauteile und U-Werte erfassen</strong>
+                            Außenwände, Fenster, Dach und Boden raumweise strukturiert eingeben — Grundlage für Transmissions- und Lüftungsverluste.
+                        </figcaption>
+                    </figure>
+                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-2 lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp"
+                            alt="Prometo Heizlast-Heatmap: farbcodierte raumweise Lastverteilung auf dem Smartphone"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">Schritt 3: Raumweise Heatmap auswerten</strong>
+                            Welche Räume verlieren am meisten Wärme? Die farbcodierte Heatmap macht Schwachstellen sofort sichtbar.
+                        </figcaption>
+                    </figure>
+                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-3 lift-on-hover">
+                        <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
+                            alt="Prometo Projektdetail: Gesamtheizlast, spezifische Last und Bivalenzpunkt auf dem Smartphone"
+                            width="1080" height="2400" loading="lazy" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
+                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
+                            <strong class="block text-white font-headline font-bold mb-1">Schritt 4: Heizlast und Wärmepumpe ableiten</strong>
+                            Gebäudeheizlast, spezifische Last und Bivalenzpunkt auf einen Blick — Auslegungsgrundlage direkt aus der Berechnung.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
 
-        <section id="berechnen" class="px-6 pb-16 md:pb-24">
-            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-                <div class="reveal">
-                    <span class="badge mb-6">Berechnung</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Wie berechnet man Heizlast genauer?
-                    </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed mb-6">
-                        Für eine genauere Betrachtung werden die Verluste über Bauteile und Lüftung systematisch
-                        erfasst. Die didaktische Kurzform lautet:
-                    </p>
-                    <div class="formula-box text-white text-lg font-headline font-bold mb-6">
-                        Φ<sub>HL</sub> ≈ Φ<sub>T</sub> + Φ<sub>V</sub> + Φ<sub>AH</sub>
-                    </div>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Den Rechengedanken mit Formeln und Beispielraum findest du auf
-                        <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">Heizlastberechnung nach DIN EN 12831 einfach erklärt</a>.
-                    </p>
-                </div>
-                <div class="space-y-5">
-                    <article class="glass-panel rounded-3xl p-6 reveal lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">1. Innen- und Außentemperaturen festlegen</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Basis ist die Differenz zwischen gewünschter Raumtemperatur und angesetzter
-                            Auslegungs-Außentemperatur.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">2. Bauteile und U-Werte erfassen</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Außenwände, Fenster, Dach, Boden und angrenzende Bereiche bestimmen den
-                            Transmissionswärmeverlust.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">3. Lüftungsverluste ergänzen</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Neben den Bauteilen zählt der Luftwechsel. Gerade im Bestand kann dieser Anteil relevant
-                            sein.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">4. Raumweise bewerten und auslegen</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Erst die saubere Raumstruktur macht die Ergebnisse für Heizflächen, Wärmepumpe und
-                            hydraulischen Abgleich wirklich belastbar.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="px-6 pb-16 md:pb-24" id="weiterlesen">
+        <!-- 7. HEIZLAST MIT PROMETO BERECHNEN -->
+        <section class="px-6 pb-16 md:pb-24" id="prometo">
             <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl reveal">
-                    <span class="badge mb-6">Weiterlesen</span>
+                <div class="mb-12 max-w-3xl reveal">
+                    <span class="badge mb-6">Prometo App</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Die passenden nächsten Seiten zum Thema Heizlast
+                        Heizlast berechnen mit Prometo
                     </h2>
                     <p class="text-lg text-gray-400 leading-relaxed">
-                        Diese Seite deckt die Grundlagen ab. Danach kannst du je nach Projektphase tiefer in
-                        Berechnung, Einordnung, Workflow oder Software einsteigen.
+                        Prometo ist eine SHK-App für iOS und Android, die den gesamten Heizlast-Workflow in einem durchgängigen Prozess abbildet — von der Planaufnahme bis zur Materialbestellung im Großhandel. Der Workflow startet mit dem vorhandenen PDF-Grundriss und führt raumweise durch Heizlast, Systementscheidung, hydraulischen Abgleich und Bestellung.
                     </p>
                 </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-6">
+
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-4">Fußbodenheizung auslegen</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Verlegeabstand, Heizkreise, EN 1264 und der Weg von der Heizlast zum Verlegeplan.
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">01</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Planbasierter Einstieg mit Import-Review</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Der Workflow startet mit dem vorhandenen PDF-Grundriss. Räume und Etagen werden automatisch erkannt und im Import-Review geprüft — kein manuelles Anlegen von Raumlisten aus dem Nichts.
                         </p>
-                        <a href="/fussbodenheizung-auslegen/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            Auslegung ansehen
-                        </a>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-4">Wärmeerzeuger einordnen</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Von Wärmepumpe bis Wärmenetz: fachlich sauber nach Heizlast, Verteilung und Gebäudekontext bewerten.
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">02</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Raumweise Heizlast angelehnt an DIN EN 12831</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Transmissions- und Lüftungswärmeverluste werden raumweise strukturiert erfasst und berechnet. Die Berechnungslogik orientiert sich an DIN EN 12831. Die fachliche Prüfung im konkreten Projekt bleibt beim Anwender.
                         </p>
-                        <a href="/waermeerzeuger/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            Wärmeerzeuger verstehen
-                        </a>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-4">Hydraulischer Abgleich erklärt</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Pflicht, Verfahren A und B, Praxisablauf und die Rolle des Abgleichs bei Wärmepumpen.
-                        </p>
-                        <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            Abgleich verstehen
-                        </a>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-4">Heizlastberechnung für SHK</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Der zentrale Überblick über Einsatzfälle und planbasierte Heizlast-Workflows.
-                        </p>
-                        <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            Heizlast-Hub ansehen
-                        </a>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-4">DIN EN 12831 einfach erklärt</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Didaktisches Tutorial mit Formelblöcken, Rechenweg und Beispielraum.
-                        </p>
-                        <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            DIN-Tutorial lesen
-                        </a>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-4">Heizlast schätzen mit W/m²</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Schätzwerte nach Gebäudezustand und die Grenzen der Überschlagsrechnung.
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">03</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Bivalenzpunkt und Wärmepumpen-Auslegung</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Das Projektergebnis zeigt Gebäudeheizlast, spezifische Last und Bivalenzpunkt auf einen Blick — eine belastbare Auslegungsgrundlage für Wärmepumpe und Heizflächen direkt in der App.
                         </p>
-                        <a href="/heizlastberechnung/schaetzwerte/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            Schätzwerte ansehen
-                        </a>
                     </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-4">Heizlast App für SHK</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">
-                            Wenn du Heizlast nicht nur verstehen, sondern im Projekt mobil bearbeiten willst.
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">04</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Hydraulischer Abgleich direkt anschließen</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Direkt nach der Heizlast: Soll-Volumenströme, Heizkreise und Verteilereinstellungen ableiten. Der hydraulische Abgleich erfolgt auf Basis derselben Projektdaten — kein Medienbruch, kein Export in ein anderes System.
                         </p>
-                        <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                            Heizlast App ansehen
-                        </a>
                     </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">05</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Flächensystem-Auslegung angelehnt an EN 1264</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Rohrabstand, Kreisanzahl und Kreislängen auf Basis von Heizlast und Systemparametern — angelehnt an EN 1264. Heizkurven-Visualisierung, Nachweis-Screen und PDF-Ausgabe sind direkt integriert.
+                        </p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <div class="text-primary text-3xl mb-4 font-headline font-bold">06</div>
+                        <h3 class="text-xl font-bold text-white mb-3">iOS, Android und Web — Büro und Baustelle in Echtzeit</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Prometo läuft auf iPhone, iPad und Android-Gerät sowie als Web-Anwendung. Büro und Monteur arbeiten am selben Projekt — Änderungen auf der Baustelle sind sofort im Büro sichtbar.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="mt-10 flex flex-wrap gap-4 reveal">
+                    <a href="/#beta-signup"
+                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                        Demo anfragen
+                    </a>
+                    <a href="/heizlastberechnung/"
+                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                        Heizlastberechnung Hub ansehen
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- 8. FAQ -->
         <section class="px-6 pb-16 md:pb-24" id="faq">
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
@@ -733,45 +858,167 @@
                 </div>
                 <div class="space-y-4">
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
-                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist Heizlast einfach erklärt?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist die Heizlast eines Hauses?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Die Heizlast ist die Wärmeleistung, die ein Gebäude oder Raum braucht, damit die gewünschte
-                            Temperatur auch bei Auslegungsbedingungen gehalten wird. Typische Einheiten sind Watt oder
-                            Kilowatt.
+                            Die Heizlast eines Hauses ist die maximale Wärmeleistung in Watt (W) oder Kilowatt (kW), die das Gebäude bei der kältesten zu erwartenden Außentemperatur — der Normaußentemperatur — benötigt, um die gewünschte Innentemperatur zu halten. Sie setzt sich aus Transmissionswärmeverlusten durch die Gebäudehülle (Wände, Dach, Boden, Fenster) und Lüftungswärmeverlusten zusammen. Die Heizlast ist die zentrale Planungsgröße für die Dimensionierung von Wärmeerzeuger und Heizflächen.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Wofür braucht man die Heizlast?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Welche Einheit hat die Heizlast?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Sie ist eine zentrale Planungsgröße für Wärmeerzeuger, Wärmepumpe, Heizkörper,
-                            Fußbodenheizung und oft auch für Folgeentscheidungen wie hydraulischen Abgleich.
+                            Die Heizlast wird in <strong class="text-white">Watt (W)</strong> auf Raumebene und in <strong class="text-white">Kilowatt (kW)</strong> auf Gebäudeebene angegeben. Für einen einzelnen Raum sind Werte von einigen Hundert bis mehreren tausend Watt typisch. Die spezifische Heizlast, die das Verhältnis von Gebäudeheizlast zu beheizter Wohnfläche beschreibt, wird in <strong class="text-white">W/m²</strong> angegeben.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wie berechnet man die Heizlast?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Die Heizlast ergibt sich aus der Summe von Transmissions- und Lüftungswärmeverlusten: <strong class="text-white">Q = Q<sub>T</sub> + Q<sub>V</sub></strong>. Transmissionswärmeverluste hängen von Bauteilflächen, U-Werten und der Temperaturdifferenz zwischen innen und außen ab. Lüftungswärmeverluste berücksichtigen Luftwechselrate und Raumvolumen. Die Berechnungsmethode orientiert sich an <strong class="text-white">DIN EN 12831</strong>. Eine strukturierte raumweise Berechnung liefert die beste Grundlage für Auslegungsentscheidungen.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Reicht ein W/m²-Wert aus?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist die spezifische Heizlast?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Für eine erste Größenordnung ja. Für konkrete Auslegung, Bestandsprojekte oder
-                            Wärmepumpen-Entscheidungen ist die reine Flächenlogik aber oft zu grob.
+                            Die spezifische Heizlast ist die Gebäudeheizlast bezogen auf die beheizte Wohnfläche, angegeben in <strong class="text-white">W/m²</strong>. Sie dient als Orientierungswert für schnelle Einordnungen: Unsanierte Altbauten liegen typisch bei 80–120 W/m², sanierte Bestände bei 40–70 W/m², Neubauten nach aktuellem GEG-Standard bei 20–40 W/m². Diese Werte sind Richtwerte aus der Praxis und ersetzen keine individuelle Heizlastberechnung.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wie hoch ist die Heizlast bei einer Wärmepumpe?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Für die Wärmepumpen-Auslegung ist die Gebäudeheizlast bei Normaußentemperatur die maßgebliche Kenngröße. Die Nennwärmeleistung der Wärmepumpe sollte möglichst nah an der tatsächlichen Heizlast liegen — Überdimensionierung führt zu häufigem Takten und niedrigem Wirkungsgrad. Zusätzlich spielt der <strong class="text-white">Bivalenzpunkt</strong> eine Rolle: die Außentemperatur, ab der ein Heizstab zugeschaltet wird. Für eine korrekte Auslegung wird eine individuelle Heizlastberechnung durch einen Fachbetrieb empfohlen.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist der Unterschied zwischen Heizlast und Heizleistung?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            <strong class="text-white">Heizlast</strong> beschreibt den Wärmebedarf des Gebäudes — wie viel Wärme das Gebäude im Auslegungsfall verliert und ersetzt werden muss. <strong class="text-white">Heizleistung</strong> bezeichnet die Fähigkeit des Wärmeerzeugers, Wärme zu erzeugen. Das Ziel der Planung ist es, Heizlast und Heizleistung passgenau abzustimmen: weder überdimensioniert (Takten, Effizienzverlust) noch unterdimensioniert (Unterversorgung an kalten Tagen).
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wann muss die Heizlast berechnet werden?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Eine strukturierte Heizlastberechnung ist in der Regel erforderlich, wenn eine Wärmepumpe eingebaut oder getauscht wird, ein hydraulischer Abgleich (Verfahren A oder B) durchgeführt wird, Heizflächen raumweise ausgelegt werden oder eine staatliche Förderung (z. B. über BAFA oder KfW) beantragt wird. Ob eine bestimmte Berechnungsmethode für Förderanträge anerkannt wird, hängt von den jeweils gültigen Förderrichtlinien ab. Alle Angaben ohne Gewähr — eine Beratung durch einen zugelassenen Energieberater wird empfohlen.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist der Unterschied zwischen Heizlast und Heizwärmebedarf?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wie schnell geht die Heizlastberechnung mit Prometo?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Heizlast beschreibt eine benötigte Leistung an einem Auslegungspunkt. Heizwärmebedarf
-                            beschreibt dagegen die Energiemenge über einen Zeitraum, häufig pro Jahr.
-                        </p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Kann man die Heizlast aus dem Verbrauch ableiten?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">
-                            Als grobe Plausibilitätsprüfung kann Verbrauch helfen. Für eine belastbare raumweise
-                            Auslegung reicht das allein meist nicht, weil Wetter, Verhalten und Warmwasser die Zahl
-                            beeinflussen.
+                            Mit Prometo startet der Workflow direkt aus dem vorhandenen PDF-Grundriss. Räume und Etagen werden automatisch erkannt, im Import-Review geprüft und in die Heizlastberechnung übergeben. Für ein typisches Einfamilienhaus mit strukturierten Plänen ist der Einstieg in die raumweise Berechnung deutlich schneller als bei vollständiger manueller Eingabe. Die tatsächliche Bearbeitungszeit hängt von Projektgröße, Planqualität und Detailtiefe der Eingaben ab.
                         </p>
                     </details>
                 </div>
             </div>
         </section>
+
+        <!-- 9. CLUSTER-LINKS -->
+        <section id="cluster-pfade" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Weiterlesen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Die passenden nächsten Seiten
+                    </h2>
+                    <p class="text-base text-gray-500 leading-relaxed">
+                        Alle Themen rund um Heizlast, Berechnung und SHK-Planung im Überblick.
+                    </p>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    <a href="/fussbodenheizung-auslegen/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Fußbodenheizung auslegen</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Verlegeabstand, Heizkreise und EN 1264 — von der Heizlast zum Verlegeplan.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Auslegung ansehen →</span>
+                    </a>
+                    <a href="/waermeerzeuger/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Wärmeerzeuger einordnen</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Wärmepumpe bis Wärmenetz: Heizlast, Verteilung und Gebäudekontext.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Wärmeerzeuger ansehen →</span>
+                    </a>
+                    <a href="/hydraulischer-abgleich/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-2 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Hydraulischer Abgleich</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Verfahren A und B, Praxisablauf und die Rolle bei Wärmepumpen.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Abgleich verstehen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlastberechnung für SHK</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Planbasierter Workflow — vom PDF-Import zur raumweisen Berechnung.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Heizlast-Hub ansehen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/din-12831/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">DIN EN 12831 erklärt</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Formelblöcke, Rechenweg und Beispielraum — didaktisch aufbereitet.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">DIN-Tutorial lesen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/schaetzwerte/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast schätzen (W/m²)</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Schätzwerte nach Gebäudezustand und Grenzen der Überschlagsrechnung.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Schätzwerte ansehen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/app/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-2 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast App für SHK</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Heizlast mobil berechnen — iOS, Android und Web in einem Workflow.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">App ansehen →</span>
+                    </a>
+                    <a href="/digitales-aufmass-app.html" class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Digitales Aufmaß</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">PDF-Grundrisse importieren und Räume mobil auf der Baustelle erfassen.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Aufmaß App ansehen →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CTA-ABSCHLUSS -->
+        <section class="px-6 pb-20 md:pb-28">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
+                <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+                    <div>
+                        <span class="badge mb-6">Jetzt starten</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
+                            Heizlast berechnen — raumweise, nachvollziehbar, mobil
+                        </h2>
+                        <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
+                            Prometo verbindet Grundriss-Import, raumweise Heizlastberechnung, Wärmepumpen-Auslegung, hydraulischen Abgleich und Materialbestellung in einem durchgängigen SHK-Workflow — auf iOS und Android.
+                        </p>
+                        <div class="mt-6 flex flex-wrap gap-4 text-sm">
+                            <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">
+                                Heizlastberechnung Hub
+                            </a>
+                            <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors">
+                                DIN EN 12831 erklärt
+                            </a>
+                            <a href="/heizlastberechnung/schaetzwerte/" class="text-primary hover:text-white transition-colors">
+                                Heizlast schätzen
+                            </a>
+                            <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors">
+                                Hydraulischer Abgleich
+                            </a>
+                            <a href="/fussbodenheizung-auslegen/" class="text-primary hover:text-white transition-colors">
+                                Fußbodenheizung auslegen
+                            </a>
+                            <a href="/waermeerzeuger/" class="text-primary hover:text-white transition-colors">
+                                Wärmeerzeuger
+                            </a>
+                            <a href="/digitales-aufmass-app.html" class="text-primary hover:text-white transition-colors">
+                                Digitales Aufmaß
+                            </a>
+                        </div>
+                    </div>
+                    <a href="/#beta-signup"
+                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                        Demo anfragen
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DISCLAIMER -->
+        <section class="px-6 pb-10">
+            <div class="max-w-screen-xl mx-auto">
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    Alle Angaben ohne Gewähr. Die Einhaltung gesetzlicher Vorgaben (GEG, DIN-Normen, Förderrichtlinien) liegt in der Verantwortung des Anwenders. Richtwerte zur spezifischen Heizlast (W/m²) sind Orientierungswerte aus der Praxis und ersetzen keine individuelle Heizlastberechnung. Für Förderanträge (BAFA, KfW) sind die jeweils gültigen Förderrichtlinien maßgeblich; eine Beratung durch einen zugelassenen Energieberater wird empfohlen.
+                </p>
+            </div>
+        </section>
+
     </main>
 
     <footer class="border-t border-white/6 bg-[#0b0e0e]">
@@ -780,18 +1027,22 @@
                 © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
             </div>
             <div class="flex flex-wrap gap-4 text-sm text-gray-400">
-                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast</a>
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/heizlast/" class="text-primary">Heizlast erklärt</a>
                 <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
                 <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
                 <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
-                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlast-Hub</a>
-                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
-                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Schätzwerte</a>
                 <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
+                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Heizlast schätzen</a>
+                <a href="/app-workflows.html" class="hover:text-white transition-colors">App-Workflows</a>
+                <a href="/datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
                 <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
         <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
             <div class="text-sm text-gray-400">
@@ -804,28 +1055,57 @@
             </div>
         </div>
     </div>
+
     <script>
         const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
         let gaLoaded = false;
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied' });
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+
         function loadGoogleAnalytics() {
-            if (gaLoaded) return; gaLoaded = true;
-            const script = document.createElement('script'); script.async = true;
+            if (gaLoaded) return;
+            gaLoaded = true;
+            const script = document.createElement('script');
+            script.async = true;
             script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-            document.head.appendChild(script); gtag('js', new Date()); gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
         }
+
         (function () {
             const banner = document.getElementById('cookie-banner');
             const acceptBtn = document.getElementById('cookie-accept');
             const declineBtn = document.getElementById('cookie-decline');
             if (!banner) return;
             const consent = localStorage.getItem('ga_consent');
-            if (!consent) { setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000); }
-            else if (consent === 'granted') { gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' }); loadGoogleAnalytics(); }
-            if (acceptBtn) { acceptBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'granted'); banner.classList.add('translate-y-full'); gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' }); loadGoogleAnalytics(); }); }
-            if (declineBtn) { declineBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'denied'); banner.classList.add('translate-y-full'); }); }
+            if (!consent) {
+                setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000);
+            } else if (consent === 'granted') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' });
+                loadGoogleAnalytics();
+            }
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'granted');
+                    banner.classList.add('translate-y-full');
+                    gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' });
+                    loadGoogleAnalytics();
+                });
+            }
+            if (declineBtn) {
+                declineBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'denied');
+                    banner.classList.add('translate-y-full');
+                });
+            }
         })();
     </script>
     <script src="/assets/page-effects.js" defer></script>
