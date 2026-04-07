@@ -8,8 +8,8 @@
     <title>Prometo App: Heizlast, Bauplan-Import & Abgleich | Prometo</title>
     <meta name="description"
         content="Prometo App Screenshots für Bauplan-Import, Heizlastberechnung, Heatmap und hydraulischen Abgleich: Mobile- und Tablet-Ansichten aus dem echten SHK-Workflow." />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="googlebot" content="noindex, follow" />
     <meta name="theme-color" content="#0b0e0e" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
@@ -281,6 +281,43 @@
                 "caption": "Projektbasis, Adressformular und Schrittübersicht in der breiten Tablet-Ansicht.",
                 "width": 2560,
                 "height": 1600
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://prometo.app/#software",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "applicationCategory": "BusinessApplication",
+                "applicationSubCategory": "SHK-Software für Heizlastberechnung und digitales Aufmaß",
+                "operatingSystem": "Web, iOS, Android",
+                "inLanguage": "de-DE",
+                "browserRequirements": "Aktueller Webbrowser oder iOS / Android App",
+                "description": "Prometo unterstützt SHK-Betriebe bei digitalem Aufmaß aus PDF-Plänen, strukturierter Heizlastberechnung, Flächensystem-Auslegung, hydraulischer Ableitung und direkter Materialbestellung.",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                },
+                "featureList": [
+                    "Plan-Import mit Review und Planstudio (PDF, JPG, PNG)",
+                    "Heizlastberechnung angelehnt an DIN EN 12831 mit Standortbezug und Monatsprofil",
+                    "Fußbodenheizung-Auslegung angelehnt an EN 1264 mit Nachweis-PDF",
+                    "Hydraulischer Abgleich mit Verteilersichten und projektspezifischen Einstellungen",
+                    "Automatische Materialberechnung mit OCI-Webshop-Schnittstelle",
+                    "Technische Projektdokumentation und Angebots-PDF",
+                    "Varianten und Sensitivitätsanalyse",
+                    "Doku-Chat: SHK-Fachwissen mit belegten Quellenangaben",
+                    "Tagesrouten-Planung für Außendienst und Einsatzsteuerung",
+                    "Anlagenbuch und Wasserprotokoll mit PDF-Ausgabe",
+                    "Kollaboratives Arbeiten: Büro und Baustelle in Echtzeit",
+                    "Rollenbasiertes Rechtemanagement"
+                ],
+                "screenshot": [
+                    "https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp",
+                    "https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp",
+                    "https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp",
+                    "https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp",
+                    "https://prometo.app/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp",
+                    "https://prometo.app/assets/prometo-screenshots/tablet/projektassistent-projektbasis.webp"
+                ]
             }
         ]
     }
@@ -295,7 +332,7 @@
                     class="h-8 w-auto brightness-0 invert" />
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
-                <a href="/digitales-aufmass-app.html" class="hover:text-white transition-colors">Digitale Aufmaß App</a>
+                <a href="/digitales-aufmass/" class="hover:text-white transition-colors">Digitale Aufmaß App</a>
                 <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
                 <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
                 <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
@@ -330,7 +367,7 @@
                             Produktkommunikation: Projektstart, Bauplan-Import, Schnellberechnung, Heatmap, hydraulischer Abgleich sowie ausgewählte Tablet-Ansichten.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                            <a href="/digitales-aufmass-app.html"
+                            <a href="/digitales-aufmass/"
                                 class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
                                 Bauplan-Import ansehen
                             </a>
@@ -446,7 +483,7 @@
                             Der Import-Workflow führt vom PDF-Upload über die KI-Auswertung bis in das Review der erkannten Räume.
                         </p>
                     </div>
-                    <a href="/digitales-aufmass-app.html"
+                    <a href="/digitales-aufmass/"
                         class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
                         Zur Aufmaß App
                     </a>
@@ -743,7 +780,7 @@
                             Breitere Layouts schaffen mehr Kontext für Assistenten-Schritte, Bauplan-Import und hydraulischen Abgleich.
                         </p>
                     </div>
-                    <a href="/digitales-aufmass-app.html"
+                    <a href="/digitales-aufmass/"
                         class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
                         Tablet-Workflow ansehen
                     </a>
@@ -791,7 +828,7 @@
             </div>
             <div class="flex flex-wrap gap-4 text-sm text-gray-400">
                 <a href="/" class="hover:text-white transition-colors">Startseite</a>
-                <a href="/digitales-aufmass-app.html" class="hover:text-white transition-colors">Digitale Aufmaß App</a>
+                <a href="/digitales-aufmass/" class="hover:text-white transition-colors">Digitale Aufmaß App</a>
                 <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
                 <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
                 <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>

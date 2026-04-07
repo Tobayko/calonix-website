@@ -21,7 +21,7 @@
     <loc>https://prometo.app/heizlast/</loc>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlast/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlast/" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -29,7 +29,7 @@
     <loc>https://prometo.app/hydraulischer-abgleich/</loc>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/hydraulischer-abgleich/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/hydraulischer-abgleich/" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -37,7 +37,7 @@
     <loc>https://prometo.app/fussbodenheizung-auslegen/</loc>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/fussbodenheizung-auslegen/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/fussbodenheizung-auslegen/" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -45,7 +45,7 @@
     <loc>https://prometo.app/waermeerzeuger/</loc>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/waermeerzeuger/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/waermeerzeuger/" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -53,7 +53,7 @@
     <loc>https://prometo.app/heizlastberechnung/app/</loc>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlastberechnung/app/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlastberechnung/app/" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -61,7 +61,7 @@
     <loc>https://prometo.app/heizlastberechnung/din-12831/</loc>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlastberechnung/din-12831/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlastberechnung/din-12831/" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -69,24 +69,16 @@
     <loc>https://prometo.app/heizlastberechnung/schaetzwerte/</loc>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlastberechnung/schaetzwerte/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlastberechnung/schaetzwerte/" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prometo.app/digitales-aufmass-app.html</loc>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/digitales-aufmass-app.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/digitales-aufmass-app.html" />
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://prometo.app/digitales-aufmass/</loc>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/digitales-aufmass/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/digitales-aufmass/" />
+    <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://prometo.app/app-workflows.html</loc>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://prometo.app/app-workflows.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://prometo.app/app-workflows.html" />
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
+  

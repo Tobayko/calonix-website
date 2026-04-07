@@ -28,12 +28,22 @@
     },
     {
       "source": "/digitales-aufmass",
-      "destination": "/digitales-aufmass-app.html",
+      "destination": "/digitales-aufmass/",
       "permanent": true
     },
     {
-      "source": "/digitales-aufmass/",
-      "destination": "/digitales-aufmass-app.html",
+      "source": "/digitales-aufmass-app.html",
+      "destination": "/digitales-aufmass/",
+      "permanent": true
+    },
+    {
+      "source": "/app-workflows",
+      "destination": "/app-workflows.html",
+      "permanent": true
+    },
+    {
+      "source": "/app-workflows/",
+      "destination": "/app-workflows.html",
       "permanent": true
     }
   ]
