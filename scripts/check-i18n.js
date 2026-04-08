@@ -8,8 +8,21 @@ const ignored = new Set([
   'en/heat-load-calculation-software/index.html'
 ]);
 
+const germanTextPatterns = [
+  /\b(Startseite|Zuletzt aktualisiert|Demo anfragen|Ablehnen|Akzeptieren|Datenschutzerkl[aä]rung)\b/i,
+  /\b(Heizlast|Heizlastberechnung|W[aä]rmepumpe|W[aä]rmeerzeuger|Hydraulischer Abgleich|Fu[ßs]bodenheizung|Aufma[ßs])\b/i,
+  /\b(Kurz erkl[aä]rt|H[aä]ufige Fragen|Alle Angaben ohne Gew[aä]hr)\b/i
+];
+
 function read(file) {
   return fs.readFileSync(path.join(root, file), 'utf8');
+}
+
+function visibleText(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ');
 }
 
 function walk(dir) {
@@ -74,6 +87,13 @@ for (const route of routes) {
   if (!html.includes(`hreflang="de-DE" href="${route.deUrl}"`)) {
     console.error(`Missing de-DE hreflang on ${route.enPath}`);
     failed = true;
+  }
+  const text = visibleText(html);
+  for (const pattern of germanTextPatterns) {
+    if (!ignored.has(route.enPath) && pattern.test(text)) {
+      console.error(`Possible German text on English page ${route.enPath}: ${pattern}`);
+      failed = true;
+    }
   }
 }
 

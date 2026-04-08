@@ -340,6 +340,170 @@ const nav = [
   ['Hydraulic Balancing', '/en/hydraulic-balancing/']
 ];
 
+const copyExpansions = {
+  'en/index.html': {
+    sections: [
+      ['Heat load as the base', 'Prometo keeps heat load data visible so sizing decisions stay grounded in the building, not just in a single kW figure.'],
+      ['Room-by-room structure', 'Room data stays organized so later steps like heating surfaces, balancing, and validation do not have to be rebuilt.'],
+      ['One connected model', 'The goal is a clean technical workflow where the same project information is reused instead of re-entered.']
+    ],
+    faqs: [
+      ['Is Prometo mobile-friendly?', 'Yes. The workflow is designed so field and office work can stay connected.'],
+      ['Can the same project data be reused later?', 'Yes. The intent is to reuse the same room and project context across calculation and balancing steps.']
+    ]
+  },
+  'en/heat-load/index.html': {
+    sections: [
+      ['What heat load means', 'Heat load is the output needed at the coldest design case, not the energy used over an entire year.'],
+      ['Units and specific load', 'Heat load is usually shown in W or kW, while specific heat load is often expressed as W/m2 for rough comparison.'],
+      ['Room load vs building load', 'Room heat load supports emitter sizing, while building heat load supports the overall heating concept and system sizing.']
+    ],
+    faqs: [
+      ['Why is room heat load important?', 'Room heat load is what later drives heating surface sizing, flow rates, and balancing decisions.'],
+      ['What is the biggest mistake to avoid?', 'The biggest mistake is treating consumption or floor area as if it were the same thing as a design heat load.']
+    ]
+  },
+  'en/heat-load-calculation/index.html': {
+    sections: [
+      ['Start from the floor plan', 'Use the floor plan as the first source of truth so room data is built from the actual project geometry.'],
+      ['Add building context', 'Envelope data, location, and design temperatures should stay tied to the calculation instead of living in separate notes.'],
+      ['Support the handoff', 'The calculation output should be easy to review, share, and continue in the next technical step.']
+    ],
+    faqs: [
+      ['Is the workflow only useful for large projects?', 'No. Smaller projects still benefit when the data stays organized from the start.'],
+      ['Does it help with later balancing work?', 'Yes. Room-level structure is useful later when balancing and flow rate checks begin.']
+    ]
+  },
+  'en/heat-load-calculation/app/index.html': {
+    sections: [
+      ['Field and office together', 'The same project can be reviewed on site and continued later in the office without losing context.'],
+      ['Review while the project is fresh', 'Mobile review makes it easier to catch missing room data, plan changes, and open questions early.'],
+      ['Reduce handoff errors', 'When the same data travels with the project, fewer details get lost between site and office.']
+    ],
+    faqs: [
+      ['Is the mobile workflow different from the office workflow?', 'The same project data should carry through both, even if the device experience changes.'],
+      ['Does it help with change tracking?', 'Yes. It is easier to catch plan revisions when the room structure stays visible in the workflow.']
+    ]
+  },
+  'en/heat-load-calculation/din-en-12831/index.html': {
+    sections: [
+      ['What the standard covers', 'DIN EN 12831 focuses on the building and room data needed to calculate the design heating output.'],
+      ['Design temperatures', 'The design outdoor temperature defines the cold-case load that the heating system must cover.'],
+      ['What the standard does not do', 'The standard gives a calculation method, but it does not replace project-specific review or system design choices.']
+    ],
+    faqs: [
+      ['Can consumption replace the standard method?', 'No. Consumption can support plausibility, but it does not replace a design calculation.'],
+      ['Why is the room level important?', 'Room data is what later supports heating surfaces, flow rates, and balancing.']
+    ]
+  },
+  'en/heat-load-estimates/index.html': {
+    sections: [
+      ['Rules of thumb', 'W/m2 values are useful as a starting point, but they are still only shortcuts.'],
+      ['New build vs retrofit', 'A new build is easier to estimate than a retrofit because the project conditions are more predictable.'],
+      ['Avoid mis-sizing', 'A rough estimate should never be treated as a final sizing basis for a heat pump or emitter system.']
+    ],
+    faqs: [
+      ['When should I stop using the estimate?', 'Stop using it once the project needs a final technical decision.'],
+      ['Is an estimate useful at all?', 'Yes. It is useful as a first step, as long as its limits stay clear.']
+    ]
+  },
+  'en/hydraulic-balancing/index.html': {
+    sections: [
+      ['What balancing does', 'Balancing helps each room receive the required flow instead of letting nearby circuits dominate the system.'],
+      ['Flow rates and emitters', 'The balancing result needs to match the actual emitters, not just the nominal system concept.'],
+      ['Documentation and review', 'Good balancing should be traceable, reviewable, and connected to the original project data.']
+    ],
+    faqs: [
+      ['Can balancing be done without room data?', 'It can be approximated, but the result is weaker and less defensible.'],
+      ['What is the most common mistake?', 'The most common mistake is treating balancing like a pure valve exercise instead of a system task.']
+    ]
+  },
+  'en/underfloor-heating-design/index.html': {
+    sections: [
+      ['Pipe spacing', 'Spacing controls how the output is distributed across the floor surface.'],
+      ['Surface output', 'The floor must provide enough output without pushing the surface temperature too far.'],
+      ['Different rooms need different layouts', 'Bedrooms, bathrooms, and living spaces often have different heat load and spacing needs.']
+    ],
+    faqs: [
+      ['Why does circuit length matter?', 'Long or uneven circuits make balancing harder and can limit performance.'],
+      ['What is the main design risk?', 'The main risk is sizing by spacing alone instead of by room demand and hydraulic reality.']
+    ]
+  },
+  'en/heat-generators/index.html': {
+    sections: [
+      ['Biomass systems', 'Biomass can make sense where the site conditions, fuel logistics, and project goals fit the concept.'],
+      ['Backup strategy', 'If an auxiliary heat source is part of the design, its role should be defined early.'],
+      ['Project-specific choice', 'There is no universal best heat generator. The better choice is the one that matches the actual project.']
+    ],
+    faqs: [
+      ['Does supply temperature matter?', 'Yes. Supply temperature strongly affects whether a heat pump can operate efficiently.'],
+      ['Can I choose the system from the equipment alone?', 'No. The building and system context matter just as much as the equipment.']
+    ]
+  },
+  'en/digital-takeoff/index.html': {
+    sections: [
+      ['Build the room structure', 'Room data is the backbone for later heat load, emitter, and balancing work.'],
+      ['Keep notes and revisions', 'Site notes, revisions, and changes should stay connected to the same project.'],
+      ['Avoid duplicate entry', 'Reusing the same structured project data saves time and lowers errors.']
+    ],
+    faqs: [
+      ['Is this just for office use?', 'No. The best use case is a workflow that keeps the field and office linked.'],
+      ['What is the main benefit?', 'The main benefit is cleaner project data that can be reused later.']
+    ]
+  },
+  'en/digital-takeoff-app/index.html': {
+    sections: [
+      ['Room-level capture', 'Room data should stay clear enough to support later calculation and balancing work.'],
+      ['Office handoff', 'The office should be able to pick up the same project without rebuilding the data.'],
+      ['Keep the workflow simple', 'The app should help the team move faster without making the process harder to understand.']
+    ],
+    faqs: [
+      ['Is it built for field use?', 'Yes. The content should support mobile review and site work.'],
+      ['Does it connect to later planning work?', 'Yes. The point is to feed structured data into the next technical step.']
+    ]
+  },
+  'en/app-workflows/index.html': {
+    sections: [
+      ['Create the project', 'Start with the project shell so the floor plan and follow-up planning steps stay in one place.'],
+      ['Project detail views', 'Project detail screens should make the key data easy to revisit without digging through unrelated views.'],
+      ['Mobile and tablet use', 'The workflow should still make sense on smaller screens because field work and review do not always happen at a desk.']
+    ],
+    faqs: [
+      ['Why keep it noindex?', 'Because it is primarily a supporting product page, not a search landing page.'],
+      ['Is the content still useful to visitors?', 'Yes. It helps visitors understand the product flow quickly.']
+    ]
+  },
+  'en/privacy/index.html': {
+    sections: [
+      ['Cookies and technical data', 'The website may use technical cookies or similar mechanisms to support normal operation and analytics.'],
+      ['Retention and handling', 'Data should be handled only for the purpose it was collected for and for the period required by law or business need.'],
+      ['Where to find details', 'Use the German privacy policy for the exact legal wording and full details.']
+    ],
+    faqs: [
+      ['Can I still understand the basics in English?', 'Yes. This page should give international visitors the practical overview they need.'],
+      ['Should users rely on the German page for legal clarity?', 'Yes. The German page is the source of record.']
+    ]
+  },
+  'en/legal-notice/index.html': {
+    sections: [
+      ['Contact information', 'Use the main site contact paths for product or demo questions.'],
+      ['Business location', 'The German legal notice remains the source of record for company details and jurisdiction.'],
+      ['Where to verify details', 'If the exact legal wording matters, use the German page.']
+    ],
+    faqs: [
+      ['Should I rely on the German page for legal wording?', 'Yes. That is the source of record.'],
+      ['Why have an English legal notice at all?', 'To make it easier for international visitors to find the correct legal information.']
+    ]
+  }
+};
+
+for (const page of pages) {
+  const expansion = copyExpansions[page.enPath];
+  if (!expansion) continue;
+  page.sections = [...page.sections, ...expansion.sections];
+  page.faqs = [...page.faqs, ...expansion.faqs];
+}
+
 function esc(value) {
   return String(value)
     .replaceAll('&', '&amp;')
