@@ -1420,7 +1420,7 @@
                         "name": "Wie funktioniert der PDF-Import für Baupläne?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Prometo liest PDF-Baupläne automatisch ein, erkennt Räume per KI und überführt sie in eine strukturierte Projektoberfläche. Je nach Planqualität sind Nachkorrekturen Teil des Workflows."
+                            "text": "Prometo liest PDF-Baupläne automatisch ein, erkennt Räume und überführt sie in eine strukturierte Projektoberfläche. Je nach Planqualität sind Nachkorrekturen Teil des Workflows."
                         }
                     },
                     {
@@ -1836,7 +1836,7 @@
                             <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors">
                                 DIN EN 12831 erklärt
                             </a>
-                            <a href="/digitales-aufmass-app.html" class="text-primary hover:text-white transition-colors">
+                            <a href="/digitales-aufmass/" class="text-primary hover:text-white transition-colors">
                                 Digitale Aufmaß App
                             </a>
                         </div>
@@ -1874,7 +1874,7 @@
                             <strong>Heizlast grob einordnen</strong>
                             <p>Ordnet die frühe Überschlagsrechnung ein und zeigt klar, wo ihre Grenzen liegen.</p>
                         </a>
-                        <a href="/digitales-aufmass-app.html" class="topic-map-card reveal reveal-delay-3">
+                        <a href="/digitales-aufmass/" class="topic-map-card reveal reveal-delay-3">
                             <strong>Digitale Aufmaß App aus PDF-Plänen</strong>
                             <p>Passend für Betriebe, die Aufmaß, Raumstruktur und spätere Heizlast zusammen denken.</p>
                         </a>
@@ -1919,7 +1919,7 @@
                     </div>
                 </div>
 
-                <!-- 2. OCR Scan -->
+                <!-- 2. Raumerkennung -->
                 <div
                     class="glass-panel p-8 rounded-3xl flex flex-col group lg:col-span-2 relative overflow-hidden reveal reveal-delay-1">
                     <div
@@ -1942,7 +1942,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Wizard -->
+                <!-- 3. Projektassistent -->
                 <div
                     class="glass-panel p-8 rounded-3xl flex flex-col group relative overflow-hidden reveal reveal-delay-2">
                     <div
@@ -3242,14 +3242,14 @@
                     <p class="text-gray-400 leading-relaxed text-sm md:text-base">
                         Allgemeine PDF-Werkzeuge enden oft bei Markups und Kommentaren. Prometo verbindet dagegen
                         PDF-Grundriss, Räume, Bauteile und Folgeprozesse in einer Projektstruktur. Details dazu stehen
-                        auf der Themenseite <a href="digitales-aufmass-app.html" class="text-primary underline underline-offset-2 hover:text-white">Digitale Aufmaß App</a>.
+                        auf der Themenseite <a href="/digitales-aufmass/" class="text-primary underline underline-offset-2 hover:text-white">Digitale Aufmaß App</a>.
                     </p>
                 </div>
                 <!-- FAQ 3 -->
                 <div class="glass-panel p-8 rounded-2xl border border-white/5 bg-[#171c1c]/50">
                     <h3 class="text-xl font-headline font-bold text-white mb-3">Lässt sich die App für das digitale Aufmaß auch auf dem iPad nutzen?</h3>
                     <p class="text-gray-400 leading-relaxed text-sm md:text-base">
-                        Ja, Prometo ist für mobile Endgeräte optimiert. Du kannst das digitale Aufmaß direkt auf der Baustelle per Tablet oder iPad durchführen. Details dazu stehen auf der Themenseite <a href="digitales-aufmass-app.html" class="text-primary underline underline-offset-2 hover:text-white">Digitale Aufmaß App</a>.
+                        Ja, Prometo ist für mobile Endgeräte optimiert. Du kannst das digitale Aufmaß direkt auf der Baustelle per Tablet oder iPad durchführen. Details dazu stehen auf der Themenseite <a href="/digitales-aufmass/" class="text-primary underline underline-offset-2 hover:text-white">Digitale Aufmaß App</a>.
                     </p>
                 </div>
             </div>
@@ -3318,7 +3318,7 @@
                         <li><a href="/heizlastberechnung/"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Heizlastberechnung App</a>
                         </li>
-                        <li><a href="digitales-aufmass-app.html"
+                        <li><a href="/digitales-aufmass/"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Digitale Aufmaß App</a>
                         </li>
                         <li><a href="#beta-signup"
@@ -3359,7 +3359,7 @@
                         <li><a href="/app-workflows.html"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">Prometo App Screenshots</a>
                         </li>
-                        <li><a href="digitales-aufmass-app.html"
+                        <li><a href="/digitales-aufmass/"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">PDF-Aufmaß & iPad</a>
                         </li>
                     </ul>
@@ -3396,7 +3396,7 @@
                         <li><a href="#faq"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">FAQ</a>
                         </li>
-                        <li><a href="digitales-aufmass-app.html"
+                        <li><a href="/digitales-aufmass/"
                                 class="text-gray-400 hover:text-primary text-sm transition-colors font-body">PDF-Aufmaß SHK</a>
                         </li>
                         <li><a href="mailto:info@prometo.app"
@@ -3651,9 +3651,9 @@
             },
             {
                 src: '/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp',
-                alt: 'Prometo Bauplan-Import auf dem Smartphone mit PDF-Upload und KI-bereiter Startansicht',
+                alt: 'Prometo Bauplan-Import auf dem Smartphone mit PDF-Upload und automatischer Raumerkennung',
                 title: 'Bauplan-Import',
-                desc: 'PDF-Grundrisse hochladen und die KI für Etagen- und Raumerkennung vorbereiten'
+                desc: 'PDF-Grundrisse hochladen und Etagen sowie Räume automatisch erkennen lassen'
             },
             {
                 src: '/assets/prometo-screenshots/mobile/bauplan-import-review.webp',
