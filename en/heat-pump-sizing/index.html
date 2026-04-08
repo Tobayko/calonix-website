@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html class="dark" lang="de">
+<html class="dark" lang="en-US">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Wärmepumpe dimensionieren: Heizlast, COP, SCOP & Bivalenzpunkt | Prometo</title>
+    <title>Heat Pump Sizing: Heat Load, COP, SCOP and Bivalence Point | Prometo</title>
     <meta name="description"
-        content="Wärmepumpe dimensionieren: Heizlastkurve, Leistungskurve, COP, SCOP, JAZ, Bivalenzpunkt, Vorlauf W35/W55 und Betriebspunkte A-7/W35 richtig einordnen." />
+        content="Learn how to size a heat pump correctly: heat load, performance curve, COP, SCOP, modulation range, bivalence point and operating conditions explained clearly." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-    <link rel="canonical" href="https://prometo.app/waermepumpe-dimensionieren/" />
+    <link rel="canonical" href="https://prometo.app/en/heat-pump-sizing/" />
     <link rel="alternate" hreflang="de-DE" href="https://prometo.app/waermepumpe-dimensionieren/" />
     <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/heat-pump-sizing/" />
     <link rel="alternate" hreflang="x-default" href="https://prometo.app/waermepumpe-dimensionieren/" />
@@ -27,25 +27,25 @@
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Wärmepumpe dimensionieren: Heizlast, COP, SCOP & Bivalenzpunkt | Prometo" />
+    <meta property="og:title" content="Heat Pump Sizing: Heat Load, COP, SCOP and Bivalence Point | Prometo" />
     <meta property="og:description"
-        content="Wärmepumpe richtig auslegen: Heizlast, Leistungskurve, COP, SCOP, JAZ, Vorlauftemperatur und Bivalenzpunkt fachlich einordnen." />
-    <meta property="og:url" content="https://prometo.app/waermepumpe-dimensionieren/" />
+        content="Heat pump sizing explained clearly: heat load, performance curve, COP, SCOP, annual performance factor, supply temperature and bivalence point." />
+    <meta property="og:url" content="https://prometo.app/en/heat-pump-sizing/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
-    <meta property="og:image:alt" content="Prometo Projektdetail mit Heizlast und Bivalenzpunkt als Grundlage für die Wärmepumpen-Dimensionierung" />
+    <meta property="og:image:alt" content="Prometo project detail with heat load and bivalence point for heat pump sizing" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1080" />
     <meta property="og:image:height" content="2400" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Wärmepumpe dimensionieren: Heizlast, COP, SCOP & Bivalenzpunkt | Prometo" />
+    <meta name="twitter:title" content="Heat Pump Sizing: Heat Load, COP, SCOP and Bivalence Point | Prometo" />
     <meta name="twitter:description"
-        content="Heizlastkurve, Leistungskurve, COP, SCOP, JAZ und Bivalenzpunkt verständlich erklärt." />
+        content="Read heat load curves, performance curves, COP, SCOP and the bivalence point before selecting a heat pump." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
-    <meta name="twitter:image:alt" content="Prometo Projektdetail mit Heizlast und Bivalenzpunkt als Grundlage für die Wärmepumpen-Dimensionierung" />
+    <meta name="twitter:image:alt" content="Prometo project detail with heat load and bivalence point for heat pump sizing" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
@@ -154,10 +154,6 @@
             animation-delay: 0.32s;
         }
 
-        .reveal.is-visible .line-delay-3 {
-            animation-delay: 0.48s;
-        }
-
         .reveal.is-visible .chart-area,
         .reveal.is-visible .chart-label,
         .reveal.is-visible .chart-marker {
@@ -258,116 +254,109 @@
                 "url": "https://prometo.app/",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://prometo.app/assets/apple-touch-icon.png"
-                },
-                "description": "Prometo ist eine SHK-Software für digitales Aufmaß, Heizlastberechnung und TGA-Planung."
-            },
-            {
-                "@type": "WebSite",
-                "@id": "https://prometo.app/#website",
-                "url": "https://prometo.app/",
-                "name": "Prometo",
-                "inLanguage": "de-DE",
-                "publisher": {
-                    "@id": "https://prometo.app/#organization"
+                    "url": "https://prometo.app/Logo/Wort-Bild.svg"
                 }
             },
             {
                 "@type": "BreadcrumbList",
-                "@id": "https://prometo.app/waermepumpe-dimensionieren/#breadcrumb",
+                "@id": "https://prometo.app/en/heat-pump-sizing/#breadcrumb",
                 "itemListElement": [
                     {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "Startseite",
+                        "name": "Home",
                         "item": "https://prometo.app/"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "Wärmepumpe dimensionieren",
-                        "item": "https://prometo.app/waermepumpe-dimensionieren/"
+                        "name": "Heat Pump Sizing",
+                        "item": "https://prometo.app/en/heat-pump-sizing/"
                     }
                 ]
             },
             {
                 "@type": "WebPage",
-                "@id": "https://prometo.app/waermepumpe-dimensionieren/#webpage",
-                "url": "https://prometo.app/waermepumpe-dimensionieren/",
-                "name": "Wärmepumpe dimensionieren: Heizlast, COP, SCOP und Bivalenzpunkt richtig einordnen",
-                "description": "Informationsseite zur Dimensionierung von Wärmepumpen mit Heizlastkurve, Leistungskurve, COP, SCOP, JAZ, Betriebspunkten und Bivalenzpunkt.",
-                "inLanguage": "de-DE",
+                "@id": "https://prometo.app/en/heat-pump-sizing/#webpage",
+                "url": "https://prometo.app/en/heat-pump-sizing/",
+                "name": "Heat Pump Sizing: How to Read Heat Load, COP, SCOP and the Bivalence Point",
+                "description": "English guide to heat pump sizing with heat load, performance curve, COP, SCOP, annual performance factor, operating points and bivalence point.",
+                "inLanguage": "en-US",
                 "isPartOf": {
                     "@id": "https://prometo.app/#website"
                 },
                 "breadcrumb": {
-                    "@id": "https://prometo.app/waermepumpe-dimensionieren/#breadcrumb"
-                },
-                "primaryImageOfPage": {
-                    "@type": "ImageObject",
-                    "url": "https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
+                    "@id": "https://prometo.app/en/heat-pump-sizing/#breadcrumb"
                 }
             },
             {
                 "@type": "Article",
-                "@id": "https://prometo.app/waermepumpe-dimensionieren/#article",
-                "headline": "Wärmepumpe dimensionieren: Heizlast, COP, SCOP und Bivalenzpunkt richtig einordnen",
-                "description": "Leitfaden zur fachlichen Einordnung von Wärmepumpen-Leistung, Heizlastkurve, COP, SCOP, JAZ, Modulationsbereich und Bivalenzpunkt.",
+                "@id": "https://prometo.app/en/heat-pump-sizing/#article",
+                "headline": "Heat Pump Sizing: How to Read Heat Load, COP, SCOP and the Bivalence Point",
+                "description": "A practical guide to matching heat pump output, minimum output, efficiency and operating conditions to the building heat load.",
+                "datePublished": "2026-04-08",
+                "dateModified": "2026-04-08",
                 "author": {
-                    "@id": "https://prometo.app/#organization"
+                    "@type": "Organization",
+                    "name": "Prometo"
                 },
                 "publisher": {
                     "@id": "https://prometo.app/#organization"
                 },
-                "datePublished": "2026-04-08",
-                "dateModified": "2026-04-08",
-                "inLanguage": "de-DE",
-                "isPartOf": {
-                    "@id": "https://prometo.app/waermepumpe-dimensionieren/#webpage"
+                "mainEntityOfPage": {
+                    "@id": "https://prometo.app/en/heat-pump-sizing/#webpage"
                 },
-                "about": [
-                    "Wärmepumpe dimensionieren",
-                    "Heizlast",
+                "keywords": [
+                    "heat pump sizing",
+                    "heat load",
                     "COP",
                     "SCOP",
-                    "JAZ",
-                    "Bivalenzpunkt"
+                    "bivalence point",
+                    "performance curve"
                 ]
             },
             {
                 "@type": "FAQPage",
-                "@id": "https://prometo.app/waermepumpe-dimensionieren/#faq",
+                "@id": "https://prometo.app/en/heat-pump-sizing/#faq",
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Wie dimensioniert man eine Wärmepumpe richtig?",
+                        "name": "How do you size a heat pump correctly?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Ausgangspunkt ist die Gebäudeheizlast bei Normaußentemperatur. Danach werden Leistungskurve, Modulationsbereich, Vorlauftemperatur, Warmwasser, Sperrzeiten, Abtauvorgänge und Bivalenzstrategie geprüft. Ein einzelner kW-Wert reicht nicht aus."
+                            "text": "Start with the building heat load at the design outdoor temperature. Then check the performance curve, modulation range, supply temperature, hot water demand, defrost behavior and bivalence strategy. A single kW figure is not enough."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Was ist der Unterschied zwischen COP, SCOP und JAZ?",
+                        "name": "What is the difference between COP, SCOP and JAZ?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Der COP beschreibt die Effizienz an einem definierten Betriebspunkt. Der SCOP ist ein saisonaler Normwert für definierte Klimazonen und Temperaturniveaus. Die JAZ beschreibt die anlagenbezogene Jahresarbeitszahl im konkreten Gebäude oder als Planungswert."
+                            "text": "COP is the efficiency at one defined operating point. SCOP is a seasonal reference value under standardized conditions. JAZ is the annual system efficiency for a specific building or planning scenario."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Ist die Wärmepumpe mit der höchsten kW-Leistung die beste?",
+                        "name": "Is the heat pump with the highest kW rating the best choice?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Nein. Entscheidend ist, ob Leistung, Mindestleistung, Modulationsbereich, COP/SCOP, Vorlauftemperaturfähigkeit und Einsatzgrenzen zum Gebäude passen. Eine zu hohe Mindestleistung kann in Übergangszeiten häufiges Takten verursachen."
+                            "text": "No. The right system is the one whose output, minimum output, modulation range, efficiency and temperature capability fit the building. Too much minimum output can cause frequent cycling."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Was bedeutet A-7/W35 bei Wärmepumpen?",
+                        "name": "What does A-7/W35 mean?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "A-7/W35 beschreibt einen Betriebspunkt: Außenluft minus 7 Grad Celsius und Heizwasser-Vorlauf 35 Grad Celsius. COP- und Leistungswerte sind nur sinnvoll vergleichbar, wenn Betriebspunkt und Temperaturniveau identisch sind."
+                            "text": "A-7/W35 is an operating point: outdoor air at minus 7 degrees Celsius and heating water supply at 35 degrees Celsius. Performance values are only comparable when the operating point is identical."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Why does the bivalence point matter?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The bivalence point marks the point where an additional heat source may support the heat pump. It depends on the building heat load, system design and operating strategy."
                         }
                     }
                 ]
@@ -380,21 +369,20 @@
 <body class="min-h-screen">
     <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
         <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
-            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Prometo home">
                 <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
                     fetchpriority="high" decoding="async" class="h-8 w-auto brightness-0 invert" />
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
-                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast</a>
-                <a href="/waermepumpe-dimensionieren/" class="text-primary" aria-current="page">Wärmepumpe dimensionieren</a>
-                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
-                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlastberechnung</a>
-                <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
-                <a href="/en/heat-pump-sizing/" hreflang="en-US" class="hover:text-white transition-colors">English</a>
+                <a href="/heizlast/" class="hover:text-white transition-colors">Heat load</a>
+                <a href="/en/heat-pump-sizing/" class="text-primary" aria-current="page">Heat pump sizing</a>
+                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Heat generators</a>
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heat load calculation</a>
+                <a href="/waermepumpe-dimensionieren/" hreflang="de-DE" class="hover:text-white transition-colors">Deutsch</a>
             </nav>
             <a href="/#beta-signup"
                 class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
-                Demo anfragen
+                Request demo
             </a>
         </div>
     </header>
@@ -403,50 +391,46 @@
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
                 <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
-                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <a href="/" class="text-primary hover:text-white transition-colors">Home</a>
                     <span class="mx-2 text-gray-600">/</span>
-                    <span aria-current="page">Wärmepumpe dimensionieren</span>
+                    <span aria-current="page">Heat pump sizing</span>
                 </nav>
 
                 <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
                     <div class="reveal">
-                        <span class="badge mb-6">Wärmepumpe dimensionieren</span>
+                        <span class="badge mb-6">Heat pump sizing</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            Wärmepumpe dimensionieren: Heizlast, COP, SCOP und Bivalenzpunkt richtig einordnen
+                            Heat Pump Sizing: How to Read Heat Load, COP, SCOP and the Bivalence Point
                         </h1>
                         <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-6">
-                            Die passende Wärmepumpe ergibt sich nicht aus einem einzelnen kW-Wert. Entscheidend ist, ob Heizlastkurve, Leistungskurve, Modulationsbereich, Vorlauftemperatur und Effizienzwerte zum Gebäude passen.
+                            The best heat pump is not the one with the highest nominal output. It is the one whose performance, minimum output and efficiency fit the building, the design conditions and the intended supply temperature.
                         </p>
                         <div class="mb-6 p-5 rounded-2xl border border-primary/20 bg-primary/8">
-                            <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Kurz erklärt</p>
+                            <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Short answer</p>
                             <p class="text-sm md:text-base text-gray-200 leading-relaxed">
-                                Eine Wärmepumpe wird ausgehend von der Gebäudeheizlast dimensioniert. Danach wird geprüft, welche Heizleistung sie bei relevanten Betriebspunkten wie A-7/W35 liefert, wie weit sie modulieren kann und wie COP, SCOP, JAZ und Bivalenzpunkt zur realen Anlage passen.
+                                A heat pump should be sized from the building's heat load, not from a single kW value. The right system depends on the heat load curve, performance curve, modulation range, supply temperature and efficiency at real operating conditions.
                             </p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-8">Zuletzt aktualisiert: <time datetime="2026-04-08">April 2026</time></p>
+                        <p class="text-xs text-gray-500 mb-8">Last updated: <time datetime="2026-04-08">April 2026</time></p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="/heizlast/"
+                            <a href="/waermepumpe-dimensionieren/" hreflang="de-DE"
                                 class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                                Heizlast zuerst verstehen
+                                German version
                             </a>
-                            <a href="/heizlastberechnung/"
+                            <a href="/#beta-signup"
                                 class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
-                                Prometo Workflow ansehen
+                                Request Prometo demo
                             </a>
                         </div>
-                        <p class="mt-5 text-sm text-gray-500">
-                            English version available:
-                            <a href="/en/heat-pump-sizing/" hreflang="en-US" class="text-primary hover:text-white transition-colors">Heat pump sizing</a>
-                        </p>
                     </div>
 
                     <figure class="diagram-card glass-panel rounded-[2rem] p-4 md:p-6 reveal reveal-delay-2">
                         <svg class="performance-svg" viewBox="0 0 760 520" role="img" aria-labelledby="wp-chart-title wp-chart-desc">
-                            <title id="wp-chart-title">Schematisches Leistungsdiagramm zur Wärmepumpen-Dimensionierung</title>
-                            <desc id="wp-chart-desc">Das Diagramm zeigt eine Gebäudelastkurve, zwei schematische Wärmepumpen-Leistungskurven, einen Bivalenzpunkt und eine COP-Kurve. Die Darstellung ist ein Beispiel und kein Herstellervergleich.</desc>
+                            <title id="wp-chart-title">Schematic performance chart for heat pump sizing</title>
+                            <desc id="wp-chart-desc">The chart shows a building heat load curve, two schematic heat pump performance curves, a bivalence point and a COP curve. It is an example and not a manufacturer comparison.</desc>
                             <rect x="0" y="0" width="760" height="520" rx="28" fill="#101818" />
                             <g transform="translate(58 58)">
-                                <text x="0" y="-18" fill="#ffffff" font-size="18" font-family="Space Grotesk" font-weight="700">Leistungskurve und Heizlastkurve</text>
+                                <text x="0" y="-18" fill="#ffffff" font-size="18" font-family="Space Grotesk" font-weight="700">Performance curve and heat load curve</text>
                                 <line class="chart-axis" x1="0" y1="280" x2="315" y2="280" stroke="#8ba1a2" stroke-width="2" />
                                 <line class="chart-axis" x1="0" y1="280" x2="0" y2="10" stroke="#8ba1a2" stroke-width="2" />
                                 <g fill="#8fa2a3" font-size="12">
@@ -464,13 +448,13 @@
                                 <path class="chart-line line-delay-2" d="M0 168 C80 158 178 169 315 228" fill="none" stroke="#b6f6fb" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 10" />
                                 <line class="chart-marker" x1="126" y1="58" x2="126" y2="280" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="6 8" />
                                 <circle class="chart-marker pulse-dot" cx="126" cy="141" r="7" fill="#45dee7" />
-                                <text class="chart-label" x="136" y="132" fill="#ffffff" font-size="13" font-family="Manrope">Bivalenzpunkt</text>
-                                <text class="chart-label" x="184" y="188" fill="#45dee7" font-size="13" font-family="Manrope">Beispiel WP A</text>
-                                <text class="chart-label" x="190" y="232" fill="#b6f6fb" font-size="13" font-family="Manrope">Beispiel WP B</text>
-                                <text class="chart-label" x="20" y="76" fill="#ffb061" font-size="13" font-family="Manrope">Gebäudelast</text>
+                                <text class="chart-label" x="136" y="132" fill="#ffffff" font-size="13" font-family="Manrope">Bivalence point</text>
+                                <text class="chart-label" x="184" y="188" fill="#45dee7" font-size="13" font-family="Manrope">Example HP A</text>
+                                <text class="chart-label" x="190" y="232" fill="#b6f6fb" font-size="13" font-family="Manrope">Example HP B</text>
+                                <text class="chart-label" x="20" y="76" fill="#ffb061" font-size="13" font-family="Manrope">Building load</text>
                             </g>
                             <g transform="translate(438 58)">
-                                <text x="0" y="-18" fill="#ffffff" font-size="18" font-family="Space Grotesk" font-weight="700">COP, SCOP und JAZ</text>
+                                <text x="0" y="-18" fill="#ffffff" font-size="18" font-family="Space Grotesk" font-weight="700">COP, SCOP and APF</text>
                                 <line class="chart-axis" x1="0" y1="280" x2="250" y2="280" stroke="#8ba1a2" stroke-width="2" />
                                 <line class="chart-axis" x1="0" y1="280" x2="0" y2="10" stroke="#8ba1a2" stroke-width="2" />
                                 <g fill="#8fa2a3" font-size="12">
@@ -487,44 +471,44 @@
                                 <circle class="chart-marker" cx="0" cy="220" r="5" fill="#45dee7" />
                                 <circle class="chart-marker" cx="120" cy="154" r="5" fill="#45dee7" />
                                 <circle class="chart-marker" cx="250" cy="86" r="5" fill="#45dee7" />
-                                <text class="chart-label" x="18" y="214" fill="#45dee7" font-size="13" font-family="Manrope">COP bei Betriebspunkt</text>
-                                <text class="chart-label" x="18" y="151" fill="#ffb061" font-size="13" font-family="Manrope">SCOP als Saisonwert</text>
-                                <text class="chart-label" x="0" y="344" fill="#9aa3a3" font-size="12" font-family="Manrope">Schematische Beispielkurven, kein Herstellervergleich.</text>
+                                <text class="chart-label" x="18" y="214" fill="#45dee7" font-size="13" font-family="Manrope">COP at operating point</text>
+                                <text class="chart-label" x="18" y="151" fill="#ffb061" font-size="13" font-family="Manrope">SCOP as seasonal value</text>
+                                <text class="chart-label" x="0" y="344" fill="#9aa3a3" font-size="12" font-family="Manrope">Schematic example curves, not a manufacturer comparison.</text>
                             </g>
                         </svg>
                         <figcaption class="relative z-10 mt-4 text-sm leading-relaxed text-gray-400">
-                            Schematische Darstellung: Entscheidend ist der Schnitt aus Gebäudelast, Leistungskurve und Effizienz über relevante Betriebspunkte. Reale Vergleiche müssen auf Herstellerdatenblättern basieren.
+                            Schematic view: the decisive factor is where building load, heat pump output and efficiency meet at relevant operating points. Real comparisons must be based on manufacturer data sheets.
                         </figcaption>
                     </figure>
                 </div>
             </div>
         </section>
 
-        <section class="px-6 pb-16 md:pb-24" id="grundlagen">
+        <section class="px-6 pb-16 md:pb-24" id="basics">
             <div class="max-w-screen-xl mx-auto">
                 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h2 class="text-xl font-bold text-white mb-3">Heizlast</h2>
+                        <h2 class="text-xl font-bold text-white mb-3">Heat load</h2>
                         <p class="text-gray-400 leading-relaxed">
-                            Die Gebäudeheizlast beschreibt die benötigte Leistung im Auslegungsfall. Sie ist der Startpunkt jeder Dimensionierung.
+                            The building heat load describes the required output at the design condition. It is the starting point for sizing.
                         </p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h2 class="text-xl font-bold text-white mb-3">Leistungskurve</h2>
+                        <h2 class="text-xl font-bold text-white mb-3">Performance curve</h2>
                         <p class="text-gray-400 leading-relaxed">
-                            Sie zeigt, welche Heizleistung eine Wärmepumpe bei bestimmten Außentemperaturen und Vorlauftemperaturen liefern kann.
+                            The curve shows how much heat a heat pump can deliver at specific outdoor temperatures and supply temperatures.
                         </p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h2 class="text-xl font-bold text-white mb-3">Modulation</h2>
+                        <h2 class="text-xl font-bold text-white mb-3">Modulation range</h2>
                         <p class="text-gray-400 leading-relaxed">
-                            Der Modulationsbereich entscheidet, ob die Wärmepumpe in Übergangszeiten ruhig laufen kann oder häufig taktet.
+                            The modulation range determines whether the unit can run steadily in milder weather or starts cycling.
                         </p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
-                        <h2 class="text-xl font-bold text-white mb-3">Bivalenzpunkt</h2>
+                        <h2 class="text-xl font-bold text-white mb-3">Bivalence point</h2>
                         <p class="text-gray-400 leading-relaxed">
-                            Er markiert den Bereich, ab dem ein Zusatzwärmeerzeuger unterstützen kann. Der Punkt ist projektspezifisch.
+                            It marks where an additional heat source may support the heat pump. The point is project-specific.
                         </p>
                     </article>
                 </div>
@@ -534,12 +518,12 @@
         <section class="px-6 pb-16 md:pb-24" id="cop-scop-jaz">
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
-                    <span class="badge mb-6">Effizienzwerte</span>
+                    <span class="badge mb-6">Efficiency values</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        COP, SCOP und JAZ nicht verwechseln
+                        Do not mix up COP, SCOP and JAZ
                     </h2>
                     <p class="text-lg text-gray-400 leading-relaxed">
-                        Effizienzwerte sind nur vergleichbar, wenn Betriebspunkt, Klimazone und Temperaturniveau klar sind. Ein hoher COP bei W35 sagt wenig über den realen Betrieb bei W55 aus.
+                        Efficiency values are only comparable when the operating point, climate reference and temperature level are clear. A high COP at W35 says little about operation at W55.
                     </p>
                 </div>
 
@@ -548,26 +532,26 @@
                         <table class="metric-table w-full min-w-[720px]">
                             <thead>
                                 <tr>
-                                    <th>Kennwert</th>
-                                    <th>Bedeutung</th>
-                                    <th>Wichtig bei Vergleich</th>
+                                    <th>Metric</th>
+                                    <th>Meaning</th>
+                                    <th>How to compare</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><strong class="text-white">COP</strong></td>
-                                    <td>Leistungszahl an einem definierten Betriebspunkt, etwa A-7/W35</td>
-                                    <td>Nur bei identischem Betriebspunkt und Vorlauf vergleichen</td>
+                                    <td>Efficiency at one defined operating point, such as A-7/W35</td>
+                                    <td>Compare only at the same operating point and supply temperature</td>
                                 </tr>
                                 <tr>
                                     <td><strong class="text-white">SCOP</strong></td>
-                                    <td>Saisonaler Normwert für definierte Klimazonen und Temperaturniveaus</td>
-                                    <td>Nicht mit realem Verbrauch gleichsetzen</td>
+                                    <td>Seasonal reference value under standardized conditions</td>
+                                    <td>Do not treat it as the actual building consumption</td>
                                 </tr>
                                 <tr>
-                                    <td><strong class="text-white">JAZ</strong></td>
-                                    <td>Jahresarbeitszahl im konkreten Gebäude oder als Planungswert</td>
-                                    <td>Abhängig von Systemgrenze, Vorlauf, Nutzung und Hydraulik</td>
+                                    <td><strong class="text-white">JAZ / APF</strong></td>
+                                    <td>Annual performance factor for a specific system or planning scenario</td>
+                                    <td>Depends on system boundary, supply temperature, usage and hydraulics</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -576,15 +560,15 @@
 
                 <div class="grid gap-6 lg:grid-cols-2">
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Betriebspunkte richtig lesen</h3>
+                        <h3 class="text-2xl font-bold text-white mb-4">Read operating points correctly</h3>
                         <p class="text-gray-400 leading-relaxed">
-                            `A-7/W35` bedeutet Außenluft minus 7 Grad Celsius und Heizwasser-Vorlauf 35 Grad Celsius. Wird derselbe Verdichter bei `W55` betrieben, kann die Effizienz deutlich niedriger liegen. Deshalb muss jedes Datenblatt mit dem realen Vorlaufniveau gelesen werden.
+                            A-7/W35 means outdoor air at minus 7 degrees Celsius and heating water supply at 35 degrees Celsius. If the same compressor is operated at W55, efficiency can be much lower. Every data sheet has to be read against the real supply temperature.
                         </p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Beste Wärmepumpe nur im Systemkontext</h3>
+                        <h3 class="text-2xl font-bold text-white mb-4">The best heat pump depends on the system</h3>
                         <p class="text-gray-400 leading-relaxed">
-                            Die bessere Wärmepumpe ist die, deren Leistung, Modulationsbereich und Effizienz zu Gebäude, Vorlauftemperatur und Betriebspunkt passen. Eine höhere Maximalleistung kann schlechter sein, wenn die Mindestleistung zu hoch ist.
+                            The better heat pump is the one whose output, modulation range and efficiency fit the building, supply temperature and operating point. A higher maximum output can be worse when the minimum output is too high.
                         </p>
                     </article>
                 </div>
@@ -594,31 +578,31 @@
         <section class="px-6 pb-16 md:pb-24" id="workflow">
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
-                    <span class="badge mb-6">Ablauf</span>
+                    <span class="badge mb-6">Workflow</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        So wird aus Heizlast eine Wärmepumpen-Auslegung
+                        From heat load to heat pump sizing
                     </h2>
                 </div>
                 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
                         <div class="text-primary text-3xl mb-4 font-headline font-bold">01</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Gebäudeheizlast ermitteln</h3>
-                        <p class="text-gray-400 leading-relaxed">Raumheizlasten summieren und Plausibilität über Gebäude, Standort und Nutzung prüfen.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Calculate building heat load</h3>
+                        <p class="text-gray-400 leading-relaxed">Sum room heat loads and check plausibility against building, location and usage.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
                         <div class="text-primary text-3xl mb-4 font-headline font-bold">02</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Heizflächen und Vorlauf prüfen</h3>
-                        <p class="text-gray-400 leading-relaxed">Heizkörper, Fußbodenheizung und Systemtemperaturen bestimmen die reale Effizienz stark mit.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Check emitters and supply temperature</h3>
+                        <p class="text-gray-400 leading-relaxed">Radiators, underfloor heating and system temperatures strongly influence real efficiency.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
                         <div class="text-primary text-3xl mb-4 font-headline font-bold">03</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Datenblattkurven abgleichen</h3>
-                        <p class="text-gray-400 leading-relaxed">Leistung bei A-7/W35, A2/W35 und A7/W35 sowie Mindestleistung und Einsatzgrenzen vergleichen.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Compare data sheet curves</h3>
+                        <p class="text-gray-400 leading-relaxed">Check output at A-7/W35, A2/W35 and A7/W35, plus minimum output and operating limits.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
                         <div class="text-primary text-3xl mb-4 font-headline font-bold">04</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Bivalenzstrategie festlegen</h3>
-                        <p class="text-gray-400 leading-relaxed">Zusatzwärmeerzeuger, Heizstabanteil, Warmwasser, Sperrzeiten und Abtauvorgänge einordnen.</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Set the bivalence strategy</h3>
+                        <p class="text-gray-400 leading-relaxed">Assess backup heater share, domestic hot water, utility lockout periods and defrost behavior.</p>
                     </article>
                 </div>
             </div>
@@ -628,24 +612,24 @@
             <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
                 <div class="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
                     <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
-                        alt="Prometo Projektdetail mit Heizlast, spezifischer Last und Bivalenzpunkt auf dem Smartphone"
+                        alt="Prometo project detail with heat load, specific load and bivalence point on a smartphone"
                         width="1080" height="2400" loading="lazy" decoding="async"
                         class="w-full max-w-sm mx-auto rounded-[1.75rem] border border-white/8" />
                     <div>
-                        <span class="badge mb-6">Prometo im Einsatz</span>
+                        <span class="badge mb-6">Prometo in practice</span>
                         <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Vom Grundriss zur Auslegungsgrundlage
+                            From floor plan to sizing basis
                         </h2>
                         <p class="text-lg text-gray-400 leading-relaxed mb-4">
-                            Prometo verbindet PDF-Grundriss, raumweise Heizlast, spezifische Last, Bivalenzpunkt, Flächensystem und hydraulischen Abgleich in einem Projektmodell. So wird die Wärmepumpen-Auslegung nicht isoliert, sondern im Gebäudekontext vorbereitet.
+                            Prometo connects PDF floor plans, room-by-room heat load, specific load, bivalence point, surface heating and hydraulic balancing in one project model. Heat pump sizing starts in the building context, not in isolation.
                         </p>
                         <p class="text-gray-500 leading-relaxed mb-6">
-                            Die konkrete Herstellerdimensionierung und Förderprüfung bleiben projektspezifisch. Prometo liefert die strukturierte technische Arbeitsgrundlage.
+                            Final manufacturer selection and incentive checks remain project-specific. Prometo provides the structured technical basis for the workflow.
                         </p>
                         <div class="flex flex-wrap gap-4 text-sm">
-                            <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heizlastberechnung ansehen</a>
-                            <a href="/waermeerzeuger/" class="text-primary hover:text-white transition-colors">Wärmeerzeuger einordnen</a>
-                            <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors">Hydraulischen Abgleich verstehen</a>
+                            <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heat load calculation</a>
+                            <a href="/waermepumpe-dimensionieren/" hreflang="de-DE" class="text-primary hover:text-white transition-colors">German version</a>
+                            <a href="/#beta-signup" class="text-primary hover:text-white transition-colors">Request demo</a>
                         </div>
                     </div>
                 </div>
@@ -657,42 +641,48 @@
                 <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">FAQ</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Häufige Fragen zur Wärmepumpen-Dimensionierung
+                        Frequently asked questions about heat pump sizing
                     </h2>
                 </div>
                 <div class="space-y-4">
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
-                        <summary class="text-lg font-headline font-bold text-gray-200">Wie dimensioniert man eine Wärmepumpe richtig?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">How do you size a heat pump correctly?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Ausgangspunkt ist die Gebäudeheizlast bei Normaußentemperatur. Danach werden Leistungskurve, Modulationsbereich, Vorlauftemperatur, Warmwasser, Sperrzeiten, Abtauvorgänge und Bivalenzstrategie geprüft. Ein einzelner kW-Wert reicht nicht aus.
+                            Start with the building heat load at the design outdoor temperature. Then check the performance curve, modulation range, supply temperature, hot water demand, defrost behavior and bivalence strategy. A single kW figure is not enough.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist der Unterschied zwischen COP, SCOP und JAZ?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">What is the difference between COP, SCOP and JAZ?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Der COP beschreibt die Effizienz an einem definierten Betriebspunkt. Der SCOP ist ein saisonaler Normwert für definierte Klimazonen und Temperaturniveaus. Die JAZ beschreibt die anlagenbezogene Jahresarbeitszahl im konkreten Gebäude oder als Planungswert.
+                            COP is the efficiency at one defined operating point. SCOP is a seasonal reference value under standardized conditions. JAZ is the annual system efficiency for a specific building or planning scenario.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Ist die Wärmepumpe mit der höchsten kW-Leistung die beste?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Is the heat pump with the highest kW rating the best choice?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Nein. Entscheidend ist, ob Leistung, Mindestleistung, Modulationsbereich, COP/SCOP, Vorlauftemperaturfähigkeit und Einsatzgrenzen zum Gebäude passen. Eine zu hohe Mindestleistung kann in Übergangszeiten häufiges Takten verursachen.
+                            No. The right system is the one whose output, minimum output, modulation range, efficiency and temperature capability fit the building. Too much minimum output can cause frequent cycling.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Was bedeutet A-7/W35 bei Wärmepumpen?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">What does A-7/W35 mean?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            A-7/W35 beschreibt einen Betriebspunkt: Außenluft minus 7 Grad Celsius und Heizwasser-Vorlauf 35 Grad Celsius. COP- und Leistungswerte sind nur sinnvoll vergleichbar, wenn Betriebspunkt und Temperaturniveau identisch sind.
+                            A-7/W35 is an operating point: outdoor air at minus 7 degrees Celsius and heating water supply at 35 degrees Celsius. Performance values are only comparable when the operating point is identical.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Why does the bivalence point matter?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            The bivalence point marks the point where an additional heat source may support the heat pump. It depends on the building heat load, system design and operating strategy.
                         </p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <section class="px-6 pb-10" id="hinweis">
+        <section class="px-6 pb-10" id="note">
             <div class="max-w-screen-xl mx-auto">
                 <p class="text-xs text-gray-600 leading-relaxed">
-                    Schematische Darstellungen und Beispielkurven auf dieser Seite sind keine Herstellervergleiche. Für konkrete Projekte müssen reale Herstellerdatenblätter, Betriebspunkte, Einsatzgrenzen, aktuelle Förderbedingungen und die projektspezifische Heizlast geprüft werden. Alle Angaben ohne Gewähr.
+                    Schematic charts and example curves on this page are not manufacturer comparisons. Specific projects require manufacturer data sheets, operating points, application limits, local incentive rules and the project-specific heat load. No warranty is given.
                 </p>
             </div>
         </section>
@@ -701,15 +691,12 @@
     <footer class="border-t border-white/6 bg-[#0b0e0e]">
         <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div class="text-sm text-gray-400">
-                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+                © 2026 Prometo · HVAC software for heat load calculation, digital takeoff and building services planning
             </div>
             <div class="flex flex-wrap gap-4 text-sm text-gray-400">
-                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast</a>
-                <a href="/waermepumpe-dimensionieren/" class="text-primary">Wärmepumpe dimensionieren</a>
-                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
-                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlastberechnung</a>
-                <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
-                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+                <a href="/en/heat-pump-sizing/" class="text-primary">Heat pump sizing</a>
+                <a href="/waermepumpe-dimensionieren/" hreflang="de-DE" class="hover:text-white transition-colors">Deutsch</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Legal notice</a>
             </div>
         </div>
     </footer>
@@ -717,12 +704,12 @@
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
         <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
             <div class="text-sm text-gray-400">
-                <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
-                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
+                <strong class="text-white block mb-1">We use cookies for Google Analytics</strong>
+                To improve this website, we collect anonymized usage data. More information is available in our <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">privacy policy</a>.
             </div>
             <div class="flex items-center gap-3 shrink-0">
-                <button id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Decline</button>
+                <button id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Accept</button>
             </div>
         </div>
     </div>
@@ -768,20 +755,6 @@
                     banner.classList.add('translate-y-full');
                 });
             }
-        })();
-    </script>
-    <script>
-        (function () {
-            const language = (navigator.language || '').toLowerCase();
-            if (!language.startsWith('en') || sessionStorage.getItem('prometo_en_hint_seen')) return;
-            sessionStorage.setItem('prometo_en_hint_seen', '1');
-            const hint = document.createElement('div');
-            hint.className = 'fixed left-4 right-4 top-20 z-50 mx-auto max-w-xl rounded-2xl border border-primary/25 bg-[#0b0e0e]/95 p-4 text-sm text-gray-200 shadow-2xl backdrop-blur-xl';
-            hint.innerHTML = '<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><span>Looking for the English version?</span><div class="flex items-center gap-3"><a class="font-headline font-bold text-primary hover:text-white" href="/en/heat-pump-sizing/" hreflang="en-US">Open English page</a><button type="button" class="text-gray-500 hover:text-white" aria-label="Close language hint">Close</button></div></div>';
-            const closeButton = hint.querySelector('button');
-            closeButton.addEventListener('click', () => hint.remove());
-            document.body.appendChild(hint);
-            setTimeout(() => hint.remove(), 9000);
         })();
     </script>
     <script src="/assets/page-effects.js" defer></script>

@@ -32,6 +32,11 @@
       "permanent": true
     },
     {
+      "source": "/en/heat-pump-sizing",
+      "destination": "/en/heat-pump-sizing/",
+      "permanent": true
+    },
+    {
       "source": "/digitales-aufmass",
       "destination": "/digitales-aufmass/",
       "permanent": true
