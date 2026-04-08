@@ -55,6 +55,81 @@
       "source": "/app-workflows/",
       "destination": "/app-workflows.html",
       "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/en/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-load",
+      "destination": "/en/heat-load/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-load-calculation",
+      "destination": "/en/heat-load-calculation/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-load-calculation-software",
+      "destination": "/en/heat-load-calculation-software/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-load-calculation/app",
+      "destination": "/en/heat-load-calculation/app/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-load-calculation/din-en-12831",
+      "destination": "/en/heat-load-calculation/din-en-12831/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-load-estimates",
+      "destination": "/en/heat-load-estimates/",
+      "permanent": true
+    },
+    {
+      "source": "/en/hydraulic-balancing",
+      "destination": "/en/hydraulic-balancing/",
+      "permanent": true
+    },
+    {
+      "source": "/en/underfloor-heating-design",
+      "destination": "/en/underfloor-heating-design/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-generators",
+      "destination": "/en/heat-generators/",
+      "permanent": true
+    },
+    {
+      "source": "/en/digital-takeoff",
+      "destination": "/en/digital-takeoff/",
+      "permanent": true
+    },
+    {
+      "source": "/en/digital-takeoff-app",
+      "destination": "/en/digital-takeoff-app/",
+      "permanent": true
+    },
+    {
+      "source": "/en/app-workflows",
+      "destination": "/en/app-workflows/",
+      "permanent": true
+    },
+    {
+      "source": "/en/privacy",
+      "destination": "/en/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/en/legal-notice",
+      "destination": "/en/legal-notice/",
+      "permanent": true
     }
   ]
 }
