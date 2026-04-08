@@ -27,6 +27,11 @@
       "permanent": true
     },
     {
+      "source": "/waermepumpe-dimensionieren",
+      "destination": "/waermepumpe-dimensionieren/",
+      "permanent": true
+    },
+    {
       "source": "/digitales-aufmass",
       "destination": "/digitales-aufmass/",
       "permanent": true
