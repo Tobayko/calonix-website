@@ -1,0 +1,114 @@
+[
+  {
+    "dePath": "index.html",
+    "deUrl": "https://prometo.app/",
+    "enPath": "en/index.html",
+    "enUrl": "https://prometo.app/en/",
+    "slugNoSlash": "/en"
+  },
+  {
+    "dePath": "heizlast/index.html",
+    "deUrl": "https://prometo.app/heizlast/",
+    "enPath": "en/heat-load/index.html",
+    "enUrl": "https://prometo.app/en/heat-load/",
+    "slugNoSlash": "/en/heat-load"
+  },
+  {
+    "dePath": "heizlastberechnung/index.html",
+    "deUrl": "https://prometo.app/heizlastberechnung/",
+    "enPath": "en/heat-load-calculation/index.html",
+    "enUrl": "https://prometo.app/en/heat-load-calculation/",
+    "slugNoSlash": "/en/heat-load-calculation"
+  },
+  {
+    "dePath": "heizlastberechnung/app/index.html",
+    "deUrl": "https://prometo.app/heizlastberechnung/app/",
+    "enPath": "en/heat-load-calculation/app/index.html",
+    "enUrl": "https://prometo.app/en/heat-load-calculation/app/",
+    "slugNoSlash": "/en/heat-load-calculation/app"
+  },
+  {
+    "dePath": "heizlastberechnung/din-12831/index.html",
+    "deUrl": "https://prometo.app/heizlastberechnung/din-12831/",
+    "enPath": "en/heat-load-calculation/din-en-12831/index.html",
+    "enUrl": "https://prometo.app/en/heat-load-calculation/din-en-12831/",
+    "slugNoSlash": "/en/heat-load-calculation/din-en-12831"
+  },
+  {
+    "dePath": "heizlastberechnung/schaetzwerte/index.html",
+    "deUrl": "https://prometo.app/heizlastberechnung/schaetzwerte/",
+    "enPath": "en/heat-load-estimates/index.html",
+    "enUrl": "https://prometo.app/en/heat-load-estimates/",
+    "slugNoSlash": "/en/heat-load-estimates"
+  },
+  {
+    "dePath": "heizlastberechnung-software.html",
+    "deUrl": "https://prometo.app/heizlastberechnung/",
+    "enPath": "en/heat-load-calculation-software/index.html",
+    "enUrl": "https://prometo.app/en/heat-load-calculation/",
+    "slugNoSlash": "/en/heat-load-calculation-software"
+  },
+  {
+    "dePath": "hydraulischer-abgleich/index.html",
+    "deUrl": "https://prometo.app/hydraulischer-abgleich/",
+    "enPath": "en/hydraulic-balancing/index.html",
+    "enUrl": "https://prometo.app/en/hydraulic-balancing/",
+    "slugNoSlash": "/en/hydraulic-balancing"
+  },
+  {
+    "dePath": "fussbodenheizung-auslegen/index.html",
+    "deUrl": "https://prometo.app/fussbodenheizung-auslegen/",
+    "enPath": "en/underfloor-heating-design/index.html",
+    "enUrl": "https://prometo.app/en/underfloor-heating-design/",
+    "slugNoSlash": "/en/underfloor-heating-design"
+  },
+  {
+    "dePath": "waermeerzeuger/index.html",
+    "deUrl": "https://prometo.app/waermeerzeuger/",
+    "enPath": "en/heat-generators/index.html",
+    "enUrl": "https://prometo.app/en/heat-generators/",
+    "slugNoSlash": "/en/heat-generators"
+  },
+  {
+    "dePath": "waermepumpe-dimensionieren/index.html",
+    "deUrl": "https://prometo.app/waermepumpe-dimensionieren/",
+    "enPath": "en/heat-pump-sizing/index.html",
+    "enUrl": "https://prometo.app/en/heat-pump-sizing/",
+    "slugNoSlash": "/en/heat-pump-sizing"
+  },
+  {
+    "dePath": "digitales-aufmass/index.html",
+    "deUrl": "https://prometo.app/digitales-aufmass/",
+    "enPath": "en/digital-takeoff/index.html",
+    "enUrl": "https://prometo.app/en/digital-takeoff/",
+    "slugNoSlash": "/en/digital-takeoff"
+  },
+  {
+    "dePath": "digitales-aufmass-app.html",
+    "deUrl": "https://prometo.app/digitales-aufmass/",
+    "enPath": "en/digital-takeoff-app/index.html",
+    "enUrl": "https://prometo.app/en/digital-takeoff-app/",
+    "slugNoSlash": "/en/digital-takeoff-app"
+  },
+  {
+    "dePath": "app-workflows.html",
+    "deUrl": "https://prometo.app/app-workflows.html",
+    "enPath": "en/app-workflows/index.html",
+    "enUrl": "https://prometo.app/en/app-workflows/",
+    "slugNoSlash": "/en/app-workflows"
+  },
+  {
+    "dePath": "datenschutz.html",
+    "deUrl": "https://prometo.app/datenschutz.html",
+    "enPath": "en/privacy/index.html",
+    "enUrl": "https://prometo.app/en/privacy/",
+    "slugNoSlash": "/en/privacy"
+  },
+  {
+    "dePath": "impressum.html",
+    "deUrl": "https://prometo.app/impressum.html",
+    "enPath": "en/legal-notice/index.html",
+    "enUrl": "https://prometo.app/en/legal-notice/",
+    "slugNoSlash": "/en/legal-notice"
+  }
+]

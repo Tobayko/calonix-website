@@ -1,0 +1,97 @@
+const fs = require('fs');
+const path = require('path');
+
+const root = path.resolve(__dirname, '..');
+const routes = require('./i18n-routes.json');
+
+const ignored = new Set([
+  'en/heat-load-calculation-software/index.html'
+]);
+
+function read(file) {
+  return fs.readFileSync(path.join(root, file), 'utf8');
+}
+
+function walk(dir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  return entries.flatMap(entry => {
+    const full = path.join(dir, entry.name);
+    if (entry.name === 'node_modules' || entry.name === '.git') return [];
+    if (entry.isDirectory()) return walk(full);
+    return entry.isFile() && entry.name.endsWith('.html') ? [path.relative(root, full)] : [];
+  });
+}
+
+let failed = false;
+const routeByDePath = new Map(routes.map(route => [route.dePath, route]));
+const routeByEnPath = new Map(routes.map(route => [route.enPath, route]));
+const htmlFiles = walk(root);
+const germanFiles = htmlFiles
+  .filter(file => !file.startsWith('en/'))
+  .filter(file => !file.startsWith('node_modules/'));
+
+for (const file of germanFiles) {
+  const html = read(file);
+  const robotsNoindex = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html);
+  const isRedirectOnly = /http-equiv="refresh"/i.test(html);
+  const needsEnglishRoute = !robotsNoindex || isRedirectOnly || file === 'datenschutz.html' || file === 'impressum.html';
+  const route = routeByDePath.get(file);
+  if (needsEnglishRoute && !route) {
+    console.error(`Missing English route mapping for ${file}`);
+    failed = true;
+    continue;
+  }
+  if (!route) continue;
+  if (!fs.existsSync(path.join(root, route.enPath))) {
+    console.error(`Missing English file ${route.enPath} for ${file}`);
+    failed = true;
+  }
+  if (!html.includes(`hreflang="en-US" href="${route.enUrl}"`)) {
+    console.error(`Missing en-US hreflang on ${file}`);
+    failed = true;
+  }
+}
+
+for (const route of routes) {
+  if (!fs.existsSync(path.join(root, route.dePath))) {
+    console.error(`Mapped German source does not exist: ${route.dePath}`);
+    failed = true;
+  }
+  if (!fs.existsSync(path.join(root, route.enPath))) {
+    console.error(`Mapped English page does not exist: ${route.enPath}`);
+    failed = true;
+    continue;
+  }
+  const html = read(route.enPath);
+  if (!html.includes('lang="en-US"')) {
+    console.error(`Missing lang="en-US" on ${route.enPath}`);
+    failed = true;
+  }
+  if (!ignored.has(route.enPath) && !html.includes(`rel="canonical" href="${route.enUrl}"`)) {
+    console.error(`Missing canonical ${route.enUrl} on ${route.enPath}`);
+    failed = true;
+  }
+  if (!html.includes(`hreflang="de-DE" href="${route.deUrl}"`)) {
+    console.error(`Missing de-DE hreflang on ${route.enPath}`);
+    failed = true;
+  }
+}
+
+const sitemap = read('sitemap-pages.xml');
+for (const route of routes) {
+  if (!ignored.has(route.enPath) && !sitemap.includes(`<loc>${route.enUrl}</loc>`)) {
+    console.error(`Missing English sitemap URL ${route.enUrl}`);
+    failed = true;
+  }
+}
+
+const vercel = JSON.parse(read('vercel.json'));
+for (const route of routes) {
+  if (!vercel.redirects?.some(redirect => redirect.source === route.slugNoSlash)) {
+    console.error(`Missing slash redirect for ${route.slugNoSlash}`);
+    failed = true;
+  }
+}
+
+if (failed) process.exit(1);
+console.log(`i18n check ok: ${routes.length} mapped English routes for ${germanFiles.length} German HTML files`);

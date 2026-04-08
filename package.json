@@ -6,6 +6,8 @@
   "scripts": {
     "build": "npx @tailwindcss/cli -i input.css -o assets/tailwind.css --minify",
     "dev": "npx @tailwindcss/cli -i input.css -o assets/tailwind.css --watch",
+    "i18n:generate": "node scripts/generate-english-pages.js",
+    "i18n:check": "node scripts/check-i18n.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
