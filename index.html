@@ -49,16 +49,30 @@
 
     <script>
       if (!/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) {
-        const insightsScript = document.createElement('script');
-        insightsScript.defer = true;
-        insightsScript.src = '/_vercel/insights/script.js';
-        document.head.appendChild(insightsScript);
+        const loadInsights = () => {
+          if (document.querySelector('script[data-prometo-insights]')) {
+            return;
+          }
+
+          const insightsScript = document.createElement('script');
+          insightsScript.defer = true;
+          insightsScript.dataset.prometoInsights = 'true';
+          insightsScript.src = '/_vercel/insights/script.js';
+          document.head.appendChild(insightsScript);
+        };
+
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadInsights, { timeout: 3000 });
+        } else {
+          window.addEventListener('load', loadInsights, { once: true });
+        }
       }
     </script>
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <!-- Lokales Tailwind CSS inkl. Fonts (DSGVO-konform, keine externen Requests) -->
     <link rel="stylesheet" href="/assets/tailwind.css" />
-    <link rel="stylesheet" href="/assets/prometo-gallery.css" />
+    <link rel="stylesheet" href="/assets/prometo-gallery.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="/assets/prometo-gallery.css" /></noscript>
 
     <!-- Default Google Consent Mode v2 -->
     <script>
@@ -302,6 +316,10 @@
         .ai-terminal-line.visible {
             opacity: 1;
             transform: translateX(0);
+        }
+
+        .material-symbols-outlined {
+            visibility: visible;
         }
 
         /* =============================================
@@ -1278,9 +1296,67 @@
         }
 
         @media (max-width: 767px) {
+            body > header {
+                background: rgba(11, 14, 14, 0.96) !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+
             .hero-animated-tracks,
-            .hero-packets {
+            .hero-packets,
+            .hero-visual-stage > svg {
                 display: none;
+            }
+
+            .hero-visual-stage {
+                height: 220px;
+                width: 100%;
+                max-width: 420px;
+            }
+
+            .engine-container {
+                transform: scale(0.5);
+            }
+
+            .brand-wand,
+            .engine-float,
+            .engine-core,
+            .typewriter-cursor,
+            #betaBanner .animate-pulse,
+            .badge .animate-pulse {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .brand-mark {
+                opacity: 1;
+                transform: none;
+                animation: none !important;
+            }
+
+            .brand-wand {
+                opacity: 0;
+            }
+
+            .engine-core,
+            .cube-face,
+            .cube-bottom {
+                box-shadow: none;
+            }
+
+            .cube-face {
+                border-color: rgba(69, 222, 231, 0.24);
+                background: rgba(11, 25, 25, 0.78);
+            }
+
+            .cube-face::before {
+                opacity: 0.2;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
             }
         }
 
@@ -1506,7 +1582,7 @@
         <button onclick="document.getElementById('betaBanner').style.display='none'"
             class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors w-10 h-10 rounded-full flex items-center justify-center"
             aria-label="Schließen">
-            <span class="material-symbols-outlined" style="font-size: 18px;">close</span>
+            <span class="material-symbols-outlined" style="font-size: 18px;">×</span>
         </button>
     </div>
 
@@ -1555,24 +1631,24 @@
     <nav class="mobile-menu md:hidden" id="mobileMenu">
         <a href="#features" class="mobile-nav-link" data-section="features">
             Funktionen
-            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+            <span class="material-symbols-outlined text-xl opacity-30">→</span>
         </a>
         <a href="#showcase" class="mobile-nav-link" data-section="showcase">
             Screenshots
-            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+            <span class="material-symbols-outlined text-xl opacity-30">→</span>
         </a>
         <a href="#seo-hub" class="mobile-nav-link" data-section="seo-hub">
             Themen
-            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+            <span class="material-symbols-outlined text-xl opacity-30">→</span>
         </a>
         <a href="#zielgruppen" class="mobile-nav-link" data-section="zielgruppen">
             Zielgruppen
-            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+            <span class="material-symbols-outlined text-xl opacity-30">→</span>
         </a>
 
         <a href="#faq" class="mobile-nav-link" data-section="faq">
             FAQ
-            <span class="material-symbols-outlined text-xl opacity-30">arrow_forward</span>
+            <span class="material-symbols-outlined text-xl opacity-30">→</span>
         </a>
         <div class="mt-auto pt-8">
             <a
@@ -1604,12 +1680,12 @@
                 </h1>
                 <p id="typewriterText"
                     class="text-on-surface-variant text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-body min-h-[180px] sm:min-h-[110px] md:min-h-[80px] lg:min-h-[60px]">
-                    <span class="typewriter-cursor"></span>
+                    Prometo verbindet digitales Aufmaß aus PDF-Grundrissen mit planbasierter Heizlastberechnung für SHK-Betriebe – mobil auf iOS, Android und im Web.<span class="typewriter-cursor"></span>
                 </p>
             </div>
 
             <!-- The Prometo Engine & SVG Lines Area -->
-            <div class="relative w-full h-[600px] md:h-[650px] flex items-center justify-center max-w-[1440px] mx-auto">
+            <div class="hero-visual-stage relative w-full h-[600px] md:h-[650px] flex items-center justify-center max-w-[1440px] mx-auto">
 
                 <!-- SVG Intertwined Lines -->
                 <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1440 650"
@@ -1791,7 +1867,7 @@
                     href="#beta-signup">
                     Jetzt Demo anfordern
                     <span
-                        class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        class="material-symbols-outlined transition-transform group-hover:translate-x-1">→</span>
                 </a>
                 <a
                     class="glass-panel text-white px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-white/10 transition-colors flex items-center gap-2"
@@ -2419,7 +2495,7 @@
                 <div class="showcase-thumbs-row">
                     <button class="showcase-thumb active" onclick="switchScreen(this, 0)">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
+                            <img src="/assets/prometo-screenshots/thumbs/projektassistent-projektbasis.webp"
                                 alt="Projektstart in der Prometo App" loading="lazy" decoding="async" width="108"
                                 height="240" />
                         </div>
@@ -2427,7 +2503,7 @@
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 1)">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp"
+                            <img src="/assets/prometo-screenshots/thumbs/bauplan-import-ki-bereit.webp"
                                 alt="Bauplan-Import in der Prometo App" loading="lazy" decoding="async" width="108"
                                 height="240" />
                         </div>
@@ -2435,7 +2511,7 @@
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 2)">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
+                            <img src="/assets/prometo-screenshots/thumbs/bauplan-import-review.webp"
                                 alt="Import-Review der erkannten Räume in Prometo" loading="lazy" decoding="async"
                                 width="108" height="240" />
                         </div>
@@ -2443,7 +2519,7 @@
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 3)">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp"
+                            <img src="/assets/prometo-screenshots/thumbs/schnellberechnung-heizlast-ergebnis.webp"
                                 alt="Schnellschätzung der Heizlast in Prometo" loading="lazy" decoding="async"
                                 width="108" height="240" />
                         </div>
@@ -2451,7 +2527,7 @@
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 4)">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp"
+                            <img src="/assets/prometo-screenshots/thumbs/projektdetail-heatmap.webp"
                                 alt="Heizlast-Heatmap in der Prometo App" loading="lazy" decoding="async"
                                 width="108" height="240" />
                         </div>
@@ -2459,7 +2535,7 @@
                     </button>
                     <button class="showcase-thumb" onclick="switchScreen(this, 5)">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
+                            <img src="/assets/prometo-screenshots/thumbs/hydraulischer-abgleich-heizkreisdetail.webp"
                                 alt="Hydraulischer Abgleich in der Prometo App" loading="lazy" decoding="async"
                                 width="108" height="240" />
                         </div>
@@ -3438,9 +3514,31 @@
     <script>
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
-        const canAnimate = !prefersReducedMotion && !isCoarsePointer;
+        const isMobileViewport = window.matchMedia('(max-width: 767px)').matches;
+        const disableMotionEnhancements = prefersReducedMotion || isCoarsePointer || isMobileViewport;
+        const canAnimate = !disableMotionEnhancements;
         const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
         let gaLoaded = false;
+        const deferredScriptRegistry = new Set();
+
+        function loadDeferredScript(src) {
+            if (deferredScriptRegistry.has(src)) return;
+            deferredScriptRegistry.add(src);
+
+            const script = document.createElement('script');
+            script.src = src;
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+
+        function runWhenIdle(callback, timeout = 2000) {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(callback, { timeout });
+                return;
+            }
+
+            window.addEventListener('load', callback, { once: true });
+        }
 
         function loadGoogleAnalytics() {
             if (gaLoaded) return;
@@ -3482,11 +3580,22 @@
             wifi_off: '◌'
         };
 
-        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-            const symbol = iconMap[icon.textContent.trim()] || '•';
-            icon.textContent = symbol;
-            icon.classList.add('icon-ready');
-            icon.setAttribute('aria-hidden', 'true');
+        function hydrateIconFallbacks() {
+            document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+                const token = icon.textContent.trim();
+                const symbol = iconMap[token];
+
+                if (symbol) {
+                    icon.textContent = symbol;
+                }
+
+                icon.classList.add('icon-ready');
+                icon.setAttribute('aria-hidden', 'true');
+            });
+        }
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(hydrateIconFallbacks);
         });
 
         // ---- Hero Engine Graphic Tracking ----
@@ -3536,7 +3645,7 @@
             rootMargin: '0px 0px -60px 0px'
         });
 
-        if (prefersReducedMotion) {
+        if (disableMotionEnhancements) {
             document.querySelectorAll('.reveal').forEach(el => {
                 el.classList.add('visible');
             });
@@ -3870,7 +3979,7 @@
             if (!el) return;
 
             const phrases = [
-                'Digitale Aufmaß- und Heizlast-Workflows für SHK-Betriebe.<br>Alle gezeigten Funktionen sind in der geschlossenen Beta für ausgewählte Tester verfügbar.',
+                'Digitales Aufmaß und Heizlastberechnung für SHK-Betriebe.<br>Alle gezeigten Funktionen sind in der geschlossenen Beta für ausgewählte Tester verfügbar.',
                 'PDF-Grundrisse lassen sich in der geschlossenen Beta in Räume, Bauteile und Projektstrukturen überführen.',
                 'Vom PDF-Import bis zum vollständigen Heizlastergebnis: in einem kontrollierten Durchlauf ca. 7 Minuten – bei realen Projekten variiert der Aufwand je nach Planqualität und Tiefe.'
             ];
@@ -3879,6 +3988,8 @@
                 el.innerHTML = phrases[0];
                 return;
             }
+
+            el.innerHTML = '<span class="typewriter-cursor"></span>';
 
             let phraseIndex = 0;
             let charIndex = 0;
@@ -4236,8 +4347,31 @@
             }
         })();
     </script>
-    <script src="/assets/prometo-gallery.js" defer></script>
-    <script src="/assets/language-hint.js" defer></script>
+    <script>
+        (function () {
+            const showcaseSection = document.getElementById('showcase');
+            const loadGalleryEnhancements = () => loadDeferredScript('/assets/prometo-gallery.js');
+
+            if (showcaseSection && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    if (!entries.some(entry => entry.isIntersecting)) {
+                        return;
+                    }
+
+                    observer.disconnect();
+                    loadGalleryEnhancements();
+                }, {
+                    rootMargin: '320px 0px'
+                });
+
+                observer.observe(showcaseSection);
+            } else {
+                runWhenIdle(loadGalleryEnhancements, 2500);
+            }
+
+            runWhenIdle(() => loadDeferredScript('/assets/language-hint.js'), 3500);
+        })();
+    </script>
 </body>
 
 </html>
