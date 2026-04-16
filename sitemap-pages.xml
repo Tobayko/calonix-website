@@ -5,24 +5,72 @@
     <lastmod>2026-04-05</lastmod>
   </url>
   <url>
-    <loc>https://prometo.app/heizlastberechnung/</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://prometo.app/en/</loc>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/heizlast/</loc>
     <lastmod>2026-04-08</lastmod>
   </url>
   <url>
+    <loc>https://prometo.app/en/heat-load/</loc>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/heizlastberechnung/</loc>
+    <lastmod>2026-04-05</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/en/heat-load-calculation/</loc>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/heizlastberechnung/app/</loc>
+    <lastmod>2026-04-08</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/en/heat-load-calculation/app/</loc>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/heizlastberechnung/din-12831/</loc>
+    <lastmod>2026-04-08</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/en/heat-load-calculation/din-en-12831/</loc>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/heizlastberechnung/schaetzwerte/</loc>
+    <lastmod>2026-04-08</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/en/heat-load-estimates/</loc>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
     <loc>https://prometo.app/hydraulischer-abgleich/</loc>
     <lastmod>2026-04-08</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/en/hydraulic-balancing/</loc>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/fussbodenheizung-auslegen/</loc>
     <lastmod>2026-04-08</lastmod>
   </url>
   <url>
+    <loc>https://prometo.app/en/underfloor-heating-design/</loc>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
     <loc>https://prometo.app/waermeerzeuger/</loc>
     <lastmod>2026-04-08</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/en/heat-generators/</loc>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/waermepumpe-dimensionieren/</loc>
@@ -30,78 +78,30 @@
   </url>
   <url>
     <loc>https://prometo.app/en/heat-pump-sizing/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/heizlastberechnung/app/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/heizlastberechnung/din-12831/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/heizlastberechnung/schaetzwerte/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/digitales-aufmass/</loc>
     <lastmod>2026-04-08</lastmod>
   </url>
   <url>
-    <loc>https://prometo.app/en/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/en/heat-load/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/en/heat-load-calculation/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/en/heat-load-calculation/app/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/en/heat-load-calculation/din-en-12831/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/en/heat-load-estimates/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/en/hydraulic-balancing/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/en/underfloor-heating-design/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://prometo.app/en/heat-generators/</loc>
-    <lastmod>2026-04-08</lastmod>
-  </url>
-  <url>
     <loc>https://prometo.app/en/digital-takeoff/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/digital-takeoff-app/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
-    <loc>https://prometo.app/en/app-workflows/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://prometo.app/app-workflows.html</loc>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
-    <loc>https://prometo.app/en/privacy/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://prometo.app/datenschutz.html</loc>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
-    <loc>https://prometo.app/en/legal-notice/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <loc>https://prometo.app/impressum.html</loc>
+    <lastmod>2026-04-16</lastmod>
   </url>
 </urlset>

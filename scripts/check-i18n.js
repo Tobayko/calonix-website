@@ -25,6 +25,22 @@ function visibleText(html) {
     .replace(/<[^>]+>/g, ' ');
 }
 
+function hasNoindexMeta(html) {
+  const metaTags = html.match(/<meta\b[^>]*>/gi) || [];
+  return metaTags.some(tag => /name\s*=\s*["'](?:robots|googlebot)["']/i.test(tag) && /content\s*=\s*["'][^"']*noindex/i.test(tag));
+}
+
+function englishUrlToFile(url) {
+  const prefix = 'https://prometo.app/';
+  if (!url.startsWith(prefix)) return null;
+  const pathname = url.slice(prefix.length);
+  if (!pathname.startsWith('en/')) return null;
+  if (pathname === 'en/') return 'en/index.html';
+  if (pathname.endsWith('/')) return `${pathname}index.html`;
+  if (pathname.endsWith('.html')) return pathname;
+  return `${pathname}/index.html`;
+}
+
 function walk(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   return entries.flatMap(entry => {
@@ -45,7 +61,7 @@ const germanFiles = htmlFiles
 
 for (const file of germanFiles) {
   const html = read(file);
-  const robotsNoindex = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html);
+  const robotsNoindex = hasNoindexMeta(html);
   const isRedirectOnly = /http-equiv="refresh"/i.test(html);
   const needsEnglishRoute = !robotsNoindex || isRedirectOnly || file === 'datenschutz.html' || file === 'impressum.html';
   const route = routeByDePath.get(file);
@@ -98,8 +114,25 @@ for (const route of routes) {
 }
 
 const sitemap = read('sitemap-pages.xml');
+const sitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]));
+for (const url of sitemapUrls) {
+  const enFile = englishUrlToFile(url);
+  if (!enFile) continue;
+  if (!fs.existsSync(path.join(root, enFile))) {
+    console.error(`Sitemap URL points to missing English file: ${url}`);
+    failed = true;
+    continue;
+  }
+  if (hasNoindexMeta(read(enFile))) {
+    console.error(`Noindex English page must not be in sitemap: ${url}`);
+    failed = true;
+  }
+}
 for (const route of routes) {
-  if (!ignored.has(route.enPath) && !sitemap.includes(`<loc>${route.enUrl}</loc>`)) {
+  const enFile = path.join(root, route.enPath);
+  const html = fs.existsSync(enFile) ? read(route.enPath) : '';
+  const robotsNoindex = hasNoindexMeta(html);
+  if (!robotsNoindex && !ignored.has(route.enPath) && !sitemapUrls.has(route.enUrl)) {
     console.error(`Missing English sitemap URL ${route.enUrl}`);
     failed = true;
   }

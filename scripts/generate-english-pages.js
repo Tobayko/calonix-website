@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
-const today = '2026-04-08';
+const routes = require('./i18n-routes.json');
+const buildDate = new Date().toISOString().slice(0, 10);
+const contentDate = '2026-04-16';
 
 const pages = [
   {
@@ -504,6 +506,161 @@ for (const page of pages) {
   page.faqs = [...page.faqs, ...expansion.faqs];
 }
 
+const relatedModules = {
+  'en/index.html': {
+    eyebrow: 'English cluster',
+    title: 'Start with the core HVAC workflows',
+    lead: 'These pages carry the English workflow forward from the overview into calculation, design and balancing.',
+    links: [
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Move from the overview into room structure and calculation context.' },
+      { label: 'Underfloor heating design', href: '/en/underfloor-heating-design/', description: 'See how load, spacing and circuit layout fit together.' },
+      { label: 'Heat generators', href: '/en/heat-generators/', description: 'Check system choice after the building load is clear.' }
+    ]
+  },
+  'en/heat-load/index.html': {
+    eyebrow: 'Next step',
+    title: 'Connect heat load to sizing decisions',
+    lead: 'Use these pages when a heat load value needs to become a practical project decision.',
+    links: [
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Go back to the connected calculation workflow.' },
+      { label: 'Heat pump sizing', href: '/en/heat-pump-sizing/', description: 'Check what the load means for a concrete system selection.' },
+      { label: 'Hydraulic balancing', href: '/en/hydraulic-balancing/', description: 'Carry the same load data into balancing and flow-rate work.' }
+    ]
+  },
+  'en/heat-load-calculation/index.html': {
+    eyebrow: 'Calculation cluster',
+    title: 'Keep the calculation chain connected',
+    lead: 'These links keep the main calculation page tied to its app, standard and downstream planning pages.',
+    links: [
+      { label: 'Heat load calculation app', href: '/en/heat-load-calculation/app/', description: 'Move the workflow into the site-and-office app flow.' },
+      { label: 'DIN EN 12831', href: '/en/heat-load-calculation/din-en-12831/', description: 'Read the standard-based calculation context next.' },
+      { label: 'Heat load', href: '/en/heat-load/', description: 'Start from the definition before you size anything.' }
+    ]
+  },
+  'en/heat-load-calculation/app/index.html': {
+    eyebrow: 'Workflow links',
+    title: 'From site capture to calculation output',
+    lead: 'Use the app page together with the calculation and planning pages so the workflow does not break at handoff.',
+    links: [
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Return to the main calculation workflow.' },
+      { label: 'Digital takeoff', href: '/en/digital-takeoff/', description: 'Connect plan capture with the same project data.' },
+      { label: 'DIN EN 12831', href: '/en/heat-load-calculation/din-en-12831/', description: 'Keep the standard-based context close to the app flow.' }
+    ]
+  },
+  'en/heat-load-calculation/din-en-12831/index.html': {
+    eyebrow: 'Standards context',
+    title: 'Use the standard with the practical pages',
+    lead: 'DIN EN 12831 works best when it stays linked to the practical calculation, load and sizing pages.',
+    links: [
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Go back to the main workflow that uses the standard.' },
+      { label: 'Heat load', href: '/en/heat-load/', description: 'Revisit the basic load definition before the method details.' },
+      { label: 'Heat generators', href: '/en/heat-generators/', description: 'Connect the calculation output to system choice.' }
+    ]
+  },
+  'en/heat-load-estimates/index.html': {
+    eyebrow: 'Orientation only',
+    title: 'Move from estimate to real calculation',
+    lead: 'Treat rough values as the starting point and hand them off to the project-specific pages.',
+    links: [
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Move from a rule of thumb to room-by-room data.' },
+      { label: 'Heat load', href: '/en/heat-load/', description: 'Keep the distinction between load and demand clear.' },
+      { label: 'Heat pump sizing', href: '/en/heat-pump-sizing/', description: 'Check why a rough estimate is not enough for system selection.' }
+    ]
+  },
+  'en/hydraulic-balancing/index.html': {
+    eyebrow: 'Balancing cluster',
+    title: 'Keep balancing tied to load and emitters',
+    lead: 'Balancing becomes more useful when it stays connected to the pages that define room demand and system choice.',
+    links: [
+      { label: 'Heat load', href: '/en/heat-load/', description: 'Use the design load as the base for flow-rate decisions.' },
+      { label: 'Underfloor heating design', href: '/en/underfloor-heating-design/', description: 'Check how circuit layout and room demand interact.' },
+      { label: 'Heat generators', href: '/en/heat-generators/', description: 'Link balancing back to the generator and operating strategy.' }
+    ]
+  },
+  'en/underfloor-heating-design/index.html': {
+    eyebrow: 'Layout links',
+    title: 'Move from room load to emitter layout',
+    lead: 'Pipe spacing and circuit length are easier to judge when the calculation and balancing pages stay one click away.',
+    links: [
+      { label: 'Heat load', href: '/en/heat-load/', description: 'Start with the output requirement for each room.' },
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Keep the design tied to the calculation workflow.' },
+      { label: 'Hydraulic balancing', href: '/en/hydraulic-balancing/', description: 'Check the flow consequences of the final layout.' }
+    ]
+  },
+  'en/heat-generators/index.html': {
+    eyebrow: 'System choice',
+    title: 'Match the generator to the building data',
+    lead: 'The generator page belongs next to the load and sizing pages, not on its own.',
+    links: [
+      { label: 'Heat load', href: '/en/heat-load/', description: 'Use the design load before choosing equipment.' },
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Bring the full calculation workflow into the decision.' },
+      { label: 'Heat pump sizing', href: '/en/heat-pump-sizing/', description: 'Compare the generator choice with sizing constraints.' }
+    ]
+  },
+  'en/digital-takeoff/index.html': {
+    eyebrow: 'Plan workflow',
+    title: 'Carry takeoff data into the calculation pages',
+    lead: 'Digital takeoff is strongest when the same project data keeps flowing into the calculation workflow.',
+    links: [
+      { label: 'Digital takeoff app', href: '/en/digital-takeoff-app/', description: 'Move from the page overview to the mobile workflow.' },
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Connect the takeoff result with the calculation page.' },
+      { label: 'Heat load', href: '/en/heat-load/', description: 'Keep the base load definition visible.' }
+    ]
+  },
+  'en/digital-takeoff-app/index.html': {
+    eyebrow: 'Field to office',
+    title: 'Use the app as the handoff point',
+    lead: 'The mobile takeoff page should feed the same project into the calculation and app workflow pages.',
+    links: [
+      { label: 'Digital takeoff', href: '/en/digital-takeoff/', description: 'See the broader takeoff workflow around the app.' },
+      { label: 'Heat load calculation app', href: '/en/heat-load-calculation/app/', description: 'Connect the takeoff result with site and office review.' },
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Continue into the main calculation workflow.' }
+    ]
+  },
+  'en/app-workflows/index.html': {
+    eyebrow: 'Supporting page',
+    title: 'Keep the workflow overview linked to the product pages',
+    lead: 'This supporting page should point back to the main English product pages instead of sitting apart as a dead end.',
+    links: [
+      { label: 'Digital takeoff app', href: '/en/digital-takeoff-app/', description: 'Review the mobile workflow shown in the screenshots.' },
+      { label: 'Heat load calculation app', href: '/en/heat-load-calculation/app/', description: 'Keep the calculation flow tied to the app page.' },
+      { label: 'Hydraulic balancing', href: '/en/hydraulic-balancing/', description: 'Continue into the balancing step after the workflow overview.' }
+    ]
+  },
+  'en/privacy/index.html': {
+    eyebrow: 'Legal links',
+    title: 'Pair the English summary with the source documents',
+    lead: 'This page is only an English orientation layer, so the legal source pages stay close at hand.',
+    links: [
+      { label: 'German privacy policy', href: '/datenschutz.html', description: 'Open the legally authoritative version.' },
+      { label: 'Legal notice', href: '/en/legal-notice/', description: 'Switch to the English legal notice page if needed.' },
+      { label: 'Home', href: '/en/', description: 'Return to the main English entry point.' }
+    ]
+  },
+  'en/legal-notice/index.html': {
+    eyebrow: 'Legal links',
+    title: 'Keep the English notice tied to the German source',
+    lead: 'The legal notice page should lead visitors back to the authoritative German imprint and the privacy page.',
+    links: [
+      { label: 'German imprint', href: '/impressum.html', description: 'Open the legally authoritative notice.' },
+      { label: 'Privacy policy', href: '/en/privacy/', description: 'Move from the notice to the privacy summary.' },
+      { label: 'Home', href: '/en/', description: 'Return to the English home page.' }
+    ]
+  }
+};
+
+function getRelatedModule(page) {
+  return relatedModules[page.enPath] || {
+    eyebrow: 'English cluster',
+    title: `Continue with ${page.badge}`,
+    lead: 'Use these links to keep the English topic cluster connected instead of treating each page as a dead end.',
+    links: nav
+      .filter(([, href]) => href !== '/en/' && href !== page.enUrl.replace('https://prometo.app', ''))
+      .slice(0, 3)
+      .map(([label, href]) => ({ label, href, description: 'Open a related English planning page.' }))
+  };
+}
+
 function esc(value) {
   return String(value)
     .replaceAll('&', '&amp;')
@@ -512,8 +669,14 @@ function esc(value) {
     .replaceAll('"', '&quot;');
 }
 
+function hasNoindexMeta(html) {
+  const metaTags = html.match(/<meta\b[^>]*>/gi) || [];
+  return metaTags.some(tag => /name\s*=\s*["'](?:robots|googlebot)["']/i.test(tag) && /content\s*=\s*["'][^"']*noindex/i.test(tag));
+}
+
 function render(page) {
   const robots = page.robots || 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+  const related = getRelatedModule(page);
   const navLinks = nav.map(([label, href]) => {
     const current = href === page.slugNoSlash + '/' || (href === '/en/' && page.enPath === 'en/index.html');
     return `<a href="${href}" class="${current ? 'text-primary' : 'hover:text-white transition-colors'}"${current ? ' aria-current="page"' : ''}>${label}</a>`;
@@ -628,7 +791,7 @@ function render(page) {
             <a href="/en/" class="inline-flex items-center gap-3" aria-label="Prometo home">
                 <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" fetchpriority="high" decoding="async" class="h-8 w-auto brightness-0 invert" />
             </a>
-            <nav class="hidden md:flex items-center gap-7 text-sm text-gray-400">
+            <nav aria-label="Primary navigation" class="hidden md:flex items-center gap-7 text-sm text-gray-400">
                 ${navLinks}
                 <a href="${page.deUrl.replace('https://prometo.app', '')}" hreflang="de-DE" class="hover:text-white transition-colors">Deutsch</a>
             </nav>
@@ -653,21 +816,23 @@ function render(page) {
                             <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Short answer</p>
                             <p class="text-sm md:text-base text-gray-200 leading-relaxed">${esc(page.short)}</p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-8">Last updated: <time datetime="${today}">April 2026</time></p>
+                        <p class="text-xs text-gray-500 mb-8">Last updated: <time datetime="${contentDate}">April 2026</time></p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a href="/#beta-signup" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">Request demo</a>
                             <a href="${page.deUrl.replace('https://prometo.app', '')}" hreflang="de-DE" class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">German version</a>
                         </div>
                     </div>
                     <aside class="glass-panel rounded-[2rem] p-8 reveal reveal-delay-2 lift-on-hover">
-                        <p class="text-sm font-headline font-bold text-primary uppercase tracking-widest mb-4">English page</p>
-                        <h2 class="text-3xl font-bold text-white mb-5">Built for international visitors</h2>
-                        <p class="text-gray-400 leading-relaxed mb-6">This page gives English-speaking visitors the same topic access without changing the German canonical URL. Search engines get a dedicated English URL and matching hreflang signals.</p>
-                        <ul class="space-y-3 text-sm text-gray-300">
-                            <li>Heat load and HVAC terminology in English</li>
-                            <li>Stable canonical URL under /en/</li>
-                            <li>German source page linked with hreflang</li>
-                        </ul>
+                        <p class="text-sm font-headline font-bold text-primary uppercase tracking-widest mb-4">${esc(related.eyebrow)}</p>
+                        <h2 class="text-3xl font-bold text-white mb-5">${esc(related.title)}</h2>
+                        <p class="text-gray-400 leading-relaxed mb-6">${esc(related.lead)}</p>
+                        <div class="space-y-3">
+                            ${related.links.map(link => `
+                            <a href="${link.href}" class="block rounded-2xl border border-white/10 p-4 transition-colors hover:border-primary hover:text-white">
+                                <span class="block text-base font-headline font-bold text-gray-100">${esc(link.label)}</span>
+                                <span class="mt-1 block text-sm text-gray-400 leading-relaxed">${esc(link.description)}</span>
+                            </a>`).join('')}
+                        </div>
                     </aside>
                 </div>
             </div>
@@ -725,13 +890,35 @@ function updateGermanHreflang(page) {
   fs.writeFileSync(file, html);
 }
 
-function updateSitemap(allPages) {
+function updateSitemap() {
   const file = path.join(root, 'sitemap-pages.xml');
-  let xml = fs.readFileSync(file, 'utf8');
-  for (const page of allPages) {
-    if (xml.includes(`<loc>${page.enUrl}</loc>`)) continue;
-    xml = xml.replace('</urlset>', `  <url>\n    <loc>${page.enUrl}</loc>\n    <lastmod>${today}</lastmod>\n  </url>\n</urlset>`);
+  const existing = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
+  const lastmodByLoc = new Map();
+  for (const match of existing.matchAll(/<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>\s*<\/url>/g)) {
+    lastmodByLoc.set(match[1], match[2]);
   }
+
+  const seen = new Set();
+  const entries = [];
+  const add = loc => {
+    if (seen.has(loc)) return;
+    seen.add(loc);
+    const lastmod = loc.startsWith('https://prometo.app/en/')
+      ? (changedEnUrls.has(loc) ? buildDate : lastmodByLoc.get(loc) || buildDate)
+      : lastmodByLoc.get(loc) || buildDate;
+    entries.push({ loc, lastmod });
+  };
+
+  for (const route of routes) {
+    add(route.deUrl);
+    const enFile = path.join(root, route.enPath);
+    if (!fs.existsSync(enFile)) continue;
+    const html = fs.readFileSync(enFile, 'utf8');
+    const robotsNoindex = hasNoindexMeta(html);
+    if (!robotsNoindex) add(route.enUrl);
+  }
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map(entry => `  <url>\n    <loc>${entry.loc}</loc>\n    <lastmod>${entry.lastmod}</lastmod>\n  </url>`).join('\n')}\n</urlset>\n`;
   fs.writeFileSync(file, xml);
 }
 
@@ -746,10 +933,17 @@ function updateVercel(allPages) {
   fs.writeFileSync(file, `${JSON.stringify(config, null, 2)}\n`);
 }
 
+const changedEnUrls = new Set();
+
 for (const page of pages) {
   const file = path.join(root, page.enPath);
+  const nextHtml = render(page);
+  const currentHtml = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : null;
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, render(page));
+  if (currentHtml !== nextHtml) {
+    fs.writeFileSync(file, nextHtml);
+    changedEnUrls.add(page.enUrl);
+  }
   updateGermanHreflang(page);
 }
 
@@ -758,7 +952,7 @@ updateGermanHreflang({
   deUrl: 'https://prometo.app/waermepumpe-dimensionieren/',
   enUrl: 'https://prometo.app/en/heat-pump-sizing/'
 });
-updateSitemap([...pages, { enUrl: 'https://prometo.app/en/heat-pump-sizing/' }]);
+updateSitemap();
 updateVercel(pages);
 
 console.log(`Generated ${pages.length} English pages and updated hreflang, sitemap and redirects.`);
