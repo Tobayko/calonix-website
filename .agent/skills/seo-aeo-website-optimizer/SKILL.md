@@ -1,351 +1,198 @@
 ---
 name: seo-aeo-website-optimizer
 description: >-
-  Use this skill when the user wants to improve how their website ranks in
-  Google or appears in AI-generated answers (ChatGPT, Perplexity, AI
-  Overviews). Triggers include: traffic drops after algorithm updates,
-  recovering from Google penalties, diagnosing why a page underperforms in
-  search, local business ranking goals, schema markup questions, competitor
-  gap analysis for search visibility, E-E-A-T improvements, and any request
-  where the core goal is "get found in search" or "get cited by AI." Use for
-  both classic SEO (rankings, crawlability, on-page optimization) and AEO
-  (answer extraction, structured data, AI citation). Works across site types:
-  blogs, SaaS, local businesses, law firms, e-commerce, B2B. Also use when
-  someone shares a URL or site and wants to know why it's not ranking, what's
-  missing vs. competitors, or how to recover lost organic traffic.
+  Optimiere Website-Inhalte fuer 2026 SEO und AEO. Nutze diesen Skill, wenn
+  Codex Landingpages, Kategorieseiten, Blogartikel, Pillar Pages, Cluster-
+  Inhalte, Titel, Meta Descriptions, H1-H6-Struktur, FAQs, Vergleichsseiten,
+  Templates, interne Content-Verlinkung, E-E-A-T/YMYL-Vertrauen, semantische
+  Abdeckung, Branded-Search-Positionierung oder AI-Overview-/ChatGPT-/
+  Perplexity-Extractability rein inhaltlich verbessern soll. Triggert bei
+  Anfragen wie "SEO-Text optimieren", "Landingpage umschreiben", "AEO
+  verbessern", "fuer Google optimieren", "Content Cluster bauen", "Text fuer
+  AI Overviews strukturieren" oder "warum erfuellt der Inhalt die Suchintention
+  nicht".
 ---
 
-# SEO + AEO Working Agent
+# SEO/AEO Content Skill 2026
 
-A diagnostic and planning agent for search visibility and AI citation potential. Optimises for **reliable diagnosis and actionable prioritisation** — not length, not appearance, not generic best-practice lists.
+Dieser Skill ist rein inhaltlich. Er optimiert Texte, Seitenstruktur und Content-Architektur fuer klassische Suche und AI Search.
 
----
+## Scope hart begrenzen
 
-## Step 0 — Auto-select mode and state data basis
+- Arbeite nur an Inhalt, semantischer Struktur, Snippets, internen Content-Links, Vertrauenssignalen im Content und Extractability.
+- Nutze [references/seo-2026-playbook.md](references/seo-2026-playbook.md), wenn Strategie, Suchintention, E-E-A-T, AEO, Query-Typen oder Content-Cluster relevant sind.
+- Nutze GSC-, GA4- oder andere Daten nur als Input zur Priorisierung, wenn sie bereitgestellt wurden.
+- Entwerfe in diesem Skill keine n8n-Workflows, keine Dashboards, keine Monitoring-Setups und keine rein technischen SEO-Audits.
 
-Before producing any output, do two things explicitly:
+## Immer zuerst
 
-### 1. Select the operating mode
+1. Bestimme genau einen Modus: `content-audit`, `rewrite`, `content-brief`, `cluster-plan`, `refresh` oder `aeo-structure`.
+2. Bestimme die primaere Suchintention: `definition`, `comparison`, `how-to`, `problem-solution`, `commercial`, `local`, `template` oder `brand`.
+3. Markiere Kernfeststellungen als `[VERIFIED]`, `[ASSUMED]` oder `[OPEN]`.
+4. Trenne Empfehlungen fuer klassische Suche und AI Search, wenn sie unterschiedlich sind.
+5. Wenn lokale Seitendateien vorliegen und der Nutzer Optimierung will, setze Titel, Meta Description, Ueberschriften, Content-Abschnitte, FAQs, Tabellen oder interne Links direkt um.
 
-Pick exactly one primary mode based on the task:
+## Was dieser Skill priorisiert
 
-| Mode | Trigger |
-|---|---|
-| **Audit** | "audit my site / page", general review request |
-| **Content Brief** | "write me a brief", "what should this page contain" |
-| **HCU Recovery** | traffic drop post-update, "lost rankings after algorithm update" |
-| **Local SEO Plan** | local business, geo-targeted pages, "rank in [city]" |
-| **AEO Snippet Plan** | "get into AI Overviews", "be cited in ChatGPT / Perplexity / AI Mode" |
-| **Rewrite Blueprint** | "rewrite this page", "improve this content", content handed over |
-| **Competitor Gap Analysis** | "why does competitor X outrank me", "what am I missing vs [site]" |
+Pruefe Inhalte in dieser Reihenfolge:
 
-State the selected mode at the top of the output. If the task is ambiguous, make a choice and note it.
+1. `Intent Satisfaction Depth`: loest die Seite die Kernfrage sofort und vollstaendig?
+2. `Content Experience`: ist die Information schnell erfassbar, konkret und ohne Fuellelemente?
+3. `Information Gain`: bietet die Seite originelle Daten, Erfahrungen, Benchmarks, Beispiele oder Vorlagen?
+4. `E-E-A-T/YMYL`: zeigt der Inhalt Autor, Erfahrung, Quelle, Aktualitaet und Grenzen?
+5. `Extractability`: kann ein LLM direkte Antworten, Definitionen, Tabellen, Schritte und Caveats sauber extrahieren?
+6. `Snippet Fit`: passen Title und Meta Description zur Suchintention und zum echten Seitenversprechen?
+7. `Content Architecture`: ist klar, welche Seite fuer welche Suchintention ranken soll?
+8. `Internal Linking`: helfen interne Links Nutzern und Suchmaschinen, Themenhierarchien zu verstehen?
 
-### 2. Declare the data basis
+## Nicht verhandelbare Regeln
 
-Before any recommendation, state clearly which evidence category applies:
+- Schreibe fuer Suchintention und Nutzerentscheidung, nicht fuer Keyword-Dichte.
+- Bevorzuge konkrete Beweise vor generischem Erklaertext.
+- Nutze Zahlen, Benchmarks, Beispiele, Vergleiche, Vorlagen, Checklisten und echte Entscheidungshilfen.
+- Fuehre bei informationsgetriebenen Queries frueh eine direkte Antwort oder Definition ein.
+- Nutze Vergleichstabellen fuer Auswahl-Queries und nummerierte Schritte fuer Prozess-Queries.
+- Entferne leere Einleitungen, Floskeln und redundante Wiederholungen.
+- Aktualisiere sensible oder datumsabhaengige Inhalte regelmaessig.
+- Behandle YMYL-Themen strenger als normale Marketingseiten.
 
-- **[VERIFIED]** — based on content, URLs, crawl data, or screenshots actually provided
-- **[ASSUMED]** — plausible inference from typical patterns for this site type/topic; flagged as assumption
-- **[OPEN]** — cannot be assessed without live data, crawl, or page access; listed as open question
+## Modusregeln
 
-Every top-level finding must carry one of these labels. Never frame an [ASSUMED] finding as a confirmed problem. Use language like "likely", "typically seen in sites like this", "needs verification".
+### `content-audit`
 
----
+Nutze diesen Modus, wenn der Nutzer wissen will, warum ein Inhalt nicht rankt oder nicht ueberzeugt.
 
-## Step 1 — Recognise query type for AEO structure
+Liefere:
 
-Identify which query type the target page is trying to answer. This determines the AEO content structure to recommend — not generic answer-block advice.
+- `MODE`
+- `PRIMARY INTENT`
+- `CORE CONTENT PROBLEM`
+- `3 KEY LEVERS`
+- `SEARCH VS AI SEARCH`
+- `TOP ACTIONS`
 
-| Query Type | Signal | AEO Structure to Apply |
-|---|---|---|
-| **Definition** | "what is X", "X meaning", "X explained" | Lead with one-sentence definition, then layered detail |
-| **Comparison** | "X vs Y", "best X for Y", "alternatives to X" | Comparison table first, then prose |
-| **Step sequence** | "how to X", "X tutorial", numbered process queries | Numbered steps as primary content unit; HowTo schema |
-| **Local / geo** | "X near me", "X in [city]", "best X [location]" | NAP clarity, service area, LocalBusiness schema, proof signals |
-| **Commercial selection** | "best X", "X review", "top X tools" | Decision criteria table, trust signals, differentiators |
-| **Problem / symptom** | "why is X happening", "X not working", "fix X" | Problem → cause → options → recommendation |
-| **Fact / data** | specific statistic, date, value queries | Direct answer block at top; cite source and date explicitly |
+Formatiere Kernempfehlungen so:
 
-State the identified query type before making AEO recommendations.
-
----
-
-## Step 2 — Apply the recommendation schema
-
-Every substantive finding must follow this structure. Do not write recommendations as flat bullet points.
-
-```
-FINDING: [What was observed or inferred]
-EVIDENCE: [What supports this — URL, screenshot, data, or explicit assumption label]
-RISK: [What breaks or underperforms if this is not addressed]
-PRIORITY: Immediate / Next / Later  (definitions below)
-ACTION: [Specific, implementable step — not "improve your content"]
+```text
+FINDING:
+EVIDENCE:
+RISK:
+PRIORITY:
+ACTION:
 ```
 
-Priority definitions:
-- **Immediate** (0–14 days): blocks indexation, causes ranking loss, or is a quick structural fix with high return
-- **Next** (15–60 days): meaningful SEO or AEO gain, requires moderate effort
-- **Later** (60–90 days): strategic, scalable, or dependent on other work completing first
+### `rewrite`
 
-**Deliberately omit recommendations that do not fit the case.** If a standard SEO tactic (e.g. FAQ schema, HowTo markup, topic cluster expansion) is not warranted by the actual problem at hand, do not include it. An irrelevant recommendation is worse than no recommendation — it dilutes trust and wastes implementation effort. State explicitly when a common tactic does NOT apply and why.
+Nutze diesen Modus, wenn vorhandene Inhalte direkt ueberarbeitet werden sollen.
 
----
+Liefere:
 
-## Step 3 — Run the diagnostic model
+- neuen `title`
+- neue `meta description`
+- neue `H1`
+- empfohlene Seiten-Outline
+- konkrete neue Abschnittsinhalte
+- FAQ- oder Vergleichsblock, falls passend
+- Vorschlaege fuer interne Linkanker
 
-Apply only the checks relevant to the selected mode. Do not produce a full checklist if the task is a content brief.
+### `content-brief`
 
-### A. Crawl and index foundations (Audit mode)
+Nutze diesen Modus fuer neue Seiten oder Artikel.
 
-Check — and label each as [VERIFIED], [ASSUMED], or [OPEN]:
-- Robots.txt: is the target path crawlable?
-- Noindex: is the page or section accidentally excluded?
-- Canonical: self-referencing where expected? Pointing elsewhere?
-- Sitemap: is the URL included and priority sensible?
-- Redirect chains: any unnecessary hops to the final URL?
-- JavaScript rendering: is critical content or metadata render-dependent?
-- Internal discovery: how many clicks from homepage to this page?
+Liefere:
 
-Only flag technical issues if they are verified or strongly evidenced. Do not produce a generic 10-point technical checklist without page-specific grounding.
+- primaere und sekundaere Suchintention
+- Suchenden-Profil und Entscheidungslage
+- klare Seitenrolle im Cluster
+- notwendige Abschnitte
+- benoetigte Beweise, Daten oder Beispiele
+- AEO-geeignete Struktur
+- interne Linkziele
 
-### B. Search snippet and SERP readiness
+### `cluster-plan`
 
-For each item, state what was observed or assumed:
-- Title tag: unique, useful, matches primary intent, within ~60 characters?
-- Meta description: does it provide a reason to click? Is it being auto-generated?
-- H1: does it match the user query, not just brand language?
-- URL: clean, readable, intent-relevant?
-- Snippet blockers: paywall, login walls, nosnippet directives?
-- Rich result eligibility: which schema type fits and what feature could it unlock?
+Nutze diesen Modus fuer thematische Architektur.
 
-### C. Information architecture
+Liefere:
 
-Assess only what is relevant to the task:
-- Is there a single clear page for this search intent, or is intent split across multiple pages?
-- Do supporting pages exist and link to the money page?
-- Is there keyword or intent cannibalization between sibling pages?
-- Is the internal link path from homepage to this URL too deep?
+- Pillar-Page
+- fokussierte Cluster-Seiten
+- jeweilige Suchintention pro URL
+- interne Linklogik
+- Inhalte mit hoechstem Bedarf an originellen Daten oder Templates
 
-### D. Content quality — gap-first approach
+### `refresh`
 
-Do not assess "length" in isolation. Assess gaps:
+Nutze diesen Modus fuer bestehende, veraltete Inhalte.
 
-**Information gaps**: What questions would a user have after reading this page that the page does not answer?
+Liefere:
 
-**Missing entities**: What named concepts, products, organisations, locations, or people should be referenced but are absent?
+- was gestrichen werden soll
+- was aktualisiert werden muss
+- welche Daten, Beispiele oder Quellen fehlen
+- welche Ueberschriften oder Snippets veraltet wirken
 
-**Unanswered queries**: What related searches does this page fail to satisfy? (Use [ASSUMED] if no Search Console data provided.)
+### `aeo-structure`
 
-**Weak differentiation**: What does every competitor page say that this page also says? What does only this page say?
+Nutze diesen Modus, wenn Inhalte speziell fuer AI Overviews, ChatGPT, Perplexity oder andere Answer Engines strukturiert werden sollen.
 
-**Missing evidence**: What claims are asserted without examples, data, citations, or direct experience?
+Liefere:
 
-**Outdated signals**: What is time-sensitive and may now be stale?
+- Query-Typ
+- direkte Antwort oder Definition
+- empfohlene Extraktionsbloeke
+- fehlende maschinenlesbare Content-Bausteine
+- Prioritaet fuer einen Abschnitt, der die Zitierbarkeit am staerksten verbessert
 
-Do not recommend "add more content". Recommend specific additions that fill verified or plausible gaps.
+## Query-Typen und passende Content-Formate
 
-### E. E-E-A-T checklist
+- `definition`: Ein-Satz-Antwort, dann Einordnung und Begriffsabgrenzung.
+- `comparison`: Vergleichstabelle zuerst, danach Bewertungslogik und Empfehlung.
+- `how-to`: nummerierte Schritte, Voraussetzungen, Fehlerquellen, Ergebnis.
+- `problem-solution`: Problem, Ursachen, Optionen, Empfehlung, Grenzen.
+- `commercial`: Entscheidungskriterien, Nutzen, Risiken, Beweise, klare CTA-Logik.
+- `local`: ortsbezogene Beweise, reale Bezugspunkte, lokale Besonderheiten.
+- `template`: sofort nutzbare Vorlage, Erklaerung, Anwendungsgrenzen, Beispiel.
+- `brand`: klares Markenversprechen, Differenzierung, Beweise, Suchbegriff-Kopplung.
 
-Evaluate each item as present / weak / absent / [OPEN]:
+## E-E-A-T im Content
 
-- **Author**: Is there a named author? Do they have a verifiable profile or byline?
-- **Author credentials**: Are relevant qualifications or experience visible on the page?
-- **Reviewer or editor**: For YMYL topics — is there a subject-matter reviewer named?
-- **First-hand experience**: Does the content show direct experience, testing, or original data?
-- **Source quality**: Are claims backed by citations to credible external sources?
-- **Revision date**: Is a last-updated date visible and plausible?
-- **Editorial responsibility**: Is there a clear organisation behind the content?
-- **Scope limits**: Does the content state what it covers and what it does not?
+Pruefe je nach Thema:
 
-Flag E-E-A-T gaps only where they are relevant to the topic's YMYL sensitivity or competitive context. Not every page needs all eight signals.
+- sichtbarer Autor oder Herausgeber
+- reale Erfahrung oder methodische Transparenz
+- belastbare Quellen oder eigene Daten
+- klares Update-Datum bei zeitkritischen Themen
+- benannte Grenzen, Annahmen oder Anwendungsfaelle
+- vertrauenswuerdige Sprache statt ueberzogener Behauptungen
 
-### F. Extractability for AI systems
+Bei YMYL:
 
-Evaluate whether an AI system can cleanly extract:
-- Direct short answer to the primary query (yes/no + evidence)
-- Definitions of key terms used on the page
-- Step sequences, if the page is instructional
-- Comparison data, if the page evaluates options
-- Who created the content and when
-- Scope and geographic applicability
-- Limitations, caveats, or "not applicable if" conditions
+- keine vagen Versprechen
+- keine anonymen Behauptungen
+- keine ungestuetzten Empfehlungen
+- keine irrefuehrenden Vereinfachungen
 
-For each gap, note which AEO content structure (from Step 1) would fix it.
+## AEO-Regeln
 
-### G. Structured data — differentiated treatment
+- Optimiere Inhalte so, dass ein Modell Antwort, Autor, Datum, Scope und Caveats schnell erkennt.
+- Frageueberschriften sind nur sinnvoll, wenn sie echte Suchfragen spiegeln.
+- FAQ-Bloecke nur nutzen, wenn sie inhaltlich noetig sind; nicht als Fuellmaterial.
+- Strukturiere Antworten so, dass einzelne Passagen eigenstaendig zitierbar sind.
+- Nutze kurze Definitionen, Tabellen, Listen und knappe Zwischenfazits fuer Extraktion.
 
-Schema is a means to an end, not a goal. Apply it only where it genuinely fits the page and the business case.
-
-**Current Google reality (as of 2025–2026):**
-- **FAQ rich results** are shown almost exclusively for authoritative health and government sites. Recommending FAQPage schema for a typical business or blog page is unlikely to produce a visible rich result. Note this explicitly rather than recommending it by default.
-- **HowTo rich results** are similarly restricted and rarely appear outside of step-by-step instructional content on established sites.
-- **LocalBusiness schema** remains useful for local businesses — it supports entity understanding and local Knowledge Panel data, even if it does not directly produce rich results.
-- **Product, Article, BreadcrumbList** schema continue to have meaningful eligibility for relevant content types.
-
-For each schema type considered, state three things:
-
-1. **Machine comprehension**: Does this help Google/AI understand what the page is about?
-2. **Feature eligibility**: Is this page type realistically eligible for a SERP feature from this schema? State the actual current eligibility status — do not imply eligibility where Google has restricted it.
-3. **Realistic impact**: Given the site type, authority, and competition, is this worth implementing now or is it low-return?
-
-Never recommend schema as a ranking signal. Schema affects entity understanding and feature eligibility — not ranking directly.
-
-Only recommend schema that matches content already visible on the page. If FAQPage or HowTo schema is not a realistic fit for the site type, say so and do not recommend it.
-
-### H. Competitor gap (Competitor Gap Analysis mode)
-
-For each competitor examined, operationalise the gap:
-
-- **Search intent coverage**: Which intent dimensions does the competitor satisfy that this page misses? (e.g., buyer intent, informational depth, local context)
-- **Answer block extractability**: Which specific sections on the competitor page would be extracted by an AI system that do not exist here?
-- **Trust signals**: What proof elements (reviews, case studies, certifications, author credentials) does the competitor show that this page lacks?
-- **Structural advantages**: What content formats (tables, step lists, FAQs, comparison matrices) does the competitor use that aid extraction?
-
-Do not produce generic "competitor has better content" summaries. Map specific gaps to specific actions.
-
----
-
-## Step 4 — Produce output
-
-Use this structure. **Omit any section that adds no value for the specific task.** A tight, focused output that covers what matters is always better than a comprehensive output that pads irrelevant sections.
-
----
-
-### DATA BASIS DECLARATION
-
-One paragraph. State: what was actually provided, what was inferred from patterns, and what cannot be assessed without live data. Be blunt — if almost nothing was provided, say so. This sets honest expectations for everything that follows.
-
-**What to flag explicitly as NOT assessable without live data:** current SERP positions, actual crawl status, Core Web Vitals scores, backlink profile, indexation state, Search Console signals, GA4 traffic patterns, competitor keyword gaps. Any recommendation about these areas is modelled, not measured.
-
----
-
-### MODE: [Selected mode]
-
----
-
-### CORE PROBLEM
-
-One to three sentences maximum. Name the single most important reason this page or site is underperforming. If there are multiple causes, rank them. Do not list five equally-weighted issues — one is primary.
-
----
-
-### 3 KEY LEVERS
-
-The three highest-impact changes available, each in FINDING / EVIDENCE / RISK / PRIORITY / ACTION format.
-
-**Discipline:** These three must be the real bottlenecks, not a representative sample of all possible improvements. If the core problem is weak E-E-A-T, all three levers may be E-E-A-T-related. If the problem is intent mismatch, schema optimisation is not a key lever. Pick what actually moves the needle for this specific case.
-
----
-
-### TOP ACTIONS
-
-Numbered list of concrete next steps in priority order. Each must be specific enough to hand to a developer, editor, or content writer without a follow-up conversation.
-
-Forbidden: "improve page quality", "add more content", "build internal links". Every item names exactly what to change, where, and what the measurable outcome should be.
-
----
-
-### SEARCH vs. AI SEARCH — WHAT'S DIFFERENT HERE
-
-For this specific page and query type, state explicitly:
-
-- **Classic search priority**: What changes most improve ranking in blue-link results?
-- **AI search priority**: What changes most improve citation in AI Overviews, Perplexity, ChatGPT browsing? (Often different — AI prioritises extractability, entity clarity, source trust; classic search prioritises relevance signals, authority, intent match.)
-- **Where they overlap**: What single improvement helps both?
-
-Do not write this section generically. Make it specific to the case at hand.
-
----
-
-### AEO BLOCK
-
-1. **Query type**: [from Step 1]
-2. **Extractability today**: What can an AI system reliably extract from the current page? Be specific. If nothing was provided, state "cannot assess without page content" and describe what would need to be true.
-3. **Top extraction blockers**: 2–3 specific missing elements or structural issues.
-4. **Recommended structure**: Given the query type, what should the page structure look like for AI extraction?
-5. **One priority addition**: The single most important addition for AI citation potential.
-
----
-
-### 14-DAY PLAN
-
-Immediate items only. Format: Days X–Y → specific task → expected outcome.
-
-Keep this short. If everything is "Immediate" priority, something is wrong with the prioritisation.
-
----
-
-### 90-DAY PLAN
-
-Three phases: Immediate (first 14 days, already listed above) → Next (days 15–60) → Later (days 61–90). One to three items per phase. No padding.
-
----
-
-### RISKS AND ASSUMPTIONS
-
-List only the [ASSUMED] findings that drove the top recommendations. For each: what was assumed, why it is plausible, what would invalidate it.
-
-List [OPEN] items that require live data before a confident recommendation is possible. Do not repeat every assumption — only the ones that materially affect the recommended actions.
-
----
-
-## Anti-hallucination protocol
-
-If no live page data, crawl output, Search Console data, or provided screenshots exist:
-
-- Do not state technical SEO problems as confirmed facts
-- Do not claim specific rankings, traffic numbers, or SERP positions
-- Do not assert E-E-A-T failures without evidence
-- Do not describe the current page state unless it was provided
-
-Use the [ASSUMED] and [OPEN] labels systematically. Opening a diagnosis with "Based on what you've described, and assuming a typical site of this type..." is correct behaviour when data is absent.
-
----
-
-## Mode-specific guidance
-
-### Audit
-
-Run the full diagnostic model. Produce all output sections. Limit top problems to the 5 highest-priority findings. Do not pad with low-impact observations.
-
-### Content Brief
-
-Skip crawl and technical sections. Focus on: query type, E-E-A-T requirements, required content sections, AEO structure, schema opportunities, SERP differentiation angle, and internal linking strategy. Output: brief ready to hand to a writer.
-
-### HCU Recovery
-
-Focus diagnostic on: E-E-A-T gaps, thin or unoriginal content, missing first-hand experience, over-reliance on generic summaries, and AEO extractability. Compare current page against the HCU quality criteria explicitly. Do not assume HCU is the cause — state it as most likely if pattern matches, but note alternative causes (core update, manual action, competition).
-
-### Local SEO Plan
-
-Focus on: NAP consistency, LocalBusiness schema, service area clarity, local proof signals (reviews, citations, local content), Google Business Profile signals, and geographic entity disambiguation. AEO focus: answer the "best [service] in [city]" query type explicitly.
-
-### AEO Snippet Plan
-
-Focus on: query type identification, answer block structure, FAQ construction, extractable entity attributes, source and date signals, and schema markup for the identified query type. Output: page outline or rewrite blueprint optimised for AI extraction.
-
-### Rewrite Blueprint
-
-Produce: revised title tag, revised H1, revised meta description, revised page outline with section-level guidance, FAQ block if relevant, schema recommendation. State what to keep, what to cut, and what to add — with reasoning for each.
-
-### Competitor Gap Analysis
-
-Produce: per-competitor gap table (intent coverage, answer extractability, trust signals, structural advantages). Prioritise gaps by impact on ranking and citation. Output: specific actions to close the highest-value gaps.
-
----
-
-## What not to do
-
-- Do not recommend longer content as a default. Recommend specific additions that fill specific gaps.
-- Do not produce 10-point checklists of generic best practices without page-specific grounding.
-- Do not recommend structured data as a ranking factor.
-- Do not assert a problem exists if you have not seen the page.
-- Do not produce an output that reads like a textbook chapter. Every sentence should help the user make a decision or take an action.
-- Do not confuse structured data eligibility with structured data appearance. Feature eligibility requires schema + content quality + policy compliance + Google's discretion.
-- Do not recommend E-E-A-T signals that are irrelevant to the topic category (a recipe page does not need a medical reviewer).
-- Do not recommend FAQPage schema as a default for business or blog pages. Google restricts FAQ rich results to health and government sites. If it does not apply, say so.
-- Do not recommend HowTo schema unless the page is genuinely step-by-step instructional content with realistic eligibility.
-- Do not treat schema as a quick win for pages where rich result eligibility is effectively zero.
-- Do not mix classic search recommendations with AI search recommendations without separating them. They often require different actions, different content structures, and different success metrics.
-- Do not produce a "balanced" output that treats every finding as equally important. Rank ruthlessly. The user needs to know what to do first, not a list of everything that could theoretically be improved.
+## Interne Verlinkung im Content
+
+- Verlinke von erklaerenden Inhalten auf transaktionale oder tiefergehende Zielseiten.
+- Verlinke Cluster-Seiten auf die Pillar-Page und auf logisch angrenzende Unterthemen.
+- Nutze beschreibende Anchors, keine generischen "hier klicken"-Formulierungen.
+- Vermeide konkurrierende Zielseiten fuer dieselbe Suchintention.
+
+## Nicht tun
+
+- Keine n8n-, Dashboard-, API- oder Automatisierungsloesungen in diesem Skill entwerfen.
+- Keine Rankings, CTRs, Traffic-Zahlen oder Core-Web-Vitals-Werte erfinden.
+- Keine rein technischen SEO-Probleme als Fakten behaupten, wenn nur Content vorliegt.
+- Nicht pauschal "mehr Text" empfehlen. Benenne die fehlende Information oder das fehlende Beweisstueck.
+- Keine KI-Fuelltexte, Phrasendrescherei oder auswechselbare SEO-Standardformulierungen produzieren.
+- `FAQPage` oder `HowTo` nicht automatisch als Schema- oder Content-Loesung einsetzen.

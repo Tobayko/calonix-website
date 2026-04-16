@@ -1,4 +1,18 @@
 (function () {
+    if (window.__prometoAccessibilityScriptRequested) {
+        return;
+    }
+
+    window.__prometoAccessibilityScriptRequested = true;
+
+    var script = document.createElement("script");
+    script.src = "/assets/accessibility.js";
+    script.async = true;
+    script.dataset.prometoAccessibility = "true";
+    document.head.appendChild(script);
+})();
+
+(function () {
     var reveals = document.querySelectorAll(".reveal");
 
     if (!reveals.length) {

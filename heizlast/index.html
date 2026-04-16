@@ -369,7 +369,7 @@
                 <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
                     fetchpriority="high" decoding="async" class="h-8 w-auto brightness-0 invert" />
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+            <nav aria-label="Hauptnavigation" class="hidden md:flex items-center gap-8 text-sm text-gray-400">
                 <a href="/" class="hover:text-white transition-colors">Startseite</a>
                 <a href="/heizlast/" class="text-primary" aria-current="page">Heizlast erklärt</a>
                 <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
@@ -412,7 +412,7 @@
                                 Die Heizlast ist die Wärmeleistung in Watt oder Kilowatt, die ein Gebäude bei Normaußentemperatur braucht. Berechnet wird sie aus Transmissionswärmeverlusten, Lüftungswärmeverlusten und je nach Verfahren Aufheizzuschlägen. Sie ist Auslegungsleistung für Wärmepumpe und Heizflächen, nicht der Jahresenergieverbrauch.
                             </p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-6">Zuletzt aktualisiert: <time datetime="2026-04-08">April 2026</time></p>
+                        <p class="text-xs text-gray-500 mb-6">Zuletzt aktualisiert: <time datetime="2026-04-08">April 2026</time> · Fachlich eingeordnet von Prometo Redaktion</p>
                         <div class="mb-8 p-4 rounded-2xl border border-white/10 bg-white/5">
                             <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Auf einen Blick</p>
                             <ul class="space-y-1.5 text-sm text-gray-300">
@@ -1160,9 +1160,9 @@
                         <span class="text-primary text-sm font-headline font-semibold">App ansehen →</span>
                     </a>
                     <a href="/digitales-aufmass/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Digitales Aufmaß</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">PDF-Grundrisse importieren und Räume mobil auf der Baustelle erfassen.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Aufmaß App ansehen →</span>
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Digitales Aufmaß aus PDF-Grundrissen</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">PDF-Grundrisse importieren, Räume strukturieren und Aufmaß-Daten für die spätere Heizlast weiterverwenden.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Digitales Aufmaß ansehen →</span>
                     </a>
                 </div>
             </div>
@@ -1271,8 +1271,8 @@
                 Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
             </div>
             <div class="flex items-center gap-3 shrink-0">
-                <button id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
+                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
             </div>
         </div>
     </div>
