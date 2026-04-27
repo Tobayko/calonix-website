@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Heizlastberechnung im SHK-Kontext: Norm, Praxis und nächste Schritte | Prometo</title>
+    <meta name="description"
+        content="Heizlastberechnung fachlich eingeordnet: DIN EN 12831, Schätzung vs. Norm, dynamische Plausibilisierung, Wärmepumpe, hydraulischer Abgleich und SHK-Workflow mit Prometo." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/heizlastberechnung/leitfaden/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlastberechnung/leitfaden/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlastberechnung/leitfaden/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Heizlastberechnung im SHK-Kontext: Norm, Praxis und nächste Schritte | Prometo" />
+    <meta property="og:description"
+        content="Heizlastberechnung fachlich eingeordnet: DIN EN 12831, Schätzung vs. Norm, dynamische Plausibilisierung, Wärmepumpe, hydraulischer Abgleich und SHK-Workflow mit Prometo." />
+    <meta property="og:url" content="https://prometo.app/heizlastberechnung/leitfaden/" />
+    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
+    <meta property="og:image:alt" content="Prometo SHK-Workflow: Heizlast, Wärmepumpe und hydraulischer Abgleich" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="2400" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Heizlastberechnung im SHK-Kontext: Norm, Praxis und nächste Schritte | Prometo" />
+    <meta name="twitter:description"
+        content="Heizlastberechnung fachlich eingeordnet: DIN EN 12831, Schätzung vs. Norm, dynamische Plausibilisierung, Wärmepumpe, hydraulischer Abgleich und SHK-Workflow mit Prometo." />
+    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
+
+    <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
+
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top, rgba(69, 222, 231, 0.10), transparent 40%),
+                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1, h2, h3, th {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .formula-box {
+            border-radius: 1.5rem;
+            border: 1px solid rgba(69, 222, 231, 0.16);
+            background: rgba(69, 222, 231, 0.06);
+            padding: 1rem 1.25rem;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item[open] summary {
+            color: #fff;
+        }
+
+        .method-table th {
+            background: rgba(69, 222, 231, 0.08);
+            color: #6bf6ff;
+        }
+
+        .method-table td, .method-table th {
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(255,255,255,0.07);
+            font-size: 0.875rem;
+            vertical-align: top;
+        }
+
+        .method-table tr:nth-child(even) td {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .step-connector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(69, 222, 231, 0.5);
+            font-size: 1.25rem;
+            margin: 0 0.25rem;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://prometo.app/assets/apple-touch-icon.png"
+                },
+                "image": "https://prometo.app/assets/og-image.png",
+                "description": "Prometo ist eine SHK-Software für digitales Aufmaß, Heizlastberechnung und TGA-Planung.",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "info@prometo.app",
+                    "contactType": "customer support",
+                    "availableLanguage": "German"
+                },
+                "sameAs": [
+                    "https://linkedin.com/company/prometo-app",
+                    "https://instagram.com/prometo.app",
+                    "https://youtube.com/@prometo-app",
+                    "https://x.com/prometo-app",
+                    "https://facebook.com/prometo.app"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE",
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/heizlastberechnung/leitfaden/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Heizlastberechnung",
+                        "item": "https://prometo.app/heizlastberechnung/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Leitfaden",
+                        "item": "https://prometo.app/heizlastberechnung/leitfaden/"
+                    }
+                ]
+            },
+            {
+                "@type": "Article",
+                "@id": "https://prometo.app/heizlastberechnung/leitfaden/#article",
+                "url": "https://prometo.app/heizlastberechnung/leitfaden/",
+                "name": "Heizlastberechnung im SHK-Kontext: Norm, Praxis und nächste Schritte",
+                "headline": "Heizlastberechnung im SHK-Kontext: Norm, Praxis und nächste Schritte",
+                "description": "Heizlastberechnung fachlich eingeordnet: DIN EN 12831, Schätzung vs. Norm, dynamische Plausibilisierung, Wärmepumpe, hydraulischer Abgleich und SHK-Workflow.",
+                "dateModified": "2026-04-27",
+                "datePublished": "2026-04-27",
+                "inLanguage": "de-DE",
+                "author": {
+                    "@id": "https://prometo.app/#organization"
+                },
+                "publisher": {
+                    "@id": "https://prometo.app/#organization"
+                },
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/heizlastberechnung/leitfaden/#breadcrumb"
+                },
+                "about": [
+                    {"@type": "Thing", "name": "Heizlastberechnung"},
+                    {"@type": "Thing", "name": "DIN EN 12831"},
+                    {"@type": "Thing", "name": "Wärmepumpe"},
+                    {"@type": "Thing", "name": "hydraulischer Abgleich"},
+                    {"@type": "Thing", "name": "Fußbodenheizung"}
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/heizlastberechnung/leitfaden/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Ist die Heizlast dasselbe wie der Jahreswärmebedarf?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Die Heizlast beschreibt die benötigte Leistung im Auslegungsfall — also die maximale kW-Anforderung bei Normaussentemperatur. Der Jahreswärmebedarf beschreibt dagegen die Energiemenge in kWh über die gesamte Heizperiode."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist DIN EN 12831 in Deutschland der richtige Bezug für die Heizlastberechnung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Für die raumweise Norm-Heizlast ist die DIN EN 12831-1 in Kombination mit den nationalen Ergänzungen (NA) der zentrale methodische Ausgangspunkt in Deutschland."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Warum reicht ein W/m²-Schätzwert oft nicht aus?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Weil Raumlage, Fensteranteil, U-Werte, Lüftung, Wärmebrücken und Solltemperaturen raumweise deutlich voneinander abweichen können. Ein pauschaler W/m²-Wert mittelt diese Unterschiede weg und kann bei Wärmepumpe, hydraulischem Abgleich oder Heizflächenauslegung zu Fehlentscheidungen führen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wann ist eine dynamische Plausibilisierung sinnvoll?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Vor allem bei Wärmepumpen, Sanierung, komplexen Gebäuden, schwierigen Lüftungssituationen oder wenn reale Betriebsbedingungen besser abgebildet werden sollen. Die dynamische Betrachtung ergänzt die Norm-Heizlast, ersetzt sie aber nicht."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Brauche ich für den hydraulischen Abgleich eine raumweise Heizlast?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Für belastbare Folgeentscheidungen ist die raumweise Last deutlich besser als eine Grobschätzung, weil sie die Ableitung von Soll-Volumenströmen und Raumlogiken sauber vorbereitet. Besonders in fördernahen Workflows ist die raumweise Grundlage wichtig."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Welche Eingaben sind bei der Heizlastberechnung am häufigsten kritisch?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Bauteilqualität (U-Werte), Luftwechsel, Wärmebrücken, Raumtemperaturen, Zonierung und unklare Bestandsdaten. Im Bestand sind pauschale Annahmen bei diesen Parametern besonders fehleranfällig."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Kann eine dynamische Methode die DIN EN 12831 ersetzen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. In der Praxis ist die dynamische Betrachtung vor allem eine Ergänzung, um kritische Projekte realitätsnäher zu plausibilisieren. Für Vergleichbarkeit, Struktur und Dokumentierbarkeit bleibt die Norm-Heizlast der belastbare Ausgangspunkt."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was ist der Vorteil von Prometo gegenüber isolierten Einzeltools?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo verbindet Grundriss, Raumstruktur, Heizlast, Folgeprozesse und Dokumentation in einem durchgängigen SHK-Workflow. Die Berechnung bleibt nicht isoliert im Tabellenblatt, sondern ist direkt Teil von Hydraulik, Flächensystem und Material."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav aria-label="Hauptnavigation" class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
+                <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
+                <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
+                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
+                <a href="/waermepumpe-dimensionieren/" class="hover:text-white transition-colors">Wärmepumpe dimensionieren</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831 erklärt</a>
+                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Heizlast schätzen</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Demo anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heizlastberechnung</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">Leitfaden</span>
+                </nav>
+
+                <div class="max-w-4xl">
+                    <span class="badge mb-6">Heizlastberechnung in der Praxis</span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 reveal">
+                        Heizlastberechnung im SHK-Kontext: Norm, Praxis und nächste Schritte
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4 reveal">
+                        Von der DIN EN 12831 bis zur dynamischen Plausibilisierung: So ordnen SHK-Teams Heizlast heute richtig ein und schaffen eine belastbare Grundlage für Wärmepumpe, Hydraulik und Dokumentation.
+                    </p>
+                    <p class="text-xs text-gray-500 mb-6">Zuletzt aktualisiert: <time datetime="2026-04-27">April 2026</time> · Fachlich eingeordnet von Prometo Redaktion</p>
+                    <p class="text-base text-gray-300 leading-relaxed max-w-3xl mb-6 reveal">
+                        Die Heizlastberechnung ist kein isolierter kW-Wert, sondern die Auslegungsbasis für Wärmeerzeuger, Heizflächen und hydraulischen Abgleich. In Deutschland bleibt die Norm-Heizlast nach DIN EN 12831-1 der zentrale Referenzpunkt. In der Praxis reichen erst dann belastbare Ergebnisse, wenn Eingabedaten, Zonierung, Lüftung und reale Projektbedingungen sauber mitgedacht werden.
+                    </p>
+
+                    <div class="mb-8 p-5 rounded-2xl border border-primary/20 bg-primary/5 max-w-3xl">
+                        <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Kurz erklärt</p>
+                        <p class="text-sm md:text-base text-gray-200 leading-relaxed">
+                            Wer Heizlast heute sauber plant, arbeitet in Stufen: normative Basis für Vergleichbarkeit, dynamische Plausibilisierung für kritische Projekte und eine klare Übergabe in Wärmepumpe, Verteilung und Dokumentation.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 reveal">
+                        <a href="/heizlastberechnung/"
+                            class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                            Heizlastberechnung mit Prometo ansehen
+                        </a>
+                        <a href="/heizlastberechnung/din-12831/"
+                            class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                            DIN EN 12831 einfach erklärt
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODUL 1: EXECUTIVE SUMMARY -->
+        <section class="px-6 py-14 md:py-20">
+            <div class="max-w-screen-xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
+                    Was SHK-Teams heute aus der Heizlast wirklich brauchen
+                </h2>
+                <p class="text-gray-400 max-w-2xl mb-10 reveal">Vier Kernthesen als Einstieg — damit Planung und Auslegung von Anfang an auf stabiler Grundlage stehen.</p>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal">
+                        <div class="text-primary text-2xl font-bold font-headline mb-3">01</div>
+                        <h3 class="text-white font-bold mb-2">Norm bleibt Ausgangspunkt</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Die Norm-Heizlast nach DIN EN 12831-1 bleibt der methodische Ausgangspunkt für Auslegung und Dokumentation — nicht trotz, sondern wegen ihrer Vergleichbarkeit.
+                        </p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal reveal-delay-1">
+                        <div class="text-primary text-2xl font-bold font-headline mb-3">02</div>
+                        <h3 class="text-white font-bold mb-2">Spitzenwert reicht oft nicht</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Ein einzelner Gebäude-kW-Wert reicht für moderne Projekte mit Wärmepumpe, Heizkreisen und raumweisem Abgleich nicht mehr aus.
+                        </p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal reveal-delay-2">
+                        <div class="text-primary text-2xl font-bold font-headline mb-3">03</div>
+                        <h3 class="text-white font-bold mb-2">Datenbasis entscheidet</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Schlechte Eingabedaten verursachen größere Fehler als fehlende Modellkomplexität. U-Werte, Luftwechsel und Zonierung sind die eigentlichen Hebel.
+                        </p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal reveal-delay-3">
+                        <div class="text-primary text-2xl font-bold font-headline mb-3">04</div>
+                        <h3 class="text-white font-bold mb-2">Übergabe schafft Wert</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Der größte Praxisnutzen entsteht erst durch die Weitergabe in Systementscheidung, Heizflächen, Hydraulik und Dokumentation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODUL 2: NORMATIVER RAHMEN -->
+        <section class="px-6 py-14 md:py-20 bg-white/2">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="max-w-3xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
+                        Warum die Norm wichtig bleibt und trotzdem nicht die ganze Wahrheit ist
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed mb-6 reveal">
+                        Für SHK-Betriebe ist die Norm-Heizlast weiter der belastbare Startpunkt. Sie schafft Vergleichbarkeit, Struktur und Dokumentierbarkeit. Gleichzeitig zeigt der europäische Rahmen klar in Richtung realitätsnäherer Verfahren: thermische Masse, Lüftung, Wetter, Nutzung und Messdaten gewinnen an Gewicht.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-8 reveal">
+                        Die sinnvolle Konsequenz ist kein Ersatz der Norm, sondern ihre gezielte Ergänzung dort, wo Projekte komplexer werden.
+                    </p>
+
+                    <div class="grid gap-4 sm:grid-cols-3 mb-8">
+                        <div class="formula-box reveal">
+                            <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Deutschland</p>
+                            <p class="text-sm text-gray-300">Raumweise Heizlast nach <strong class="text-white">DIN EN 12831-1</strong> mit nationalen Ergänzungen (NA) bleibt der methodische Ausgangspunkt.</p>
+                        </div>
+                        <div class="formula-box reveal reveal-delay-1">
+                            <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Europa</p>
+                            <p class="text-sm text-gray-300">Europäischer Rahmen geht stärker in Richtung realer Betriebsbedingungen, transparenter Annahmen und verifizierbarer Performance.</p>
+                        </div>
+                        <div class="formula-box reveal reveal-delay-2">
+                            <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Praxis</p>
+                            <p class="text-sm text-gray-300">Kein „entweder-oder", sondern eine <strong class="text-white">Methodenkaskade</strong>: Norm als Basis, dynamisch für kritische Entscheidungen.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 text-sm">
+                        <a href="/heizlast/" class="text-primary hover:text-white transition-colors underline underline-offset-4">Heizlast einfach erklärt</a>
+                        <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors underline underline-offset-4">DIN EN 12831 im Detail</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODUL 3: METHODEN-VERGLEICH -->
+        <section class="px-6 py-14 md:py-20">
+            <div class="max-w-screen-xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
+                    Wann ein Überschlag reicht und wann er zu grob wird
+                </h2>
+                <p class="text-gray-400 max-w-2xl mb-10 reveal">
+                    Der klügste Weg ist heute meist gestuft: <strong class="text-white">Schätzung für die erste Orientierung, Norm für die Auslegung, dynamische Plausibilisierung für schwierige Entscheidungen.</strong>
+                </p>
+
+                <div class="grid gap-6 md:grid-cols-3 mb-10">
+                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal">
+                        <h3 class="text-xl font-bold text-white mb-3">Schätzung als Einstieg</h3>
+                        <ul class="text-sm text-gray-400 leading-relaxed space-y-2">
+                            <li class="flex gap-2"><span class="text-primary mt-0.5">✓</span> Sinnvoll für Erstgespräch und Vorqualifikation</li>
+                            <li class="flex gap-2"><span class="text-yellow-400 mt-0.5">!</span> Nicht ausreichend für raumweise Auslegung</li>
+                            <li class="flex gap-2"><span class="text-red-400 mt-0.5">✗</span> Kein Endpunkt für Förderung, Haftung oder Wärmepumpen-Dimensionierung</li>
+                        </ul>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 border-primary/20 lift-on-hover reveal reveal-delay-1" style="border-color: rgba(69,222,231,0.2);">
+                        <div class="text-xs font-bold text-primary uppercase tracking-wider mb-3">Empfohlen für Auslegung</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Norm-Heizlast nach DIN EN 12831</h3>
+                        <ul class="text-sm text-gray-400 leading-relaxed space-y-2">
+                            <li class="flex gap-2"><span class="text-primary mt-0.5">✓</span> Richtige Ebene für Auslegung und Dokumentation</li>
+                            <li class="flex gap-2"><span class="text-primary mt-0.5">✓</span> Konservativer Designpunkt mit Vergleichbarkeit</li>
+                            <li class="flex gap-2"><span class="text-primary mt-0.5">✓</span> Belastbar für Raum- und Gebäudelogik</li>
+                        </ul>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal reveal-delay-2">
+                        <h3 class="text-xl font-bold text-white mb-3">Dynamische Plausibilisierung</h3>
+                        <ul class="text-sm text-gray-400 leading-relaxed space-y-2">
+                            <li class="flex gap-2"><span class="text-primary mt-0.5">✓</span> Sinnvoll bei Bestand, Wärmepumpe, kritischen Zonen</li>
+                            <li class="flex gap-2"><span class="text-primary mt-0.5">✓</span> Bessere Abbildung von Wetter, Nutzung, Speicherwirkung</li>
+                            <li class="flex gap-2"><span class="text-primary mt-0.5">✓</span> Ergänzt die Norm — ersetzt sie nicht</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl reveal">
+                    <table class="method-table w-full rounded-2xl overflow-hidden">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Merkmal</th>
+                                <th class="text-left">Schätzung (W/m²)</th>
+                                <th class="text-left">Norm-Heizlast (DIN EN 12831)</th>
+                                <th class="text-left">Dynamische Simulation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Aufwand</td>
+                                <td class="text-gray-400">Gering</td>
+                                <td class="text-gray-400">Mittel</td>
+                                <td class="text-gray-400">Hoch</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Raumweiser Bezug</td>
+                                <td class="text-gray-400">Nein</td>
+                                <td class="text-primary font-medium">Ja</td>
+                                <td class="text-primary font-medium">Ja</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Dokumentierbar</td>
+                                <td class="text-gray-400">Eingeschränkt</td>
+                                <td class="text-primary font-medium">Ja</td>
+                                <td class="text-gray-400">Je nach Tool</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Für Wärmepumpe</td>
+                                <td class="text-yellow-400">Nur grob</td>
+                                <td class="text-primary font-medium">Gut geeignet</td>
+                                <td class="text-primary font-medium">Sehr gut</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Reale Betriebsbedingungen</td>
+                                <td class="text-gray-400">Nein</td>
+                                <td class="text-gray-400">Konservativ</td>
+                                <td class="text-primary font-medium">Ja</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="flex flex-wrap gap-4 text-sm mt-8">
+                    <a href="/heizlastberechnung/schaetzwerte/" class="text-primary hover:text-white transition-colors underline underline-offset-4">Heizlast schätzen mit W/m²</a>
+                    <a href="/waermepumpe-dimensionieren/" class="text-primary hover:text-white transition-colors underline underline-offset-4">Wärmepumpe dimensionieren</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODUL 4: EINGABEDATEN -->
+        <section class="px-6 py-14 md:py-20 bg-white/2">
+            <div class="max-w-screen-xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
+                    Nicht die Formel ist meist das Problem, sondern die Datenbasis
+                </h2>
+                <p class="text-gray-400 max-w-2xl mb-10 reveal">
+                    Die Formel für die Heizlast ist bekannt. Der eigentliche Qualitätshebel liegt in den Eingaben: U-Werte, Luftwechsel, Wärmebrücken und Zonierung bestimmen, wie belastbar das Ergebnis wirklich ist.
+                </p>
+
+                <div class="grid gap-6 md:grid-cols-3 mb-10">
+                    <div class="glass-panel rounded-3xl p-6 reveal">
+                        <h3 class="text-xl font-bold text-white mb-3">U-Werte, Flächen und Wärmebrücken</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-3">Bauteilqualität und Flächen wirken direkt auf Transmissionsverluste. Wärmebrücken sollten nicht als Fußnote, sondern als Teil der Verlustseite behandelt werden.</p>
+                        <p class="text-xs text-gray-500">Im Bestand sind pauschale Annahmen besonders fehleranfällig.</p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-1">
+                        <h3 class="text-xl font-bold text-white mb-3">Lüftung, Infiltration und Dichtheit</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-3">Luftwechsel wird in der Praxis oft zu grob angesetzt. Fenster­lüftung, mechanische Lüftung und unbekannte Dichtheit müssen sauber unterschieden werden.</p>
+                        <p class="text-xs text-gray-500">Gerade im Bestand ein großer Hebel für Plausibilität.</p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-2">
+                        <h3 class="text-xl font-bold text-white mb-3">Wetter, Mikroklima und Solltemperaturen</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-3">Die Normaussentemperatur bleibt wichtig. Lokale Wetterdaten und reale Nutzungsprofile können Spitzenlasten verschieben — gleiche Region bedeutet nicht automatisch gleiche Lastsituation.</p>
+                        <p class="text-xs text-gray-500">Standortbezogene Daten verbessern die Aussagekraft.</p>
+                    </div>
+                </div>
+
+                <div class="formula-box max-w-2xl reveal">
+                    <p class="text-xs font-bold text-primary uppercase tracking-wider mb-3">Einordnungskasten</p>
+                    <div class="grid gap-2 sm:grid-cols-3 text-sm text-gray-300">
+                        <div>
+                            <p class="text-white font-medium mb-1">Transmission</p>
+                            <p class="text-gray-400">U-Wert × Fläche × Temperaturdifferenz</p>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium mb-1">Lüftung</p>
+                            <p class="text-gray-400">Luftwechsel × Volumen × Temperaturdifferenz</p>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium mb-1">Ergebnisqualität</p>
+                            <p class="text-gray-400">steht und fällt mit Raumdaten, Zonierung und Annahmen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODUL 5: FOLGEPROZESSE -->
+        <section class="px-6 py-14 md:py-20">
+            <div class="max-w-screen-xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
+                    Die Heizlast ist nicht das Endergebnis, sondern der Startpunkt der Auslegung
+                </h2>
+                <p class="text-gray-400 max-w-2xl mb-10 reveal">Drei Folgeprozesse, die direkt auf einer sauberen raumweisen Heizlast aufbauen.</p>
+
+                <div class="grid gap-6 md:grid-cols-3">
+                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal">
+                        <h3 class="text-xl font-bold text-white mb-3">Wärmepumpe dimensionieren</h3>
+                        <ul class="text-sm text-gray-400 leading-relaxed space-y-2 mb-4">
+                            <li class="flex gap-2"><span class="text-primary">→</span> Überdimensionierung gezielt vermeiden</li>
+                            <li class="flex gap-2"><span class="text-primary">→</span> Bivalenzpunkt besser einordnen</li>
+                            <li class="flex gap-2"><span class="text-primary">→</span> Reale Projektbedingungen stärker beachten</li>
+                        </ul>
+                        <a href="/waermepumpe-dimensionieren/" class="text-sm text-primary hover:text-white transition-colors underline underline-offset-4">Wärmepumpe dimensionieren →</a>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal reveal-delay-1">
+                        <h3 class="text-xl font-bold text-white mb-3">Hydraulischen Abgleich vorbereiten</h3>
+                        <ul class="text-sm text-gray-400 leading-relaxed space-y-2 mb-4">
+                            <li class="flex gap-2"><span class="text-primary">→</span> Raumweise Last als Grundlage für Soll-Volumenströme</li>
+                            <li class="flex gap-2"><span class="text-primary">→</span> Saubere Raumlogik vereinfacht den Folgeprozess</li>
+                            <li class="flex gap-2"><span class="text-primary">→</span> Besonders in fördernahen Workflows relevant</li>
+                        </ul>
+                        <a href="/hydraulischer-abgleich/" class="text-sm text-primary hover:text-white transition-colors underline underline-offset-4">Hydraulischen Abgleich ableiten →</a>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal reveal-delay-2">
+                        <h3 class="text-xl font-bold text-white mb-3">Fußbodenheizung auslegen</h3>
+                        <ul class="text-sm text-gray-400 leading-relaxed space-y-2 mb-4">
+                            <li class="flex gap-2"><span class="text-primary">→</span> Raumlast führt zu Rohrabstand, Kreisanzahl und Vorlauftemperatur</li>
+                            <li class="flex gap-2"><span class="text-primary">→</span> Saubere Lastverteilung verhindert Mittelungsfehler zwischen Räumen</li>
+                        </ul>
+                        <a href="/fussbodenheizung-auslegen/" class="text-sm text-primary hover:text-white transition-colors underline underline-offset-4">Fußbodenheizung mit Raumlast auslegen →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODUL 6: PROMETO-WORKFLOW -->
+        <section class="px-6 py-14 md:py-20 bg-white/2">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="max-w-4xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
+                        Wie aus Heizlast ein belastbarer SHK-Workflow wird
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed mb-8 max-w-3xl reveal">
+                        In der Praxis scheitert Heizlast selten an einer einzelnen Formel, sondern an der Übergabe. Genau hier setzt Prometo an: Der Workflow startet beim PDF-Grundriss, führt über Raumstruktur und Datenerfassung in die Heizlastbewertung und von dort weiter in Hydraulik, Flächensystem und Material. So bleibt die Berechnung nicht isoliert im Tabellenblatt, sondern Teil eines durchgängigen Projektprozesses.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-2 mb-10 reveal">
+                        <div class="glass-panel rounded-2xl px-5 py-3 text-sm text-white font-medium">PDF-Grundriss</div>
+                        <div class="step-connector">→</div>
+                        <div class="glass-panel rounded-2xl px-5 py-3 text-sm text-white font-medium">Raumstruktur</div>
+                        <div class="step-connector">→</div>
+                        <div class="glass-panel rounded-2xl px-5 py-3 text-sm text-white font-medium">Heizlast</div>
+                        <div class="step-connector">→</div>
+                        <div class="glass-panel rounded-2xl px-5 py-3 text-sm text-white font-medium">Hydraulik</div>
+                        <div class="step-connector">→</div>
+                        <div class="glass-panel rounded-2xl px-5 py-3 text-sm text-primary font-bold">Material &amp; Doku</div>
+                    </div>
+
+                    <div class="grid gap-4 sm:grid-cols-2 mb-10">
+                        <div class="flex gap-4 items-start reveal">
+                            <div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0 text-primary text-sm font-bold">1</div>
+                            <div>
+                                <p class="text-white font-medium mb-1">Plan-Import und Review</p>
+                                <p class="text-sm text-gray-400">PDF-Grundriss als Ausgangspunkt für Raum- und Bauteilstruktur</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start reveal reveal-delay-1">
+                            <div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0 text-primary text-sm font-bold">2</div>
+                            <div>
+                                <p class="text-white font-medium mb-1">Raumweise Struktur statt Sammelwert</p>
+                                <p class="text-sm text-gray-400">Jeder Raum erhält seine eigene Datenbasis — Fläche, U-Werte, Lüftung</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start reveal">
+                            <div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0 text-primary text-sm font-bold">3</div>
+                            <div>
+                                <p class="text-white font-medium mb-1">Dokumentierbare Ergebnisse</p>
+                                <p class="text-sm text-gray-400">Annahmen, Eingaben und Berechnungslogik bleiben nachvollziehbar</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start reveal reveal-delay-1">
+                            <div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0 text-primary text-sm font-bold">4</div>
+                            <div>
+                                <p class="text-white font-medium mb-1">Mobile Zusammenarbeit</p>
+                                <p class="text-sm text-gray-400">Büro und Baustelle arbeiten am selben Projektstand</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="/heizlastberechnung/"
+                            class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                            Heizlastberechnung Software für SHK ansehen
+                        </a>
+                        <a href="/digitales-aufmass/"
+                            class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                            Digitales Aufmaß als Startpunkt
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODUL 7: FAQ -->
+        <section class="px-6 py-14 md:py-20">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="max-w-3xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-10 reveal">
+                        FAQ zur Heizlastberechnung
+                    </h2>
+
+                    <div class="space-y-3">
+                        <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
+                            <summary class="flex items-center justify-between gap-4 text-gray-200 font-medium py-1">
+                                <span>Ist die Heizlast dasselbe wie der Jahreswärmebedarf?</span>
+                                <span class="text-primary text-xl shrink-0 leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-4 pb-2">
+                                Nein. Die Heizlast beschreibt die benötigte <strong class="text-white">Leistung</strong> im Auslegungsfall (kW bei Normaussentemperatur). Der Jahreswärmebedarf beschreibt die Energiemenge (kWh) über die gesamte Heizperiode. Beides ist wichtig, aber für unterschiedliche Entscheidungen.
+                            </p>
+                        </details>
+
+                        <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
+                            <summary class="flex items-center justify-between gap-4 text-gray-200 font-medium py-1">
+                                <span>Ist DIN EN 12831 in Deutschland der richtige Bezug?</span>
+                                <span class="text-primary text-xl shrink-0 leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-4 pb-2">
+                                Ja. Für die raumweise Norm-Heizlast ist die <strong class="text-white">DIN EN 12831-1</strong> in Kombination mit den nationalen Ergänzungen (NA) der zentrale methodische Ausgangspunkt in Deutschland. Prometo orientiert sich an dieser Berechnungslogik.
+                            </p>
+                        </details>
+
+                        <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
+                            <summary class="flex items-center justify-between gap-4 text-gray-200 font-medium py-1">
+                                <span>Warum reicht ein W/m²-Schätzwert oft nicht aus?</span>
+                                <span class="text-primary text-xl shrink-0 leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-4 pb-2">
+                                Weil Raumlage, Fensteranteil, U-Werte, Lüftung, Wärmebrücken und Solltemperaturen raumweise deutlich voneinander abweichen können. Ein pauschaler W/m²-Wert mittelt diese Unterschiede weg. Für Wärmepumpe, hydraulischen Abgleich oder Heizflächenauslegung führt das zu Fehlentscheidungen.
+                            </p>
+                        </details>
+
+                        <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
+                            <summary class="flex items-center justify-between gap-4 text-gray-200 font-medium py-1">
+                                <span>Wann ist eine dynamische Plausibilisierung sinnvoll?</span>
+                                <span class="text-primary text-xl shrink-0 leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-4 pb-2">
+                                Vor allem bei Wärmepumpen, Sanierung, komplexen Gebäuden, schwierigen Lüftungssituationen oder wenn reale Betriebsbedingungen besser abgebildet werden sollen. Die dynamische Betrachtung ergänzt die Norm-Heizlast — ersetzt sie aber nicht.
+                            </p>
+                        </details>
+
+                        <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
+                            <summary class="flex items-center justify-between gap-4 text-gray-200 font-medium py-1">
+                                <span>Brauche ich für den hydraulischen Abgleich eine raumweise Heizlast?</span>
+                                <span class="text-primary text-xl shrink-0 leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-4 pb-2">
+                                Für belastbare Folgeentscheidungen ist die raumweise Last deutlich besser als eine Grobschätzung. Sie ermöglicht die Ableitung von Soll-Volumenströmen und sauberer Raumlogik — besonders in fördernahen Workflows ist das wichtig.
+                            </p>
+                        </details>
+
+                        <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
+                            <summary class="flex items-center justify-between gap-4 text-gray-200 font-medium py-1">
+                                <span>Welche Eingaben sind am häufigsten kritisch?</span>
+                                <span class="text-primary text-xl shrink-0 leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-4 pb-2">
+                                Bauteilqualität (U-Werte), Luftwechsel, Wärmebrücken, Raumtemperaturen, Zonierung und unklare Bestandsdaten. Im Bestand sind pauschale Annahmen bei diesen Parametern besonders fehleranfällig und können das Ergebnis erheblich verzerren.
+                            </p>
+                        </details>
+
+                        <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
+                            <summary class="flex items-center justify-between gap-4 text-gray-200 font-medium py-1">
+                                <span>Kann eine dynamische Methode die DIN EN 12831 ersetzen?</span>
+                                <span class="text-primary text-xl shrink-0 leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-4 pb-2">
+                                Nein. In der Praxis ist sie vor allem eine Ergänzung, um kritische Projekte realitätsnäher zu plausibilisieren. Für Vergleichbarkeit, Struktur und Dokumentierbarkeit bleibt die Norm-Heizlast der belastbare Ausgangspunkt.
+                            </p>
+                        </details>
+
+                        <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
+                            <summary class="flex items-center justify-between gap-4 text-gray-200 font-medium py-1">
+                                <span>Was ist der Vorteil von Prometo gegenüber isolierten Einzeltools?</span>
+                                <span class="text-primary text-xl shrink-0 leading-none">+</span>
+                            </summary>
+                            <p class="text-sm text-gray-400 leading-relaxed mt-4 pb-2">
+                                Prometo verbindet Grundriss, Raumstruktur, Heizlast, Folgeprozesse und Dokumentation in einem durchgängigen SHK-Workflow. Die Berechnung bleibt nicht isoliert im Tabellenblatt, sondern ist direkt Teil von Hydraulik, Flächensystem und Material.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODUL 8: ABSCHLUSS CTA -->
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="glass-panel rounded-[2.5rem] p-10 md:p-16 text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                        Heizlast sauber einordnen und direkt weiterarbeiten
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed mb-8 max-w-xl mx-auto">
+                        Wer Heizlast nur als Einzelwert betrachtet, verliert im weiteren Projekt schnell an Klarheit. Wer sie als Ausgangspunkt für Wärmepumpe, Verteilung, Raumlogik und Dokumentation versteht, schafft eine deutlich robustere Planungsbasis.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/heizlastberechnung/"
+                            class="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_32px_rgba(69,222,231,0.4)]">
+                            Heizlastberechnung mit Prometo ansehen
+                        </a>
+                        <a href="/heizlast/"
+                            class="inline-flex items-center justify-center rounded-full border border-white/10 px-8 py-4 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                            Heizlast einfach erklärt
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cluster-Links -->
+                <div class="mt-16">
+                    <p class="text-sm text-gray-500 mb-6 text-center">Weiterführende Themen</p>
+                    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
+                        <a href="/heizlast/" class="glass-panel rounded-2xl p-4 hover:border-primary/30 transition-colors text-center group">
+                            <p class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Heizlast erklärt</p>
+                            <p class="text-xs text-gray-500 mt-1">Definition, Einheit, Grundlagen</p>
+                        </a>
+                        <a href="/heizlastberechnung/din-12831/" class="glass-panel rounded-2xl p-4 hover:border-primary/30 transition-colors text-center group">
+                            <p class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">DIN EN 12831</p>
+                            <p class="text-xs text-gray-500 mt-1">Norm, Rechenweg, Formeln</p>
+                        </a>
+                        <a href="/heizlastberechnung/schaetzwerte/" class="glass-panel rounded-2xl p-4 hover:border-primary/30 transition-colors text-center group">
+                            <p class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Schätzwerte W/m²</p>
+                            <p class="text-xs text-gray-500 mt-1">Überschlag und Orientierung</p>
+                        </a>
+                        <a href="/heizlastberechnung/" class="glass-panel rounded-2xl p-4 hover:border-primary/30 transition-colors text-center group">
+                            <p class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Heizlast Software</p>
+                            <p class="text-xs text-gray-500 mt-1">Prometo für SHK-Betriebe</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
+                <a href="/hydraulischer-abgleich/" class="hover:text-white transition-colors">Hydraulischer Abgleich</a>
+                <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
+                <a href="/waermeerzeuger/" class="hover:text-white transition-colors">Wärmeerzeuger</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
+                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Heizlast schätzen</a>
+                <a href="/datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
+            <div class="text-sm text-gray-400">
+                <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
+                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
+                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
+        let gaLoaded = false;
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+
+        function loadGoogleAnalytics() {
+            if (gaLoaded) return;
+            gaLoaded = true;
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+        }
+
+        (function () {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+            if (!banner) return;
+            const consent = localStorage.getItem('ga_consent');
+            if (!consent) {
+                setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000);
+            } else if (consent === 'granted') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' });
+                loadGoogleAnalytics();
+            }
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'granted');
+                    banner.classList.add('translate-y-full');
+                    gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' });
+                    loadGoogleAnalytics();
+                });
+            }
+            if (declineBtn) {
+                declineBtn.addEventListener('click', () => {
+                    localStorage.setItem('ga_consent', 'denied');
+                    banner.classList.add('translate-y-full');
+                });
+            }
+        })();
+    </script>
+    <script src="/assets/page-effects.js" defer></script>
+    <script src="/assets/language-hint.js" defer></script>
+</body>
+</html>
