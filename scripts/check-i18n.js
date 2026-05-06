@@ -30,12 +30,11 @@ function hasNoindexMeta(html) {
   return metaTags.some(tag => /name\s*=\s*["'](?:robots|googlebot)["']/i.test(tag) && /content\s*=\s*["'][^"']*noindex/i.test(tag));
 }
 
-function englishUrlToFile(url) {
+function sitemapUrlToFile(url) {
   const prefix = 'https://prometo.app/';
   if (!url.startsWith(prefix)) return null;
   const pathname = url.slice(prefix.length);
-  if (!pathname.startsWith('en/')) return null;
-  if (pathname === 'en/') return 'en/index.html';
+  if (pathname === '') return 'index.html';
   if (pathname.endsWith('/')) return `${pathname}index.html`;
   if (pathname.endsWith('.html')) return pathname;
   return `${pathname}/index.html`;
@@ -116,15 +115,15 @@ for (const route of routes) {
 const sitemap = read('sitemap-pages.xml');
 const sitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]));
 for (const url of sitemapUrls) {
-  const enFile = englishUrlToFile(url);
-  if (!enFile) continue;
-  if (!fs.existsSync(path.join(root, enFile))) {
-    console.error(`Sitemap URL points to missing English file: ${url}`);
+  const file = sitemapUrlToFile(url);
+  if (!file) continue;
+  if (!fs.existsSync(path.join(root, file))) {
+    console.error(`Sitemap URL points to missing file: ${url}`);
     failed = true;
     continue;
   }
-  if (hasNoindexMeta(read(enFile))) {
-    console.error(`Noindex English page must not be in sitemap: ${url}`);
+  if (hasNoindexMeta(read(file))) {
+    console.error(`Noindex page must not be in sitemap: ${url}`);
     failed = true;
   }
 }

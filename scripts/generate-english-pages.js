@@ -910,7 +910,14 @@ function updateSitemap() {
   };
 
   for (const route of routes) {
-    add(route.deUrl);
+    const deFile = path.join(root, route.dePath);
+    if (fs.existsSync(deFile)) {
+      const html = fs.readFileSync(deFile, 'utf8');
+      if (!hasNoindexMeta(html)) add(route.deUrl);
+    } else {
+      add(route.deUrl);
+    }
+
     const enFile = path.join(root, route.enPath);
     if (!fs.existsSync(enFile)) continue;
     const html = fs.readFileSync(enFile, 'utf8');
