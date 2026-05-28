@@ -42,10 +42,31 @@
     "slugNoSlash": "/en/heat-load-estimates"
   },
   {
-    "dePath": "heizlastberechnung-software.html",
-    "deUrl": "https://prometo.app/heizlastberechnung/",
+    "dePath": "heizlastberechnung/leitfaden/index.html",
+    "deUrl": "https://prometo.app/heizlastberechnung/leitfaden/",
+    "enPath": "en/heat-load-calculation/guide/index.html",
+    "enUrl": "https://prometo.app/en/heat-load-calculation/guide/",
+    "slugNoSlash": "/en/heat-load-calculation/guide"
+  },
+  {
+    "dePath": "heizlastberechnung-software/index.html",
+    "deUrl": "https://prometo.app/heizlastberechnung-software/",
     "enPath": "en/heat-load-calculation-software/index.html",
-    "enUrl": "https://prometo.app/en/heat-load-calculation/",
+    "enUrl": "https://prometo.app/en/heat-load-calculation-software/",
+    "slugNoSlash": "/en/heat-load-calculation-software"
+  },
+  {
+    "dePath": "ki-assistent/index.html",
+    "deUrl": "https://prometo.app/ki-assistent/",
+    "enPath": "en/ai-assistant/index.html",
+    "enUrl": "https://prometo.app/en/ai-assistant/",
+    "slugNoSlash": "/en/ai-assistant"
+  },
+  {
+    "dePath": "heizlastberechnung-software.html",
+    "deUrl": "https://prometo.app/heizlastberechnung-software/",
+    "enPath": "en/heat-load-calculation-software/index.html",
+    "enUrl": "https://prometo.app/en/heat-load-calculation-software/",
     "slugNoSlash": "/en/heat-load-calculation-software"
   },
   {

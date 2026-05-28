@@ -3,7 +3,7 @@
   "redirects": [
     {
       "source": "/heizlastberechnung-software.html",
-      "destination": "/heizlastberechnung/",
+      "destination": "/heizlastberechnung-software/",
       "permanent": true
     },
     {
@@ -129,6 +129,16 @@
     {
       "source": "/en/legal-notice",
       "destination": "/en/legal-notice/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-load-calculation/guide",
+      "destination": "/en/heat-load-calculation/guide/",
+      "permanent": true
+    },
+    {
+      "source": "/en/ai-assistant",
+      "destination": "/en/ai-assistant/",
       "permanent": true
     }
   ]

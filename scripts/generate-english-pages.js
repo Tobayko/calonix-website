@@ -146,6 +146,75 @@ const pages = [
     ]
   },
   {
+    dePath: 'heizlastberechnung/leitfaden/index.html',
+    deUrl: 'https://prometo.app/heizlastberechnung/leitfaden/',
+    enPath: 'en/heat-load-calculation/guide/index.html',
+    enUrl: 'https://prometo.app/en/heat-load-calculation/guide/',
+    slugNoSlash: '/en/heat-load-calculation/guide',
+    title: 'Heat Load Calculation Guide: Standard, Estimates and HVAC Workflow | Prometo',
+    description: 'Practical heat load calculation guide for HVAC teams: DIN EN 12831, room heat load, estimates, heat pumps and hydraulic balancing context.',
+    badge: 'Heat load guide',
+    h1: 'Heat Load Calculation Guide for HVAC Teams',
+    intro: 'This guide explains when a rough estimate is enough for orientation and when a room-by-room heat load calculation becomes the safer basis.',
+    short: 'For final HVAC design, room-by-room heat load under DIN EN 12831 logic is the starting point. W/m2 estimates can support early orientation, but they should not be used as the final basis for heat pumps, heating surfaces or hydraulic balancing.',
+    sections: [
+      ['Standard before sizing', 'A defensible sizing workflow starts with room data, design temperatures, envelope assumptions and ventilation context.'],
+      ['Estimate vs. calculation', 'Rules of thumb can help early discussions, but they cannot replace a project-specific room load.'],
+      ['Connected next steps', 'The heat load result should remain connected to heat pump sizing, emitter design and hydraulic balancing.']
+    ],
+    faqs: [
+      ['Which data do I need for room-by-room heat load calculation?', 'You need room areas, envelope surfaces, U-values, indoor and outdoor design temperatures, ventilation assumptions and project-specific boundary conditions.'],
+      ['What is the difference between building heat load and room heat load?', 'Building heat load supports the overall generator concept. Room heat load supports emitter sizing, room control and hydraulic balancing.'],
+      ['Can W/m2 estimates replace DIN EN 12831?', 'No. W/m2 values are useful for orientation, but final design decisions need a project-specific calculation.']
+    ]
+  },
+  {
+    dePath: 'heizlastberechnung-software/index.html',
+    deUrl: 'https://prometo.app/heizlastberechnung-software/',
+    enPath: 'en/heat-load-calculation-software/index.html',
+    enUrl: 'https://prometo.app/en/heat-load-calculation-software/',
+    slugNoSlash: '/en/heat-load-calculation-software',
+    title: 'Heat Load Calculation Software for HVAC Teams | Prometo',
+    description: 'Prometo heat load calculation software for HVAC teams: PDF floor plans, room data, DIN EN 12831 context, heat pumps and balancing workflows.',
+    badge: 'Heat load software',
+    h1: 'Heat Load Calculation Software for HVAC Teams',
+    intro: 'Prometo helps HVAC teams turn floor plans into structured project data for heat load, emitter design, heat pump context and balancing workflows.',
+    short: 'Prometo is heat load calculation software for HVAC teams that starts from the project floor plan and keeps room data, calculation context and downstream planning steps connected. It supports professional workflows, while final technical verification remains project-specific.',
+    sections: [
+      ['From PDF to project data', 'Import the floor plan, review room structure and keep the project context ready for technical work.'],
+      ['Inputs that matter', 'Room areas, envelope surfaces, U-values, design temperatures, ventilation assumptions and setpoints should stay tied to the calculation.'],
+      ['Planning chain', 'Heat load data can support heat pump sizing, underfloor heating design, hydraulic balancing and documentation.']
+    ],
+    faqs: [
+      ['Is Prometo a DIN EN 12831 heat load calculation tool?', 'Prometo supports a structured heat load workflow with DIN EN 12831 context. Final technical checks and project-specific responsibility remain with qualified users.'],
+      ['Who is the software for?', 'It is aimed at HVAC contractors, heating specialists and planning teams that need connected project data from floor plan to calculation workflow.'],
+      ['Does Prometo replace professional judgement?', 'No. The software structures data and workflows, but project-specific assumptions and final decisions must be checked professionally.']
+    ]
+  },
+  {
+    dePath: 'ki-assistent/index.html',
+    deUrl: 'https://prometo.app/ki-assistent/',
+    enPath: 'en/ai-assistant/index.html',
+    enUrl: 'https://prometo.app/en/ai-assistant/',
+    slugNoSlash: '/en/ai-assistant',
+    title: 'AI Assistant for HVAC, MEP and Surface Heating | Prometo',
+    description: 'Prometo AI assistant for HVAC and MEP teams: explain standards, planning questions, app workflows and surface heating context in chat.',
+    badge: 'AI assistant',
+    h1: 'AI Assistant for HVAC, MEP and Surface Heating',
+    intro: 'The Prometo AI assistant answers HVAC and MEP questions in plain language and helps users find the right next step in the workflow.',
+    short: 'The Prometo AI assistant is a chat assistant for HVAC contractors and MEP planning teams. It explains planning context, standards and app workflows, but it does not replace professional design, heat load calculation or project verification.',
+    sections: [
+      ['Plain-language questions', 'Users can ask technical questions the way they would ask a colleague on site or in the office.'],
+      ['Planning context', 'The assistant can explain heat load, surface heating, hydraulic balancing, material context and system choices.'],
+      ['Clear boundaries', 'The assistant supports orientation and app guidance; calculations and project changes stay in the dedicated Prometo workflows.']
+    ],
+    faqs: [
+      ['What is the Prometo AI assistant?', 'It is an in-app chat assistant that answers HVAC, MEP, surface heating, heat load, material and app workflow questions.'],
+      ['Can I use normal language?', 'Yes. Users can ask with technical terms or describe the situation in everyday job-site language.'],
+      ['Does the assistant replace heat load calculation or design work?', 'No. It provides orientation and explanations. Heat load, design and balancing work must be handled through the proper technical workflow and professional review.']
+    ]
+  },
+  {
     dePath: 'hydraulischer-abgleich/index.html',
     deUrl: 'https://prometo.app/hydraulischer-abgleich/',
     enPath: 'en/hydraulic-balancing/index.html',
@@ -409,6 +478,39 @@ const copyExpansions = {
       ['Is an estimate useful at all?', 'Yes. It is useful as a first step, as long as its limits stay clear.']
     ]
   },
+  'en/heat-load-calculation/guide/index.html': {
+    sections: [
+      ['Formula components', 'A practical guide should keep transmission losses, ventilation losses, indoor and outdoor temperature difference, thermal bridges and air change visible.'],
+      ['Use estimates carefully', 'A rough value can help early scoping, but it should be replaced before equipment, emitters or flow rates are fixed.'],
+      ['Review date matters', 'Technical guides should be reviewed whenever standards, product workflows or market assumptions change.']
+    ],
+    faqs: [
+      ['When should a rough estimate stop being used?', 'Stop using it as soon as the project moves from orientation into final system sizing or documentation.'],
+      ['Why does room data matter?', 'Room data connects the calculation with emitters, control behavior and hydraulic balancing.']
+    ]
+  },
+  'en/heat-load-calculation-software/index.html': {
+    sections: [
+      ['For whom', 'Prometo is built for HVAC contractors, heating specialists and MEP teams that need a connected workflow instead of separate spreadsheets and notes.'],
+      ['Expected result', 'The intended result is cleaner room and project data that can carry into heat load, heat pumps, surface heating and balancing.'],
+      ['Limits', 'The software supports the workflow, but final project assumptions and professional responsibility remain with qualified users.']
+    ],
+    faqs: [
+      ['Which inputs should be reviewed?', 'Review room structure, floor areas, envelope surfaces, U-values, design temperatures, ventilation assumptions and project-specific notes.'],
+      ['Can it support heat pump decisions?', 'Yes. Heat load context is a core basis for heat pump sizing and operating strategy.']
+    ]
+  },
+  'en/ai-assistant/index.html': {
+    sections: [
+      ['Example questions', 'Users can ask where to find a function, how to interpret a planning concept or what a standard-related term means in the workflow.'],
+      ['No automatic project changes', 'The assistant explains and guides, but it should not silently alter calculation data or technical decisions.'],
+      ['Team knowledge', 'Company-specific product information and internal workflows can make answers more useful for daily work.']
+    ],
+    faqs: [
+      ['Can the assistant answer standards questions?', 'It can explain standards-related context, but the answer is orientation and not a legally binding proof.'],
+      ['Can company knowledge be added?', 'Yes. Teams can add company, product and workflow knowledge so answers fit their daily process better.']
+    ]
+  },
   'en/hydraulic-balancing/index.html': {
     sections: [
       ['What balancing does', 'Balancing helps each room receive the required flow instead of letting nearby circuits dominate the system.'],
@@ -565,6 +667,36 @@ const relatedModules = {
       { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Move from a rule of thumb to room-by-room data.' },
       { label: 'Heat load', href: '/en/heat-load/', description: 'Keep the distinction between load and demand clear.' },
       { label: 'Heat pump sizing', href: '/en/heat-pump-sizing/', description: 'Check why a rough estimate is not enough for system selection.' }
+    ]
+  },
+  'en/heat-load-calculation/guide/index.html': {
+    eyebrow: 'Guide links',
+    title: 'Move from explanation to workflow',
+    lead: 'The guide should connect the standard context with the software, calculation and sizing pages.',
+    links: [
+      { label: 'Heat load calculation software', href: '/en/heat-load-calculation-software/', description: 'See how Prometo supports the workflow.' },
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Return to the main calculation page.' },
+      { label: 'DIN EN 12831', href: '/en/heat-load-calculation/din-en-12831/', description: 'Read the standard-specific context.' }
+    ]
+  },
+  'en/heat-load-calculation-software/index.html': {
+    eyebrow: 'Software cluster',
+    title: 'Connect software, standards and field workflow',
+    lead: 'The software page should make the product role clear while linking to the technical context.',
+    links: [
+      { label: 'Heat load guide', href: '/en/heat-load-calculation/guide/', description: 'Read the practical guide around estimates and standards.' },
+      { label: 'Heat load calculation app', href: '/en/heat-load-calculation/app/', description: 'See how the workflow carries into mobile and office work.' },
+      { label: 'Digital takeoff', href: '/en/digital-takeoff/', description: 'Start from PDF floor plans and room structure.' }
+    ]
+  },
+  'en/ai-assistant/index.html': {
+    eyebrow: 'Assistant links',
+    title: 'Keep AI guidance tied to technical workflows',
+    lead: 'The assistant should help users move toward the right Prometo workflow, not replace the workflow.',
+    links: [
+      { label: 'Heat load calculation software', href: '/en/heat-load-calculation-software/', description: 'Use the software page for the core calculation workflow.' },
+      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Connect assistant answers to structured project data.' },
+      { label: 'Hydraulic balancing', href: '/en/hydraulic-balancing/', description: 'Continue into balancing context when flow rates matter.' }
     ]
   },
   'en/hydraulic-balancing/index.html': {
@@ -873,7 +1005,7 @@ function render(page) {
 </body>
 
 </html>
-`;
+`.replace(/[ \t]+$/gm, '');
 }
 
 function updateGermanHreflang(page) {

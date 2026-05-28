@@ -4,9 +4,7 @@ const path = require('path');
 const root = path.resolve(__dirname, '..');
 const routes = require('./i18n-routes.json');
 
-const ignored = new Set([
-  'en/heat-load-calculation-software/index.html'
-]);
+const ignored = new Set();
 
 const germanTextPatterns = [
   /\b(Startseite|Zuletzt aktualisiert|Demo anfragen|Ablehnen|Akzeptieren|Datenschutzerkl[aä]rung)\b/i,
