@@ -11,7 +11,7 @@
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp</image:loc>
       <image:title>Prometo Bauplan-Import</image:title>
-      <image:caption>PDF-Grundriss für die KI-gestützte Raumerkennung vorbereiten.</image:caption>
+      <image:caption>PDF-Grundriss für die automatische Raumerkennung vorbereiten.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp</image:loc>
@@ -131,17 +131,17 @@
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp</image:loc>
       <image:title>Prometo PDF-Aufmaß Startansicht</image:title>
-      <image:caption>Digitale Aufmaß App mit KI-bereitem Bauplan-Import.</image:caption>
+      <image:caption>Digitale Aufmaß App mit analysebereitem Bauplan-Import.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-pdf-ausgewaehlt.webp</image:loc>
       <image:title>Prometo PDF-Aufmaß mit ausgewählter Datei</image:title>
-      <image:caption>PDF-Datei vor dem Senden an die KI in der App prüfen.</image:caption>
+      <image:caption>PDF-Datei vor der Plananalyse in der App prüfen.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-ki-analyse.webp</image:loc>
-      <image:title>Prometo KI-Analyse für PDF-Aufmaß</image:title>
-      <image:caption>Fortschritt der KI-Auswertung beim digitalen Bauplan-Import.</image:caption>
+      <image:title>Prometo Plananalyse für PDF-Aufmaß</image:title>
+      <image:caption>Fortschritt der automatischen Auswertung beim digitalen Bauplan-Import.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp</image:loc>
@@ -151,7 +151,15 @@
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp</image:loc>
       <image:title>Prometo Bauplan-Import Review auf dem Tablet</image:title>
-      <image:caption>Raumprüfung nach dem KI-Import in der breiten Tablet-Ansicht.</image:caption>
+      <image:caption>Raumprüfung nach dem automatischen Import in der breiten Tablet-Ansicht.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://prometo.app/ki-assistent/</loc>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/fachassistent-chat.webp</image:loc>
+      <image:title>Prometo Fachassistent im App-Chat</image:title>
+      <image:caption>App-Chat für SHK-Fachfragen, Bedienung und projektnahes Wissen.</image:caption>
     </image:image>
   </url>
 </urlset>

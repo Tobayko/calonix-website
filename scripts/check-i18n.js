@@ -101,6 +101,14 @@ for (const route of routes) {
     console.error(`Missing de-DE hreflang on ${route.enPath}`);
     failed = true;
   }
+  if (!ignored.has(route.enPath) && !html.includes('Reviewed by Team Prometo')) {
+    console.error(`Missing Team Prometo review byline on ${route.enPath}`);
+    failed = true;
+  }
+  if (!ignored.has(route.enPath) && !html.includes('"dateModified"')) {
+    console.error(`Missing dateModified structured data on ${route.enPath}`);
+    failed = true;
+  }
   const text = visibleText(html);
   for (const pattern of germanTextPatterns) {
     if (!ignored.has(route.enPath) && pattern.test(text)) {
