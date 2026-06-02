@@ -10,6 +10,29 @@ const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const rateLimitStore = new Map();
 
+function getAllowedOrigins(req) {
+    const configuredOrigins = String(process.env.BETA_FORM_ALLOWED_ORIGINS || '')
+        .split(',')
+        .map((origin) => origin.trim())
+        .filter(Boolean);
+    const host = req.headers.host || '';
+    const hostOrigins = host ? [`https://${host}`, `http://${host}`] : [];
+
+    return new Set([...configuredOrigins, ...hostOrigins]);
+}
+
+function setCorsHeaders(req, res) {
+    const origin = req.headers.origin;
+
+    if (origin && getAllowedOrigins(req).has(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+        res.setHeader('Access-Control-Allow-Credentials', 'false');
+    }
+
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
+}
+
 function json(res, statusCode, payload) {
     res.statusCode = statusCode;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -80,16 +103,6 @@ function isRateLimited(ip, now) {
     return false;
 }
 
-function getAllowedOrigins(req) {
-    const configuredOrigins = String(process.env.BETA_FORM_ALLOWED_ORIGINS || '')
-        .split(',')
-        .map((origin) => origin.trim())
-        .filter(Boolean);
-    const host = req.headers.host ? `https://${req.headers.host}` : '';
-
-    return new Set(host ? [...configuredOrigins, host] : configuredOrigins);
-}
-
 function isAllowedOrigin(req) {
     const origin = req.headers.origin;
 
@@ -111,6 +124,7 @@ function getRequiredEnv(name) {
 }
 
 function createTransporter() {
+    const smtpUser = getRequiredEnv('ZOHO_SMTP_USER');
     const port = Number(process.env.ZOHO_SMTP_PORT || 465);
     const secure = String(process.env.ZOHO_SMTP_SECURE ?? (port === 465)).toLowerCase() === 'true';
 
@@ -119,7 +133,7 @@ function createTransporter() {
         port,
         secure,
         auth: {
-            user: getRequiredEnv('ZOHO_SMTP_USER'),
+            user: smtpUser,
             pass: getRequiredEnv('ZOHO_SMTP_PASS'),
         },
     });
@@ -138,8 +152,15 @@ function buildPlainTextMail({ email, company, role }) {
 }
 
 module.exports = async (req, res) => {
+    setCorsHeaders(req, res);
+
+    if (req.method === 'OPTIONS') {
+        res.statusCode = 204;
+        return res.end();
+    }
+
     if (req.method !== 'POST') {
-        res.setHeader('Allow', 'POST');
+        res.setHeader('Allow', 'POST, OPTIONS');
         return json(res, 405, { ok: false, error: 'Method not allowed.' });
     }
 
