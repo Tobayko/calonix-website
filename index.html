@@ -1320,10 +1320,71 @@
         }
 
         @media (max-width: 767px) {
+            html,
+            body {
+                max-width: 100%;
+                overflow-x: clip;
+            }
+
             body > header {
                 background: rgba(11, 14, 14, 0.96) !important;
                 backdrop-filter: none !important;
                 -webkit-backdrop-filter: none !important;
+            }
+
+            body > header nav {
+                padding-inline: 1rem !important;
+            }
+
+            main > section:first-of-type {
+                min-height: auto;
+                padding-top: 3rem;
+            }
+
+            main > section:first-of-type > .relative.z-30 {
+                width: 100%;
+                max-width: 100%;
+                padding-inline: 1rem;
+                margin-top: 1.25rem;
+            }
+
+            main > section:first-of-type .badge {
+                flex-shrink: 0;
+                font-size: 0.68rem;
+                padding-inline: 0.65rem;
+            }
+
+            main > section:first-of-type .flex.items-center.justify-center.gap-3.mb-6 {
+                flex-wrap: wrap;
+                gap: 0.6rem;
+                margin-bottom: 1.25rem;
+            }
+
+            main > section:first-of-type .flex.items-center.justify-center.gap-3.mb-6 > .text-gray-500 {
+                flex: 1 1 100%;
+                min-width: 0;
+                font-size: 0.78rem;
+            }
+
+            main > section:first-of-type h1 {
+                font-size: clamp(2.25rem, 9.2vw, 2.75rem);
+                line-height: 1.08;
+                overflow-wrap: anywhere;
+                word-break: normal;
+            }
+
+            main > section:first-of-type h1 span {
+                display: inline;
+                overflow-wrap: anywhere;
+            }
+
+            #typewriterText {
+                min-height: 8.25rem;
+                font-size: 1rem;
+            }
+
+            main > section:first-of-type .max-w-3xl.rounded-2xl {
+                padding: 1rem;
             }
 
             .hero-animated-tracks,
@@ -1335,7 +1396,32 @@
             .hero-visual-stage {
                 height: 220px;
                 width: 100%;
-                max-width: 420px;
+                max-width: min(100%, 420px);
+            }
+
+            .showcase-thumbs-row {
+                box-sizing: border-box;
+                max-width: 100%;
+                margin-inline: 0;
+                padding-inline: 1rem;
+                overscroll-behavior-inline: contain;
+            }
+
+            #beta-signup .absolute.w-\[700px\],
+            .cta-banner .absolute.w-\[600px\] {
+                width: 100%;
+                max-width: 100vw;
+            }
+
+            footer .flex.gap-4 {
+                flex-wrap: wrap;
+                justify-content: center;
+                row-gap: 0.75rem;
+            }
+
+            footer .flex.gap-3 {
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .engine-container {
