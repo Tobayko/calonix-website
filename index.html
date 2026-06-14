@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
     <title>Prometo | Heizlastberechnung & Digitales Aufmaß für SHK</title>
     <meta name="description"
-        content="Prometo für SHK-Betriebe: digitales Aufmaß aus PDF-Grundrissen, Heizlastberechnung, hydraulische Ableitung und Workflows auf iOS, Android und Web." />
+        content="Prometo für SHK-Betriebe: PDF-Grundriss hochladen, Räume prüfen und Heizlast sowie hydraulischen Abgleich in einem Workflow vorbereiten." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -1505,7 +1505,7 @@
                     "url": "https://prometo.app/assets/apple-touch-icon.png"
                 },
                 "image": "https://prometo.app/assets/og-image.png",
-                "description": "Prometo ist eine SHK-Software für digitales Aufmaß, Heizlastberechnung und TGA-Planung.",
+                "description": "Prometo ist eine SHK-Software für digitales Aufmaß, Heizlastberechnung und TGA-Planung im kontrollierten Beta-Rollout.",
                 "email": "info@prometo.app",
                 "sameAs": [
                     "https://linkedin.com/company/prometo-app",
@@ -1540,8 +1540,8 @@
                 "@id": "https://prometo.app/#webpage",
                 "url": "https://prometo.app/",
                 "name": "Prometo | Heizlastberechnung & Digitales Aufmaß für SHK",
-                "description": "Prometo für SHK-Betriebe: digitales Aufmaß aus PDF-Grundrissen, Heizlastberechnung, hydraulische Ableitung und Workflows auf iOS, Android und Web.",
-                "dateModified": "2026-05-28",
+                "description": "Prometo für SHK-Betriebe: PDF-Grundriss hochladen, Räume prüfen und Heizlast sowie hydraulischen Abgleich in einem Workflow vorbereiten.",
+                "dateModified": "2026-06-14",
                 "inLanguage": "de-DE",
                 "isPartOf": {
                     "@id": "https://prometo.app/#website"
@@ -1653,7 +1653,7 @@
                         "name": "Wann kann ich Prometo nutzen?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Prometo ist aktuell in der Aufbauphase. Einen Demo-Zugang kannst du direkt anfragen – wir melden uns mit den nächsten Schritten."
+                            "text": "Prometo läuft aktuell im kontrollierten Beta-Rollout mit ausgewählten SHK-Betrieben. Einen Beta-Zugang kannst du direkt anfragen – wir melden uns mit den nächsten Schritten."
                         }
                     },
                     {
@@ -1698,10 +1698,9 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse inline-block"></span>
                 Beta
             </span>
-            Prometo befindet sich in aktiver Entwicklung —
+            Prometo läuft im kontrollierten Beta-Rollout —
             <a href="#beta-signup"
-                class="text-primary hover:text-white underline underline-offset-2 transition-colors font-semibold">Jetzt
-                für Beta-Zugang registrieren</a>
+                class="text-primary hover:text-white underline underline-offset-2 transition-colors font-semibold">Beta-Zugang anfragen</a>
         </span>
         <button type="button" onclick="document.getElementById('betaBanner').style.display='none'"
             class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors w-10 h-10 rounded-full flex items-center justify-center"
@@ -1740,7 +1739,7 @@
                 <a
                     class="bg-primary text-on-primary font-headline font-bold py-2.5 px-6 rounded-full text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] active:scale-95 transition-all hidden md:inline-flex items-center justify-center"
                     href="#beta-signup">
-                    Beta-Zugang sichern
+                    Beta-Zugang anfragen
                 </a>
                 <!-- Hamburger (mobile only) -->
                 <button type="button" class="burger md:hidden" id="burgerBtn" aria-label="Menü öffnen" aria-controls="mobileMenu"
@@ -1784,7 +1783,7 @@
             <a
                 class="w-full bg-primary text-on-primary font-headline font-bold py-4 px-6 rounded-full text-base hover:shadow-[0_0_30px_rgba(69,222,231,0.4)] active:scale-95 transition-all inline-flex items-center justify-center"
                 href="#beta-signup">
-                Beta-Zugang sichern
+                Beta-Zugang anfragen
             </a>
         </div>
     </nav>
@@ -1799,26 +1798,40 @@
                 <div class="flex items-center justify-center gap-3 mb-6">
                     <span class="badge">
                         <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse inline-block"></span>
-                        Geschlossene Beta
+                        Kontrollierter Beta-Rollout
                     </span>
-                    <span class="text-gray-500 text-sm font-body">Reale Funktionen für ausgewählte Tester</span>
+                    <span class="text-gray-500 text-sm font-body">Mit ausgewählten SHK-Betrieben</span>
                 </div>
                 <h1
-                    class="text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-6 tracking-tight text-white">
-                    Heizlastberechnung & <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">digitales Aufmaß</span> für SHK-Betriebe
+                    class="text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-6 tracking-normal text-white">
+                    PDF-Grundriss hochladen. Räume prüfen. <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">Heizlast & Abgleich</span> vorbereiten.
                 </h1>
                 <p id="typewriterText"
                     class="text-on-surface-variant text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-body min-h-[180px] sm:min-h-[110px] md:min-h-[80px] lg:min-h-[60px]">
-                    Prometo verbindet digitales Aufmaß aus PDF-Grundrissen mit planbasierter Heizlastberechnung für SHK-Betriebe – mobil auf iOS, Android und im Web.<span class="typewriter-cursor"></span>
+                    Für SHK-Betriebe, die keine Lust mehr auf Excel, doppelte Eingaben und chaotische Plan-PDFs haben.<span class="typewriter-cursor"></span>
                 </p>
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-8 mb-8">
+                    <a
+                        class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:shadow-[0_0_30px_rgba(69,222,231,0.5)] transition-all flex items-center justify-center gap-2 group"
+                        href="#beta-signup">
+                        Beta-Zugang anfragen
+                        <span
+                            class="material-symbols-outlined transition-transform group-hover:translate-x-1">→</span>
+                    </a>
+                    <a
+                        class="glass-panel text-white px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+                        href="#features">
+                        Workflow ansehen
+                    </a>
+                </div>
                 <p class="text-xs text-gray-500 mb-5">
-                    Zuletzt aktualisiert: <time datetime="2026-05-28">Mai 2026</time> · Fachlich eingeordnet von Team Prometo
+                    Zuletzt aktualisiert: <time datetime="2026-06-14">Juni 2026</time> · Fachlich eingeordnet von Team Prometo
                 </p>
                 <div class="mx-auto max-w-3xl rounded-2xl border border-primary/20 bg-primary/8 p-5 text-left">
                     <p class="mb-3 text-xs font-headline font-bold uppercase tracking-widest text-primary">Kurzantwort</p>
                     <p class="text-sm md:text-base leading-relaxed text-gray-200">
-                        Prometo ist eine SHK-Software aus der geschlossenen Beta, die PDF-Grundrisse, Raumstruktur, Heizlast, hydraulische Ableitung und Materiallogik in einem Projektworkflow verbindet. Ziel ist weniger doppelte Datenerfassung zwischen Baustelle, Büro und technischer Berechnung.
+                        Prometo ist eine SHK-Software im kontrollierten Beta-Rollout, die PDF-Grundrisse, Raumstruktur, Heizlast, hydraulische Ableitung und Materiallogik in einem Projektworkflow verbindet. Ziel ist weniger Bürochaos, weniger Nachtragen und weniger doppelte Datenerfassung zwischen Baustelle, Büro und technischer Berechnung.
                     </p>
                 </div>
             </div>
@@ -1997,22 +2010,6 @@
                         <div id="aiTerminal" class="px-3 py-3 font-mono text-[11px] space-y-1.5 min-h-[90px]"></div>
                     </div>
                 </div>
-            </div>
-
-            <!-- CTA Buttons -->
-            <div class="relative z-30 flex flex-col sm:flex-row gap-6 mt-4">
-                <a
-                    class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:shadow-[0_0_30px_rgba(69,222,231,0.5)] transition-all flex items-center gap-2 group"
-                    href="#beta-signup">
-                    Jetzt Demo anfordern
-                    <span
-                        class="material-symbols-outlined transition-transform group-hover:translate-x-1">→</span>
-                </a>
-                <a
-                    class="glass-panel text-white px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-white/10 transition-colors flex items-center gap-2"
-                    href="#features">
-                    Alle Funktionen ansehen
-                </a>
             </div>
 
             <!-- Fade out gradient to next section -->
@@ -2700,13 +2697,13 @@
              ============================================ -->
         <section class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
             <div class="text-center mb-16 reveal">
-                <span class="badge mb-6">Produktprinzipien</span>
+                <span class="badge mb-6">Proof & Arbeitsgrundlage</span>
                 <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
-                    Was Prometo im SHK-Alltag auszeichnet
+                    Was Prometo im SHK-Alltag belegt
                 </h2>
                 <p class="text-on-surface-variant max-w-xl mx-auto">
-                    Statt unklarer Marketing-Zahlen zeigt dieser Block, wie Prometo den Workflow für Aufmaß,
-                    Heizlast und Baustelle strukturiert.
+                    Sichtbare Signale statt vager Software-Versprechen: Interesse, gemessener Workflow,
+                    Plattformen und fachliche Arbeitsgrundlage.
                 </p>
             </div>
 
@@ -2717,11 +2714,11 @@
                         class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border border-primary/20 group-hover:bg-primary/20 transition-colors">
                         <span class="material-symbols-outlined text-primary text-2xl">schedule</span>
                     </div>
-                    <div class="text-5xl font-headline font-bold mb-2 text-white">PDF</div>
+                    <div class="text-5xl font-headline font-bold mb-2 text-white">127</div>
                     <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
-                        Grundriss-Workflow</div>
-                    <div class="text-on-surface-variant text-sm leading-relaxed">Planbasiertes Aufmaß statt verteilter
-                        Screenshots, Notizen und Einzellösungen</div>
+                        SHK-Interessenten</div>
+                    <div class="text-on-surface-variant text-sm leading-relaxed">Bereits auf der Warteliste für den
+                        kontrollierten Beta-Rollout</div>
                 </div>
 
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-1">
@@ -2729,11 +2726,11 @@
                         class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border border-primary/20 group-hover:bg-primary/20 transition-colors">
                         <span class="material-symbols-outlined text-primary text-2xl">verified</span>
                     </div>
-                    <div class="text-4xl font-headline font-bold mb-2 text-white">Raumweise</div>
+                    <div class="text-4xl font-headline font-bold mb-2 text-white">ca. 7 Min.</div>
                     <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
-                        Projektlogik</div>
-                    <div class="text-on-surface-variant text-sm leading-relaxed">Räume, Bauteile und Randbedingungen
-                        bleiben für Prüfung und Nacharbeit nachvollziehbar verknüpft</div>
+                        Testlauf</div>
+                    <div class="text-on-surface-variant text-sm leading-relaxed">Vom PDF-Import bis zum Heizlastergebnis
+                        in einem kontrollierten Durchlauf</div>
                 </div>
 
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-2">
@@ -2741,7 +2738,7 @@
                         class="w-14 h-14 rounded-2xl bg-blue-400/10 flex items-center justify-center mx-auto mb-5 border border-blue-400/20 group-hover:bg-blue-400/20 transition-colors">
                         <span class="material-symbols-outlined text-blue-400 text-2xl">gavel</span>
                     </div>
-                    <div class="text-5xl font-headline font-bold mb-2 text-blue-300">DIN EN</div>
+                    <div class="text-5xl font-headline font-bold mb-2 text-blue-300">DIN/EN</div>
                     <div class="text-blue-400 font-headline font-semibold text-sm uppercase tracking-widest mb-2">12831
                         angelehnt</div>
                     <div class="text-on-surface-variant text-sm leading-relaxed">Arbeitslogik für strukturierte
@@ -2753,11 +2750,11 @@
                         class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mx-auto mb-5 border border-tertiary/20 group-hover:bg-tertiary/20 transition-colors">
                         <span class="material-symbols-outlined text-tertiary text-2xl">wifi_off</span>
                     </div>
-                    <div class="text-4xl font-headline font-bold mb-2 text-tertiary">Offline</div>
+                    <div class="text-4xl font-headline font-bold mb-2 text-tertiary">iOS · Android · Web</div>
                     <div class="text-tertiary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
-                        Baustelle</div>
-                    <div class="text-on-surface-variant text-sm leading-relaxed">Projektstände lassen sich auch auf der
-                        Baustelle prüfen, ergänzen und später synchronisieren</div>
+                        Plattformen</div>
+                    <div class="text-on-surface-variant text-sm leading-relaxed">Büro und Baustelle arbeiten auf
+                        derselben Projektgrundlage</div>
                 </div>
 
             </div>
@@ -2789,11 +2786,12 @@
             <div class="text-center mb-16 reveal">
                 <span class="badge mb-6">Für wen ist Prometo?</span>
                 <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
-                    Entwickelt für Fachleute im Gebäudebereich
+                    Zuerst für SHK-Betriebe. Danach für Planung und Beratung.
                 </h2>
                 <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
-                    Ob du Heizungsbauer im Handwerk bist, als TGA-Ingenieur komplexe Anlagen planst oder als
-                    Energieberater Sanierungen begleitest – Prometo spricht deine Sprache.
+                    Der Fokus liegt auf Heizungsbauern und SHK-Teams, die vom Plan schneller zur prüfbaren
+                    Arbeitsgrundlage wollen. TGA-Planer und Energieberater docken dort an, wo Projektlogik,
+                    Nachvollziehbarkeit und Dokumentation wichtig werden.
                 </p>
             </div>
 
@@ -2810,8 +2808,8 @@
                     </h3>
                     <p class="text-on-surface-variant mb-6 leading-relaxed">
                         Du planst Heizungsanlagen direkt beim Kunden und brauchst nachvollziehbare Ergebnisse ohne
-                        langen Büroumweg. Prometo bündelt in der geschlossenen Beta strukturierte Heizlastberechnung,
-                        digitales Aufmaß und Stücklisten-Workflows direkt auf dem Smartphone auf der Baustelle.
+                        Excel-Runden, Nachtragen und langen Büroumweg. Prometo bündelt im kontrollierten Beta-Rollout
+                        strukturiertes PDF-Aufmaß, Heizlast-Arbeitsgrundlage und Stücklisten-Workflows direkt auf dem Smartphone auf der Baustelle.
                     </p>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
@@ -3125,14 +3123,14 @@
             <div class="text-center mb-16 reveal relative z-10">
                 <span class="badge mb-6">
                     <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse inline-block"></span>
-                    Geschlossene Beta
+                    Kontrollierter Beta-Rollout
                 </span>
                 <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-4">
                     Sei unter den Ersten.
                 </h2>
                 <p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
-                    Prometo ist aktuell in der geschlossenen Beta. Trag dich jetzt ein und erhalte exklusiven Frühzugang
-                    – unverbindlich.
+                    Prometo wird aktuell mit ausgewählten SHK-Betrieben ausgerollt. Trag dich ein und erhalte Zugang,
+                    sobald weitere Beta-Plätze frei werden.
                 </p>
             </div>
 
@@ -3146,7 +3144,7 @@
                         <div class="stat-number text-3xl font-headline font-bold mb-1">127</div>
                         <div class="text-primary font-headline font-semibold text-xs uppercase tracking-widest mb-1">
                             Interessenten</div>
-                        <div class="text-gray-500 text-xs">bereits auf der Warteliste</div>
+                        <div class="text-gray-500 text-xs">auf der Warteliste</div>
                     </div>
                 </div>
 
@@ -3277,7 +3275,7 @@
                     </div>
                     <div class="glass-panel p-5 rounded-2xl text-center flex-1 max-w-[180px]">
                         <div class="text-white font-headline font-bold text-base mb-1">Rollout 2026</div>
-                        <div class="text-gray-500 text-xs">ab Q2 geplant</div>
+                        <div class="text-gray-500 text-xs">kontrollierter Zugang</div>
                     </div>
                 </div>
 
@@ -4223,8 +4221,8 @@
             if (!el) return;
 
             const phrases = [
-                'Digitales Aufmaß und Heizlastberechnung für SHK-Betriebe.<br>Alle gezeigten Funktionen sind in der geschlossenen Beta für ausgewählte Tester verfügbar.',
-                'PDF-Grundrisse lassen sich in der geschlossenen Beta in Räume, Bauteile und Projektstrukturen überführen.',
+                'PDF-Grundriss hochladen, Räume prüfen, Heizlast und Abgleich in Minuten vorbereiten.',
+                'Für SHK-Betriebe, die weniger Excel, weniger Nachtragen und weniger chaotische Plan-PDFs wollen.',
                 'Vom PDF-Import bis zum vollständigen Heizlastergebnis: in einem kontrollierten Durchlauf ca. 7 Minuten – bei realen Projekten variiert der Aufwand je nach Planqualität und Tiefe.'
             ];
 
