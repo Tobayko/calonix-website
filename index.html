@@ -70,6 +70,7 @@
       }
     </script>
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="stylesheet" href="/assets/site-navigation.css" />
     <!-- Lokales Tailwind CSS inkl. Fonts (DSGVO-konform, keine externen Requests) -->
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" media="print" onload="this.media='all'" />
@@ -1711,84 +1712,143 @@
     </div>
 
     <!-- Header -->
-    <header class="sticky top-0 w-full z-50 bg-[#0b0e0e]/80 backdrop-blur-xl border-b border-white/5">
-        <nav aria-label="Hauptnavigation" class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
-            <a href="/" aria-label="Zur Startseite von Prometo"
-                class="group relative inline-block overflow-hidden h-8">
-                <div class="brand-wand absolute top-0 bottom-0 w-[4px] z-20 bg-cyan-400 blur-[2px] opacity-0"
-                    style="box-shadow: 0 0 15px 5px rgba(34, 211, 238, 0.8);">
-                </div>
-                <img src="Logo/Wort-Bild.svg" alt="Prometo" class="brand-mark h-8 w-auto relative z-10" width="230" height="37"
-                    style="filter: brightness(0) invert(1);" />
+    <header class="site-header" data-prometo-site-nav>
+        <div class="site-nav-shell">
+            <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" />
             </a>
-            <div class="hidden md:flex items-center gap-10">
-                <a class="font-headline tracking-wide text-sm text-primary transition-colors nav-link"
-                    href="#features">Funktionen</a>
-                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
-                    href="#showcase">App-Screenshots</a>
-                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
-                    href="#seo-hub">Themen</a>
-                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
-                    href="/ki-assistent/">Fachassistent</a>
-                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
-                    href="#zielgruppen">Zielgruppen</a>
-
-                <a class="font-headline tracking-wide text-sm text-gray-400 hover:text-white transition-colors nav-link"
-                    href="#faq">FAQ</a>
+            <nav aria-label="Hauptnavigation" class="site-desktop-nav">
+                <a class="site-nav-link" href="/">Startseite</a>
+                <details class="site-nav-group">
+                    <summary class="site-nav-trigger">Lösungen</summary>
+                    <div class="site-nav-panel">
+                        <a class="site-nav-card" href="/heizlast/">
+                            <strong>Heizlast</strong>
+                            <span>Grundlagen, Räume und Wärmeverluste</span>
+                        </a>
+                        <a class="site-nav-card" href="/digitales-aufmass/">
+                            <strong>Digitales Aufmaß</strong>
+                            <span>PDF-Grundrisse und Raumdaten strukturieren</span>
+                        </a>
+                        <a class="site-nav-card" href="/waermepumpe-dimensionieren/">
+                            <strong>Wärmepumpe</strong>
+                            <span>Heizlast als Basis für Dimensionierung</span>
+                        </a>
+                        <a class="site-nav-card" href="/hydraulischer-abgleich/">
+                            <strong>Hydraulischer Abgleich</strong>
+                            <span>Volumenströme und Heizkreise vorbereiten</span>
+                        </a>
+                        <a class="site-nav-card" href="/fussbodenheizung-auslegen/">
+                            <strong>Fußbodenheizung</strong>
+                            <span>Flächenheizung und Auslegung einordnen</span>
+                        </a>
+                        <a class="site-nav-card" href="/waermeerzeuger/">
+                            <strong>Wärmeerzeuger</strong>
+                            <span>Systemdaten für Bestand und Planung</span>
+                        </a>
+                    </div>
+                </details>
+                <details class="site-nav-group">
+                    <summary class="site-nav-trigger">App &amp; Workflow</summary>
+                    <div class="site-nav-panel">
+                        <a class="site-nav-card" href="/heizlastberechnung-software/">
+                            <strong>Heizlast Software</strong>
+                            <span>Prometo als SHK-Workflow im Überblick</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlastberechnung/app/">
+                            <strong>Heizlast App</strong>
+                            <span>Mobile Nutzung für Büro und Baustelle</span>
+                        </a>
+                        <a class="site-nav-card" href="/app-workflows.html">
+                            <strong>App-Workflows</strong>
+                            <span>Abläufe vom Plan bis zur Dokumentation</span>
+                        </a>
+                        <a class="site-nav-card" href="/digitales-aufmass-app.html">
+                            <strong>Aufmaß App</strong>
+                            <span>Grundriss und Aufmaß mobil verbinden</span>
+                        </a>
+                        <a class="site-nav-card" href="/ki-assistent/">
+                            <strong>KI-Assistent</strong>
+                            <span>Fachwissen und Projektfragen schneller klären</span>
+                        </a>
+                    </div>
+                </details>
+                <details class="site-nav-group">
+                    <summary class="site-nav-trigger">Ressourcen</summary>
+                    <div class="site-nav-panel">
+                        <a class="site-nav-card" href="/heizlast-software-vergleich-shk/">
+                            <strong>Software-Vergleich</strong>
+                            <span>Heizlastsoftware nach Workflow vergleichen</span>
+                        </a>
+                        <a class="site-nav-card" href="/autarc-reonic-alternative/">
+                            <strong>autarc/Reonic Alternative</strong>
+                            <span>Prometo fair im Plattformvergleich einordnen</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlast-checkliste-shk/">
+                            <strong>Heizlast-Checkliste</strong>
+                            <span>Daten für die Vorbereitung sauber prüfen</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlastberechnung/schaetzwerte/">
+                            <strong>Heizlast schätzen</strong>
+                            <span>Schätzwerte richtig einordnen</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlastberechnung/din-12831/">
+                            <strong>DIN EN 12831</strong>
+                            <span>Normkontext für die Heizlast</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlastberechnung/leitfaden/">
+                            <strong>Leitfaden</strong>
+                            <span>Praxisnah durch die Heizlast-Vorbereitung</span>
+                        </a>
+                    </div>
+                </details>
+            </nav>
+            <div class="site-nav-actions">
+                <a class="site-lang-link" href="/en/" aria-label="English version">EN</a>
+                <a class="site-cta" href="/#beta-signup">Kostenlose Beta testen</a>
+                <details class="site-mobile-nav">
+                    <summary class="site-mobile-toggle" aria-label="Menü öffnen"><span></span></summary>
+                    <nav class="site-mobile-panel" aria-label="Hauptnavigation mobil">
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Hauptnavigation</span>
+                        <a href="/">Startseite</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Lösungen</span>
+                        <a href="/heizlast/">Heizlast</a>
+                        <a href="/digitales-aufmass/">Digitales Aufmaß</a>
+                        <a href="/waermepumpe-dimensionieren/">Wärmepumpe</a>
+                        <a href="/hydraulischer-abgleich/">Hydraulischer Abgleich</a>
+                        <a href="/fussbodenheizung-auslegen/">Fußbodenheizung</a>
+                        <a href="/waermeerzeuger/">Wärmeerzeuger</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">App &amp; Workflow</span>
+                        <a href="/heizlastberechnung-software/">Heizlast Software</a>
+                        <a href="/heizlastberechnung/app/">Heizlast App</a>
+                        <a href="/app-workflows.html">App-Workflows</a>
+                        <a href="/digitales-aufmass-app.html">Aufmaß App</a>
+                        <a href="/ki-assistent/">KI-Assistent</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Ressourcen</span>
+                        <a href="/heizlast-software-vergleich-shk/">Software-Vergleich</a>
+                        <a href="/autarc-reonic-alternative/">autarc/Reonic Alternative</a>
+                        <a href="/heizlast-checkliste-shk/">Heizlast-Checkliste</a>
+                        <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
+                        <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
+                        <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Sprache</span>
+                        <a href="/en/">EN</a>
+                        <a class="site-mobile-cta" href="/#beta-signup">Kostenlose Beta testen</a>
+                    </div>
+                    </nav>
+                </details>
             </div>
-            <div class="flex items-center gap-4">
-                <a
-                    class="bg-primary text-on-primary font-headline font-bold py-2.5 px-6 rounded-full text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] active:scale-95 transition-all hidden md:inline-flex items-center justify-center"
-                    href="#beta-signup">
-                    Beta-Zugang anfragen
-                </a>
-                <!-- Hamburger (mobile only) -->
-                <button type="button" class="burger md:hidden" id="burgerBtn" aria-label="Menü öffnen" aria-controls="mobileMenu"
-                    aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu -->
-    <nav class="mobile-menu md:hidden" id="mobileMenu" aria-label="Mobile Navigation" aria-hidden="true">
-        <a href="#features" class="mobile-nav-link" data-section="features">
-            Funktionen
-            <span class="material-symbols-outlined text-xl opacity-30">→</span>
-        </a>
-        <a href="#showcase" class="mobile-nav-link" data-section="showcase">
-            Screenshots
-            <span class="material-symbols-outlined text-xl opacity-30">→</span>
-        </a>
-        <a href="#seo-hub" class="mobile-nav-link" data-section="seo-hub">
-            Themen
-            <span class="material-symbols-outlined text-xl opacity-30">→</span>
-        </a>
-        <a href="/ki-assistent/" class="mobile-nav-link">
-            Fachassistent
-        <span class="material-symbols-outlined text-xl opacity-30">→</span>
-        </a>
-        <a href="#zielgruppen" class="mobile-nav-link" data-section="zielgruppen">
-            Zielgruppen
-            <span class="material-symbols-outlined text-xl opacity-30">→</span>
-        </a>
-
-        <a href="#faq" class="mobile-nav-link" data-section="faq">
-            FAQ
-            <span class="material-symbols-outlined text-xl opacity-30">→</span>
-        </a>
-        <div class="mt-auto pt-8">
-            <a
-                class="w-full bg-primary text-on-primary font-headline font-bold py-4 px-6 rounded-full text-base hover:shadow-[0_0_30px_rgba(69,222,231,0.4)] active:scale-95 transition-all inline-flex items-center justify-center"
-                href="#beta-signup">
-                Beta-Zugang anfragen
-            </a>
         </div>
-    </nav>
-
+    </header>
     <main>
         <!-- HERO SECTION - 1:1 ÜBERNOMMEN -->
         <section
@@ -4615,6 +4675,7 @@
             runWhenIdle(() => loadDeferredScript('/assets/language-hint.js'), 3500);
         })();
     </script>
+    <script src="/assets/site-navigation.js" defer></script>
 </body>
 
 </html>

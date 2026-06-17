@@ -36,6 +36,7 @@
     <meta name="twitter:description" content="English orientation page for Prometo privacy information. The legally authoritative privacy policy remains the German version." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
@@ -157,23 +158,143 @@
 </head>
 
 <body class="min-h-screen">
-    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
-        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
-            <a href="/en/" class="inline-flex items-center gap-3" aria-label="Prometo home">
-                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" fetchpriority="high" decoding="async" class="h-8 w-auto brightness-0 invert" />
+    <header class="site-header" data-prometo-site-nav>
+        <div class="site-nav-shell">
+            <a href="/en/" class="site-brand" aria-label="Prometo home">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" />
             </a>
-            <nav aria-label="Primary navigation" class="hidden md:flex items-center gap-7 text-sm text-gray-400">
-                <a href="/en/" class="hover:text-white transition-colors">Home</a>
-                <a href="/en/heat-load/" class="hover:text-white transition-colors">Heat Load</a>
-                <a href="/en/heat-pump-sizing/" class="hover:text-white transition-colors">Heat Pump Sizing</a>
-                <a href="/en/digital-takeoff/" class="hover:text-white transition-colors">Digital Takeoff</a>
-                <a href="/en/hydraulic-balancing/" class="hover:text-white transition-colors">Hydraulic Balancing</a>
-                <a href="/datenschutz.html" hreflang="de-DE" class="hover:text-white transition-colors">Deutsch</a>
+            <nav aria-label="Primary navigation" class="site-desktop-nav">
+                <a class="site-nav-link" href="/en/">Home</a>
+                <details class="site-nav-group">
+                    <summary class="site-nav-trigger">Solutions</summary>
+                    <div class="site-nav-panel">
+                        <a class="site-nav-card" href="/en/heat-load/">
+                            <strong>Heat Load</strong>
+                            <span>Room data and heat loss context</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/digital-takeoff/">
+                            <strong>Digital Takeoff</strong>
+                            <span>Structure PDF plans and room data</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/heat-pump-sizing/">
+                            <strong>Heat Pump Sizing</strong>
+                            <span>Use heat load as planning context</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/hydraulic-balancing/">
+                            <strong>Hydraulic Balancing</strong>
+                            <span>Prepare flows and heating circuits</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/underfloor-heating-design/">
+                            <strong>Underfloor Heating</strong>
+                            <span>Plan surface heating workflows</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/heat-generators/">
+                            <strong>Heat Generators</strong>
+                            <span>System data for HVAC projects</span>
+                        </a>
+                    </div>
+                </details>
+                <details class="site-nav-group">
+                    <summary class="site-nav-trigger">App &amp; Workflow</summary>
+                    <div class="site-nav-panel">
+                        <a class="site-nav-card" href="/en/heat-load-calculation-software/">
+                            <strong>Calculation Software</strong>
+                            <span>Prometo workflow overview</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/heat-load-calculation/app/">
+                            <strong>Heat Load App</strong>
+                            <span>Mobile and office workflows</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/app-workflows/">
+                            <strong>App Workflows</strong>
+                            <span>From floor plan to documentation</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/digital-takeoff-app/">
+                            <strong>Takeoff App</strong>
+                            <span>Connect floor plans and takeoff</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/ai-assistant/">
+                            <strong>AI Assistant</strong>
+                            <span>Faster project and technical questions</span>
+                        </a>
+                    </div>
+                </details>
+                <details class="site-nav-group">
+                    <summary class="site-nav-trigger">Resources</summary>
+                    <div class="site-nav-panel">
+                        <a class="site-nav-card" href="/en/heat-load-software-comparison-hvac/">
+                            <strong>Software Comparison</strong>
+                            <span>Compare heat load workflows</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/autarc-reonic-alternative/">
+                            <strong>autarc/Reonic Alternative</strong>
+                            <span>Fair platform comparison</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/heat-load-checklist-hvac/">
+                            <strong>Heat Load Checklist</strong>
+                            <span>Prepare project data more clearly</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/heat-load-estimates/">
+                            <strong>Heat Load Estimates</strong>
+                            <span>Use estimates with care</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/heat-load-calculation/din-en-12831/">
+                            <strong>DIN EN 12831</strong>
+                            <span>Standard context for heat load</span>
+                        </a>
+                        <a class="site-nav-card" href="/en/heat-load-calculation/guide/">
+                            <strong>Guide</strong>
+                            <span>Practical preparation workflow</span>
+                        </a>
+                    </div>
+                </details>
             </nav>
-            <a href="/#beta-signup" class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">Request demo</a>
+            <div class="site-nav-actions">
+                <a class="site-lang-link" href="/datenschutz.html" aria-label="Deutsche Version">DE</a>
+                <a class="site-cta" href="/#beta-signup">Try free beta</a>
+                <details class="site-mobile-nav">
+                    <summary class="site-mobile-toggle" aria-label="Open menu"><span></span></summary>
+                    <nav class="site-mobile-panel" aria-label="Primary navigation mobil">
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Primary navigation</span>
+                        <a href="/en/">Home</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Solutions</span>
+                        <a href="/en/heat-load/">Heat Load</a>
+                        <a href="/en/digital-takeoff/">Digital Takeoff</a>
+                        <a href="/en/heat-pump-sizing/">Heat Pump Sizing</a>
+                        <a href="/en/hydraulic-balancing/">Hydraulic Balancing</a>
+                        <a href="/en/underfloor-heating-design/">Underfloor Heating</a>
+                        <a href="/en/heat-generators/">Heat Generators</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">App &amp; Workflow</span>
+                        <a href="/en/heat-load-calculation-software/">Calculation Software</a>
+                        <a href="/en/heat-load-calculation/app/">Heat Load App</a>
+                        <a href="/en/app-workflows/">App Workflows</a>
+                        <a href="/en/digital-takeoff-app/">Takeoff App</a>
+                        <a href="/en/ai-assistant/">AI Assistant</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Resources</span>
+                        <a href="/en/heat-load-software-comparison-hvac/">Software Comparison</a>
+                        <a href="/en/autarc-reonic-alternative/">autarc/Reonic Alternative</a>
+                        <a href="/en/heat-load-checklist-hvac/">Heat Load Checklist</a>
+                        <a href="/en/heat-load-estimates/">Heat Load Estimates</a>
+                        <a href="/en/heat-load-calculation/din-en-12831/">DIN EN 12831</a>
+                        <a href="/en/heat-load-calculation/guide/">Guide</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Language</span>
+                        <a href="/datenschutz.html">DE</a>
+                        <a class="site-mobile-cta" href="/#beta-signup">Try free beta</a>
+                    </div>
+                    </nav>
+                </details>
+            </div>
         </div>
     </header>
-
     <main>
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
@@ -297,6 +418,7 @@
     </footer>
 
     <script src="/assets/page-effects.js" defer></script>
+    <script src="/assets/site-navigation.js" defer></script>
 </body>
 
 </html>

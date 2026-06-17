@@ -18,6 +18,7 @@
     <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/site-navigation.css" />
     <style>
         body {
             background-color: #0b0e0e;
@@ -33,6 +34,143 @@
 </head>
 
 <body class="min-h-screen">
+    <header class="site-header" data-prometo-site-nav>
+        <div class="site-nav-shell">
+            <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" />
+            </a>
+            <nav aria-label="Hauptnavigation" class="site-desktop-nav">
+                <a class="site-nav-link" href="/">Startseite</a>
+                <details class="site-nav-group">
+                    <summary class="site-nav-trigger">Lösungen</summary>
+                    <div class="site-nav-panel">
+                        <a class="site-nav-card" href="/heizlast/">
+                            <strong>Heizlast</strong>
+                            <span>Grundlagen, Räume und Wärmeverluste</span>
+                        </a>
+                        <a class="site-nav-card" href="/digitales-aufmass/">
+                            <strong>Digitales Aufmaß</strong>
+                            <span>PDF-Grundrisse und Raumdaten strukturieren</span>
+                        </a>
+                        <a class="site-nav-card" href="/waermepumpe-dimensionieren/">
+                            <strong>Wärmepumpe</strong>
+                            <span>Heizlast als Basis für Dimensionierung</span>
+                        </a>
+                        <a class="site-nav-card" href="/hydraulischer-abgleich/">
+                            <strong>Hydraulischer Abgleich</strong>
+                            <span>Volumenströme und Heizkreise vorbereiten</span>
+                        </a>
+                        <a class="site-nav-card" href="/fussbodenheizung-auslegen/">
+                            <strong>Fußbodenheizung</strong>
+                            <span>Flächenheizung und Auslegung einordnen</span>
+                        </a>
+                        <a class="site-nav-card" href="/waermeerzeuger/">
+                            <strong>Wärmeerzeuger</strong>
+                            <span>Systemdaten für Bestand und Planung</span>
+                        </a>
+                    </div>
+                </details>
+                <details class="site-nav-group">
+                    <summary class="site-nav-trigger">App &amp; Workflow</summary>
+                    <div class="site-nav-panel">
+                        <a class="site-nav-card" href="/heizlastberechnung-software/">
+                            <strong>Heizlast Software</strong>
+                            <span>Prometo als SHK-Workflow im Überblick</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlastberechnung/app/">
+                            <strong>Heizlast App</strong>
+                            <span>Mobile Nutzung für Büro und Baustelle</span>
+                        </a>
+                        <a class="site-nav-card" href="/app-workflows.html">
+                            <strong>App-Workflows</strong>
+                            <span>Abläufe vom Plan bis zur Dokumentation</span>
+                        </a>
+                        <a class="site-nav-card" href="/digitales-aufmass-app.html">
+                            <strong>Aufmaß App</strong>
+                            <span>Grundriss und Aufmaß mobil verbinden</span>
+                        </a>
+                        <a class="site-nav-card" href="/ki-assistent/">
+                            <strong>KI-Assistent</strong>
+                            <span>Fachwissen und Projektfragen schneller klären</span>
+                        </a>
+                    </div>
+                </details>
+                <details class="site-nav-group">
+                    <summary class="site-nav-trigger">Ressourcen</summary>
+                    <div class="site-nav-panel">
+                        <a class="site-nav-card" href="/heizlast-software-vergleich-shk/">
+                            <strong>Software-Vergleich</strong>
+                            <span>Heizlastsoftware nach Workflow vergleichen</span>
+                        </a>
+                        <a class="site-nav-card" href="/autarc-reonic-alternative/">
+                            <strong>autarc/Reonic Alternative</strong>
+                            <span>Prometo fair im Plattformvergleich einordnen</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlast-checkliste-shk/">
+                            <strong>Heizlast-Checkliste</strong>
+                            <span>Daten für die Vorbereitung sauber prüfen</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlastberechnung/schaetzwerte/">
+                            <strong>Heizlast schätzen</strong>
+                            <span>Schätzwerte richtig einordnen</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlastberechnung/din-12831/">
+                            <strong>DIN EN 12831</strong>
+                            <span>Normkontext für die Heizlast</span>
+                        </a>
+                        <a class="site-nav-card" href="/heizlastberechnung/leitfaden/">
+                            <strong>Leitfaden</strong>
+                            <span>Praxisnah durch die Heizlast-Vorbereitung</span>
+                        </a>
+                    </div>
+                </details>
+            </nav>
+            <div class="site-nav-actions">
+                <a class="site-lang-link" href="/en/privacy/" aria-label="English version">EN</a>
+                <a class="site-cta" href="/#beta-signup">Kostenlose Beta testen</a>
+                <details class="site-mobile-nav">
+                    <summary class="site-mobile-toggle" aria-label="Menü öffnen"><span></span></summary>
+                    <nav class="site-mobile-panel" aria-label="Hauptnavigation mobil">
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Hauptnavigation</span>
+                        <a href="/">Startseite</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Lösungen</span>
+                        <a href="/heizlast/">Heizlast</a>
+                        <a href="/digitales-aufmass/">Digitales Aufmaß</a>
+                        <a href="/waermepumpe-dimensionieren/">Wärmepumpe</a>
+                        <a href="/hydraulischer-abgleich/">Hydraulischer Abgleich</a>
+                        <a href="/fussbodenheizung-auslegen/">Fußbodenheizung</a>
+                        <a href="/waermeerzeuger/">Wärmeerzeuger</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">App &amp; Workflow</span>
+                        <a href="/heizlastberechnung-software/">Heizlast Software</a>
+                        <a href="/heizlastberechnung/app/">Heizlast App</a>
+                        <a href="/app-workflows.html">App-Workflows</a>
+                        <a href="/digitales-aufmass-app.html">Aufmaß App</a>
+                        <a href="/ki-assistent/">KI-Assistent</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Ressourcen</span>
+                        <a href="/heizlast-software-vergleich-shk/">Software-Vergleich</a>
+                        <a href="/autarc-reonic-alternative/">autarc/Reonic Alternative</a>
+                        <a href="/heizlast-checkliste-shk/">Heizlast-Checkliste</a>
+                        <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
+                        <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
+                        <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                    </div>
+                    <div class="site-mobile-section">
+                        <span class="site-mobile-section-title">Sprache</span>
+                        <a href="/en/privacy/">EN</a>
+                        <a class="site-mobile-cta" href="/#beta-signup">Kostenlose Beta testen</a>
+                    </div>
+                    </nav>
+                </details>
+            </div>
+        </div>
+    </header>
     <div class="max-w-3xl mx-auto px-6 py-20">
 
         <a href="/" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary mb-10 no-underline">
@@ -176,6 +314,7 @@
         <p class="text-gray-600 text-xs mt-16">Stand: März 2026</p>
     </div>
     <script src="/assets/language-hint.js" defer></script>
+    <script src="/assets/site-navigation.js" defer></script>
 </body>
 
 </html>
