@@ -42,6 +42,11 @@
       "permanent": true
     },
     {
+      "source": "/heizlast-checkliste-shk",
+      "destination": "/heizlast-checkliste-shk/",
+      "permanent": true
+    },
+    {
       "source": "/digitales-aufmass-app.html",
       "destination": "/digitales-aufmass/",
       "permanent": true
@@ -89,6 +94,11 @@
     {
       "source": "/en/heat-load-estimates",
       "destination": "/en/heat-load-estimates/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-load-checklist-hvac",
+      "destination": "/en/heat-load-checklist-hvac/",
       "permanent": true
     },
     {

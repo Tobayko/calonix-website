@@ -237,50 +237,42 @@
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "Welcher Verlegeabstand ist bei einer Fußbodenheizung sinnvoll?",
+                        "name": "Welcher Verlegeabstand ist bei Fußbodenheizung üblich?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Typische Verlegeabstände liegen grob zwischen 10 und 30 cm. Welcher Abstand passt, hängt von Raumheizlast, verfügbarer Fläche, Bodenbelag, Systemtemperatur und hydraulischen Grenzen ab."
+                            "text": "Übliche Verlegeabstände liegen häufig bei 10, 15 oder 20 cm. Welcher Abstand passt, hängt von Heizlast, Bodenaufbau, Rohrdimension, Systemtemperaturen und verfügbarer Fläche ab."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Kann man eine Fußbodenheizung ohne Heizlast auslegen?",
+                        "name": "Wann sind 10 cm Verlegeabstand sinnvoll?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Für eine belastbare Auslegung sollte die raumweise Heizlast bekannt sein. Ohne Lastbasis bleiben Verlegeabstand, Kreisanzahl und Systemtemperaturen schnell zu grob."
+                            "text": "10 cm können in Bädern, Randzonen, bei größeren Fensterflächen oder bei höherer Raumheizlast sinnvoll sein. Die Entscheidung sollte aus der vollständigen Auslegung abgeleitet werden."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Welche Daten braucht man für die Auslegung?",
+                        "name": "Reichen 20 cm Verlegeabstand aus?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Typisch erforderlich sind raumweise Heizlast, gewünschte Raumtemperaturen, verfügbare Fläche, Bodenaufbau, Oberbelag, Systemtemperaturen und der gewählte Systemtyp."
+                            "text": "20 cm können in Räumen mit niedriger Last oder geringeren Komfortanforderungen ausreichen. Ob das passt, hängt von Heizlast, Bodenaufbau, Vorlauftemperatur und verfügbarer Fläche ab."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Was regelt die DIN EN 1264 bei der Fußbodenheizung?",
+                        "name": "Warum hängt der Verlegeabstand von der Heizlast ab?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Die Normenreihe behandelt unter anderem Wärmeleistung, Auslegung und Installation wassergeführter Fußbodenheizungen. Sie ist ein wichtiger Referenzrahmen für die Fachplanung."
+                            "text": "Die Heizlast beschreibt, welche Leistung ein Raum benötigt. Je höher die notwendige Wärmeabgabe pro Fläche, desto eher werden engere Rohrabstände, niedrigere Systemwiderstände oder zusätzliche Maßnahmen relevant."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Ist Fußbodenheizung nur für Wärmepumpen sinnvoll?",
+                        "name": "Kann eine App die Auslegung vorbereiten?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Nein. Fußbodenheizung passt besonders gut zu niedrigen Systemtemperaturen und damit oft zu Wärmepumpen, sie ist aber nicht ausschließlich auf diesen Wärmeerzeuger beschränkt."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Ersetzt die App die Fachplanung?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Nein. Prometo unterstützt die Fachplanung mit Heizlast, Systemparametern, EN-1264-bezogener Auslegung und Verlegeplan-Logik. Die fachliche Prüfung im konkreten Projekt bleibt erforderlich."
+                            "text": "Ja, eine App kann Raumdaten, Heizlast-Vorbereitung, verfügbare Flächen und Verlegeparameter strukturieren. Die fachliche Prüfung und vollständige Auslegung bleiben erforderlich."
                         }
                     }
                 ]
@@ -508,6 +500,70 @@
         </section>
 
         <section class="px-6 pb-16 md:pb-24" id="norm">
+            <div class="max-w-screen-xl mx-auto mb-16 glass-panel rounded-[2rem] overflow-hidden reveal">
+                <div class="p-8 md:p-10">
+                    <span class="badge mb-6">Verlegeabstand</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Verlegeabstand Fußbodenheizung: 10 cm, 15 cm oder 20 cm?
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
+                        Der Verlegeabstand hängt von Raumheizlast, Bodenaufbau, Rohrdimension, Systemtemperaturen,
+                        verfügbarer Fläche und hydraulischen Randbedingungen ab. Die folgende Tabelle ist eine
+                        Orientierung für typische Planungsfälle.
+                    </p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[720px]">
+                        <thead>
+                            <tr class="border-y border-white/8">
+                                <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Raumtyp</th>
+                                <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Typischer Verlegeabstand</th>
+                                <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-gray-500">Hinweis</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm md:text-base">
+                            <tr class="border-b border-white/6">
+                                <td class="px-6 py-5 text-white font-semibold">Bad</td>
+                                <td class="px-6 py-5 text-gray-300">10 cm</td>
+                                <td class="px-6 py-5 text-gray-400">höhere Leistung und höhere Komfortanforderung</td>
+                            </tr>
+                            <tr class="border-b border-white/6">
+                                <td class="px-6 py-5 text-white font-semibold">Wohnraum</td>
+                                <td class="px-6 py-5 text-gray-300">10–15 cm</td>
+                                <td class="px-6 py-5 text-gray-400">abhängig von Heizlast und Bodenaufbau</td>
+                            </tr>
+                            <tr class="border-b border-white/6">
+                                <td class="px-6 py-5 text-white font-semibold">Schlafraum</td>
+                                <td class="px-6 py-5 text-gray-300">15 cm</td>
+                                <td class="px-6 py-5 text-gray-400">meist geringere Norm-Innentemperatur</td>
+                            </tr>
+                            <tr class="border-b border-white/6">
+                                <td class="px-6 py-5 text-white font-semibold">Flur</td>
+                                <td class="px-6 py-5 text-gray-300">15–20 cm</td>
+                                <td class="px-6 py-5 text-gray-400">abhängig von Nutzung und verfügbarer Fläche</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-5 text-white font-semibold">Randzone</td>
+                                <td class="px-6 py-5 text-gray-300">enger</td>
+                                <td class="px-6 py-5 text-gray-400">bei großen Fenstern oder Außenwandbereichen sinnvoll</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-8 md:p-10 border-t border-white/8">
+                    <p class="text-gray-300 leading-relaxed mb-5">
+                        Der Verlegeabstand allein ersetzt keine vollständige Auslegung. Entscheidend sind Heizlast,
+                        Bodenaufbau, Rohrdimension, Systemtemperaturen, verfügbare Fläche und hydraulische
+                        Randbedingungen.
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-sm">
+                        <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heizlastberechnung</a>
+                        <a href="/heizlast-checkliste-shk/" class="text-primary hover:text-white transition-colors">Heizlast-Checkliste SHK</a>
+                        <a href="/digitales-aufmass/" class="text-primary hover:text-white transition-colors">Digitales Aufmaß</a>
+                        <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors">Heizlastberechnung App</a>
+                    </div>
+                </div>
+            </div>
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">Normbezug</span>
@@ -676,50 +732,39 @@
                 </div>
                 <div class="space-y-4">
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
-                        <summary class="text-lg font-headline font-bold text-gray-200">Welcher Verlegeabstand ist bei einer Fußbodenheizung sinnvoll?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Welcher Verlegeabstand ist bei Fußbodenheizung üblich?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Typische Werte liegen grob zwischen 10 und 30 cm. Entscheidend sind aber Raumheizlast,
-                            verfügbare Heizfläche, Bodenbelag, Systemtemperatur und Hydraulik. Darum sollte der
-                            Verlegeabstand nicht pauschal für alle Räume gewählt werden.
+                            Übliche Verlegeabstände liegen häufig bei 10, 15 oder 20 cm. Welcher Abstand passt, hängt
+                            von Heizlast, Bodenaufbau, Rohrdimension, Systemtemperaturen und verfügbarer Fläche ab.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
-                        <summary class="text-lg font-headline font-bold text-gray-200">Kann man eine Fußbodenheizung ohne Heizlast auslegen?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Wann sind 10 cm Verlegeabstand sinnvoll?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Für grobe Orientierung ja, für eine belastbare Auslegung nicht empfehlenswert. Spätestens
-                            wenn Verlegeabstand, Wärmeerzeuger oder Nachweise relevant werden, ist die raumweise Last
-                            die bessere Grundlage.
+                            10 cm können in Bädern, Randzonen, bei größeren Fensterflächen oder bei höherer Raumheizlast
+                            sinnvoll sein. Die Entscheidung sollte aus der vollständigen Auslegung abgeleitet werden.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Welche Daten braucht man mindestens?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Reichen 20 cm Verlegeabstand aus?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Typisch notwendig sind Heizlast, Raumtemperatur, verfügbare Fläche, Bodenaufbau,
-                            Oberbelag, Systemtemperaturen und der geplante Systemtyp.
+                            20 cm können in Räumen mit niedriger Last oder geringeren Komfortanforderungen ausreichen.
+                            Ob das passt, hängt von Heizlast, Bodenaufbau, Vorlauftemperatur und verfügbarer Fläche ab.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Was bedeutet EN 1264 in der Praxis?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Warum hängt der Verlegeabstand von der Heizlast ab?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Die Normenreihe liefert den methodischen Rahmen für Wärmeleistung, Auslegung und
-                            Installation wassergeführter Fußbodenheizungen. Sie hilft, die Planung nachvollziehbar und
-                            vergleichbar zu halten.
+                            Die Heizlast beschreibt, welche Leistung ein Raum benötigt. Je höher die notwendige
+                            Wärmeabgabe pro Fläche, desto eher werden engere Rohrabstände, niedrigere Systemwiderstände
+                            oder zusätzliche Maßnahmen relevant.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Ist Fußbodenheizung nur mit Wärmepumpe sinnvoll?</summary>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Kann eine App die Auslegung vorbereiten?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Nein. Sie ist besonders gut für niedrige Systemtemperaturen geeignet und deshalb oft eine
-                            starke Partnerin der Wärmepumpe, kann aber auch mit anderen Wärmeerzeugern kombiniert
-                            werden.
-                        </p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Ersetzt Prometo die Fachplanung?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">
-                            Nein. Prometo unterstützt die Fachplanung mit Heizlast, Systemparametern,
-                            EN-1264-bezogener Auslegung, Verlegeplan und hydraulischer Ableitung. Die fachliche Prüfung
-                            im konkreten Projekt bleibt erforderlich.
+                            Ja, eine App kann Raumdaten, Heizlast-Vorbereitung, verfügbare Flächen und Verlegeparameter
+                            strukturieren. Die fachliche Prüfung und vollständige Auslegung bleiben erforderlich.
                         </p>
                     </details>
                 </div>
