@@ -63,6 +63,20 @@
     "slugNoSlash": "/en/heat-load-calculation-software"
   },
   {
+    "dePath": "autarc-reonic-alternative/index.html",
+    "deUrl": "https://prometo.app/autarc-reonic-alternative/",
+    "enPath": "en/autarc-reonic-alternative/index.html",
+    "enUrl": "https://prometo.app/en/autarc-reonic-alternative/",
+    "slugNoSlash": "/en/autarc-reonic-alternative"
+  },
+  {
+    "dePath": "heizlast-software-vergleich-shk/index.html",
+    "deUrl": "https://prometo.app/heizlast-software-vergleich-shk/",
+    "enPath": "en/heat-load-software-comparison-hvac/index.html",
+    "enUrl": "https://prometo.app/en/heat-load-software-comparison-hvac/",
+    "slugNoSlash": "/en/heat-load-software-comparison-hvac"
+  },
+  {
     "dePath": "ki-assistent/index.html",
     "deUrl": "https://prometo.app/ki-assistent/",
     "enPath": "en/ai-assistant/index.html",
