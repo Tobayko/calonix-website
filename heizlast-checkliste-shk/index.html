@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
+    <title>Kostenlose Heizlast-Checkliste für SHK-Betriebe | Prometo</title>
+    <meta name="description"
+        content="Welche Daten braucht man aus einem Grundriss für die Heizlast-Vorbereitung? Kostenlose Checkliste für SHK-Betriebe, digitales Aufmaß und PDF-Grundrisse." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/heizlast-checkliste-shk/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/heizlast-checkliste-shk/" />
+    <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/heat-load-checklist-hvac/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/heizlast-checkliste-shk/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="Kostenlose Heizlast-Checkliste für SHK-Betriebe | Prometo" />
+    <meta property="og:description"
+        content="Welche Daten braucht man aus einem Grundriss für die Heizlast-Vorbereitung? Kostenlose Checkliste für SHK-Betriebe, digitales Aufmaß und PDF-Grundrisse." />
+    <meta property="og:url" content="https://prometo.app/heizlast-checkliste-shk/" />
+    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
+    <meta property="og:image:alt" content="Prometo Grundriss-Import als Grundlage für strukturierte Raumdaten" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="2560" />
+    <meta property="og:image:height" content="1600" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kostenlose Heizlast-Checkliste für SHK-Betriebe | Prometo" />
+    <meta name="twitter:description"
+        content="Welche Daten braucht man aus einem Grundriss für die Heizlast-Vorbereitung? Kostenlose Checkliste für SHK-Betriebe, digitales Aufmaß und PDF-Grundrisse." />
+    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
+    <meta name="twitter:image:alt" content="Prometo Grundriss-Import als Grundlage für strukturierte Raumdaten" />
+
+    <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
+    <link rel="stylesheet" href="/assets/prometo-gallery.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top right, rgba(69, 222, 231, 0.12), transparent 40%),
+                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .check-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            color: #c8d0d0;
+            line-height: 1.55;
+        }
+
+        .check-item::before {
+            content: "";
+            width: 1rem;
+            height: 1rem;
+            margin-top: 0.25rem;
+            border-radius: 0.25rem;
+            border: 1px solid rgba(69, 222, 231, 0.55);
+            background: rgba(69, 222, 231, 0.08);
+            flex: 0 0 auto;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "de-DE"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/heizlast-checkliste-shk/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Heizlast-Checkliste SHK",
+                        "item": "https://prometo.app/heizlast-checkliste-shk/"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/heizlast-checkliste-shk/#webpage",
+                "url": "https://prometo.app/heizlast-checkliste-shk/",
+                "name": "Kostenlose Heizlast-Checkliste für SHK-Betriebe | Prometo",
+                "description": "Welche Daten braucht man aus einem Grundriss für die Heizlast-Vorbereitung? Kostenlose Checkliste für SHK-Betriebe, digitales Aufmaß und PDF-Grundrisse.",
+                "datePublished": "2026-06-17",
+                "dateModified": "2026-06-17",
+                "inLanguage": "de-DE",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/heizlast-checkliste-shk/#breadcrumb"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/heizlast-checkliste-shk/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Ersetzt die Checkliste eine Heizlastberechnung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Die Checkliste hilft bei der Vorbereitung und Prüfung der notwendigen Daten. Die fachliche Berechnung und Bewertung muss weiterhin durch qualifizierte Personen erfolgen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Für wen ist die Checkliste gedacht?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Für SHK-Betriebe, Heizungsbauer, TGA-Planer und Energieberater, die Raumdaten aus Grundrissen strukturierter vorbereiten möchten."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Kann man damit Wärmepumpen besser vorbereiten?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja, indirekt. Eine saubere Heizlast-Datenbasis hilft dabei, Wärmeerzeuger und Flächenheizungen fundierter zu planen. Die Checkliste ersetzt aber keine vollständige Auslegung."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Funktioniert Prometo schon vollständig?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo befindet sich im Beta-Aufbau. Einzelne Funktionen werden praxisnah weiterentwickelt und anhand echter Anforderungen verbessert."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Warum ist ein PDF-Grundriss allein nicht genug?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ein PDF-Grundriss enthält viele Informationen, aber nicht immer strukturiert. Raumlage, Außenwände, Fensterflächen, Nutzung und Bauteildaten müssen geprüft und für die Heizlast-Vorbereitung aufbereitet werden."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+            <a href="/" class="inline-flex items-center gap-3" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"
+                    class="h-8 w-auto brightness-0 invert" />
+            </a>
+            <nav aria-label="Hauptnavigation" class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="/digitales-aufmass/" class="hover:text-white transition-colors">Digitales Aufmaß</a>
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlastberechnung</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/schaetzwerte/" class="hover:text-white transition-colors">Heizlast schätzen</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
+            </nav>
+            <a href="/#beta-signup"
+                class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">
+                Beta-Zugang anfragen
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">Heizlast-Checkliste SHK</span>
+                </nav>
+
+                <div class="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+                    <div class="reveal">
+                        <span class="badge mb-6">Kostenlose Checkliste</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Kostenlose Heizlast-Checkliste für SHK-Betriebe
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-6">
+                            Welche Daten aus einem PDF-Grundriss wirklich wichtig sind, bevor eine raumweise Heizlast
+                            sinnvoll vorbereitet werden kann.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed max-w-2xl mb-8">
+                            Viele Grundrisse enthalten wichtige Informationen wie Raumflächen, Raumlage, Fenster, Türen
+                            und Geschosse. Für eine Heizlast-Vorbereitung müssen diese Daten jedoch strukturiert geprüft
+                            werden. Die Prometo-Checkliste hilft dabei, typische Lücken und Fehler früh zu erkennen.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                            <a href="#checkliste"
+                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                Checkliste ansehen
+                            </a>
+                            <a href="/#beta-signup"
+                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                Prometo Beta-Zugang anfragen
+                            </a>
+                        </div>
+                        <p class="text-xs text-gray-500">
+                            Prometo befindet sich aktuell im Beta-Aufbau und wird als Solo-Projekt praxisnah weiterentwickelt.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel rounded-[2rem] p-4 md:p-6 reveal reveal-delay-2">
+                        <img src="/assets/prometo-screenshots/tablet/bauplan-import-review.webp"
+                            alt="Prometo Import-Review mit erkannten Räumen und Geschossen auf dem Tablet"
+                            width="2560" height="1600" loading="eager" fetchpriority="high" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="problem">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                    <div>
+                        <span class="badge mb-6">Problem</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                            Warum eine reine m²-Schätzung oft nicht reicht
+                        </h2>
+                    </div>
+                    <div class="space-y-4 text-gray-300 leading-relaxed">
+                        <p>
+                            Zwei Räume mit gleicher Fläche können völlig unterschiedliche Anforderungen haben.
+                            Entscheidend sind Außenwandanteile, Fensterflächen, Raumlage, angrenzende unbeheizte
+                            Bereiche, Raumhöhe und Nutzung.
+                        </p>
+                        <p>
+                            Besonders bei Wärmepumpen und Flächenheizungen ist eine saubere Datenbasis wichtig. Die
+                            Checkliste ersetzt keine Fachplanung, hilft aber bei der strukturierten Vorbereitung.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="checkliste">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="max-w-3xl mb-10 reveal">
+                    <span class="badge mb-6">Checkliste</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Diese Daten sollten vor der Heizlast-Vorbereitung geprüft werden
+                    </h2>
+                </div>
+                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-5">Projektdaten</h3>
+                        <div class="space-y-3">
+                            <p class="check-item">Adresse / Ort</p>
+                            <p class="check-item">Gebäudetyp</p>
+                            <p class="check-item">Baujahr oder Sanierungsstand</p>
+                            <p class="check-item">Geschosse</p>
+                            <p class="check-item">verfügbare Planunterlagen</p>
+                            <p class="check-item">bekannte U-Werte oder Bauteilaufbauten</p>
+                        </div>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-5">Raumdaten</h3>
+                        <div class="space-y-3">
+                            <p class="check-item">Raumname</p>
+                            <p class="check-item">Geschoss</p>
+                            <p class="check-item">Raumfläche</p>
+                            <p class="check-item">Raumhöhe</p>
+                            <p class="check-item">Nutzung des Raums</p>
+                            <p class="check-item">gewünschte Norm-Innentemperatur</p>
+                            <p class="check-item">beheizt / unbeheizt</p>
+                        </div>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-5">Gebäudehülle</h3>
+                        <div class="space-y-3">
+                            <p class="check-item">Außenwände je Raum</p>
+                            <p class="check-item">Fensterflächen</p>
+                            <p class="check-item">Türflächen</p>
+                            <p class="check-item">Dachflächen</p>
+                            <p class="check-item">Boden gegen Erdreich oder unbeheizte Bereiche</p>
+                            <p class="check-item">angrenzende unbeheizte Räume</p>
+                        </div>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                        <h3 class="text-2xl font-bold text-white mb-5">Lüftung und Nutzung</h3>
+                        <div class="space-y-3">
+                            <p class="check-item">Fensterlüftung oder Lüftungsanlage</p>
+                            <p class="check-item">Luftwechsel-Annahmen</p>
+                            <p class="check-item">Bad / Wohnraum / Schlafraum / Nebenraum</p>
+                            <p class="check-item">besondere Anforderungen</p>
+                        </div>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover md:col-span-2 xl:col-span-2">
+                        <h3 class="text-2xl font-bold text-white mb-5">Typische Fehler im Grundriss</h3>
+                        <div class="grid gap-3 md:grid-cols-2">
+                            <p class="check-item">doppelte Raumnamen werden nicht getrennt</p>
+                            <p class="check-item">Flächen werden falsch gelesen</p>
+                            <p class="check-item">Kommawerte werden falsch interpretiert</p>
+                            <p class="check-item">Außenwände werden pauschal gezählt</p>
+                            <p class="check-item">Fenster oder Türen fehlen</p>
+                            <p class="check-item">Geschosse werden verwechselt</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="prometo">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                    <span class="badge mb-6">Prometo</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Warum Prometo genau hier ansetzt
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Prometo soll PDF-Grundrisse, digitales Aufmaß, Raumdaten und Heizlast-Vorbereitung besser
+                        zusammenführen. Ziel ist nicht, die fachliche Prüfung zu ersetzen, sondern die Vorarbeit
+                        schneller, strukturierter und nachvollziehbarer zu machen.
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <p class="check-item">PDF-Grundrisse strukturiert auswerten</p>
+                        <p class="check-item">Räume und Flächen schneller vorbereiten</p>
+                        <p class="check-item">typische Fehler bei Raumdaten reduzieren</p>
+                        <p class="check-item">Grundlage für Heizlast, Aufmaß und spätere Auslegung verbessern</p>
+                        <p class="check-item">SHK-Betriebe im Alltag entlasten</p>
+                    </div>
+                    <a href="/#beta-signup"
+                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                        Beta-Zugang anfragen
+                    </a>
+                </article>
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal reveal-delay-1 lift-on-hover">
+                    <span class="badge mb-6">Transparenz</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Ein Solo-Projekt aus echtem Praxisbedarf
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Prometo wird als Solo-Projekt entwickelt. Der Fokus liegt auf einem schlanken, praxisnahen
+                        Workflow für SHK-Betriebe, Planer und Energieberater. Rückmeldungen aus der Praxis fließen
+                        direkt in die Weiterentwicklung ein.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="weiterlesen">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Weiterlesen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Weiterführende Seiten zur Heizlast-Vorbereitung
+                    </h2>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    <a href="/digitales-aufmass/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Digitales Aufmaß</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">PDF-Grundrisse und Raumdaten strukturierter vorbereiten.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Aufmaß ansehen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlastberechnung</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Ablauf, Datenbedarf und Prometo-Bezug im Überblick.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Prozess ansehen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/app/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-2 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast App</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Räume prüfen und Heizlast-Vorbereitung strukturieren.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">App ansehen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/schaetzwerte/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast schätzen</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">m²-Werte, Grenzen und bessere Vorbereitung.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Schätzen einordnen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/din-12831/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">DIN EN 12831</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Welche Daten für die Heizlastberechnung wichtig sind.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">DIN-Seite lesen →</span>
+                    </a>
+                    <a href="/fussbodenheizung-auslegen/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Fußbodenheizung auslegen</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Verlegeabstand und Auslegung aus der Heizlast ableiten.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Auslegung ansehen →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="faq">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">FAQ</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Häufige Fragen zur Heizlast-Checkliste
+                    </h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Ersetzt die Checkliste eine Heizlastberechnung?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Nein. Die Checkliste hilft bei der Vorbereitung und Prüfung der notwendigen Daten. Die
+                            fachliche Berechnung und Bewertung muss weiterhin durch qualifizierte Personen erfolgen.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Für wen ist die Checkliste gedacht?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Für SHK-Betriebe, Heizungsbauer, TGA-Planer und Energieberater, die Raumdaten aus
+                            Grundrissen strukturierter vorbereiten möchten.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Kann man damit Wärmepumpen besser vorbereiten?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Ja, indirekt. Eine saubere Heizlast-Datenbasis hilft dabei, Wärmeerzeuger und
+                            Flächenheizungen fundierter zu planen. Die Checkliste ersetzt aber keine vollständige
+                            Auslegung.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Funktioniert Prometo schon vollständig?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Prometo befindet sich im Beta-Aufbau. Einzelne Funktionen werden praxisnah weiterentwickelt
+                            und anhand echter Anforderungen verbessert.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Warum ist ein PDF-Grundriss allein nicht genug?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Ein PDF-Grundriss enthält viele Informationen, aber nicht immer strukturiert. Raumlage,
+                            Außenwände, Fensterflächen, Nutzung und Bauteildaten müssen geprüft und für die
+                            Heizlast-Vorbereitung aufbereitet werden.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-20 md:pb-28">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
+                <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+                    <div>
+                        <span class="badge mb-6">Nächster Schritt</span>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
+                            PDF-Grundrisse strukturierter für Heizlast und Aufmaß vorbereiten
+                        </h2>
+                        <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
+                            Prometo soll SHK-Betrieben helfen, aus Planunterlagen schneller belastbare Raumdaten für
+                            Aufmaß, Heizlast-Vorbereitung und weitere Arbeitsschritte zu gewinnen.
+                        </p>
+                    </div>
+                    <a href="/#beta-signup"
+                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                        Beta-Zugang anfragen
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · SHK-Software für Heizlast-Vorbereitung, digitales Aufmaß und TGA-Planung
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/digitales-aufmass/" class="hover:text-white transition-colors">Digitales Aufmaß</a>
+                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlastberechnung</a>
+                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
+                <a href="/heizlastberechnung/din-12831/" class="hover:text-white transition-colors">DIN EN 12831</a>
+                <a href="/fussbodenheizung-auslegen/" class="hover:text-white transition-colors">Fußbodenheizung auslegen</a>
+                <a href="/datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/page-effects.js" defer></script>
+    <script src="/assets/prometo-gallery.js" defer></script>
+    <script src="/assets/language-hint.js" defer></script>
+</body>
+
+</html>

@@ -42,6 +42,13 @@
     "slugNoSlash": "/en/heat-load-estimates"
   },
   {
+    "dePath": "heizlast-checkliste-shk/index.html",
+    "deUrl": "https://prometo.app/heizlast-checkliste-shk/",
+    "enPath": "en/heat-load-checklist-hvac/index.html",
+    "enUrl": "https://prometo.app/en/heat-load-checklist-hvac/",
+    "slugNoSlash": "/en/heat-load-checklist-hvac"
+  },
+  {
     "dePath": "heizlastberechnung/leitfaden/index.html",
     "deUrl": "https://prometo.app/heizlastberechnung/leitfaden/",
     "enPath": "en/heat-load-calculation/guide/index.html",
