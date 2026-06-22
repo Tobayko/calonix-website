@@ -48,6 +48,7 @@
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/site-navigation.css" />
+    <link rel="stylesheet" href="/assets/seo-explainers.css" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
 
@@ -492,6 +493,45 @@
                             DIN EN 12831 einfach erklärt
                         </a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-14 md:pb-20" aria-labelledby="leitfaden-flow-heading">
+            <div class="max-w-screen-xl mx-auto seo-explainer glass-panel rounded-[2rem] p-6 md:p-8 reveal">
+                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">Leitfaden-Logik</span>
+                        <h2 id="leitfaden-flow-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Von grober Orientierung zu prüfbaren Raumdaten
+                        </h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            Ein Leitfaden hilft nur, wenn Schätzung, Datengrundlage und fachliche Prüfung klar getrennt
+                            bleiben. Prometo setzt bei der strukturierten Vorbereitung an.
+                        </p>
+                    </div>
+                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="leitfaden-flow-svg-title leitfaden-flow-svg-desc">
+                        <title id="leitfaden-flow-svg-title">Heizlast-Leitfaden von Schätzung zu Fachprüfung</title>
+                        <desc id="leitfaden-flow-svg-desc">Animierte Grafik zeigt Schätzung, Raumdaten und fachliche Prüfung als Schritte im Heizlast-Leitfaden.</desc>
+                        <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
+                        <circle class="moving-dot" r="7" fill="#45dee7" />
+                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
+                        <g class="flow-node flow-pulse">
+                            <rect x="44" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="119" y="126" text-anchor="middle" class="step-label">Schätzung</text>
+                            <text x="119" y="153" text-anchor="middle" class="step-copy">einordnen</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="341" y="78" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
+                            <text x="416" y="126" text-anchor="middle" class="step-label">Raumdaten</text>
+                            <text x="416" y="153" text-anchor="middle" class="step-copy">strukturieren</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="657" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="732" y="126" text-anchor="middle" class="step-label">Prüfung</text>
+                            <text x="732" y="153" text-anchor="middle" class="step-copy">fachlich</text>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </section>

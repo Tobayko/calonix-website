@@ -55,6 +55,7 @@
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/site-navigation.css" />
+    <link rel="stylesheet" href="/assets/seo-explainers.css" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
@@ -450,6 +451,45 @@
                                 class="mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" aria-labelledby="waermeerzeuger-flow-heading">
+            <div class="max-w-screen-xl mx-auto seo-explainer glass-panel rounded-[2rem] p-6 md:p-8 reveal">
+                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">Systementscheidung</span>
+                        <h2 id="waermeerzeuger-flow-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Der Wärmeerzeuger folgt aus Last, Temperatur und Prüfung
+                        </h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            Wärmepumpe, Hybrid oder Biomasse lassen sich nicht isoliert wählen. Entscheidend sind Heizlast,
+                            Vorlauf, Heizflächen und die fachliche Einordnung im konkreten Projekt.
+                        </p>
+                    </div>
+                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="waermeerzeuger-flow-svg-title waermeerzeuger-flow-svg-desc">
+                        <title id="waermeerzeuger-flow-svg-title">Wärmeerzeuger-Auswahl von Heizlast zu Fachprüfung</title>
+                        <desc id="waermeerzeuger-flow-svg-desc">Animierte Grafik zeigt Heizlast, Systemtemperatur und fachliche Prüfung als Grundlage für die Wahl des Wärmeerzeugers.</desc>
+                        <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
+                        <circle class="moving-dot" r="7" fill="#45dee7" />
+                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
+                        <g class="flow-node flow-pulse">
+                            <rect x="44" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="119" y="126" text-anchor="middle" class="step-label">Heizlast</text>
+                            <text x="119" y="153" text-anchor="middle" class="step-copy">Leistung klären</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="341" y="78" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
+                            <text x="416" y="126" text-anchor="middle" class="step-label">Temperatur</text>
+                            <text x="416" y="153" text-anchor="middle" class="step-copy">System prüfen</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="657" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="732" y="126" text-anchor="middle" class="step-label">Erzeuger</text>
+                            <text x="732" y="153" text-anchor="middle" class="step-copy">fachlich wählen</text>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </section>
