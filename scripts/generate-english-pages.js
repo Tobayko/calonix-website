@@ -311,8 +311,9 @@ const pages = [
     dePath: 'digitales-aufmass-app.html',
     deUrl: 'https://prometo.app/digitales-aufmass/',
     enPath: 'en/digital-takeoff-app/index.html',
-    enUrl: 'https://prometo.app/en/digital-takeoff-app/',
+    enUrl: 'https://prometo.app/en/digital-takeoff/',
     slugNoSlash: '/en/digital-takeoff-app',
+    robots: 'noindex, follow',
     title: 'Digital Takeoff App for HVAC | Prometo',
     description: 'Mobile digital takeoff app for HVAC teams with floor plan import, room review and connected project workflows.',
     badge: 'Digital takeoff app',
@@ -735,8 +736,8 @@ const relatedModules = {
     title: 'Carry takeoff data into the calculation pages',
     lead: 'Digital takeoff is strongest when the same project data keeps flowing into the calculation workflow.',
     links: [
-      { label: 'Digital takeoff app', href: '/en/digital-takeoff-app/', description: 'Move from the page overview to the mobile workflow.' },
       { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Connect the takeoff result with the calculation page.' },
+      { label: 'Heat load calculation app', href: '/en/heat-load-calculation/app/', description: 'Review the connected mobile and office workflow.' },
       { label: 'Heat load', href: '/en/heat-load/', description: 'Keep the base load definition visible.' }
     ]
   },
@@ -755,7 +756,7 @@ const relatedModules = {
     title: 'Keep the workflow overview linked to the product pages',
     lead: 'This supporting page should point back to the main English product pages instead of sitting apart as a dead end.',
     links: [
-      { label: 'Digital takeoff app', href: '/en/digital-takeoff-app/', description: 'Review the mobile workflow shown in the screenshots.' },
+      { label: 'Digital takeoff', href: '/en/digital-takeoff/', description: 'Review the plan-to-project workflow shown in the screenshots.' },
       { label: 'Heat load calculation app', href: '/en/heat-load-calculation/app/', description: 'Keep the calculation flow tied to the app page.' },
       { label: 'Hydraulic balancing', href: '/en/hydraulic-balancing/', description: 'Continue into the balancing step after the workflow overview.' }
     ]

@@ -143,7 +143,12 @@
     },
     {
       "source": "/en/digital-takeoff-app",
-      "destination": "/en/digital-takeoff-app/",
+      "destination": "/en/digital-takeoff/",
+      "permanent": true
+    },
+    {
+      "source": "/en/digital-takeoff-app/",
+      "destination": "/en/digital-takeoff/",
       "permanent": true
     },
     {
