@@ -140,6 +140,13 @@
     "slugNoSlash": "/en/app-workflows"
   },
   {
+    "dePath": "shk-ausbildung/index.html",
+    "deUrl": "https://prometo.app/shk-ausbildung/",
+    "enPath": "en/hvac-training/index.html",
+    "enUrl": "https://prometo.app/en/hvac-training/",
+    "slugNoSlash": "/en/hvac-training"
+  },
+  {
     "dePath": "datenschutz.html",
     "deUrl": "https://prometo.app/datenschutz.html",
     "enPath": "en/privacy/index.html",

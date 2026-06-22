@@ -47,6 +47,11 @@
       "permanent": true
     },
     {
+      "source": "/shk-ausbildung",
+      "destination": "/shk-ausbildung/",
+      "permanent": true
+    },
+    {
       "source": "/autarc-reonic-alternative",
       "destination": "/autarc-reonic-alternative/",
       "permanent": true
@@ -119,6 +124,11 @@
     {
       "source": "/en/heat-load-checklist-hvac",
       "destination": "/en/heat-load-checklist-hvac/",
+      "permanent": true
+    },
+    {
+      "source": "/en/hvac-training",
+      "destination": "/en/hvac-training/",
       "permanent": true
     },
     {

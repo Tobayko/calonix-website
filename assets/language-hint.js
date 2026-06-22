@@ -22,6 +22,7 @@
         "/heizlastberechnung/din-12831/": "/en/heat-load-calculation/din-en-12831/",
         "/heizlastberechnung/schaetzwerte/": "/en/heat-load-estimates/",
         "/heizlast-checkliste-shk/": "/en/heat-load-checklist-hvac/",
+        "/shk-ausbildung/": "/en/hvac-training/",
         "/heizlastberechnung-software.html": "/en/heat-load-calculation/",
         "/heizlastberechnung-software/": "/en/heat-load-calculation-software/",
         "/autarc-reonic-alternative/": "/en/autarc-reonic-alternative/",

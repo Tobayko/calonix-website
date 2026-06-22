@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="dark" lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <title>HVAC Training: Heat Load, Takeoff and App Workflow | Prometo</title>
+    <meta name="description"
+        content="Prometo for HVAC apprentices, trade schools and master-level training: understand floor plans, room data, heat load preparation and digital takeoff." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href="https://prometo.app/en/hvac-training/" />
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/shk-ausbildung/" />
+    <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/hvac-training/" />
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/shk-ausbildung/" />
+
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+        crossorigin />
+
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prometo" />
+    <meta property="og:title" content="HVAC Training: Heat Load, Takeoff and App Workflow | Prometo" />
+    <meta property="og:description"
+        content="A visual HVAC learning workflow from PDF floor plan to reviewed room data and heat load preparation." />
+    <meta property="og:url" content="https://prometo.app/en/hvac-training/" />
+    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
+    <meta property="og:image:alt" content="Prometo import review as a visual room data example for HVAC training" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="2560" />
+    <meta property="og:image:height" content="1600" />
+
+    <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="stylesheet" href="/assets/site-navigation.css" />
+    <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="stylesheet" href="/assets/tailwind.css" />
+    <link rel="stylesheet" href="/assets/page-effects.css" />
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(69, 222, 231, 0.12), transparent 40%),
+                linear-gradient(180deg, #0b0e0e 0%, #101515 100%);
+            color: #dfe3e3;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(23, 28, 28, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 999px;
+            padding: 0.5rem 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6bf6ff;
+            background: rgba(69, 222, 231, 0.08);
+            border: 1px solid rgba(69, 222, 231, 0.18);
+        }
+
+        .badge::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
+        }
+
+        .learn-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            color: #c8d0d0;
+            line-height: 1.55;
+        }
+
+        .learn-item::before {
+            content: "";
+            width: 1rem;
+            height: 1rem;
+            margin-top: 0.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(69, 222, 231, 0.55);
+            background: rgba(69, 222, 231, 0.10);
+            flex: 0 0 auto;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://prometo.app/#website",
+                "url": "https://prometo.app/",
+                "name": "Prometo",
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/en/hvac-training/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://prometo.app/en/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "HVAC Training",
+                        "item": "https://prometo.app/en/hvac-training/"
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://prometo.app/en/hvac-training/#webpage",
+                "url": "https://prometo.app/en/hvac-training/",
+                "name": "HVAC Training: Heat Load, Takeoff and App Workflow | Prometo",
+                "description": "Prometo for HVAC apprentices, trade schools and master-level training: understand floor plans, room data, heat load preparation and digital takeoff.",
+                "datePublished": "2026-06-22",
+                "dateModified": "2026-06-22",
+                "inLanguage": "en-US",
+                "isPartOf": {
+                    "@id": "https://prometo.app/#website"
+                },
+                "breadcrumb": {
+                    "@id": "https://prometo.app/en/hvac-training/#breadcrumb"
+                },
+                "reviewedBy": {
+                    "@type": "Organization",
+                    "name": "Prometo"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen">
+    <header class="site-header" data-prometo-site-nav>
+        <div class="site-nav-shell">
+            <a href="/en/" class="site-brand" aria-label="Go to Prometo home">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" />
+            </a>
+            <nav aria-label="Main navigation" class="site-desktop-nav">
+                <a class="site-nav-link" href="/en/">Home</a>
+                <a class="site-nav-link" href="/en/hvac-training/">HVAC Training</a>
+                <a class="site-nav-link" href="/en/heat-load/">Heat Load</a>
+                <a class="site-nav-link" href="/en/digital-takeoff/">Digital Takeoff</a>
+            </nav>
+            <div class="site-nav-actions">
+                <a class="site-lang-link" href="/shk-ausbildung/" aria-label="German version">DE</a>
+                <a class="site-cta" href="/#beta-signup">Request beta access</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="px-6 py-16 md:py-24">
+            <div class="max-w-screen-xl mx-auto">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                    <a href="/en/" class="text-primary hover:text-white transition-colors">Home</a>
+                    <span class="mx-2 text-gray-600">/</span>
+                    <span aria-current="page">HVAC Training</span>
+                </nav>
+
+                <div class="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+                    <div class="reveal">
+                        <span class="badge mb-6">For training and practice</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Heat load and digital takeoff for HVAC apprentices, trade schools and master-level training
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-6">
+                            Prometo shows how a PDF floor plan becomes reviewed room data and why that data matters for
+                            heat load preparation, underfloor heating and hydraulic balancing.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed max-w-2xl mb-8">
+                            Prometo is currently in beta. It can support learning and preparation, but it does not
+                            replace instruction, professional judgment or qualified project review.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#learning-workflow"
+                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                View learning workflow
+                            </a>
+                            <a href="/#beta-signup"
+                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                Request beta access
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-[2rem] p-4 md:p-6 reveal reveal-delay-2">
+                        <img src="/assets/prometo-screenshots/tablet/bauplan-import-review.webp"
+                            alt="Prometo import review with detected rooms as a training example"
+                            width="2560" height="1600" loading="eager" fetchpriority="high" decoding="async"
+                            class="w-full rounded-[1.5rem] border border-white/8" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="learning-workflow" class="px-6 pb-12 md:pb-16" aria-labelledby="training-flow-heading">
+            <div class="max-w-screen-xl mx-auto seo-explainer glass-panel rounded-[2rem] p-6 md:p-8 reveal">
+                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">Visual workflow</span>
+                        <h2 id="training-flow-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            From floor plan to heat load preparation
+                        </h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            Complex HVAC topics become easier when the path stays visible: read the plan, review rooms,
+                            understand the building envelope and prepare qualified review.
+                        </p>
+                    </div>
+                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="training-flow-svg-title training-flow-svg-desc">
+                        <title id="training-flow-svg-title">HVAC training workflow with floor plan and heat load</title>
+                        <desc id="training-flow-svg-desc">Animated graphic with floor plan, room data, heat load understanding and qualified review.</desc>
+                        <path class="flow-track" d="M80 150 C180 72 280 72 380 150 S580 228 760 150" fill="none" />
+                        <circle class="moving-dot" r="7" fill="#45dee7" />
+                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
+                        <g class="flow-node flow-pulse">
+                            <rect x="28" y="82" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="103" y="126" text-anchor="middle" class="step-label">Plan</text>
+                            <text x="103" y="153" text-anchor="middle" class="step-copy">read</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="236" y="82" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
+                            <text x="311" y="126" text-anchor="middle" class="step-label">Rooms</text>
+                            <text x="311" y="153" text-anchor="middle" class="step-copy">review</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="444" y="82" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="519" y="126" text-anchor="middle" class="step-label">Heat load</text>
+                            <text x="519" y="153" text-anchor="middle" class="step-copy">understand</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="652" y="82" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
+                            <text x="727" y="126" text-anchor="middle" class="step-label">Review</text>
+                            <text x="727" y="153" text-anchor="middle" class="step-copy">qualified</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-3">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">For apprentices</h2>
+                    <div class="space-y-3">
+                        <p class="learn-item">Understand rooms, areas and floors from the plan</p>
+                        <p class="learn-item">See the difference between estimates and reviewed data</p>
+                        <p class="learn-item">Connect formulas to a real project workflow</p>
+                    </div>
+                </article>
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">For trade schools</h2>
+                    <div class="space-y-3">
+                        <p class="learn-item">Use plan documents as practical examples</p>
+                        <p class="learn-item">Make typical data gaps visible</p>
+                        <p class="learn-item">Explain takeoff, heat load and balancing as one chain</p>
+                    </div>
+                </article>
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">For master-level training</h2>
+                    <div class="space-y-3">
+                        <p class="learn-item">Practice the handoff between site, office and calculation</p>
+                        <p class="learn-item">Prepare room data for heat pumps and surface heating</p>
+                        <p class="learn-item">Keep app workflow and professional review clearly separated</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-20 md:pb-28">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
+                <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+                    <div>
+                        <p class="text-xs text-gray-500 mb-4">Reviewed by Prometo · Updated June 2026</p>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
+                            Test Prometo in training, master courses or practical projects
+                        </h2>
+                        <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
+                            If you want to try Prometo in an educational or practical HVAC context, request beta access.
+                            Feedback from real learning and project workflows helps shape the product.
+                        </p>
+                    </div>
+                    <a href="/#beta-signup"
+                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                        Request beta access
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div class="text-sm text-gray-400">
+                © 2026 Prometo · HVAC training, heat load preparation and digital takeoff
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <a href="/en/" class="hover:text-white transition-colors">Home</a>
+                <a href="/en/heat-load/" class="hover:text-white transition-colors">Heat Load</a>
+                <a href="/en/digital-takeoff/" class="hover:text-white transition-colors">Digital Takeoff</a>
+                <a href="/en/privacy/" class="hover:text-white transition-colors">Privacy</a>
+                <a href="/en/legal-notice/" class="hover:text-white transition-colors">Legal Notice</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/page-effects.js" defer></script>
+    <script src="/assets/language-hint.js" defer></script>
+    <script src="/assets/site-navigation.js" defer></script>
+</body>
+
+</html>
