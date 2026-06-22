@@ -147,7 +147,7 @@ function buildPlainTextMail({ email, company, role }) {
         `Betriebsname: ${company || '-'}`,
         `Rolle: ${role}`,
         '',
-        'Bitte in die Warteliste aufnehmen.',
+        'Bitte zum Beta-Zugang vormerken.',
     ].join('\n');
 }
 
