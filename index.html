@@ -71,6 +71,7 @@
     </script>
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/site-navigation.css" />
+    <link rel="stylesheet" href="/assets/seo-explainers.css" />
     <!-- Lokales Tailwind CSS inkl. Fonts (DSGVO-konform, keine externen Requests) -->
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" media="print" onload="this.media='all'" />
@@ -2075,6 +2076,45 @@
 
             <!-- Fade out gradient to next section -->
             <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-[#0b0e0e] to-transparent z-10"></div>
+        </section>
+
+        <section class="px-8 max-w-screen-2xl mx-auto mb-20 relative z-20" aria-labelledby="home-flow-heading">
+            <div class="seo-explainer glass-panel rounded-[2rem] p-8 md:p-10 reveal">
+                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">So wird Prometo greifbar</span>
+                        <h2 id="home-flow-heading" class="text-3xl md:text-4xl font-headline font-bold text-white mb-5">
+                            Aus einem PDF-Grundriss wird ein nutzbarer SHK-Workflow
+                        </h2>
+                        <p class="text-on-surface-variant text-lg leading-relaxed max-w-3xl">
+                            Prometo soll den frühen Projektstart vereinfachen: Planunterlagen strukturieren,
+                            Raumdaten prüfen und die nächsten Schritte für Aufmaß, Heizlast und Auslegung vorbereiten.
+                        </p>
+                    </div>
+                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="home-flow-svg-title home-flow-svg-desc">
+                        <title id="home-flow-svg-title">Prometo Workflow vom PDF-Grundriss bis zur Beta-Anfrage</title>
+                        <desc id="home-flow-svg-desc">Animierte Grafik mit PDF-Grundriss, Raumdaten, Heizlast-Vorbereitung und Beta-Zugang.</desc>
+                        <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
+                        <circle class="moving-dot" r="7" fill="#45dee7" />
+                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
+                        <g class="flow-node flow-pulse">
+                            <rect x="44" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="119" y="126" text-anchor="middle" class="step-label">PDF</text>
+                            <text x="119" y="153" text-anchor="middle" class="step-copy">Plan importieren</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="341" y="78" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
+                            <text x="416" y="126" text-anchor="middle" class="step-label">Raumdaten</text>
+                            <text x="416" y="153" text-anchor="middle" class="step-copy">prüfen statt raten</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="657" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="732" y="126" text-anchor="middle" class="step-label">Beta</text>
+                            <text x="732" y="153" text-anchor="middle" class="step-copy">Workflow testen</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
         </section>
 
         <section class="px-8 max-w-screen-2xl mx-auto mb-20 relative z-20" aria-labelledby="topic-map-heading">

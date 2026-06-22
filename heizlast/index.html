@@ -49,6 +49,7 @@
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/site-navigation.css" />
+    <link rel="stylesheet" href="/assets/seo-explainers.css" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -599,6 +600,45 @@
                             <span>Auslegungsgrundlage direkt aus der Berechnung</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" aria-labelledby="heizlast-flow-heading">
+            <div class="max-w-screen-xl mx-auto seo-explainer glass-panel rounded-[2rem] p-6 md:p-8 reveal">
+                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">Visuell erklärt</span>
+                        <h2 id="heizlast-flow-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Heizlast ist der Moment, in dem ein Raum am meisten Wärme verliert
+                        </h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            Nicht der Jahresverbrauch entscheidet, sondern der ungünstige Auslegungsfall: außen kalt,
+                            innen Zieltemperatur, Wärmeverluste über Hülle und Lüftung.
+                        </p>
+                    </div>
+                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="heizlast-flow-svg-title heizlast-flow-svg-desc">
+                        <title id="heizlast-flow-svg-title">Ablauf von Wetter, Raumverlusten und Heizlast</title>
+                        <desc id="heizlast-flow-svg-desc">Animierte Grafik mit drei Stationen: Normaußentemperatur, Raumverluste und Heizleistung.</desc>
+                        <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
+                        <circle class="moving-dot" r="7" fill="#45dee7" />
+                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
+                        <g class="flow-node flow-pulse">
+                            <rect x="44" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="119" y="126" text-anchor="middle" class="step-label">Außen kalt</text>
+                            <text x="119" y="153" text-anchor="middle" class="step-copy">Normtemperatur</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="341" y="78" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
+                            <text x="416" y="126" text-anchor="middle" class="step-label">Raum verliert</text>
+                            <text x="416" y="153" text-anchor="middle" class="step-copy">Hülle + Lüftung</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="657" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="732" y="126" text-anchor="middle" class="step-label">Heizung deckt</text>
+                            <text x="732" y="153" text-anchor="middle" class="step-copy">W oder kW</text>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </section>
