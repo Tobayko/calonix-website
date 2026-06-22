@@ -31,7 +31,7 @@
         "/waermeerzeuger/": "/en/heat-generators/",
         "/waermepumpe-dimensionieren/": "/en/heat-pump-sizing/",
         "/digitales-aufmass/": "/en/digital-takeoff/",
-        "/digitales-aufmass-app.html": "/en/digital-takeoff-app/",
+        "/digitales-aufmass-app.html": "/en/digital-takeoff/",
         "/app-workflows.html": "/en/app-workflows/",
         "/datenschutz.html": "/en/privacy/",
         "/impressum.html": "/en/legal-notice/"

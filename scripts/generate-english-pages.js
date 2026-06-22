@@ -859,12 +859,12 @@ function render(page) {
         isPartOf: { '@id': 'https://prometo.app/#website' },
         author: {
           '@type': 'Organization',
-          name: 'Team Prometo',
+          name: 'Prometo',
           url: 'https://prometo.app/'
         },
         reviewedBy: {
           '@type': 'Organization',
-          name: 'Team Prometo',
+          name: 'Prometo',
           url: 'https://prometo.app/'
         },
         publisher: { '@id': 'https://prometo.app/#organization' },
@@ -961,7 +961,7 @@ function render(page) {
                             <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Short answer</p>
                             <p class="text-sm md:text-base text-gray-200 leading-relaxed">${esc(page.short)}</p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-8">Reviewed by Team Prometo · Last updated: <time datetime="${page.dateModified || contentDate}">${page.dateLabel || contentDateLabel}</time></p>
+                        <p class="text-xs text-gray-500 mb-8">Reviewed by Prometo · Last updated: <time datetime="${page.dateModified || contentDate}">${page.dateLabel || contentDateLabel}</time></p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a href="/#beta-signup" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">Request demo</a>
                             <a href="${page.deUrl.replace('https://prometo.app', '')}" hreflang="de-DE" class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">German version</a>
