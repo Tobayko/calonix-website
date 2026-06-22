@@ -38,6 +38,7 @@
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/projektdetail-heatmap.webp" />
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/site-navigation.css" />
+    <link rel="stylesheet" href="/assets/seo-explainers.css" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
@@ -284,6 +285,41 @@
                 </div>
             </div>
         </section>
+
+        <section class="px-6 pb-16 md:pb-24" aria-labelledby="english-flow-heading">
+            <div class="max-w-screen-xl mx-auto seo-explainer glass-panel rounded-[2rem] p-6 md:p-8 reveal">
+                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">Workflow visual</span>
+                        <h2 id="english-flow-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">From floor plan to reusable project data</h2>
+                        <p class="text-gray-400 leading-relaxed">The same basic structure matters across the workflow: start with project context, check room data, then carry cleaner information into the next technical step.</p>
+                    </div>
+                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="english-flow-svg-title english-flow-svg-desc">
+                        <title id="english-flow-svg-title">From floor plan to reusable project data</title>
+                        <desc id="english-flow-svg-desc">Animated diagram showing how a floor plan becomes checked room data and then feeds the next HVAC workflow step.</desc>
+                        <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
+                        <circle class="moving-dot" r="7" fill="#45dee7" />
+                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
+                        <g class="flow-node flow-pulse">
+                            <rect x="44" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="119" y="126" text-anchor="middle" class="step-label">Plan</text>
+                            <text x="119" y="153" text-anchor="middle" class="step-copy">project start</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="341" y="78" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
+                            <text x="416" y="126" text-anchor="middle" class="step-label">Room data</text>
+                            <text x="416" y="153" text-anchor="middle" class="step-copy">checked basis</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="657" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="732" y="126" text-anchor="middle" class="step-label">Next step</text>
+                            <text x="732" y="153" text-anchor="middle" class="step-copy">HVAC workflow</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
 
         <section class="px-6 py-14 md:py-20 bg-white/2">
             <div class="max-w-screen-xl mx-auto">
