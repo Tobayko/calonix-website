@@ -49,6 +49,7 @@
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/site-navigation.css" />
+    <link rel="stylesheet" href="/assets/seo-explainers.css" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -514,6 +515,45 @@
                         <a href="#waermepumpe" class="jump-link">Wärmepumpe und FBH</a>
                         <a href="#faq" class="jump-link">FAQ</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-12 md:pb-16" aria-labelledby="abgleich-flow-heading">
+            <div class="max-w-screen-xl mx-auto seo-explainer glass-panel rounded-[2rem] p-6 md:p-8 reveal">
+                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+                    <div>
+                        <span class="badge mb-6">Verteilung sichtbar machen</span>
+                        <h2 id="abgleich-flow-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Hydraulischer Abgleich verteilt Leistung passend zur Raumlast
+                        </h2>
+                        <p class="text-gray-400 leading-relaxed">
+                            Erst Raumlast und Heizfläche zeigen, welcher Durchfluss sinnvoll ist. Danach werden Ventile,
+                            Kreise und Übergabe so eingestellt, dass jeder Raum die passende Wassermenge erhält.
+                        </p>
+                    </div>
+                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="abgleich-flow-svg-title abgleich-flow-svg-desc">
+                        <title id="abgleich-flow-svg-title">Hydraulischer Abgleich von Raumlast zu Durchfluss</title>
+                        <desc id="abgleich-flow-svg-desc">Animierte Grafik mit Raumlast, Volumenstrom und eingestellter Heizfläche.</desc>
+                        <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
+                        <circle class="moving-dot" r="7" fill="#45dee7" />
+                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
+                        <g class="flow-node flow-pulse">
+                            <rect x="44" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="119" y="126" text-anchor="middle" class="step-label">Raumlast</text>
+                            <text x="119" y="153" text-anchor="middle" class="step-copy">Wärmebedarf</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="341" y="78" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
+                            <text x="416" y="126" text-anchor="middle" class="step-label">Durchfluss</text>
+                            <text x="416" y="153" text-anchor="middle" class="step-copy">l/h berechnen</text>
+                        </g>
+                        <g class="flow-node flow-pulse">
+                            <rect x="657" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                            <text x="732" y="126" text-anchor="middle" class="step-label">Ventile</text>
+                            <text x="732" y="153" text-anchor="middle" class="step-copy">einstellen</text>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </section>

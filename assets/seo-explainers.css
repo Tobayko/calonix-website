@@ -1,0 +1,93 @@
+.seo-explainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.seo-explainer svg {
+    width: 100%;
+    height: auto;
+}
+
+.seo-explainer .flow-track {
+    stroke: rgba(69, 222, 231, 0.34);
+    stroke-width: 3;
+    stroke-dasharray: 10 12;
+    animation: seo-flow 4s linear infinite;
+}
+
+.seo-explainer .flow-node {
+    filter: drop-shadow(0 0 18px rgba(69, 222, 231, 0.24));
+}
+
+.seo-explainer .flow-pulse {
+    animation: seo-pulse 2.6s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.seo-explainer .flow-pulse:nth-of-type(2n) {
+    animation-delay: -0.8s;
+}
+
+.seo-explainer .moving-dot {
+    offset-path: path("M 104 154 C 210 68 310 68 416 154 S 626 240 732 154");
+    animation: seo-dot 5.8s ease-in-out infinite;
+}
+
+.seo-explainer .moving-dot--slow {
+    animation-delay: -2.9s;
+}
+
+.seo-explainer .step-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    fill: #ffffff;
+}
+
+.seo-explainer .step-copy {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    fill: #9aa3a3;
+}
+
+@keyframes seo-flow {
+    to {
+        stroke-dashoffset: -44;
+    }
+}
+
+@keyframes seo-pulse {
+    0%,
+    100% {
+        opacity: 0.74;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.035);
+    }
+}
+
+@keyframes seo-dot {
+    0% {
+        offset-distance: 0%;
+        opacity: 0;
+    }
+    10%,
+    90% {
+        opacity: 1;
+    }
+    100% {
+        offset-distance: 100%;
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .seo-explainer .flow-track,
+    .seo-explainer .flow-pulse,
+    .seo-explainer .moving-dot {
+        animation: none;
+    }
+}
