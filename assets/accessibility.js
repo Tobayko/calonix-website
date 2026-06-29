@@ -132,6 +132,12 @@
         });
     }
 
+    function hideDecorativeIcons() {
+        document.querySelectorAll(".material-symbols-outlined:not([aria-hidden])").forEach(function (icon) {
+            icon.setAttribute("aria-hidden", "true");
+        });
+    }
+
     function enhanceLiveRegions() {
         var formStatus = document.getElementById("betaFormStatus");
 
@@ -146,6 +152,7 @@
         ensureSkipLink(ensureMainTarget());
         labelNavigation();
         normalizeButtons();
+        hideDecorativeIcons();
         enhanceLiveRegions();
     }
 

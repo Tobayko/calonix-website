@@ -243,11 +243,6 @@
                 },
                 "datePublished": "2026-04-06",
                 "dateModified": "2026-06-22",
-                "reviewedBy": {
-                    "@type": "Organization",
-                    "name": "Prometo",
-                    "url": "https://prometo.app/"
-                },
                 "image": {
                     "@type": "ImageObject",
                     "url": "https://prometo.app/assets/prometo-screenshots/tablet/projektdetail-heatmap.webp"
@@ -365,7 +360,7 @@
                         "name": "Wie schnell geht die Heizlastberechnung mit Prometo?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Mit Prometo startet der Workflow direkt aus dem vorhandenen PDF-Grundriss. Räume und Etagen werden automatisch erkannt, im Import-Review geprüft und in die Heizlastberechnung übergeben. Für ein typisches Einfamilienhaus mit strukturierten Plänen ist der Einstieg in die raumweise Berechnung deutlich schneller als bei vollständiger manueller Eingabe. Die tatsächliche Bearbeitungszeit hängt von Projektgröße, Planqualität und Detailtiefe der Eingaben ab."
+                            "text": "Prometo kann PDF-Grundrisse, Räume und Etagen für die Heizlast-Vorbereitung strukturieren. Erkannte Daten müssen im Import-Review geprüft werden; Bearbeitungszeit und Nacharbeit hängen von Projektgröße und Planqualität ab."
                         }
                     }
                 ]
@@ -539,7 +534,7 @@
                                 Die Heizlast ist die Wärmeleistung in Watt oder Kilowatt, die ein Gebäude bei Normaußentemperatur braucht. Berechnet wird sie aus Transmissionswärmeverlusten, Lüftungswärmeverlusten und je nach Verfahren Aufheizzuschlägen. Sie ist Auslegungsleistung für Wärmepumpe und Heizflächen, nicht der Jahresenergieverbrauch.
                             </p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-6">Autor: Prometo · Zuletzt fachlich geprüft: <time datetime="2026-06-22">Juni 2026</time></p>
+                        <p class="text-xs text-gray-500 mb-6">Grundlageninhalt · Konkrete Berechnung und Bewertung fachlich prüfen</p>
                         <div class="mb-8 p-4 rounded-2xl border border-white/10 bg-white/5">
                             <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Auf einen Blick</p>
                             <ul class="space-y-1.5 text-sm text-gray-300">
@@ -832,64 +827,6 @@
             </div>
         </section>
 
-        <!-- 4. HEIZLAST SCHÄTZEN VS. BERECHNEN -->
-        <section class="px-6 pb-16 md:pb-24" id="berechnen-lassen">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl reveal">
-                    <span class="badge mb-6">Praxisentscheidung</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Heizlast überschlagen oder raumweise berechnen?
-                    </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Eine schnelle Schätzung hilft bei der ersten Einordnung. Für Wärmepumpe, Heizflächen, hydraulischen Abgleich oder Nachweise braucht es aber eine strukturierte raumweise Berechnung mit belastbaren Gebäudedaten.
-                    </p>
-                </div>
-
-                <div class="grid gap-6 md:grid-cols-3 mb-8">
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Überschlag</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Wohnfläche mal spezifischer Heizlast in W/m². Sinnvoll für Vorqualifikation und Plausibilität, aber kein Ersatz für die Norm-Heizlast.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Raumweise Berechnung</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Räume, Bauteile, U-Werte, Fenster, Lüftung und Normaußentemperatur werden getrennt betrachtet. Das ist die Basis für Heizflächen und Volumenströme.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Nachweis und Fachplanung</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Für Förderung, hydraulischen Abgleich oder verbindliche Auslegung müssen aktuelle Richtlinien, Berechnungsmethode und Projektgrenzen geprüft werden.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="grid gap-6 lg:grid-cols-2">
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Welche Daten braucht der Fachbetrieb?</h3>
-                        <ul class="space-y-3 text-gray-400">
-                            <li>Grundriss, Raumflächen, Raumhöhen und beheizte Bereiche</li>
-                            <li>Bauteilaufbau oder U-Werte für Außenwand, Dach, Boden und Fenster</li>
-                            <li>Standort beziehungsweise Normaußentemperatur und gewünschte Raumtemperaturen</li>
-                            <li>Lüftungskonzept, Luftwechsel, Sanierungsstand und erkennbare Wärmebrücken</li>
-                            <li>Bestehende Heizflächen, Vorlauftemperatur und geplante Wärmepumpenstrategie</li>
-                        </ul>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Warum Verbrauchswerte keine Norm-Heizlast ersetzen</h3>
-                        <p class="text-gray-400 leading-relaxed mb-4">
-                            Gas-, Öl- oder Stromverbrauch zeigt Energie über ein Jahr. Die Heizlast beschreibt dagegen die erforderliche Leistung im Auslegungsfall. Verbrauchsdaten können helfen, Ergebnisse zu plausibilisieren, ersetzen aber keine raumweise Berechnung.
-                        </p>
-                        <p class="text-gray-400 leading-relaxed">
-                            Besonders bei Wärmepumpen zählen zusätzlich Modulationsbereich, Vorlauftemperatur, Warmwasser, Sperrzeiten, Abtauvorgänge und der geplante Bivalenzpunkt.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <!-- 4. SPEZIFISCHE HEIZLAST W/m² -->
         <section class="px-6 pb-16 md:pb-24" id="spezifische-heizlast">
             <div class="max-w-screen-xl mx-auto">
@@ -972,209 +909,6 @@
                     <a href="/heizlastberechnung/schaetzwerte/"
                         class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
                         Schätzwerte und Orientierungsbereiche im Detail
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. HEIZLAST UND WÄRMEPUMPE -->
-        <section class="px-6 pb-16 md:pb-24" id="waermepumpe">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
-                    <div class="reveal">
-                        <span class="badge mb-6">Wärmepumpe</span>
-                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Heizlast und Wärmepumpe: Warum die Auslegung entscheidend ist
-                        </h2>
-                        <p class="text-lg text-gray-400 leading-relaxed mb-6">
-                            Bei keiner Heizungsart ist eine genaue Heizlastberechnung so kritisch wie bei der Wärmepumpe. Wärmepumpen arbeiten mit variablen Außentemperaturen und reagieren auf Fehler bei der Auslegung besonders empfindlich.
-                        </p>
-                        <p class="text-lg text-gray-400 leading-relaxed mb-8">
-                            Die Heizlast des Gebäudes bei Normaußentemperatur bestimmt, welche Wärmepumpenleistung benötigt wird. Hinzu kommt die Frage, ob und ab welcher Außentemperatur eine elektrische Zusatzheizung zugeschaltet werden muss — der sogenannte <strong class="text-white">Bivalenzpunkt</strong>.
-                        </p>
-
-                        <div class="space-y-4 mb-8">
-                            <div class="glass-panel rounded-2xl p-5 lift-on-hover">
-                                <h3 class="text-base font-bold text-white mb-2">Überdimensionierung vermeiden</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">
-                                    Eine zu groß gewählte Wärmepumpe taktet häufig: Sie schaltet an und aus, anstatt im effizienten Teillastbetrieb zu laufen. Das erhöht den Stromverbrauch, belastet das Gerät und verkürzt die Lebensdauer.
-                                </p>
-                            </div>
-                            <div class="glass-panel rounded-2xl p-5 lift-on-hover">
-                                <h3 class="text-base font-bold text-white mb-2">Unterdimensionierung ebenso kritisch</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">
-                                    Eine zu kleine Wärmepumpe kann an kalten Tagen die Raumtemperatur nicht halten. Der Heizstab springt dauerhaft an — das erhöht die Betriebskosten erheblich und macht den Effizienzgewinn zunichte.
-                                </p>
-                            </div>
-                            <div class="glass-panel rounded-2xl p-5 lift-on-hover">
-                                <h3 class="text-base font-bold text-white mb-2">Bivalenzpunkt richtig wählen</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">
-                                    Der Bivalenzpunkt hängt von Gebäude, Leistungskurve, Vorlauftemperatur und Betriebsstrategie ab. Er markiert den Bereich, ab dem ein Zusatzwärmeerzeuger unterstützen kann.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="glass-panel rounded-2xl p-5 mb-8 lift-on-hover">
-                            <h3 class="text-base font-bold text-white mb-2">Wärmepumpe dimensionieren: Leistungsdiagramm statt nur kW-Wert</h3>
-                            <p class="text-sm text-gray-400 leading-relaxed mb-3">
-                                Eine Wärmepumpe ist nicht automatisch besser, weil sie mehr maximale Leistung hat. Relevant sind Leistung bei A-7/W35 oder A2/W35, Mindestleistung in der Übergangszeit, COP/SCOP, Vorlaufniveau, Schall und Systemfit.
-                            </p>
-                            <a href="/waermepumpe-dimensionieren/" class="text-primary hover:text-white transition-colors font-headline font-semibold">
-                                Wärmepumpe dimensionieren mit COP, SCOP und Bivalenzpunkt ansehen
-                            </a>
-                        </div>
-
-                        <p class="text-sm text-gray-500 leading-relaxed">
-                            Alle Angaben sind Orientierungswerte. Die konkrete Wärmepumpen-Dimensionierung sollte durch einen Fachbetrieb auf Basis einer individuellen Heizlastberechnung erfolgen.
-                        </p>
-                    </div>
-
-                    <div class="space-y-6 reveal reveal-delay-1">
-                        <figure class="glass-panel rounded-3xl p-4 lift-on-hover">
-                            <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
-                                alt="Prometo App zeigt Heizlastergebnis mit Bivalenzpunkt-Diagramm und spezifischer Heizlast auf dem Smartphone"
-                                width="1080" height="2400" loading="lazy" decoding="async"
-                                class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
-                            <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                                <strong class="block text-white font-headline font-bold mb-1">Bivalenzpunkt direkt in der App</strong>
-                                Prometo zeigt Gebäudeheizlast, spezifische Last und den Bivalenzpunkt in einer Projektansicht — als Grundlage für die Wärmepumpen-Auslegung.
-                            </figcaption>
-                        </figure>
-
-                        <div class="formula-box">
-                            <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Orientierung Wärmepumpen-Dimensionierung</p>
-                            <p class="text-gray-300 leading-relaxed text-sm">
-                                Die Nennleistung der Wärmepumpe sollte der Gebäudeheizlast bei Normaußentemperatur entsprechen — oder leicht darunter liegen, wenn ein Heizstab als Bivalenzpartner eingeplant ist. Eine strukturierte Heizlastberechnung verhindert grobe Fehler bei der Geräteauswahl. Alle Angaben ohne Gewähr.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. APP-SCREENSHOTS -->
-        <section class="px-6 pb-16 md:pb-24" id="app-screenshots">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="max-w-3xl mb-10 reveal">
-                    <span class="badge mb-6">App-Ansichten</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Heizlast berechnen mit Prometo — der Workflow in der Praxis
-                    </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Vom PDF-Grundriss zur raumweisen Heizlast: Diese Prometo-Ansichten zeigen den typischen Berechnungsablauf — Planübernahme, Raumstruktur prüfen, Heizlast auswerten und Wärmepumpen-Auslegung direkt ableiten.
-                    </p>
-                </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4 screenshot-rail screenshot-rail--wide">
-                    <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
-                            alt="Prometo Import-Review: erkannte Räume und Etagen aus dem PDF-Grundriss auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Schritt 1: Grundriss importieren</strong>
-                            PDF hochladen, Räume und Etagen automatisch erkennen und im Review prüfen — bevor die Heizlastberechnung startet.
-                        </figcaption>
-                    </figure>
-                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/schnellberechnung-aussenhuelle.webp"
-                            alt="Prometo: Eingabe von Außenhülle und Bauteilen für die Heizlastberechnung auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Schritt 2: Bauteile und U-Werte erfassen</strong>
-                            Außenwände, Fenster, Dach und Boden raumweise strukturiert eingeben — Grundlage für Transmissions- und Lüftungsverluste.
-                        </figcaption>
-                    </figure>
-                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-2 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp"
-                            alt="Prometo Heizlast-Heatmap: farbcodierte raumweise Lastverteilung auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Schritt 3: Raumweise Heatmap auswerten</strong>
-                            Welche Räume verlieren am meisten Wärme? Die farbcodierte Heatmap macht Schwachstellen sofort sichtbar.
-                        </figcaption>
-                    </figure>
-                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-3 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
-                            alt="Prometo Projektdetail: Gesamtheizlast, spezifische Last und Bivalenzpunkt auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">Schritt 4: Heizlast und Wärmepumpe ableiten</strong>
-                            Gebäudeheizlast, spezifische Last und Bivalenzpunkt auf einen Blick — Auslegungsgrundlage direkt aus der Berechnung.
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. HEIZLAST MIT PROMETO BERECHNEN -->
-        <section class="px-6 pb-16 md:pb-24" id="prometo">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="mb-12 max-w-3xl reveal">
-                    <span class="badge mb-6">Prometo App</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Heizlast berechnen mit Prometo
-                    </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Prometo ist eine SHK-App für iOS und Android, die den gesamten Heizlast-Workflow in einem durchgängigen Prozess abbildet — von der Planaufnahme bis zur Materialbestellung im Großhandel. Der Workflow startet mit dem vorhandenen PDF-Grundriss und führt raumweise durch Heizlast, Systementscheidung, hydraulischen Abgleich und Bestellung.
-                    </p>
-                </div>
-
-                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <div class="text-primary text-3xl mb-4 font-headline font-bold">01</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Planbasierter Einstieg mit Import-Review</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Der Workflow startet mit dem vorhandenen PDF-Grundriss. Räume und Etagen werden automatisch erkannt und im Import-Review geprüft — kein manuelles Anlegen von Raumlisten aus dem Nichts.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <div class="text-primary text-3xl mb-4 font-headline font-bold">02</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Raumweise Heizlast angelehnt an DIN EN 12831</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Transmissions- und Lüftungswärmeverluste werden raumweise strukturiert erfasst und berechnet. Die Berechnungslogik orientiert sich an DIN EN 12831. Die fachliche Prüfung im konkreten Projekt bleibt beim Anwender.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <div class="text-primary text-3xl mb-4 font-headline font-bold">03</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Bivalenzpunkt und Wärmepumpen-Auslegung</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Das Projektergebnis zeigt Gebäudeheizlast, spezifische Last und Bivalenzpunkt auf einen Blick — eine belastbare Auslegungsgrundlage für Wärmepumpe und Heizflächen direkt in der App.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <div class="text-primary text-3xl mb-4 font-headline font-bold">04</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Hydraulischer Abgleich direkt anschließen</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Direkt nach der Heizlast: Soll-Volumenströme, Heizkreise und Verteilereinstellungen ableiten. Der hydraulische Abgleich erfolgt auf Basis derselben Projektdaten — kein Medienbruch, kein Export in ein anderes System.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <div class="text-primary text-3xl mb-4 font-headline font-bold">05</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Flächensystem-Auslegung angelehnt an EN 1264</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Rohrabstand, Kreisanzahl und Kreislängen auf Basis von Heizlast und Systemparametern — angelehnt an EN 1264. Heizkurven-Visualisierung, Nachweis-Screen und PDF-Ausgabe sind direkt integriert.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <div class="text-primary text-3xl mb-4 font-headline font-bold">06</div>
-                        <h3 class="text-xl font-bold text-white mb-3">iOS, Android und Web — Büro und Baustelle in Echtzeit</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Prometo läuft auf iPhone, iPad und Android-Gerät sowie als Web-Anwendung. Büro und Monteur arbeiten am selben Projekt — Änderungen auf der Baustelle sind sofort im Büro sichtbar.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="mt-10 flex flex-wrap gap-4 reveal">
-                    <a href="/#beta-signup"
-                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                        Demo anfragen
-                    </a>
-                    <a href="/heizlastberechnung/"
-                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
-                        Heizlastberechnung Hub ansehen
                     </a>
                 </div>
             </div>
@@ -1265,115 +999,11 @@
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Wie schnell geht die Heizlastberechnung mit Prometo?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
-                            Mit Prometo startet der Workflow direkt aus dem vorhandenen PDF-Grundriss. Räume und Etagen werden automatisch erkannt, im Import-Review geprüft und in die Heizlastberechnung übergeben. Für ein typisches Einfamilienhaus mit strukturierten Plänen ist der Einstieg in die raumweise Berechnung deutlich schneller als bei vollständiger manueller Eingabe. Die tatsächliche Bearbeitungszeit hängt von Projektgröße, Planqualität und Detailtiefe der Eingaben ab.
+                            Prometo kann PDF-Grundrisse, Räume und Etagen für die Heizlast-Vorbereitung strukturieren.
+                            Erkannte Daten müssen im Import-Review geprüft werden; Bearbeitungszeit und Nacharbeit
+                            hängen von Projektgröße und Planqualität ab.
                         </p>
                     </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- 9. CLUSTER-LINKS -->
-        <section id="cluster-pfade" class="px-6 pb-16 md:pb-24">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl reveal">
-                    <span class="badge mb-6">Weiterlesen</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-                        Die passenden nächsten Seiten
-                    </h2>
-                    <p class="text-base text-gray-500 leading-relaxed">
-                        Alle Themen rund um Heizlast, Berechnung und SHK-Planung im Überblick.
-                    </p>
-                </div>
-                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <a href="/fussbodenheizung-auslegen/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Fußbodenheizung auslegen</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Verlegeabstand, Heizkreise und EN 1264 — von der Heizlast zum Verlegeplan.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Auslegung ansehen →</span>
-                    </a>
-                    <a href="/waermeerzeuger/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Wärmeerzeuger einordnen</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Wärmepumpe bis Wärmenetz: Heizlast, Verteilung und Gebäudekontext.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Wärmeerzeuger ansehen →</span>
-                    </a>
-                    <a href="/waermepumpe-dimensionieren/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Wärmepumpe dimensionieren</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Heizlastkurve, Leistungskurve, COP, SCOP und Bivalenzpunkt fachlich einordnen.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Dimensionierung ansehen →</span>
-                    </a>
-                    <a href="/hydraulischer-abgleich/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-2 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Hydraulischer Abgleich</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Verfahren A und B, Praxisablauf und die Rolle bei Wärmepumpen.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Abgleich verstehen →</span>
-                    </a>
-                    <a href="/heizlastberechnung/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlastberechnung für SHK</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Planbasierter Workflow — vom PDF-Import zur raumweisen Berechnung.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Heizlast-Hub ansehen →</span>
-                    </a>
-                    <a href="/heizlastberechnung/din-12831/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">DIN EN 12831 erklärt</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Formelblöcke, Rechenweg und Beispielraum — didaktisch aufbereitet.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">DIN-Tutorial lesen →</span>
-                    </a>
-                    <a href="/heizlastberechnung/schaetzwerte/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast schätzen (W/m²)</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Schätzwerte nach Gebäudezustand und Grenzen der Überschlagsrechnung.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Schätzwerte ansehen →</span>
-                    </a>
-                    <a href="/heizlastberechnung/app/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-2 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast App für SHK</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Heizlast mobil berechnen — iOS, Android und Web in einem Workflow.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">App ansehen →</span>
-                    </a>
-                    <a href="/digitales-aufmass/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover cursor-pointer flex flex-col gap-3 transition-colors hover:border-primary/40 group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Digitales Aufmaß aus PDF-Grundrissen</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">PDF-Grundrisse importieren, Räume strukturieren und Aufmaß-Daten für die spätere Heizlast weiterverwenden.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Digitales Aufmaß ansehen →</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. CTA-ABSCHLUSS -->
-        <section class="px-6 pb-20 md:pb-28">
-            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
-                <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-                    <div>
-                        <span class="badge mb-6">Jetzt starten</span>
-                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
-                            Heizlast berechnen — raumweise, nachvollziehbar, mobil
-                        </h2>
-                        <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
-                            Prometo verbindet Grundriss-Import, raumweise Heizlastberechnung, Wärmepumpen-Auslegung, hydraulischen Abgleich und Materialbestellung in einem durchgängigen SHK-Workflow — auf iOS und Android.
-                        </p>
-                        <div class="mt-6 flex flex-wrap gap-4 text-sm">
-                            <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">
-                                Heizlastberechnung Hub
-                            </a>
-                            <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors">
-                                DIN EN 12831 erklärt
-                            </a>
-                            <a href="/heizlastberechnung/schaetzwerte/" class="text-primary hover:text-white transition-colors">
-                                Heizlast schätzen
-                            </a>
-                            <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors">
-                                Hydraulischer Abgleich
-                            </a>
-                            <a href="/fussbodenheizung-auslegen/" class="text-primary hover:text-white transition-colors">
-                                Fußbodenheizung auslegen
-                            </a>
-                            <a href="/waermeerzeuger/" class="text-primary hover:text-white transition-colors">
-                                Wärmeerzeuger
-                            </a>
-                            <a href="/digitales-aufmass/" class="text-primary hover:text-white transition-colors">
-                                Digitales Aufmaß
-                            </a>
-                        </div>
-                    </div>
-                    <a href="/#beta-signup"
-                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                        Demo anfragen
-                    </a>
                 </div>
             </div>
         </section>

@@ -68,6 +68,14 @@
 
 /* ── Manrope (local) ── */
 @font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('fonts/material-symbols-outlined.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 300;
@@ -109,16 +117,22 @@
 }
 
 .material-symbols-outlined {
-  font-weight: 700;
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
   font-style: normal;
+  font-size: 24px;
   line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 1em;
-  visibility: hidden;
-}
-
-.material-symbols-outlined.icon-ready {
   visibility: visible;
 }

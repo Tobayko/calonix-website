@@ -1,4 +1,10 @@
 (function () {
+    if (!document.querySelector('script[src="/assets/accessibility.js"]')) {
+        const accessibility = document.createElement("script");
+        accessibility.src = "/assets/accessibility.js";
+        document.head.appendChild(accessibility);
+    }
+
     const header = document.querySelector("[data-prometo-site-nav]");
     if (!header) return;
 
