@@ -11,7 +11,7 @@
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp</image:loc>
       <image:title>Prometo Bauplan-Import</image:title>
-      <image:caption>PDF-Grundriss für die automatische Raumerkennung vorbereiten.</image:caption>
+      <image:caption>PDF-Grundriss für den planbasierten Import vorbereiten.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp</image:loc>
@@ -91,6 +91,44 @@
     </image:image>
   </url>
   <url>
+    <loc>https://prometo.app/heizlastberechnung-software/</loc>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/android/phone/01-projektassistent-planimport.webp</image:loc>
+      <image:title>Prometo Projektassistent mit PDF-Bauplan</image:title>
+      <image:caption>Optionaler PDF-Bauplan als Einstieg in den Heizlast-Workflow.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/android/phone/02-raeume-aus-bauplan.webp</image:loc>
+      <image:title>Prometo Raumdaten im Android-Workflow</image:title>
+      <image:caption>Raumname, Nutzung und Fläche gemeinsam prüfen.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/android/phone/03-richtwerte-heizlast.webp</image:loc>
+      <image:title>Prometo Heizlast-Richtwerte</image:title>
+      <image:caption>Richtwertkorridor und verwendete Annahme transparent einordnen.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/android/phone/04-heizlast-schaetzergebnis.webp</image:loc>
+      <image:title>Prometo Heizlast-Schätzergebnis</image:title>
+      <image:caption>Indikativer Lastkorridor für die frühe Vorplanung.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/android/phone/05-uebergabe-planung.webp</image:loc>
+      <image:title>Prometo Übergabe an weitere Planungsschritte</image:title>
+      <image:caption>Schätzergebnis im selben Projekt weiterverwenden.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/android/phone/06-hydraulischer-abgleich.webp</image:loc>
+      <image:title>Prometo Systemtemperaturen</image:title>
+      <image:caption>Vorlauf, Rücklauf und Spreizung gemeinsam dokumentieren.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://prometo.app/assets/prometo-screenshots/android/phone/07-heizkreise-einstellwerte.webp</image:loc>
+      <image:title>Prometo Heizkreis- und Einstellwerte</image:title>
+      <image:caption>Heizkreis, Verteilerport, Rohrlänge und Soll-Einstellwert zuordnen.</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://prometo.app/heizlastberechnung/din-12831/</loc>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp</image:loc>
@@ -141,7 +179,7 @@
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-ki-analyse.webp</image:loc>
       <image:title>Prometo Plananalyse für PDF-Aufmaß</image:title>
-      <image:caption>Fortschritt der automatischen Auswertung beim digitalen Bauplan-Import.</image:caption>
+      <image:caption>Fortschritt beim digitalen Bauplan-Import.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp</image:loc>
@@ -151,7 +189,7 @@
     <image:image>
       <image:loc>https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp</image:loc>
       <image:title>Prometo Bauplan-Import Review auf dem Tablet</image:title>
-      <image:caption>Raumprüfung nach dem automatischen Import in der breiten Tablet-Ansicht.</image:caption>
+      <image:caption>Raumprüfung nach dem Import in der breiten Tablet-Ansicht.</image:caption>
     </image:image>
   </url>
   <url>

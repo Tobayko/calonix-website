@@ -1570,7 +1570,7 @@
                 "url": "https://prometo.app/",
                 "name": "Prometo | Heizlast & digitales Aufmaß für SHK-Ausbildung",
                 "description": "Prometo verbindet PDF-Grundrisse, Raumdaten, Heizlast-Vorbereitung und Abgleich für SHK-Azubis, Berufsschulen, Meisterkurse und Betriebe.",
-                "dateModified": "2026-06-29",
+                "dateModified": "2026-06-30",
                 "inLanguage": "de-DE",
                 "isPartOf": {
                     "@id": "https://prometo.app/#website"
@@ -1629,7 +1629,7 @@
                         "name": "Orientiert sich Prometo an der DIN EN 12831?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Ja. Die Heizlastberechnung in Prometo ist eng an die Berechnungslogik der DIN EN 12831 angelehnt – inklusive Transmissions- und Lüftungswärmeverlusten, Aufheizzuschlägen und regionalen Klimadaten. Prometo dient dabei als strukturierte, nachvollziehbare Arbeitsgrundlage. Die fachliche Prüfung im konkreten Projekt bleibt weiterhin wichtig."
+                            "text": "Prometo kann Eingaben und Prüfschritte entlang der DIN EN 12831 strukturieren. Eine Garantie auf DIN-Konformität wird nicht behauptet; Berechnung und Bewertung müssen qualifizierte Personen fachlich prüfen."
                         }
                     },
                     {
@@ -1637,7 +1637,7 @@
                         "name": "Wie funktioniert der PDF-Import für Baupläne?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Prometo liest PDF-Baupläne automatisch ein, erkennt Räume und überführt sie in eine strukturierte Projektoberfläche. Je nach Planqualität sind Nachkorrekturen Teil des Workflows."
+                            "text": "Du wählst einen PDF-Bauplan aus und prüfst die daraus übernommenen Raumdaten vor der weiteren Verwendung. Je nach Planqualität bleiben manuelle Korrekturen Teil des Workflows."
                         }
                     },
                     {
@@ -1670,30 +1670,6 @@
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "Prometo befindet sich im Beta-Aufbau mit Fokus auf SHK-Ausbildung, Meistervorbereitung und Praxis. Einen Beta-Zugang kannst du direkt anfragen – wir melden uns mit den nächsten Schritten."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Warum ist eine Software für die Heizlastberechnung besser als Excel?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Eine strukturierte Software reduziert manuelle Fehler, dokumentiert Berechnungsschritte sauberer und beschleunigt die Planung. Prometo automatisiert Aufmaß, Flächen und Heizlastschritte, die in Excel oft aufwendig und fehleranfällig bleiben."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Warum ist digitales Aufmaß mehr als PDF-Markup?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Weil Prometo PDF-Grundrisse, Räume, Bauteile und Folgeprozesse in einer Projektstruktur zusammenführt. Dadurch bleibt digitales Aufmaß für Heizlast, Planung und Baustellenabstimmung weiter nutzbar."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Lässt sich die App für das digitale Aufmaß auch auf dem iPad nutzen?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Ja. Prometo ist für mobile Endgeräte optimiert und kann für digitales Aufmaß direkt auf Tablet oder iPad genutzt werden. So lassen sich Räume und Bauteile direkt auf der Baustelle erfassen."
                         }
                     }
                 ]
@@ -3077,7 +3053,9 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p class="text-on-surface-variant leading-relaxed">
-                                        Ja. Die Heizlastberechnung in Prometo ist eng an die Berechnungslogik der DIN EN 12831 angelehnt – inklusive Transmissions- und Lüftungswärmeverlusten, Aufheizzuschlägen und regionalen Klimadaten. Prometo dient dabei als strukturierte, nachvollziehbare Arbeitsgrundlage. Die fachliche Prüfung im konkreten Projekt bleibt weiterhin wichtig.
+                                        Prometo kann Eingaben und Prüfschritte entlang der DIN EN 12831 strukturieren.
+                                        Eine Garantie auf DIN-Konformität wird nicht behauptet; Berechnung und Bewertung
+                                        müssen qualifizierte Personen fachlich prüfen.
                                     </p>
                                 </div>
                             </div>
@@ -3087,7 +3065,7 @@
                         <div class="faq-item" data-faq="1">
                             <button type="button" class="faq-question" onclick="toggleFaq(this)">
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Wie funktioniert
-                                    der PDF-Import von Bauplänen in der geschlossenen Beta?</span>
+                                    der PDF-Import für Baupläne?</span>
                                 <span class="faq-icon">
                                     <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
                                 </span>
@@ -3095,14 +3073,9 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p class="text-on-surface-variant leading-relaxed">
-                                        Du lädst den Architektenplan als PDF-Datei in Prometo hoch. Unsere
-                                        Analyse-Engine analysiert das Dokument in der geschlossenen Beta so, dass
-                                        Räume, Wände, Fenster und Türen als Arbeitsgrundlage übernommen werden können.
-                                        Die daraus abgeleiteten Flächen werden dir zur Überprüfung und manuellen
-                                        Nachkorrektur präsentiert, bevor sie in die Heizlastberechnung übernommen
-                                        werden.
-                                        Gängige Architektur-Dateiformate aus AutoCAD, Revit und anderen Tools werden
-                                        unterstützt – solange sie als PDF exportiert vorliegen.
+                                        Du wählst einen PDF-Bauplan aus und prüfst die daraus übernommenen Raumdaten
+                                        vor der weiteren Verwendung. Je nach Planqualität bleiben manuelle Korrekturen
+                                        Teil des Workflows.
                                     </p>
                                 </div>
                             </div>
@@ -3120,7 +3093,7 @@
                             <div class="faq-answer">
                                 <div class="faq-answer-inner">
                                     <p class="text-on-surface-variant leading-relaxed">
-                                        Im Beta-Aufbau können Projekte auch offline
+                                        Im Beta-Aufbau lassen sich ausgewählte Projektdaten auch offline
                                         weiterbearbeiten. Der genaue Funktionsumfang hängt vom Gerät und Workflow ab;
                                         sobald die Verbindung wieder besteht, werden Änderungen synchronisiert und
                                         Cloud-Funktionen wie der Assistent oder der Materialbereich wieder verfügbar.
@@ -3786,9 +3759,9 @@
             },
             {
                 src: '/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp',
-                alt: 'Prometo Bauplan-Import auf dem Smartphone mit PDF-Upload und automatischer Raumerkennung',
+                alt: 'Prometo Bauplan-Import auf dem Smartphone mit PDF-Auswahl',
                 title: 'Bauplan-Import',
-                desc: 'PDF-Grundrisse hochladen und Etagen sowie Räume automatisch erkennen lassen'
+                desc: 'PDF-Grundrisse auswählen und Raumdaten anschließend prüfen'
             },
             {
                 src: '/assets/prometo-screenshots/mobile/bauplan-import-review.webp',

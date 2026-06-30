@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Heizlastberechnung Software im Beta-Aufbau | Prometo</title>
+    <title>SHK-Software für Heizlast & Flächenheizung | Prometo</title>
     <meta name="description"
-        content="PDF-Grundrisse und Raumdaten für Heizlast, Abgleich und Auslegung strukturiert vorbereiten. Prometo befindet sich im Beta-Aufbau." />
+        content="Prometo verbindet Bauplan, Heizlast-Schätzung, Flächenheizungsplanung und hydraulischen Abgleich in einem digitalen Workflow für SHK-Betriebe." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -30,9 +30,9 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Heizlastberechnung Software im Beta-Aufbau | Prometo" />
+    <meta property="og:title" content="Prometo – digitale SHK-Planung ohne Medienbrüche" />
     <meta property="og:description"
-        content="PDF-Grundrisse und Raumdaten für Heizlast, Abgleich und Auslegung strukturiert vorbereiten." />
+        content="Räume erfassen, Heizlast transparent schätzen und Werte für Flächenheizung und hydraulischen Abgleich weiterverwenden." />
     <meta property="og:url" content="https://prometo.app/heizlastberechnung-software/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/projektdetail-heatmap.webp" />
     <meta property="og:image:alt" content="Prometo Heizlastberechnung Software mit Heatmap und raumweiser Projektansicht auf dem Tablet" />
@@ -41,9 +41,9 @@
     <meta property="og:image:height" content="1600" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Heizlastberechnung Software im Beta-Aufbau | Prometo" />
+    <meta name="twitter:title" content="SHK-Software für Heizlast & Flächenheizung | Prometo" />
     <meta name="twitter:description"
-        content="Vom PDF-Grundriss zu geprüften Raumdaten für Heizlast-Vorbereitung, Abgleich und Auslegung." />
+        content="Vom PDF-Bauplan zur transparenten Vorplanung für Raumdaten, Heizlast und hydraulischen Abgleich." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/projektdetail-heatmap.webp" />
     <meta name="twitter:image:alt" content="Prometo Heizlastberechnung Software mit Heatmap und raumweiser Projektansicht auf dem Tablet" />
 
@@ -145,6 +145,57 @@
             font-size: 0.9rem;
             flex-shrink: 0;
         }
+
+        .workflow-gallery {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(18rem, 22rem);
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 0.25rem 0.15rem 1rem;
+            scroll-snap-type: x mandatory;
+            scrollbar-color: rgba(69, 222, 231, 0.45) rgba(255, 255, 255, 0.06);
+        }
+
+        .workflow-card {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            min-width: 0;
+            overflow: hidden;
+            scroll-snap-align: start;
+        }
+
+        .workflow-media {
+            display: flex;
+            height: 28rem;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: #0b1010;
+            padding: 1rem;
+        }
+
+        .workflow-media picture,
+        .workflow-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .workflow-media img {
+            object-fit: contain;
+        }
+
+        @media (max-width: 767px) {
+            .workflow-gallery {
+                grid-auto-columns: minmax(17rem, 86vw);
+            }
+
+            .workflow-media {
+                height: 25rem;
+            }
+        }
     </style>
 
     <script type="application/ld+json">
@@ -161,7 +212,7 @@
                     "url": "https://prometo.app/assets/apple-touch-icon.png"
                 },
                 "image": "https://prometo.app/assets/og-image.png",
-                "description": "Prometo ist eine SHK-Software für digitales Aufmaß, Heizlastberechnung und TGA-Planung.",
+                "description": "Prometo unterstützt SHK-Betriebe bei digitalem Aufmaß, Heizlast-Vorbereitung und hydraulischer Folgearbeit.",
                 "contactPoint": {
                     "@type": "ContactPoint",
                     "email": "info@prometo.app",
@@ -196,9 +247,9 @@
                 "@type": "WebPage",
                 "@id": "https://prometo.app/heizlastberechnung-software/#webpage",
                 "url": "https://prometo.app/heizlastberechnung-software/",
-                "name": "Heizlastberechnung Software im Beta-Aufbau | Prometo",
-                "description": "PDF-Grundrisse und Raumdaten für Heizlast, Abgleich und Auslegung strukturiert vorbereiten. Prometo befindet sich im Beta-Aufbau.",
-                "dateModified": "2026-06-29",
+                "name": "SHK-Software für Heizlast & Flächenheizung | Prometo",
+                "description": "Prometo verbindet Bauplan, Heizlast-Schätzung, Flächenheizungsplanung und hydraulischen Abgleich in einem digitalen Workflow für SHK-Betriebe.",
+                "dateModified": "2026-06-30",
                 "inLanguage": "de-DE",
                 "isPartOf": { "@id": "https://prometo.app/#website" },
                 "author": {
@@ -208,47 +259,15 @@
                 },
                 "publisher": { "@id": "https://prometo.app/#organization" },
                 "breadcrumb": { "@id": "https://prometo.app/heizlastberechnung-software/#breadcrumb" },
-                "mainEntity": { "@id": "https://prometo.app/heizlastberechnung-software/#software" },
                 "primaryImageOfPage": {
                     "@type": "ImageObject",
-                    "url": "https://prometo.app/assets/prometo-screenshots/tablet/projektdetail-heatmap.webp"
+                    "url": "https://prometo.app/assets/prometo-screenshots/android/tablet/04-heizlast-schaetzergebnis.webp"
                 },
                 "about": [
                     { "@type": "Thing", "name": "Heizlastberechnung" },
                     { "@type": "Thing", "name": "DIN EN 12831-1" },
                     { "@type": "Thing", "name": "Hydraulischer Abgleich" },
                     { "@type": "Thing", "name": "Digitales Aufmaß" }
-                ]
-            },
-            {
-                "@type": "SoftwareApplication",
-                "@id": "https://prometo.app/heizlastberechnung-software/#software",
-                "name": "Prometo",
-                "url": "https://prometo.app/heizlastberechnung-software/",
-                "applicationCategory": "BusinessApplication",
-                "applicationSubCategory": "Heizlastberechnung Software für SHK-Betriebe",
-                "operatingSystem": "Web, iOS, Android",
-                "inLanguage": "de-DE",
-                "browserRequirements": "Aktueller Webbrowser oder iOS / Android App",
-                "description": "Prometo unterstützt im Beta-Aufbau die strukturierte Vorbereitung von PDF-Grundrissen und Raumdaten für Heizlast, Abgleich und Flächenheizung.",
-                "publisher": { "@id": "https://prometo.app/#organization" },
-                "audience": {
-                    "@type": "Audience",
-                    "audienceType": "SHK-Betriebe, Heizungsbauer und TGA-Planer"
-                },
-                "offers": {
-                    "@type": "Offer",
-                    "url": "https://prometo.app/#beta-signup",
-                    "price": "0",
-                    "priceCurrency": "EUR",
-                    "availability": "https://schema.org/PreOrder"
-                },
-                "featureList": [
-                    "PDF-Grundriss importieren und Räume strukturieren",
-                    "Raum- und Bauteildaten für die Heizlastberechnung vorbereiten",
-                    "Eingaben für hydraulischen Abgleich und Flächenheizung strukturieren",
-                    "Projektunterlagen nachvollziehbar zusammenführen",
-                    "Mobile Datenerfassung im Beta-Aufbau"
                 ]
             },
             {
@@ -289,10 +308,10 @@
                     },
                     {
                         "@type": "Question",
-                        "name": "Wie funktioniert die Materialbestellung mit Prometo?",
+                        "name": "Ist die Heizlast-Schnellschätzung ein Normnachweis?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Rohr- und Systemdaten können als Grundlage für Stücklisten vorbereitet werden. Materiallogik und Schnittstellen werden im Beta-Aufbau schrittweise geprüft."
+                            "text": "Nein. Sie dient der frühen Vorplanung und wird in Prometo ausdrücklich als indikative Schätzung gekennzeichnet. Die fachliche Berechnung und Bewertung bleibt erforderlich."
                         }
                     },
                     {
@@ -461,13 +480,13 @@
 
                 <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                     <div class="reveal">
-                        <span class="badge mb-6">Heizlastberechnung Software SHK</span>
+                        <span class="badge mb-6">Digitale SHK-Planung</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            Software für Heizlast-Vorbereitung im SHK-Betrieb
+                            Heizlast und Flächenheizung durchgängig planen
                         </h1>
                         <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
-                            Prometo hilft, PDF-Grundrisse und Raumdaten für Heizlast, hydraulischen Abgleich und
-                            Flächenheizung strukturiert vorzubereiten. Die fachliche Prüfung bleibt erforderlich.
+                            Prometo verbindet Raumdaten, Heizlast-Schätzung, Systementscheidung und hydraulischen
+                            Abgleich in einem nachvollziehbaren Projekt-Workflow.
                         </p>
                         <p class="text-xs text-gray-500 mb-4">
                             Beta-Inhalt · Berechnung und Ergebnisse fachlich prüfen
@@ -489,26 +508,26 @@
                             </div>
                             <div class="flex items-center gap-3 text-sm text-gray-300">
                                 <span class="text-primary text-lg">✓</span>
-                                <span>Raumweise Heizlast berechnen</span>
+                                <span>Richtwerte und Lastkorridor prüfen</span>
                             </div>
                             <div class="flex items-center gap-3 text-sm text-gray-300">
                                 <span class="text-primary text-lg">✓</span>
-                                <span>Hydraulik und Heizkreise ableiten</span>
+                                <span>Systemtemperaturen dokumentieren</span>
                             </div>
                             <div class="flex items-center gap-3 text-sm text-gray-300">
                                 <span class="text-primary text-lg">✓</span>
-                                <span>Material und Stückliste vorbereiten</span>
+                                <span>Heizkreiswerte nachvollziehen</span>
                             </div>
                         </div>
 
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="/#beta-signup"
+                            <a href="#workflow-demo"
                                 class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                                Demo anfragen
+                                Demo ansehen
                             </a>
-                            <a href="/heizlastberechnung/leitfaden/"
+                            <a href="/#beta-signup"
                                 class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
-                                Workflow ansehen
+                                Beta-Zugang anfragen
                             </a>
                         </div>
                     </div>
@@ -659,46 +678,140 @@
             </div>
         </section>
 
-        <!-- FEATURE-SCHRITTE -->
-        <section class="px-6 py-14 md:py-20 bg-white/2">
+        <section id="workflow-demo" class="px-6 py-14 md:py-20 bg-white/2">
             <div class="max-w-screen-xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
-                    Der Workflow vom Grundriss zur Fachprüfung
-                </h2>
-                <p class="text-gray-400 max-w-2xl mb-12 reveal">Vier Schritte für eine strukturierte Vorbereitung.</p>
-
-                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal">
-                        <div class="step-num mb-4">1</div>
-                        <h3 class="text-lg font-bold text-white mb-2">PDF-Grundriss importieren</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Plan-Import mit Review und Planstudio. Räume, Geschosse und Bauteillogik werden aus dem vorhandenen Grundriss strukturiert — kein manuelles Abtippen.
-                        </p>
-                    </div>
-                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal reveal-delay-1">
-                        <div class="step-num mb-4">2</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Heizlast-Daten prüfen</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Raum-, Bauteil- und Standortdaten als Grundlage für die fachliche Heizlastberechnung prüfen.
-                        </p>
-                    </div>
-                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal reveal-delay-2">
-                        <div class="step-num mb-4">3</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Hydraulik und Flächen ableiten</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Raumdaten für Soll-Volumenströme, Heizkreislogik und Flächenheizung weiterverwenden. Die
-                            fachliche Auslegung bleibt erforderlich.
-                        </p>
-                    </div>
-                    <div class="glass-panel rounded-3xl p-6 lift-on-hover reveal reveal-delay-3">
-                        <div class="step-num mb-4">4</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Folgedaten vorbereiten</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Rohr- und Systemdaten als Grundlage für Stücklisten und Dokumentation strukturieren.
-                            Schnittstellen werden im Beta-Aufbau geprüft.
-                        </p>
-                    </div>
+                <div class="max-w-3xl mb-10 reveal">
+                    <span class="badge mb-6">Android-Workflow</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                        Vom PDF-Bauplan bis zum einzelnen Heizkreis
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Sieben echte App-Schritte aus einem Testprojekt. Schätzwerte und Beispielzahlen dienen der
+                        Vorplanung; Berechnung und Auslegung müssen fachlich geprüft werden.
+                    </p>
                 </div>
+
+                <ol class="workflow-gallery" aria-label="Sieben Schritte des Prometo Android-Workflows">
+                    <li class="workflow-card glass-panel rounded-3xl">
+                        <div class="workflow-media">
+                            <picture>
+                                <source media="(min-width: 768px)"
+                                    srcset="/assets/prometo-screenshots/android/tablet/01-projektassistent-planimport.webp"
+                                    width="1194" height="1600" type="image/webp" />
+                                <img src="/assets/prometo-screenshots/android/phone/01-projektassistent-planimport.webp"
+                                    alt="Prometo Projektassistent mit optionaler Auswahl eines PDF-Bauplans"
+                                    width="1080" height="2400" loading="lazy" decoding="async" />
+                            </picture>
+                        </div>
+                        <div class="p-6">
+                            <div class="step-num mb-4">1</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Mit dem Bauplan starten</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">PDF auswählen oder den Schritt überspringen. Der Plan bleibt ein optionaler Einstieg.</p>
+                        </div>
+                    </li>
+                    <li class="workflow-card glass-panel rounded-3xl">
+                        <div class="workflow-media">
+                            <picture>
+                                <source media="(min-width: 768px)"
+                                    srcset="/assets/prometo-screenshots/android/tablet/02-raeume-aus-bauplan.webp"
+                                    width="1194" height="1600" type="image/webp" />
+                                <img src="/assets/prometo-screenshots/android/phone/02-raeume-aus-bauplan.webp"
+                                    alt="Prometo Raumübersicht mit Raumname, Nutzung und Fläche"
+                                    width="1080" height="2400" loading="lazy" decoding="async" />
+                            </picture>
+                        </div>
+                        <div class="p-6">
+                            <div class="step-num mb-4">2</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Raumdaten prüfen</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">Raumname, Fläche und Nutzung liegen gemeinsam im prüfbaren Projektdatensatz.</p>
+                        </div>
+                    </li>
+                    <li class="workflow-card glass-panel rounded-3xl">
+                        <div class="workflow-media">
+                            <picture>
+                                <source media="(min-width: 768px)"
+                                    srcset="/assets/prometo-screenshots/android/tablet/03-richtwerte-heizlast.webp"
+                                    width="1194" height="1600" type="image/webp" />
+                                <img src="/assets/prometo-screenshots/android/phone/03-richtwerte-heizlast.webp"
+                                    alt="Prometo Richtwertprüfung mit Bandbreite und verwendetem Planungswert"
+                                    width="1080" height="2400" loading="lazy" decoding="async" />
+                            </picture>
+                        </div>
+                        <div class="p-6">
+                            <div class="step-num mb-4">3</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Annahmen sichtbar machen</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">Richtwertkorridor und verwendeter Wert bleiben als Demo-Annahmen nachvollziehbar.</p>
+                        </div>
+                    </li>
+                    <li class="workflow-card glass-panel rounded-3xl">
+                        <div class="workflow-media">
+                            <picture>
+                                <source media="(min-width: 768px)"
+                                    srcset="/assets/prometo-screenshots/android/tablet/04-heizlast-schaetzergebnis.webp"
+                                    width="1194" height="1600" type="image/webp" />
+                                <img src="/assets/prometo-screenshots/android/phone/04-heizlast-schaetzergebnis.webp"
+                                    alt="Prometo Heizlast-Schätzung mit optimistischem, mittlerem und konservativem Lastwert"
+                                    width="1080" height="2400" loading="lazy" decoding="async" />
+                            </picture>
+                        </div>
+                        <div class="p-6">
+                            <div class="step-num mb-4">4</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Lastkorridor einordnen</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">Das Ergebnis wird ausdrücklich als indikative Schätzung und nicht als Normnachweis markiert.</p>
+                        </div>
+                    </li>
+                    <li class="workflow-card glass-panel rounded-3xl">
+                        <div class="workflow-media">
+                            <picture>
+                                <source media="(min-width: 768px)"
+                                    srcset="/assets/prometo-screenshots/android/tablet/05-uebergabe-planung.webp"
+                                    width="1194" height="1600" type="image/webp" />
+                                <img src="/assets/prometo-screenshots/android/phone/05-uebergabe-planung.webp"
+                                    alt="Prometo Übergabe der Schätzung an weitere Planungsschritte"
+                                    width="1080" height="2400" loading="lazy" decoding="async" />
+                            </picture>
+                        </div>
+                        <div class="p-6">
+                            <div class="step-num mb-4">5</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Planung weiterführen</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">System, Materialdaten und hydraulischer Abgleich nutzen denselben Projektstand.</p>
+                        </div>
+                    </li>
+                    <li class="workflow-card glass-panel rounded-3xl">
+                        <div class="workflow-media">
+                            <picture>
+                                <source media="(min-width: 768px)"
+                                    srcset="/assets/prometo-screenshots/android/tablet/06-hydraulischer-abgleich.webp"
+                                    width="1194" height="1600" type="image/webp" />
+                                <img src="/assets/prometo-screenshots/android/phone/06-hydraulischer-abgleich.webp"
+                                    alt="Prometo hydraulischer Abgleich mit Vorlauf, Rücklauf und Spreizung"
+                                    width="1080" height="2400" loading="lazy" decoding="async" />
+                            </picture>
+                        </div>
+                        <div class="p-6">
+                            <div class="step-num mb-4">6</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Systemtemperaturen bündeln</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">Vorlauf, Rücklauf, Spreizung und Raumfilter bleiben gemeinsam sichtbar.</p>
+                        </div>
+                    </li>
+                    <li class="workflow-card glass-panel rounded-3xl">
+                        <div class="workflow-media">
+                            <picture>
+                                <source media="(min-width: 768px)"
+                                    srcset="/assets/prometo-screenshots/android/tablet/07-heizkreise-einstellwerte.webp"
+                                    width="1194" height="1600" type="image/webp" />
+                                <img src="/assets/prometo-screenshots/android/phone/07-heizkreise-einstellwerte.webp"
+                                    alt="Prometo Heizkreisansicht mit Verteilerport, Rohrlänge und Soll-Einstellwert"
+                                    width="1080" height="2400" loading="lazy" decoding="async" />
+                            </picture>
+                        </div>
+                        <div class="p-6">
+                            <div class="step-num mb-4">7</div>
+                            <h3 class="text-lg font-bold text-white mb-2">Heizkreiswerte dokumentieren</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">Heizleistung, Volumenstrom, Rohrlänge und Verteilerport werden je Heizkreis zugeordnet.</p>
+                        </div>
+                    </li>
+                </ol>
             </div>
         </section>
 
@@ -713,7 +826,7 @@
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     <div class="glass-panel rounded-3xl p-6 reveal">
                         <h3 class="text-lg font-bold text-white mb-2">PDF-Grundriss als natürlicher Start</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">SHK-Betriebe haben Grundrisse, keine CAD-Dateien. Prometo startet dort, wo die Projektdaten wirklich vorliegen — als PDF.</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">Viele SHK-Projekte starten mit einem vorhandenen PDF-Grundriss. Prometo setzt genau dort an.</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-1">
                         <h3 class="text-lg font-bold text-white mb-2">Mobile Baustellen-Tauglichkeit</h3>
@@ -725,7 +838,7 @@
                     </div>
                     <div class="glass-panel rounded-3xl p-6 reveal">
                         <h3 class="text-lg font-bold text-white mb-2">Bestand und Wärmepumpe</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Gerade im Bestand ist raumweise Heizlast entscheidend. Prometo unterstützt Wärmepumpen-Projekte mit Bivalenzpunkt-Analyse und Systemvergleich.</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">Gerade im Bestand liefern geprüfte Raumdaten eine wichtige Grundlage für Wärmepumpen-Projekte und Systementscheidungen.</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-1">
                         <h3 class="text-lg font-bold text-white mb-2">Materialdaten vorbereiten</h3>
@@ -827,12 +940,12 @@
 
                         <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
                             <summary class="flex items-center justify-between gap-4 text-gray-200 font-medium py-1">
-                                <span>Wie funktioniert die Materialbestellung mit Prometo?</span>
+                                <span>Ist die Heizlast-Schnellschätzung ein Normnachweis?</span>
                                 <span class="text-primary text-xl shrink-0 leading-none">+</span>
                             </summary>
                             <p class="text-sm text-gray-400 leading-relaxed mt-4 pb-2">
-                                Rohr- und Systemdaten können als Grundlage für Stücklisten vorbereitet werden.
-                                Materiallogik und Schnittstellen werden im Beta-Aufbau schrittweise geprüft.
+                                Nein. Sie dient der frühen Vorplanung und wird in Prometo ausdrücklich als indikative
+                                Schätzung gekennzeichnet. Die fachliche Berechnung und Bewertung bleibt erforderlich.
                             </p>
                         </details>
 
