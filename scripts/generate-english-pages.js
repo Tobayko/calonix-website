@@ -617,7 +617,10 @@ const relatedModules = {
     links: [
       { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Move from the overview into room structure and calculation context.' },
       { label: 'Underfloor heating design', href: '/en/underfloor-heating-design/', description: 'See how load, spacing and circuit layout fit together.' },
-      { label: 'Heat generators', href: '/en/heat-generators/', description: 'Check system choice after the building load is clear.' }
+      { label: 'Heat generators', href: '/en/heat-generators/', description: 'Check system choice after the building load is clear.' },
+      { label: 'AI assistant', href: '/en/ai-assistant/', description: 'See how source-backed guidance connects to technical workflows.' },
+      { label: 'Heat load software comparison', href: '/en/heat-load-software-comparison-hvac/', description: 'Compare software groups by workflow and project need.' },
+      { label: 'autarc, Reonic and Prometo', href: '/en/autarc-reonic-alternative/', description: 'Compare a focused floor-plan workflow with broader energy platforms.' }
     ]
   },
   'en/heat-load/index.html': {
@@ -627,7 +630,8 @@ const relatedModules = {
     links: [
       { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Go back to the connected calculation workflow.' },
       { label: 'Heat pump sizing', href: '/en/heat-pump-sizing/', description: 'Check what the load means for a concrete system selection.' },
-      { label: 'Hydraulic balancing', href: '/en/hydraulic-balancing/', description: 'Carry the same load data into balancing and flow-rate work.' }
+      { label: 'Hydraulic balancing', href: '/en/hydraulic-balancing/', description: 'Carry the same load data into balancing and flow-rate work.' },
+      { label: 'Heat load estimates', href: '/en/heat-load-estimates/', description: 'See where rough W/m² values help and where they stop.' }
     ]
   },
   'en/heat-load-calculation/index.html': {

@@ -42,7 +42,7 @@ function walk(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   return entries.flatMap(entry => {
     const full = path.join(dir, entry.name);
-    if (entry.name === 'node_modules' || entry.name === '.git') return [];
+    if (['node_modules', '.git', 'tools', 'graphify-out'].includes(entry.name)) return [];
     if (entry.isDirectory()) return walk(full);
     return entry.isFile() && entry.name.endsWith('.html') ? [path.relative(root, full)] : [];
   });

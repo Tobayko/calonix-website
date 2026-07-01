@@ -15,3 +15,4 @@ lighthouse-*.json
 fix_all.py
 fix_logo.py
 seo_inject.py
+.vercel

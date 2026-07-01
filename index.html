@@ -1542,7 +1542,7 @@
                 "url": "https://prometo.app/",
                 "name": "Prometo | Heizlastberechnung & Digitales Aufmaß für SHK",
                 "description": "Prometo für SHK-Betriebe: PDF-Grundriss hochladen, Räume prüfen und Heizlast sowie hydraulischen Abgleich in einem Workflow vorbereiten.",
-                "dateModified": "2026-06-14",
+                "dateModified": "2026-07-01",
                 "inLanguage": "de-DE",
                 "isPartOf": {
                     "@id": "https://prometo.app/#website"
@@ -1827,7 +1827,7 @@
                     </a>
                 </div>
                 <p class="text-xs text-gray-500 mb-5">
-                    Zuletzt aktualisiert: <time datetime="2026-06-14">Juni 2026</time> · Fachlich eingeordnet von Team Prometo
+                    Zuletzt aktualisiert: <time datetime="2026-07-01">Juli 2026</time> · Fachlich eingeordnet von Team Prometo
                 </p>
                 <div class="mx-auto max-w-3xl rounded-2xl border border-primary/20 bg-primary/8 p-5 text-left">
                     <p class="mb-3 text-xs font-headline font-bold uppercase tracking-widest text-primary">Kurzantwort</p>
@@ -2100,7 +2100,7 @@
         <!-- Feature Grid (Bento Style) -->
         <section id="features" class="px-8 max-w-screen-2xl mx-auto mb-32 relative z-20">
             <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-6">Die All-in-One Software für
+                <h2 class="text-4xl md:text-5xl font-headline font-bold text-white mb-6">Ein Projektworkflow für
                     Heizungsbau & TGA-Planung</h2>
                 <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Acht Werkzeuge, die in der geschlossenen
                     Beta bereits digitale Aufmaß-, Heizlast- und Baustellen-Workflows für SHK und TGA abbilden.</p>
@@ -2764,7 +2764,7 @@
                 <div class="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                     <div>
                         <p class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">Gemessener Workflow</p>
-                        <h3 class="text-2xl font-headline font-bold text-white mb-3">Vom PDF-Import zur vollständigen Heizlastberechnung: rund 7 Minuten</h3>
+                        <h3 class="text-2xl font-headline font-bold text-white mb-3">Vom PDF-Import zum strukturierten Heizlastergebnis: rund 7 Minuten</h3>
                     </div>
                     <div class="text-sm text-gray-500 md:text-right">Praxisnaher Orientierungswert</div>
                 </div>
@@ -2818,7 +2818,7 @@
                                 <span class="material-symbols-outlined text-primary"
                                     style="font-size: 14px;">check</span>
                             </span>
-                            Strukturierte Heizlastberechnung (angelehnt an DIN EN 12831) in Minuten
+                            Raumweise Heizlast-Arbeitsgrundlage, angelehnt an DIN EN 12831
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
@@ -3428,6 +3428,28 @@
                     </p>
                     <a href="/heizlastberechnung/schaetzwerte/" class="inline-flex items-center gap-2 text-primary font-headline font-semibold hover:text-white transition-colors">
                         Schätzwerte ansehen
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </article>
+                <article class="glass-panel p-8 rounded-3xl border border-white/5 bg-[#171c1c]/50">
+                    <span class="badge mb-5">Vergleich</span>
+                    <h3 class="text-2xl font-headline font-bold text-white mb-4">Heizlast Software vergleichen</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Ordnet Fachsoftware, Energieplattformen, Online-Tools und PDF-/Aufmaß-Workflows nach ihrem Einsatz ein.
+                    </p>
+                    <a href="/heizlast-software-vergleich-shk/" class="inline-flex items-center gap-2 text-primary font-headline font-semibold hover:text-white transition-colors">
+                        Software einordnen
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </article>
+                <article class="glass-panel p-8 rounded-3xl border border-white/5 bg-[#171c1c]/50">
+                    <span class="badge mb-5">Alternativen</span>
+                    <h3 class="text-2xl font-headline font-bold text-white mb-4">autarc, Reonic und Prometo einordnen</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Zeigt, wann ein früher PDF-/Aufmaß-Workflow passt und wann eine breitere Energieplattform sinnvoller ist.
+                    </p>
+                    <a href="/autarc-reonic-alternative/" class="inline-flex items-center gap-2 text-primary font-headline font-semibold hover:text-white transition-colors">
+                        Workflows vergleichen
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </article>
@@ -4162,6 +4184,7 @@
                         throw new Error(result.error || 'Die Anfrage konnte nicht gesendet werden.');
                     }
 
+                    gtag('event', 'generate_lead', { method: 'beta_form', lead_role: role });
                     betaForm.reset();
                     if (betaFormContent) {
                         betaFormContent.style.display = 'none';
@@ -4225,7 +4248,7 @@
             const phrases = [
                 'PDF-Grundriss hochladen, Räume prüfen, Heizlast und Abgleich in Minuten vorbereiten.',
                 'Für SHK-Betriebe, die weniger Excel, weniger Nachtragen und weniger chaotische Plan-PDFs wollen.',
-                'Vom PDF-Import bis zum vollständigen Heizlastergebnis: in einem kontrollierten Durchlauf ca. 7 Minuten – bei realen Projekten variiert der Aufwand je nach Planqualität und Tiefe.'
+                'Vom PDF-Import bis zum strukturierten Heizlastergebnis: in einem kontrollierten Durchlauf ca. 7 Minuten – bei realen Projekten variiert der Aufwand je nach Planqualität und Tiefe.'
             ];
 
             if (!canAnimate) {

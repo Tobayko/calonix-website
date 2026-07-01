@@ -47,6 +47,16 @@
       "permanent": true
     },
     {
+      "source": "/autarc-reonic-alternative",
+      "destination": "/autarc-reonic-alternative/",
+      "permanent": true
+    },
+    {
+      "source": "/heizlast-software-vergleich-shk",
+      "destination": "/heizlast-software-vergleich-shk/",
+      "permanent": true
+    },
+    {
       "source": "/digitales-aufmass-app.html",
       "destination": "/digitales-aufmass/",
       "permanent": true
@@ -79,6 +89,16 @@
     {
       "source": "/en/heat-load-calculation-software",
       "destination": "/en/heat-load-calculation-software/",
+      "permanent": true
+    },
+    {
+      "source": "/en/autarc-reonic-alternative",
+      "destination": "/en/autarc-reonic-alternative/",
+      "permanent": true
+    },
+    {
+      "source": "/en/heat-load-software-comparison-hvac",
+      "destination": "/en/heat-load-software-comparison-hvac/",
       "permanent": true
     },
     {
