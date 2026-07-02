@@ -5,6 +5,7 @@ const root = path.resolve(__dirname, '..');
 const routes = require('./i18n-routes.json');
 
 const ignored = new Set();
+const ignoredDirectories = new Set(['.git', '.vercel', 'graphify-out', 'node_modules', 'tools']);
 
 const germanTextPatterns = [
   /\b(Startseite|Zuletzt aktualisiert|Demo anfragen|Ablehnen|Akzeptieren|Datenschutzerkl[aä]rung)\b/i,
@@ -42,7 +43,7 @@ function walk(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   return entries.flatMap(entry => {
     const full = path.join(dir, entry.name);
-    if (entry.name === 'node_modules' || entry.name === '.git') return [];
+    if (ignoredDirectories.has(entry.name)) return [];
     if (entry.isDirectory()) return walk(full);
     return entry.isFile() && entry.name.endsWith('.html') ? [path.relative(root, full)] : [];
   });

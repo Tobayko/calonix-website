@@ -308,30 +308,6 @@ const pages = [
     ]
   },
   {
-    dePath: 'digitales-aufmass-app.html',
-    deUrl: 'https://prometo.app/digitales-aufmass/',
-    enPath: 'en/digital-takeoff-app/index.html',
-    enUrl: 'https://prometo.app/en/digital-takeoff/',
-    slugNoSlash: '/en/digital-takeoff-app',
-    robots: 'noindex, follow',
-    title: 'Digital Takeoff App for HVAC | Prometo',
-    description: 'Mobile digital takeoff app for HVAC teams with floor plan import, room review and connected project workflows.',
-    badge: 'Digital takeoff app',
-    h1: 'Digital Takeoff App for HVAC Teams',
-    intro: 'Prometo supports floor plan import, room review and connected project data for HVAC takeoff workflows.',
-    short: 'The app helps teams move from floor plan review to structured room and project data without describing internal recognition methods or technical API details.',
-    sections: [
-      ['Plan import', 'Start with the project floor plan and review the resulting room structure.'],
-      ['Mobile review', 'Keep site checks and office preparation connected in one project context.'],
-      ['Technical follow-up', 'Use structured data as the basis for heat load and further planning workflows.']
-    ],
-    faqs: [
-      ['Is this a separate workflow?', 'It supports the digital takeoff part of the broader Prometo workflow.'],
-      ['Can users review results?', 'Yes. Review is important because project data should be checked before technical use.'],
-      ['Do you explain internal recognition logic?', 'No. The page describes the user workflow, not implementation details.']
-    ]
-  },
-  {
     dePath: 'app-workflows.html',
     deUrl: 'https://prometo.app/app-workflows.html',
     enPath: 'en/app-workflows/index.html',
@@ -557,17 +533,6 @@ const copyExpansions = {
       ['What is the main benefit?', 'The main benefit is cleaner project data that can be reused later.']
     ]
   },
-  'en/digital-takeoff-app/index.html': {
-    sections: [
-      ['Room-level capture', 'Room data should stay clear enough to support later calculation and balancing work.'],
-      ['Office handoff', 'The office should be able to pick up the same project without rebuilding the data.'],
-      ['Keep the workflow simple', 'The app should help the team move faster without making the process harder to understand.']
-    ],
-    faqs: [
-      ['Is it built for field use?', 'Yes. The content should support mobile review and site work.'],
-      ['Does it connect to later planning work?', 'Yes. The point is to feed structured data into the next technical step.']
-    ]
-  },
   'en/app-workflows/index.html': {
     sections: [
       ['Create the project', 'Start with the project shell so the floor plan and follow-up planning steps stay in one place.'],
@@ -739,16 +704,6 @@ const relatedModules = {
       { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Connect the takeoff result with the calculation page.' },
       { label: 'Heat load calculation app', href: '/en/heat-load-calculation/app/', description: 'Review the connected mobile and office workflow.' },
       { label: 'Heat load', href: '/en/heat-load/', description: 'Keep the base load definition visible.' }
-    ]
-  },
-  'en/digital-takeoff-app/index.html': {
-    eyebrow: 'Field to office',
-    title: 'Use the app as the handoff point',
-    lead: 'The mobile takeoff page should feed the same project into the calculation and app workflow pages.',
-    links: [
-      { label: 'Digital takeoff', href: '/en/digital-takeoff/', description: 'See the broader takeoff workflow around the app.' },
-      { label: 'Heat load calculation app', href: '/en/heat-load-calculation/app/', description: 'Connect the takeoff result with site and office review.' },
-      { label: 'Heat load calculation', href: '/en/heat-load-calculation/', description: 'Continue into the main calculation workflow.' }
     ]
   },
   'en/app-workflows/index.html': {
