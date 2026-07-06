@@ -36,3 +36,38 @@ Diese Datei ist das dauerhafte Gedächtnis der wöchentlichen SEO-Routine für
 - Früheste belastbare Kontrolle von `a3be5b5`: 2026-07-30.
 - Nächster Kandidat: Query-/Seiten-Daten für `/ki-assistent/` prüfen und nur bei
   stabiler Sichtbarkeit Snippet oder Inhalt gezielt schärfen.
+
+### 2026-07-06, 08:34 CEST
+
+- GSC-Property: `sc-domain:prometo.app`; ausschließlich bestätigte
+  `data_state=final`-Daten.
+- Vergleich: 2026-06-06 bis 2026-07-03 gegen 2026-05-09 bis 2026-06-05.
+- Gesamt: 4 vs. 4 Klicks, 575 vs. 388 Impressionen, 0,70 % vs. 1,03 % CTR,
+  gewichtete mittlere Position 51,6 vs. 53,2.
+- Auffällige Seiten:
+  - `/digitales-aufmass/`: 139 vs. 92 Impressionen; Position 57,0 vs. 52,7.
+  - `/fussbodenheizung-auslegen/`: 102 vs. 56 Impressionen; Position 32,9
+    vs. 34,9.
+  - `/ki-assistent/`: 33 vs. 27 Impressionen; Position 22,4 vs. 56,5; ein
+    Klick vs. keiner.
+- Queries: 84 vs. 66 sichtbare Zeilen. Größere Zuwächse gab es unter anderem
+  bei `app für aufmaß und grundriss` (56 vs. 37 Impressionen, Position 55,2
+  vs. 50,4), `ki-assistent für klimatechnik` (20 vs. 8, Position 17,1 vs.
+  30,5) und `fußbodenheizung verlegeabstand` (16 vs. 7, Position 46,1 vs.
+  46,4). Die Query-Zeilen enthalten wegen GSC-Datenschutzfiltern nicht alle
+  vier Klicks und werden nicht als Gesamtsumme verwendet.
+- Spike-Prüfung: Tagesmedian 11,5 Impressionen. Der breite Ausschlag vom
+  23. bis 25. Juni lag bei 66, 67 und 60 Impressionen und verteilte sich auf
+  mehrere Seiten, vor allem Fußbodenheizung, Aufmaß und Heizlast. Ähnliche
+  kurze Cluster lagen im Vorzeitraum am 24./25. Mai und 31. Mai bis 2. Juni.
+  Es gibt damit noch keinen stabilen einzelnen Query-/Seitengewinner.
+- Sitemaps: Seiten-Sitemap 37 URLs, Bild-Sitemap 8 URLs, Index 45 URLs; keine
+  Fehler, Warnungen oder ausstehenden Abrufe.
+- Konkrete Änderung: nur diesen Verlauf ergänzt; keine Website-Inhalte
+  geändert. `a3be5b5` ist erst seit 2026-07-02 live und im aktuellen
+  Messfenster nur zwei Tage enthalten.
+- Hypothese, kein Ergebnis: Die Bereinigung durch `a3be5b5` kann kanonische
+  Signale stabilisieren. Die höhere Sichtbarkeit korreliert bisher nur mit
+  mehreren kurzen Ausschlägen und belegt keine Wirkung der Änderung.
+- Früheste Bewertung von `a3be5b5`: 2026-07-30. Bis dahin nur bei einem
+  technisch eindeutigen Fehler eingreifen.
