@@ -29,7 +29,7 @@
   font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 300;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/space-grotesk-latin-300-normal.woff2') format('woff2'),
        url('fonts/space-grotesk-latin-300-normal.woff') format('woff');
 }
@@ -37,7 +37,7 @@
   font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/space-grotesk-latin-400-normal.woff2') format('woff2'),
        url('fonts/space-grotesk-latin-400-normal.woff') format('woff');
 }
@@ -45,7 +45,7 @@
   font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/space-grotesk-latin-500-normal.woff2') format('woff2'),
        url('fonts/space-grotesk-latin-500-normal.woff') format('woff');
 }
@@ -53,7 +53,7 @@
   font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/space-grotesk-latin-600-normal.woff2') format('woff2'),
        url('fonts/space-grotesk-latin-600-normal.woff') format('woff');
 }
@@ -61,7 +61,7 @@
   font-family: 'Space Grotesk';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/space-grotesk-latin-700-normal.woff2') format('woff2'),
        url('fonts/space-grotesk-latin-700-normal.woff') format('woff');
 }
@@ -70,7 +70,7 @@
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 300;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/manrope-latin-300-normal.woff2') format('woff2'),
        url('fonts/manrope-latin-300-normal.woff') format('woff');
 }
@@ -78,7 +78,7 @@
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/manrope-latin-400-normal.woff2') format('woff2'),
        url('fonts/manrope-latin-400-normal.woff') format('woff');
 }
@@ -86,7 +86,7 @@
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/manrope-latin-500-normal.woff2') format('woff2'),
        url('fonts/manrope-latin-500-normal.woff') format('woff');
 }
@@ -94,7 +94,7 @@
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/manrope-latin-600-normal.woff2') format('woff2'),
        url('fonts/manrope-latin-600-normal.woff') format('woff');
 }
@@ -102,7 +102,7 @@
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url('fonts/manrope-latin-700-normal.woff2') format('woff2'),
        url('fonts/manrope-latin-700-normal.woff') format('woff');
 }
