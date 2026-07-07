@@ -66,15 +66,6 @@
        url('fonts/space-grotesk-latin-700-normal.woff') format('woff');
 }
 
-/* ── Manrope (local) ── */
-@font-face {
-  font-family: 'Material Symbols Outlined';
-  font-style: normal;
-  font-weight: 100 700;
-  font-display: block;
-  src: url('fonts/material-symbols-outlined.woff2') format('woff2');
-}
-
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
@@ -117,7 +108,7 @@
 }
 
 .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
+  font-family: ui-sans-serif, system-ui, sans-serif;
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
