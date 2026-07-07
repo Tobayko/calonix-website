@@ -71,7 +71,8 @@
     </script>
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/site-navigation.css" />
-    <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="stylesheet" href="/assets/seo-explainers.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="/assets/seo-explainers.css" /></noscript>
     <!-- Lokales Tailwind CSS inkl. Fonts (DSGVO-konform, keine externen Requests) -->
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" media="print" onload="this.media='all'" />
@@ -1811,7 +1812,7 @@
                         href="#beta-signup">
                         Beta-Zugang anfragen
                         <span
-                            class="material-symbols-outlined transition-transform group-hover:translate-x-1">→</span>
+                            class="material-symbols-outlined transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                     </a>
                     <a
                         class="glass-panel text-white px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
@@ -1955,7 +1956,7 @@
                     <div class="absolute top-[12%] left-10 glass-panel p-5 rounded-2xl w-64 pointer-events-auto"
                         style="animation: float-label 8s ease-in-out infinite;">
                         <h3 class="text-white font-headline font-bold text-lg mb-1 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary text-xl">forum</span>
+                            <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">◌</span>
                             Fachassistent
                         </h3>
                         <p class="text-gray-400 text-xs leading-relaxed">Dein digitaler Co-Pilot für SHK-Normen und
@@ -2109,7 +2110,7 @@
                     <div class="relative z-10">
                         <div
                             class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-all group-hover:scale-110">
-                            <span class="material-symbols-outlined text-primary text-3xl">forum</span>
+                            <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">◌</span>
                         </div>
                         <h3 class="font-headline font-bold text-2xl text-white mb-2">Fachassistent für TGA & SHK
                             <span class="text-primary text-lg ml-2 font-normal tracking-wide">(quellenbasiert)</span>
@@ -2132,7 +2133,7 @@
                     <div class="relative z-10">
                         <div
                             class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-blue-400/20 group-hover:bg-blue-400/20 transition-all group-hover:scale-110">
-                            <span class="material-symbols-outlined text-blue-400 text-3xl">document_scanner</span>
+                            <span class="material-symbols-outlined text-blue-400 text-3xl" aria-hidden="true">▣</span>
                         </div>
                         <h3 class="font-headline font-bold text-2xl text-white mb-2">Grundriss-Erkennung in der Beta
                             <span class="text-blue-400 text-lg ml-2 font-normal tracking-wide">(PDF Scan)</span>
@@ -2152,7 +2153,7 @@
                     <div
                         class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
                         <span
-                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors">magic_button</span>
+                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors" aria-hidden="true">✦</span>
                     </div>
                     <h3 class="font-headline font-bold text-xl text-white mb-2">Smarte Projektanlage</h3>
                     <h4 class="text-gray-400 text-sm font-medium mb-4">Geführter Einstieg in Beta-Projekte</h4>
@@ -2168,7 +2169,7 @@
                     <div
                         class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
                         <span
-                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors">thermostat</span>
+                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors" aria-hidden="true">°</span>
                     </div>
                     <h3 class="font-headline font-bold text-xl text-white mb-2">Strukturierte Heizlast</h3>
                     <h4 class="text-gray-400 text-sm font-medium mb-4">Angelehnt an DIN EN 12831</h4>
@@ -2184,7 +2185,7 @@
                     <div
                         class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
                         <span
-                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors">architecture</span>
+                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors" aria-hidden="true">⌂</span>
                     </div>
                     <h3 class="font-headline font-bold text-xl text-white mb-2">Rohrnetz-Auslegung</h3>
                     <h4 class="text-gray-400 text-sm font-medium mb-4">Angelehnt an DIN EN 1264</h4>
@@ -2201,7 +2202,7 @@
                     <div
                         class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
                         <span
-                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors">shopping_cart_checkout</span>
+                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors" aria-hidden="true">✓</span>
                     </div>
                     <h3 class="font-headline font-bold text-xl text-white mb-2">Material & Stücklisten</h3>
                     <h4 class="text-gray-400 text-sm font-medium mb-4">Vorbereitung für weitere Prozesse</h4>
@@ -2220,7 +2221,7 @@
                     <div class="relative z-10 flex flex-col h-full justify-center">
                         <div
                             class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-tertiary/20 group-hover:bg-tertiary/20 transition-all group-hover:scale-110">
-                            <span class="material-symbols-outlined text-tertiary text-3xl">groups</span>
+                            <span class="material-symbols-outlined text-tertiary text-3xl" aria-hidden="true">◯</span>
                         </div>
                         <h3 class="font-headline font-bold text-2xl text-white mb-2">Team- & Rechtemanagement <span
                                 class="text-tertiary text-lg ml-2 font-normal tracking-wide">(RBAC)</span></h3>
@@ -2242,7 +2243,7 @@
                     <div class="relative z-10 flex flex-col h-full justify-center">
                         <div
                             class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-gray-400/20 group-hover:bg-gray-400/20 transition-all group-hover:scale-110">
-                            <span class="material-symbols-outlined text-gray-300 text-3xl">wifi_off</span>
+                            <span class="material-symbols-outlined text-gray-300 text-3xl" aria-hidden="true">⌁</span>
                         </div>
                         <h3 class="font-headline font-bold text-2xl text-white mb-2">Offline-Baustellen-App <span
                                 class="text-gray-400 text-lg ml-2 font-normal tracking-wide">(Auto-Sync)</span></h3>
@@ -2700,7 +2701,7 @@
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal">
                     <div
                         class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                        <span class="material-symbols-outlined text-primary text-2xl">schedule</span>
+                        <span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">◷</span>
                     </div>
                     <div class="text-4xl font-headline font-bold mb-2 text-white">Lernfokus</div>
                     <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
@@ -2712,7 +2713,7 @@
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-1">
                     <div
                         class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                        <span class="material-symbols-outlined text-primary text-2xl">fact_check</span>
+                        <span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">✓</span>
                     </div>
                     <div class="text-4xl font-headline font-bold mb-2 text-white">Beta</div>
                     <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
@@ -2724,7 +2725,7 @@
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-2">
                     <div
                         class="w-14 h-14 rounded-2xl bg-blue-400/10 flex items-center justify-center mx-auto mb-5 border border-blue-400/20 group-hover:bg-blue-400/20 transition-colors">
-                        <span class="material-symbols-outlined text-blue-400 text-2xl">gavel</span>
+                        <span class="material-symbols-outlined text-blue-400 text-2xl" aria-hidden="true">§</span>
                     </div>
                     <div class="text-5xl font-headline font-bold mb-2 text-blue-300">DIN/EN</div>
                     <div class="text-blue-400 font-headline font-semibold text-sm uppercase tracking-widest mb-2">12831
@@ -2736,7 +2737,7 @@
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-3">
                     <div
                         class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mx-auto mb-5 border border-tertiary/20 group-hover:bg-tertiary/20 transition-colors">
-                        <span class="material-symbols-outlined text-tertiary text-2xl">wifi_off</span>
+                        <span class="material-symbols-outlined text-tertiary text-2xl" aria-hidden="true">⌁</span>
                     </div>
                     <div class="text-4xl font-headline font-bold mb-2 text-tertiary">iOS · Android · Web</div>
                     <div class="text-tertiary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
@@ -2804,21 +2805,21 @@
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
                                 <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Lernworkflow für Heizlast, Aufmaß und Abgleich
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
                                 <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Anschaulich mit echten Plan- und Raumdaten
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
                                 <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Fachliche Prüfung bleibt Bestandteil der Ausbildung
                         </li>
@@ -2832,7 +2833,7 @@
                 <div class="audience-card reveal reveal-delay-1">
                     <div
                         class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-primary/20 bg-primary/8">
-                        <span class="material-symbols-outlined text-primary text-3xl">handyman</span>
+                        <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">⚒</span>
                     </div>
                     <div class="badge mb-4">SHK-Handwerk</div>
                     <h3 class="font-headline font-bold text-2xl text-white mb-3">Für Heizungsbauer und Installateure
@@ -2846,28 +2847,28 @@
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
                                 <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Raumdaten strukturiert für die Heizlastberechnung vorbereiten
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
                                 <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Mobile Datenerfassung für Baustelle und Büro
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
                                 <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Rohr- und Materialdaten für Folgeprozesse vorbereiten
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
                                 <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Nachvollziehbarer Workflow für Ausbildung und Praxis
                         </li>
@@ -2878,7 +2879,7 @@
                 <div class="audience-card reveal reveal-delay-2" style="border-color: rgba(96,165,250,0.15);">
                     <div
                         class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-blue-400/20 bg-blue-400/8">
-                        <span class="material-symbols-outlined text-blue-400 text-3xl">engineering</span>
+                        <span class="material-symbols-outlined text-blue-400 text-3xl" aria-hidden="true">⚙</span>
                     </div>
                     <div class="badge mb-4"
                         style="color: #60a5fa; background: rgba(96,165,250,0.08); border-color: rgba(96,165,250,0.2);">
@@ -2894,28 +2895,28 @@
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
                                 <span class="material-symbols-outlined text-blue-400"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Flächen-Heizung nach Vorbild DIN EN 1264 auslegen
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
                                 <span class="material-symbols-outlined text-blue-400"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Hydraulischer Abgleich mit Soll-Volumenströmen und Verteileransicht
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
                                 <span class="material-symbols-outlined text-blue-400"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             RBAC-Rechtemanagement für Teams
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
                                 <span class="material-symbols-outlined text-blue-400"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Eigene Herstellerunterlagen projektbezogen einordnen
                         </li>
@@ -2926,7 +2927,7 @@
                 <div class="audience-card reveal reveal-delay-3" style="border-color: rgba(121,217,230,0.15);">
                     <div
                         class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-tertiary/20 bg-tertiary/8">
-                        <span class="material-symbols-outlined text-tertiary text-3xl">eco</span>
+                        <span class="material-symbols-outlined text-tertiary text-3xl" aria-hidden="true">◇</span>
                     </div>
                     <div class="badge mb-4"
                         style="color: #79d9e6; background: rgba(121,217,230,0.08); border-color: rgba(121,217,230,0.2);">
@@ -2943,28 +2944,28 @@
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
                                 <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Strukturierte Heizlast für dein Projekt
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
                                 <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Digitales Bestandsaufmaß aus Architekturplänen
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
                                 <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Nachvollziehbare Projektdokumentation
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
                                 <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;">check</span>
+                                    style="font-size: 14px;" aria-hidden="true">✓</span>
                             </span>
                             Systemvergleiche für Beratungsberichte
                         </li>
@@ -2997,7 +2998,7 @@
                         class="inline-flex items-center gap-2 text-primary font-headline font-semibold text-sm group">
                         Beta-Kontakt aufnehmen
                         <span
-                            class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+                            class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                     </a>
                 </div>
 
@@ -3010,7 +3011,7 @@
                             <button type="button" class="faq-question" onclick="toggleFaq(this)">
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Orientiert sich Prometo an der DIN EN 12831?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3030,7 +3031,7 @@
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Wie funktioniert
                                     der PDF-Import für Baupläne?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3050,7 +3051,7 @@
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Kann ich Prometo auch
                                     ohne Internetverbindung auf der Baustelle nutzen?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3071,7 +3072,7 @@
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Wie funktioniert das
                                     Rechtemanagement für mein Team?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3095,7 +3096,7 @@
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Welche Geräte und
                                     Betriebssysteme werden unterstützt?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3115,7 +3116,7 @@
                             <button type="button" class="faq-question" onclick="toggleFaq(this)">
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Wann kann ich Prometo nutzen?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3217,7 +3218,7 @@
                                         <input type="radio" name="role" id="role-shk" value="SHK-Handwerker" />
                                         <label for="role-shk">
                                             <span class="material-symbols-outlined"
-                                                style="font-size: 15px;">handyman</span>
+                                                style="font-size: 15px;" aria-hidden="true">⚒</span>
                                             SHK-Handwerker
                                         </label>
                                     </div>
@@ -3225,14 +3226,14 @@
                                         <input type="radio" name="role" id="role-tga" value="TGA-Planer" />
                                         <label for="role-tga">
                                             <span class="material-symbols-outlined"
-                                                style="font-size: 15px;">engineering</span>
+                                                style="font-size: 15px;" aria-hidden="true">⚙</span>
                                             TGA-Planer
                                         </label>
                                     </div>
                                     <div class="role-pill">
                                         <input type="radio" name="role" id="role-energy" value="Energieberater" />
                                         <label for="role-energy">
-                                            <span class="material-symbols-outlined" style="font-size: 15px;">eco</span>
+                                            <span class="material-symbols-outlined" style="font-size: 15px;" aria-hidden="true">◇</span>
                                             Energieberater
                                         </label>
                                     </div>
@@ -3240,7 +3241,7 @@
                                         <input type="radio" name="role" id="role-other" value="Sonstiges" />
                                         <label for="role-other">
                                             <span class="material-symbols-outlined"
-                                                style="font-size: 15px;">person</span>
+                                                style="font-size: 15px;" aria-hidden="true">○</span>
                                             Sonstiges
                                         </label>
                                     </div>
@@ -3252,7 +3253,7 @@
                                 class="w-full bg-primary text-on-primary font-headline font-bold py-4 px-8 rounded-full text-base hover:shadow-[0_0_30px_rgba(69,222,231,0.5)] active:scale-95 transition-all flex items-center justify-center gap-2 group">
                                 <span id="betaSubmitLabel">Beta-Zugang anfragen</span>
                                 <span
-                                    class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                                    class="material-symbols-outlined transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                             </button>
                             <p id="betaFormStatus" role="status" aria-live="polite" class="text-center text-sm mt-4 font-body" style="display: none;">
                             </p>
@@ -3273,7 +3274,7 @@
                         <div class="w-16 h-16 rounded-full flex items-center justify-center"
                             style="background: rgba(69,222,231,0.2); border: 1px solid rgba(69,222,231,0.4);">
                             <span class="material-symbols-outlined text-primary"
-                                style="font-size: 32px;">check_circle</span>
+                                style="font-size: 32px;" aria-hidden="true">✓</span>
                         </div>
                         <h3 class="text-white font-headline font-bold text-2xl">Anfrage abgeschickt</h3>
                         <p class="text-gray-400 max-w-sm font-body leading-relaxed">Wir haben deine Beta-Anfrage
@@ -3317,7 +3318,7 @@
                             class="bg-primary text-on-primary px-10 py-4 rounded-full font-headline font-bold text-lg hover:shadow-[0_0_40px_rgba(69,222,231,0.5)] active:scale-95 transition-all flex items-center justify-center gap-2 group">
                             Beta-Zugang anfragen
                             <span
-                                class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                                class="material-symbols-outlined transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                         </a>
                     </div>
 
@@ -3347,7 +3348,7 @@
 
     <!-- Back to Top Button -->
     <button type="button" id="backToTop" aria-label="Nach oben scrollen">
-        <span class="material-symbols-outlined" style="font-size: 20px;">arrow_upward</span>
+        <span class="material-symbols-outlined" style="font-size: 20px;" aria-hidden="true">↑</span>
     </button>
 
 
