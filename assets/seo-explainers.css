@@ -91,3 +91,11 @@
         animation: none;
     }
 }
+
+@media (max-width: 768px) {
+    .seo-explainer .flow-track,
+    .seo-explainer .flow-pulse,
+    .seo-explainer .moving-dot {
+        animation: none;
+    }
+}
