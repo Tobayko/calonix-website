@@ -482,6 +482,12 @@
             scroll-margin-top: 96px;
         }
 
+        main > section:not(:first-of-type),
+        footer {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 760px;
+        }
+
         /* Hero Specific Animations & Styles */
         .glass-panel {
             background: rgba(38, 43, 43, 0.4);
