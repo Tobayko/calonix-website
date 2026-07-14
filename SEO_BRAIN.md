@@ -147,11 +147,18 @@ Diese Datei ist das dauerhafte Gedächtnis der wöchentlichen SEO-Routine für
   PageSpeed weist noch auf render-blockierende Anfragen und rund 418–422 KiB
   mögliche Bildoptimierung hin; wegen der bereits sehr guten Werte und des
   Scopes dieses Laufs keine technische Zusatzänderung.
-- Google-Trends-Prüfung: Vergleich der Prometo-Themen „Aufmaß App“,
-  „Heizlastberechnung“, „Fußbodenheizung Verlegeabstand“ und „hydraulischer
-  Abgleich“ wurde gestartet, aber die konkrete Explore-Abfrage mit HTTP 429
-  rate-limited. Die sichtbaren allgemeinen Deutschland-Trends waren nicht
-  fachlich belastbar; kein Trendbegriff wurde übernommen.
+- Google-Trends-Prüfung über `https://trends.google.de/trends/` für die vier
+  Prometo-Themen, jeweils Deutschland und „Letzte 12 Monate“: „Aufmaß App“
+  blieb lange ohne belastbares Signal und stieg erst Ende Juni auf 66, 100
+  und 72 (Wochenwerte); verwandte Signale waren das Thema „Aufmaß“ (99) und
+  „aufmaß app kostenlos“ (100). „Heizlastberechnung“ war über den Zeitraum
+  stabil nachgefragt und lag zuletzt bei 61; „Fußbodenheizung
+  Verlegeabstand“ blieb klein (zuletzt 0, nach 15 und 20); „hydraulischer
+  Abgleich“ war stabil (zuletzt 30–33), mit verwandten Themen „Stellantrieb“
+  (+100 %) und „Wärmepumpe“ (+80 %). Wegen der dünnen Aufmaß-Daten und weil
+  „kostenlos“ für das Beta-Angebot nicht belegt ist, wurde kein Trendbegriff
+  übernommen. Ein früherer Explore-Aufruf war zusätzlich zeitweise HTTP-429-
+  rate-limited; die direkte Trends-Seite war in diesem Lauf nutzbar.
 - Konkrete Änderung: nur diesen Verlauf ergänzt. Keine Website-Inhalte
   erweitert, weil `/digitales-aufmass/` die stärkste Query bereits im Title und
   H1 trifft und weiteres Textvolumen die Seite unnötig überladen würde.
