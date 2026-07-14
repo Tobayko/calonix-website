@@ -107,3 +107,57 @@ Diese Datei ist das dauerhafte Gedächtnis der wöchentlichen SEO-Routine für
   der Änderung.
 - Früheste Bewertung von `a3be5b5`: 2026-07-30. Bis dahin keine weitere
   Inhaltsänderung ohne klaren technischen Fehler oder stabilen GSC-Gewinner.
+
+### 2026-07-14, 15:31 CEST
+
+- GSC-Property: `sc-domain:prometo.app`; zuerst per GSC-MCP
+  `list_properties` bestätigt. Verwendet wurden ausschließlich bestätigte
+  `data_state=final`-Daten.
+- Vergleich: 2026-06-14 bis 2026-07-11 gegen 2026-05-17 bis 2026-06-13.
+- Gesamt: 4 vs. 3 Klicks, 552 vs. 407 Impressionen, 0,72 % vs. 0,74 % CTR,
+  gewichtete mittlere Position 49,3 vs. 56,6.
+- Queries und Seiten: 84 vs. 70 sichtbare Query-Zeilen und 21 vs. 13
+  sichtbare Seiten-Zeilen. Wichtige Query-Signale:
+  - `app für aufmaß und grundriss`: 45 vs. 48 Impressionen, Position 48,8
+    vs. 57,6, weiterhin ohne Klick.
+  - `aufmaß app shk`: 8 vs. 2 Impressionen, Position 13,9 vs. 16,5.
+  - `fußbodenheizung verlegeabstand`: 16 vs. 7 Impressionen, Position 46,1
+    vs. 46,4.
+  - `ki-assistent für klimatechnik`: 20 vs. 6 Impressionen, Position 17,1
+    vs. 11,0; die höhere Sichtbarkeit ist kein belegtes Ranking-Ergebnis.
+- Auffällige Seiten:
+  - `/digitales-aufmass/`: 120 vs. 112 Impressionen; Position 51,0 vs. 60,6.
+  - `/fussbodenheizung-auslegen/`: 105 vs. 53 Impressionen; Position 33,1
+    vs. 33,4.
+  - `/ki-assistent/`: 35 vs. 21 Impressionen; Position 21,3 vs. 48,0.
+  - `/heizlastberechnung/`: 49 vs. 64 Impressionen; Position 63,3 vs. 75,1.
+- Spike-Prüfung: Der aktuelle Tagesmedian liegt bei 12 Impressionen. Der
+  aktuelle Ausschlag vom 21. bis 27. Juni lag bei 37, 36, 66, 67, 60, 41 und
+  37 Impressionen; am 1. Juli folgten nochmals 37. Die Werte verteilten sich
+  auf mehrere Seiten. Vergleichbare Cluster gab es im Vorzeitraum am 24./25.
+  Mai sowie vom 31. Mai bis 2. Juni. Das ist eine Korrelation, kein Beleg für
+  eine einzelne Änderung oder einen dauerhaften Rankingfaktor.
+- Sitemaps: `sitemap-pages.xml` 37 URLs, `sitemap-images.xml` 8 URLs,
+  `sitemap.xml` 45 URLs; alle drei `Valid`, 0 Fehler und 0 Warnungen.
+- PageSpeed für `https://prometo.app/digitales-aufmass/`, Bericht vom
+  2026-07-14 15:31 CEST: Mobil 99 Leistung, 100 Barrierefreiheit, 100 Best
+  Practices und 100 SEO; FCP 1,2 s, LCP 1,8 s, TBT 0 ms, CLS 0, Speed Index
+  1,3 s. Desktop: 100 Leistung, 100 Barrierefreiheit, 100 Best Practices und
+  100 SEO; FCP 0,3 s, LCP 0,4 s, TBT 0 ms, CLS 0, Speed Index 0,6 s.
+  PageSpeed weist noch auf render-blockierende Anfragen und rund 418–422 KiB
+  mögliche Bildoptimierung hin; wegen der bereits sehr guten Werte und des
+  Scopes dieses Laufs keine technische Zusatzänderung.
+- Google-Trends-Prüfung: Vergleich der Prometo-Themen „Aufmaß App“,
+  „Heizlastberechnung“, „Fußbodenheizung Verlegeabstand“ und „hydraulischer
+  Abgleich“ wurde gestartet, aber die konkrete Explore-Abfrage mit HTTP 429
+  rate-limited. Die sichtbaren allgemeinen Deutschland-Trends waren nicht
+  fachlich belastbar; kein Trendbegriff wurde übernommen.
+- Konkrete Änderung: nur diesen Verlauf ergänzt. Keine Website-Inhalte
+  erweitert, weil `/digitales-aufmass/` die stärkste Query bereits im Title und
+  H1 trifft und weiteres Textvolumen die Seite unnötig überladen würde.
+- Hypothese, kein Ergebnis: Die bessere Sichtbarkeit und Position korrelieren
+  mit der Bereinigung durch `a3be5b5` und breit verteilten Impression-Spikes;
+  weder eine Wirkung von `a3be5b5` noch eine dauerhafte Platzierungsverbesserung
+  ist nach zwölf Tagen belastbar belegt.
+- Früheste Bewertung von `a3be5b5`: 2026-07-30. Bis dahin keine weitere
+  Inhaltsänderung ohne technischen Fehler oder stabilen GSC-Gewinner.
