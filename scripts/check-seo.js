@@ -56,6 +56,14 @@ const files = walk(root);
 const indexable = [];
 const titles = new Map();
 const descriptions = new Map();
+const allowedNoindex = new Set([
+  'beta/danke/index.html',
+  'datenschutz.html',
+  'en/beta/thanks/index.html',
+  'en/legal-notice/index.html',
+  'en/privacy/index.html',
+  'impressum.html'
+]);
 
 for (const file of files) {
   const rel = relative(file);
@@ -84,7 +92,10 @@ for (const file of files) {
     if (match[1] > '2026-07-18') errors.push(`${rel}: zukünftiges dateModified ${match[1]}.`);
   }
 
-  if (!isIndexable) continue;
+  if (!isIndexable) {
+    if (!allowedNoindex.has(rel)) errors.push(`${rel}: unerwartetes noindex.`);
+    continue;
+  }
   indexable.push({ file, rel, html, canonical });
   if (!title) errors.push(`${rel}: Title fehlt.`);
   if (!description) errors.push(`${rel}: Meta-Description fehlt.`);

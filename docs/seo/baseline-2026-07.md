@@ -17,6 +17,17 @@ Zeitraum: letzte drei Monate bis 15.07.2026.
 
 Wichtige Query-Signale: „app für aufmaß und grundriss“ (115 Impressionen), „heizlastberechnung software“ (54), „hydraulischer abgleich wärmepumpe“ (48), „fußbodenheizung verlegeabstand“ (43), „heizlastberechnung programm“ (39) und „aufmaß software tablet“ (36). Der Query-Export ist datenschutzbedingt unvollständig; Gesamt- und Seitendaten sind deshalb die primäre Bewertungsbasis.
 
+## Indexierungsabdeckung vom 18.07.2026
+
+Der Google-Coverage-Export enthält Tageswerte bis 10.07.2026 und bezieht sich auf alle Google bekannten Seiten, nicht nur auf die aktuelle Sitemap.
+
+- 23 URLs waren indexiert, 20 URLs nicht indexiert.
+- Die 20 Ausschlüsse verteilen sich auf 3 Seiten mit Weiterleitung, 1 per `noindex` ausgeschlossene Seite und 16 URLs mit „Gefunden – zurzeit nicht indexiert“.
+- Am 01.07.2026 stieg die Zahl nicht indexierter URLs sprunghaft von 4 auf 20, während die Zahl indexierter URLs bei 23 stabil blieb. Das spricht für neu entdeckte URLs und nicht für den Verlust von 16 bereits indexierten Seiten.
+- Der Export enthält keine URL-Beispiele. Eine exakte Zuordnung der 16 gefundenen URLs ist damit nicht möglich.
+
+Der Live-Abgleich am 18.07.2026 ergab 39 kanonische Sitemap-URLs mit direktem Status `200`, selbstreferenzierendem Canonical, genau einer H1 und indexierbarem Robots-Meta. Alle 41 konfigurierten permanenten Weiterleitungen endeten ohne Kette auf einem `200`-Ziel. Als tatsächliche Inkonsistenz wurde `/en/app-workflows/` identifiziert: Die Seite war intern stark verlinkt und als hreflang-Gegenseite referenziert, trug aber `noindex`. Sie wurde indexierbar gemacht, in die Sitemap aufgenommen und von internen SEO-Platzhaltertexten bereinigt. Danke- und Rechtstextseiten bleiben bewusst `noindex` und stehen nicht in der Sitemap.
+
 ## Untersuchung der jüngsten Git-Historie
 
 - Commit `a3be5b5` vom 02.07.2026 entfernte die Duplikate `digitales-aufmass-app.html`, `en/digital-takeoff-app/index.html` und `heizlastberechnung-software.html`. Die Weiterleitung von `/digitales-aufmass-app.html` auf `/digitales-aufmass/` war bereits vorhanden und bleibt erhalten.

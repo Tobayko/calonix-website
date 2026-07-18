@@ -2,6 +2,9 @@
 
 ## 18.07.2026
 
+- Google-Coverage-Export geprüft: 23 indexierte und 20 nicht indexierte bekannte URLs mit dem letzten enthaltenen Tagesstand 10.07.2026 dokumentiert; der Sprung am 01.07. als zusätzliche URL-Entdeckung statt Deindexierungsverlust eingeordnet.
+- Unerwartetes `noindex` auf `/en/app-workflows/` entfernt, selbstreferenzierendes hreflang-Paar dadurch indexierbar gemacht, Seite in die Sitemap aufgenommen und sichtbare interne SEO-Platzhaltertexte durch den tatsächlichen PDF-first Workflow ersetzt.
+- SEO-Abnahmetest um eine Positivliste für beabsichtigte `noindex`-Seiten ergänzt; neue unbeabsichtigte Ausschlüsse führen nun zum Testfehler.
 - Visuelle Seitenrollen getauscht: Die kommerzielle Startseite nutzt wieder die markante Würfel-/Linien-Inszenierung, während `/shk-ausbildung/` die reduzierte Marketingstruktur mit klar abgegrenzten Ausbildungsinhalten erhält.
 - Mobile App-Bilder auf der Ausbildungsseite als horizontale Scroll-Snap-Galerie umgesetzt; die Startseite nutzt wieder eine einzelne große App-Ansicht mit wischbarer Thumbnail-Navigation.
 - Startseite auf den kommerziellen Einstieg „PDF-Aufmaß für bestehende SHK-Betriebe“ geschärft; Aufmaß Software als primäre Suchintention definiert und die Detailseite `/digitales-aufmass/` auf den konkreten PDF-Aufmaß-Workflow abgegrenzt.
