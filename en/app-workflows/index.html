@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Prometo App Workflows: Floor Plan Import, Heat Load and Balancing</title>
-    <meta name="description" content="Prometo app workflow overview for floor plan import, room review, heat load context, heatmap and hydraulic balancing screens." />
-    <meta name="robots" content="noindex, follow" />
-    <meta name="googlebot" content="noindex, follow" />
+    <title>Prometo Workflow: PDF, Heat Load &amp; Balancing in 4 Steps</title>
+    <meta name="description" content="Upload a PDF floor plan, detect and review rooms, then calculate heat load, material requirements and hydraulic balancing in one connected workflow." />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="canonical" href="https://prometo.app/en/app-workflows/" />
@@ -23,18 +23,18 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Prometo App Workflows: Floor Plan Import, Heat Load and Balancing" />
-    <meta property="og:description" content="Prometo app workflow overview for floor plan import, room review, heat load context, heatmap and hydraulic balancing screens." />
+    <meta property="og:title" content="Prometo Workflow: PDF, Heat Load &amp; Balancing in 4 Steps" />
+    <meta property="og:description" content="From PDF floor plan and automatic room detection to heat load, materials and hydraulic balancing." />
     <meta property="og:url" content="https://prometo.app/en/app-workflows/" />
-    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
-    <meta property="og:image:alt" content="Prometo app screen for HVAC project planning" />
+    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp" />
+    <meta property="og:image:alt" content="Prometo floor plan import review with automatically detected rooms" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1080" />
     <meta property="og:image:height" content="2400" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Prometo App Workflows: Floor Plan Import, Heat Load and Balancing" />
-    <meta name="twitter:description" content="Prometo app workflow overview for floor plan import, room review, heat load context, heatmap and hydraulic balancing screens." />
-    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
+    <meta name="twitter:title" content="Prometo Workflow: PDF, Heat Load &amp; Balancing in 4 Steps" />
+    <meta name="twitter:description" content="From PDF floor plan and automatic room detection to heat load, materials and hydraulic balancing." />
+    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp" />
     <link rel="preload" href="/assets/tailwind.css" as="style" />
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/tailwind.css" />
@@ -48,113 +48,57 @@
         .faq-item summary { cursor: pointer; list-style: none; }
         .faq-item summary::-webkit-details-marker { display: none; }
     </style>
-    <script type="application/ld+json">{
-        "@context": "https://schema.org",
-        "@graph": [
-                {
-                        "@type": "Organization",
-                        "@id": "https://prometo.app/#organization",
-                        "name": "Prometo",
-                        "url": "https://prometo.app/",
-                        "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://prometo.app/Logo/Wort-Bild.svg"
-                        }
-                },
-                {
-                        "@type": "BreadcrumbList",
-                        "@id": "https://prometo.app/en/app-workflows/#breadcrumb",
-                        "itemListElement": [
-                                {
-                                        "@type": "ListItem",
-                                        "position": 1,
-                                        "name": "Home",
-                                        "item": "https://prometo.app/en/"
-                                },
-                                {
-                                        "@type": "ListItem",
-                                        "position": 2,
-                                        "name": "App workflows",
-                                        "item": "https://prometo.app/en/app-workflows/"
-                                }
-                        ]
-                },
-                {
-                        "@type": "WebPage",
-                        "@id": "https://prometo.app/en/app-workflows/#webpage",
-                        "url": "https://prometo.app/en/app-workflows/",
-                        "name": "Prometo App Workflows: Floor Plan Import, Heat Load and Balancing",
-                        "description": "Prometo app workflow overview for floor plan import, room review, heat load context, heatmap and hydraulic balancing screens.",
-                        "dateModified": "2026-05-28",
-                        "inLanguage": "en-US",
-                        "isPartOf": {
-                                "@id": "https://prometo.app/#website"
-                        },
-                        "author": {
-                                "@type": "Organization",
-                                "name": "Prometo",
-                                "url": "https://prometo.app/"
-                        },
-                        "reviewedBy": {
-                                "@type": "Organization",
-                                "name": "Prometo",
-                                "url": "https://prometo.app/"
-                        },
-                        "publisher": {
-                                "@id": "https://prometo.app/#organization"
-                        },
-                        "breadcrumb": {
-                                "@id": "https://prometo.app/en/app-workflows/#breadcrumb"
-                        }
-                },
-                {
-                        "@type": "FAQPage",
-                        "@id": "https://prometo.app/en/app-workflows/#faq",
-                        "mainEntity": [
-                                {
-                                        "@type": "Question",
-                                        "name": "Is this an indexed SEO page?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "This workflow overview is intended as a supporting page and can remain noindex if used mainly for product screenshots."
-                                        }
-                                },
-                                {
-                                        "@type": "Question",
-                                        "name": "What does the workflow cover?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "It covers floor plan import, room review, heat load context and hydraulic balancing screens."
-                                        }
-                                },
-                                {
-                                        "@type": "Question",
-                                        "name": "Does it reveal internal implementation details?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "No. It describes the user-facing workflow only."
-                                        }
-                                },
-                                {
-                                        "@type": "Question",
-                                        "name": "Why keep it noindex?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "Because it is primarily a supporting product page, not a search landing page."
-                                        }
-                                },
-                                {
-                                        "@type": "Question",
-                                        "name": "Is the content still useful to visitors?",
-                                        "acceptedAnswer": {
-                                                "@type": "Answer",
-                                                "text": "Yes. It helps visitors understand the product flow quickly."
-                                        }
-                                }
-                        ]
-                }
-        ]
-}</script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://prometo.app/#organization",
+          "name": "Prometo",
+          "url": "https://prometo.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://prometo.app/Logo/Wort-Bild.svg"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://prometo.app/#website",
+          "name": "Prometo",
+          "url": "https://prometo.app/",
+          "inLanguage": ["de-DE", "en-US"],
+          "dateModified": "2026-07-18"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://prometo.app/en/app-workflows/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://prometo.app/en/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Prometo workflow",
+              "item": "https://prometo.app/en/app-workflows/"
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Prometo",
+          "url": "https://prometo.app/",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web browser",
+          "description": "PDF-first HVAC workflow for room detection, heat load calculation, material requirements and hydraulic balancing."
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="min-h-screen">
@@ -300,36 +244,36 @@
                 </nav>
                 <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
                     <div class="reveal">
-                        <span class="badge mb-6">App workflows</span>
-                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">Prometo App Workflows: Floor Plan Import, Heat Load and Balancing</h1>
-                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-6">This English workflow overview summarizes the main Prometo app screens for international visitors.</p>
+                        <span class="badge mb-6">PDF-first workflow</span>
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">How Prometo works</h1>
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-6">Upload an existing PDF floor plan, review automatically detected rooms and use the checked project data for heat load, material requirements and hydraulic balancing.</p>
                         <div class="mb-6 p-5 rounded-2xl border border-primary/20 bg-primary/8">
                             <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Short answer</p>
-                            <p class="text-sm md:text-base text-gray-200 leading-relaxed">Prometo combines plan import, room review, heat load context, project detail views and hydraulic balancing support in a connected HVAC workflow.</p>
+                            <p class="text-sm md:text-base text-gray-200 leading-relaxed">The workflow has four steps: upload the PDF, detect rooms, review room and building-component data, then calculate heat load, materials and hydraulic balancing.</p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-8">Reviewed by Prometo · Last updated: <time datetime="2026-05-28">May 2026</time></p>
+                        <p class="text-xs text-gray-500 mb-8">Reviewed by Prometo · Last updated: <time datetime="2026-07-18">July 2026</time></p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a href="/en/beta/" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">Try beta for free</a>
                             <a href="/app-workflows.html" hreflang="de-DE" class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">German version</a>
                         </div>
                     </div>
                     <aside class="glass-panel rounded-[2rem] p-8 reveal reveal-delay-2 lift-on-hover">
-                        <p class="text-sm font-headline font-bold text-primary uppercase tracking-widest mb-4">Supporting page</p>
-                        <h2 class="text-3xl font-bold text-white mb-5">Keep the workflow overview linked to the product pages</h2>
-                        <p class="text-gray-400 leading-relaxed mb-6">This supporting page should point back to the main English product pages instead of sitting apart as a dead end.</p>
+                        <p class="text-sm font-headline font-bold text-primary uppercase tracking-widest mb-4">One connected project</p>
+                        <h2 class="text-3xl font-bold text-white mb-5">From PDF floor plan to calculation</h2>
+                        <p class="text-gray-400 leading-relaxed mb-6">Prometo reuses reviewed room and geometry data across the calculation steps, reducing repeated data entry between separate tools.</p>
                         <div class="space-y-3">
 
                             <a href="/en/digital-takeoff/" class="block rounded-2xl border border-white/10 p-4 transition-colors hover:border-primary hover:text-white">
                                 <span class="block text-base font-headline font-bold text-gray-100">Digital takeoff app</span>
-                                <span class="mt-1 block text-sm text-gray-400 leading-relaxed">Review the mobile workflow shown in the screenshots.</span>
+                                <span class="mt-1 block text-sm text-gray-400 leading-relaxed">See how existing PDF floor plans become checked room data.</span>
                             </a>
                             <a href="/en/heat-load-calculation/app/" class="block rounded-2xl border border-white/10 p-4 transition-colors hover:border-primary hover:text-white">
                                 <span class="block text-base font-headline font-bold text-gray-100">Heat load calculation app</span>
-                                <span class="mt-1 block text-sm text-gray-400 leading-relaxed">Keep the calculation flow tied to the app page.</span>
+                                <span class="mt-1 block text-sm text-gray-400 leading-relaxed">Continue from reviewed rooms to room-by-room heat load.</span>
                             </a>
                             <a href="/en/hydraulic-balancing/" class="block rounded-2xl border border-white/10 p-4 transition-colors hover:border-primary hover:text-white">
                                 <span class="block text-base font-headline font-bold text-gray-100">Hydraulic balancing</span>
-                                <span class="mt-1 block text-sm text-gray-400 leading-relaxed">Continue into the balancing step after the workflow overview.</span>
+                                <span class="mt-1 block text-sm text-gray-400 leading-relaxed">Use the room heat load as the basis for balancing calculations.</span>
                             </a>
                         </div>
                     </aside>
@@ -341,28 +285,28 @@
             <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-3">
 
                     <article class="glass-panel rounded-3xl p-8 reveal  lift-on-hover">
-                        <h2 class="text-2xl font-bold text-white mb-4">Create project structure</h2>
-                        <p class="text-gray-400 leading-relaxed">Start a project and keep floor plan, room data and follow-up planning context together.</p>
+                        <h2 class="text-2xl font-bold text-white mb-4">1. Upload the PDF floor plan</h2>
+                        <p class="text-gray-400 leading-relaxed">Start with a suitable existing floor plan instead of redrawing every room from scratch.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h2 class="text-2xl font-bold text-white mb-4">Review rooms and heat load context</h2>
-                        <p class="text-gray-400 leading-relaxed">Use the app workflow to review room data and prepare a cleaner basis for calculations.</p>
+                        <h2 class="text-2xl font-bold text-white mb-4">2. Detect rooms automatically</h2>
+                        <p class="text-gray-400 leading-relaxed">Prometo identifies rooms and geometries so the project structure can be reviewed quickly.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h2 class="text-2xl font-bold text-white mb-4">Continue into balancing</h2>
-                        <p class="text-gray-400 leading-relaxed">Project data can continue into distribution and balancing workflows.</p>
+                        <h2 class="text-2xl font-bold text-white mb-4">3. Review the detected data</h2>
+                        <p class="text-gray-400 leading-relaxed">Check and correct room, geometry and building-component data before calculating results.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
-                        <h2 class="text-2xl font-bold text-white mb-4">Create the project</h2>
-                        <p class="text-gray-400 leading-relaxed">Start with the project shell so the floor plan and follow-up planning steps stay in one place.</p>
+                        <h2 class="text-2xl font-bold text-white mb-4">4. Calculate connected results</h2>
+                        <p class="text-gray-400 leading-relaxed">Calculate room heat load, material requirements and hydraulic balancing from the reviewed project data.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
-                        <h2 class="text-2xl font-bold text-white mb-4">Project detail views</h2>
-                        <p class="text-gray-400 leading-relaxed">Project detail screens should make the key data easy to revisit without digging through unrelated views.</p>
+                        <h2 class="text-2xl font-bold text-white mb-4">Review results by room</h2>
+                        <p class="text-gray-400 leading-relaxed">Trace inputs and results back to individual rooms and correct the project where required.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
-                        <h2 class="text-2xl font-bold text-white mb-4">Mobile and tablet use</h2>
-                        <p class="text-gray-400 leading-relaxed">The workflow should still make sense on smaller screens because field work and review do not always happen at a desk.</p>
+                        <h2 class="text-2xl font-bold text-white mb-4">Test with a real project</h2>
+                        <p class="text-gray-400 leading-relaxed">The current beta is free for HVAC contractors who can test the workflow with a suitable PDF floor plan.</p>
                     </article>
             </div>
         </section>
@@ -376,24 +320,24 @@
                 <div class="space-y-4">
 
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal  lift-on-hover" open>
-                        <summary class="text-lg font-headline font-bold text-gray-200">Is this an indexed SEO page?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">This workflow overview is intended as a supporting page and can remain noindex if used mainly for product screenshots.</p>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Where does the Prometo workflow start?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">It starts with a suitable PDF floor plan. Prometo analyzes the plan and creates room and geometry data for review.</p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">What does the workflow cover?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">It covers floor plan import, room review, heat load context and hydraulic balancing screens.</p>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Are automatically detected rooms final?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">No. The user must review and correct detected rooms, geometries and project data before relying on calculated results.</p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Does it reveal internal implementation details?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">No. It describes the user-facing workflow only.</p>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Which calculations are connected?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">Prometo connects room-by-room heat load, material requirements and hydraulic balancing in one project workflow.</p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Why keep it noindex?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">Because it is primarily a supporting product page, not a search landing page.</p>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Can a house be calculated in under seven minutes?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">That is an example for a typical single-family house with a suitable PDF. Actual duration depends on plan quality, building scope and the corrections required.</p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Is the content still useful to visitors?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">Yes. It helps visitors understand the product flow quickly.</p>
+                        <summary class="text-lg font-headline font-bold text-gray-200">Is the beta free?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">Yes. The current beta is free. Beta limitations and the need to verify project results are explained during onboarding.</p>
                     </details>
                 </div>
             </div>
