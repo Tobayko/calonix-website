@@ -1,145 +1,60 @@
-<!DOCTYPE html>
-<html class="dark" lang="de">
-
+<!doctype html>
+<html lang="de-DE">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
-    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>SHK-Ausbildung: Heizlast, Aufmaß & App-Workflow lernen</title>
-    <meta name="description"
-        content="Prometo für SHK-Azubis, Berufsschulen und angehende Meister: Heizlast, PDF-Grundriss, Raumdaten und digitales Aufmaß anschaulich vorbereiten." />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="theme-color" content="#0b0e0e" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ">
+    <title>SHK-Ausbildung: Heizlast & Aufmaß praxisnah | Prometo</title>
+    <meta name="description" content="PDF-Grundrisse, Raumdaten, Heizlast und hydraulischen Abgleich anschaulich in SHK-Ausbildung und Meisterschule einordnen. Prometo Beta kostenlos testen.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#081011">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <link rel="canonical" href="https://prometo.app/shk-ausbildung/" />
-    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/shk-ausbildung/" />
-    <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/hvac-training/" />
-    <link rel="alternate" hreflang="x-default" href="https://prometo.app/shk-ausbildung/" />
+    <link rel="canonical" href="https://prometo.app/shk-ausbildung/">
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/shk-ausbildung/">
+    <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/hvac-training/">
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/shk-ausbildung/">
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preload" href="/assets/fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/prometo-screenshots/tablet/bauplan-import-review.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="stylesheet" href="/assets/site-navigation.css?v=20260718">
+    <link rel="stylesheet" href="/assets/prometo-marketing.css?v=20260718">
 
-    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
-        crossorigin />
-    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
-        crossorigin />
-
-    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <meta property="og:locale" content="de_DE" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="SHK-Ausbildung: Heizlast, Aufmaß & App-Workflow lernen" />
-    <meta property="og:description"
-        content="Heizlast und digitales Aufmaß anhand von PDF-Grundrissen verstehen: für SHK-Azubis, Berufsschulen und angehende Meister." />
-    <meta property="og:url" content="https://prometo.app/shk-ausbildung/" />
-    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
-    <meta property="og:image:alt" content="Prometo Import-Review als anschauliche Raumdatenbasis für SHK-Ausbildung" />
-    <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:width" content="2560" />
-    <meta property="og:image:height" content="1600" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="SHK-Ausbildung: Heizlast, Aufmaß & App-Workflow lernen" />
-    <meta name="twitter:description"
-        content="Für Azubis, Berufsschulen und angehende Meister: Grundrissdaten, Heizlast-Vorbereitung und Abgleich praxisnah verstehen." />
-    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
-    <meta name="twitter:image:alt" content="Prometo Import-Review als anschauliche Raumdatenbasis für SHK-Ausbildung" />
-
-    <link rel="preload" href="/assets/tailwind.css" as="style" />
-    <link rel="stylesheet" href="/assets/site-navigation.css" />
-    <link rel="stylesheet" href="/assets/seo-explainers.css" />
-    <link rel="stylesheet" href="/assets/tailwind.css" />
-    <link rel="stylesheet" href="/assets/page-effects.css" />
-    <link rel="stylesheet" href="/assets/prometo-gallery.css" />
-    <style>
-        body {
-            background:
-                radial-gradient(circle at top left, rgba(69, 222, 231, 0.12), transparent 40%),
-                linear-gradient(180deg, #0b0e0e 0%, #101515 100%);
-            color: #dfe3e3;
-            font-family: 'Manrope', sans-serif;
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .glass-panel {
-            background: rgba(23, 28, 28, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border-radius: 999px;
-            padding: 0.5rem 0.9rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #6bf6ff;
-            background: rgba(69, 222, 231, 0.08);
-            border: 1px solid rgba(69, 222, 231, 0.18);
-        }
-
-        .badge::before {
-            content: "";
-            width: 0.45rem;
-            height: 0.45rem;
-            border-radius: 999px;
-            background: #45dee7;
-            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
-        }
-
-        .learn-item {
-            display: flex;
-            gap: 0.75rem;
-            align-items: flex-start;
-            color: #c8d0d0;
-            line-height: 1.55;
-        }
-
-        .learn-item::before {
-            content: "";
-            width: 1rem;
-            height: 1rem;
-            margin-top: 0.25rem;
-            border-radius: 999px;
-            border: 1px solid rgba(69, 222, 231, 0.55);
-            background: rgba(69, 222, 231, 0.10);
-            flex: 0 0 auto;
-        }
-
-        .faq-item summary {
-            cursor: pointer;
-            list-style: none;
-        }
-
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-    </style>
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Prometo">
+    <meta property="og:title" content="SHK-Ausbildung: Heizlast & Aufmaß praxisnah | Prometo">
+    <meta property="og:description" content="Echte PDF-Grundrisse und eine professionelle SHK-Software nutzen, um den Datenweg von Raumprüfung bis Abgleich anschaulich zu vermitteln.">
+    <meta property="og:url" content="https://prometo.app/shk-ausbildung/">
+    <meta property="og:image" content="https://prometo.app/assets/og-image.png">
+    <meta property="og:image:alt" content="Prometo Produktoberfläche für SHK-Ausbildung und Meisterschule">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SHK-Ausbildung: Heizlast & Aufmaß praxisnah | Prometo">
+    <meta name="twitter:description" content="PDF-Grundriss, Raumdaten, Heizlast und Abgleich anhand einer echten SHK-Produktoberfläche nachvollziehen.">
+    <meta name="twitter:image" content="https://prometo.app/assets/og-image.png">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@graph": [
             {
+                "@type": "Organization",
+                "@id": "https://prometo.app/#organization",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "logo": "https://prometo.app/Logo/Wort-Bild.svg",
+                "email": "info@prometo.app"
+            },
+            {
                 "@type": "WebSite",
                 "@id": "https://prometo.app/#website",
                 "url": "https://prometo.app/",
                 "name": "Prometo",
-                "inLanguage": "de-DE"
+                "inLanguage": "de-DE",
+                "publisher": { "@id": "https://prometo.app/#organization" }
             },
             {
                 "@type": "BreadcrumbList",
@@ -158,367 +73,375 @@
                         "item": "https://prometo.app/shk-ausbildung/"
                     }
                 ]
-            },
-            {
-                "@type": "WebPage",
-                "@id": "https://prometo.app/shk-ausbildung/#webpage",
-                "url": "https://prometo.app/shk-ausbildung/",
-                "name": "SHK-Ausbildung: Heizlast, Aufmaß & App-Workflow lernen",
-                "description": "Prometo für SHK-Azubis, Berufsschulen und angehende Meister: Heizlast, PDF-Grundriss, Raumdaten und digitales Aufmaß anschaulich vorbereiten.",
-                "datePublished": "2026-06-22",
-                "dateModified": "2026-06-22",
-                "inLanguage": "de-DE",
-                "isPartOf": {
-                    "@id": "https://prometo.app/#website"
-                },
-                "breadcrumb": {
-                    "@id": "https://prometo.app/shk-ausbildung/#breadcrumb"
-                },
-                "audience": [
-                    {
-                        "@type": "Audience",
-                        "audienceType": "SHK-Azubis"
-                    },
-                    {
-                        "@type": "Audience",
-                        "audienceType": "Berufsschulen und Meisterschulen"
-                    },
-                    {
-                        "@type": "Audience",
-                        "audienceType": "Angehende Meister im SHK-Handwerk"
-                    }
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://prometo.app/shk-ausbildung/#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Ist Prometo eine Lernsoftware für Berufsschulen?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Prometo ist aktuell ein Beta-Projekt. Die App kann Lern- und Praxisprozesse unterstützen, weil Heizlast-Vorbereitung, Grundrissdaten und Raumprüfung anschaulich zusammengeführt werden. Sie ersetzt keinen Unterricht und keine fachliche Prüfung."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Für wen ist die Ausbildungsseite gedacht?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Für SHK-Azubis, Berufsschulen, angehende Meister und Betriebe, die Heizlast, Aufmaß und hydraulischen Abgleich praxisnah anhand von Grundrissdaten erklären möchten."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Kann Prometo eine Heizlastberechnung garantieren?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Nein. Prometo unterstützt die strukturierte Vorbereitung und Plausibilisierung von Raumdaten. Fachliche Bewertung, Berechnung und Freigabe müssen durch qualifizierte Personen erfolgen."
-                        }
-                    }
-                ]
             }
         ]
     }
     </script>
 </head>
-
-<body class="min-h-screen">
+<body class="marketing-body">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
-            <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
-                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" />
+            <a class="site-brand" href="/" aria-label="Zur Startseite von Prometo">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37">
             </a>
-            <nav aria-label="Hauptnavigation" class="site-desktop-nav">
-                <a class="site-nav-link" href="/">Startseite</a>
-                <a class="site-nav-link" href="/shk-ausbildung/">SHK-Ausbildung</a>
-                <a class="site-nav-link" href="/heizlast/">Heizlast</a>
-                <a class="site-nav-link" href="/digitales-aufmass/">Digitales Aufmaß</a>
-                <a class="site-nav-link" href="/heizlast-checkliste-shk/">Checkliste</a>
+            <nav class="site-desktop-nav" aria-label="Hauptnavigation">
+                <a class="site-nav-link" href="/digitales-aufmass/">PDF-Aufmaß</a>
+                <a class="site-nav-link" href="/heizlastberechnung/app/">Heizlastsoftware</a>
+                <a class="site-nav-link" href="/hydraulischer-abgleich/">Hydraulischer Abgleich</a>
+                <a class="site-nav-link" href="/fussbodenheizung-auslegen/">Fußbodenheizung</a>
+                <a class="site-nav-link" href="/heizlast-software-vergleich-shk/">Vergleich</a>
             </nav>
             <div class="site-nav-actions">
                 <a class="site-lang-link" href="/en/hvac-training/" aria-label="English version">EN</a>
-                <a class="site-cta" href="/beta/">Kostenlos Beta testen</a>
+                <a class="site-cta" href="/beta/" data-event="beta_cta_click" data-cta-position="header">Kostenlos Beta testen</a>
+                <details class="site-mobile-nav">
+                    <summary class="site-mobile-toggle" aria-label="Menü öffnen"><span></span></summary>
+                    <nav class="site-mobile-panel" aria-label="Hauptnavigation mobil">
+                        <div class="site-mobile-section">
+                            <span class="site-mobile-section-title">Produkt</span>
+                            <a href="/digitales-aufmass/">Digitales Aufmaß aus PDF-Grundrissen</a>
+                            <a href="/heizlastberechnung/app/">Heizlastberechnung App für SHK</a>
+                            <a href="/hydraulischer-abgleich/">Hydraulischen Abgleich berechnen</a>
+                            <a href="/fussbodenheizung-auslegen/">Fußbodenheizung auslegen</a>
+                            <a href="/app-workflows.html">Workflow ansehen</a>
+                            <a href="/heizlast-software-vergleich-shk/">Softwarevergleich</a>
+                        </div>
+                        <div class="site-mobile-section">
+                            <span class="site-mobile-section-title">Sprache</span>
+                            <a href="/en/hvac-training/">English</a>
+                            <a class="site-mobile-cta" href="/beta/" data-event="beta_cta_click" data-cta-position="mobile_menu">Kostenlos Beta testen</a>
+                        </div>
+                    </nav>
+                </details>
             </div>
         </div>
     </header>
 
-    <main>
-        <section class="px-6 py-16 md:py-24">
-            <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
-                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
-                    <span class="mx-2 text-gray-600">/</span>
-                    <span aria-current="page">SHK-Ausbildung</span>
-                </nav>
+    <noscript><div class="marketing-noscript">Die Inhalte sind vollständig lesbar. Für das Beta-Formular muss JavaScript aktiviert sein.</div></noscript>
 
-                <div class="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-                    <div class="reveal">
-                        <span class="badge mb-6">Für Ausbildung und Meisterschule</span>
-                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            Heizlast und digitales Aufmaß für SHK-Ausbildung, Berufsschule und Meisterschule
-                        </h1>
-                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-6">
-                            Prometo macht sichtbar, wie aus einem PDF-Grundriss prüfbare Raumdaten entstehen und warum
-                            diese Daten für Heizlast-Vorbereitung, Fußbodenheizung und hydraulischen Abgleich wichtig sind.
-                        </p>
-                        <p class="text-gray-400 leading-relaxed max-w-2xl mb-8">
-                            Die App befindet sich im Beta-Aufbau. Sie ist kein Ersatz für Unterricht, Fachplanung oder
-                            Meisterprüfungsvorbereitung, sondern ein anschaulicher Praxisworkflow zum Lernen, Erklären
-                            und Vorbereiten.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#lernworkflow"
-                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                                Lernworkflow ansehen
-                            </a>
-                            <a href="/beta/"
-                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
-                                Zugang für Schule oder Kurs anfragen
-                            </a>
-                        </div>
+    <main id="prometo-main-content">
+        <section class="marketing-hero">
+            <div class="marketing-shell marketing-hero-grid">
+                <div class="marketing-hero-copy">
+                    <span class="marketing-eyebrow">Praxisbezug für SHK-Ausbildung · Separater Bereich</span>
+                    <h1>Heizlast und Aufmaß anhand echter Grundrisse vermitteln.</h1>
+                    <p class="marketing-lead">Prometo ist professionelle SHK-Berechnungssoftware, keine Lern-App. Die Produktoberfläche macht sichtbar, wie aus einem PDF-Grundriss geprüfte Raumdaten, Heizlast, Materialbedarf und hydraulischer Abgleich entstehen.</p>
+                    <div class="marketing-actions">
+                        <a class="marketing-button marketing-button--primary" href="/beta/" data-event="beta_cta_click" data-cta-position="hero">Kostenlos Beta testen</a>
+                        <a class="marketing-button marketing-button--secondary" href="#workflow" data-event="workflow_view" data-cta-position="hero">Workflow ansehen</a>
                     </div>
-
-                    <div class="glass-panel rounded-[2rem] p-4 md:p-6 reveal reveal-delay-2">
-                        <img src="/assets/prometo-screenshots/tablet/bauplan-import-review.webp"
-                            alt="Prometo Import-Review mit erkannten Räumen als Lernbeispiel für SHK-Ausbildung"
-                            width="2560" height="1600" loading="eager" fetchpriority="high" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
-                    </div>
+                    <p class="marketing-hero-note">Für Auszubildende, Berufsschulen, Meisterkurse und betriebliche Unterweisungen. Fachliche Anleitung, Kontrolle und Bewertung bleiben notwendig.</p>
                 </div>
+                <figure class="marketing-media-card marketing-hero-visual">
+                    <img src="/assets/prometo-screenshots/tablet/bauplan-import-review.webp" width="2560" height="1600" alt="Prometo Import-Review auf dem Tablet mit automatisch erkannten und kontrollierbaren Räumen" fetchpriority="high">
+                    <figcaption>
+                        <strong>Echte Produktoberfläche</strong>
+                        Automatisch erkannte Räume lassen sich gemeinsam prüfen, korrigieren und weiterberechnen.
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
-        <section id="lernworkflow" class="px-6 pb-12 md:pb-16" aria-labelledby="training-flow-heading">
-            <div class="max-w-screen-xl mx-auto seo-explainer glass-panel rounded-[2rem] p-6 md:p-8 reveal">
-                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-                    <div>
-                        <span class="badge mb-6">Visuell erklärt</span>
-                        <h2 id="training-flow-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">
-                            Der Lernweg vom Grundriss zur Heizlast-Vorbereitung
-                        </h2>
-                        <p class="text-gray-400 leading-relaxed">
-                            Komplexe Themen werden leichter, wenn der Weg sichtbar bleibt: Plan lesen, Räume prüfen,
-                            Hüllflächen verstehen und die fachliche Bewertung vorbereiten.
-                        </p>
-                    </div>
-                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="training-flow-svg-title training-flow-svg-desc">
-                        <title id="training-flow-svg-title">Lernworkflow für SHK-Ausbildung mit Grundriss und Heizlast</title>
-                        <desc id="training-flow-svg-desc">Animierte Grafik mit PDF-Grundriss, Raumdaten, Heizlast-Verständnis und fachlicher Prüfung.</desc>
-                        <path class="flow-track" d="M80 150 C180 72 280 72 380 150 S580 228 760 150" fill="none" />
-                        <circle class="moving-dot" r="7" fill="#45dee7" />
-                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
-                        <g class="flow-node flow-pulse">
-                            <rect x="28" y="82" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="103" y="126" text-anchor="middle" class="step-label">Grundriss</text>
-                            <text x="103" y="153" text-anchor="middle" class="step-copy">lesen</text>
-                        </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="236" y="82" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
-                            <text x="311" y="126" text-anchor="middle" class="step-label">Raumdaten</text>
-                            <text x="311" y="153" text-anchor="middle" class="step-copy">prüfen</text>
-                        </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="444" y="82" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="519" y="126" text-anchor="middle" class="step-label">Heizlast</text>
-                            <text x="519" y="153" text-anchor="middle" class="step-copy">verstehen</text>
-                        </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="652" y="82" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
-                            <text x="727" y="126" text-anchor="middle" class="step-label">Prüfung</text>
-                            <text x="727" y="153" text-anchor="middle" class="step-copy">fachlich</text>
-                        </g>
-                    </svg>
+        <section class="marketing-section--tight" aria-labelledby="kernfunktionen">
+            <div class="marketing-shell">
+                <div class="marketing-section-heading">
+                    <span class="marketing-kicker">Ein Projekt · vier Lernanlässe</span>
+                    <h2 id="kernfunktionen">Den vollständigen Datenweg am Grundriss nachvollziehen.</h2>
                 </div>
-            </div>
-        </section>
-
-        <section class="px-6 pb-16 md:pb-24">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="max-w-3xl mb-10 reveal">
-                    <span class="badge mb-6">Lernen mit Praxisbezug</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Warum Prometo für Ausbildung und Meistervorbereitung passt
-                    </h2>
-                </div>
-                <div class="grid gap-6 md:grid-cols-3">
-                    <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Für Azubis</h3>
-                        <div class="space-y-3">
-                            <p class="learn-item">Räume, Flächen und Geschosse am Plan nachvollziehen</p>
-                            <p class="learn-item">Unterschied zwischen Schätzwert und Raumdatenbasis verstehen</p>
-                            <p class="learn-item">Heizlast nicht nur als Formel, sondern als Projektlogik sehen</p>
+                <div class="marketing-feature-grid">
+                    <article class="marketing-feature-card">
+                        <span>01</span>
+                        <div>
+                            <h3>Grundriss und Aufmaß</h3>
+                            <p>Räume, Geometrien und Planinformationen erkennen, kontrollieren und fachlich einordnen.</p>
                         </div>
                     </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Für Berufsschulen</h3>
-                        <div class="space-y-3">
-                            <p class="learn-item">Planunterlagen als Unterrichtsbeispiel strukturieren</p>
-                            <p class="learn-item">Typische Datenlücken im Grundriss sichtbar machen</p>
-                            <p class="learn-item">Aufmaß, Heizlast und Abgleich als zusammenhängenden Prozess erklären</p>
+                    <article class="marketing-feature-card">
+                        <span>02</span>
+                        <div>
+                            <h3>Raumweise Heizlast</h3>
+                            <p>Verstehen, welche Raum- und Bauteildaten entlang der DIN EN 12831 in die Berechnung einfließen.</p>
                         </div>
                     </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Für angehende Meister</h3>
-                        <div class="space-y-3">
-                            <p class="learn-item">Schnittstelle zwischen Baustelle, Büro und Berechnung üben</p>
-                            <p class="learn-item">Raumdaten für Wärmepumpe und Flächenheizung sauber vorbereiten</p>
-                            <p class="learn-item">Fachliche Prüfung bewusst vom App-Workflow trennen</p>
+                    <article class="marketing-feature-card">
+                        <span>03</span>
+                        <div>
+                            <h3>Materialzusammenhänge</h3>
+                            <p>Nachvollziehen, wie Rohrlängen, Systemdaten und Materialpositionen aus dem Projekt entstehen.</p>
+                        </div>
+                    </article>
+                    <article class="marketing-feature-card">
+                        <span>04</span>
+                        <div>
+                            <h3>Hydraulischer Abgleich</h3>
+                            <p>Den Zusammenhang zwischen Raumheizlast, Volumenströmen, Heizkreisen und Einregelwerten erklären.</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="px-6 pb-16 md:pb-24">
-            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-[1fr_1fr]">
-                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
-                    <span class="badge mb-6">Unterricht und Praxis</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Weniger abstrakt, mehr nachvollziehbar
-                    </h2>
-                    <p class="text-gray-300 leading-relaxed mb-6">
-                        Viele Lernende sehen Heizlast zuerst als Norm, Tabelle oder Formel. Prometo setzt früher an:
-                        beim Grundriss, bei der Raumliste und bei den Fragen, die vor jeder fachlichen Berechnung
-                        geklärt werden müssen.
-                    </p>
-                    <div class="space-y-3">
-                        <p class="learn-item">Welche Räume gehören zusammen?</p>
-                        <p class="learn-item">Welche Außenflächen beeinflussen die Last?</p>
-                        <p class="learn-item">Wo fehlen Fenster, Türen oder Raumhöhen?</p>
-                        <p class="learn-item">Warum reicht ein reiner m²-Wert nicht aus?</p>
+        <section class="marketing-section marketing-section--panel" id="workflow" aria-labelledby="workflow-title">
+            <div class="marketing-shell">
+                <div class="marketing-section-heading">
+                    <span class="marketing-eyebrow">Praxisnaher Ablauf</span>
+                    <h2 id="workflow-title">Vom Plan zur begründeten fachlichen Entscheidung.</h2>
+                    <p class="marketing-lead">Der PDF-Grundriss bildet eine gemeinsame Projektbasis. Lernende prüfen die erkannten Daten und sehen anschließend, welche Folgen Korrekturen für Berechnung und Auslegung haben.</p>
+                </div>
+                <div class="marketing-workflow">
+                    <article class="marketing-workflow-step">
+                        <h3>PDF-Grundriss hochladen</h3>
+                        <p>Einen geeigneten, lesbaren Grundriss als gemeinsame Ausgangslage verwenden.</p>
+                    </article>
+                    <article class="marketing-workflow-step">
+                        <h3>Räume automatisch erkennen</h3>
+                        <p>Erkannte Raumstrukturen und Planinformationen gemeinsam bewerten.</p>
+                    </article>
+                    <article class="marketing-workflow-step">
+                        <h3>Annahmen begründen</h3>
+                        <p>Raumgeometrien, Bauteile und Randbedingungen prüfen, diskutieren und korrigieren.</p>
+                    </article>
+                    <article class="marketing-workflow-step">
+                        <h3>Ergebnisse vergleichen</h3>
+                        <p>Heizlast, Materialbedarf und hydraulische Werte aus derselben Projektbasis nachvollziehen.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="marketing-section" aria-labelledby="efh-beispiel">
+            <div class="marketing-shell marketing-example-grid">
+                <div class="marketing-callout">
+                    <span class="marketing-eyebrow">Konkretes EFH-Projekt</span>
+                    <div class="marketing-time-value">1 Projekt</div>
+                    <p class="marketing-lead">Ein geeigneter Einfamilienhaus-Grundriss verbindet Aufmaß, Heizlast, Material und Abgleich in einer durchgängigen Aufgabe.</p>
+                    <p class="marketing-smallprint">Automatisch erkannte Angaben sind Vorschläge. Sie müssen im Unterricht und im realen Projekt fachlich kontrolliert werden.</p>
+                </div>
+                <div>
+                    <div class="marketing-section-heading">
+                        <span class="marketing-kicker">Was dabei verständlich wird</span>
+                        <h2 id="efh-beispiel">Zusammenhänge statt isolierter Eingabemasken.</h2>
+                        <p class="marketing-copy">Lernende sehen nicht nur ein Endergebnis. Sie verfolgen, wie Grundriss, Raumgeometrie, Bauteile und Systemdaten zusammenwirken und wo fachliche Kontrolle nötig ist.</p>
                     </div>
-                </article>
-                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal reveal-delay-1 lift-on-hover">
-                    <span class="badge mb-6">Grenzen</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Kein Ersatz für Fachunterricht oder Prüfung
-                    </h2>
-                    <p class="text-gray-300 leading-relaxed mb-6">
-                        Prometo kann Abläufe sichtbar machen und Raumdaten strukturieren. Normative Bewertung,
-                        Berechnungsfreigabe, Unterrichtskonzept und Prüfungsbewertung bleiben bei Lehrkräften,
-                        Ausbildern und qualifizierten Fachpersonen.
-                    </p>
-                    <a href="/heizlast-checkliste-shk/"
-                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
-                        Heizlast-Checkliste nutzen
-                    </a>
-                </article>
-            </div>
-        </section>
-
-        <section class="px-6 pb-16 md:pb-24" id="weiterlernen">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl reveal">
-                    <span class="badge mb-6">Weiterlernen</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Passende Lernseiten auf Prometo
-                    </h2>
-                </div>
-                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <a href="/heizlast/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast einfach erklärt</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Definition, Einheit und Unterschied zu Wärmebedarf.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Grundlagen lesen →</span>
-                    </a>
-                    <a href="/digitales-aufmass/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Digitales Aufmaß</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">PDF-Grundrisse und Raumdaten strukturieren.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Aufmaß ansehen →</span>
-                    </a>
-                    <a href="/heizlastberechnung/schaetzwerte/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-2 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast schätzen</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">m²-Werte, Grenzen und bessere Vorbereitung.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Schätzung einordnen →</span>
-                    </a>
-                    <a href="/heizlastberechnung/din-12831/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
-                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">DIN EN 12831</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Welche Daten für die Berechnung wichtig sind.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Normkontext lesen →</span>
-                    </a>
+                    <ul class="marketing-data-list">
+                        <li>Raum- und Bauteildaten direkt am Grundriss besprechen</li>
+                        <li>Automatische Erkennung kritisch prüfen statt ungeprüft übernehmen</li>
+                        <li>Auswirkungen von Korrekturen auf Folgeergebnisse vergleichen</li>
+                        <li>Grenzen, Unsicherheiten und fachliche Verantwortung benennen</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="px-6 pb-16 md:pb-24" id="faq">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl reveal">
-                    <span class="badge mb-6">FAQ</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Häufige Fragen zur SHK-Ausbildungsnutzung
-                    </h2>
+        <section class="marketing-section marketing-section--panel" aria-labelledby="produktansichten">
+            <div class="marketing-shell">
+                <div class="marketing-section-heading marketing-section-heading--center">
+                    <span class="marketing-eyebrow">Echte Produktoberfläche</span>
+                    <h2 id="produktansichten">Echte Arbeitsschritte statt vereinfachter Lernsimulation.</h2>
+                    <p class="marketing-lead">Die Ansichten stammen aus Prometo. So lässt sich der reale Datenweg zeigen; dargestellte Werte bleiben projektbezogen zu prüfen.</p>
                 </div>
-                <div class="space-y-4">
-                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
-                        <summary class="text-lg font-headline font-bold text-gray-200">Ist Prometo eine Lernsoftware für Berufsschulen?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">
-                            Prometo ist aktuell ein Beta-Projekt. Die App kann Lern- und Praxisprozesse unterstützen,
-                            weil Heizlast-Vorbereitung, Grundrissdaten und Raumprüfung anschaulich zusammengeführt werden.
-                            Sie ersetzt keinen Unterricht und keine fachliche Prüfung.
-                        </p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Für wen ist die Seite gedacht?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">
-                            Für SHK-Azubis, Berufsschulen, angehende Meister und Betriebe, die Heizlast, Aufmaß und
-                            hydraulischen Abgleich praxisnah anhand von Grundrissdaten erklären möchten.
-                        </p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
-                        <summary class="text-lg font-headline font-bold text-gray-200">Kann Prometo eine Heizlastberechnung garantieren?</summary>
-                        <p class="mt-4 text-gray-400 leading-relaxed">
-                            Nein. Prometo unterstützt die strukturierte Vorbereitung und Plausibilisierung von Raumdaten.
-                            Fachliche Bewertung, Berechnung und Freigabe müssen durch qualifizierte Personen erfolgen.
-                        </p>
-                    </details>
+                <p class="marketing-swipe-hint">Seitlich wischen, um weitere Ansichten zu sehen.</p>
+                <div class="marketing-screenshot-grid" aria-label="Wischbare Prometo App-Ansichten">
+                    <figure class="marketing-phone-shot">
+                        <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp" width="1080" height="2400" loading="lazy" alt="Prometo Import-Review mit erkannten Räumen und Geschossen">
+                        <figcaption>Erkannte Räume und Geschosse kontrollieren.</figcaption>
+                    </figure>
+                    <figure class="marketing-phone-shot">
+                        <img src="/assets/prometo-screenshots/mobile/schnellberechnung-raeume.webp" width="1080" height="2400" loading="lazy" alt="Prometo Raumliste für die Heizlastberechnung">
+                        <figcaption>Raumdaten im Berechnungsweg prüfen.</figcaption>
+                    </figure>
+                    <figure class="marketing-phone-shot">
+                        <img src="/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" width="1080" height="2400" loading="lazy" alt="Prometo Ergebnisansicht der Heizlastberechnung">
+                        <figcaption>Heizlast und Plausibilität auswerten.</figcaption>
+                    </figure>
+                    <figure class="marketing-phone-shot">
+                        <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp" width="1080" height="2400" loading="lazy" alt="Prometo Heizkreisdetail im hydraulischen Abgleich">
+                        <figcaption>Heizkreise und Einstellwerte nachvollziehen.</figcaption>
+                    </figure>
+                </div>
+                <div class="marketing-actions" style="justify-content:center; margin-top:2rem">
+                    <a class="marketing-button marketing-button--secondary" href="/app-workflows.html" data-event="workflow_view" data-cta-position="screenshots">Alle App-Workflows ansehen</a>
                 </div>
             </div>
         </section>
 
-        <section class="px-6 pb-20 md:pb-28">
-            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
-                <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-                    <div>
-                        <span class="badge mb-6">Beta-Zugang</span>
-                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
-                            Prometo für Unterricht, Meisterkurs oder Betrieb testen
-                        </h2>
-                        <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
-                            Wenn du Prometo in Ausbildung, Meistervorbereitung oder Praxis testen möchtest, kannst du
-                            dich für den Beta-Zugang eintragen. Rückmeldungen aus echten Lern- und Arbeitskontexten
-                            fließen direkt in die Weiterentwicklung ein.
-                        </p>
+        <section class="marketing-section" aria-labelledby="ergebnisse">
+            <div class="marketing-shell">
+                <div class="marketing-section-heading">
+                    <span class="marketing-eyebrow">Sichtbare Lernergebnisse</span>
+                    <h2 id="ergebnisse">Was sich an einem Projekt fachlich besprechen lässt.</h2>
+                    <p class="marketing-lead">Prometo zeigt Eingaben und Ergebnisse in einem gemeinsamen Kontext. Dadurch werden Rückfragen, Varianten und Plausibilitätsprüfungen konkret.</p>
+                </div>
+                <div class="marketing-result-grid">
+                    <article class="marketing-result-card">
+                        <strong>Raum- und Gebäudeheizlast</strong>
+                        <p>Ergebnisübersichten für Räume, Geschosse und Gebäude gemeinsam prüfen und vergleichen.</p>
+                    </article>
+                    <article class="marketing-result-card">
+                        <strong>Materialbedarf</strong>
+                        <p>Den Weg von Raum-, System- und Verlegeparametern zur projektbezogenen Stückliste erklären.</p>
+                    </article>
+                    <article class="marketing-result-card">
+                        <strong>Hydraulische Werte</strong>
+                        <p>Soll-Volumenströme, Kreisübersichten und Einregelwerte in Zusammenhang setzen.</p>
+                    </article>
+                    <article class="marketing-result-card">
+                        <strong>Plausibilitätsfragen</strong>
+                        <p>Abweichungen erkennen, Annahmen hinterfragen und notwendige Korrekturen begründen.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="marketing-section marketing-section--panel" aria-labelledby="vorteile-ausbildung">
+            <div class="marketing-shell">
+                <div class="marketing-section-heading">
+                    <span class="marketing-eyebrow">Für Ausbildung und Meisterschule</span>
+                    <h2 id="vorteile-ausbildung">Praxissoftware als roter Faden durch die Berechnung.</h2>
+                </div>
+                <div class="marketing-benefit-grid">
+                    <article class="marketing-benefit-card">
+                        <h3>Am Grundriss erklären</h3>
+                        <p>Räume, Flächen und Bauteile bleiben sichtbar, während Eingaben und Ergebnisse besprochen werden.</p>
+                    </article>
+                    <article class="marketing-benefit-card">
+                        <h3>Fehler diskutieren</h3>
+                        <p>Automatische Erkennung wird bewusst kontrolliert. Unsichere Daten werden zum konkreten Prüfauftrag.</p>
+                    </article>
+                    <article class="marketing-benefit-card">
+                        <h3>Folgeschritte verbinden</h3>
+                        <p>Raumheizlast, Material und hydraulische Werte lassen sich innerhalb derselben Projektstruktur erklären.</p>
+                    </article>
+                    <article class="marketing-benefit-card">
+                        <h3>Praxisbezug herstellen</h3>
+                        <p>Ausbilder können dieselben Abläufe zeigen, die später im SHK-Betrieb fachlich kontrolliert werden.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="marketing-section" aria-labelledby="ausbilder-betriebe">
+            <div class="marketing-shell marketing-split">
+                <div class="marketing-section-heading">
+                    <span class="marketing-audience-tag">Für Ausbilder und Betriebe</span>
+                    <h2 id="ausbilder-betriebe">Ein gemeinsames Projekt für Theorie, Prüfung und Praxis.</h2>
+                    <p class="marketing-lead">Die Ausbildungsseite ist ein separater Zugang zur professionellen Software. Sie verspricht keine Lernplattform, sondern zeigt, wie reale Projektdaten didaktisch genutzt werden können.</p>
+                </div>
+                <ul class="marketing-check-list">
+                    <li>Geeignet für Berufsschule, Meisterkurs und betriebliche Unterweisung</li>
+                    <li>Einheitliche Raum-, System- und Ergebnisdaten als Gesprächsgrundlage</li>
+                    <li>Aufgaben von Datenerfassung bis Plausibilitätsprüfung ableiten</li>
+                    <li>Fachliche Verantwortung und Softwaregrenzen transparent behandeln</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="marketing-section marketing-section--panel" aria-labelledby="beta-transparenz">
+            <div class="marketing-shell marketing-beta-grid">
+                <div class="marketing-section-heading">
+                    <span class="marketing-eyebrow">Kostenlose Beta</span>
+                    <h2 id="beta-transparenz">Im Ausbildungsalltag testen – mit klaren Grenzen.</h2>
+                    <p class="marketing-lead">Gesucht werden Berufsschulen, Meisterkurse, Ausbilder und SHK-Betriebe, die einen realen PDF-Grundriss gemeinsam prüfen und den Ablauf fachlich bewerten.</p>
+                    <a class="marketing-button marketing-button--primary" href="/beta/" data-event="beta_cta_click" data-cta-position="beta_explanation">Kostenlos Beta testen</a>
+                </div>
+                <div class="marketing-beta-status">
+                    <strong>Was Beta hier bedeutet</strong>
+                    <p class="marketing-copy">Plan-Import, Raumerkennung, Berechnung und Folgeübergaben sind nutzbar. Automatisch erkannte Daten müssen kontrolliert werden. Einzelne Sonderfälle und Randbedingungen sind noch Gegenstand der fachlichen Prüfung.</p>
+                    <p class="marketing-copy">Die Beta ist kostenlos. Sie ersetzt weder Unterricht noch die Anleitung und Bewertung durch qualifizierte Fachpersonen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="marketing-section" aria-labelledby="abgrenzung">
+            <div class="marketing-shell marketing-split">
+                <div class="marketing-section-heading">
+                    <span class="marketing-eyebrow">Klare Abgrenzung</span>
+                    <h2 id="abgrenzung">Professionelle Software statt Lernsimulation.</h2>
+                    <p class="marketing-lead">Prometo wurde für SHK-Betriebe entwickelt. Der Ausbildungsnutzen entsteht durch die sichtbaren Zusammenhänge und die kontrollierbare Produktoberfläche – nicht durch einen vereinfachten Lernmodus.</p>
+                </div>
+                <div class="marketing-card">
+                    <h3>Wie läuft ein Projekt konkret ab?</h3>
+                    <p>Die Workflow-Seite zeigt Plan-Import, Raumprüfung, Heizlast und Abgleich Schritt für Schritt anhand der echten Produktoberfläche.</p>
+                    <div class="marketing-actions">
+                        <a class="marketing-button marketing-button--secondary" href="/app-workflows.html" data-event="workflow_view" data-cta-position="training_workflow">App-Workflow ansehen</a>
                     </div>
-                    <a href="/beta/"
-                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                        Kostenlos Beta testen
-                    </a>
                 </div>
+            </div>
+        </section>
+
+        <section class="marketing-section marketing-section--panel" aria-labelledby="faq-title">
+            <div class="marketing-shell">
+                <div class="marketing-section-heading">
+                    <span class="marketing-eyebrow">FAQ</span>
+                    <h2 id="faq-title">Häufige Fragen zu Prometo in der SHK-Ausbildung.</h2>
+                </div>
+                <div class="marketing-faq">
+                    <details>
+                        <summary>Ist Prometo eine Lern-App?</summary>
+                        <p>Nein. Prometo ist professionelle SHK-Berechnungssoftware. Die Ausbildungsseite zeigt, wie sich die echte Produktoberfläche nutzen lässt, um Aufmaß, Heizlast und Abgleich praxisnah zu vermitteln.</p>
+                    </details>
+                    <details>
+                        <summary>Für wen ist dieser Bereich gedacht?</summary>
+                        <p>Für SHK-Auszubildende, Berufsschulen, Meisterkurse, Ausbilder und Betriebe, die reale Berechnungsabläufe anhand eines PDF-Grundrisses gemeinsam nachvollziehen möchten.</p>
+                    </details>
+                    <details>
+                        <summary>Ersetzt Prometo Unterricht oder fachliche Anleitung?</summary>
+                        <p>Nein. Eingaben, Annahmen und Ergebnisse müssen von qualifizierten Fachpersonen erklärt, kontrolliert und bewertet werden.</p>
+                    </details>
+                    <details>
+                        <summary>Welche Inhalte lassen sich zeigen?</summary>
+                        <p>PDF-Import, automatische Raumerkennung, Raum- und Bauteilkontrolle, raumweise Heizlast, Materialzusammenhänge und hydraulischer Abgleich.</p>
+                    </details>
+                    <details>
+                        <summary>Kann ein eigener Grundriss verwendet werden?</summary>
+                        <p>Ja, sofern der PDF-Grundriss geeignet und lesbar ist. Planqualität, Maßstab und enthaltene Informationen beeinflussen die Erkennung und den notwendigen Korrekturbedarf.</p>
+                    </details>
+                    <details>
+                        <summary>Ist die Beta kostenlos?</summary>
+                        <p>Ja. Die aktuelle Beta kann kostenlos getestet werden. Rückmeldungen aus Berufsschule, Meisterkurs und betrieblicher Unterweisung helfen bei der fachlichen Weiterentwicklung.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="marketing-section">
+            <div class="marketing-shell marketing-final-cta">
+                <span class="marketing-eyebrow">Praxisbezug für die Ausbildung</span>
+                <h2>Teste Prometo mit einem geeigneten PDF-Grundriss aus Unterricht oder Betrieb.</h2>
+                <p class="marketing-lead">Die Beta ist kostenlos. Prüfe, wie sich Raumdaten, Heizlast, Materialbedarf und hydraulischer Abgleich mit deiner Lerngruppe nachvollziehen lassen.</p>
+                <a class="marketing-button marketing-button--primary" href="/beta/" data-event="beta_cta_click" data-cta-position="final">Kostenlos Beta testen</a>
             </div>
         </section>
     </main>
 
-    <footer class="border-t border-white/6 bg-[#0b0e0e]">
-        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-            <div class="text-sm text-gray-400">
-                © 2026 Prometo · SHK-Ausbildung, Heizlast-Vorbereitung und digitales Aufmaß
+    <footer class="marketing-footer">
+        <div class="marketing-shell marketing-footer-grid">
+            <div class="marketing-footer-brand">
+                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" loading="lazy">
+                <p>Professionelle SHK-Software mit einem separaten Praxiszugang für Ausbildung und Meisterschule.</p>
             </div>
-            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
-                <a href="/" class="hover:text-white transition-colors">Startseite</a>
-                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast</a>
-                <a href="/digitales-aufmass/" class="hover:text-white transition-colors">Digitales Aufmaß</a>
-                <a href="/heizlast-checkliste-shk/" class="hover:text-white transition-colors">Checkliste</a>
-                <a href="/datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
-                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
-            </div>
+            <nav class="marketing-footer-links" aria-label="Fußnavigation">
+                <a href="/">Prometo für SHK-Betriebe</a>
+                <a href="/heizlastberechnung/app/">Heizlastberechnung App für SHK</a>
+                <a href="/digitales-aufmass/">Digitales Aufmaß aus PDF-Grundrissen</a>
+                <a href="/hydraulischer-abgleich/">Hydraulischen Abgleich berechnen</a>
+                <a href="/beta/">Beta</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+                <a href="/impressum.html">Impressum</a>
+            </nav>
         </div>
     </footer>
 
-    <script src="/assets/page-effects.js" defer></script>
-    <script src="/assets/prometo-gallery.js" defer></script>
-    <script src="/assets/language-hint.js" defer></script>
-    <script src="/assets/site-navigation.js" defer></script>
-</body>
+    <div id="cookie-banner" class="marketing-cookie-banner" role="dialog" aria-label="Datenschutzeinstellungen" aria-live="polite">
+        <p>Wir verwenden Google Analytics erst nach deiner Zustimmung, um die Nutzung der Website anonymisiert auszuwerten. Details stehen in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+        <div class="marketing-cookie-actions">
+            <button type="button" id="cookie-decline">Ablehnen</button>
+            <button type="button" id="cookie-accept">Akzeptieren</button>
+        </div>
+    </div>
 
+    <script src="/assets/site-navigation.js" defer></script>
+    <script src="/assets/accessibility.js" defer></script>
+    <script src="/assets/prometo-analytics.js" defer></script>
+</body>
 </html>

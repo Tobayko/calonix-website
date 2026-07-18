@@ -2,6 +2,8 @@
 
 ## 18.07.2026
 
+- Visuelle Seitenrollen getauscht: Die kommerzielle Startseite nutzt wieder die markante Würfel-/Linien-Inszenierung, während `/shk-ausbildung/` die reduzierte Marketingstruktur mit klar abgegrenzten Ausbildungsinhalten erhält.
+- Mobile App-Bilder auf der Ausbildungsseite als horizontale Scroll-Snap-Galerie umgesetzt; die Startseite nutzt wieder eine einzelne große App-Ansicht mit wischbarer Thumbnail-Navigation.
 - Startseite auf den kommerziellen Einstieg „PDF-Aufmaß für bestehende SHK-Betriebe“ geschärft; Aufmaß Software als primäre Suchintention definiert und die Detailseite `/digitales-aufmass/` auf den konkreten PDF-Aufmaß-Workflow abgegrenzt.
 - Startseite auf „PDF-first Heizlastsoftware für SHK-Betriebe“ neu positioniert; Ausbildung/Lernfokus aus Hero, Metadaten und Hauptnavigation entfernt.
 - Hero, vier Kernfunktionen, Vier-Schritt-Workflow, realistisches EFH-Beispiel mit Zeit-Hinweis, echte Produktoberflächen, Ergebnisse/Exporte, Betriebs- und Teamvorteile, Beta-Erklärung, Vergleich, FAQ und Abschluss-CTA umgesetzt.
