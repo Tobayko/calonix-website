@@ -2,6 +2,7 @@
 
 ## 18.07.2026
 
+- Startseite auf den kommerziellen Einstieg „PDF-Aufmaß für bestehende SHK-Betriebe“ geschärft; Aufmaß Software als primäre Suchintention definiert und die Detailseite `/digitales-aufmass/` auf den konkreten PDF-Aufmaß-Workflow abgegrenzt.
 - Startseite auf „PDF-first Heizlastsoftware für SHK-Betriebe“ neu positioniert; Ausbildung/Lernfokus aus Hero, Metadaten und Hauptnavigation entfernt.
 - Hero, vier Kernfunktionen, Vier-Schritt-Workflow, realistisches EFH-Beispiel mit Zeit-Hinweis, echte Produktoberflächen, Ergebnisse/Exporte, Betriebs- und Teamvorteile, Beta-Erklärung, Vergleich, FAQ und Abschluss-CTA umgesetzt.
 - Zentrale deutsche und englische Beta-Landingpages mit kurzem Formular und noindex-Danke-Seiten angelegt; bestehende API um Rolle, optionale Berechnungsanzahl und explizite Datenschutz-Zustimmung ergänzt.
