@@ -5,7 +5,10 @@ const root = path.resolve(__dirname, '..');
 const routes = require('./i18n-routes.json');
 
 const ignored = new Set();
-const ignoredDirectories = new Set(['.git', '.vercel', 'graphify-out', 'node_modules', 'tools']);
+const ignoredDirectories = new Set([
+  '.codex', '.git', '.vercel', 'experiments', 'graphify-out',
+  'marketing-assets', 'node_modules', 'tools'
+]);
 
 const germanTextPatterns = [
   /\b(Startseite|Zuletzt aktualisiert|Demo anfragen|Ablehnen|Akzeptieren|Datenschutzerkl[aä]rung)\b/i,

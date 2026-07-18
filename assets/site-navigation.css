@@ -25,13 +25,14 @@
 
 .site-brand {
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
     min-width: 0;
 }
 
 .site-brand img {
-    width: auto;
-    height: 2rem;
+    width: 9.5rem;
+    height: auto;
     filter: brightness(0) invert(1);
 }
 

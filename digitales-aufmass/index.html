@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>App für Aufmaß und Grundriss im SHK-Handwerk | Prometo</title>
+    <title>Aufmaß App für SHK: PDF-Grundrisse erkennen | Prometo</title>
     <meta name="description"
-        content="PDF-Grundrisse auswerten, Raumdaten strukturieren und digitales Aufmaß für SHK-Betriebe vorbereiten. Prometo befindet sich aktuell im Beta-Aufbau." />
+        content="PDF-Grundriss hochladen, Räume automatisch erkennen und kontrollieren. Die geprüften Daten direkt für Heizlast und hydraulischen Abgleich nutzen." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -30,9 +30,9 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="App für Aufmaß und Grundriss im SHK-Handwerk | Prometo" />
+    <meta property="og:title" content="Aufmaß App für SHK: PDF-Grundrisse erkennen | Prometo" />
     <meta property="og:description"
-        content="PDF-Grundrisse auswerten, Raumdaten strukturieren und digitales Aufmaß für SHK-Betriebe vorbereiten. Prometo befindet sich aktuell im Beta-Aufbau." />
+        content="PDF-Grundriss hochladen, Räume automatisch erkennen und die geprüften Daten direkt für Heizlast und Abgleich nutzen." />
     <meta property="og:url" content="https://prometo.app/digitales-aufmass/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
     <meta property="og:image:alt" content="Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Tablet" />
@@ -41,9 +41,9 @@
     <meta property="og:image:height" content="1600" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="App für Aufmaß und Grundriss im SHK-Handwerk | Prometo" />
+    <meta name="twitter:title" content="Aufmaß App für SHK: PDF-Grundrisse erkennen | Prometo" />
     <meta name="twitter:description"
-        content="PDF-Grundrisse auswerten, Raumdaten strukturieren und digitales Aufmaß für SHK-Betriebe vorbereiten. Prometo befindet sich aktuell im Beta-Aufbau." />
+        content="PDF-Aufmaß mit automatischer Raumerkennung, Kontrolle und direkter Weiterverwendung für Heizlast und Abgleich." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
     <meta name="twitter:image:alt" content="Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Tablet" />
 
@@ -114,154 +114,26 @@
             color: #fff;
         }
     </style>
-
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Organization",
-                "@id": "https://prometo.app/#organization",
-                "name": "Prometo",
-                "url": "https://prometo.app/",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://prometo.app/assets/apple-touch-icon.png"
-                },
-                "sameAs": [
-                    "https://linkedin.com/company/prometo-app",
-                    "https://instagram.com/prometo.app",
-                    "https://youtube.com/@prometo-app",
-                    "https://x.com/prometo-app",
-                    "https://facebook.com/prometo.app"
-                ]
-            },
-            {
-                "@type": "WebSite",
-                "@id": "https://prometo.app/#website",
-                "url": "https://prometo.app/",
-                "name": "Prometo",
-                "inLanguage": "de-DE",
-                "publisher": {
-                    "@id": "https://prometo.app/#organization"
-                }
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://prometo.app/digitales-aufmass/#breadcrumb",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Startseite",
-                        "item": "https://prometo.app/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Digitales Aufmaß",
-                        "item": "https://prometo.app/digitales-aufmass/"
-                    }
-                ]
-            },
-            {
-                "@type": "WebPage",
-                "@id": "https://prometo.app/digitales-aufmass/#webpage",
-                "url": "https://prometo.app/digitales-aufmass/",
-                "name": "App für Aufmaß und Grundriss im SHK-Handwerk | Prometo",
-                "description": "PDF-Grundrisse auswerten, Raumdaten strukturieren und digitales Aufmaß für SHK-Betriebe vorbereiten. Prometo befindet sich aktuell im Beta-Aufbau.",
-                "dateModified": "2026-06-30",
-                "inLanguage": "de-DE",
-                "isPartOf": {
-                    "@id": "https://prometo.app/#website"
-                },
-                "author": {
-                    "@type": "Organization",
-                    "name": "Prometo",
-                    "url": "https://prometo.app/"
-                },
-                "publisher": {
-                    "@id": "https://prometo.app/#organization"
-                },
-                "breadcrumb": {
-                    "@id": "https://prometo.app/digitales-aufmass/#breadcrumb"
-                },
-                "primaryImageOfPage": {
-                    "@type": "ImageObject",
-                    "url": "https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp"
-                },
-                "about": {
-                    "@type": "Thing",
-                        "name": "Digitales Aufmaß"
-                }
-            },
-            {
-                "@type": "SoftwareApplication",
-                "@id": "https://prometo.app/#software",
-                "name": "Prometo",
-                "url": "https://prometo.app/",
-                "applicationCategory": "BusinessApplication",
-                "applicationSubCategory": "Beta-Workflow für digitales Aufmaß und Heizlast-Vorbereitung",
-                "operatingSystem": "Web, iOS, Android",
-                "inLanguage": "de-DE",
-                "browserRequirements": "Aktueller Webbrowser oder iOS / Android App",
-                "description": "Prometo unterstützt SHK-Betriebe dabei, PDF-Pläne, Räume und Aufmaßdaten für Heizlast-Vorbereitung und Folgearbeit strukturiert zu prüfen.",
-                "publisher": {
-                    "@id": "https://prometo.app/#organization"
-                },
-                "featureList": [
-                    "Plan-Import mit prüfbarem Review (PDF, JPG, PNG)",
-                    "Strukturierte Raum- und Geschossdaten",
-                    "Mobiles digitales Aufmaß",
-                    "Vorbereitung für Heizlast und weitere SHK-Arbeitsschritte"
-                ],
-                "screenshot": [
-                    "https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp",
-                    "https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp",
-                    "https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp",
-                    "https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp",
-                    "https://prometo.app/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://prometo.app/digitales-aufmass/#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Welche App eignet sich für Aufmaß und Grundriss im SHK-Betrieb?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Für SHK-Betriebe ist eine Aufmaß App besonders hilfreich, wenn sie PDF-Grundrisse, Raumstruktur, Baustellenkorrekturen und spätere Heizlast- oder Planungsdaten in einem Workflow verbindet."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Was ist digitales Aufmaß und wie funktioniert es mit PDF-Grundrissen?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Digitales Aufmaß bedeutet, Grundrisse, Räume und Bauteile nicht nur visuell zu markieren, sondern als weiterverwendbare Projektdaten zu erfassen. Mit Prometo lassen sich PDF-Pläne direkt importieren und in eine strukturierte Projektoberfläche mit Räumen, Bauteilen und Projektinfos überführen."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Läuft die App auch auf Tablet oder iPad?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Ja. Prometo läuft auf Tablet, iPad und Smartphone, damit Aufmaß und Datenerfassung direkt auf der Baustelle stattfinden können – nicht nur am Büroarbeitsplatz."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Worin unterscheidet sich digitales Aufmaß von PDF-Markup?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Digitales Aufmaß endet nicht bei Linien und Kommentaren. Geometrie, Räume und Folgeschritte werden direkt in einer Projektstruktur erfasst. Dadurch bleiben Daten für Heizlast, Planung und Projektabstimmung weiter nutzbar."
-                        }
-                    }
-                ]
-            }
-        ]
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://prometo.app/"},
+            {"@type": "ListItem", "position": 2, "name": "Digitales Aufmaß", "item": "https://prometo.app/digitales-aufmass/"}
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Prometo",
+          "url": "https://prometo.app/",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Webbrowser",
+          "description": "Aufmaß App für SHK-Betriebe: PDF-Grundrisse importieren, Räume automatisch erkennen und die geprüften Daten weiterverwenden."
+        }
+      ]
     }
     </script>
 </head>
@@ -291,7 +163,7 @@
                         </a>
                         <a class="site-nav-card" href="/hydraulischer-abgleich/">
                             <strong>Hydraulischer Abgleich</strong>
-                            <span>Volumenströme und Heizkreise vorbereiten</span>
+                            <span>Volumenströme und Heizkreise berechnen</span>
                         </a>
                         <a class="site-nav-card" href="/fussbodenheizung-auslegen/">
                             <strong>Fußbodenheizung</strong>
@@ -353,14 +225,14 @@
                         </a>
                         <a class="site-nav-card" href="/heizlastberechnung/leitfaden/">
                             <strong>Leitfaden</strong>
-                            <span>Praxisnah durch die Heizlast-Vorbereitung</span>
+                            <span>Praxisnah durch die Heizlastberechnung</span>
                         </a>
                     </div>
                 </details>
             </nav>
             <div class="site-nav-actions">
                 <a class="site-lang-link" href="/en/digital-takeoff/" aria-label="English version">EN</a>
-                <a class="site-cta" href="/#beta-signup">Kostenlose Beta testen</a>
+                <a class="site-cta" href="/beta/">Kostenlos Beta testen</a>
                 <details class="site-mobile-nav">
                     <summary class="site-mobile-toggle" aria-label="Menü öffnen"><span></span></summary>
                     <nav class="site-mobile-panel" aria-label="Hauptnavigation mobil">
@@ -397,7 +269,7 @@
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
                         <a href="/en/digital-takeoff/">EN</a>
-                        <a class="site-mobile-cta" href="/#beta-signup">Kostenlose Beta testen</a>
+                        <a class="site-mobile-cta" href="/beta/">Kostenlos Beta testen</a>
                     </div>
                     </nav>
                 </details>
@@ -417,25 +289,25 @@
                     <div class="reveal">
                         <span class="badge mb-6">Digitales Aufmaß SHK</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            App für Aufmaß und Grundriss im SHK-Handwerk
+                            Digitales Aufmaß aus PDF-Grundrissen
                         </h1>
                         <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
-                            Prometo hilft dabei, PDF-Grundrisse, Raumdaten und digitales Aufmaß strukturierter vorzubereiten – speziell für SHK-Betriebe, Heizungsbauer, TGA-Planer und Energieberater.
+                            PDF-Grundriss hochladen, Räume und Raumgeometrien automatisch erkennen und die Daten kontrollieren. Die bestätigte Projektstruktur fließt direkt in Heizlast, Materialberechnung und hydraulischen Abgleich.
                         </p>
                         <p class="text-xs text-gray-500 mb-4">Beta-Inhalt · Raumdaten und Ergebnisse fachlich prüfen</p>
                         <div class="mb-6 p-5 rounded-2xl border border-primary/20 bg-primary/8">
                             <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Kurzantwort</p>
                             <p class="text-sm md:text-base text-gray-200 leading-relaxed">
-                                Digitales Aufmaß in Prometo führt Plan, Räume, Baustellenkorrekturen und Folgearbeiten zusammen. Aus PDF-Grundrissen entsteht eine strukturierte Grundlage für Heizlast-Vorbereitung, Aufmaß und Abstimmung im Team.
+                                Digitales Aufmaß in Prometo endet nicht beim Markieren eines Plans. Erkannte Räume werden zu prüfbaren Projektdaten, die ohne erneute Übertragung für die weiteren SHK-Berechnungen bereitstehen.
                             </p>
                             <p class="text-xs text-gray-500 leading-relaxed mt-4">
                                 Hinweis: Der Plan-Import ist als prüfbarer Arbeitsstart gedacht. Erkannte Räume und Bauteile bleiben kontrollierbar und können vor der Weiterverwendung korrigiert werden.
                             </p>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                            <a href="/#beta-signup"
+                            <a href="/beta/" data-event="beta_cta_click" data-cta-position="hero"
                                 class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                                Aufmaß-App testen
+                                Kostenlos Beta testen
                             </a>
                             <a href="/heizlastberechnung/"
                                 class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
@@ -662,12 +534,12 @@
                         </p>
                         <p class="text-gray-300 leading-relaxed">
                             Eine digitale Aufmaß-App kann helfen, Medienbrüche zwischen Plan, Raumliste und weiterer
-                            Berechnung zu reduzieren. Prometo befindet sich im Beta-Aufbau und ersetzt keine fachliche
+                            Berechnung zu reduzieren. Prometo befindet sich in der kostenlosen Beta und ersetzt keine fachliche
                             Prüfung, sondern unterstützt die strukturierte Vorbereitung.
                         </p>
                         <div class="flex flex-wrap gap-4 pt-2 text-sm">
                             <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">
-                                Heizlastberechnung vorbereiten
+                                Heizlast berechnen
                             </a>
                             <a href="/heizlast-checkliste-shk/" class="text-primary hover:text-white transition-colors">
                                 Heizlast-Checkliste ansehen
@@ -837,6 +709,19 @@
             </div>
         </section>
 
+        <section class="px-6 pb-16 md:pb-24" aria-labelledby="aufmass-efh-title">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12">
+                <span class="badge mb-6">EFH-Beispiel aus dem Aufmaß</span>
+                <h2 id="aufmass-efh-title" class="text-3xl md:text-5xl font-bold text-white mb-6">Automatisch erkennen heißt: schneller prüfen, nicht ungeprüft übernehmen</h2>
+                <div class="grid gap-6 md:grid-cols-3 text-gray-400 leading-relaxed">
+                    <p><strong class="block text-white mb-2">Plan</strong>Ein lesbarer PDF-Grundriss mit Erd- und Obergeschoss wird dem Projekt zugeordnet.</p>
+                    <p><strong class="block text-white mb-2">Review</strong>Der Betrieb prüft Raumbezeichnungen, Abmessungen, Öffnungen und korrigiert beispielsweise einen unklar erkannten Hauswirtschaftsraum.</p>
+                    <p><strong class="block text-white mb-2">Weiterverwendung</strong>Erst die bestätigten Daten fließen in Raumheizlast und hydraulischen Abgleich ein.</p>
+                </div>
+                <p class="mt-6 text-sm text-gray-500">Grenze: Scans, verzerrte Pläne, fehlende Maße oder ungewöhnliche Geometrien können mehr manuelle Korrektur erfordern.</p>
+            </div>
+        </section>
+
         <section class="px-6 pb-16 md:pb-24" id="faq">
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
@@ -859,7 +744,7 @@
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Digitales Aufmaß bedeutet, PDF-Grundrisse, Räume und Bauteile nicht nur zu markieren,
                             sondern als prüfbare Projektdaten zu erfassen. Prometo bereitet erkannte Räume für Aufmaß,
-                            Heizlast-Vorbereitung und weitere SHK-Arbeitsschritte strukturiert vor.
+                            Heizlastberechnung und weitere SHK-Arbeitsschritte strukturiert vor.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
@@ -908,9 +793,9 @@
                             </a>
                         </div>
                     </div>
-                    <a href="/#beta-signup"
+                    <a href="/beta/"
                         class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                        Beta-Zugang anfragen
+                        Kostenlos Beta testen
                     </a>
                 </div>
             </div>
@@ -983,6 +868,7 @@
     <script src="/assets/prometo-gallery.js" defer></script>
     <script src="/assets/language-hint.js" defer></script>
     <script src="/assets/site-navigation.js" defer></script>
+    <script src="/assets/prometo-events.js" defer></script>
 </body>
 
 </html>

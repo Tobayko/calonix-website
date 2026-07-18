@@ -1,699 +1,117 @@
-<!DOCTYPE html>
-<html class="dark" lang="de">
-
+<!doctype html>
+<html lang="de-DE">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
-    <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>autarc/Reonic Alternative für SHK-Aufmaß | Prometo</title>
-    <meta name="description"
-        content="Prometo als schlanker Beta-Workflow für PDF-Grundrisse, digitales Aufmaß und Heizlast-Vorbereitung im SHK-Handwerk." />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="theme-color" content="#0b0e0e" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-
-    <link rel="canonical" href="https://prometo.app/autarc-reonic-alternative/" />
-    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/autarc-reonic-alternative/" />
-    <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/autarc-reonic-alternative/" />
-    <link rel="alternate" hreflang="x-default" href="https://prometo.app/autarc-reonic-alternative/" />
-
-    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
-        crossorigin />
-    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
-        crossorigin />
-
-    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <meta property="og:locale" content="de_DE" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="autarc/Reonic Alternative für SHK-Aufmaß | Prometo" />
-    <meta property="og:description"
-        content="Prometo als schlanker Beta-Workflow für PDF-Grundrisse, digitales Aufmaß und Heizlast-Vorbereitung im SHK-Handwerk." />
-    <meta property="og:url" content="https://prometo.app/autarc-reonic-alternative/" />
-    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
-    <meta property="og:image:alt" content="Prometo Grundriss-Import und Raumdaten als Grundlage für digitales Aufmaß" />
-    <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:width" content="2560" />
-    <meta property="og:image:height" content="1600" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="autarc/Reonic Alternative für SHK-Aufmaß | Prometo" />
-    <meta name="twitter:description"
-        content="Prometo als schlanker Beta-Workflow für PDF-Grundrisse, digitales Aufmaß und Heizlast-Vorbereitung im SHK-Handwerk." />
-    <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
-    <meta name="twitter:image:alt" content="Prometo Grundriss-Import und Raumdaten als Grundlage für digitales Aufmaß" />
-
-    <link rel="preload" href="/assets/tailwind.css" as="style" />
-    <link rel="stylesheet" href="/assets/site-navigation.css" />
-    <link rel="stylesheet" href="/assets/seo-explainers.css" />
-    <link rel="stylesheet" href="/assets/tailwind.css" />
-    <link rel="stylesheet" href="/assets/page-effects.css" />
-
-    <style>
-        body {
-            background:
-                radial-gradient(circle at top right, rgba(69, 222, 231, 0.11), transparent 38%),
-                linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%);
-            color: #dfe3e3;
-            font-family: 'Manrope', sans-serif;
-        }
-
-        h1,
-        h2,
-        h3,
-        th {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .glass-panel {
-            background: rgba(23, 28, 28, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border-radius: 999px;
-            padding: 0.5rem 0.9rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #6bf6ff;
-            background: rgba(69, 222, 231, 0.08);
-            border: 1px solid rgba(69, 222, 231, 0.18);
-        }
-
-        .badge::before {
-            content: "";
-            width: 0.45rem;
-            height: 0.45rem;
-            border-radius: 999px;
-            background: #45dee7;
-            box-shadow: 0 0 16px rgba(69, 222, 231, 0.7);
-        }
-
-        .compare-table th {
-            background: rgba(69, 222, 231, 0.08);
-            color: #6bf6ff;
-            font-size: 0.875rem;
-            padding: 0.85rem 1.1rem;
-        }
-
-        .compare-table td {
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 0.875rem;
-            padding: 0.85rem 1.1rem;
-            vertical-align: top;
-        }
-
-        .compare-table tr:nth-child(even) td {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .faq-item summary {
-            cursor: pointer;
-            list-style: none;
-        }
-
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .faq-item[open] summary {
-            color: #fff;
-        }
-    </style>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Reonic &amp; autarc Alternative für PDF-Aufmaß | Prometo</title>
+    <meta name="description" content="Prometo mit Reonic und autarc vergleichen: PDF-Aufmaß, Heizlast, Materialberechnung und hydraulischer Abgleich im transparenten Funktionsvergleich.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#081011">
+    <link rel="canonical" href="https://prometo.app/autarc-reonic-alternative/">
+    <link rel="alternate" hreflang="de-DE" href="https://prometo.app/autarc-reonic-alternative/">
+    <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/autarc-reonic-alternative/">
+    <link rel="alternate" hreflang="x-default" href="https://prometo.app/autarc-reonic-alternative/">
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/assets/site-navigation.css?v=20260718">
+    <link rel="stylesheet" href="/assets/prometo-marketing.css?v=20260718">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Prometo">
+    <meta property="og:title" content="Reonic &amp; autarc Alternative für PDF-Aufmaß | Prometo">
+    <meta property="og:description" content="PDF-first statt primär LiDAR- oder manueller Raumerfassung: Prometo sachlich mit Reonic und autarc vergleichen.">
+    <meta property="og:url" content="https://prometo.app/autarc-reonic-alternative/">
+    <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp">
+    <meta property="og:image:alt" content="Prometo PDF-Import mit kontrollierbaren Räumen auf dem Tablet">
+    <meta name="twitter:card" content="summary_large_image">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebSite",
-                "@id": "https://prometo.app/#website",
-                "url": "https://prometo.app/",
-                "name": "Prometo",
-                "inLanguage": "de-DE"
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://prometo.app/autarc-reonic-alternative/#breadcrumb",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Startseite",
-                        "item": "https://prometo.app/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "autarc & Reonic Alternative",
-                        "item": "https://prometo.app/autarc-reonic-alternative/"
-                    }
-                ]
-            },
-            {
-                "@type": "WebPage",
-                "@id": "https://prometo.app/autarc-reonic-alternative/#webpage",
-                "url": "https://prometo.app/autarc-reonic-alternative/",
-                "name": "autarc & Reonic Alternative? Prometo für PDF-Grundriss und Heizlast-Vorbereitung",
-                "description": "Prometo als schlanker Beta-Workflow für PDF-Grundrisse, digitales Aufmaß und Heizlast-Vorbereitung im SHK-Handwerk.",
-                "datePublished": "2026-06-17",
-                "dateModified": "2026-06-17",
-                "inLanguage": "de-DE",
-                "isPartOf": {
-                    "@id": "https://prometo.app/#website"
-                },
-                "breadcrumb": {
-                    "@id": "https://prometo.app/autarc-reonic-alternative/#breadcrumb"
-                },
-                "about": [
-                    { "@type": "Thing", "name": "Digitales Aufmaß" },
-                    { "@type": "Thing", "name": "PDF-Grundriss" },
-                    { "@type": "Thing", "name": "Heizlast-Vorbereitung" }
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://prometo.app/autarc-reonic-alternative/#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Ist Prometo eine Alternative zu autarc oder Reonic?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Prometo kann eine besonders schlanke Alternative sein, wenn der Engpass früher im Prozess liegt: beim PDF-Grundriss, beim digitalen Aufmaß und bei strukturierten Raumdaten. Für vollständige Plattformprozesse rund um Wärmepumpe, PV, Förderung und Angebote sind etablierte Komplettlösungen oft passender."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Wann ist Prometo eine Alternative zu autarc?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Prometo ist vor allem dann eine Alternative, wenn der Betrieb keinen breiten Energieplattform-Prozess sucht, sondern PDF-Grundrisse, Räume, Flächen und Aufmaßdaten schneller strukturieren möchte. Für Förder-, Angebots- und komplette Wärmepumpenprozesse kann eine etablierte Plattform passender sein."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Wann ist Prometo eine Alternative zu Reonic?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Prometo passt eher als schlanker Einstieg, wenn der erste Engpass im vorhandenen PDF-Grundriss und in der Raumdaten-Vorbereitung liegt. Wenn PV, Wärmepumpe, Angebote, Projektmanagement und weitere Plattformfunktionen im Zentrum stehen, sollte Reonic direkt mitgeprüft werden."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Ersetzt Prometo eine Heizlastsoftware?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Nein. Prometo befindet sich im Beta-Aufbau und unterstützt die Heizlast-Vorbereitung. Eine vollständige Berechnung, fachliche Prüfung und Normbewertung bleiben Aufgabe qualifizierter Anwender und gegebenenfalls spezialisierter Fachsoftware."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Für wen ist Prometo gedacht?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Prometo richtet sich an SHK-Betriebe, TGA-nahe Teams und Planer, die aus vorhandenen PDF-Grundrissen auf kurzem Weg Raumdaten, Flächen und Aufmaßinformationen strukturierter vorbereiten möchten."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Worin unterscheidet sich Prometo von etablierter Fachsoftware?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Etablierte Fachsoftware ist auf Berechnungstiefe, Normprozesse und professionelle Auslegung ausgelegt. Prometo setzt früher an und konzentriert sich bewusst auf einen direkten Grundriss-First-Workflow für PDF, Aufmaß und Heizlast-Vorbereitung."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Warum fokussiert Prometo auf PDF-Grundrisse?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Im Bestand liegt häufig zuerst ein PDF-Plan vor. Prometo nutzt diesen Startpunkt, damit Räume, Geschosse, Flächen und spätere Heizlastdaten nicht in mehreren Werkzeugen neu erfasst werden müssen."
-                        }
-                    }
-                ]
-            }
+        "@type": "BreadcrumbList",
+        "@id": "https://prometo.app/autarc-reonic-alternative/#breadcrumb",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://prometo.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Reonic und autarc Alternative", "item": "https://prometo.app/autarc-reonic-alternative/" }
         ]
     }
     </script>
 </head>
-
-<body class="min-h-screen">
+<body class="marketing-body">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
-            <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
-                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" />
-            </a>
-            <nav aria-label="Hauptnavigation" class="site-desktop-nav">
-                <a class="site-nav-link" href="/">Startseite</a>
-                <details class="site-nav-group">
-                    <summary class="site-nav-trigger">Lösungen</summary>
-                    <div class="site-nav-panel">
-                        <a class="site-nav-card" href="/heizlast/">
-                            <strong>Heizlast</strong>
-                            <span>Grundlagen, Räume und Wärmeverluste</span>
-                        </a>
-                        <a class="site-nav-card" href="/digitales-aufmass/">
-                            <strong>Digitales Aufmaß</strong>
-                            <span>PDF-Grundrisse und Raumdaten strukturieren</span>
-                        </a>
-                        <a class="site-nav-card" href="/waermepumpe-dimensionieren/">
-                            <strong>Wärmepumpe</strong>
-                            <span>Heizlast als Basis für Dimensionierung</span>
-                        </a>
-                        <a class="site-nav-card" href="/hydraulischer-abgleich/">
-                            <strong>Hydraulischer Abgleich</strong>
-                            <span>Volumenströme und Heizkreise vorbereiten</span>
-                        </a>
-                        <a class="site-nav-card" href="/fussbodenheizung-auslegen/">
-                            <strong>Fußbodenheizung</strong>
-                            <span>Flächenheizung und Auslegung einordnen</span>
-                        </a>
-                        <a class="site-nav-card" href="/waermeerzeuger/">
-                            <strong>Wärmeerzeuger</strong>
-                            <span>Systemdaten für Bestand und Planung</span>
-                        </a>
-                    </div>
-                </details>
-                <details class="site-nav-group">
-                    <summary class="site-nav-trigger">App &amp; Workflow</summary>
-                    <div class="site-nav-panel">
-                        <a class="site-nav-card" href="/heizlastberechnung-software/">
-                            <strong>Heizlast Software</strong>
-                            <span>Prometo als SHK-Workflow im Überblick</span>
-                        </a>
-                        <a class="site-nav-card" href="/heizlastberechnung/app/">
-                            <strong>Heizlast App</strong>
-                            <span>Mobile Nutzung für Büro und Baustelle</span>
-                        </a>
-                        <a class="site-nav-card" href="/app-workflows.html">
-                            <strong>App-Workflows</strong>
-                            <span>Abläufe vom Plan bis zur Dokumentation</span>
-                        </a>
-                        <a class="site-nav-card" href="/digitales-aufmass/">
-                            <strong>Aufmaß App</strong>
-                            <span>Grundriss und Aufmaß mobil verbinden</span>
-                        </a>
-                        <a class="site-nav-card" href="/ki-assistent/">
-                            <strong>KI-Assistent</strong>
-                            <span>Fachwissen und Projektfragen schneller klären</span>
-                        </a>
-                    </div>
-                </details>
-                <details class="site-nav-group">
-                    <summary class="site-nav-trigger">Ressourcen</summary>
-                    <div class="site-nav-panel">
-                        <a class="site-nav-card" href="/heizlast-software-vergleich-shk/">
-                            <strong>Software-Vergleich</strong>
-                            <span>Heizlastsoftware nach Workflow vergleichen</span>
-                        </a>
-                        <a class="site-nav-card" href="/autarc-reonic-alternative/">
-                            <strong>autarc/Reonic Alternative</strong>
-                            <span>Prometo fair im Plattformvergleich einordnen</span>
-                        </a>
-                        <a class="site-nav-card" href="/heizlast-checkliste-shk/">
-                            <strong>Heizlast-Checkliste</strong>
-                            <span>Daten für die Vorbereitung sauber prüfen</span>
-                        </a>
-                        <a class="site-nav-card" href="/heizlastberechnung/schaetzwerte/">
-                            <strong>Heizlast schätzen</strong>
-                            <span>Schätzwerte richtig einordnen</span>
-                        </a>
-                        <a class="site-nav-card" href="/heizlastberechnung/din-12831/">
-                            <strong>DIN EN 12831</strong>
-                            <span>Normkontext für die Heizlast</span>
-                        </a>
-                        <a class="site-nav-card" href="/heizlastberechnung/leitfaden/">
-                            <strong>Leitfaden</strong>
-                            <span>Praxisnah durch die Heizlast-Vorbereitung</span>
-                        </a>
-                    </div>
-                </details>
-            </nav>
-            <div class="site-nav-actions">
-                <a class="site-lang-link" href="/en/autarc-reonic-alternative/" aria-label="English version">EN</a>
-                <a class="site-cta" href="/#beta-signup">Kostenlose Beta testen</a>
-                <details class="site-mobile-nav">
-                    <summary class="site-mobile-toggle" aria-label="Menü öffnen"><span></span></summary>
-                    <nav class="site-mobile-panel" aria-label="Hauptnavigation mobil">
-                    <div class="site-mobile-section">
-                        <span class="site-mobile-section-title">Hauptnavigation</span>
-                        <a href="/">Startseite</a>
-                    </div>
-                    <div class="site-mobile-section">
-                        <span class="site-mobile-section-title">Lösungen</span>
-                        <a href="/heizlast/">Heizlast</a>
-                        <a href="/digitales-aufmass/">Digitales Aufmaß</a>
-                        <a href="/waermepumpe-dimensionieren/">Wärmepumpe</a>
-                        <a href="/hydraulischer-abgleich/">Hydraulischer Abgleich</a>
-                        <a href="/fussbodenheizung-auslegen/">Fußbodenheizung</a>
-                        <a href="/waermeerzeuger/">Wärmeerzeuger</a>
-                    </div>
-                    <div class="site-mobile-section">
-                        <span class="site-mobile-section-title">App &amp; Workflow</span>
-                        <a href="/heizlastberechnung-software/">Heizlast Software</a>
-                        <a href="/heizlastberechnung/app/">Heizlast App</a>
-                        <a href="/app-workflows.html">App-Workflows</a>
-                        <a href="/digitales-aufmass/">Aufmaß App</a>
-                        <a href="/ki-assistent/">KI-Assistent</a>
-                    </div>
-                    <div class="site-mobile-section">
-                        <span class="site-mobile-section-title">Ressourcen</span>
-                        <a href="/heizlast-software-vergleich-shk/">Software-Vergleich</a>
-                        <a href="/autarc-reonic-alternative/">autarc/Reonic Alternative</a>
-                        <a href="/heizlast-checkliste-shk/">Heizlast-Checkliste</a>
-                        <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
-                        <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
-                        <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
-                    </div>
-                    <div class="site-mobile-section">
-                        <span class="site-mobile-section-title">Sprache</span>
-                        <a href="/en/autarc-reonic-alternative/">EN</a>
-                        <a class="site-mobile-cta" href="/#beta-signup">Kostenlose Beta testen</a>
-                    </div>
-                    </nav>
-                </details>
-            </div>
+            <a class="site-brand" href="/" aria-label="Zur Startseite von Prometo"><img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"></a>
+            <nav class="site-desktop-nav" aria-label="Hauptnavigation"><a class="site-nav-link" href="/heizlastberechnung/app/">Heizlastsoftware</a><a class="site-nav-link" href="/digitales-aufmass/">PDF-Aufmaß</a><a class="site-nav-link" href="/hydraulischer-abgleich/">Hydraulischer Abgleich</a><a class="site-nav-link" href="/fussbodenheizung-auslegen/">Fußbodenheizung</a><a class="site-nav-link" href="/heizlast-software-vergleich-shk/">Vergleich</a></nav>
+            <div class="site-nav-actions"><a class="site-lang-link" href="/en/autarc-reonic-alternative/" aria-label="English version">EN</a><a class="site-cta" href="/beta/" data-event="beta_cta_click" data-cta-position="header">Kostenlos Beta testen</a><details class="site-mobile-nav"><summary class="site-mobile-toggle" aria-label="Menü öffnen"><span></span></summary><nav class="site-mobile-panel" aria-label="Hauptnavigation mobil"><div class="site-mobile-section"><span class="site-mobile-section-title">Produkt</span><a href="/digitales-aufmass/">Digitales Aufmaß aus PDF-Grundrissen</a><a href="/heizlastberechnung/app/">Heizlastberechnung App für SHK</a><a href="/heizlast-software-vergleich-shk/">Softwarevergleich</a><a class="site-mobile-cta" href="/beta/" data-event="beta_cta_click" data-cta-position="mobile_menu">Kostenlos Beta testen</a></div></nav></details></div>
         </div>
     </header>
-    <main>
-        <section class="px-6 py-16 md:py-24">
-            <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
-                    <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
-                    <span class="mx-2 text-gray-600">/</span>
-                    <span aria-current="page">autarc &amp; Reonic Alternative</span>
-                </nav>
 
-                <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-                    <div class="reveal">
-                        <span class="badge mb-6">Workflow-Vergleich SHK</span>
-                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            Prometo als schlanke Alternative für PDF-Grundriss, Aufmaß und Heizlast-Vorbereitung
-                        </h1>
-                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
-                            Prometo setzt früher an als Komplettplattformen: beim PDF-Grundriss, bei Raumdaten und beim digitalen Aufmaß. Gerade wenn ein Plan-PDF der erste konkrete Projektstand ist, bringt Prometo diesen Schritt klarer und direkter in den Workflow. Es ist ein bewusst schlanker Beta-Ansatz für SHK-Betriebe, nicht der Anspruch, etablierte Fachsoftware vollständig zu ersetzen.
-                        </p>
-                        <div class="mb-8 p-5 rounded-2xl border border-primary/20 bg-primary/8 max-w-2xl">
-                            <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Kurzantwort</p>
-                            <p class="text-sm md:text-base text-gray-200 leading-relaxed">
-                                Wenn ein Betrieb vor allem PDF-Pläne, Räume, Flächen und Aufmaßdaten sauber vorbereiten möchte, ist Prometo oft der klarere Einstieg. Es reduziert den frühen Plan-Schritt auf das Wesentliche: Grundriss öffnen, Räume strukturieren, Daten für Aufmaß und Heizlast-Vorbereitung nutzbar machen. Wenn vollständige Berechnung, Förderung, PV, Wärmepumpe, Angebote und Integrationen im Zentrum stehen, passt meist eine breite Plattform besser.
-                            </p>
-                        </div>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="/#beta-signup"
-                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                                Kostenlosen Beta-Zugang anfragen
-                            </a>
-                            <a href="/digitales-aufmass/"
-                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
-                                Aufmaß-Workflow ansehen
-                            </a>
-                        </div>
-                        <p class="mt-3 text-sm text-gray-400">
-                            Die Prometo-Beta ist aktuell kostenlos.
-                        </p>
-                    </div>
+    <main id="prometo-main-content">
+        <div class="marketing-shell"><nav class="marketing-breadcrumbs" aria-label="Breadcrumb"><a href="/">Startseite</a><span aria-hidden="true">/</span><span aria-current="page">Reonic &amp; autarc Alternative</span></nav></div>
 
-                    <aside class="glass-panel rounded-[2rem] p-6 md:p-8 reveal reveal-delay-2">
-                        <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-5">Einordnung</p>
-                        <div class="space-y-5">
-                            <div>
-                                <h2 class="text-xl font-bold text-white mb-2">Prometo startet beim Plan</h2>
-                                <p class="text-sm text-gray-400 leading-relaxed">
-                                    PDF-Grundriss importieren, Räume strukturieren, Aufmaßdaten vorbereiten und daraus die Heizlast-Vorbereitung sauber anschließen. Genau hier ist Prometo bewusst fokussierter als breite Plattformprozesse.
-                                </p>
-                            </div>
-                            <div>
-                                <h2 class="text-xl font-bold text-white mb-2">Keine falschen Versprechen</h2>
-                                <p class="text-sm text-gray-400 leading-relaxed">
-                                    Prometo ist ein Solo-Projekt im Beta-Aufbau. Ergebnisse müssen fachlich geprüft werden und ersetzen keine vollständige Fachplanung.
-                                </p>
-                            </div>
-                        </div>
-                    </aside>
+        <section class="marketing-hero">
+            <div class="marketing-shell marketing-hero-grid">
+                <div class="marketing-hero-copy">
+                    <span class="marketing-eyebrow">PDF-first Alternative · Kostenlose Beta</span>
+                    <h1>Prometo als PDF-first Alternative zu Reonic und autarc</h1>
+                    <p class="marketing-lead">Prometo richtet sich an SHK-Betriebe, die mit vorhandenen PDF-Grundrissen arbeiten. Statt primär jeden Raum per LiDAR oder manuell neu zu erfassen, wird der Plan analysiert, kontrolliert und direkt für Heizlast, Materialbedarf und hydraulischen Abgleich weiterverwendet.</p>
+                    <div class="marketing-actions"><a class="marketing-button marketing-button--primary" href="/beta/" data-event="comparison_cta_click" data-cta-position="hero">Kostenlos Beta testen</a><a class="marketing-button marketing-button--secondary" href="#direktvergleich">Direktvergleich ansehen</a></div>
+                    <p class="marketing-hero-note">Prometo behauptet nicht, schneller, günstiger oder pauschal besser zu sein. Die passende Lösung hängt vom Projektstart, Funktionsumfang und bestehenden Betriebsprozess ab.</p>
                 </div>
+                <figure class="marketing-media-card"><img src="/assets/prometo-screenshots/tablet/bauplan-import-review.webp" width="2560" height="1600" alt="Prometo Import-Review mit automatisch erkannten Räumen auf dem Tablet" fetchpriority="high"><figcaption><strong>Der Unterschied liegt am Anfang</strong>Vorhandenen PDF-Grundriss übernehmen, Räume kontrollieren und dieselben Daten weiterberechnen.</figcaption></figure>
             </div>
         </section>
 
-        <section class="px-6 pb-14 md:pb-20" aria-labelledby="alternative-flow-heading">
-            <div class="max-w-screen-xl mx-auto seo-explainer glass-panel rounded-[2rem] p-6 md:p-8 reveal">
-                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-                    <div>
-                        <span class="badge mb-6">Entscheidungshilfe</span>
-                        <h2 id="alternative-flow-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">
-                            Prometo gewinnt dort, wo der erste Projektstand ein PDF-Grundriss ist
-                        </h2>
-                        <p class="text-gray-400 leading-relaxed">
-                            autarc und Reonic sind breiter aufgestellt. Prometo positioniert sich bewusst schmaler:
-                            Plan öffnen, Raumdaten vorbereiten und den nächsten SHK-Schritt greifbar machen.
-                        </p>
-                    </div>
-                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="alternative-flow-svg-title alternative-flow-svg-desc">
-                        <title id="alternative-flow-svg-title">Vergleich aus Plattformumfang, PDF-Start und SHK-Vorbereitung</title>
-                        <desc id="alternative-flow-svg-desc">Animierte Grafik zeigt breite Plattformen, PDF-Grundriss und Prometo als fokussierten Raumdaten-Workflow.</desc>
-                        <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
-                        <circle class="moving-dot" r="7" fill="#45dee7" />
-                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
-                        <g class="flow-node flow-pulse">
-                            <rect x="44" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="119" y="126" text-anchor="middle" class="step-label">Plattform</text>
-                            <text x="119" y="153" text-anchor="middle" class="step-copy">breiter Prozess</text>
-                        </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="341" y="78" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
-                            <text x="416" y="126" text-anchor="middle" class="step-label">PDF-Start</text>
-                            <text x="416" y="153" text-anchor="middle" class="step-copy">Räume erkennen</text>
-                        </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="657" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="732" y="126" text-anchor="middle" class="step-label">Prometo</text>
-                            <text x="732" y="153" text-anchor="middle" class="step-copy">Aufmaß + Daten</text>
-                        </g>
-                    </svg>
-                </div>
+        <section class="marketing-section--tight" aria-labelledby="wann-prometo">
+            <div class="marketing-shell marketing-split">
+                <div class="marketing-section-heading"><span class="marketing-kicker">Wann Prometo in die Auswahl gehört</span><h2 id="wann-prometo">Wenn ein guter PDF-Grundriss bereits vorhanden ist.</h2></div>
+                <ul class="marketing-check-list"><li>Raumdaten sollen nicht komplett in einem weiteren Programm neu erfasst werden</li><li>Heizlast, Material und hydraulischer Abgleich sollen auf derselben Datenbasis bleiben</li><li>Ein fokussierter SHK-Berechnungsworkflow ist wichtiger als eine breite Energieplattform</li><li>Der Betrieb möchte eine moderne kostenlose Beta mit echten Projekten prüfen</li></ul>
             </div>
         </section>
 
-        <section class="px-6 py-14 md:py-20 bg-white/2">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="max-w-3xl mb-10 reveal">
-                    <span class="badge mb-6">Vergleich</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                        autarc/Reonic und Prometo im Workflow-Vergleich
-                    </h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        Der Vergleich bewertet nicht, welche Lösung generell besser ist. Er zeigt, an welcher Stelle im Projektprozess die Werkzeuge typischerweise ansetzen und warum Prometo beim frühen Plan- und Aufmaßstart besonders praktisch sein kann.
-                    </p>
-                    <p class="mt-3 text-xs text-gray-500">
-                        Stand der Einordnung: 22. Juni 2026. Anbieterfunktionen, Preise und Verfügbarkeit bitte vor einer Entscheidung direkt prüfen.
-                    </p>
-                </div>
-                <div class="overflow-x-auto rounded-2xl reveal">
-                    <table class="compare-table w-full rounded-2xl overflow-hidden">
-                        <thead>
-                            <tr>
-                                <th class="text-left">Kriterium</th>
-                                <th class="text-left">autarc/Reonic</th>
-                                <th class="text-left">Prometo</th>
-                            </tr>
-                        </thead>
+        <section class="marketing-section marketing-section--panel" id="direktvergleich" aria-labelledby="direktvergleich-title">
+            <div class="marketing-shell">
+                <div class="marketing-section-heading"><span class="marketing-eyebrow">Offizielle Quellen · geprüft am 18. Juli 2026</span><h2 id="direktvergleich-title">PDF-first, LiDAR oder manuelle Erfassung?</h2><p class="marketing-copy">Der Vergleich übernimmt nur Aussagen, die auf den verlinkten offiziellen Seiten eindeutig beschrieben sind.</p></div>
+                <div class="marketing-table-wrap">
+                    <table class="marketing-table">
+                        <thead><tr><th>Kriterium</th><th>Prometo</th><th>Reonic 360° Heating</th><th>autarc</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Fokus</td>
-                                <td class="text-gray-400">Energieplanung, PV, Wärmepumpe, Förderung, Angebote</td>
-                                <td class="text-primary">PDF-Grundriss, Aufmaß, Raumdaten, Heizlast-Vorbereitung</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Einstieg</td>
-                                <td class="text-gray-400">Projekt-/Scan-/Planungsprozess</td>
-                                <td class="text-primary">PDF-Grundriss</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Stärke</td>
-                                <td class="text-gray-400">breite Plattform</td>
-                                <td class="text-primary">direkter Grundriss-First-Workflow mit wenig Umweg</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Status</td>
-                                <td class="text-gray-400">etabliert</td>
-                                <td class="text-primary">Solo-Projekt im Beta-Aufbau</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Heizlast</td>
-                                <td class="text-gray-400">vollständige Prozesse laut Anbieter</td>
-                                <td class="text-primary">Vorbereitung, Prüfung erforderlich</td>
-                            </tr>
+                            <tr><th scope="row">Primärer Einstieg</th><td>Vorhandener PDF-Grundriss</td><td>LiDAR auf unterstützten Apple-Geräten oder manuelle Portal-Eingabe</td><td>Gebäudedaten plus LiDAR-Scan oder manuelle Raumerfassung</td></tr>
+                            <tr><th scope="row">PDF-Import</th><td>Ja, zentraler Startpunkt</td><td>Auf der geprüften 360°-Heating-Seite nicht ausgewiesen</td><td>Auf den geprüften Heizungsplanungs-Seiten nicht als Erfassungsweg ausgewiesen</td></tr>
+                            <tr><th scope="row">Automatische Erkennung</th><td>Räume und Planinformationen aus PDF; Review erforderlich</td><td>Wände, Fenster und Türen beim LiDAR-Scan</td><td>Raumgeometrien per LiDAR und KI-Analyse</td></tr>
+                            <tr><th scope="row">Heizlast</th><td>Raumweise aus geprüften Projektdaten; Beta-Prüfung erforderlich</td><td>Raumweise nach DIN EN 12831 laut Anbieter</td><td>Nach DIN EN 12831 mit Kontrolle und Report laut Anbieter</td></tr>
+                            <tr><th scope="row">Material</th><td>Materialberechnung und projektbezogene Stückliste</td><td>Auf der geprüften Seite nicht ausgewiesen</td><td>Auf den geprüften Seiten nicht als Material- oder Stücklistenfunktion ausgewiesen</td></tr>
+                            <tr><th scope="row">Hydraulischer Abgleich</th><td>Raum- und Kreisvolumenströme, Verteiler und Einregelwerte</td><td>Verfahren B und Ventileinstellwerte laut Anbieter</td><td>Verfahren B für Heizkörper und Fußbodenheizung laut Anbieter</td></tr>
+                            <tr><th scope="row">Plattform</th><td>Web, iOS, Android</td><td>Web-Portal; LiDAR auf unterstützten iPhones und iPad Pro</td><td>Mobile App; LiDAR mit iPhone/iPad; Offlinefähigkeit wird genannt</td></tr>
+                            <tr><th scope="row">Zielgruppe</th><td>SHK-Betriebe</td><td>Heizungsinstallateure</td><td>Unter anderem Heizungsbauer und Energieberater</td></tr>
+                            <tr><th scope="row">Test</th><td>Kostenlose Beta</td><td>Kostenloser Einstieg mit Basis-Paket laut Anbieter</td><td>„Jetzt testen“ und Demo werden angeboten</td></tr>
+                            <tr><th scope="row">Prüfdatum</th><td>18.07.2026</td><td>18.07.2026</td><td>18.07.2026</td></tr>
                         </tbody>
                     </table>
                 </div>
+                <div class="marketing-source-list"><strong>Offizielle Quellen:</strong><a href="https://reonic.com/de-de/product/360heating/" target="_blank" rel="noopener noreferrer">Reonic 360° Heating</a><a href="https://www.autarc.energy/produkte/heizlastberechnung" target="_blank" rel="noopener noreferrer">autarc Heizlastberechnung</a><a href="https://www.autarc.energy/produkte/hydraulischer-abgleich" target="_blank" rel="noopener noreferrer">autarc Hydraulischer Abgleich</a><a href="https://www.autarc.energy/produkte/heizflachenauslegung" target="_blank" rel="noopener noreferrer">autarc Heizflächenauslegung</a><a href="https://www.autarc.energy/produkte/lidar-scan" target="_blank" rel="noopener noreferrer">autarc LiDAR-Scan</a></div>
             </div>
         </section>
 
-        <section class="px-6 py-14 md:py-20">
-            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
-                <article class="glass-panel rounded-[2rem] p-7 md:p-9 reveal">
-                    <span class="badge mb-6">Wann Prometo passt</span>
-                    <h2 class="text-3xl font-bold text-white mb-5">Wenn der PDF-Grundriss zuerst vorliegt</h2>
-                    <ul class="space-y-4 text-gray-300 leading-relaxed">
-                        <li class="flex gap-3"><span class="text-primary">✓</span><span>Der Plan liegt als PDF vor und soll ohne vorgelagerten Komplettprozess als Projektbasis genutzt werden.</span></li>
-                        <li class="flex gap-3"><span class="text-primary">✓</span><span>Räume, Flächen, Geschosse und Bauteile sollen früh, nachvollziehbar und weiterverwendbar strukturiert werden.</span></li>
-                        <li class="flex gap-3"><span class="text-primary">✓</span><span>Digitales Aufmaß und Heizlast-Vorbereitung sollen in einem kompakten Arbeitsfluss zusammenkommen.</span></li>
-                    </ul>
-                </article>
-
-                <article class="glass-panel rounded-[2rem] p-7 md:p-9 reveal reveal-delay-1">
-                    <span class="badge mb-6">Wann Komplettlösung passt</span>
-                    <h2 class="text-3xl font-bold text-white mb-5">Wenn der gesamte Energieprozess abgedeckt werden soll</h2>
-                    <ul class="space-y-4 text-gray-300 leading-relaxed">
-                        <li class="flex gap-3"><span class="text-primary">✓</span><span>Vollständige Berechnung, Förderprozesse und normnahe Dokumentation stehen im Mittelpunkt.</span></li>
-                        <li class="flex gap-3"><span class="text-primary">✓</span><span>PV, Wärmepumpe, Angebote und Projektsteuerung sollen in einer breiten Plattform laufen.</span></li>
-                        <li class="flex gap-3"><span class="text-primary">✓</span><span>Etablierte Integrationen, Teamprozesse und vorhandene Anbieter-Workflows sind entscheidend.</span></li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <section class="px-6 py-14 md:py-20 bg-white/2" id="faq">
-            <div class="max-w-screen-md mx-auto">
-                <div class="text-center mb-10">
-                    <span class="badge mb-6">FAQ</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Häufige Fragen zur Alternative</h2>
-                    <p class="text-gray-400">Fair eingeordnet: Prometo ist besonders stark am Anfang des Projekts, spezialisierte Lösungen bleiben wichtig für vollständige Fachprozesse.</p>
+        <section class="marketing-section" aria-labelledby="abgrenzung-title">
+            <div class="marketing-shell">
+                <div class="marketing-section-heading"><span class="marketing-eyebrow">Sachliche Abgrenzung</span><h2 id="abgrenzung-title">Prometo ist fokussierter – Reonic und autarc decken breitere Erfassungs- und Plattformwege ab.</h2></div>
+                <div class="marketing-card-grid marketing-card-grid--three">
+                    <article class="marketing-card"><h3>Prometo</h3><p>Für den direkten Start aus einem vorhandenen PDF-Grundriss und den verbundenen Ablauf von Raumerkennung über Heizlast und Material bis zum Abgleich.</p></article>
+                    <article class="marketing-card"><h3>Reonic</h3><p>Die geprüfte 360°-Heating-Seite beschreibt LiDAR- oder manuelle Erfassung, raumweise Heizlast, hydraulischen Abgleich und Wärmepumpen-Optimierung.</p></article>
+                    <article class="marketing-card"><h3>autarc</h3><p>Die geprüften Seiten beschreiben LiDAR oder manuelle Raumerfassung, Heizlast, Heizflächenauslegung, hydraulischen Abgleich sowie weitere Plattformmodule.</p></article>
                 </div>
-                <div class="space-y-4">
-                    <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
-                        <summary class="font-headline font-bold text-white">Ist Prometo eine Alternative zu autarc oder Reonic?</summary>
-                        <p class="mt-3 text-gray-400 leading-relaxed">Ja, wenn der wichtigste Engpass beim PDF-Grundriss, digitalen Aufmaß, Raumdaten und der Heizlast-Vorbereitung liegt. Genau dort ist Prometo angenehm schlank. Für eine vollständige Energieplattform bleiben autarc oder Reonic je nach Prozessumfang naheliegend.</p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
-                        <summary class="font-headline font-bold text-white">Wann ist Prometo eine Alternative zu autarc?</summary>
-                        <p class="mt-3 text-gray-400 leading-relaxed">Wenn du keinen breiten Energieplattform-Prozess suchst, sondern PDF-Grundrisse, Räume, Flächen und Aufmaßdaten schneller strukturieren möchtest. Für Förder-, Angebots- und vollständige Wärmepumpenprozesse kann eine etablierte Plattform passender sein.</p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
-                        <summary class="font-headline font-bold text-white">Wann ist Prometo eine Alternative zu Reonic?</summary>
-                        <p class="mt-3 text-gray-400 leading-relaxed">Wenn der erste Engpass im vorhandenen PDF-Grundriss und in der Raumdaten-Vorbereitung liegt. Wenn PV, Wärmepumpe, Angebote, Projektmanagement und weitere Plattformfunktionen im Zentrum stehen, sollte Reonic direkt mitgeprüft werden.</p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
-                        <summary class="font-headline font-bold text-white">Ersetzt Prometo Heizlastsoftware?</summary>
-                        <p class="mt-3 text-gray-400 leading-relaxed">Nein. Prometo unterstützt die Vorbereitung und Strukturierung. Eine fachliche Berechnung, Prüfung und Dokumentation muss weiterhin durch qualifizierte Personen und passende Fachsoftware abgesichert werden.</p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
-                        <summary class="font-headline font-bold text-white">Für wen ist Prometo geeignet?</summary>
-                        <p class="mt-3 text-gray-400 leading-relaxed">Für SHK-Betriebe, TGA-nahe Teams und Planer, die vor allem mit vorhandenen PDF-Grundrissen arbeiten und daraus schnell belastbarere Raum- und Aufmaßdaten machen möchten.</p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
-                        <summary class="font-headline font-bold text-white">Was ist der Unterschied zu Fachsoftware?</summary>
-                        <p class="mt-3 text-gray-400 leading-relaxed">Fachsoftware ist auf Berechnungstiefe, Normlogik und Auslegung spezialisiert. Prometo konzentriert sich auf den frühen, praktischen Arbeitsschritt vom Plan zur strukturierten Datengrundlage und macht genau diesen Teil übersichtlicher.</p>
-                    </details>
-                    <details class="faq-item glass-panel rounded-2xl px-6 py-4 reveal">
-                        <summary class="font-headline font-bold text-white">Warum legt Prometo den Fokus auf PDF?</summary>
-                        <p class="mt-3 text-gray-400 leading-relaxed">Weil im Bestand oft genau dort die Arbeit beginnt. Ein PDF-Grundriss ist häufig vorhanden, aber die enthaltenen Informationen müssen erst in Räume, Flächen, Geschosse und prüfbare Daten übersetzt werden.</p>
-                    </details>
-                </div>
+                <div class="marketing-inline-cta"><h3>Auch Hottgenroth einbeziehen?</h3><p>Der vollständige Heizlastsoftware-Vergleich ergänzt die CAD-basierte Fachsoftware von Hottgenroth und zeigt alle Quellen in einer größeren Tabelle.</p><a class="marketing-button marketing-button--secondary" href="/heizlast-software-vergleich-shk/" data-event="comparison_cta_click" data-cta-position="internal_comparison">Vollständigen Softwarevergleich ansehen</a></div>
             </div>
         </section>
 
-        <section class="px-6 py-16 md:py-20">
-            <div class="max-w-screen-lg mx-auto glass-panel rounded-[2rem] p-8 md:p-10 text-center reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">PDF-Grundriss zuerst? Dann lohnt sich ein Blick auf Prometo.</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                    Prometo ist noch im Beta-Aufbau. Wer einen schlanken Grundriss-First-Workflow sucht, bekommt einen fokussierten Einstieg und kann früh Feedback geben.
-                    Aktuell kostenlos im Beta-Aufbau. Rückmeldungen aus der Praxis fließen direkt in die Weiterentwicklung ein.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/#beta-signup"
-                        class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                        Jetzt kostenlos zur Prometo-Beta anmelden
-                    </a>
-                    <a href="/heizlastberechnung-software/"
-                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
-                        Heizlast-Software ansehen
-                    </a>
-                </div>
-                <p class="mt-3 text-sm text-gray-400">
-                    Die Prometo-Beta ist aktuell kostenlos.
-                </p>
-            </div>
-        </section>
+        <section class="marketing-section marketing-section--panel" aria-labelledby="alternative-faq"><div class="marketing-shell"><div class="marketing-section-heading"><span class="marketing-eyebrow">FAQ</span><h2 id="alternative-faq">Häufige Fragen zur PDF-first Alternative.</h2></div><div class="marketing-faq"><details><summary>Ist Prometo ein vollständiger Ersatz für Reonic oder autarc?</summary><p>Nicht pauschal. Prometo setzt einen engeren Schwerpunkt auf vorhandene PDF-Grundrisse und den verbundenen SHK-Berechnungsworkflow. Breitere Plattformfunktionen von Reonic und autarc müssen separat gegen die eigenen Anforderungen geprüft werden.</p></details><details><summary>Warum beginnt Prometo beim PDF?</summary><p>Weil in vielen EFH-, Sanierungs- und Wärmepumpenprojekten bereits ein Grundriss vorliegt. Prometo nutzt ihn als Datenquelle, statt ihn nur neben einer neuen Raumerfassung anzuzeigen.</p></details><details><summary>Muss die automatische Erkennung kontrolliert werden?</summary><p>Ja. Raumgeometrien, Bauteile und weitere Planinformationen müssen vor der Berechnung bestätigt und bei Bedarf korrigiert werden.</p></details><details><summary>Ist die Prometo Beta kostenlos?</summary><p>Ja. Die aktuelle Beta ist kostenlos und richtet sich an SHK-Betriebe, die Prometo mit einem echten Projekt prüfen und konkretes Feedback geben.</p></details></div></div></section>
+
+        <section class="marketing-section"><div class="marketing-shell marketing-final-cta"><span class="marketing-eyebrow">PDF-Grundriss vorhanden?</span><h2>Prüfe den PDF-first Workflow an einem echten SHK-Projekt.</h2><p class="marketing-lead">Keine pauschale Wechselentscheidung: Teste Prometo kostenlos und vergleiche den Ablauf mit deinem heutigen Prozess.</p><a class="marketing-button marketing-button--primary" href="/beta/" data-event="comparison_cta_click" data-cta-position="final">Kostenlos Beta testen</a></div></section>
     </main>
 
-    <footer class="border-t border-white/6 bg-[#0b0e0e]">
-        <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-            <div class="text-sm text-gray-400">
-                © 2026 Prometo · SHK-Software für Heizlastberechnung, digitales Aufmaß und TGA-Planung
-            </div>
-            <div class="flex flex-wrap gap-4 text-sm text-gray-400">
-                <a href="/" class="hover:text-white transition-colors">Startseite</a>
-                <a href="/heizlast/" class="hover:text-white transition-colors">Heizlast erklärt</a>
-                <a href="/digitales-aufmass/" class="hover:text-white transition-colors">Digitales Aufmaß</a>
-                <a href="/heizlastberechnung/" class="hover:text-white transition-colors">Heizlastberechnung</a>
-                <a href="/heizlastberechnung/app/" class="hover:text-white transition-colors">Heizlast App</a>
-                <a href="/datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
-                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
-            </div>
-        </div>
-    </footer>
-
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
-        <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
-            <div class="text-sm text-gray-400">
-                <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
-                Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
-            </div>
-            <div class="flex items-center gap-3 shrink-0">
-                <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const GA_MEASUREMENT_ID = 'G-NCWCYR2X69';
-        let gaLoaded = false;
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied' });
-        function loadGoogleAnalytics() {
-            if (gaLoaded) return;
-            gaLoaded = true;
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-            document.head.appendChild(script);
-            gtag('js', new Date());
-            gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
-        }
-        (function () {
-            const banner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('cookie-accept');
-            const declineBtn = document.getElementById('cookie-decline');
-            if (!banner) return;
-            const consent = localStorage.getItem('ga_consent');
-            if (!consent) { setTimeout(() => { banner.classList.remove('translate-y-full'); }, 1000); }
-            else if (consent === 'granted') {
-                gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' });
-                loadGoogleAnalytics();
-            }
-            if (acceptBtn) { acceptBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'granted'); banner.classList.add('translate-y-full'); gtag('consent', 'update', { 'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' }); loadGoogleAnalytics(); }); }
-            if (declineBtn) { declineBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'denied'); banner.classList.add('translate-y-full'); }); }
-        })();
-    </script>
-    <script src="/assets/page-effects.js" defer></script>
-    <script src="/assets/language-hint.js" defer></script>
-    <script src="/assets/site-navigation.js" defer></script>
+    <footer class="marketing-footer"><div class="marketing-shell marketing-footer-grid"><div class="marketing-footer-brand"><img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" loading="lazy"><p>Die PDF-first Heizlastsoftware für SHK-Betriebe.</p></div><nav class="marketing-footer-links" aria-label="Fußnavigation"><a href="/heizlast-software-vergleich-shk/">Softwarevergleich</a><a href="/digitales-aufmass/">Digitales Aufmaß</a><a href="/beta/">Beta</a><a href="/datenschutz.html">Datenschutz</a><a href="/impressum.html">Impressum</a></nav></div></footer>
+    <div id="cookie-banner" class="marketing-cookie-banner" role="dialog" aria-label="Datenschutzeinstellungen" aria-live="polite"><p>Wir verwenden Google Analytics erst nach deiner Zustimmung. Details stehen in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p><div class="marketing-cookie-actions"><button type="button" id="cookie-decline">Ablehnen</button><button type="button" id="cookie-accept">Akzeptieren</button></div></div>
+    <script src="/assets/site-navigation.js" defer></script><script src="/assets/accessibility.js" defer></script><script src="/assets/prometo-analytics.js" defer></script>
 </body>
 </html>

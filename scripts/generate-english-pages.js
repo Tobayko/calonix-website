@@ -900,7 +900,7 @@ function render(page) {
                 ${navLinks}
                 <a href="${page.deUrl.replace('https://prometo.app', '')}" hreflang="de-DE" class="hover:text-white transition-colors">Deutsch</a>
             </nav>
-            <a href="/#beta-signup" class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">Request demo</a>
+            <a href="/en/beta/" class="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_24px_rgba(69,222,231,0.35)]">Try beta for free</a>
         </div>
     </header>
 
@@ -923,7 +923,7 @@ function render(page) {
                         </div>
                         <p class="text-xs text-gray-500 mb-8">Reviewed by Prometo · Last updated: <time datetime="${page.dateModified || contentDate}">${page.dateLabel || contentDateLabel}</time></p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="/#beta-signup" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">Request demo</a>
+                            <a href="/en/beta/" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">Try beta for free</a>
                             <a href="${page.deUrl.replace('https://prometo.app', '')}" hreflang="de-DE" class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">German version</a>
                         </div>
                     </div>

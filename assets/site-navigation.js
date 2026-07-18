@@ -5,6 +5,14 @@
         document.head.appendChild(accessibility);
     }
 
+    if (!document.querySelector('script[src="/assets/prometo-events.js"]') &&
+        !document.querySelector('script[src="/assets/prometo-analytics.js"]')) {
+        const events = document.createElement("script");
+        events.src = "/assets/prometo-events.js";
+        events.defer = true;
+        document.head.appendChild(events);
+    }
+
     const header = document.querySelector("[data-prometo-site-nav]");
     if (!header) return;
 

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://prometo.app/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://prometo.app/heizlast/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/heat-load/</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://prometo.app/heizlastberechnung/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/heat-load-calculation/</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://prometo.app/heizlastberechnung/app/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/heat-load-calculation/app/</loc>
@@ -78,11 +78,19 @@
   </url>
   <url>
     <loc>https://prometo.app/app-workflows.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/beta/</loc>
+    <lastmod>2026-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://prometo.app/en/beta/</loc>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/autarc-reonic-alternative/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/autarc-reonic-alternative/</loc>
@@ -90,7 +98,7 @@
   </url>
   <url>
     <loc>https://prometo.app/heizlast-software-vergleich-shk/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/heat-load-software-comparison-hvac/</loc>
@@ -110,7 +118,7 @@
   </url>
   <url>
     <loc>https://prometo.app/hydraulischer-abgleich/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/hydraulic-balancing/</loc>
@@ -118,7 +126,7 @@
   </url>
   <url>
     <loc>https://prometo.app/fussbodenheizung-auslegen/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/underfloor-heating-design/</loc>
@@ -142,7 +150,7 @@
   </url>
   <url>
     <loc>https://prometo.app/digitales-aufmass/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-18</lastmod>
   </url>
   <url>
     <loc>https://prometo.app/en/digital-takeoff/</loc>
