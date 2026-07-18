@@ -480,17 +480,30 @@ body.marketing-body p {
 }
 
 .marketing-screenshot-grid {
-    display: grid;
+    display: flex;
     align-items: start;
     gap: 1rem;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0.25rem var(--gutter) 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: var(--gutter);
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+}
+
+.marketing-screenshot-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .marketing-phone-shot {
+    flex: 0 0 min(78vw, 19rem);
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 1.6rem;
     background: var(--surface);
     box-shadow: var(--shadow);
+    scroll-snap-align: center;
 }
 
 .marketing-phone-shot img {
@@ -501,6 +514,13 @@ body.marketing-body p {
     padding: 1rem;
     color: var(--text-muted);
     font-size: 0.84rem;
+}
+
+.marketing-swipe-hint {
+    margin: -0.25rem 0 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    text-align: center;
 }
 
 .marketing-result-card strong {
@@ -845,7 +865,20 @@ body.marketing-body p {
     .marketing-result-grid,
     .marketing-benefit-grid,
     .marketing-screenshot-grid {
+        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-inline: 0;
+        padding: 0;
+        overflow: visible;
+        scroll-snap-type: none;
+    }
+
+    .marketing-phone-shot {
+        flex-basis: auto;
+    }
+
+    .marketing-swipe-hint {
+        display: none;
     }
 
     .marketing-workflow {

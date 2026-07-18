@@ -160,6 +160,11 @@ const exactPages = {
   'beta/index.html': {
     title: 'Prometo Beta kostenlos testen | Heizlastsoftware für SHK',
     h1: 'Teste Prometo mit einem echten SHK-Projekt'
+  },
+  'shk-ausbildung/index.html': {
+    title: 'SHK-Ausbildung: Heizlast & Aufmaß praxisnah | Prometo',
+    description: 'PDF-Grundrisse, Raumdaten, Heizlast und hydraulischen Abgleich anschaulich in SHK-Ausbildung und Meisterschule einordnen. Prometo Beta kostenlos testen.',
+    h1: 'Heizlast und Aufmaß anhand echter Grundrisse vermitteln.'
   }
 };
 
