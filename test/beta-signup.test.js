@@ -82,7 +82,9 @@ test('rejects invalid email addresses before sending mail', async () => {
     const req = createRequest({
         body: {
             email: 'keine-mail',
+            company: 'Muster GmbH',
             role: 'SHK-Handwerker',
+            privacyConsent: true,
         },
         ip: '127.0.0.2',
     });
@@ -121,6 +123,8 @@ test('sends beta signup details through the configured Zoho SMTP account', async
             email: 'kunde@example.com',
             company: 'Muster GmbH',
             role: 'TGA-Planer',
+            monthlyCalculations: '3–5',
+            privacyConsent: true,
             website: '',
         },
         ip: '127.0.0.3',
@@ -147,6 +151,38 @@ test('sends beta signup details through the configured Zoho SMTP account', async
     assert.match(sentMessages[0].text, /E-Mail-Adresse: kunde@example\.com/);
     assert.match(sentMessages[0].text, /Betriebsname: Muster GmbH/);
     assert.match(sentMessages[0].text, /Rolle: TGA-Planer/);
+    assert.match(sentMessages[0].text, /Heizlastberechnungen pro Monat: 3–5/);
+    assert.match(sentMessages[0].text, /Datenschutz-Zustimmung: erteilt/);
+});
+
+test('requires company, role and privacy consent before sending mail', async () => {
+    configureZohoEnv();
+    let sendMailWasCalled = false;
+    nodemailer.createTransport = () => ({
+        sendMail: async () => {
+            sendMailWasCalled = true;
+        },
+    });
+
+    const req = createRequest({
+        body: {
+            email: 'kunde@example.com',
+            company: 'Muster GmbH',
+            role: 'Projektleitung',
+            privacyConsent: false,
+        },
+        ip: '127.0.0.31',
+    });
+    const res = createResponse();
+
+    await handler(req, res);
+
+    assert.equal(res.statusCode, 400);
+    assert.equal(sendMailWasCalled, false);
+    assert.deepEqual(JSON.parse(res.payload), {
+        ok: false,
+        error: 'Bitte stimme der Datenschutzerklaerung zu.',
+    });
 });
 
 test('accepts honeypot submissions without sending mail', async () => {

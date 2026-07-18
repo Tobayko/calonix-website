@@ -1,10 +1,24 @@
 const nodemailer = require('nodemailer');
 
 const ALLOWED_ROLES = new Set([
+    'Inhaber/Geschäftsführung',
+    'SHK-Meister',
+    'Technische Betriebsleitung',
+    'Projektleitung',
+    'Kalkulation',
+    'Heizlastberechnung',
     'SHK-Handwerker',
     'TGA-Planer',
     'Energieberater',
     'Sonstiges',
+]);
+const ALLOWED_MONTHLY_CALCULATIONS = new Set([
+    '',
+    '1–2',
+    '3–5',
+    '6–10',
+    '11–25',
+    'Mehr als 25',
 ]);
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
@@ -139,13 +153,15 @@ function createTransporter() {
     });
 }
 
-function buildPlainTextMail({ email, company, role }) {
+function buildPlainTextMail({ email, company, role, monthlyCalculations }) {
     return [
         'Neue Beta-Anfrage ueber prometo.app',
         '',
         `E-Mail-Adresse: ${email}`,
         `Betriebsname: ${company || '-'}`,
         `Rolle: ${role}`,
+        `Heizlastberechnungen pro Monat: ${monthlyCalculations || '-'}`,
+        'Datenschutz-Zustimmung: erteilt',
         '',
         'Bitte zum Beta-Zugang vormerken.',
     ].join('\n');
@@ -173,7 +189,8 @@ module.exports = async (req, res) => {
         const email = normalizeValue(body.email, 254).toLowerCase();
         const company = normalizeValue(body.company, 160);
         const requestedRole = normalizeValue(body.role, 80);
-        const role = ALLOWED_ROLES.has(requestedRole) ? requestedRole : 'Sonstiges';
+        const monthlyCalculations = normalizeValue(body.monthlyCalculations, 40);
+        const privacyConsent = body.privacyConsent === true;
         const website = normalizeValue(body.website, 200);
         const clientIp = getClientIp(req);
 
@@ -193,6 +210,22 @@ module.exports = async (req, res) => {
             return json(res, 400, { ok: false, error: 'Bitte gib eine gueltige E-Mail-Adresse ein.' });
         }
 
+        if (!company) {
+            return json(res, 400, { ok: false, error: 'Bitte gib den Namen deines Betriebs ein.' });
+        }
+
+        if (!ALLOWED_ROLES.has(requestedRole)) {
+            return json(res, 400, { ok: false, error: 'Bitte waehle deine Rolle aus.' });
+        }
+
+        if (!ALLOWED_MONTHLY_CALCULATIONS.has(monthlyCalculations)) {
+            return json(res, 400, { ok: false, error: 'Ungueltige Angabe zur Anzahl der Berechnungen.' });
+        }
+
+        if (!privacyConsent) {
+            return json(res, 400, { ok: false, error: 'Bitte stimme der Datenschutzerklaerung zu.' });
+        }
+
         const transporter = createTransporter();
         const smtpUser = getRequiredEnv('ZOHO_SMTP_USER');
 
@@ -201,7 +234,12 @@ module.exports = async (req, res) => {
             to: process.env.BETA_FORM_TO || smtpUser,
             replyTo: email,
             subject: 'Prometo Beta-Anfrage',
-            text: buildPlainTextMail({ email, company, role }),
+            text: buildPlainTextMail({
+                email,
+                company,
+                role: requestedRole,
+                monthlyCalculations,
+            }),
         });
 
         return json(res, 200, { ok: true });

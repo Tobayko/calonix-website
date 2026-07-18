@@ -67,6 +67,16 @@
       "permanent": true
     },
     {
+      "source": "/beta",
+      "destination": "/beta/",
+      "permanent": true
+    },
+    {
+      "source": "/beta/danke",
+      "destination": "/beta/danke/",
+      "permanent": true
+    },
+    {
       "source": "/app-workflows",
       "destination": "/app-workflows.html",
       "permanent": true
@@ -164,6 +174,16 @@
     {
       "source": "/en/app-workflows",
       "destination": "/en/app-workflows/",
+      "permanent": true
+    },
+    {
+      "source": "/en/beta",
+      "destination": "/en/beta/",
+      "permanent": true
+    },
+    {
+      "source": "/en/beta/thanks",
+      "destination": "/en/beta/thanks/",
       "permanent": true
     },
     {

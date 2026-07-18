@@ -1,0 +1,933 @@
+@font-face {
+    font-family: "Space Grotesk";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("/assets/fonts/space-grotesk-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/fonts/manrope-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600 800;
+    font-display: swap;
+    src: url("/assets/fonts/manrope-latin-700-normal.woff2") format("woff2");
+}
+
+:root {
+    color-scheme: dark;
+    --bg: #081011;
+    --bg-soft: #0d1718;
+    --surface: #111c1d;
+    --surface-raised: #162425;
+    --surface-muted: #1b2a2c;
+    --line: rgba(218, 251, 252, 0.12);
+    --line-strong: rgba(107, 246, 255, 0.3);
+    --text: #f5fbfb;
+    --text-soft: #c3d0d1;
+    --text-muted: #90a1a3;
+    --primary: #6bf6ff;
+    --primary-strong: #45dee7;
+    --primary-ink: #032d30;
+    --accent: #f2e8c7;
+    --success: #9ee7b1;
+    --warning: #ffd58a;
+    --danger: #ff9d9d;
+    --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+    --radius-sm: 0.85rem;
+    --radius: 1.35rem;
+    --radius-lg: 2rem;
+    --shell: 1180px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    background: var(--bg);
+}
+
+body.marketing-body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: clip;
+    background:
+        radial-gradient(circle at 15% -5%, rgba(69, 222, 231, 0.14), transparent 30rem),
+        radial-gradient(circle at 90% 20%, rgba(107, 246, 255, 0.07), transparent 26rem),
+        var(--bg);
+    color: var(--text);
+    font-family: "Manrope", system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+}
+
+body.marketing-body img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+body.marketing-body a {
+    color: inherit;
+}
+
+body.marketing-body button,
+body.marketing-body input,
+body.marketing-body select,
+body.marketing-body textarea {
+    font: inherit;
+}
+
+body.marketing-body h1,
+body.marketing-body h2,
+body.marketing-body h3 {
+    margin: 0;
+    color: var(--text);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    line-height: 1.08;
+    text-wrap: balance;
+}
+
+body.marketing-body h1 {
+    max-width: 16ch;
+    font-size: clamp(2.65rem, 6vw, 5.8rem);
+    letter-spacing: -0.055em;
+}
+
+body.marketing-body h2 {
+    max-width: 23ch;
+    font-size: clamp(2rem, 4.2vw, 3.9rem);
+    letter-spacing: -0.04em;
+}
+
+body.marketing-body h3 {
+    font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+    letter-spacing: -0.02em;
+}
+
+body.marketing-body p {
+    margin: 0;
+}
+
+.marketing-shell {
+    width: min(calc(100% - 2rem), var(--shell));
+    margin-inline: auto;
+}
+
+.marketing-section {
+    padding-block: clamp(4.5rem, 9vw, 8.5rem);
+}
+
+.marketing-section--tight {
+    padding-block: clamp(3.5rem, 6vw, 6rem);
+}
+
+.marketing-section--panel {
+    border-block: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.006));
+}
+
+.marketing-section-heading {
+    display: grid;
+    gap: 1rem;
+    max-width: 760px;
+    margin-bottom: clamp(2.2rem, 5vw, 4rem);
+}
+
+.marketing-section-heading--center {
+    margin-inline: auto;
+    text-align: center;
+}
+
+.marketing-section-heading--center h2,
+.marketing-section-heading--center p {
+    margin-inline: auto;
+}
+
+.marketing-eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--primary);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.marketing-eyebrow::before {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 18px currentColor;
+    content: "";
+}
+
+.marketing-lead {
+    max-width: 66ch;
+    color: var(--text-soft);
+    font-size: clamp(1.08rem, 2vw, 1.35rem);
+    line-height: 1.65;
+}
+
+.marketing-copy {
+    max-width: 70ch;
+    color: var(--text-soft);
+}
+
+.marketing-copy + .marketing-copy {
+    margin-top: 1rem;
+}
+
+.marketing-muted {
+    color: var(--text-muted);
+}
+
+.marketing-kicker {
+    color: var(--primary);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.marketing-hero {
+    position: relative;
+    padding-block: clamp(5.5rem, 10vw, 9rem) clamp(4rem, 8vw, 7rem);
+}
+
+.marketing-hero::after {
+    position: absolute;
+    right: -10rem;
+    bottom: 8%;
+    width: 32rem;
+    height: 32rem;
+    border: 1px solid rgba(107, 246, 255, 0.1);
+    border-radius: 50%;
+    box-shadow: inset 0 0 100px rgba(69, 222, 231, 0.04);
+    content: "";
+    pointer-events: none;
+}
+
+.marketing-hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    align-items: center;
+    gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+.marketing-hero-copy {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.marketing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.marketing-button {
+    display: inline-flex;
+    min-height: 3.25rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 0.78rem 1.4rem;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.marketing-button:hover {
+    transform: translateY(-2px);
+}
+
+.marketing-button:active {
+    transform: translateY(0);
+}
+
+.marketing-button--primary {
+    background: var(--primary);
+    color: var(--primary-ink);
+    box-shadow: 0 14px 36px rgba(69, 222, 231, 0.16);
+}
+
+.marketing-button--primary:hover {
+    background: #9afaff;
+    box-shadow: 0 18px 44px rgba(69, 222, 231, 0.25);
+}
+
+.marketing-button--secondary {
+    border-color: var(--line-strong);
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--text);
+}
+
+.marketing-button--secondary:hover {
+    border-color: var(--primary);
+    background: rgba(107, 246, 255, 0.06);
+}
+
+.marketing-hero-note {
+    max-width: 68ch;
+    color: var(--text-muted);
+    font-size: 0.86rem;
+}
+
+.marketing-hero-visual {
+    position: relative;
+    min-width: 0;
+}
+
+.marketing-hero-visual::before {
+    position: absolute;
+    inset: 12% 0 0 5%;
+    border-radius: 2rem;
+    background: rgba(69, 222, 231, 0.12);
+    filter: blur(42px);
+    content: "";
+}
+
+.marketing-media-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-lg);
+    background: var(--surface-raised);
+    box-shadow: var(--shadow);
+}
+
+.marketing-media-card img {
+    width: 100%;
+}
+
+.marketing-media-card figcaption {
+    display: grid;
+    gap: 0.3rem;
+    border-top: 1px solid var(--line);
+    padding: 1rem 1.2rem 1.2rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.marketing-media-card figcaption strong {
+    color: var(--text);
+}
+
+.marketing-feature-grid,
+.marketing-card-grid,
+.marketing-result-grid,
+.marketing-benefit-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.marketing-feature-card,
+.marketing-card,
+.marketing-result-card,
+.marketing-benefit-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+    padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.marketing-feature-card {
+    display: grid;
+    min-height: 10rem;
+    align-content: space-between;
+    gap: 1.5rem;
+}
+
+.marketing-feature-card span {
+    color: var(--primary);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.marketing-feature-card p,
+.marketing-card p,
+.marketing-result-card p,
+.marketing-benefit-card p {
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+}
+
+.marketing-workflow {
+    display: grid;
+    gap: 1rem;
+    counter-reset: workflow;
+}
+
+.marketing-workflow-step {
+    position: relative;
+    display: grid;
+    gap: 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    background: var(--surface);
+    counter-increment: workflow;
+}
+
+.marketing-workflow-step::before {
+    display: grid;
+    width: 2.55rem;
+    height: 2.55rem;
+    place-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    color: var(--primary);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-weight: 700;
+    content: counter(workflow, decimal-leading-zero);
+}
+
+.marketing-workflow-step p {
+    color: var(--text-muted);
+}
+
+.marketing-callout {
+    display: grid;
+    gap: 1.5rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 4vw, 3.2rem);
+    background:
+        radial-gradient(circle at 100% 0, rgba(107, 246, 255, 0.11), transparent 20rem),
+        var(--surface);
+}
+
+.marketing-example-grid,
+.marketing-split,
+.marketing-beta-grid {
+    display: grid;
+    align-items: start;
+    gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.marketing-data-list,
+.marketing-check-list,
+.marketing-link-list {
+    display: grid;
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.marketing-data-list li,
+.marketing-check-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--text-soft);
+}
+
+.marketing-data-list li::before,
+.marketing-check-list li::before {
+    position: absolute;
+    top: 0.55rem;
+    left: 0;
+    width: 0.55rem;
+    height: 0.55rem;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    background: rgba(107, 246, 255, 0.12);
+    content: "";
+}
+
+.marketing-time-value {
+    color: var(--primary);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: clamp(2.8rem, 8vw, 6.6rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.95;
+}
+
+.marketing-smallprint {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.55;
+}
+
+.marketing-screenshot-grid {
+    display: grid;
+    align-items: start;
+    gap: 1rem;
+}
+
+.marketing-phone-shot {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 1.6rem;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.marketing-phone-shot img {
+    width: 100%;
+}
+
+.marketing-phone-shot figcaption {
+    padding: 1rem;
+    color: var(--text-muted);
+    font-size: 0.84rem;
+}
+
+.marketing-result-card strong {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: var(--primary);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 1.05rem;
+}
+
+.marketing-audience-tag {
+    display: inline-flex;
+    width: fit-content;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.marketing-beta-status {
+    display: grid;
+    gap: 1rem;
+    border-left: 3px solid var(--warning);
+    padding: 1rem 0 1rem 1.25rem;
+}
+
+.marketing-beta-status strong {
+    color: var(--warning);
+}
+
+.marketing-breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding-top: 1.3rem;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+.marketing-breadcrumbs a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.marketing-breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.marketing-inline-cta {
+    display: grid;
+    gap: 1rem;
+    margin-block: 2rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 3vw, 2rem);
+    background: rgba(107, 246, 255, 0.045);
+}
+
+.marketing-inline-cta .marketing-button {
+    width: fit-content;
+}
+
+.marketing-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.marketing-table {
+    width: 100%;
+    min-width: 880px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.marketing-table th,
+.marketing-table td {
+    border-bottom: 1px solid var(--line);
+    padding: 0.9rem 1rem;
+    vertical-align: top;
+}
+
+.marketing-table th {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 0.86rem;
+}
+
+.marketing-table td {
+    color: var(--text-soft);
+    font-size: 0.88rem;
+}
+
+.marketing-table tr:last-child th,
+.marketing-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.marketing-source-list {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.84rem;
+}
+
+.marketing-source-list a {
+    color: var(--primary);
+}
+
+.marketing-faq {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.marketing-faq details {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.018);
+}
+
+.marketing-faq summary {
+    position: relative;
+    cursor: pointer;
+    padding: 1.15rem 3.5rem 1.15rem 1.2rem;
+    color: var(--text);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-weight: 700;
+    list-style: none;
+}
+
+.marketing-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.marketing-faq summary::after {
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    color: var(--primary);
+    font-size: 1.35rem;
+    content: "+";
+    transform: translateY(-50%);
+}
+
+.marketing-faq details[open] summary::after {
+    content: "–";
+}
+
+.marketing-faq details p {
+    padding: 0 1.2rem 1.25rem;
+    color: var(--text-soft);
+}
+
+.marketing-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.marketing-form-row {
+    display: grid;
+    gap: 1rem;
+}
+
+.marketing-field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.marketing-field label,
+.marketing-field legend {
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.marketing-field input,
+.marketing-field select,
+.marketing-field textarea {
+    width: 100%;
+    min-height: 3.25rem;
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    padding: 0.78rem 0.9rem;
+    background: #0a1415;
+    color: var(--text);
+}
+
+.marketing-field input::placeholder,
+.marketing-field textarea::placeholder {
+    color: #728486;
+}
+
+.marketing-checkbox {
+    display: grid;
+    grid-template-columns: 1.2rem 1fr;
+    align-items: start;
+    gap: 0.7rem;
+    color: var(--text-soft);
+    font-size: 0.85rem;
+}
+
+.marketing-checkbox input {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.18rem;
+    accent-color: var(--primary);
+}
+
+.marketing-checkbox a {
+    color: var(--primary);
+}
+
+.marketing-form-status {
+    min-height: 1.5rem;
+    color: var(--text-soft);
+    font-size: 0.88rem;
+}
+
+.marketing-form-status[data-state="error"] {
+    color: var(--danger);
+}
+
+.marketing-form-status[data-state="success"] {
+    color: var(--success);
+}
+
+.marketing-honeypot {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+.marketing-final-cta {
+    display: grid;
+    justify-items: start;
+    gap: 1.2rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-lg);
+    padding: clamp(2rem, 6vw, 4.5rem);
+    background:
+        radial-gradient(circle at 90% 10%, rgba(107, 246, 255, 0.16), transparent 22rem),
+        var(--surface);
+}
+
+.marketing-footer {
+    border-top: 1px solid var(--line);
+    padding-block: 3rem;
+    color: var(--text-muted);
+}
+
+.marketing-footer-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.marketing-footer-brand img {
+    width: 150px;
+    filter: brightness(0) invert(1);
+}
+
+.marketing-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.2rem;
+}
+
+.marketing-footer-links a {
+    text-decoration: none;
+}
+
+.marketing-footer-links a:hover {
+    color: var(--primary);
+}
+
+.marketing-cookie-banner {
+    position: fixed;
+    z-index: 100;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    display: none;
+    max-width: 720px;
+    margin-inline: auto;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    padding: 1rem;
+    background: rgba(10, 19, 20, 0.98);
+    box-shadow: var(--shadow);
+}
+
+.marketing-cookie-banner[data-visible="true"] {
+    display: grid;
+    gap: 1rem;
+}
+
+.marketing-cookie-banner p {
+    color: var(--text-soft);
+    font-size: 0.84rem;
+}
+
+.marketing-cookie-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.marketing-cookie-actions button {
+    min-height: 2.6rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.55rem 1rem;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.marketing-cookie-actions button:last-child {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: var(--primary-ink);
+}
+
+.marketing-noscript {
+    border-bottom: 1px solid var(--line);
+    padding: 0.8rem 1rem;
+    background: #1e292a;
+    color: var(--text-soft);
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .marketing-feature-grid,
+    .marketing-card-grid,
+    .marketing-result-grid,
+    .marketing-benefit-grid,
+    .marketing-screenshot-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .marketing-workflow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .marketing-form-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .marketing-cookie-banner {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+}
+
+@media (min-width: 860px) {
+    .marketing-hero-grid,
+    .marketing-example-grid,
+    .marketing-split,
+    .marketing-beta-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    }
+
+    .marketing-feature-grid,
+    .marketing-result-grid,
+    .marketing-benefit-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .marketing-card-grid--three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .marketing-workflow {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .marketing-workflow-step:not(:last-child)::after {
+        position: absolute;
+        top: 2.65rem;
+        left: calc(100% + 0.15rem);
+        z-index: 2;
+        width: 0.7rem;
+        height: 1px;
+        background: var(--line-strong);
+        content: "";
+    }
+
+    .marketing-screenshot-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .marketing-footer-grid {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .marketing-actions,
+    .marketing-actions .marketing-button,
+    .marketing-final-cta .marketing-button,
+    .marketing-inline-cta .marketing-button {
+        width: 100%;
+    }
+
+    .marketing-hero::after {
+        display: none;
+    }
+}

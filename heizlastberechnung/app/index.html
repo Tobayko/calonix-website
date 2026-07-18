@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
     <title>Heizlastberechnung App für SHK-Betriebe | Prometo</title>
     <meta name="description"
-        content="Raumdaten aus PDF-Grundrissen strukturieren und Heizlast-Vorbereitung prüfen. Für SHK-Betriebe, TGA-Planer und Energieberater. Beta-Zugang anfragen." />
+        content="Raumweise Heizlast aus dem PDF-Grundriss berechnen: Räume automatisch erkennen, Daten prüfen und Material sowie hydraulischen Abgleich weiterberechnen." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -32,7 +32,7 @@
     <meta property="og:site_name" content="Prometo" />
     <meta property="og:title" content="Heizlastberechnung App für SHK-Betriebe | Prometo" />
     <meta property="og:description"
-        content="Raumdaten aus PDF-Grundrissen strukturieren und Heizlast-Vorbereitung prüfen. Für SHK-Betriebe, TGA-Planer und Energieberater. Beta-Zugang anfragen." />
+        content="Raumweise Heizlast aus dem PDF-Grundriss berechnen: Räume automatisch erkennen, Daten prüfen und Folgewerte weiterberechnen." />
     <meta property="og:url" content="https://prometo.app/heizlastberechnung/app/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp" />
     <meta property="og:image:alt" content="Prometo Projektassistent der Heizlast App auf dem Smartphone" />
@@ -43,7 +43,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Heizlastberechnung App für SHK-Betriebe | Prometo" />
     <meta name="twitter:description"
-        content="Raumdaten aus PDF-Grundrissen strukturieren und Heizlast-Vorbereitung prüfen. Für SHK-Betriebe, TGA-Planer und Energieberater. Beta-Zugang anfragen." />
+        content="PDF-Grundriss, automatische Raumerkennung, raumweise Heizlast, Material und hydraulischer Abgleich in einem Workflow." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp" />
     <meta name="twitter:image:alt" content="Prometo Projektassistent der Heizlast App auf dem Smartphone" />
 
@@ -114,139 +114,27 @@
             color: #fff;
         }
     </style>
-
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Organization",
-                "@id": "https://prometo.app/#organization",
-                "name": "Prometo",
-                "url": "https://prometo.app/",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://prometo.app/assets/apple-touch-icon.png"
-                },
-                "contactPoint": {
-                    "@type": "ContactPoint",
-                    "email": "info@prometo.app",
-                    "contactType": "customer support"
-                }
-            },
-            {
-                "@type": "WebSite",
-                "@id": "https://prometo.app/#website",
-                "url": "https://prometo.app/",
-                "name": "Prometo",
-                "inLanguage": "de-DE",
-                "publisher": {
-                    "@id": "https://prometo.app/#organization"
-                }
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://prometo.app/heizlastberechnung/app/#breadcrumb",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Startseite",
-                        "item": "https://prometo.app/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Heizlastberechnung",
-                        "item": "https://prometo.app/heizlastberechnung/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "name": "Heizlastberechnung App",
-                        "item": "https://prometo.app/heizlastberechnung/app/"
-                    }
-                ]
-            },
-            {
-                "@type": "WebPage",
-                "@id": "https://prometo.app/heizlastberechnung/app/#webpage",
-                "url": "https://prometo.app/heizlastberechnung/app/",
-                "name": "Heizlastberechnung App für SHK-Betriebe | Prometo",
-                "description": "Raumdaten aus PDF-Grundrissen strukturieren und Heizlast-Vorbereitung prüfen. Für SHK-Betriebe, TGA-Planer und Energieberater. Beta-Zugang anfragen.",
-                "dateModified": "2026-06-17",
-                "inLanguage": "de-DE",
-                "isPartOf": {
-                    "@id": "https://prometo.app/#website"
-                },
-                "breadcrumb": {
-                    "@id": "https://prometo.app/heizlastberechnung/app/#breadcrumb"
-                },
-                "primaryImageOfPage": {
-                    "@type": "ImageObject",
-                    "url": "https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
-                }
-            },
-            {
-                "@type": "SoftwareApplication",
-                "@id": "https://prometo.app/#software",
-                "name": "Prometo",
-                "url": "https://prometo.app/",
-                "applicationCategory": "BusinessApplication",
-                "applicationSubCategory": "Beta-Workflow für Heizlast-Vorbereitung und digitales Aufmaß",
-                "operatingSystem": "Web, iOS, Android",
-                "inLanguage": "de-DE",
-                "browserRequirements": "Aktueller Webbrowser oder iOS / Android App",
-                "description": "Prometo unterstützt SHK-Betriebe bei digitalem Aufmaß aus PDF-Plänen, strukturierter Heizlast-Vorbereitung, Flächensystem-Auslegung, hydraulischer Ableitung und direkter Materialvorbereitung.",
-                "publisher": {
-                    "@id": "https://prometo.app/#organization"
-                },
-                "featureList": [
-                    "Plan-Import mit prüfbarem Review (PDF, JPG, PNG)",
-                    "Strukturierte Raum- und Bauteildaten",
-                    "Mobile Heizlast-Vorbereitung",
-                    "Projektbezogene Fachprüfung im Beta-Workflow"
-                ],
-                "screenshot": [
-                    "https://prometo.app/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp",
-                    "https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp",
-                    "https://prometo.app/assets/prometo-screenshots/mobile/bauplan-import-review.webp",
-                    "https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp",
-                    "https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp",
-                    "https://prometo.app/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://prometo.app/heizlastberechnung/app/#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Warum setzt Prometo auf PDF-Pläne und Grundrisse?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Viele SHK-Projekte starten mit vorhandenen Bauplänen und Grundrissen. Prometo nutzt genau diese Grundlage, damit Räume, Heizlast und Projektdaten ohne zusätzlichen Scan-Workflow weitergeführt werden können."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Ist die Heizlast App nur für das Büro gedacht?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Nein. Die Seite richtet sich bewusst an Büro und Baustelle. Mobile Nutzung hilft bei Prüfung, Nachträgen und Abstimmung entlang derselben Projektstruktur."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Kann ich die App für Bestandsprojekte nutzen?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Ja. Gerade im Bestand ist der planbasierte Workflow hilfreich, wenn Grundriss, Raumstruktur und Nachbearbeitung in einem Prozess zusammenlaufen sollen."
-                        }
-                    }
-                ]
-            }
-        ]
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://prometo.app/"},
+            {"@type": "ListItem", "position": 2, "name": "Heizlastberechnung", "item": "https://prometo.app/heizlastberechnung/"},
+            {"@type": "ListItem", "position": 3, "name": "Heizlastberechnung App", "item": "https://prometo.app/heizlastberechnung/app/"}
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Prometo",
+          "url": "https://prometo.app/",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Webbrowser",
+          "description": "PDF-first Heizlastsoftware für SHK-Betriebe mit automatischer Raumerkennung, Materialberechnung und hydraulischem Abgleich."
+        }
+      ]
     }
     </script>
 </head>
@@ -276,7 +164,7 @@
                         </a>
                         <a class="site-nav-card" href="/hydraulischer-abgleich/">
                             <strong>Hydraulischer Abgleich</strong>
-                            <span>Volumenströme und Heizkreise vorbereiten</span>
+                            <span>Volumenströme und Heizkreise berechnen</span>
                         </a>
                         <a class="site-nav-card" href="/fussbodenheizung-auslegen/">
                             <strong>Fußbodenheizung</strong>
@@ -338,14 +226,14 @@
                         </a>
                         <a class="site-nav-card" href="/heizlastberechnung/leitfaden/">
                             <strong>Leitfaden</strong>
-                            <span>Praxisnah durch die Heizlast-Vorbereitung</span>
+                            <span>Praxisnah durch die Heizlastberechnung</span>
                         </a>
                     </div>
                 </details>
             </nav>
             <div class="site-nav-actions">
                 <a class="site-lang-link" href="/en/heat-load-calculation/app/" aria-label="English version">EN</a>
-                <a class="site-cta" href="/#beta-signup">Kostenlose Beta testen</a>
+                <a class="site-cta" href="/beta/">Kostenlos Beta testen</a>
                 <details class="site-mobile-nav">
                     <summary class="site-mobile-toggle" aria-label="Menü öffnen"><span></span></summary>
                     <nav class="site-mobile-panel" aria-label="Hauptnavigation mobil">
@@ -382,7 +270,7 @@
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
                         <a href="/en/heat-load-calculation/app/">EN</a>
-                        <a class="site-mobile-cta" href="/#beta-signup">Kostenlose Beta testen</a>
+                        <a class="site-mobile-cta" href="/beta/">Kostenlos Beta testen</a>
                     </div>
                     </nav>
                 </details>
@@ -404,22 +292,21 @@
                     <div class="reveal">
                         <span class="badge mb-6">Heizlast App</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            Heizlastberechnung App für SHK-Betriebe
+                            Heizlastberechnung direkt aus dem PDF-Grundriss
                         </h1>
                         <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
-                            PDF-Grundriss hochladen → Räume prüfen → Heizlast-Vorbereitung strukturieren.
-                            Prometo ist für SHK-Betriebe gedacht, die Raumdaten aus Grundrissen nachvollziehbar vorbereiten und vor der fachlichen Berechnung sauber prüfen möchten.
+                            Prometo erkennt Räume aus dem vorhandenen Grundriss automatisch. Du kontrollierst Geometrien und Bauteildaten und berechnest anschließend Raumheizlast, Materialbedarf und hydraulischen Abgleich aus derselben Projektbasis.
                         </p>
                         <div class="mb-8 p-5 rounded-2xl border border-primary/20 bg-primary/8">
                             <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Wichtig zur Einordnung</p>
                             <p class="text-sm md:text-base text-gray-200 leading-relaxed">
-                                Prometo hilft bei der Vorbereitung, nicht bei blind automatisierter Fachplanung. Raumdaten aus Grundrissen müssen geprüft werden; gerade für Wärmepumpe und Flächenheizung ist eine saubere Datenbasis besonders wichtig. Die fachliche Prüfung bleibt erforderlich.
+                                Automatische Raumerkennung ersetzt nicht die fachliche Kontrolle. Unklare Geometrien, Bauteile und Randbedingungen bleiben korrigierbar und müssen vor der Berechnung bestätigt werden.
                             </p>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                            <a href="/#beta-signup"
+                            <a href="/beta/" data-event="beta_cta_click" data-cta-position="hero"
                                 class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                                Beta-Zugang anfragen
+                                Kostenlos Beta testen
                             </a>
                             <a href="/heizlastberechnung/"
                                 class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
@@ -467,7 +354,7 @@
                             <strong>Für Baustelle und Büro</strong>
                             <span>Prüfen, nachtragen und abstimmen ohne Medienbruch</span>
                         </div>
-                        <div class="glass-panel signal-panel rounded-3xl p-4" aria-label="Ablauf der Heizlast-Vorbereitung">
+                        <div class="glass-panel signal-panel rounded-3xl p-4" aria-label="Ablauf der Heizlastberechnung">
                             <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-300">
                                 <span>Grundriss</span>
                                 <span class="material-symbols-outlined text-primary" aria-hidden="true">→</span>
@@ -496,7 +383,7 @@
                     </div>
                     <svg viewBox="0 0 840 260" role="img" aria-labelledby="app-flow-svg-title app-flow-svg-desc">
                         <title id="app-flow-svg-title">Heizlast-App Workflow von Grundriss zu Fachprüfung</title>
-                        <desc id="app-flow-svg-desc">Animierte Grafik mit Grundriss, mobiler Raumprüfung und fachlicher Heizlast-Vorbereitung.</desc>
+                        <desc id="app-flow-svg-desc">Animierte Grafik mit Grundriss, mobiler Raumprüfung und fachlicher Heizlastberechnung.</desc>
                         <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
                         <circle class="moving-dot" r="7" fill="#45dee7" />
                         <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
@@ -705,14 +592,14 @@
                 <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">Weiterlesen</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Heizlast verstehen statt nur mobil bedienen
+                        Heizlast fachlich einordnen
                     </h2>
                 </div>
                 <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <a href="/heizlast/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
                         <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Was ist Heizlast?</h3>
                         <p class="text-sm text-gray-400 leading-relaxed flex-1">Bedeutung, Einheit und erste fachliche Einordnung.</p>
-                        <span class="text-primary text-sm font-headline font-semibold">Heizlast verstehen →</span>
+                        <span class="text-primary text-sm font-headline font-semibold">Heizlast erklärt →</span>
                     </a>
                     <a href="/hydraulischer-abgleich/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
                         <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Hydraulischer Abgleich</h3>
@@ -751,10 +638,23 @@
                     </a>
                     <a href="/heizlast-checkliste-shk/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
                         <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast-Checkliste SHK</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Welche Daten aus PDF-Grundrissen vor der Heizlast-Vorbereitung geprüft werden sollten.</p>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Welche Daten aus PDF-Grundrissen vor der Heizlastberechnung geprüft werden sollten.</p>
                         <span class="text-primary text-sm font-headline font-semibold">Checkliste ansehen →</span>
                     </a>
                 </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" aria-labelledby="app-efh-title">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12">
+                <span class="badge mb-6">Realistisches EFH-Beispiel</span>
+                <h2 id="app-efh-title" class="text-3xl md:text-5xl font-bold text-white mb-6">Ein PDF, kontrollierte Raumdaten, verbundene Ergebnisse</h2>
+                <div class="grid gap-6 md:grid-cols-3 text-gray-400 leading-relaxed">
+                    <p><strong class="block text-white mb-2">Eingabe</strong>Zweigeschossiger PDF-Grundriss, Standort, Gebäude- und Bauteildaten sowie die vorgesehenen Heizflächen.</p>
+                    <p><strong class="block text-white mb-2">Kontrolle</strong>Erkannte Räume, Geometrien, Fenster und Außenflächen werden bestätigt oder korrigiert.</p>
+                    <p><strong class="block text-white mb-2">Ergebnis</strong>Raumweise Heizlast, Materialbedarf und Werte für den hydraulischen Abgleich bleiben im selben Projekt verbunden.</p>
+                </div>
+                <p class="mt-6 text-sm text-gray-500">Beispielwert für ein typisches Einfamilienhaus mit geeignetem PDF-Grundriss. Die tatsächliche Dauer hängt von Planqualität, Gebäudeumfang und notwendigem Korrekturbedarf ab.</p>
             </div>
         </section>
 
@@ -790,6 +690,14 @@
                         </p>
                     </details>
                 </div>
+            </div>
+        </section>
+        <section class="px-6 pb-20 md:pb-28" aria-labelledby="app-beta-cta-title">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 text-center">
+                <span class="badge mb-6">Kostenlose Beta</span>
+                <h2 id="app-beta-cta-title" class="text-3xl md:text-5xl font-bold text-white mb-5">Berechne ein echtes EFH-Projekt mit Prometo.</h2>
+                <p class="text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto mb-8">Prüfe automatische Raumerkennung, Raumheizlast, Material und hydraulischen Abgleich mit einem geeigneten PDF-Grundriss.</p>
+                <a href="/beta/" data-event="beta_cta_click" data-cta-position="final" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 font-headline font-bold text-on-primary">Kostenlos Beta testen</a>
             </div>
         </section>
     </main>
@@ -854,6 +762,7 @@
     <script src="/assets/prometo-gallery.js" defer></script>
     <script src="/assets/language-hint.js" defer></script>
     <script src="/assets/site-navigation.js" defer></script>
+    <script src="/assets/prometo-events.js" defer></script>
 </body>
 
 </html>
