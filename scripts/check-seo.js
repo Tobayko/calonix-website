@@ -129,9 +129,9 @@ const exactPages = {
     h1: 'Heizlastberechnung direkt aus dem PDF-Grundriss'
   },
   'digitales-aufmass/index.html': {
-    title: 'Aufmaß App für SHK: PDF-Grundrisse erkennen | Prometo',
-    description: 'PDF-Grundriss hochladen, Räume automatisch erkennen und kontrollieren. Die geprüften Daten direkt für Heizlast und hydraulischen Abgleich nutzen.',
-    h1: 'Digitales Aufmaß aus PDF-Grundrissen'
+    title: 'Digitales Aufmaß für Heizlastberechnung | Prometo',
+    description: 'Digitales Aufmaß für SHK: PDF-Grundrisse importieren, Räume und Flächen prüfen und die bestätigten Daten für Heizlastberechnung und hydraulischen Abgleich weiterverwenden.',
+    h1: 'Digitales Aufmaß für Heizlastberechnung'
   },
   'hydraulischer-abgleich/index.html': {
     title: 'Hydraulischer Abgleich Software für SHK | Prometo',

@@ -1,0 +1,499 @@
+.aufmass-workflow-stage {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    padding: 0;
+}
+
+.aufmass-workflow-stage::before {
+    position: absolute;
+    inset: 0;
+    inset: -2rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(69,222,231,0.1), transparent 64%);
+    content: "";
+    pointer-events: none;
+}
+
+.aufmass-workflow-timeline {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.35rem;
+    margin-top: 0.65rem;
+    padding-top: 0.75rem;
+}
+
+.aufmass-workflow-timeline::before,
+.aufmass-workflow-timeline::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    border-radius: 999px;
+    content: "";
+}
+
+.aufmass-workflow-timeline::before {
+    right: 0;
+    background: rgba(255,255,255,0.08);
+}
+
+.aufmass-workflow-timeline::after {
+    width: 100%;
+    background: linear-gradient(90deg, #45dee7, #a9faff);
+    box-shadow: 0 0 14px rgba(69,222,231,0.45);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: aufmass-timeline-progress 12s linear infinite;
+}
+
+.aufmass-workflow-timeline span {
+    display: flex;
+    align-items: center;
+    gap: 0.38rem;
+    color: #667576;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.54rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.aufmass-workflow-timeline i {
+    width: 0.38rem;
+    height: 0.38rem;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 9px currentColor;
+}
+
+.aufmass-workflow-timeline .phase-import { animation: aufmass-phase-import 12s linear infinite; }
+.aufmass-workflow-timeline .phase-analyse { animation: aufmass-phase-analyse 12s linear infinite; }
+.aufmass-workflow-timeline .phase-review { animation: aufmass-phase-review 12s linear infinite; }
+.aufmass-workflow-timeline .phase-ready { animation: aufmass-phase-ready 12s linear infinite; }
+
+.aufmass-workflow-window {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid rgba(69,222,231,0.23);
+    border-radius: 1.2rem;
+    background: rgba(8, 13, 13, 0.92);
+    box-shadow: 0 28px 72px rgba(0,0,0,0.42), inset 0 1px rgba(255,255,255,0.045);
+}
+
+.workflow-live .aufmass-workflow-window {
+    animation: aufmass-window-cycle 12s ease-in-out infinite;
+}
+
+.aufmass-workflow-topbar {
+    display: flex;
+    min-height: 3.15rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.aufmass-workflow-brand,
+.aufmass-workflow-project {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.aufmass-workflow-brand i {
+    width: 0.58rem;
+    height: 0.58rem;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #45dee7;
+    box-shadow: 0 0 14px rgba(69, 222, 231, 0.8);
+}
+
+.aufmass-workflow-brand strong,
+.aufmass-workflow-project strong {
+    overflow: hidden;
+    color: #f4ffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.aufmass-workflow-brand span,
+.aufmass-workflow-project span {
+    color: #849394;
+    font-size: 0.62rem;
+}
+
+.aufmass-workflow-body {
+    display: grid;
+    grid-template-columns: 0.6fr minmax(0, 1.5fr) 0.86fr;
+    min-height: 345px;
+}
+
+.aufmass-workflow-sidebar {
+    display: grid;
+    align-content: start;
+    gap: 0.35rem;
+    padding: 0.9rem 0.62rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.aufmass-workflow-sidebar-label,
+.aufmass-workflow-status-title {
+    margin: 0 0 0.4rem 0.35rem;
+    color: #6f7e7f;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.52rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.aufmass-workflow-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+    border-radius: 0.5rem;
+    padding: 0.48rem 0.42rem;
+    color: #8d9b9c;
+    font-size: 0.62rem;
+}
+
+.aufmass-workflow-nav-item.is-active {
+    background: rgba(69, 222, 231, 0.1);
+    color: #bffcff;
+}
+
+.aufmass-workflow-nav-item i {
+    width: 0.72rem;
+    height: 0.72rem;
+    border: 1px solid currentColor;
+    border-radius: 0.2rem;
+    opacity: 0.8;
+}
+
+.aufmass-workflow-canvas {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    align-content: center;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.aufmass-workflow-heading {
+    position: absolute;
+    top: 0.72rem;
+    left: 1rem;
+}
+
+.aufmass-workflow-heading p {
+    margin: 0;
+    color: #7d8b8c;
+    font-size: 0.58rem;
+}
+
+.aufmass-workflow-heading strong {
+    color: #f5ffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+}
+
+.aufmass-workflow-dropzone {
+    position: relative;
+    min-height: 205px;
+    overflow: hidden;
+    border: 1px dashed rgba(69, 222, 231, 0.5);
+    border-radius: 0.85rem;
+    background: radial-gradient(circle at 50% 20%, rgba(69, 222, 231, 0.1), transparent 48%), rgba(69, 222, 231, 0.025);
+}
+
+.aufmass-workflow-upload {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    gap: 0.35rem;
+    color: #a8b7b8;
+    text-align: center;
+}
+
+.aufmass-workflow-upload i {
+    display: grid;
+    width: 2.7rem;
+    height: 2.7rem;
+    place-items: center;
+    margin: 0 auto 0.15rem;
+    border: 1px solid rgba(69, 222, 231, 0.52);
+    border-radius: 0.7rem;
+    color: #72eff6;
+    font-size: 1.3rem;
+    font-style: normal;
+}
+
+.aufmass-workflow-upload strong { color: #ecffff; font-size: 0.7rem; }
+.aufmass-workflow-upload span { font-size: 0.6rem; }
+
+.aufmass-workflow-blueprint {
+    position: absolute;
+    inset: 1rem;
+    opacity: 0;
+    transform: scale(0.96);
+}
+
+.aufmass-workflow-blueprint svg { width: 100%; height: 100%; }
+.aufmass-workflow-blueprint .room { fill: rgba(69, 222, 231, 0.035); stroke: rgba(144, 240, 245, 0.7); stroke-width: 1.6; }
+.aufmass-workflow-blueprint .room-label { fill: #d4ffff; font-family: 'Manrope', sans-serif; font-size: 8px; opacity: 0.9; }
+
+.aufmass-workflow-scanline {
+    position: absolute;
+    top: 0;
+    right: 7%;
+    left: 7%;
+    height: 2px;
+    opacity: 0;
+    background: #45dee7;
+    box-shadow: 0 0 18px 4px rgba(69, 222, 231, 0.68);
+}
+
+.aufmass-workflow-file {
+    position: absolute;
+    z-index: 5;
+    top: 5%;
+    left: -7.4rem;
+    display: flex;
+    width: 8.4rem;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0.65rem;
+    padding: 0.48rem;
+    background: #202b2c;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.42);
+}
+
+.aufmass-workflow-file > i {
+    display: grid;
+    width: 1.75rem;
+    height: 2.05rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 0.26rem;
+    background: #d95a5a;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.47rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.aufmass-workflow-file strong { display: block; overflow: hidden; color: #f6ffff; font-size: 0.55rem; text-overflow: ellipsis; white-space: nowrap; }
+.aufmass-workflow-file span { display: block; margin-top: 0.1rem; color: #91a0a0; font-size: 0.48rem; }
+
+.aufmass-workflow-cursor {
+    position: absolute;
+    z-index: 7;
+    top: 12%;
+    left: -2rem;
+    color: #fff;
+    font-size: 1.4rem;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.75));
+    opacity: 0;
+}
+
+.aufmass-workflow-status {
+    display: grid;
+    align-content: start;
+    gap: 0.55rem;
+    padding: 1rem 0.72rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.aufmass-workflow-step {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #849293;
+    font-size: 0.6rem;
+    opacity: 0.38;
+}
+
+.aufmass-workflow-step i {
+    display: grid;
+    width: 0.9rem;
+    height: 0.9rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 0.55rem;
+    font-style: normal;
+}
+
+.aufmass-workflow-result {
+    margin-top: 0.45rem;
+    border: 1px solid rgba(69, 222, 231, 0.2);
+    border-radius: 0.72rem;
+    padding: 0.65rem;
+    opacity: 0.25;
+    transform: translateY(6px);
+}
+
+.aufmass-workflow-result span { color: #8d9b9c; font-size: 0.52rem; }
+.aufmass-workflow-result strong { display: block; margin-top: 0.18rem; color: #8df8fc; font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; }
+.aufmass-workflow-result small { display: block; margin-top: 0.18rem; color: #a5b4b5; font-size: 0.5rem; line-height: 1.35; }
+
+.workflow-live .aufmass-workflow-file { animation: aufmass-file-drag 12s cubic-bezier(0.25, 1, 0.5, 1) infinite; }
+.workflow-live .aufmass-workflow-cursor { animation: aufmass-cursor-drag 12s cubic-bezier(0.25, 1, 0.5, 1) infinite; }
+.workflow-live .aufmass-workflow-upload { animation: aufmass-upload-copy 12s linear infinite; }
+.workflow-live .aufmass-workflow-blueprint { animation: aufmass-blueprint-show 12s linear infinite; }
+.workflow-live .aufmass-workflow-scanline { animation: aufmass-scan 12s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.workflow-live .aufmass-workflow-step--import { animation: aufmass-step-import 12s linear infinite; }
+.workflow-live .aufmass-workflow-step--rooms { animation: aufmass-step-rooms 12s linear infinite; }
+.workflow-live .aufmass-workflow-step--ready { animation: aufmass-step-ready 12s linear infinite; }
+.workflow-live .aufmass-workflow-result { animation: aufmass-result-show 12s linear infinite; }
+
+@keyframes aufmass-file-drag {
+    0%, 8% { transform: translate(0, 0) rotate(-4deg); opacity: 1; }
+    25%, 38% { transform: translate(9.8rem, 7.2rem) rotate(2deg); opacity: 1; }
+    42%, 100% { transform: translate(9.8rem, 7.2rem) scale(0.72); opacity: 0; }
+}
+
+@keyframes aufmass-cursor-drag {
+    0%, 7% { transform: translate(0, 0); opacity: 0; }
+    10% { opacity: 1; }
+    25%, 36% { transform: translate(10.9rem, 7.9rem); opacity: 1; }
+    41%, 100% { transform: translate(10.9rem, 7.9rem); opacity: 0; }
+}
+
+@keyframes aufmass-upload-copy {
+    0%, 37% { opacity: 1; transform: scale(1); }
+    42%, 100% { opacity: 0; transform: scale(0.96); }
+}
+
+@keyframes aufmass-blueprint-show {
+    0%, 40% { opacity: 0; transform: scale(0.96); }
+    46%, 92% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.96); }
+}
+
+@keyframes aufmass-scan {
+    0%, 45% { top: 0; opacity: 0; }
+    48% { top: 8%; opacity: 1; }
+    68% { top: 88%; opacity: 1; }
+    73%, 100% { top: 88%; opacity: 0; }
+}
+
+@keyframes aufmass-step-import {
+    0%, 34% { color: #849293; opacity: 0.38; }
+    40%, 100% { color: #70f0f6; opacity: 1; }
+}
+
+@keyframes aufmass-step-rooms {
+    0%, 53% { color: #849293; opacity: 0.38; }
+    59%, 100% { color: #70f0f6; opacity: 1; }
+}
+
+@keyframes aufmass-step-ready {
+    0%, 70% { color: #849293; opacity: 0.38; }
+    77%, 100% { color: #70f0f6; opacity: 1; }
+}
+
+@keyframes aufmass-result-show {
+    0%, 76% { opacity: 0.25; transform: translateY(6px); }
+    84%, 96% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0.25; transform: translateY(4px); }
+}
+
+@keyframes aufmass-window-cycle {
+    0%, 3% { border-color: rgba(69,222,231,0.14); }
+    8%, 94% { border-color: rgba(69,222,231,0.27); }
+    100% { border-color: rgba(69,222,231,0.14); }
+}
+
+@keyframes aufmass-timeline-progress {
+    0% { transform: scaleX(0); opacity: 0; }
+    8% { opacity: 1; }
+    92% { transform: scaleX(1); opacity: 1; }
+    100% { transform: scaleX(1); opacity: 0; }
+}
+
+@keyframes aufmass-phase-import {
+    0%, 7%, 100% { color: #667576; }
+    10%, 42% { color: #85f6fb; }
+    47% { color: #8fa0a1; }
+}
+
+@keyframes aufmass-phase-analyse {
+    0%, 37%, 100% { color: #667576; }
+    43%, 66% { color: #85f6fb; }
+    71% { color: #8fa0a1; }
+}
+
+@keyframes aufmass-phase-review {
+    0%, 60%, 100% { color: #667576; }
+    66%, 82% { color: #85f6fb; }
+    87% { color: #8fa0a1; }
+}
+
+@keyframes aufmass-phase-ready {
+    0%, 76%, 100% { color: #667576; }
+    83%, 96% { color: #85f6fb; }
+}
+
+@media (max-width: 1100px) {
+    .aufmass-workflow-body { grid-template-columns: minmax(0, 1fr) 8.1rem; }
+    .aufmass-workflow-sidebar { display: none; }
+}
+
+@media (max-width: 620px) {
+    .aufmass-workflow-stage { padding: 0; }
+    .aufmass-workflow-topbar { min-height: 2.8rem; padding-inline: 0.65rem; }
+    .aufmass-workflow-brand span,
+    .aufmass-workflow-project span { display: none; }
+    .aufmass-workflow-body { grid-template-columns: minmax(0, 1fr) 7rem; min-height: 295px; }
+    .aufmass-workflow-canvas { padding: 0.7rem; }
+    .aufmass-workflow-heading { top: 0.5rem; left: 0.7rem; }
+    .aufmass-workflow-dropzone { min-height: 180px; }
+    .aufmass-workflow-status { gap: 0.42rem; padding: 0.7rem 0.42rem; }
+    .aufmass-workflow-step { align-items: flex-start; font-size: 0.52rem; }
+    .aufmass-workflow-result { padding: 0.48rem; }
+    .aufmass-workflow-file { width: 7rem; }
+    .aufmass-workflow-timeline span { gap: 0.24rem; font-size: 0.45rem; }
+    @keyframes aufmass-file-drag {
+        0%, 8% { transform: translate(0, 0) rotate(-4deg); opacity: 1; }
+        25%, 38% { transform: translate(7rem, 6.5rem) rotate(2deg); opacity: 1; }
+        42%, 100% { transform: translate(7rem, 6.5rem) scale(0.72); opacity: 0; }
+    }
+    @keyframes aufmass-cursor-drag {
+        0%, 7% { transform: translate(0, 0); opacity: 0; }
+        10% { opacity: 1; }
+        25%, 36% { transform: translate(7.8rem, 7.1rem); opacity: 1; }
+        41%, 100% { transform: translate(7.8rem, 7.1rem); opacity: 0; }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aufmass-workflow-file,
+    .aufmass-workflow-cursor,
+    .aufmass-workflow-upload,
+    .aufmass-workflow-scanline { display: none; }
+    .aufmass-workflow-blueprint { opacity: 1; transform: none; }
+    .aufmass-workflow-step,
+    .aufmass-workflow-result { color: #70f0f6; opacity: 1; transform: none; }
+    .aufmass-workflow-timeline::after,
+    .aufmass-workflow-timeline span,
+    .workflow-live .aufmass-workflow-window { animation: none; }
+    .aufmass-workflow-timeline::after { transform: scaleX(1); }
+    .aufmass-workflow-timeline span { color: #91a0a1; }
+}
