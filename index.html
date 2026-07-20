@@ -18,14 +18,14 @@
     <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/" />
     <link rel="alternate" hreflang="x-default" href="https://prometo.app/" />
 
-    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
         crossorigin />
-    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
         crossorigin />
 
-    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
@@ -68,7 +68,7 @@
         }
       }
     </script>
-    <link rel="preload" href="/assets/tailwind-home.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href="assets/tailwind-home.css" />
     <style data-inline-site-navigation>
 .site-header {
     position: sticky;
@@ -444,12 +444,9 @@
     }
 }
     </style>
-    <link rel="stylesheet" href="/assets/seo-explainers.css" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="/assets/seo-explainers.css" /></noscript>
+    <link rel="stylesheet" href="assets/seo-explainers.css" />
     <!-- Lokales Tailwind CSS inkl. Fonts (DSGVO-konform, keine externen Requests) -->
-    <noscript><link rel="stylesheet" href="/assets/tailwind-home.css" /></noscript>
-    <link rel="stylesheet" href="/assets/prometo-gallery.css" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="/assets/prometo-gallery.css" /></noscript>
+    <link rel="stylesheet" href="assets/prometo-gallery.css" />
 
     <!-- Default Google Consent Mode v2 -->
     <script>
@@ -497,95 +494,6 @@
             border: 1px solid rgba(69, 222, 231, 0.3);
         }
 
-        /* Prometo Engine Graphic */
-        .engine-container {
-            perspective: 1200px;
-            width: 160px;
-            height: 160px;
-            z-index: 20;
-        }
-
-        .engine-float {
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            animation: float-up-down 8s ease-in-out infinite;
-        }
-
-        .engine-cube {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transform: rotateX(-30deg) rotateY(45deg) translateZ(0);
-            transition: transform 0.1s ease-out;
-            will-change: transform;
-        }
-
-        .cube-face {
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            background: rgba(11, 25, 25, 0.9);
-            border: 1px solid rgba(69, 222, 231, 0.5);
-            box-shadow: inset 0 0 40px rgba(69, 222, 231, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            transform: translateZ(0);
-        }
-
-        .cube-face::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(to right, rgba(69, 222, 231, 0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(69, 222, 231, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-            opacity: 0.5;
-        }
-
-        .cube-front {
-            transform: rotateY(0deg) translateZ(80px);
-        }
-
-        .cube-back {
-            transform: rotateY(180deg) translateZ(80px);
-        }
-
-        .cube-right {
-            transform: rotateY(90deg) translateZ(80px);
-        }
-
-        .cube-left {
-            transform: rotateY(-90deg) translateZ(80px);
-        }
-
-        .cube-top {
-            transform: rotateX(90deg) translateZ(80px);
-        }
-
-        .cube-bottom {
-            transform: rotateX(-90deg) translateZ(80px);
-            box-shadow: 0 0 60px 20px rgba(69, 222, 231, 0.4);
-        }
-
-        .engine-core {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 60px;
-            height: 60px;
-            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
-            background: #45dee7;
-            border-radius: 10px;
-            box-shadow: 0 0 80px 20px rgba(69, 222, 231, 0.6), inset 0 0 20px #fff;
-            animation: core-pulse 2s ease-in-out infinite alternate;
-            will-change: transform, opacity;
-        }
-
         @keyframes line-flow {
             to {
                 stroke-dashoffset: -2000;
@@ -625,18 +533,6 @@
             }
         }
 
-        @keyframes core-pulse {
-            0% {
-                transform: translate(-50%, -50%) scale(0.9);
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: translate(-50%, -50%) scale(1.1);
-                opacity: 1;
-            }
-        }
-
         @keyframes float-label {
 
             0%,
@@ -649,10 +545,432 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .engine-container {
-                transform: scale(0.6);
-            }
+        /* Hero workflow demo: a concrete product story instead of the former cube. */
+        .hero-workflow-stage {
+            position: relative;
+            width: min(calc(100% - 2rem), 1180px);
+            min-height: 590px;
+            margin: 0 auto;
+            padding: 2.1rem;
+            overflow: hidden;
+            border: 1px solid rgba(69, 222, 231, 0.22);
+            border-radius: 2rem;
+            background:
+                radial-gradient(circle at 72% 10%, rgba(69, 222, 231, 0.14), transparent 27%),
+                linear-gradient(145deg, rgba(24, 34, 35, 0.98), rgba(9, 14, 14, 0.98));
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        .hero-workflow-stage::before {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(69, 222, 231, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(69, 222, 231, 0.035) 1px, transparent 1px);
+            background-size: 34px 34px;
+            content: '';
+            mask-image: linear-gradient(to bottom, black, transparent 85%);
+            pointer-events: none;
+        }
+
+        .workflow-window {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.25rem;
+            background: rgba(8, 13, 13, 0.88);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .workflow-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 3.6rem;
+            padding: 0 1.15rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .workflow-brand,
+        .workflow-project {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .workflow-brand-dot {
+            width: 0.64rem;
+            height: 0.64rem;
+            border-radius: 999px;
+            background: #45dee7;
+            box-shadow: 0 0 16px rgba(69, 222, 231, 0.8);
+        }
+
+        .workflow-brand strong,
+        .workflow-project strong {
+            color: #f4ffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+        }
+
+        .workflow-project span,
+        .workflow-brand span {
+            color: #8d9b9c;
+            font-size: 0.72rem;
+        }
+
+        .workflow-body {
+            display: grid;
+            grid-template-columns: 0.72fr 1.5fr 0.82fr;
+            min-height: 435px;
+        }
+
+        .workflow-sidebar {
+            display: grid;
+            align-content: start;
+            gap: 0.45rem;
+            padding: 1.15rem 0.8rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.015);
+        }
+
+        .workflow-sidebar-label {
+            margin: 0 0 0.55rem 0.5rem;
+            color: #718081;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        .workflow-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            border-radius: 0.6rem;
+            padding: 0.62rem 0.58rem;
+            color: #9aa8a9;
+            font-size: 0.76rem;
+        }
+
+        .workflow-nav-item.active {
+            background: rgba(69, 222, 231, 0.1);
+            color: #bffcff;
+        }
+
+        .workflow-nav-icon {
+            width: 0.88rem;
+            height: 0.88rem;
+            border: 1px solid currentColor;
+            border-radius: 0.24rem;
+            opacity: 0.8;
+        }
+
+        .workflow-canvas {
+            position: relative;
+            display: grid;
+            align-content: center;
+            padding: 1.35rem;
+            overflow: hidden;
+        }
+
+        .workflow-heading {
+            position: absolute;
+            top: 1rem;
+            left: 1.35rem;
+        }
+
+        .workflow-heading p {
+            margin: 0;
+            color: #7f8d8e;
+            font-size: 0.7rem;
+        }
+
+        .workflow-heading strong {
+            color: #f5ffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.98rem;
+        }
+
+        .workflow-dropzone {
+            position: relative;
+            min-height: 245px;
+            overflow: hidden;
+            border: 1px dashed rgba(69, 222, 231, 0.52);
+            border-radius: 1rem;
+            background: radial-gradient(circle at 50% 20%, rgba(69, 222, 231, 0.1), transparent 48%), rgba(69, 222, 231, 0.025);
+        }
+
+        .workflow-blueprint {
+            position: absolute;
+            inset: 1.2rem;
+            opacity: 0;
+            transform: scale(0.96);
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+
+        .workflow-blueprint svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .workflow-blueprint .room {
+            fill: rgba(69, 222, 231, 0.035);
+            stroke: rgba(144, 240, 245, 0.68);
+            stroke-width: 1.6;
+        }
+
+        .workflow-blueprint .room-label {
+            fill: #d4ffff;
+            font-family: 'Manrope', sans-serif;
+            font-size: 8px;
+            opacity: 0.9;
+        }
+
+        .workflow-scanline {
+            position: absolute;
+            top: 0;
+            right: 7%;
+            left: 7%;
+            height: 2px;
+            opacity: 0;
+            background: #45dee7;
+            box-shadow: 0 0 18px 4px rgba(69, 222, 231, 0.68);
+        }
+
+        .workflow-upload-copy {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-content: center;
+            gap: 0.45rem;
+            color: #aababb;
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .workflow-upload-icon {
+            display: grid;
+            width: 3.2rem;
+            height: 3.2rem;
+            place-items: center;
+            margin: 0 auto 0.25rem;
+            border: 1px solid rgba(69, 222, 231, 0.55);
+            border-radius: 0.85rem;
+            color: #75f1f7;
+            font-size: 1.55rem;
+        }
+
+        .workflow-upload-copy strong { color: #ecffff; font-size: 0.87rem; }
+        .workflow-upload-copy span { font-size: 0.72rem; }
+
+        .workflow-pdf-file {
+            position: absolute;
+            z-index: 5;
+            top: 6%;
+            left: -7rem;
+            display: flex;
+            width: 9.5rem;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 0.7rem;
+            padding: 0.55rem;
+            background: #202b2c;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .workflow-pdf-icon {
+            display: grid;
+            width: 2rem;
+            height: 2.35rem;
+            place-items: center;
+            border-radius: 0.3rem;
+            background: #e85d5d;
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.54rem;
+            font-weight: 700;
+        }
+
+        .workflow-pdf-file strong { display: block; color: #f6ffff; font-size: 0.65rem; }
+        .workflow-pdf-file span { display: block; margin-top: 0.15rem; color: #91a0a0; font-size: 0.58rem; }
+
+        .workflow-status {
+            display: grid;
+            align-content: start;
+            gap: 0.7rem;
+            padding: 1.25rem 1rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .workflow-status-title {
+            margin: 0 0 0.3rem;
+            color: #728081;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: #849293;
+            font-size: 0.72rem;
+            opacity: 0.4;
+        }
+
+        .workflow-step i {
+            display: grid;
+            width: 1rem;
+            height: 1rem;
+            place-items: center;
+            border: 1px solid currentColor;
+            border-radius: 999px;
+            font-size: 0.65rem;
+            font-style: normal;
+        }
+
+        .workflow-result {
+            margin-top: 0.6rem;
+            border: 1px solid rgba(69, 222, 231, 0.2);
+            border-radius: 0.8rem;
+            padding: 0.8rem;
+            opacity: 0.28;
+            transform: translateY(6px);
+        }
+
+        .workflow-result span { color: #8d9b9c; font-size: 0.62rem; }
+        .workflow-result strong { display: block; margin-top: 0.2rem; color: #8df8fc; font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; }
+        .workflow-result small { display: block; margin-top: 0.22rem; color: #a5b4b5; font-size: 0.62rem; }
+
+        .workflow-live .workflow-pdf-file { animation: workflow-file-drag 12s cubic-bezier(0.25, 1, 0.5, 1) infinite; }
+        .workflow-live .workflow-upload-copy { animation: workflow-upload-copy 12s linear infinite; }
+        .workflow-live .workflow-blueprint { animation: workflow-blueprint-show 12s linear infinite; }
+        .workflow-live .workflow-scanline { animation: workflow-scan 12s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        .workflow-live .workflow-step--import { animation: workflow-step-import 12s linear infinite; }
+        .workflow-live .workflow-step--rooms { animation: workflow-step-rooms 12s linear infinite; }
+        .workflow-live .workflow-step--heat { animation: workflow-step-heat 12s linear infinite; }
+        .workflow-live .workflow-result { animation: workflow-result-show 12s linear infinite; }
+
+        @keyframes workflow-file-drag {
+            0%, 8% { transform: translate(0, 0) rotate(-4deg); opacity: 1; }
+            25%, 38% { transform: translate(13rem, 8.3rem) rotate(2deg); opacity: 1; }
+            42%, 100% { transform: translate(13rem, 8.3rem) scale(0.75); opacity: 0; }
+        }
+
+        @keyframes workflow-upload-copy {
+            0%, 37% { opacity: 1; transform: scale(1); }
+            42%, 100% { opacity: 0; transform: scale(0.96); }
+        }
+
+        @keyframes workflow-blueprint-show {
+            0%, 40% { opacity: 0; transform: scale(0.96); }
+            46%, 92% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.96); }
+        }
+
+        @keyframes workflow-scan {
+            0%, 45% { top: 0; opacity: 0; }
+            48% { top: 8%; opacity: 1; }
+            68% { top: 88%; opacity: 1; }
+            73%, 100% { top: 88%; opacity: 0; }
+        }
+
+        @keyframes workflow-step-import {
+            0%, 34% { color: #849293; opacity: 0.4; }
+            40%, 100% { color: #70f0f6; opacity: 1; }
+        }
+
+        @keyframes workflow-step-rooms {
+            0%, 53% { color: #849293; opacity: 0.4; }
+            59%, 100% { color: #70f0f6; opacity: 1; }
+        }
+
+        @keyframes workflow-step-heat {
+            0%, 70% { color: #849293; opacity: 0.4; }
+            77%, 100% { color: #70f0f6; opacity: 1; }
+        }
+
+        @keyframes workflow-result-show {
+            0%, 76% { opacity: 0.28; transform: translateY(6px); }
+            84%, 100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Compact overview below the hero: a visual product flow rather than a decorative line. */
+        .home-workflow-visual {
+            width: 100%;
+            height: auto;
+            overflow: visible;
+        }
+
+        .home-workflow-visual .flow-surface {
+            fill: rgba(5, 17, 18, 0.56);
+            stroke: rgba(69, 222, 231, 0.18);
+        }
+
+        .home-workflow-visual .flow-link {
+            fill: none;
+            stroke: rgba(69, 222, 231, 0.34);
+            stroke-width: 2;
+            stroke-dasharray: 4 8;
+            animation: home-flow-link 4s linear infinite;
+        }
+
+        .home-workflow-visual .flow-card {
+            fill: rgba(255, 255, 255, 0.035);
+            stroke: rgba(255, 255, 255, 0.12);
+        }
+
+        .home-workflow-visual .flow-card--active {
+            fill: rgba(69, 222, 231, 0.08);
+            stroke: rgba(69, 222, 231, 0.46);
+        }
+
+        .home-workflow-visual .flow-kicker {
+            fill: #7e9293;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+        }
+
+        .home-workflow-visual .flow-title {
+            fill: #f5ffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .home-workflow-visual .flow-copy {
+            fill: #91a2a3;
+            font-family: 'Manrope', sans-serif;
+            font-size: 11px;
+        }
+
+        .home-workflow-visual .flow-detail {
+            fill: #72f0f6;
+            font-family: 'Manrope', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .home-workflow-visual .flow-pulse-ring {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: home-flow-pulse 2.8s ease-in-out infinite;
+        }
+
+        .home-workflow-visual .flow-pulse-ring--delay { animation-delay: -1.4s; }
+
+        @keyframes home-flow-link { to { stroke-dashoffset: -48; } }
+        @keyframes home-flow-pulse {
+            0%, 100% { opacity: 0.35; transform: scale(0.94); }
+            50% { opacity: 0.9; transform: scale(1.06); }
         }
 
         .text-glow {
@@ -1409,18 +1727,7 @@
 
         /* iPad / Tablet Fixes */
         @media (min-width: 768px) and (max-width: 1024px) {
-            .engine-container {
-                transform: scale(0.75);
-            }
-
-            /* Hero floating labels: schmaler auf iPad */
-            .hidden.md\:block.absolute.left-10 {
-                left: 8px;
-            }
-
-            .hidden.md\:block.absolute.right-10 {
-                right: 8px;
-            }
+            .hero-workflow-stage { width: calc(100% - 3rem); }
         }
 
         /* Allgemeine Touch-Verbesserungen */
@@ -1758,20 +2065,46 @@
                 padding: 1rem;
             }
 
-            .hero-animated-tracks,
-            .hero-packets {
+            .hero-workflow-stage {
+                width: calc(100% - 1.5rem);
+                min-height: 0;
+                padding: 0.65rem;
+                border-radius: 1.25rem;
+            }
+
+            .workflow-topbar {
+                min-height: 3.1rem;
+                padding-inline: 0.8rem;
+            }
+
+            .workflow-brand span,
+            .workflow-project span,
+            .workflow-sidebar {
                 display: none;
             }
 
-            .hero-visual-stage > svg {
-                display: block;
-                opacity: 0.72;
+            .workflow-body {
+                grid-template-columns: minmax(0, 1fr) 7.75rem;
+                min-height: 315px;
             }
 
-            .hero-visual-stage {
-                height: 220px;
-                width: 100%;
-                max-width: min(100%, 420px);
+            .workflow-canvas { padding: 1rem; }
+            .workflow-heading { top: 0.75rem; left: 1rem; }
+            .workflow-dropzone { min-height: 195px; }
+            .workflow-status { gap: 0.55rem; padding: 0.85rem 0.55rem; }
+            .workflow-step { align-items: flex-start; font-size: 0.62rem; }
+            .workflow-result { padding: 0.55rem; }
+            .workflow-result strong { font-size: 1rem; }
+            .workflow-result small { font-size: 0.55rem; }
+            .workflow-pdf-file { width: 7.5rem; }
+            .workflow-pdf-file strong { font-size: 0.56rem; }
+            .workflow-pdf-file span { font-size: 0.52rem; }
+            .workflow-pdf-icon { width: 1.55rem; height: 1.85rem; }
+
+            @keyframes workflow-file-drag {
+                0%, 8% { transform: translate(0, 0) rotate(-4deg); opacity: 1; }
+                25%, 38% { transform: translate(7.2rem, 6.8rem) rotate(2deg); opacity: 1; }
+                42%, 100% { transform: translate(7.2rem, 6.8rem) scale(0.75); opacity: 0; }
             }
 
             .showcase-thumbs-row {
@@ -1799,13 +2132,7 @@
                 justify-content: center;
             }
 
-            .engine-container {
-                transform: scale(0.5);
-            }
-
             .brand-wand,
-            .engine-float,
-            .engine-core,
             .badge .animate-pulse {
                 animation: none !important;
                 transition: none !important;
@@ -1819,21 +2146,6 @@
 
             .brand-wand {
                 opacity: 0;
-            }
-
-            .engine-core,
-            .cube-face,
-            .cube-bottom {
-                box-shadow: none;
-            }
-
-            .cube-face {
-                border-color: rgba(69, 222, 231, 0.24);
-                background: rgba(11, 25, 25, 0.78);
-            }
-
-            .cube-face::before {
-                opacity: 0.2;
             }
 
             .reveal {
@@ -1864,6 +2176,24 @@
             .school-icon--animated .school-icon-roof {
                 animation: none;
                 stroke-dashoffset: 0;
+            }
+
+            .workflow-pdf-file,
+            .workflow-upload-copy,
+            .workflow-scanline {
+                display: none;
+            }
+
+            .workflow-blueprint {
+                opacity: 1;
+                transform: none;
+            }
+
+            .workflow-step,
+            .workflow-result {
+                color: #70f0f6;
+                opacity: 1;
+                transform: none;
             }
         }
     </style>
@@ -1954,7 +2284,7 @@
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
-                <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" />
+                <img src="Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" />
             </a>
             <nav aria-label="Hauptnavigation" class="site-desktop-nav">
                 <a class="site-nav-link" href="/">Startseite</a>
@@ -2135,178 +2465,43 @@
                 </div>
             </div>
 
-            <!-- The Prometo Engine & SVG Lines Area -->
-            <div class="hero-visual-stage relative w-full h-[600px] md:h-[650px] flex items-center justify-center max-w-[1440px] mx-auto">
-
-                <!-- SVG Intertwined Lines -->
-                <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1440 650"
-                    preserveAspectRatio="xMidYMid slice">
-                    <defs>
-                    </defs>
-
-                    <!-- Base Track Lines (Faint) -->
-                    <g opacity="0.15" class="path-glow" stroke-width="4">
-                        <path d="M -100 200 C 400 200, 500 450, 720 325 C 800 325, 1000 200, 1540 200"
-                            stroke="#45dee7" />
-                        <path d="M -100 450 C 300 450, 500 250, 720 325 C 800 325, 1000 280, 1540 280"
-                            stroke="#3b82f6" />
-                        <path d="M -100 325 C 400 325, 450 550, 720 325 C 800 325, 1000 360, 1540 360"
-                            stroke="#ffffff" />
-                        <path d="M -100 550 C 350 550, 450 150, 720 325 C 800 325, 1000 440, 1540 440"
-                            stroke="#45dee7" />
-                    </g>
-
-                    <!-- Animated Glowing Lines -->
-                    <g stroke-width="5" class="hero-animated-tracks">
-                        <!-- Cyan Line -->
-                        <path id="svgPath1" d="M -100 200 C 400 200, 500 450, 720 325 C 800 325, 1000 200, 1540 200"
-                            stroke="#45dee7" class="path-animated" />
-                        <!-- Blue Line -->
-                        <path id="svgPath2" d="M -100 450 C 300 450, 500 250, 720 325 C 800 325, 1000 280, 1540 280"
-                            stroke="#60a5fa" class="path-animated" style="animation-duration: 12s;" />
-                        <!-- White Line -->
-                        <path id="svgPath3" d="M -100 325 C 400 325, 450 550, 720 325 C 800 325, 1000 360, 1540 360"
-                            stroke="#ffffff" class="path-animated-fast" />
-                        <!-- Cyan Secondary Line -->
-                        <path id="svgPath4" d="M -100 550 C 350 550, 450 150, 720 325 C 800 325, 1000 440, 1540 440"
-                            stroke="#22d3ee" class="path-animated" style="animation-duration: 18s;" />
-                    </g>
-
-                    <!-- Data Packet Dots -->
-                    <g class="hero-packets">
-                        <circle r="3.5" fill="#45dee7" opacity="0.9">
-                            <animateMotion dur="4s" repeatCount="indefinite" begin="0s">
-                                <mpath href="#svgPath1" />
-                            </animateMotion>
-                        </circle>
-                        <circle r="3" fill="#45dee7" opacity="0.7">
-                            <animateMotion dur="4s" repeatCount="indefinite" begin="2s">
-                                <mpath href="#svgPath1" />
-                            </animateMotion>
-                        </circle>
-                        <circle r="3" fill="#60a5fa" opacity="0.9">
-                            <animateMotion dur="5s" repeatCount="indefinite" begin="0.5s">
-                                <mpath href="#svgPath2" />
-                            </animateMotion>
-                        </circle>
-                        <circle r="2.5" fill="#60a5fa" opacity="0.7">
-                            <animateMotion dur="5s" repeatCount="indefinite" begin="2.5s">
-                                <mpath href="#svgPath2" />
-                            </animateMotion>
-                        </circle>
-                        <circle r="2.5" fill="#ffffff" opacity="0.8">
-                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="1s">
-                                <mpath href="#svgPath3" />
-                            </animateMotion>
-                        </circle>
-                        <circle r="2" fill="#ffffff" opacity="0.6">
-                            <animateMotion dur="3.5s" repeatCount="indefinite" begin="2.8s">
-                                <mpath href="#svgPath3" />
-                            </animateMotion>
-                        </circle>
-                        <circle r="3" fill="#22d3ee" opacity="0.9">
-                            <animateMotion dur="6s" repeatCount="indefinite" begin="1.5s">
-                                <mpath href="#svgPath4" />
-                            </animateMotion>
-                        </circle>
-                        <circle r="2.5" fill="#22d3ee" opacity="0.7">
-                            <animateMotion dur="6s" repeatCount="indefinite" begin="4s">
-                                <mpath href="#svgPath4" />
-                            </animateMotion>
-                        </circle>
-                    </g>
-                </svg>
-
-                <!-- Central Engine Graphic -->
-                <div class="engine-container absolute">
-                    <div class="engine-float">
-                        <div class="engine-cube">
-                            <div class="cube-face cube-front flex-col gap-2">
-                                <img src="Logo/Standard.svg" alt="Prometo" class="relative z-10 w-24" width="96" height="70"
-                                    style="filter: brightness(0) invert(1);" />
-                                <span
-                                    class="relative z-10 text-primary font-headline font-semibold tracking-[0.2em] text-[10px]">ENGINE</span>
+            <!-- A product-led hero: the workflow, not an abstract engine, explains Prometo. -->
+            <div class="hero-workflow-stage workflow-live" aria-label="Animierte Vorschau: Einen PDF-Grundriss in Prometo ziehen, Räume erkennen und die Heizlast berechnen">
+                <div class="workflow-window">
+                    <div class="workflow-topbar">
+                        <div class="workflow-brand"><i class="workflow-brand-dot"></i><strong>Prometo</strong><span>Projektstudio</span></div>
+                        <div class="workflow-project"><span>Projekt</span><strong>EFH Meyer</strong></div>
+                    </div>
+                    <div class="workflow-body">
+                        <aside class="workflow-sidebar" aria-label="Projektbereiche">
+                            <p class="workflow-sidebar-label">Projekt</p>
+                            <div class="workflow-nav-item active"><i class="workflow-nav-icon"></i>Bauplan-Import</div>
+                            <div class="workflow-nav-item"><i class="workflow-nav-icon"></i>Räume</div>
+                            <div class="workflow-nav-item"><i class="workflow-nav-icon"></i>Heizlast</div>
+                            <div class="workflow-nav-item"><i class="workflow-nav-icon"></i>Abgleich</div>
+                        </aside>
+                        <div class="workflow-canvas">
+                            <div class="workflow-heading"><p>Schritt 01 von 04</p><strong>Grundriss importieren</strong></div>
+                            <div class="workflow-dropzone">
+                                <div class="workflow-upload-copy"><i class="workflow-upload-icon">↑</i><strong>PDF-Grundriss hier ablegen</strong><span>oder Datei auswählen</span></div>
+                                <div class="workflow-blueprint" aria-hidden="true">
+                                    <svg viewBox="0 0 310 190" role="img" aria-label="Erkannter Grundriss mit Räumen">
+                                        <rect class="room" x="15" y="16" width="134" height="77" rx="2"/><rect class="room" x="154" y="16" width="140" height="77" rx="2"/>
+                                        <rect class="room" x="15" y="98" width="77" height="77" rx="2"/><rect class="room" x="97" y="98" width="99" height="77" rx="2"/><rect class="room" x="201" y="98" width="93" height="77" rx="2"/>
+                                        <text class="room-label" x="61" y="55">WOHNEN</text><text class="room-label" x="197" y="55">KÜCHE</text><text class="room-label" x="34" y="140">BAD</text><text class="room-label" x="119" y="140">FLUR</text><text class="room-label" x="220" y="140">SCHLAFEN</text>
+                                    </svg>
+                                </div>
+                                <i class="workflow-scanline" aria-hidden="true"></i>
                             </div>
-                            <div class="cube-face cube-back"></div>
-                            <div class="cube-face cube-right"></div>
-                            <div class="cube-face cube-left"></div>
-                            <div class="cube-face cube-top"></div>
-                            <div class="cube-face cube-bottom"></div>
-                            <div class="engine-core"></div>
+                            <div class="workflow-pdf-file"><i class="workflow-pdf-icon">PDF</i><div><strong>grundriss_eg.pdf</strong><span>1,8 MB · 1 Seite</span></div></div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Floating Labels (Left Side) -->
-                <div class="hidden md:block absolute left-10 lg:left-32 inset-y-0 w-64 pointer-events-none z-30">
-                    <!-- Text aligned to lines -->
-                    <div class="absolute top-[32%] text-primary font-headline font-semibold tracking-widest uppercase text-sm"
-                        style="animation: float-label 6s ease-in-out infinite;">
-                        PDF-Baupläne
-                        <div class="h-px w-32 bg-primary/50 mt-1"></div>
-                    </div>
-                    <div class="absolute top-[55%] text-blue-400 font-headline font-semibold tracking-widest uppercase text-sm"
-                        style="animation: float-label 7s ease-in-out infinite 1s;">
-                        Projektdaten
-                        <div class="h-px w-32 bg-blue-400/50 mt-1"></div>
-                    </div>
-                    <div class="absolute top-[78%] text-gray-300 font-headline font-semibold tracking-widest uppercase text-sm"
-                        style="animation: float-label 5s ease-in-out infinite 0.5s;">
-                        Datenblätter
-                        <div class="h-px w-32 bg-gray-300/50 mt-1"></div>
-                    </div>
-
-                    <!-- Glass Card -->
-                    <div class="absolute top-[12%] left-10 glass-panel p-5 rounded-2xl w-64 pointer-events-auto"
-                        style="animation: float-label 8s ease-in-out infinite;">
-                        <h3 class="text-white font-headline font-bold text-lg mb-1 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary text-xl" aria-hidden="true">◌</span>
-                            Fachassistent
-                        </h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Dein digitaler Co-Pilot für SHK-Normen und
-                            fachliche Rückfragen direkt im Projekt.</p>
-                    </div>
-                </div>
-
-                <!-- Floating Labels (Right Side - Structured) -->
-                <div class="hidden md:block absolute right-10 lg:right-32 inset-y-0 w-64 pointer-events-none z-30">
-                    <!-- Text aligned exactly to the new straight lines -->
-                    <div class="absolute top-[28%] right-0 text-right text-primary font-headline font-semibold tracking-widest uppercase text-sm"
-                        style="animation: float-label 6s ease-in-out infinite 0.5s;">
-                        Digitales Aufmaß
-                        <div class="h-px w-40 bg-primary/50 mt-1 ml-auto"></div>
-                    </div>
-                    <div class="absolute top-[40%] right-0 text-right text-blue-400 font-headline font-semibold tracking-widest uppercase text-sm"
-                        style="animation: float-label 7s ease-in-out infinite 1.5s;">
-                        Raumheizlast
-                        <div class="h-px w-32 bg-blue-400/50 mt-1 ml-auto"></div>
-                    </div>
-                    <div class="absolute top-[64%] right-0 text-right text-primary font-headline font-semibold tracking-widest uppercase text-sm"
-                        style="animation: float-label 5s ease-in-out infinite 1s;">
-                        Strukturierte Stücklisten
-                        <div class="h-px w-48 bg-primary/50 mt-1 ml-auto"></div>
-                    </div>
-
-                    <!-- Glass Cards -->
-                    <div class="absolute top-[48%] -left-16 glass-panel p-3 px-4 rounded-xl border-primary/30 shadow-[0_0_20px_rgba(69,222,231,0.2)] pointer-events-auto"
-                        style="animation: float-label 4s ease-in-out infinite;">
-                        <div class="text-[10px] text-primary font-headline uppercase tracking-widest">Status</div>
-                        <div class="text-white font-bold text-2xl font-headline">Beta</div>
-                        <div class="text-[10px] text-gray-500 font-headline uppercase tracking-widest">Solo-Projekt</div>
-                    </div>
-
-                    <div class="absolute top-[75%] right-12 glass-panel rounded-xl w-56 pointer-events-auto overflow-hidden"
-                        style="animation: float-label 9s ease-in-out infinite 2s;">
-                        <!-- Terminal Title Bar -->
-                        <div class="flex items-center gap-2 px-3 py-2 border-b border-white/5 bg-white/[0.02]">
-                            <span class="w-2 h-2 rounded-full bg-red-500/50"></span>
-                            <span class="w-2 h-2 rounded-full bg-yellow-500/50"></span>
-                            <span class="w-2 h-2 rounded-full bg-green-500/50"></span>
-                            <span class="ml-2 text-[10px] text-gray-500 font-headline tracking-widest uppercase">Prometo
-                                Assistent</span>
-                        </div>
-                        <!-- Terminal Output -->
-                        <div id="aiTerminal" class="px-3 py-3 font-mono text-[11px] space-y-1.5 min-h-[90px]"></div>
+                        <aside class="workflow-status" aria-label="Analysefortschritt">
+                            <p class="workflow-status-title">Analyse</p>
+                            <div class="workflow-step workflow-step--import"><i>✓</i><span>PDF eingelesen</span></div>
+                            <div class="workflow-step workflow-step--rooms"><i>✓</i><span>12 Räume erkannt</span></div>
+                            <div class="workflow-step workflow-step--heat"><i>✓</i><span>Heizlast berechnet</span></div>
+                            <div class="workflow-result"><span>Gebäudeheizlast</span><strong>8,4 kW</strong><small>Ergebnis zur Prüfung bereit</small></div>
+                        </aside>
                     </div>
                 </div>
             </div>
@@ -2328,26 +2523,44 @@
                             Raum- und Bauteildaten kontrollieren und anschließend Heizlast, Material sowie Abgleich berechnen.
                         </p>
                     </div>
-                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="home-flow-svg-title home-flow-svg-desc">
+                    <svg class="home-workflow-visual" viewBox="0 0 840 310" role="img" aria-labelledby="home-flow-svg-title home-flow-svg-desc">
                         <title id="home-flow-svg-title">Prometo Workflow vom PDF-Grundriss bis zu Heizlast und Abgleich</title>
-                        <desc id="home-flow-svg-desc">Animierte Grafik mit PDF-Grundriss, kontrollierten Raumdaten und berechneten Ergebnissen.</desc>
-                        <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
-                        <circle class="moving-dot" r="7" fill="#45dee7" />
-                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
-                        <g class="flow-node flow-pulse">
-                            <rect x="44" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="119" y="126" text-anchor="middle" class="step-label">PDF</text>
-                            <text x="119" y="153" text-anchor="middle" class="step-copy">Plan importieren</text>
+                        <desc id="home-flow-svg-desc">Drei klar verbundene Arbeitsschritte: PDF importieren, Raumdaten prüfen und Heizlast berechnen.</desc>
+                        <rect class="flow-surface" x="16" y="20" width="808" height="270" rx="28" />
+                        <path class="flow-link" d="M267 157 H309 M531 157 H573" />
+                        <circle cx="288" cy="157" r="4" fill="#45dee7" /><circle cx="552" cy="157" r="4" fill="#45dee7" />
+
+                        <g>
+                            <rect class="flow-card" x="40" y="65" width="226" height="182" rx="20" />
+                            <text x="64" y="95" class="flow-kicker">01 · IMPORT</text>
+                            <rect x="64" y="115" width="46" height="56" rx="7" fill="rgba(232,93,93,0.18)" stroke="rgba(232,93,93,0.55)" />
+                            <text x="87" y="147" text-anchor="middle" class="flow-detail" fill="#ff9b9b">PDF</text>
+                            <path d="M76 155 H99 M76 161 H95" stroke="rgba(255,255,255,0.42)" stroke-width="2" stroke-linecap="round" />
+                            <text x="124" y="135" class="flow-title">Grundriss</text>
+                            <text x="124" y="156" class="flow-copy">Plan sicher importiert</text>
+                            <circle cx="75" cy="207" r="5" fill="#45dee7" /><text x="88" y="211" class="flow-detail">1 PDF bereit</text>
                         </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="341" y="78" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
-                            <text x="416" y="126" text-anchor="middle" class="step-label">Raumdaten</text>
-                            <text x="416" y="153" text-anchor="middle" class="step-copy">prüfen statt raten</text>
+
+                        <g>
+                            <rect class="flow-card flow-card--active" x="310" y="65" width="226" height="182" rx="20" />
+                            <text x="334" y="95" class="flow-kicker">02 · PRÜFUNG</text>
+                            <rect x="334" y="115" width="78" height="57" rx="6" fill="rgba(69,222,231,0.05)" stroke="rgba(113,244,250,0.7)" />
+                            <path d="M360 115 V172 M334 143 H412" stroke="rgba(113,244,250,0.62)" stroke-width="1.4" />
+                            <rect x="416" y="115" width="45" height="57" rx="6" fill="rgba(69,222,231,0.05)" stroke="rgba(113,244,250,0.7)" />
+                            <text x="334" y="199" class="flow-title">Raumdaten</text>
+                            <text x="334" y="220" class="flow-copy">automatisch erkannt</text>
+                            <circle class="flow-pulse-ring" cx="496" cy="203" r="11" fill="none" stroke="#45dee7" stroke-width="2" /><path d="m491 203 4 4 7-9" fill="none" stroke="#9dffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="657" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="732" y="126" text-anchor="middle" class="step-label">Ergebnis</text>
-                            <text x="732" y="153" text-anchor="middle" class="step-copy">direkt berechnen</text>
+
+                        <g>
+                            <rect class="flow-card" x="574" y="65" width="226" height="182" rx="20" />
+                            <text x="598" y="95" class="flow-kicker">03 · ERGEBNIS</text>
+                            <circle cx="638" cy="145" r="31" fill="rgba(69,222,231,0.07)" stroke="rgba(69,222,231,0.22)" stroke-width="7" />
+                            <circle class="flow-pulse-ring flow-pulse-ring--delay" cx="638" cy="145" r="31" fill="none" stroke="#45dee7" stroke-width="3" stroke-dasharray="128 70" stroke-linecap="round" transform="rotate(-90 638 145)" />
+                            <text x="682" y="139" class="flow-title">8,4 kW</text>
+                            <text x="682" y="160" class="flow-copy">Gebäudeheizlast</text>
+                            <rect x="598" y="190" width="150" height="30" rx="15" fill="rgba(69,222,231,0.12)" />
+                            <text x="673" y="210" text-anchor="middle" class="flow-detail">zur Prüfung bereit</text>
                         </g>
                     </svg>
                 </div>
@@ -2903,7 +3116,7 @@
                     <button type="button" class="showcase-featured-trigger" data-prometo-lightbox-trigger aria-labelledby="activeLabelTitle activeLabelDesc">
                         <span class="phone-mockup phone-mockup--featured">
                             <span class="phone-screen">
-                            <img id="featuredImg" src="/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
+                            <img id="featuredImg" src="assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
                                 alt="Prometo Projektassistent auf dem Smartphone mit Feldern für Projektname, Adresse und Fertigstellung"
                                 loading="lazy" decoding="async" width="1080" height="2400" />
                             </span>
@@ -2921,7 +3134,7 @@
                 <div class="showcase-thumbs-row" role="group" aria-label="App-Screenshots auswählen">
                     <button type="button" class="showcase-thumb active" onclick="switchScreen(this, 0)" aria-controls="featuredPhone" aria-pressed="true" aria-label="Screenshot Projektstart anzeigen">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/thumbs/projektassistent-projektbasis.webp"
+                            <img src="assets/prometo-screenshots/thumbs/projektassistent-projektbasis.webp"
                                 alt="Projektstart in der Prometo App" loading="lazy" decoding="async" width="108"
                                 height="240" />
                         </div>
@@ -2929,7 +3142,7 @@
                     </button>
                     <button type="button" class="showcase-thumb" onclick="switchScreen(this, 1)" aria-controls="featuredPhone" aria-pressed="false" aria-label="Screenshot Bauplan-Import anzeigen">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/thumbs/bauplan-import-ki-bereit.webp"
+                            <img src="assets/prometo-screenshots/thumbs/bauplan-import-ki-bereit.webp"
                                 alt="Bauplan-Import in der Prometo App" loading="lazy" decoding="async" width="108"
                                 height="240" />
                         </div>
@@ -2937,7 +3150,7 @@
                     </button>
                     <button type="button" class="showcase-thumb" onclick="switchScreen(this, 2)" aria-controls="featuredPhone" aria-pressed="false" aria-label="Screenshot Import-Review anzeigen">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/thumbs/bauplan-import-review.webp"
+                            <img src="assets/prometo-screenshots/thumbs/bauplan-import-review.webp"
                                 alt="Import-Review der erkannten Räume in Prometo" loading="lazy" decoding="async"
                                 width="108" height="240" />
                         </div>
@@ -2945,7 +3158,7 @@
                     </button>
                     <button type="button" class="showcase-thumb" onclick="switchScreen(this, 3)" aria-controls="featuredPhone" aria-pressed="false" aria-label="Screenshot Heizlast-Szenarien anzeigen">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/thumbs/schnellberechnung-heizlast-ergebnis.webp"
+                            <img src="assets/prometo-screenshots/thumbs/schnellberechnung-heizlast-ergebnis.webp"
                                 alt="Heizlast-Szenarien in Prometo" loading="lazy" decoding="async"
                                 width="108" height="240" />
                         </div>
@@ -2953,7 +3166,7 @@
                     </button>
                     <button type="button" class="showcase-thumb" onclick="switchScreen(this, 4)" aria-controls="featuredPhone" aria-pressed="false" aria-label="Screenshot Heatmap anzeigen">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/thumbs/projektdetail-heatmap.webp"
+                            <img src="assets/prometo-screenshots/thumbs/projektdetail-heatmap.webp"
                                 alt="Heizlast-Heatmap in der Prometo App" loading="lazy" decoding="async"
                                 width="108" height="240" />
                         </div>
@@ -2961,7 +3174,7 @@
                     </button>
                     <button type="button" class="showcase-thumb" onclick="switchScreen(this, 5)" aria-controls="featuredPhone" aria-pressed="false" aria-label="Screenshot Hydraulischer Abgleich anzeigen">
                         <div class="showcase-thumb-img">
-                            <img src="/assets/prometo-screenshots/thumbs/hydraulischer-abgleich-heizkreisdetail.webp"
+                            <img src="assets/prometo-screenshots/thumbs/hydraulischer-abgleich-heizkreisdetail.webp"
                                 alt="Hydraulischer Abgleich in der Prometo App" loading="lazy" decoding="async"
                                 width="108" height="240" />
                         </div>
@@ -3847,40 +4060,6 @@
             });
         }
 
-        // ---- Hero Engine Graphic Tracking ----
-        document.addEventListener('DOMContentLoaded', () => {
-            const cube = document.querySelector('.engine-cube');
-            const heroSection = document.querySelector('section');
-
-            if (cube && heroSection && canAnimate) {
-                heroSection.addEventListener('mousemove', (e) => {
-                    const rect = heroSection.getBoundingClientRect();
-                    const centerX = rect.left + rect.width / 2;
-                    const centerY = rect.top + rect.height / 2;
-
-                    const mouseX = (e.clientX - centerX) / (rect.width / 2);
-                    const mouseY = (e.clientY - centerY) / (rect.height / 2);
-
-                    const maxRotateX = 20;
-                    const maxRotateY = 30;
-
-                    const rotateX = -30 + (mouseY * maxRotateX);
-                    const rotateY = 45 - (mouseX * maxRotateY);
-
-                    cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                });
-
-                heroSection.addEventListener('mouseleave', () => {
-                    cube.style.transform = `rotateX(-30deg) rotateY(45deg)`;
-                    cube.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
-                });
-
-                heroSection.addEventListener('mouseenter', () => {
-                    cube.style.transition = 'transform 0.1s ease-out';
-                });
-            }
-        });
-
         // ---- Intersection Observer: Scroll Reveal ----
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -4003,37 +4182,37 @@
         // ---- Showcase Screen Switcher ----
         const showcaseData = [
             {
-                src: '/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp',
+                src: 'assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp',
                 alt: 'Prometo Projektassistent auf dem Smartphone mit Feldern für Projektname, Adresse und Fertigstellung',
                 title: 'Projektstart',
                 desc: 'Projektbasis mobil erfassen und neue Heizlast-Projekte direkt aus der App anlegen'
             },
             {
-                src: '/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp',
+                src: 'assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp',
                 alt: 'Prometo Bauplan-Import auf dem Smartphone mit PDF-Auswahl',
                 title: 'Bauplan-Import',
                 desc: 'PDF-Grundrisse auswählen und Raumdaten anschließend prüfen'
             },
             {
-                src: '/assets/prometo-screenshots/mobile/bauplan-import-review.webp',
+                src: 'assets/prometo-screenshots/mobile/bauplan-import-review.webp',
                 alt: 'Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Smartphone',
                 title: 'Import-Review',
                 desc: 'Erkannte Räume vor der Übernahme prüfen und Import-Issues transparent nachvollziehen'
             },
             {
-                src: '/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp',
+                src: 'assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp',
                 alt: 'Prometo Heizlast-Szenarien mit drei Vergleichswerten auf dem Smartphone',
                 title: 'Heizlast-Szenarien',
                 desc: 'Optimistische, mittlere und konservative Szenarien vergleichen und zur Plausibilisierung einordnen'
             },
             {
-                src: '/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp',
+                src: 'assets/prometo-screenshots/mobile/projektdetail-heatmap.webp',
                 alt: 'Prometo Projektdetail mit farbcodierter Heizlast-Heatmap auf dem Smartphone',
                 title: 'Heatmap',
                 desc: 'Raumweise Heizlastverteilung visuell prüfen und Auffälligkeiten direkt im Projekt erkennen'
             },
             {
-                src: '/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp',
+                src: 'assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp',
                 alt: 'Prometo Hydraulischer Abgleich mit Heizkreisdetail auf dem Smartphone',
                 title: 'Hydraulischer Abgleich',
                 desc: 'Heizkreis, Port und projektspezifische Einstellungen direkt am Verteiler mobil abstimmen'
@@ -4547,50 +4726,6 @@
             observer.observe(section);
         })();
 
-        // ---- Assistant Terminal Animation ----
-        (function () {
-            const terminal = document.getElementById('aiTerminal');
-            if (!terminal) return;
-
-            if (!canAnimate) {
-                terminal.innerHTML = `
-                    <div class="ai-terminal-line visible" style="color:#45dee7;">&gt; PDF analysiert ✓</div>
-                    <div class="ai-terminal-line visible" style="color:#45dee7;">&gt; Räume erkannt ✓</div>
-                    <div class="ai-terminal-line visible" style="color:#45dee7;">&gt; Heizlast-Workflow bereit ✓</div>
-                `;
-                return;
-            }
-
-            const steps = [
-                { text: '> PDF wird analysiert...', color: '#bbc9ca', delay: 0 },
-                { text: '> 14 Räume erkannt ✓', color: '#45dee7', delay: 900 },
-                { text: '> Flächen berechnet ✓', color: '#45dee7', delay: 1700 },
-                { text: '> Heizlast läuft...', color: '#bbc9ca', delay: 2500 },
-                { text: '> Ergebnis zur Prüfung bereit ✓', color: '#45dee7', delay: 3400 },
-            ];
-
-            function runSequence() {
-                terminal.innerHTML = '';
-                steps.forEach((step, i) => {
-                    const line = document.createElement('div');
-                    line.className = 'ai-terminal-line';
-                    line.style.color = step.color;
-                    line.textContent = step.text;
-                    terminal.appendChild(line);
-
-                    setTimeout(() => {
-                        line.classList.add('visible');
-                        // Restart after last step
-                        if (i === steps.length - 1) {
-                            setTimeout(runSequence, 3000);
-                        }
-                    }, step.delay);
-                });
-            }
-
-            // Start after short delay so hero is visible
-            setTimeout(runSequence, 1200);
-        })();
         // ---- Cookie Consent Logic (Google Consent Mode v2) ----
         (function () {
             const banner = document.getElementById('cookie-banner');
@@ -4647,7 +4782,7 @@
 
         (function () {
             const showcaseSection = document.getElementById('showcase');
-            const loadGalleryEnhancements = () => loadDeferredScript('/assets/prometo-gallery.js');
+            const loadGalleryEnhancements = () => loadDeferredScript('assets/prometo-gallery.js');
 
             if (showcaseSection && 'IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries) => {
@@ -4666,11 +4801,11 @@
                 runWhenIdle(loadGalleryEnhancements, 2500);
             }
 
-            runWhenIdle(() => loadDeferredScript('/assets/language-hint.js'), 3500);
+            runWhenIdle(() => loadDeferredScript('assets/language-hint.js'), 3500);
         })();
     </script>
-    <script src="/assets/site-navigation.js" defer></script>
-    <script src="/assets/prometo-events.js" defer></script>
+    <script src="assets/site-navigation.js" defer></script>
+    <script src="assets/prometo-events.js" defer></script>
 </body>
 
 </html>

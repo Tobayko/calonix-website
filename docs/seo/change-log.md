@@ -1,5 +1,12 @@
 # SEO-Änderungsprotokoll
 
+## 20.07.2026
+
+- GSC-Export vom 19.07.2026 und Research zum digitalen Aufmaß ausgewertet: `/digitales-aufmass/` erhielt 412 Impressionen, 5 Klicks, 1,21 % CTR und eine durchschnittliche Position von 39,62. Die URL wird künftig klar als fachliche Datenbasis vor der Heizlastberechnung positioniert; die Startseite bleibt die breite Plattform-/Software-Positionierung.
+- Title, Meta-Description, H1, Hero und Inhaltsstruktur auf „digitales Aufmaß für Heizlastberechnung“ geschärft. Aussagen unterscheiden nun ausdrücklich zwischen planbasiertem Aufmaß und fachlich zu prüfenden Eingaben für die Heizlastberechnung.
+- Fachliche Kontextlinks zu Heizlast, DIN-12831-Kontext, hydraulischem Abgleich und Wärmepumpen-Dimensionierung ergänzt; `SoftwareApplication`-Schema um sichtbare Funktionen, Screenshot und Anbieter ergänzt.
+- Seitendramaturgie nach visueller Prüfung verdichtet: zentrale PDF-Import-Animation in den Hero verlagert, doppelte Ablaufsektion entfernt, Planstudio von sechs Karten auf drei Funktionsgruppen reduziert und FAQ standardmäßig geschlossen. Suchintentionen und crawlbare Fachinhalte bleiben sichtbar beziehungsweise im semantischen HTML erhalten.
+
 ## 18.07.2026
 
 - Google-Coverage-Export geprüft: 23 indexierte und 20 nicht indexierte bekannte URLs mit dem letzten enthaltenen Tagesstand 10.07.2026 dokumentiert; der Sprung am 01.07. als zusätzliche URL-Entdeckung statt Deindexierungsverlust eingeordnet.

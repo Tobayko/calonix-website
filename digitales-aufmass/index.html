@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Aufmaß App für SHK: PDF-Grundrisse erkennen | Prometo</title>
+    <title>Digitales Aufmaß für Heizlastberechnung | Prometo</title>
     <meta name="description"
-        content="PDF-Grundriss hochladen, Räume automatisch erkennen und kontrollieren. Die geprüften Daten direkt für Heizlast und hydraulischen Abgleich nutzen." />
+        content="Digitales Aufmaß für SHK: PDF-Grundrisse importieren, Räume und Flächen prüfen und die bestätigten Daten für Heizlastberechnung und hydraulischen Abgleich weiterverwenden." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -18,21 +18,21 @@
     <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/digital-takeoff/" />
     <link rel="alternate" hreflang="x-default" href="https://prometo.app/digitales-aufmass/" />
 
-    <link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="../assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2"
         crossorigin />
-    <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="../assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2"
         crossorigin />
 
-    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" sizes="any" />
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" href="../assets/icon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Aufmaß App für SHK: PDF-Grundrisse erkennen | Prometo" />
+    <meta property="og:title" content="Digitales Aufmaß für Heizlastberechnung | Prometo" />
     <meta property="og:description"
-        content="PDF-Grundriss hochladen, Räume automatisch erkennen und die geprüften Daten direkt für Heizlast und Abgleich nutzen." />
+        content="PDF-Grundriss importieren, Raumdaten prüfen und die bestätigte Projektbasis für Heizlast und Abgleich weiterverwenden." />
     <meta property="og:url" content="https://prometo.app/digitales-aufmass/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
     <meta property="og:image:alt" content="Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Tablet" />
@@ -41,18 +41,17 @@
     <meta property="og:image:height" content="1600" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aufmaß App für SHK: PDF-Grundrisse erkennen | Prometo" />
+    <meta name="twitter:title" content="Digitales Aufmaß für Heizlastberechnung | Prometo" />
     <meta name="twitter:description"
-        content="PDF-Aufmaß mit automatischer Raumerkennung, Kontrolle und direkter Weiterverwendung für Heizlast und Abgleich." />
+        content="PDF-Aufmaß mit Raumprüfung und direkter Weiterverwendung für Heizlastberechnung und hydraulischen Abgleich." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
     <meta name="twitter:image:alt" content="Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Tablet" />
 
-    <link rel="preload" href="/assets/tailwind.css" as="style" />
-    <link rel="stylesheet" href="/assets/site-navigation.css" />
-    <link rel="stylesheet" href="/assets/seo-explainers.css" />
-    <link rel="stylesheet" href="/assets/tailwind.css" />
-    <link rel="stylesheet" href="/assets/page-effects.css" />
-    <link rel="stylesheet" href="/assets/prometo-gallery.css" />
+    <link rel="preload" href="../assets/tailwind.css" as="style" />
+    <link rel="stylesheet" href="../assets/site-navigation.css" />
+    <link rel="stylesheet" href="../assets/tailwind.css" />
+    <link rel="stylesheet" href="../assets/page-effects.css" />
+    <link rel="stylesheet" href="../assets/digitales-aufmass-workflow.css" />
     <style>
         body {
             background:
@@ -104,6 +103,8 @@
         .faq-item summary {
             cursor: pointer;
             list-style: none;
+            min-height: 2.75rem;
+            padding-block: 0.35rem;
         }
 
         .faq-item summary::-webkit-details-marker {
@@ -112,6 +113,102 @@
 
         .faq-item[open] summary {
             color: #fff;
+        }
+
+        .faq-item summary:focus-visible {
+            border-radius: 0.5rem;
+            outline: 2px solid #45dee7;
+            outline-offset: 4px;
+        }
+
+        /* A compact solution-page shell: related to Prometo, but distinct from the homepage. */
+        .aufmass-hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aufmass-hero::before {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(69, 222, 231, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(69, 222, 231, 0.035) 1px, transparent 1px);
+            background-size: 52px 52px;
+            content: "";
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.72), transparent 74%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.72), transparent 74%);
+            pointer-events: none;
+        }
+
+        .aufmass-hero-frame {
+            position: relative;
+            z-index: 1;
+            padding: clamp(1.4rem, 3vw, 2.6rem) 0 2.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .aufmass-hero-frame::after {
+            position: absolute;
+            inset: auto -4rem -9rem auto;
+            width: 25rem;
+            height: 25rem;
+            border-radius: 50%;
+            background: rgba(69,222,231,0.09);
+            filter: blur(76px);
+            content: "";
+            pointer-events: none;
+        }
+
+        .aufmass-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+            color: #6bf6ff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .aufmass-kicker::before {
+            width: 0.62rem;
+            height: 0.62rem;
+            border: 2px solid #45dee7;
+            border-radius: 999px;
+            box-shadow: 0 0 15px rgba(69, 222, 231, 0.5);
+            content: "";
+        }
+
+        .aufmass-hero-copy {
+            position: relative;
+            z-index: 1;
+            max-width: 40rem;
+        }
+
+        .aufmass-hero-copy h1 {
+            max-width: 11ch;
+            font-size: clamp(2.75rem, 4.4vw, 3.65rem);
+            letter-spacing: -0.045em;
+            overflow-wrap: break-word;
+        }
+
+        .aufmass-intent {
+            display: grid;
+            gap: 0.75rem;
+            margin: 1.6rem 0;
+            border-left: 2px solid rgba(69, 222, 231, 0.6);
+            padding: 0.2rem 0 0.2rem 1.1rem;
+        }
+
+        .aufmass-intent strong { color: #f4ffff; font-family: 'Space Grotesk', sans-serif; }
+        .aufmass-intent span { color: #9aabab; font-size: 0.92rem; line-height: 1.55; }
+
+        #datenbasis,
+        #aufmass-vorteile,
+        #faq { scroll-margin-top: 7rem; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .aufmass-hero * { animation: none !important; transition: none !important; }
         }
     </style>
     <script type="application/ld+json">
@@ -131,7 +228,19 @@
           "url": "https://prometo.app/",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Webbrowser",
-          "description": "Aufmaß App für SHK-Betriebe: PDF-Grundrisse importieren, Räume automatisch erkennen und die geprüften Daten weiterverwenden."
+          "description": "Aufmaß App für SHK-Betriebe: PDF-Grundrisse importieren, Raumdaten prüfen und als Projektbasis für die Heizlastberechnung weiterverwenden.",
+          "isAccessibleForFree": true,
+          "featureList": [
+            "PDF-Grundriss importieren",
+            "Räume und Geometrien prüfen",
+            "Raumdaten für Heizlast und hydraulischen Abgleich weiterverwenden"
+          ],
+          "screenshot": "https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp",
+          "provider": {
+            "@type": "Organization",
+            "name": "Prometo",
+            "url": "https://prometo.app/"
+          }
         }
       ]
     }
@@ -277,91 +386,84 @@
         </div>
     </header>
     <main>
-        <section class="px-6 py-16 md:py-24">
+        <section class="aufmass-hero px-6 pt-10 pb-12 md:pt-14 md:pb-16" id="ueberblick">
             <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                <nav aria-label="Breadcrumb" class="relative z-10 mb-5 text-sm text-gray-500">
                     <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
                     <span class="mx-2 text-gray-600">/</span>
                     <span aria-current="page">Digitales Aufmaß</span>
                 </nav>
 
-                <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-                    <div class="reveal">
-                        <span class="badge mb-6">Digitales Aufmaß SHK</span>
-                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            Digitales Aufmaß aus PDF-Grundrissen
-                        </h1>
-                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
-                            PDF-Grundriss hochladen, Räume und Raumgeometrien automatisch erkennen und die Daten kontrollieren. Die bestätigte Projektstruktur fließt direkt in Heizlast, Materialberechnung und hydraulischen Abgleich.
-                        </p>
-                        <p class="text-xs text-gray-500 mb-4">Beta-Inhalt · Raumdaten und Ergebnisse fachlich prüfen</p>
-                        <div class="mb-6 p-5 rounded-2xl border border-primary/20 bg-primary/8">
-                            <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Kurzantwort</p>
-                            <p class="text-sm md:text-base text-gray-200 leading-relaxed">
-                                Digitales Aufmaß in Prometo endet nicht beim Markieren eines Plans. Erkannte Räume werden zu prüfbaren Projektdaten, die ohne erneute Übertragung für die weiteren SHK-Berechnungen bereitstehen.
+                <div class="aufmass-hero-frame">
+                    <div class="relative z-10 grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+                        <div class="aufmass-hero-copy">
+                            <span class="aufmass-kicker">Lösung · PDF-Aufmaß für SHK</span>
+                            <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
+                                Digitales Aufmaß für <span class="text-primary">Heizlastberechnung</span>
+                            </h1>
+                            <p class="text-lg text-gray-300 leading-relaxed max-w-2xl">
+                                PDF-Grundriss importieren, Raumdaten prüfen und ohne doppelte Erfassung für die Heizlast weiterverwenden.
                             </p>
-                            <p class="text-xs text-gray-500 leading-relaxed mt-4">
-                                Hinweis: Der Plan-Import ist als prüfbarer Arbeitsstart gedacht. Erkannte Räume und Bauteile bleiben kontrollierbar und können vor der Weiterverwendung korrigiert werden.
-                            </p>
-                        </div>
-                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
-                            <a href="/beta/" data-event="beta_cta_click" data-cta-position="hero"
-                                class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
-                                Kostenlos Beta testen
-                            </a>
-                            <a href="/heizlastberechnung/"
-                                class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
-                                Heizlast-Hub ansehen
-                            </a>
-                        </div>
-                        <div class="grid gap-4 sm:grid-cols-2">
-                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
-                                <h2 class="text-xl font-bold text-white mb-2">Vom PDF ins Projekt</h2>
-                                <p class="text-sm text-gray-400 leading-relaxed">
-                                    Statt bloßer Markierung im Plan werden Räume und Bauteile direkt in ein strukturiertes
-                                    Projekt überführt.
-                                </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="/beta/" data-event="beta_cta_click" data-cta-position="hero"
+                                    class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
+                                    Kostenlos Beta testen
+                                </a>
+                                <a href="#datenbasis"
+                                    class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-3.5 text-base text-white transition-colors hover:border-primary hover:text-primary">
+                                    Was geprüft wird
+                                </a>
                             </div>
-                            <div class="glass-panel rounded-3xl p-5 lift-on-hover">
-                                <h2 class="text-xl font-bold text-white mb-2">Für Tablet und iPad</h2>
-                                <p class="text-sm text-gray-400 leading-relaxed">
-                                    Mobile Erfassung auf der Baustelle sorgt dafür, dass Korrekturen dort landen, wo sie
-                                    entstehen.
-                                </p>
+                            <div class="aufmass-intent">
+                                <strong>Einmal erfassen. Fachlich prüfen. Weiterverwenden.</strong>
+                                <span>Planinformationen werden zu kontrollierbaren Raumdaten für Heizlast und weitere SHK-Schritte.</span>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="hero-visual reveal reveal-delay-2">
-                        <div class="ambient-orb ambient-orb--a"></div>
-                        <div class="ambient-orb ambient-orb--b"></div>
-                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6"
-                            data-lightbox-title="Import-Review zur Raumprüfung"
-                            data-lightbox-caption="Erkannte Räume und Etagen bleiben in der Prometo App direkt prüfbar, bevor der Import in den Projektworkflow übernommen wird.">
-                            <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
-                                alt="Prometo Import-Review auf dem Smartphone mit Räumen nach Etagen und sichtbaren Import-Hinweisen"
-                                width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async"
-                                class="hero-device mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
-                        </div>
-                        <div class="hero-chip hero-chip--top">
-                            <strong>PDF rein</strong>
-                            <span>Plan öffnen und direkt als Projektbasis verwenden</span>
-                        </div>
-                        <div class="hero-chip hero-chip--mid">
-                            <strong>Räume statt Markups</strong>
-                            <span>Aufmaß wird strukturiert, nicht nur eingezeichnet</span>
-                        </div>
-                        <div class="hero-chip hero-chip--bottom">
-                            <strong>Baustelle mitgedacht</strong>
-                            <span>Änderungen landen dort, wo sie später weiterverarbeitet werden</span>
-                        </div>
-                        <div class="glass-panel signal-panel rounded-3xl p-4" aria-label="Ablauf des digitalen Aufmaßes">
-                            <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-300">
-                                <span>PDF-Plan</span>
-                                <span class="material-symbols-outlined text-primary" aria-hidden="true">→</span>
-                                <span>Raumprüfung</span>
-                                <span class="material-symbols-outlined text-primary" aria-hidden="true">→</span>
-                                <span>Weitergabe</span>
+                        <div class="aufmass-workflow-stage workflow-live reveal reveal-delay-2" aria-label="Animierte Vorschau: PDF-Grundriss in Prometo ziehen, Räume erkennen und die Projektbasis prüfen">
+                            <div class="aufmass-workflow-window">
+                                <div class="aufmass-workflow-topbar">
+                                    <div class="aufmass-workflow-brand"><i></i><strong>Prometo</strong><span>Projektstudio</span></div>
+                                    <div class="aufmass-workflow-project"><span>Projekt</span><strong>EFH · Bestand</strong></div>
+                                </div>
+                                <div class="aufmass-workflow-body">
+                                    <aside class="aufmass-workflow-sidebar" aria-label="Projektbereiche">
+                                        <p class="aufmass-workflow-sidebar-label">Projekt</p>
+                                        <div class="aufmass-workflow-nav-item is-active"><i></i>Bauplan-Import</div>
+                                        <div class="aufmass-workflow-nav-item"><i></i>Räume</div>
+                                        <div class="aufmass-workflow-nav-item"><i></i>Heizlast</div>
+                                        <div class="aufmass-workflow-nav-item"><i></i>Abgleich</div>
+                                    </aside>
+                                    <div class="aufmass-workflow-canvas">
+                                        <div class="aufmass-workflow-heading"><p>Schritt 01 von 04</p><strong>Grundriss importieren</strong></div>
+                                        <div class="aufmass-workflow-dropzone">
+                                            <div class="aufmass-workflow-upload"><i>↑</i><strong>PDF-Grundriss hier ablegen</strong><span>oder Datei auswählen</span></div>
+                                            <div class="aufmass-workflow-blueprint" aria-hidden="true">
+                                                <svg viewBox="0 0 310 190">
+                                                    <rect class="room" x="15" y="16" width="134" height="77" rx="2"/><rect class="room" x="154" y="16" width="140" height="77" rx="2"/>
+                                                    <rect class="room" x="15" y="98" width="77" height="77" rx="2"/><rect class="room" x="97" y="98" width="99" height="77" rx="2"/><rect class="room" x="201" y="98" width="93" height="77" rx="2"/>
+                                                    <text class="room-label" x="61" y="55">WOHNEN</text><text class="room-label" x="197" y="55">KÜCHE</text><text class="room-label" x="34" y="140">BAD</text><text class="room-label" x="119" y="140">FLUR</text><text class="room-label" x="220" y="140">SCHLAFEN</text>
+                                                </svg>
+                                            </div>
+                                            <i class="aufmass-workflow-scanline" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="aufmass-workflow-file"><i>PDF</i><div><strong>grundriss_eg.pdf</strong><span>1,8 MB · 1 Seite</span></div></div>
+                                        <span class="material-symbols-outlined aufmass-workflow-cursor" aria-hidden="true">arrow_selector_tool</span>
+                                    </div>
+                                    <aside class="aufmass-workflow-status" aria-label="Analysefortschritt">
+                                        <p class="aufmass-workflow-status-title">Analyse</p>
+                                        <div class="aufmass-workflow-step aufmass-workflow-step--import"><i>✓</i><span>PDF eingelesen</span></div>
+                                        <div class="aufmass-workflow-step aufmass-workflow-step--rooms"><i>✓</i><span>12 Räume erkannt</span></div>
+                                        <div class="aufmass-workflow-step aufmass-workflow-step--ready"><i>✓</i><span>Prüfung bereit</span></div>
+                                        <div class="aufmass-workflow-result"><span>Projektbasis</span><strong>Raumdaten bereit</strong><small>Vor Weiterverwendung fachlich prüfen</small></div>
+                                    </aside>
+                                </div>
+                            </div>
+                            <div class="aufmass-workflow-timeline" aria-hidden="true">
+                                <span class="phase-import"><i></i>PDF</span>
+                                <span class="phase-analyse"><i></i>Import</span>
+                                <span class="phase-review"><i></i>Raumprüfung</span>
+                                <span class="phase-ready"><i></i>Projektbasis</span>
                             </div>
                         </div>
                     </div>
@@ -369,254 +471,54 @@
             </div>
         </section>
 
-        <section class="px-6 pb-12 md:pb-16" aria-labelledby="aufmass-flow-heading">
-            <div class="max-w-screen-xl mx-auto seo-explainer glass-panel rounded-[2rem] p-6 md:p-8 reveal">
-                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-                    <div>
-                        <span class="badge mb-6">Plan wird Datenbasis</span>
-                        <h2 id="aufmass-flow-heading" class="text-3xl md:text-4xl font-bold text-white mb-4">
-                            Digitales Aufmaß heißt: Informationen aus dem Grundriss weiterverwenden
-                        </h2>
-                        <p class="text-gray-400 leading-relaxed">
-                            Der PDF-Plan bleibt nicht nur Bild. Räume, Flächen und Geschosse werden geprüft und als
-                            strukturierte Daten für Heizlast, Aufmaß und spätere Arbeitsschritte vorbereitet.
-                        </p>
-                    </div>
-                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="aufmass-flow-svg-title aufmass-flow-svg-desc">
-                        <title id="aufmass-flow-svg-title">Digitales Aufmaß aus PDF-Grundriss</title>
-                        <desc id="aufmass-flow-svg-desc">Animierte Grafik mit PDF-Plan, Raumliste und weiterverwendbaren Projektdaten.</desc>
-                        <path class="flow-track" d="M104 154 C210 68 310 68 416 154 S626 240 732 154" fill="none" />
-                        <circle class="moving-dot" r="7" fill="#45dee7" />
-                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
-                        <g class="flow-node flow-pulse">
-                            <rect x="44" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="119" y="126" text-anchor="middle" class="step-label">PDF-Plan</text>
-                            <text x="119" y="153" text-anchor="middle" class="step-copy">Grundriss importieren</text>
-                        </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="341" y="78" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
-                            <text x="416" y="126" text-anchor="middle" class="step-label">Raumliste</text>
-                            <text x="416" y="153" text-anchor="middle" class="step-copy">Flächen prüfen</text>
-                        </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="657" y="78" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="732" y="126" text-anchor="middle" class="step-label">Projekt</text>
-                            <text x="732" y="153" text-anchor="middle" class="step-copy">Daten nutzen</text>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <section class="px-6 pb-8 md:pb-12">
-            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-[1.1fr_0.9fr] mb-8 md:mb-12">
-                <article class="answer-panel reveal">
-                    <p class="answer-label">Kurzantwort</p>
-                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-                        Was ist digitales Aufmaß im SHK-Handwerk?
-                        </h2>
-                        <p class="text-gray-300 leading-relaxed">
-                        Digitales Aufmaß bedeutet, dass der Plan nicht nur markiert, sondern als strukturierte Projektbasis weitergeführt wird. Dadurch lassen sich Räume, Bauteile und spätere Heizlast-Schritte auf derselben Grundlage bearbeiten.
-                    </p>
-                    <p class="text-gray-400 leading-relaxed mt-4">
-                        Der Unterschied zu reinem PDF-Markup liegt in der Weiterverwendbarkeit: Aufmaß-Daten bleiben für Heizlastberechnung, Materiallogik und Abstimmung zwischen Büro und Baustelle nutzbar.
-                    </p>
-                </article>
-                <aside class="jump-nav reveal reveal-delay-1" aria-labelledby="aufmass-jump-nav-title">
-                    <p id="aufmass-jump-nav-title" class="jump-nav-title">Direkt zu den wichtigsten Abschnitten</p>
-                    <div class="jump-links">
-                        <a href="#grundriss-import" class="jump-link">Warum Grundriss-Import sinnvoll ist</a>
-                        <a href="#aufmass-vorteile" class="jump-link">Warum digitale Aufmaß-Workflows sinnvoll sind</a>
-                        <a href="#praxisablauf" class="jump-link">Praxisablauf vom Plan zur Baustelle</a>
-                        <a href="#einsatzfelder" class="jump-link">Einsatzfelder im SHK-Betrieb</a>
-                        <a href="#faq" class="jump-link">FAQ zur Aufmaß App</a>
-                        <a href="#naechster-schritt" class="jump-link">Anschluss an Heizlast und Planung</a>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section class="px-6 pb-16 md:pb-20" id="aufmass-screenshots">
-            <div class="max-w-screen-xl mx-auto">
-                <div class="max-w-3xl mb-10 reveal">
-                    <span class="badge mb-6">Screenshots</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Der Bauplan-Import vom PDF bis zur Raumprüfung
-                    </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Diese Prometo-Screenshots zeigen den planbasierten Ablauf für digitales Aufmaß:
-                        PDF wählen, Importstatus verfolgen, Raumdaten prüfen und in den Projektworkflow übernehmen.
-                    </p>
-                </div>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5 screenshot-rail screenshot-rail--wide">
-                    <figure class="glass-panel rounded-3xl p-4 reveal lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp"
-                            alt="Prometo Bauplan-Import mit Startansicht und PDF-Upload auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">1. Bauplan-Import vorbereiten</strong>
-                            Projektart und Strategie wählen, dann den PDF-Import direkt in Prometo starten.
-                        </figcaption>
-                    </figure>
-                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/bauplan-import-pdf-ausgewaehlt.webp"
-                            alt="Prometo Bauplan-Import mit ausgewählter PDF-Datei und Senden-Button auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">2. PDF prüfen und senden</strong>
-                            Die ausgewählte Datei wird kontrolliert, bevor der Import startet.
-                        </figcaption>
-                    </figure>
-                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-2 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/bauplan-import-ki-analyse.webp"
-                            alt="Prometo Bauplan-Import mit Fortschrittsanzeige auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">3. Auswertung live verfolgen</strong>
-                            Der Importfortschritt bleibt sichtbar, damit der Status klar nachvollziehbar ist.
-                        </figcaption>
-                    </figure>
-                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-3 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
-                            alt="Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Smartphone"
-                            width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">4. Räume im Review prüfen</strong>
-                            Erdgeschoss, Obergeschoss und Dachgeschoss werden vor der Übernahme sauber gegliedert angezeigt.
-                        </figcaption>
-                    </figure>
-                    <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-3 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/tablet/bauplan-import-review.webp"
-                            alt="Prometo Bauplan-Import Review auf dem Tablet mit abgeschlossener Raumübernahme"
-                            width="2560" height="1600" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8" />
-                        <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
-                            <strong class="block text-white font-headline font-bold mb-1">5. Auf dem Tablet weiterarbeiten</strong>
-                            Die Tablet-Ansicht zeigt denselben Importprozess mit mehr Kontext für Baustelle und Büro.
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="mt-10 flex flex-wrap gap-4 reveal">
-                    <a href="/app-workflows.html"
-                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
-                        Bauplan-Import im gesamten Workflow ansehen
-                    </a>
-                    <a href="/heizlastberechnung/"
-                        class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
-                        Anschluss an die Heizlastberechnung sehen
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="aufmass-vorteile" class="px-6 pb-8 md:pb-12">
-            <div id="grundriss-import" class="max-w-screen-xl mx-auto mb-10 glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
-                <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-                    <div>
-                        <span class="badge mb-6">Grundriss-Import</span>
-                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Warum eine Aufmaß-App mit Grundriss-Import sinnvoll ist
-                        </h2>
-                        <p class="text-lg text-gray-400 leading-relaxed">
-                            PDF-Grundrisse sind im SHK-Alltag oft der Startpunkt. Wertvoll werden sie aber erst, wenn
-                            Räume, Geschosse und Bauteile strukturiert geprüft und für weitere Arbeitsschritte nutzbar
-                            gemacht werden.
-                        </p>
-                    </div>
-                    <div class="space-y-4">
-                        <p class="text-gray-300 leading-relaxed">
-                            PDF-Grundrisse enthalten viele wichtige Informationen, aber selten strukturiert. Raumflächen,
-                            Raumlage, Fenster, Türen und Geschosse müssen häufig manuell übertragen werden.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed">
-                            Eine digitale Aufmaß-App kann helfen, Medienbrüche zwischen Plan, Raumliste und weiterer
-                            Berechnung zu reduzieren. Prometo befindet sich in der kostenlosen Beta und ersetzt keine fachliche
-                            Prüfung, sondern unterstützt die strukturierte Vorbereitung.
-                        </p>
-                        <div class="flex flex-wrap gap-4 pt-2 text-sm">
-                            <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">
-                                Heizlast berechnen
-                            </a>
-                            <a href="/heizlast-checkliste-shk/" class="text-primary hover:text-white transition-colors">
-                                Heizlast-Checkliste ansehen
-                            </a>
-                            <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors">
-                                Heizlastberechnung App
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-3">
-                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                    <h2 class="text-2xl font-bold text-white mb-4">1. Schneller Einstieg aus dem Plan</h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        Wer nach einer Aufmaß App sucht, sucht selten nur ein Zeichenwerkzeug. In der Praxis zählt,
-                        wie schnell ein PDF-Grundriss in ein bearbeitbares Projekt mit Räumen, Wänden und Öffnungen
-                        überführt werden kann.
-                    </p>
-                    <p class="text-gray-400 leading-relaxed mt-4">
-                        Genau deshalb zielt Prometo auf Aufmaß mit Grundriss und PDF: Plan hochladen, Räume prüfen,
-                        Änderungen vor Ort ergänzen und die Daten später für Heizlast und Planung nutzen.
-                    </p>
-                </article>
-                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                    <h2 class="text-2xl font-bold text-white mb-4">2. Besser für spätere Berechnungen</h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        Ein digitales Aufmaß wird besonders wertvoll, wenn die Daten später für Heizlast,
-                        Sanierungsplanung oder Materiallogik weiterverwendet werden können. Genau darauf ist Prometo
-                        ausgelegt.
-                    </p>
-                </article>
-                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                    <h2 class="text-2xl font-bold text-white mb-4">3. Baustellentauglich statt bürolastig</h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        Aufmaß auf dem iPad direkt vor Ort – Prometo ist für mobile Nutzung auf Baustelle und Tablet konzipiert. Änderungen werden sofort synchronisiert, damit Büro und Monteur immer denselben Projektstand haben.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <section id="praxisablauf" class="px-6 py-16 md:py-24">
-            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <section class="px-6 pb-16 md:pb-24" id="datenbasis" aria-labelledby="aufmass-data-heading">
+            <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                 <div class="reveal">
-                    <span class="badge mb-6">Praxisablauf</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Wie die Aufmaß App im Alltag eingesetzt wird
+                    <span class="badge mb-6">Datenqualität vor Berechnung</span>
+                    <h2 id="aufmass-data-heading" class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Ein Grundriss ist der Start — nicht die vollständige Heizlastberechnung
                     </h2>
                     <p class="text-lg text-gray-400 leading-relaxed">
-                        So sieht der Einsatz im SHK-Alltag aus: vom ersten Plan bis zur sauberen Weitergabe der Daten in Heizlast- und Projektprozesse.
+                        Räume und Flächen werden strukturiert vorbereitet. Für eine raumweise Heizlast braucht es zusätzlich projektspezifische Eingaben, dokumentierte Annahmen und die fachliche Prüfung.
                     </p>
+                    <p class="mt-6 text-sm leading-relaxed text-gray-500">Digitales Aufmaß überführt Planinformationen in eine strukturierte Projektbasis. Die vollständige Heizlastberechnung bleibt ein eigener, kontrollierter Arbeitsschritt.</p>
+                    <a href="/heizlastberechnung/" class="mt-5 inline-flex text-sm font-headline font-semibold text-primary hover:text-white transition-colors">Zur Heizlastberechnung →</a>
                 </div>
-                <div class="space-y-5 flow-strip">
-                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover flow-step" data-step="1">
-                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 1</p>
-                        <h3 class="text-xl font-bold text-white mb-3">PDF öffnen und Projekt strukturieren</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Der Plan bildet den Einstieg, aber das Ziel ist ein belastbares Projektmodell mit Räumen,
-                            Bauteilen und nachvollziehbaren Informationen.
-                        </p>
+                <div class="space-y-5" aria-label="Daten, die vor der Heizlastberechnung geprüft werden müssen">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">01 · Aufmaß</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Räume, Flächen und Geschosse prüfen</h3>
+                        <p class="text-gray-400 leading-relaxed">Raumbezeichnungen, Geometrien, Maßstab und Geschosszuordnung müssen nachvollziehbar sein, bevor sie als Raumdaten weiterverwendet werden.</p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover flow-step" data-step="2">
-                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 2</p>
-                        <h3 class="text-xl font-bold text-white mb-3">Vor Ort ergänzen statt später nachpflegen</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Auf Tablet oder Smartphone lassen sich Änderungen dort eintragen, wo sie auffallen. Das spart
-                            doppelte Erfassung im Büro.
-                        </p>
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">02 · Gebäudehülle</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Bauteile und U-Werte ergänzen</h3>
+                        <p class="text-gray-400 leading-relaxed">Außenwände, Fenster, Dach, Boden und angrenzende Bereiche brauchen die zum Projekt passenden Bauteil- und Randbedingungen.</p>
                     </article>
-                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover flow-step" data-step="3">
-                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 3</p>
-                        <h3 class="text-xl font-bold text-white mb-3">Daten direkt weiterverwenden</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Das Aufmaß ist kein isolierter Export, sondern die Grundlage für weitere Arbeitsschritte wie
-                            die <a href="/heizlastberechnung/" class="text-primary underline underline-offset-2">Heizlastberechnung</a>.
-                        </p>
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
+                        <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">03 · Berechnung</p>
+                        <h3 class="text-xl font-bold text-white mb-3">Annahmen dokumentieren und prüfen</h3>
+                        <p class="text-gray-400 leading-relaxed">Auslegungstemperaturen, Nutzung, Lüftung und weitere Annahmen gehören zur fachlichen Prüfung — nicht in eine automatische Übernahme.</p>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="aufmass-vorteile" class="px-6 pb-16 md:pb-24">
+            <div id="grundriss-import" class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                <div class="reveal">
+                    <span class="badge mb-6">Mehr als PDF-Markup</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Digitales Aufmaß verbindet Plan, Baustelle und Heizlast</h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">Entscheidend ist nicht das Markieren im PDF, sondern die prüfbare Weiterverwendung der Raumdaten.</p>
+                    <div class="mt-6 flex flex-wrap gap-4 text-sm">
+                        <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Raumweise Heizlastberechnung</a>
+                        <a href="/heizlast-checkliste-shk/" class="text-primary hover:text-white transition-colors">Bestandsaufnahme prüfen</a>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover"><p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 1</p><h3 class="text-xl font-bold text-white mb-3">Aus dem Grundriss starten</h3><p class="text-gray-400 leading-relaxed">PDF importieren und Räume, Wände sowie Öffnungen in einer bearbeitbaren Projektstruktur prüfen.</p></article>
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover"><p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 2</p><h3 class="text-xl font-bold text-white mb-3">Auf der Baustelle ergänzen</h3><p class="text-gray-400 leading-relaxed">Änderungen mobil erfassen, damit Büro und Baustelle mit demselben Projektstand arbeiten.</p></article>
+                    <article class="glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover"><p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 3</p><h3 class="text-xl font-bold text-white mb-3">Für Berechnungen weiterverwenden</h3><p class="text-gray-400 leading-relaxed">Bestätigte Daten als Grundlage für Heizlast, Materiallogik und hydraulischen Abgleich nutzen.</p></article>
                 </div>
             </div>
         </section>
@@ -625,49 +527,24 @@
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">Planstudio</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Vollintegrierter Planarbeitsplatz für SHK-Profis
-                    </h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Das Planstudio geht weit über einfaches PDF-Markup hinaus: Geschossverwaltung, polygonale Raumerfassung, Ebenensteuerung und PDF-Export mit wählbaren Scopes – alles direkt im Projekt.
-                    </p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Erfassen, prüfen und weitergeben</h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">Import, Raumerfassung, Ebenen und Export bleiben in einem Projekt verbunden — auf Desktop, Tablet und Smartphone.</p>
                 </div>
-                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div class="grid gap-6 md:grid-cols-3">
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">PDF, JPG & PNG importieren</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Baupläne aus allen gängigen Formaten werden direkt ins Projekt geladen – inklusive mobilem Dokumentscan auf dem Smartphone oder Tablet.
-                        </p>
+                        <h3 class="text-xl font-bold text-white mb-3">Erfassen</h3>
+                        <p class="text-gray-400 leading-relaxed">Pläne importieren, Maßstab kalibrieren und auch unregelmäßige Räume polygonal aufnehmen.</p>
+                        <ul class="mt-5 flex flex-wrap gap-2 text-xs text-gray-400" aria-label="Funktionen zum Erfassen"><li class="rounded-full border border-white/10 px-3 py-2">PDF, JPG &amp; PNG</li><li class="rounded-full border border-white/10 px-3 py-2">Zwei-Punkt-Kalibrierung</li><li class="rounded-full border border-white/10 px-3 py-2">Raumpolygone</li></ul>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Polygonale Raumerfassung</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Räume werden präzise durch polygonale Auswahl direkt auf dem Plan erfasst – auch bei unregelmäßigen Grundrissen oder Nischen im Bestand.
-                        </p>
+                        <h3 class="text-xl font-bold text-white mb-3">Prüfen und planen</h3>
+                        <p class="text-gray-400 leading-relaxed">Räume, Notizen, Leitungen und Verteiler auf getrennten Ebenen kontrollierbar halten.</p>
+                        <ul class="mt-5 flex flex-wrap gap-2 text-xs text-gray-400" aria-label="Funktionen zum Prüfen"><li class="rounded-full border border-white/10 px-3 py-2">Ebenen</li><li class="rounded-full border border-white/10 px-3 py-2">Markups</li><li class="rounded-full border border-white/10 px-3 py-2">Verteilerplanung</li></ul>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Ebenensteuerung & Markups</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Original, Räume, Rohrführung, Verteiler, Leitungen und Notizen als separate Ebenen. Markups wie Linie, Pfeil, Flächen- und Distanzmaß direkt auf dem Plan.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Zwei-Tap-Kalibrierung</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Maßstab mit zwei bekannten Punkten kalibrieren und die daraus abgeleiteten Flächen und Abstände anschließend prüfen.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Verlegung & Verteilerplanung</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Rohrführungsart, Türmarkierung, Mäander- und Schneckenlayout sowie Verteiler- und Leitungsplanung direkt auf dem Bauplan.
-                        </p>
-                    </article>
-                    <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-3 lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">PDF-Export mit Ebenenauswahl</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Export-Scopes wählbar: nur Original, Original mit sichtbaren Ebenen oder freigegebene Ebenen – für Übergabe, Dokumentation oder Kundenpräsentation.
-                        </p>
+                        <h3 class="text-xl font-bold text-white mb-3">Weitergeben</h3>
+                        <p class="text-gray-400 leading-relaxed">Geprüfte Daten im Projekt weiterverwenden und Pläne mit wählbaren Ebenen exportieren.</p>
+                        <ul class="mt-5 flex flex-wrap gap-2 text-xs text-gray-400" aria-label="Funktionen zur Weitergabe"><li class="rounded-full border border-white/10 px-3 py-2">PDF-Export</li><li class="rounded-full border border-white/10 px-3 py-2">Projektbasis</li><li class="rounded-full border border-white/10 px-3 py-2">Heizlast-Workflow</li></ul>
                     </article>
                 </div>
             </div>
@@ -675,44 +552,32 @@
 
         <section id="einsatzfelder" class="px-6 pb-16 md:pb-24">
             <div class="max-w-screen-xl mx-auto">
-                <div class="mb-10 max-w-3xl reveal">
+                <div class="mb-9 max-w-3xl reveal">
                     <span class="badge mb-6">Einsatzfelder</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Wann digitales Aufmaß im SHK-Betrieb besonders stark ist</h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        Nicht jede Baustelle ist identisch. Viele Betriebe stehen jedoch immer wieder vor denselben
-                        Situationen, in denen klassische PDF-Markups an Grenzen stoßen.
-                    </p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Wo digitales Aufmaß im SHK-Betrieb besonders hilft</h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">Drei typische Situationen, in denen strukturierte Raumdaten mehr leisten als lose PDF-Markierungen.</p>
                 </div>
                 <div class="grid gap-6 md:grid-cols-3">
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Sanierungen im Bestand</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Wenn Räume, Nischen und Bauteilanschlüsse vom Standard abweichen, hilft eine strukturierte
-                            Erfassung mehr als lose Screenshots.
-                        </p>
+                        <h3 class="text-xl font-bold text-white mb-3">Sanierungen im Bestand</h3>
+                        <p class="text-gray-400 leading-relaxed">Räume, Nischen und abweichende Bauteilanschlüsse nachvollziehbar erfassen.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Aufmaß mit Team</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Sobald Büro und Baustelle beteiligt sind, werden klare Zustände, Notizen und
-                            Synchronisation wichtiger als reine Zeichenfunktionen.
-                        </p>
+                        <h3 class="text-xl font-bold text-white mb-3">Aufmaß mit Team</h3>
+                        <p class="text-gray-400 leading-relaxed">Klare Projektstände zwischen Baustelle, Büro und späterer Berechnung teilen.</p>
                     </article>
                     <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-2xl font-bold text-white mb-4">iPad-Workflows im SHK-Betrieb</h3>
-                        <p class="text-gray-400 leading-relaxed">
-                            Viele Betriebe suchen ausdrücklich nach einer Aufmaß App für iPad. Prometo greift diesen
-                            Bedarf mit einer konsequent mobil gedachten Bedienung auf.
-                        </p>
+                        <h3 class="text-xl font-bold text-white mb-3">Aufmaß App für iPad und Tablet</h3>
+                        <p class="text-gray-400 leading-relaxed">Änderungen direkt vor Ort aufnehmen, statt sie später im Büro nachzutragen.</p>
                     </article>
                 </div>
             </div>
         </section>
 
         <section class="px-6 pb-16 md:pb-24" aria-labelledby="aufmass-efh-title">
-            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
                 <span class="badge mb-6">EFH-Beispiel aus dem Aufmaß</span>
-                <h2 id="aufmass-efh-title" class="text-3xl md:text-5xl font-bold text-white mb-6">Automatisch erkennen heißt: schneller prüfen, nicht ungeprüft übernehmen</h2>
+                <h2 id="aufmass-efh-title" class="text-3xl md:text-5xl font-bold text-white mb-6">Automatisch erkennen heißt: schneller prüfen</h2>
                 <div class="grid gap-6 md:grid-cols-3 text-gray-400 leading-relaxed">
                     <p><strong class="block text-white mb-2">Plan</strong>Ein lesbarer PDF-Grundriss mit Erd- und Obergeschoss wird dem Projekt zugeordnet.</p>
                     <p><strong class="block text-white mb-2">Review</strong>Der Betrieb prüft Raumbezeichnungen, Abmessungen, Öffnungen und korrigiert beispielsweise einen unklar erkannten Hauswirtschaftsraum.</p>
@@ -739,12 +604,18 @@
                             Prometo ist genau auf diesen planbasierten Workflow ausgelegt.
                         </p>
                     </details>
-                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover" open>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal lift-on-hover">
                         <summary class="text-lg font-headline font-bold text-gray-200">Was ist digitales Aufmaß und wie funktioniert es mit PDF-Grundrissen?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Digitales Aufmaß bedeutet, PDF-Grundrisse, Räume und Bauteile nicht nur zu markieren,
                             sondern als prüfbare Projektdaten zu erfassen. Prometo bereitet erkannte Räume für Aufmaß,
                             Heizlastberechnung und weitere SHK-Arbeitsschritte strukturiert vor.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Reicht ein PDF-Grundriss für eine Heizlastberechnung?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Nein. Ein PDF-Grundriss ist eine wichtige Planbasis, ersetzt aber keine vollständigen projektspezifischen Angaben. Für eine raumweise Heizlastberechnung müssen unter anderem Raum- und Bauteildaten, Randbedingungen und Annahmen fachlich geprüft und dokumentiert werden.
                         </p>
                     </details>
                     <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
@@ -768,32 +639,23 @@
                 <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
                     <div>
                         <span class="badge mb-6">Nächster Schritt</span>
-                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
-                            Aufmaß nicht isoliert denken, sondern als Startpunkt des ganzen Projekts
-                        </h2>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">Vom Aufmaß direkt ins Projekt</h2>
                         <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
-                            Genau dafür ist Prometo gedacht: erst digitales Aufmaß, dann strukturierte Weiterarbeit
-                            in Heizlast, Planung und Baustellenkoordination.
+                            Geprüfte Raumdaten bilden die gemeinsame Basis für Heizlast, Planung und Baustellenkoordination.
                         </p>
                         <div class="mt-6 flex flex-wrap gap-4 text-sm text-gray-400">
                             <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">
                                 Heizlastberechnung mit Grundriss
                             </a>
-                            <a href="/fussbodenheizung-auslegen/" class="text-primary hover:text-white transition-colors">
-                                Fußbodenheizung auslegen
+                            <a href="/heizlastberechnung/din-12831/" class="text-primary hover:text-white transition-colors">
+                                Gebäudedaten im DIN-12831-Kontext
                             </a>
-                            <a href="/waermeerzeuger/" class="text-primary hover:text-white transition-colors">
-                                Wärmeerzeuger
-                            </a>
-                            <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors">
-                                Heizlast App
-                            </a>
-                            <a href="/" class="text-primary hover:text-white transition-colors">
-                                Zur Startseite
+                            <a href="/hydraulischer-abgleich/" class="text-primary hover:text-white transition-colors">
+                                Hydraulischer Abgleich
                             </a>
                         </div>
                     </div>
-                    <a href="/beta/"
+                    <a href="/beta/" data-event="beta_cta_click" data-cta-position="final"
                         class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
                         Kostenlos Beta testen
                     </a>
@@ -823,15 +685,15 @@
     </footer>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
+    <div id="cookie-banner" role="region" aria-label="Cookie-Einstellungen" class="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 translate-y-full transition-transform duration-500 ease-in-out">
         <div class="max-w-screen-xl mx-auto glass-panel p-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 bg-[#0b0e0e]/95 backdrop-blur-xl">
             <div class="text-sm text-gray-400">
                 <strong class="text-white block mb-1">Wir nutzen Cookies für Google Analytics</strong>
                 Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="/datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
             </div>
             <div class="flex items-center gap-3 shrink-0">
-                <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button type="button" id="cookie-decline" class="min-h-11 text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
+                <button type="button" id="cookie-accept" class="min-h-11 bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
             </div>
         </div>
     </div>
@@ -864,11 +726,10 @@
             if (declineBtn) { declineBtn.addEventListener('click', () => { localStorage.setItem('ga_consent', 'denied'); banner.classList.add('translate-y-full'); }); }
         })();
     </script>
-    <script src="/assets/page-effects.js" defer></script>
-    <script src="/assets/prometo-gallery.js" defer></script>
-    <script src="/assets/language-hint.js" defer></script>
-    <script src="/assets/site-navigation.js" defer></script>
-    <script src="/assets/prometo-events.js" defer></script>
+    <script src="../assets/page-effects.js" defer></script>
+    <script src="../assets/language-hint.js" defer></script>
+    <script src="../assets/site-navigation.js" defer></script>
+    <script src="../assets/prometo-events.js" defer></script>
 </body>
 
 </html>
