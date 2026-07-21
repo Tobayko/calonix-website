@@ -122,36 +122,140 @@
             color: #fff;
         }
 
-        .richtwert-table th {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: #45dee7;
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .richtwert-table td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            color: #dfe3e3;
-            font-size: 0.9rem;
-        }
-
-        .richtwert-table tr:last-child td {
-            border-bottom: none;
-        }
+        /* .richtwert-table jetzt zentral in assets/page-effects.css (.data-table-System) */
     </style>
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://prometo.app/"},
-        {"@type": "ListItem", "position": 2, "name": "Heizlast", "item": "https://prometo.app/heizlast/"}
-      ]
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Heizlast",
+                        "item": "https://prometo.app/heizlast/"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/heizlast/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Was ist die Heizlast eines Hauses?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die Heizlast eines Hauses ist die maximale Wärmeleistung in Watt (W) oder Kilowatt (kW), die das Gebäude bei der kältesten zu erwartenden Außentemperatur — der Normaußentemperatur — benötigt, um die gewünschte Innentemperatur zu halten. Sie setzt sich aus Transmissionswärmeverlusten durch die Gebäudehülle (Wände, Dach, Boden, Fenster) und Lüftungswärmeverlusten zusammen. Die Heizlast ist die zentrale Planungsgröße für die Dimensionierung von Wärmeerzeuger und Heizflächen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Welche Einheit hat die Heizlast?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die Heizlast wird in Watt (W) auf Raumebene und in Kilowatt (kW) auf Gebäudeebene angegeben. Für einen einzelnen Raum sind Werte von einigen Hundert bis mehreren tausend Watt typisch. Die spezifische Heizlast, die das Verhältnis von Gebäudeheizlast zu beheizter Wohnfläche beschreibt, wird in W/m² angegeben."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie berechnet man die Heizlast?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die Heizlast ergibt sich aus der Summe von Transmissions- und Lüftungswärmeverlusten: Q = Q T + Q V . Transmissionswärmeverluste hängen von Bauteilflächen, U-Werten und der Temperaturdifferenz zwischen innen und außen ab. Lüftungswärmeverluste berücksichtigen Luftwechselrate und Raumvolumen. Die Berechnungsmethode orientiert sich an DIN EN 12831 . Eine strukturierte raumweise Berechnung liefert die beste Grundlage für Auslegungsentscheidungen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was ist die spezifische Heizlast?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die spezifische Heizlast ist die Gebäudeheizlast bezogen auf die beheizte Wohnfläche, angegeben in W/m² . Sie dient als Orientierungswert für schnelle Einordnungen: Unsanierte Altbauten liegen typisch bei 80–120 W/m², sanierte Bestände bei 40–70 W/m², Neubauten nach aktuellem GEG-Standard bei 20–40 W/m². Diese Werte sind Richtwerte aus der Praxis und ersetzen keine individuelle Heizlastberechnung."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie hoch ist die Heizlast bei einer Wärmepumpe?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Für die Wärmepumpen-Auslegung ist die Gebäudeheizlast bei Normaußentemperatur die maßgebliche Kenngröße. Die Nennwärmeleistung der Wärmepumpe sollte möglichst nah an der tatsächlichen Heizlast liegen — Überdimensionierung führt zu häufigem Takten und niedrigem Wirkungsgrad. Zusätzlich spielt der Bivalenzpunkt eine Rolle: die Außentemperatur, ab der ein Heizstab zugeschaltet wird. Für eine korrekte Auslegung wird eine individuelle Heizlastberechnung durch einen Fachbetrieb empfohlen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was ist der Unterschied zwischen Heizlast und Heizleistung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Heizlast beschreibt den Wärmebedarf des Gebäudes — wie viel Wärme das Gebäude im Auslegungsfall verliert und ersetzt werden muss. Heizleistung bezeichnet die Fähigkeit des Wärmeerzeugers, Wärme zu erzeugen. Das Ziel der Planung ist es, Heizlast und Heizleistung passgenau abzustimmen: weder überdimensioniert (Takten, Effizienzverlust) noch unterdimensioniert (Unterversorgung an kalten Tagen)."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wann muss die Heizlast berechnet werden?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Eine strukturierte Heizlastberechnung ist in der Regel erforderlich, wenn eine Wärmepumpe eingebaut oder getauscht wird, ein hydraulischer Abgleich (Verfahren A oder B) durchgeführt wird, Heizflächen raumweise ausgelegt werden oder eine staatliche Förderung (z. B. über BAFA oder KfW) beantragt wird. Ob eine bestimmte Berechnungsmethode für Förderanträge anerkannt wird, hängt von den jeweils gültigen Förderrichtlinien ab. Alle Angaben ohne Gewähr — eine Beratung durch einen zugelassenen Energieberater wird empfohlen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Kann ich die Heizlast selbst berechnen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Eine grobe Heizlast lässt sich mit W/m²-Werten überschlagen. Für Wärmepumpe, Heizflächen, hydraulischen Abgleich oder Nachweise reicht das nicht aus, weil Räume, Bauteile, U-Werte, Lüftung, Standort und Normaußentemperatur getrennt betrachtet werden müssen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was kostet eine Heizlastberechnung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Die Kosten hängen von Gebäudegröße, Planqualität, Detailtiefe, Nachweisziel, Region und Anbieter ab. Eine pauschale Zahl wäre unseriös. Wichtig ist, ob nur ein Überschlag, eine raumweise Berechnung oder ein förder- beziehungsweise nachweisrelevanter Umfang benötigt wird."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Reicht der Gas- oder Ölverbrauch zur Wärmepumpen-Auslegung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Verbrauchsdaten können eine Heizlast plausibilisieren, ersetzen aber keine Norm-Heizlast. Der Jahresverbrauch beschreibt Energie über einen Zeitraum; die Heizlast beschreibt Leistung im Auslegungsfall. Für Wärmepumpen zählen zusätzlich Vorlauftemperatur, Modulationsbereich, Warmwasser und Bivalenzstrategie."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was passiert, wenn die Wärmepumpe zu groß dimensioniert wird?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Eine zu groß dimensionierte Wärmepumpe kann in Übergangszeiten häufiger takten, wenn ihre Mindestleistung über dem tatsächlichen Wärmebedarf liegt. Das kann Effizienz, Laufzeitverhalten und Lebensdauer verschlechtern. Entscheidend sind deshalb Heizlastkurve, Leistungskurve und Modulationsbereich."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Welche Daten braucht man für eine Heizlastberechnung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Benötigt werden typischerweise Grundriss, Raumflächen, Raumhöhen, Bauteile und U-Werte, Fenster, Standort beziehungsweise Normaußentemperatur, gewünschte Raumtemperaturen, Lüftung, Sanierungsstand und vorhandene Heizflächen. Je genauer die Daten, desto belastbarer die Auslegung."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie schnell geht die Heizlastberechnung mit Prometo?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo kann PDF-Grundrisse, Räume und Etagen für die Heizlastberechnung strukturieren. Erkannte Daten müssen im Import-Review geprüft werden; Bearbeitungszeit und Nacharbeit hängen von Projektgröße und Planqualität ab."
+                        }
+                    }
+                ]
+            }
+        ]
     }
     </script>
 </head>
@@ -299,9 +403,9 @@
         <!-- 1. HERO -->
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-text-subtle">
                     <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
-                    <span class="mx-2 text-gray-600">/</span>
+                    <span class="mx-2 text-text-subtle">/</span>
                     <span aria-current="page">Heizlast</span>
                 </nav>
 
@@ -320,7 +424,7 @@
                                 Die Heizlast ist die Wärmeleistung in Watt oder Kilowatt, die ein Gebäude bei Normaußentemperatur braucht. Berechnet wird sie aus Transmissionswärmeverlusten, Lüftungswärmeverlusten und je nach Verfahren Aufheizzuschlägen. Sie ist Auslegungsleistung für Wärmepumpe und Heizflächen, nicht der Jahresenergieverbrauch.
                             </p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-6">Grundlageninhalt · Konkrete Berechnung und Bewertung fachlich prüfen</p>
+                        <p class="text-xs text-text-subtle mb-6">Grundlageninhalt · Konkrete Berechnung und Bewertung fachlich prüfen</p>
                         <div class="mb-8 p-4 rounded-2xl border border-white/10 bg-white/5">
                             <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Auf einen Blick</p>
                             <ul class="space-y-1.5 text-sm text-gray-300">
@@ -624,7 +728,7 @@
                     <p class="text-lg text-gray-400 leading-relaxed mb-4">
                         Die spezifische Heizlast setzt die Gebäudeheizlast ins Verhältnis zur beheizten Wohnfläche. Das Ergebnis in <strong class="text-white">W/m²</strong> erlaubt einen schnellen Vergleich zwischen Gebäuden und gibt SHK-Fachleuten eine erste Plausibilitätskontrolle.
                     </p>
-                    <p class="text-sm text-gray-500 leading-relaxed">
+                    <p class="text-sm text-text-subtle leading-relaxed">
                         Hinweis: Die folgenden Werte sind Orientierungswerte aus der Praxis. Sie ersetzen keine individuelle Heizlastberechnung und hängen stark von Standort, Gebäudegröße, Nutzung und konkretem Sanierungsstand ab.
                     </p>
                 </div>
@@ -804,7 +908,7 @@
                 <p class="text-gray-400 leading-relaxed mb-4">
                     Die Begriffe und Rechenlogik orientieren sich an der Heizlastberechnung nach DIN EN 12831 und an der fachlichen Praxis zur Wärmepumpen-Auslegung. Für konkrete Nachweise, Förderanträge oder Herstellerdimensionierungen müssen aktuelle Richtlinien und projektspezifische Daten geprüft werden.
                 </p>
-                <ul class="space-y-2 text-sm text-gray-500">
+                <ul class="space-y-2 text-sm text-text-subtle">
                     <li>DIN EN 12831 und nationale Ergänzungen zur Norm-Heizlast als fachlicher Bezugsrahmen.</li>
                     <li>DIN EN 14825 und VDI 4650 als wichtige Bezugspunkte für saisonale Wärmepumpen-Effizienz und JAZ-Einordnung.</li>
                     <li>Herstellerdatenblätter für reale Betriebspunkte, Leistungskurven, COP-Werte und Einsatzgrenzen.</li>
@@ -816,7 +920,7 @@
         <!-- DISCLAIMER -->
         <section class="px-6 pb-10">
             <div class="max-w-screen-xl mx-auto">
-                <p class="text-xs text-gray-600 leading-relaxed">
+                <p class="text-xs text-text-subtle leading-relaxed">
                     Alle Angaben ohne Gewähr. Die Einhaltung gesetzlicher Vorgaben (GEG, DIN-Normen, Förderrichtlinien) liegt in der Verantwortung des Anwenders. Richtwerte zur spezifischen Heizlast (W/m²) sind Orientierungswerte aus der Praxis und ersetzen keine individuelle Heizlastberechnung. Für Förderanträge (BAFA, KfW) sind die jeweils gültigen Förderrichtlinien maßgeblich; eine Beratung durch einen zugelassenen Energieberater wird empfohlen.
                 </p>
             </div>
@@ -862,7 +966,7 @@
             </div>
             <div class="flex items-center gap-3 shrink-0">
                 <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary px-6 py-2 text-sm">Akzeptieren</button>
             </div>
         </div>
     </div>

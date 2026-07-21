@@ -116,25 +116,70 @@
     </style>
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://prometo.app/"},
-            {"@type": "ListItem", "position": 2, "name": "Heizlastberechnung", "item": "https://prometo.app/heizlastberechnung/"},
-            {"@type": "ListItem", "position": 3, "name": "Heizlastberechnung App", "item": "https://prometo.app/heizlastberechnung/app/"}
-          ]
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "Prometo",
-          "url": "https://prometo.app/",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Webbrowser",
-          "description": "PDF-first Heizlastsoftware für SHK-Betriebe mit automatischer Raumerkennung, Materialberechnung und hydraulischem Abgleich."
-        }
-      ]
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Heizlastberechnung",
+                        "item": "https://prometo.app/heizlastberechnung/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Heizlastberechnung App",
+                        "item": "https://prometo.app/heizlastberechnung/app/"
+                    }
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Webbrowser",
+                "description": "PDF-first Heizlastsoftware für SHK-Betriebe mit automatischer Raumerkennung, Materialberechnung und hydraulischem Abgleich."
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/heizlastberechnung/app/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Warum setzt Prometo auf Grundrisse als Arbeitsgrundlage?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Viele Projekte liegen bereits als PDF-Bauplan vor. Genau dort setzt Prometo an, damit Raumstruktur und Heizlast ohne zusätzlichen Scan-Workflow weiterbearbeitet werden können."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Kann ich die App auch für Bestandsgebäude nutzen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Besonders im Bestand ist ein planbasierter Workflow hilfreich, wenn Eingaben, Korrekturen und Projektkommunikation zusammenlaufen sollen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wo finde ich die Formeln hinter der Heizlast?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Dafür ist die Seite Heizlastberechnung nach DIN EN 12831 einfach erklärt gedacht."
+                        }
+                    }
+                ]
+            }
+        ]
     }
     </script>
 </head>
@@ -280,11 +325,11 @@
     <main>
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-text-subtle">
                     <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
-                    <span class="mx-2 text-gray-600">/</span>
+                    <span class="mx-2 text-text-subtle">/</span>
                     <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heizlastberechnung</a>
-                    <span class="mx-2 text-gray-600">/</span>
+                    <span class="mx-2 text-text-subtle">/</span>
                     <span aria-current="page">App</span>
                 </nav>
 
@@ -335,10 +380,10 @@
                         <div class="ambient-orb ambient-orb--a"></div>
                         <div class="ambient-orb ambient-orb--b"></div>
                         <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6"
-                            data-lightbox-title="Projektassistent für neue Heizlast-Projekte"
-                            data-lightbox-caption="Projektname, Adresse und Geocoding lassen sich direkt mobil erfassen, bevor der weitere SHK-Workflow startet.">
-                            <img src="/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
-                                alt="Prometo Projektassistent auf dem Smartphone mit Adresse, Projektname und Geocoding"
+                            data-lightbox-title="Bauplan-Import: Heizlast direkt aus dem PDF-Grundriss"
+                            data-lightbox-caption="PDF-Architektenpläne hochladen — Etagen und Räume werden automatisch übernommen und lassen sich vor der Berechnung prüfen.">
+                            <img src="/assets/prometo-screenshots/mobile/bauplan-import-ki-bereit.webp"
+                                alt="Prometo Bauplan-Import auf dem Smartphone: PDF-Grundriss hochladen, Etagen und Räume werden automatisch übernommen"
                                 width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async"
                                 class="hero-device mx-auto rounded-[1.75rem] border border-white/8 w-full max-w-sm" />
                         </div>
@@ -357,9 +402,9 @@
                         <div class="glass-panel signal-panel rounded-3xl p-4" aria-label="Ablauf der Heizlastberechnung">
                             <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-300">
                                 <span>Grundriss</span>
-                                <span class="material-symbols-outlined text-primary" aria-hidden="true">→</span>
+                                <svg class="ui-icon text-primary text-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                                 <span>Räume prüfen</span>
-                                <span class="material-symbols-outlined text-primary" aria-hidden="true">→</span>
+                                <svg class="ui-icon text-primary text-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                                 <span>Fachreview</span>
                             </div>
                         </div>
@@ -449,17 +494,17 @@
                         <img src="/assets/prometo-screenshots/mobile/projektassistent-projektbasis.webp"
                             alt="Prometo Projektassistent auf dem Smartphone mit Adresse, Projektname und Geocoding"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
+                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-top" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">Projektbasis anlegen</strong>
                             Neue Heizlast-Projekte starten mit Adresse, Kunde und Fertigstellung direkt im Assistenten.
                         </figcaption>
                     </figure>
                     <figure class="glass-panel rounded-3xl p-4 reveal reveal-delay-1 lift-on-hover">
-                        <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
-                            alt="Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Smartphone"
+                        <img src="/assets/prometo-screenshots/mobile/schnellberechnung-raeume.webp"
+                            alt="Prometo Raum-Kontrolle auf dem Smartphone: aus dem PDF-Plan übernommene Räume mit Fläche und Raumtyp prüfen"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
+                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-top" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">Projekt aus dem Plan heraus prüfen</strong>
                             Erkannte Räume und Etagen werden vor Heizlast, Flächensystem und Hydraulik direkt in der App kontrolliert.
@@ -469,7 +514,7 @@
                         <img src="/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp"
                             alt="Prometo Projektdetail mit farbcodierter Heizlast-Heatmap auf dem Smartphone"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
+                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-top" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">Ergebnisse visuell einordnen</strong>
                             Die Heatmap macht raumweise Unterschiede im Projekt sofort sichtbar und erleichtert die fachliche Einordnung.
@@ -479,7 +524,7 @@
                         <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
                             alt="Prometo Hydraulischer Abgleich mit Heizkreisdetail und Durchflusswerten auf dem Smartphone"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-top" />
+                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-top" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">Heizkreise mobil abstimmen</strong>
                             Port, Verteiler und projektspezifische Abgleichdaten bleiben direkt in der App für Baustelle und Büro nachvollziehbar.
@@ -489,7 +534,7 @@
                         <img src="/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp"
                             alt="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet"
                             width="2560" height="1600" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-center" />
+                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-center" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">Tablet-Modus: EG-Verteiler</strong>
                             Der Tablet-Screen kombiniert Heizkreisverteiler, Farbstatus und Raumwerte in einer Ansicht.
@@ -499,7 +544,7 @@
                         <img src="/assets/prometo-screenshots/tablet/hydraulischer-abgleich-og-verteiler.webp"
                             alt="Prometo Hydraulischer Abgleich mit OG-Verteiler und Durchflusswerten auf dem Tablet"
                             width="2560" height="1600" loading="lazy" decoding="async"
-                            class="w-full rounded-[1.5rem] border border-white/8 aspect-[9/19] object-cover object-center" />
+                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-center" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">Tablet-Modus: OG-Verteiler</strong>
                             Auch je Etage bleiben Durchfluss, Kreise und Raumdaten auf dem Tablet direkt vergleichbar.
@@ -654,7 +699,7 @@
                     <p><strong class="block text-white mb-2">Kontrolle</strong>Erkannte Räume, Geometrien, Fenster und Außenflächen werden bestätigt oder korrigiert.</p>
                     <p><strong class="block text-white mb-2">Ergebnis</strong>Raumweise Heizlast, Materialbedarf und Werte für den hydraulischen Abgleich bleiben im selben Projekt verbunden.</p>
                 </div>
-                <p class="mt-6 text-sm text-gray-500">Beispielwert für ein typisches Einfamilienhaus mit geeignetem PDF-Grundriss. Die tatsächliche Dauer hängt von Planqualität, Gebäudeumfang und notwendigem Korrekturbedarf ab.</p>
+                <p class="mt-6 text-sm text-text-subtle">Beispielwert für ein typisches Einfamilienhaus mit geeignetem PDF-Grundriss. Die tatsächliche Dauer hängt von Planqualität, Gebäudeumfang und notwendigem Korrekturbedarf ab.</p>
             </div>
         </section>
 
@@ -730,7 +775,7 @@
             </div>
             <div class="flex items-center gap-3 shrink-0">
                 <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary px-6 py-2 text-sm">Akzeptieren</button>
             </div>
         </div>
     </div>

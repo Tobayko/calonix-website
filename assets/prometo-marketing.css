@@ -752,6 +752,64 @@ body.marketing-body p {
     color: var(--success);
 }
 
+/* Marken-Fokuszustand statt unsichtbarem Browser-Default */
+.marketing-field input:focus-visible,
+.marketing-field select:focus-visible,
+.marketing-field textarea:focus-visible {
+    outline: none;
+    border-color: var(--primary-strong);
+    box-shadow: 0 0 0 3px rgba(69, 222, 231, 0.28);
+}
+
+/* Feldbezogener Fehlerzustand — greift erst nach Nutzerinteraktion (nicht bei leerem Pflichtfeld) */
+.marketing-field input:user-invalid,
+.marketing-field select:user-invalid,
+.marketing-field textarea:user-invalid {
+    border-color: var(--danger);
+}
+
+.marketing-field input:user-invalid:focus-visible,
+.marketing-field select:user-invalid:focus-visible,
+.marketing-field textarea:user-invalid:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 157, 157, 0.28);
+}
+
+/* Eigener Select-Chevron statt OS-Pfeil */
+.marketing-field select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%2390a1a3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    background-size: 1.15rem;
+    padding-right: 2.7rem;
+}
+
+/* Sichtbarer Ladezustand des Submit-Buttons (JS setzt disabled + aria-busy) */
+.marketing-button[aria-busy="true"],
+.marketing-button:disabled {
+    opacity: 0.72;
+    cursor: wait;
+    pointer-events: none;
+}
+
+.marketing-button[aria-busy="true"]::after {
+    content: "";
+    width: 1em;
+    height: 1em;
+    margin-left: 0.6rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: marketing-btn-spin 0.7s linear infinite;
+}
+
+@keyframes marketing-btn-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .marketing-honeypot {
     position: absolute !important;
     left: -9999px !important;

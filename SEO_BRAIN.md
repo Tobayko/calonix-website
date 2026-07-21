@@ -168,3 +168,37 @@ Diese Datei ist das dauerhafte Gedächtnis der wöchentlichen SEO-Routine für
   ist nach zwölf Tagen belastbar belegt.
 - Früheste Bewertung von `a3be5b5`: 2026-07-30. Bis dahin keine weitere
   Inhaltsänderung ohne technischen Fehler oder stabilen GSC-Gewinner.
+
+### 2026-07-20 — Vollaudit, Abweichung von der Ein-Schritt-Routine
+
+- Auslöser: ausdrücklicher Auftrag für eine vollständige SEO-Prüfung, nicht der
+  wöchentliche Routinelauf. Datenquelle war der CSV-Export
+  „Leistung in der Google Suche 2026-07-20" plus zwei
+  Keyword-Planner-Exporte, **kein** GSC-MCP — in dieser Sitzung war kein
+  Search-Console-Connector verbunden.
+- Datenlage: 03.04. bis 18.07.2026, 107 Tage, 19 Klicks, 2.008 Impressionen,
+  gewichtete Position 44,1. Monatlich 910 / 358 / 604 / 136 Impressionen
+  (April bis Juli), also 32,5 auf 7,6 Impressionen pro Tag. Letzter Klick am
+  2026-07-01.
+- Wichtiger Vorbehalt zur Query-Tabelle: Alle 157 Zeilen weisen 0 Klicks aus,
+  die Gesamtsumme ist aber 19. Die klickstarken Queries sind durch den
+  GSC-Datenschutzfilter ausgeblendet und aus diesem Export nicht ermittelbar.
+- Umgesetzt wurden diesmal **mehrere** Änderungen über 17 Dateien statt der
+  sonst üblichen einen: FAQPage-Schema auf 10 Seiten ergänzt, 6 veraltete
+  FAQ-Schemas mit dem sichtbaren Text synchronisiert, Titles von
+  `/digitales-aufmass/` und `/fussbodenheizung-auslegen/` an die tatsächlichen
+  Suchbegriffe angepasst, zwei EN-Metadaten korrigiert.
+- **Folge für die Messung:** Die Wirkung von `a3be5b5` lässt sich ab jetzt nicht
+  mehr isoliert bewerten; der für 2026-07-30 geplante Kontrollpunkt verliert
+  seine Trennschärfe. Das war der bewusste Preis des Vollaudits.
+- Hypothese, kein Ergebnis: Der Rückgang von 32,5 auf 7,6 Impressionen pro Tag
+  passt zu einem auslaufenden Neustart-Bonus. Ohne Vorperiode vor April 2026
+  ist das nicht belegbar und ausdrücklich kein Rankingfaktor-Befund.
+- Nächste Bewertung frühestens 2026-08-31 (sechs Wochen). Zu prüfen: Position
+  von `fußbodenheizung verlegeabstand` (heute 47,7) und
+  `app für aufmaß und grundriss` (heute 42,9) sowie die Impressionen der
+  beiden zugehörigen Seiten.
+- Offener Engpass außerhalb dieses Audits: keine Backlink-Daten vorhanden.
+  Für kommerzielle Begriffe wie `hydraulischer abgleich` (50.000/Monat laut
+  Keyword-Planner, aktuell Position 51–79) ist fehlende Domain-Autorität die
+  wahrscheinlichste Ursache, nicht die On-Page-Qualität.

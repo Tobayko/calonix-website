@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Digitales Aufmaß für Heizlastberechnung | Prometo</title>
+    <title>Aufmaß App für PDF-Grundrisse: digitales Aufmaß | Prometo</title>
     <meta name="description"
-        content="Digitales Aufmaß für SHK: PDF-Grundrisse importieren, Räume und Flächen prüfen und die bestätigten Daten für Heizlastberechnung und hydraulischen Abgleich weiterverwenden." />
+        content="Aufmaß App für SHK: PDF-Grundriss importieren, Räume und Flächen prüfen und die geprüften Daten für Heizlast und hydraulischen Abgleich weiterverwenden." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -30,7 +30,7 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Digitales Aufmaß für Heizlastberechnung | Prometo" />
+    <meta property="og:title" content="Aufmaß App für PDF-Grundrisse: digitales Aufmaß | Prometo" />
     <meta property="og:description"
         content="PDF-Grundriss importieren, Raumdaten prüfen und die bestätigte Projektbasis für Heizlast und Abgleich weiterverwenden." />
     <meta property="og:url" content="https://prometo.app/digitales-aufmass/" />
@@ -41,7 +41,7 @@
     <meta property="og:image:height" content="1600" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Digitales Aufmaß für Heizlastberechnung | Prometo" />
+    <meta name="twitter:title" content="Aufmaß App für PDF-Grundrisse: digitales Aufmaß | Prometo" />
     <meta name="twitter:description"
         content="PDF-Aufmaß mit Raumprüfung und direkter Weiterverwendung für Heizlastberechnung und hydraulischen Abgleich." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
@@ -213,36 +213,92 @@
     </style>
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://prometo.app/"},
-            {"@type": "ListItem", "position": 2, "name": "Digitales Aufmaß", "item": "https://prometo.app/digitales-aufmass/"}
-          ]
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "Prometo",
-          "url": "https://prometo.app/",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Webbrowser",
-          "description": "Aufmaß App für SHK-Betriebe: PDF-Grundrisse importieren, Raumdaten prüfen und als Projektbasis für die Heizlastberechnung weiterverwenden.",
-          "isAccessibleForFree": true,
-          "featureList": [
-            "PDF-Grundriss importieren",
-            "Räume und Geometrien prüfen",
-            "Raumdaten für Heizlast und hydraulischen Abgleich weiterverwenden"
-          ],
-          "screenshot": "https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp",
-          "provider": {
-            "@type": "Organization",
-            "name": "Prometo",
-            "url": "https://prometo.app/"
-          }
-        }
-      ]
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Digitales Aufmaß",
+                        "item": "https://prometo.app/digitales-aufmass/"
+                    }
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Webbrowser",
+                "description": "Aufmaß App für SHK-Betriebe: PDF-Grundrisse importieren, Raumdaten prüfen und als Projektbasis für die Heizlastberechnung weiterverwenden.",
+                "isAccessibleForFree": true,
+                "featureList": [
+                    "PDF-Grundriss importieren",
+                    "Räume und Geometrien prüfen",
+                    "Raumdaten für Heizlast und hydraulischen Abgleich weiterverwenden"
+                ],
+                "screenshot": "https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Prometo",
+                    "url": "https://prometo.app/"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/digitales-aufmass/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Welche App eignet sich für Aufmaß und Grundriss im SHK-Betrieb?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Für SHK-Betriebe ist eine Aufmaß App besonders stark, wenn sie PDF-Grundrisse, Raumstruktur, Baustellenkorrekturen und spätere Heizlast- oder Planungsdaten verbindet. Prometo ist genau auf diesen planbasierten Workflow ausgelegt."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was ist digitales Aufmaß und wie funktioniert es mit PDF-Grundrissen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Digitales Aufmaß bedeutet, PDF-Grundrisse, Räume und Bauteile nicht nur zu markieren, sondern als prüfbare Projektdaten zu erfassen. Prometo bereitet erkannte Räume für Aufmaß, Heizlastberechnung und weitere SHK-Arbeitsschritte strukturiert vor."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Reicht ein PDF-Grundriss für eine Heizlastberechnung?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Ein PDF-Grundriss ist eine wichtige Planbasis, ersetzt aber keine vollständigen projektspezifischen Angaben. Für eine raumweise Heizlastberechnung müssen unter anderem Raum- und Bauteildaten, Randbedingungen und Annahmen fachlich geprüft und dokumentiert werden."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Läuft die App auch auf Tablet oder iPad?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Prometo läuft nativ auf iOS (iPhone und iPad) und Android (Smartphone und Tablet). Mobile Nutzung ist kein Add-on, sondern von Anfang an Teil des Produktkonzepts – damit Aufmaß auf der Baustelle stattfindet, nicht erst im Büro."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Worin unterscheidet sich digitales Aufmaß von PDF-Markup?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Digitales Aufmaß endet nicht bei Kommentaren oder Markierungen. Der Unterschied zu klassischen PDF-Markup-Tools liegt darin, dass Aufmaßdaten später direkt in Heizlast- und Projektlogik übergehen können."
+                        }
+                    }
+                ]
+            }
+        ]
     }
     </script>
 </head>
@@ -388,9 +444,9 @@
     <main>
         <section class="aufmass-hero px-6 pt-10 pb-12 md:pt-14 md:pb-16" id="ueberblick">
             <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="relative z-10 mb-5 text-sm text-gray-500">
+                <nav aria-label="Breadcrumb" class="relative z-10 mb-5 text-sm text-text-subtle">
                     <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
-                    <span class="mx-2 text-gray-600">/</span>
+                    <span class="mx-2 text-text-subtle">/</span>
                     <span aria-current="page">Digitales Aufmaß</span>
                 </nav>
 
@@ -399,7 +455,7 @@
                         <div class="aufmass-hero-copy">
                             <span class="aufmass-kicker">Lösung · PDF-Aufmaß für SHK</span>
                             <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
-                                Digitales Aufmaß für <span class="text-primary">Heizlastberechnung</span>
+                                Digitales Aufmaß aus dem <span class="text-primary">PDF-Grundriss</span>
                             </h1>
                             <p class="text-lg text-gray-300 leading-relaxed max-w-2xl">
                                 PDF-Grundriss importieren, Raumdaten prüfen und ohne doppelte Erfassung für die Heizlast weiterverwenden.
@@ -481,7 +537,7 @@
                     <p class="text-lg text-gray-400 leading-relaxed">
                         Räume und Flächen werden strukturiert vorbereitet. Für eine raumweise Heizlast braucht es zusätzlich projektspezifische Eingaben, dokumentierte Annahmen und die fachliche Prüfung.
                     </p>
-                    <p class="mt-6 text-sm leading-relaxed text-gray-500">Digitales Aufmaß überführt Planinformationen in eine strukturierte Projektbasis. Die vollständige Heizlastberechnung bleibt ein eigener, kontrollierter Arbeitsschritt.</p>
+                    <p class="mt-6 text-sm leading-relaxed text-text-subtle">Digitales Aufmaß überführt Planinformationen in eine strukturierte Projektbasis. Die vollständige Heizlastberechnung bleibt ein eigener, kontrollierter Arbeitsschritt.</p>
                     <a href="/heizlastberechnung/" class="mt-5 inline-flex text-sm font-headline font-semibold text-primary hover:text-white transition-colors">Zur Heizlastberechnung →</a>
                 </div>
                 <div class="space-y-5" aria-label="Daten, die vor der Heizlastberechnung geprüft werden müssen">
@@ -583,7 +639,7 @@
                     <p><strong class="block text-white mb-2">Review</strong>Der Betrieb prüft Raumbezeichnungen, Abmessungen, Öffnungen und korrigiert beispielsweise einen unklar erkannten Hauswirtschaftsraum.</p>
                     <p><strong class="block text-white mb-2">Weiterverwendung</strong>Erst die bestätigten Daten fließen in Raumheizlast und hydraulischen Abgleich ein.</p>
                 </div>
-                <p class="mt-6 text-sm text-gray-500">Grenze: Scans, verzerrte Pläne, fehlende Maße oder ungewöhnliche Geometrien können mehr manuelle Korrektur erfordern.</p>
+                <p class="mt-6 text-sm text-text-subtle">Grenze: Scans, verzerrte Pläne, fehlende Maße oder ungewöhnliche Geometrien können mehr manuelle Korrektur erfordern.</p>
             </div>
         </section>
 
@@ -693,7 +749,7 @@
             </div>
             <div class="flex items-center gap-3 shrink-0">
                 <button type="button" id="cookie-decline" class="min-h-11 text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button type="button" id="cookie-accept" class="min-h-11 bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button type="button" id="cookie-accept" class="min-h-11 btn btn-primary px-6 py-2 text-sm">Akzeptieren</button>
             </div>
         </div>
     </div>

@@ -23,6 +23,68 @@
   --font-family-body: 'Manrope', sans-serif;
 }
 
+/* ── Ergänzte Design-Tokens (additiv, aus vorhandenen Werten konsolidiert).
+   static, damit die Motion-/Shadow-/Linien-Tokens auch für hand-geschriebenes
+   CSS (page-effects.css u.a.) per var() verfügbar sind statt tree-geshakt. ── */
+@theme static {
+  /* Text-/Neutral-Rollen — ersetzen text-gray-* (Kontrast AA-geprüft auf #0b0e0e) */
+  --color-text: #f5fbfb;            /* 17.6:1 — Fließtext hell */
+  --color-text-subtle: #90a1a3;    /* 7.15:1 — Meta/Caption, ersetzt gray-400/500/600 */
+  /* Semantik-Rollen (kein neuer Hex, alle bereits im Code vorkommend) */
+  --color-success: #7cf2bf;
+  --color-on-success: #00381d;
+  --color-warning: #ffb061;
+  --color-on-warning: #3d2100;
+  --color-danger: #ff9d9d;
+  --color-on-danger: #4a0000;
+  --color-info: #6bf6ff;
+  --color-on-info: #001f23;
+  /* Linien — 2 Rollen statt border-white/5..10 + border-primary/20..40 Varianz */
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(69, 222, 231, 0.24);
+  /* Radien — benannte Skala, deckt rounded-2xl/3xl/[2rem] ab */
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  /* Schatten — 1 Glow statt 7 Ad-hoc-Varianten */
+  --shadow-glow: 0 0 24px rgba(69, 222, 231, 0.4);
+  --shadow-card: 0 28px 80px rgba(0, 0, 0, 0.34);
+  /* Motion-System — Dauern + Easing als Tokens (bisher 58 Ad-hoc-Werte) */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 180ms;
+  --duration-base: 350ms;
+  --duration-reveal: 720ms;
+}
+
+/* ── Button-Komponente: eine Button-Sprache statt 10 Utility-Strings + 6 Glow-Werten.
+   Größe bleibt bewusst am Callsite (px-/py-/text-), damit gewollte Größenunterschiede
+   (Nav-CTA vs. Hero-CTA) erhalten bleiben. MUSS synchron zu input-home.css sein. */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    font-family: var(--font-family-headline);
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      box-shadow var(--duration-fast) var(--ease-standard),
+      background-color var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard),
+      color var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn:focus-visible { outline: 2px solid rgba(107, 246, 255, 0.7); outline-offset: 2px; }
+  .btn-primary { background-color: var(--color-primary); color: var(--color-on-primary); }
+  .btn-primary:hover { box-shadow: var(--shadow-glow); }
+  .btn-secondary { border: 1px solid var(--color-line); color: #ffffff; background-color: transparent; }
+  .btn-secondary:hover { border-color: var(--color-line-strong); background-color: rgba(255, 255, 255, 0.05); }
+}
+
 /* ── Space Grotesk (local) ── */
 /* Note: these paths are relative to the OUTPUT CSS file location (assets/tailwind.css) */
 @font-face {

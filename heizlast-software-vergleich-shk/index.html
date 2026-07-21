@@ -28,11 +28,63 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "@id": "https://prometo.app/heizlast-software-vergleich-shk/#breadcrumb",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://prometo.app/" },
-            { "@type": "ListItem", "position": 2, "name": "Heizlastsoftware Vergleich", "item": "https://prometo.app/heizlast-software-vergleich-shk/" }
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/heizlast-software-vergleich-shk/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Heizlastsoftware Vergleich",
+                        "item": "https://prometo.app/heizlast-software-vergleich-shk/"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/heizlast-software-vergleich-shk/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Welche Heizlastsoftware ist für SHK-Betriebe am besten?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Das hängt vom vorhandenen Planmaterial, gewünschter Erfassung, Berechnungstiefe und den Folgeprozessen ab. Ein Betrieb mit guten PDF-Grundrissen hat andere Anforderungen als ein Team, das Räume primär per LiDAR scannt oder CAD-basiert modelliert."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was bedeutet PDF-first bei Prometo?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Der vorhandene PDF-Grundriss ist der Ausgangspunkt. Prometo erkennt Räume, lässt die Daten kontrollieren und verwendet die bestätigte Projektstruktur für Heizlast, Materialberechnung und hydraulischen Abgleich weiter."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Warum steht bei manchen Funktionen „nicht ausgewiesen“?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Weil nur eindeutige Angaben auf den verlinkten offiziellen Seiten übernommen wurden. Eine nicht ausgewiesene Funktion kann an anderer Stelle oder in einem anderen Paket vorhanden sein."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist Prometo normkonform?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Auf dieser Website wird keine pauschale DIN-Konformität behauptet. Prometo berechnet entlang der DIN EN 12831; Eingaben und Ergebnisse müssen in der Beta fachlich geprüft werden."
+                        }
+                    }
+                ]
+            }
         ]
     }
     </script>

@@ -118,21 +118,7 @@
             color: #fff;
         }
 
-        .method-table th {
-            background: rgba(69, 222, 231, 0.08);
-            color: #6bf6ff;
-        }
-
-        .method-table td, .method-table th {
-            padding: 0.75rem 1rem;
-            border: 1px solid rgba(255,255,255,0.07);
-            font-size: 0.875rem;
-            vertical-align: top;
-        }
-
-        .method-table tr:nth-child(even) td {
-            background: rgba(255,255,255,0.02);
-        }
+        /* .method-table jetzt zentral in assets/page-effects.css (.data-table-System) */
 
         .step-connector {
             display: flex;
@@ -230,11 +216,26 @@
                     "@id": "https://prometo.app/heizlastberechnung/leitfaden/#breadcrumb"
                 },
                 "about": [
-                    {"@type": "Thing", "name": "Heizlastberechnung"},
-                    {"@type": "Thing", "name": "DIN EN 12831"},
-                    {"@type": "Thing", "name": "Wärmepumpe"},
-                    {"@type": "Thing", "name": "hydraulischer Abgleich"},
-                    {"@type": "Thing", "name": "Fußbodenheizung"}
+                    {
+                        "@type": "Thing",
+                        "name": "Heizlastberechnung"
+                    },
+                    {
+                        "@type": "Thing",
+                        "name": "DIN EN 12831"
+                    },
+                    {
+                        "@type": "Thing",
+                        "name": "Wärmepumpe"
+                    },
+                    {
+                        "@type": "Thing",
+                        "name": "hydraulischer Abgleich"
+                    },
+                    {
+                        "@type": "Thing",
+                        "name": "Fußbodenheizung"
+                    }
                 ]
             },
             {
@@ -246,15 +247,15 @@
                         "name": "Ist die Heizlast dasselbe wie der Jahreswärmebedarf?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Nein. Die Heizlast beschreibt die benötigte Leistung im Auslegungsfall — also die maximale kW-Anforderung bei Normaussentemperatur. Der Jahreswärmebedarf beschreibt dagegen die Energiemenge in kWh über die gesamte Heizperiode."
+                            "text": "Nein. Die Heizlast beschreibt die benötigte Leistung im Auslegungsfall (kW bei Normaussentemperatur). Der Jahreswärmebedarf beschreibt die Energiemenge (kWh) über die gesamte Heizperiode. Beides ist wichtig, aber für unterschiedliche Entscheidungen."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Ist DIN EN 12831 in Deutschland der richtige Bezug für die Heizlastberechnung?",
+                        "name": "Ist DIN EN 12831 in Deutschland der richtige Bezug?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Ja. Für die raumweise Norm-Heizlast ist die DIN EN 12831-1 in Kombination mit den nationalen Ergänzungen (NA) der zentrale methodische Ausgangspunkt in Deutschland."
+                            "text": "Ja. Für die raumweise Norm-Heizlast ist die DIN EN 12831-1 in Kombination mit den nationalen Ergänzungen (NA) der zentrale methodische Ausgangspunkt in Deutschland. Prometo orientiert sich an dieser Berechnungslogik."
                         }
                     },
                     {
@@ -262,7 +263,7 @@
                         "name": "Warum reicht ein W/m²-Schätzwert oft nicht aus?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Weil Raumlage, Fensteranteil, U-Werte, Lüftung, Wärmebrücken und Solltemperaturen raumweise deutlich voneinander abweichen können. Ein pauschaler W/m²-Wert mittelt diese Unterschiede weg und kann bei Wärmepumpe, hydraulischem Abgleich oder Heizflächenauslegung zu Fehlentscheidungen führen."
+                            "text": "Weil Raumlage, Fensteranteil, U-Werte, Lüftung, Wärmebrücken und Solltemperaturen raumweise deutlich voneinander abweichen können. Ein pauschaler W/m²-Wert mittelt diese Unterschiede weg. Für Wärmepumpe, hydraulischen Abgleich oder Heizflächenauslegung führt das zu Fehlentscheidungen."
                         }
                     },
                     {
@@ -270,7 +271,7 @@
                         "name": "Wann ist eine dynamische Plausibilisierung sinnvoll?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Vor allem bei Wärmepumpen, Sanierung, komplexen Gebäuden, schwierigen Lüftungssituationen oder wenn reale Betriebsbedingungen besser abgebildet werden sollen. Die dynamische Betrachtung ergänzt die Norm-Heizlast, ersetzt sie aber nicht."
+                            "text": "Vor allem bei Wärmepumpen, Sanierung, komplexen Gebäuden, schwierigen Lüftungssituationen oder wenn reale Betriebsbedingungen besser abgebildet werden sollen. Die dynamische Betrachtung ergänzt die Norm-Heizlast — ersetzt sie aber nicht."
                         }
                     },
                     {
@@ -278,15 +279,15 @@
                         "name": "Brauche ich für den hydraulischen Abgleich eine raumweise Heizlast?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Für belastbare Folgeentscheidungen ist die raumweise Last deutlich besser als eine Grobschätzung, weil sie die Ableitung von Soll-Volumenströmen und Raumlogiken sauber vorbereitet. Besonders in fördernahen Workflows ist die raumweise Grundlage wichtig."
+                            "text": "Für belastbare Folgeentscheidungen ist die raumweise Last deutlich besser als eine Grobschätzung. Sie ermöglicht die Ableitung von Soll-Volumenströmen und sauberer Raumlogik — besonders in fördernahen Workflows ist das wichtig."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Welche Eingaben sind bei der Heizlastberechnung am häufigsten kritisch?",
+                        "name": "Welche Eingaben sind am häufigsten kritisch?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Bauteilqualität (U-Werte), Luftwechsel, Wärmebrücken, Raumtemperaturen, Zonierung und unklare Bestandsdaten. Im Bestand sind pauschale Annahmen bei diesen Parametern besonders fehleranfällig."
+                            "text": "Bauteilqualität (U-Werte), Luftwechsel, Wärmebrücken, Raumtemperaturen, Zonierung und unklare Bestandsdaten. Im Bestand sind pauschale Annahmen bei diesen Parametern besonders fehleranfällig und können das Ergebnis erheblich verzerren."
                         }
                     },
                     {
@@ -294,7 +295,7 @@
                         "name": "Kann eine dynamische Methode die DIN EN 12831 ersetzen?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Nein. In der Praxis ist die dynamische Betrachtung vor allem eine Ergänzung, um kritische Projekte realitätsnäher zu plausibilisieren. Für Vergleichbarkeit, Struktur und Dokumentierbarkeit bleibt die Norm-Heizlast der belastbare Ausgangspunkt."
+                            "text": "Nein. In der Praxis ist sie vor allem eine Ergänzung, um kritische Projekte realitätsnäher zu plausibilisieren. Für Vergleichbarkeit, Struktur und Dokumentierbarkeit bleibt die Norm-Heizlast der belastbare Ausgangspunkt."
                         }
                     },
                     {
@@ -455,11 +456,11 @@
         <!-- HERO -->
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-text-subtle">
                     <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
-                    <span class="mx-2 text-gray-600">/</span>
+                    <span class="mx-2 text-text-subtle">/</span>
                     <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heizlastberechnung</a>
-                    <span class="mx-2 text-gray-600">/</span>
+                    <span class="mx-2 text-text-subtle">/</span>
                     <span aria-current="page">Leitfaden</span>
                 </nav>
 
@@ -471,7 +472,7 @@
                     <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mb-4 reveal">
                         Von der DIN EN 12831 bis zur dynamischen Plausibilisierung: So ordnen SHK-Teams Heizlast heute richtig ein und schaffen eine belastbare Grundlage für Wärmepumpe, Hydraulik und Dokumentation.
                     </p>
-                    <p class="text-xs text-gray-500 mb-6">Leitfaden im Beta-Aufbau · Konkrete Berechnung und Bewertung fachlich prüfen</p>
+                    <p class="text-xs text-text-subtle mb-6">Leitfaden im Beta-Aufbau · Konkrete Berechnung und Bewertung fachlich prüfen</p>
                     <p class="text-base text-gray-300 leading-relaxed max-w-3xl mb-6 reveal">
                         Die Heizlastberechnung ist kein isolierter kW-Wert, sondern die Auslegungsbasis für Wärmeerzeuger, Heizflächen und hydraulischen Abgleich. In Deutschland bleibt die Norm-Heizlast nach DIN EN 12831-1 der zentrale Referenzpunkt. In der Praxis reichen erst dann belastbare Ergebnisse, wenn Eingabedaten, Zonierung, Lüftung und reale Projektbedingungen sauber mitgedacht werden.
                     </p>
@@ -717,17 +718,17 @@
                     <div class="glass-panel rounded-3xl p-6 reveal">
                         <h3 class="text-xl font-bold text-white mb-3">U-Werte, Flächen und Wärmebrücken</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-3">Bauteilqualität und Flächen wirken direkt auf Transmissionsverluste. Wärmebrücken sollten nicht als Fußnote, sondern als Teil der Verlustseite behandelt werden.</p>
-                        <p class="text-xs text-gray-500">Im Bestand sind pauschale Annahmen besonders fehleranfällig.</p>
+                        <p class="text-xs text-text-subtle">Im Bestand sind pauschale Annahmen besonders fehleranfällig.</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-1">
                         <h3 class="text-xl font-bold text-white mb-3">Lüftung, Infiltration und Dichtheit</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-3">Luftwechsel wird in der Praxis oft zu grob angesetzt. Fenster­lüftung, mechanische Lüftung und unbekannte Dichtheit müssen sauber unterschieden werden.</p>
-                        <p class="text-xs text-gray-500">Gerade im Bestand ein großer Hebel für Plausibilität.</p>
+                        <p class="text-xs text-text-subtle">Gerade im Bestand ein großer Hebel für Plausibilität.</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-2">
                         <h3 class="text-xl font-bold text-white mb-3">Wetter, Mikroklima und Solltemperaturen</h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-3">Die Normaussentemperatur bleibt wichtig. Lokale Wetterdaten und reale Nutzungsprofile können Spitzenlasten verschieben — gleiche Region bedeutet nicht automatisch gleiche Lastsituation.</p>
-                        <p class="text-xs text-gray-500">Standortbezogene Daten verbessern die Aussagekraft.</p>
+                        <p class="text-xs text-text-subtle">Standortbezogene Daten verbessern die Aussagekraft.</p>
                     </div>
                 </div>
 
@@ -975,23 +976,23 @@
 
                 <!-- Cluster-Links -->
                 <div class="mt-16">
-                    <p class="text-sm text-gray-500 mb-6 text-center">Weiterführende Themen</p>
+                    <p class="text-sm text-text-subtle mb-6 text-center">Weiterführende Themen</p>
                     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
                         <a href="/heizlast/" class="glass-panel rounded-2xl p-4 hover:border-primary/30 transition-colors text-center group">
                             <p class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Heizlast erklärt</p>
-                            <p class="text-xs text-gray-500 mt-1">Definition, Einheit, Grundlagen</p>
+                            <p class="text-xs text-text-subtle mt-1">Definition, Einheit, Grundlagen</p>
                         </a>
                         <a href="/heizlastberechnung/din-12831/" class="glass-panel rounded-2xl p-4 hover:border-primary/30 transition-colors text-center group">
                             <p class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">DIN EN 12831</p>
-                            <p class="text-xs text-gray-500 mt-1">Norm, Rechenweg, Formeln</p>
+                            <p class="text-xs text-text-subtle mt-1">Norm, Rechenweg, Formeln</p>
                         </a>
                         <a href="/heizlastberechnung/schaetzwerte/" class="glass-panel rounded-2xl p-4 hover:border-primary/30 transition-colors text-center group">
                             <p class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Schätzwerte W/m²</p>
-                            <p class="text-xs text-gray-500 mt-1">Überschlag und Orientierung</p>
+                            <p class="text-xs text-text-subtle mt-1">Überschlag und Orientierung</p>
                         </a>
                         <a href="/heizlastberechnung/" class="glass-panel rounded-2xl p-4 hover:border-primary/30 transition-colors text-center group">
                             <p class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">Heizlast Software</p>
-                            <p class="text-xs text-gray-500 mt-1">Prometo für SHK-Betriebe</p>
+                            <p class="text-xs text-text-subtle mt-1">Prometo für SHK-Betriebe</p>
                         </a>
                     </div>
                 </div>
@@ -1028,7 +1029,7 @@
             </div>
             <div class="flex items-center gap-3 shrink-0">
                 <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary px-6 py-2 text-sm">Akzeptieren</button>
             </div>
         </div>
     </div>

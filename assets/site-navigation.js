@@ -57,6 +57,14 @@
         });
     });
 
+    // Body-Scroll sperren, solange das mobile Vollbild-Menü offen ist.
+    const mobileNav = header.querySelector("details.site-mobile-nav");
+    if (mobileNav) {
+        mobileNav.addEventListener("toggle", () => {
+            document.body.classList.toggle("nav-scroll-lock", mobileNav.open);
+        });
+    }
+
     document.addEventListener("click", (event) => {
         if (!header.contains(event.target)) closeDetails();
     });

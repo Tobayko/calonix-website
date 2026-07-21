@@ -662,9 +662,13 @@
         .workflow-nav-icon {
             width: 0.88rem;
             height: 0.88rem;
-            border: 1px solid currentColor;
-            border-radius: 0.24rem;
-            opacity: 0.8;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.85;
+            flex: none;
         }
 
         .workflow-canvas {
@@ -1001,6 +1005,20 @@
             stroke-linecap: round;
             stroke-linejoin: round;
             stroke-width: 1.8;
+        }
+
+        /* Einheitliches Inline-SVG-Iconset (ersetzt die Unicode-Dingbats der
+           .material-symbols-outlined-Spans). Erbt Farbe + Größe von den
+           Utility-Klassen (text-primary, text-3xl) wie zuvor der Span. */
+        .ui-icon {
+            width: 1em;
+            height: 1em;
+            fill: none;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.75;
+            flex: none;
         }
 
         .school-icon--animated .school-icon-roof {
@@ -1499,52 +1517,6 @@
             max-width: 600px;
         }
 
-        /* Nav active state */
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #45dee7;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Pulse dot */
-        @keyframes pulse-ring {
-            0% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-
-            100% {
-                transform: scale(2.5);
-                opacity: 0;
-            }
-        }
-
-        .pulse-dot {
-            position: relative;
-        }
-
-        .pulse-dot::after {
-            content: '';
-            position: absolute;
-            inset: -3px;
-            border-radius: 50%;
-            background: #45dee7;
-            animation: pulse-ring 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
-        }
-
         /* Badge */
         .badge {
             display: inline-flex;
@@ -1560,114 +1532,6 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             font-family: 'Space Grotesk', sans-serif;
-        }
-
-        /* ---- Mobile Menu ---- */
-        .mobile-menu {
-            position: fixed;
-            top: 65px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(11, 14, 14, 0.98);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            z-index: 40;
-            display: flex;
-            flex-direction: column;
-            padding: 40px 32px;
-            gap: 8px;
-            transform: translateY(-20px);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .mobile-menu.open {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .mobile-menu a {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #9ca3af;
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: color 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .mobile-menu a:hover,
-        .mobile-menu a.nav-active {
-            color: #fff;
-        }
-
-        .mobile-menu a.nav-active {
-            color: #45dee7;
-        }
-
-        /* ---- Hamburger Icon ---- */
-        .burger {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 44px;
-            height: 44px;
-            cursor: pointer;
-            padding: 4px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.03);
-            transition: background 0.2s ease, border-color 0.2s ease;
-        }
-
-        .burger:hover {
-            background: rgba(69, 222, 231, 0.06);
-            border-color: rgba(69, 222, 231, 0.2);
-        }
-
-        .burger:focus-visible {
-            outline: 2px solid rgba(107, 246, 255, 0.88);
-            outline-offset: 4px;
-            border-color: rgba(69, 222, 231, 0.35);
-        }
-
-        .burger span {
-            display: block;
-            height: 1.5px;
-            background: #dfe3e3;
-            border-radius: 99px;
-            transform-origin: center;
-            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease, width 0.3s ease;
-        }
-
-        .burger span:nth-child(3) {
-            width: 60%;
-        }
-
-        .burger.open span:nth-child(1) {
-            transform: translateY(6.5px) rotate(45deg);
-        }
-
-        .burger.open span:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-
-        .burger.open span:nth-child(3) {
-            width: 100%;
-            transform: translateY(-6.5px) rotate(-45deg);
-        }
-
-        /* ---- Active Nav Link ---- */
-        .nav-link.nav-active {
-            color: #45dee7 !important;
         }
 
         /* ---- Back to Top ---- */
@@ -1759,6 +1623,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            min-height: 44px;
             padding: 8px 16px;
             border-radius: 99px;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2043,7 +1908,7 @@
                 margin-bottom: 1.25rem;
             }
 
-            main > section:first-of-type .flex.items-center.justify-center.gap-3.mb-6 > .text-gray-500 {
+            main > section:first-of-type .flex.items-center.justify-center.gap-3.mb-6 > .text-text-subtle {
                 flex: 1 1 100%;
                 min-width: 0;
                 font-size: 0.78rem;
@@ -2272,6 +2137,60 @@
                     "https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp",
                     "https://prometo.app/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
                 ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Orientiert sich Prometo an der DIN EN 12831?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo kann Eingaben und Prüfschritte entlang der DIN EN 12831 strukturieren. Eine Garantie auf DIN-Konformität wird nicht behauptet; Berechnung und Bewertung müssen qualifizierte Personen fachlich prüfen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wie funktioniert der PDF-Import für Baupläne?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Du wählst einen PDF-Bauplan aus und prüfst die daraus übernommenen Raumdaten vor der weiteren Verwendung. Je nach Planqualität bleiben manuelle Korrekturen Teil des Workflows."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Erkennt Prometo jeden PDF-Grundriss automatisch?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Die Qualität der Erkennung hängt von Lesbarkeit, Maßstab, Planaufbau und enthaltenen Informationen ab. Erkannte Räume und Geometrien müssen vor der Berechnung kontrolliert und bei Bedarf korrigiert werden."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist ein Einfamilienhaus immer in unter 7 Minuten berechnet?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Unter sieben Minuten ist ein Beispielwert für ein typisches Einfamilienhaus mit geeignetem PDF-Grundriss. Planqualität, Gebäudeumfang und notwendiger Korrekturbedarf beeinflussen die tatsächliche Dauer."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Berechnet Prometo nur die Heizlast?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nein. Die geprüften Raumdaten werden für Materialberechnung, Flächenheizung und hydraulischen Abgleich weiterverwendet. Dadurch müssen Projektinformationen nicht für jeden Folgeschritt neu erfasst werden."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wann kann ich Prometo nutzen?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Prometo befindet sich in der kostenlosen Beta. SHK-Betriebe können die Software mit einem echten Projekt testen und Feedback zu Raumerkennung, Berechnung, Bedienung und Ergebnissen geben."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -2430,10 +2349,10 @@
                         <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse inline-block"></span>
                         Kostenlose Beta
                     </span>
-                    <span class="text-gray-500 text-sm font-body">PDF-Aufmaß für bestehende SHK-Betriebe</span>
+                    <span class="text-on-surface-variant text-sm font-body">PDF-Aufmaß für bestehende SHK-Betriebe</span>
                 </div>
                 <h1
-                    class="text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-6 tracking-normal text-white">
+                    class="text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-6 tracking-[-0.03em] [text-wrap:balance] text-white">
                     Digitales Aufmaß direkt aus dem <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-200">PDF-Grundriss.</span>
                 </h1>
@@ -2442,22 +2361,21 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-8 mb-8">
                     <a
-                        class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:shadow-[0_0_30px_rgba(69,222,231,0.5)] transition-all flex items-center justify-center gap-2 group"
+                        class="btn btn-primary px-8 py-4 text-lg group"
                         href="/beta/" data-event="beta_cta_click" data-cta-position="hero">
                         Kostenlos Beta testen
-                        <span
-                            class="material-symbols-outlined transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                        <svg class="ui-icon text-xl transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
                     <a
-                        class="glass-panel text-white px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+                        class="btn btn-secondary px-7 py-3.5 text-base"
                         href="#features" data-event="workflow_view" data-cta-position="hero">
                         Workflow ansehen
                     </a>
                 </div>
-                <p class="text-xs text-gray-500 mb-5">
+                <p class="text-xs text-on-surface-variant mb-5">
                     Bei geeignetem PDF: typisches EFH bis zur Heizlast in unter 7 Minuten
                 </p>
-                <div class="mx-auto max-w-3xl rounded-2xl border border-primary/20 bg-primary/8 p-5 text-left">
+                <div class="mx-auto max-w-3xl rounded-2xl border border-primary/20 bg-primary/8 p-5 text-left hidden sm:block">
                     <p class="mb-3 text-xs font-headline font-bold uppercase tracking-widest text-primary">Kurzantwort</p>
                     <p class="text-sm md:text-base leading-relaxed text-gray-200">
                         Vorhandenen PDF-Grundriss hochladen, Räume automatisch erkennen, Geometrien kontrollieren und dieselben Projektdaten ohne erneute Erfassung für Heizlast, Materialberechnung und hydraulischen Abgleich weiterverwenden.
@@ -2475,10 +2393,10 @@
                     <div class="workflow-body">
                         <aside class="workflow-sidebar" aria-label="Projektbereiche">
                             <p class="workflow-sidebar-label">Projekt</p>
-                            <div class="workflow-nav-item active"><i class="workflow-nav-icon"></i>Bauplan-Import</div>
-                            <div class="workflow-nav-item"><i class="workflow-nav-icon"></i>Räume</div>
-                            <div class="workflow-nav-item"><i class="workflow-nav-icon"></i>Heizlast</div>
-                            <div class="workflow-nav-item"><i class="workflow-nav-icon"></i>Abgleich</div>
+                            <div class="workflow-nav-item active"><svg class="workflow-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4M8 8l4-4 4 4"/><path d="M5 15v3a1 1 0 001 1h12a1 1 0 001-1v-3"/></svg>Bauplan-Import</div>
+                            <div class="workflow-nav-item"><svg class="workflow-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 12h16M12 4v16"/></svg>Räume</div>
+                            <div class="workflow-nav-item"><svg class="workflow-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2.5 3.5 4.5 5.5 4.5 8.5a4.5 4.5 0 01-9 0c0-1.2.5-2.2 1.3-3 .4 1 1.2 1.5 1.2 1.5 0-1.8.3-4.2 1-7z"/></svg>Heizlast</div>
+                            <div class="workflow-nav-item"><svg class="workflow-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h9M17 8h3M4 16h3M11 16h9"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="16" r="2"/></svg>Abgleich</div>
                         </aside>
                         <div class="workflow-canvas">
                             <div class="workflow-heading"><p>Schritt 01 von 04</p><strong>Grundriss importieren</strong></div>
@@ -2515,7 +2433,7 @@
                 <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                     <div>
                         <span class="badge mb-6">So wird Prometo greifbar</span>
-                        <h2 id="home-flow-heading" class="text-3xl md:text-4xl font-headline font-bold text-white mb-5">
+                        <h2 id="home-flow-heading" class="text-4xl md:text-5xl font-headline font-bold text-white mb-5">
                             Aus einem PDF-Grundriss wird ein nutzbarer SHK-Workflow
                         </h2>
                         <p class="text-on-surface-variant text-lg leading-relaxed max-w-3xl">
@@ -2572,7 +2490,7 @@
                 <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                     <div>
                         <span class="badge mb-6">Themeneinstieg</span>
-                        <h2 id="topic-map-heading" class="text-3xl md:text-4xl font-headline font-bold text-white mb-5">
+                        <h2 id="topic-map-heading" class="text-4xl md:text-5xl font-headline font-bold text-white mb-5">
                             Direkt zum passenden Thema
                         </h2>
                         <p class="text-on-surface-variant text-lg leading-relaxed max-w-3xl">
@@ -2627,7 +2545,7 @@
                     <div class="relative z-10">
                         <div
                             class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary/20 transition-all group-hover:scale-110">
-                            <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">◌</span>
+                            <svg class="ui-icon text-primary text-3xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 13h5M9.5 16.5h5"/></svg>
                         </div>
                         <h3 class="font-headline font-bold text-2xl text-white mb-2">Digitales Aufmaß aus dem PDF
                             <span class="text-primary text-lg ml-2 font-normal tracking-wide">(PDF-first)</span>
@@ -2649,7 +2567,7 @@
                     <div class="relative z-10">
                         <div
                             class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-blue-400/20 group-hover:bg-blue-400/20 transition-all group-hover:scale-110">
-                            <span class="material-symbols-outlined text-blue-400 text-3xl" aria-hidden="true">▣</span>
+                            <svg class="ui-icon text-blue-400 text-3xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 13h16M13 4v16M13 9h7"/></svg>
                         </div>
                         <h3 class="font-headline font-bold text-2xl text-white mb-2">Kontrollierbare Raumerkennung
                             <span class="text-blue-400 text-lg ml-2 font-normal tracking-wide">(Review)</span>
@@ -2667,8 +2585,7 @@
                     class="glass-panel p-8 rounded-3xl flex flex-col group relative overflow-hidden reveal reveal-delay-2">
                     <div
                         class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
-                        <span
-                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors" aria-hidden="true">✦</span>
+                        <svg class="ui-icon text-2xl text-white group-hover:text-primary transition-colors" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V6z"/><path d="M9 12l2 2 4-4"/></svg>
                     </div>
                     <h3 class="font-headline font-bold text-xl text-white mb-2">Geprüfte Projektdaten</h3>
                     <h4 class="text-gray-400 text-sm font-medium mb-4">Ein Datenstand für alle Folgeschritte</h4>
@@ -2683,8 +2600,7 @@
                     class="glass-panel p-8 rounded-3xl flex flex-col group relative overflow-hidden reveal reveal-delay-3">
                     <div
                         class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
-                        <span
-                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors" aria-hidden="true">°</span>
+                        <svg class="ui-icon text-2xl text-white group-hover:text-primary transition-colors" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2.5 3.5 4.5 5.5 4.5 8.5a4.5 4.5 0 01-9 0c0-1.2.5-2.2 1.3-3 .4 1 1.2 1.5 1.2 1.5 0-1.8.3-4.2 1-7z"/></svg>
                     </div>
                     <h3 class="font-headline font-bold text-xl text-white mb-2">Raumweise Heizlast</h3>
                     <h4 class="text-gray-400 text-sm font-medium mb-4">Entlang der DIN EN 12831</h4>
@@ -2699,8 +2615,7 @@
                     class="glass-panel p-8 rounded-3xl flex flex-col group relative overflow-hidden reveal reveal-delay-1">
                     <div
                         class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
-                        <span
-                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors" aria-hidden="true">⌂</span>
+                        <svg class="ui-icon text-2xl text-white group-hover:text-primary transition-colors" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-6 9 6"/><path d="M5 9v11h14V9"/><path d="M8 16c1.3-1.5 2.7-1.5 4 0s2.7 1.5 4 0"/></svg>
                     </div>
                     <h3 class="font-headline font-bold text-xl text-white mb-2">Flächenheizung auslegen</h3>
                     <h4 class="text-gray-400 text-sm font-medium mb-4">Von der Raumheizlast zum Heizkreis</h4>
@@ -2715,8 +2630,7 @@
                     class="glass-panel p-8 rounded-3xl flex flex-col group relative overflow-hidden reveal reveal-delay-2">
                     <div
                         class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-primary/30 transition-all">
-                        <span
-                            class="material-symbols-outlined text-white group-hover:text-primary transition-colors" aria-hidden="true">✓</span>
+                        <svg class="ui-icon text-2xl text-white group-hover:text-primary transition-colors" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6z"/><path d="M8.5 6h7"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h4"/></svg>
                     </div>
                     <h3 class="font-headline font-bold text-xl text-white mb-2">Material berechnen</h3>
                     <h4 class="text-gray-400 text-sm font-medium mb-4">Projektbezogener Bedarf</h4>
@@ -2735,7 +2649,7 @@
                     <div class="relative z-10 flex flex-col h-full justify-center">
                         <div
                             class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-tertiary/20 group-hover:bg-tertiary/20 transition-all group-hover:scale-110">
-                            <span class="material-symbols-outlined text-tertiary text-3xl" aria-hidden="true">◯</span>
+                            <svg class="ui-icon text-tertiary text-3xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h9M17 8h3"/><path d="M4 16h3M11 16h9"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="16" r="2"/></svg>
                         </div>
                         <h3 class="font-headline font-bold text-2xl text-white mb-2">Hydraulischer Abgleich <span
                                 class="text-tertiary text-lg ml-2 font-normal tracking-wide">(verbunden)</span></h3>
@@ -2756,7 +2670,7 @@
                     <div class="relative z-10 flex flex-col h-full justify-center">
                         <div
                             class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-gray-400/20 group-hover:bg-gray-400/20 transition-all group-hover:scale-110">
-                            <span class="material-symbols-outlined text-gray-300 text-3xl" aria-hidden="true">⌁</span>
+                            <svg class="ui-icon text-gray-300 text-3xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
                         </div>
                         <h3 class="font-headline font-bold text-2xl text-white mb-2">Fachliche Kontrolle <span
                                 class="text-gray-400 text-lg ml-2 font-normal tracking-wide">(transparent)</span></h3>
@@ -2801,7 +2715,7 @@
                             <span class="w-2 h-2 rounded-full bg-yellow-500/50"></span>
                             <span class="w-2 h-2 rounded-full bg-green-500/50"></span>
                             <span
-                                class="ml-2 text-xs text-gray-500 font-headline tracking-widest uppercase">Grundriss_EG.pdf</span>
+                                class="ml-2 text-xs text-text-subtle font-headline tracking-widest uppercase">Grundriss_EG.pdf</span>
                         </div>
 
                         <!-- SVG Container (position: relative for absolute scanline) -->
@@ -3148,13 +3062,13 @@
                         </div>
                         <span class="showcase-thumb-label">Import</span>
                     </button>
-                    <button type="button" class="showcase-thumb" onclick="switchScreen(this, 2)" aria-controls="featuredPhone" aria-pressed="false" aria-label="Screenshot Import-Review anzeigen">
+                    <button type="button" class="showcase-thumb" onclick="switchScreen(this, 2)" aria-controls="featuredPhone" aria-pressed="false" aria-label="Screenshot Räume kontrollieren anzeigen">
                         <div class="showcase-thumb-img">
                             <img src="assets/prometo-screenshots/thumbs/bauplan-import-review.webp"
-                                alt="Import-Review der erkannten Räume in Prometo" loading="lazy" decoding="async"
+                                alt="Prometo Raumkontrolle als Vorschau" loading="lazy" decoding="async"
                                 width="108" height="240" />
                         </div>
-                        <span class="showcase-thumb-label">Review</span>
+                        <span class="showcase-thumb-label">Räume</span>
                     </button>
                     <button type="button" class="showcase-thumb" onclick="switchScreen(this, 3)" aria-controls="featuredPhone" aria-pressed="false" aria-label="Screenshot Heizlast-Szenarien anzeigen">
                         <div class="showcase-thumb-img">
@@ -3215,7 +3129,7 @@
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal">
                     <div
                         class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                        <span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">◷</span>
+                        <svg class="ui-icon text-primary text-2xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 13h5M9.5 16.5h5"/></svg>
                     </div>
                     <div class="text-4xl font-headline font-bold mb-2 text-white">PDF-first</div>
                     <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
@@ -3227,7 +3141,7 @@
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-1">
                     <div
                         class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                        <span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">✓</span>
+                        <svg class="ui-icon text-primary text-2xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>
                     </div>
                     <div class="text-4xl font-headline font-bold mb-2 text-white">Beta</div>
                     <div class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
@@ -3239,7 +3153,7 @@
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-2">
                     <div
                         class="w-14 h-14 rounded-2xl bg-blue-400/10 flex items-center justify-center mx-auto mb-5 border border-blue-400/20 group-hover:bg-blue-400/20 transition-colors">
-                        <span class="material-symbols-outlined text-blue-400 text-2xl" aria-hidden="true">§</span>
+                        <svg class="ui-icon text-blue-400 text-2xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v18H7z"/><path d="M10 8h4M10 12h4M10 16h2"/></svg>
                     </div>
                     <div class="text-5xl font-headline font-bold mb-2 text-blue-300">DIN/EN</div>
                     <div class="text-blue-400 font-headline font-semibold text-sm uppercase tracking-widest mb-2">12831
@@ -3251,7 +3165,7 @@
                 <div class="glass-panel p-8 rounded-3xl text-center group reveal reveal-delay-3">
                     <div
                         class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mx-auto mb-5 border border-tertiary/20 group-hover:bg-tertiary/20 transition-colors">
-                        <span class="material-symbols-outlined text-tertiary text-2xl" aria-hidden="true">⌁</span>
+                        <svg class="ui-icon text-tertiary text-2xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h13v9H3z"/><path d="M3 17h10"/><path d="M18 9h3v10h-3z"/></svg>
                     </div>
                     <div class="text-4xl font-headline font-bold mb-2 text-tertiary">iOS · Android · Web</div>
                     <div class="text-tertiary font-headline font-semibold text-sm uppercase tracking-widest mb-2">
@@ -3268,7 +3182,7 @@
                         <p class="text-primary font-headline font-semibold text-sm uppercase tracking-widest mb-2">Prüfbarer Workflow</p>
                         <h3 class="text-2xl font-headline font-bold text-white mb-3">Vom PDF-Grundriss zu strukturierten Raumdaten</h3>
                     </div>
-                    <div class="text-sm text-gray-500 md:text-right">Bearbeitungszeit hängt vom Projekt ab</div>
+                    <div class="text-sm text-text-subtle md:text-right">Bearbeitungszeit hängt vom Projekt ab</div>
                 </div>
                 <p class="text-on-surface-variant leading-relaxed max-w-4xl">
                     Plan-Import, Raumprüfung und fachliche Bewertung bleiben als einzelne Schritte nachvollziehbar.
@@ -3317,22 +3231,19 @@
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-primary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Vorhandenen PDF-Grundriss direkt weiterverwenden
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-primary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Erkannte Räume kontrollieren statt vollständig neu erfassen
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-primary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Heizlast, Material und Abgleich aus denselben Daten ableiten
                         </li>
@@ -3346,7 +3257,7 @@
                 <div class="audience-card reveal reveal-delay-1">
                     <div
                         class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-primary/20 bg-primary/8">
-                        <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">⚒</span>
+                        <svg class="ui-icon text-primary text-3xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4z"/><path d="M9 8V6a1 1 0 011-1h4a1 1 0 011 1v2"/><path d="M4 13h16"/></svg>
                     </div>
                     <div class="badge mb-4">Inhaber & Meister</div>
                     <h3 class="font-headline font-bold text-2xl text-white mb-3">Für fachliche Entscheider im Betrieb
@@ -3358,29 +3269,25 @@
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-primary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Raumdaten vor der Berechnung vollständig kontrollieren
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-primary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Klare Projektbasis für Büro und technische Leitung
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-primary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Materialbedarf aus Raum- und Systemdaten ableiten
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5">
-                                <span class="material-symbols-outlined text-primary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-primary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Fachliche Plausibilitätsprüfung bleibt erhalten
                         </li>
@@ -3391,7 +3298,7 @@
                 <div class="audience-card reveal reveal-delay-2" style="border-color: rgba(96,165,250,0.15);">
                     <div
                         class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-blue-400/20 bg-blue-400/8">
-                        <span class="material-symbols-outlined text-blue-400 text-3xl" aria-hidden="true">⚙</span>
+                        <svg class="ui-icon text-blue-400 text-3xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>
                     </div>
                     <div class="badge mb-4"
                         style="color: #60a5fa; background: rgba(96,165,250,0.08); border-color: rgba(96,165,250,0.2);">
@@ -3405,29 +3312,25 @@
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
-                                <span class="material-symbols-outlined text-blue-400"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-blue-400" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Raumweise Heizlast entlang der DIN EN 12831
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
-                                <span class="material-symbols-outlined text-blue-400"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-blue-400" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Heizkreise, Rohrlängen und Material auslegen
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
-                                <span class="material-symbols-outlined text-blue-400"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-blue-400" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Hydraulischen Abgleich direkt weiterberechnen
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(96,165,250,0.15);">
-                                <span class="material-symbols-outlined text-blue-400"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-blue-400" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Eingaben und Ergebnisse plausibilisieren
                         </li>
@@ -3438,7 +3341,7 @@
                 <div class="audience-card reveal reveal-delay-3" style="border-color: rgba(121,217,230,0.15);">
                     <div
                         class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-tertiary/20 bg-tertiary/8">
-                        <span class="material-symbols-outlined text-tertiary text-3xl" aria-hidden="true">◇</span>
+                        <svg class="ui-icon text-tertiary text-3xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v4H9z"/><path d="M3 17h6v4H3z"/><path d="M15 17h6v4h-6z"/><path d="M12 7v4M6 17v-2h12v2"/></svg>
                     </div>
                     <div class="badge mb-4"
                         style="color: #79d9e6; background: rgba(121,217,230,0.08); border-color: rgba(121,217,230,0.2);">
@@ -3451,29 +3354,25 @@
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-tertiary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Standardisierte Eingaben und Kontrollen
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-tertiary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Einheitliche Raum-, System- und Ergebnisdaten
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-tertiary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Nachvollziehbare Übergaben zwischen Rollen
                         </li>
                         <li class="flex items-start gap-3 text-sm text-on-surface-variant">
                             <span class="check-icon mt-0.5" style="background: rgba(121,217,230,0.15);">
-                                <span class="material-symbols-outlined text-tertiary"
-                                    style="font-size: 14px;" aria-hidden="true">✓</span>
+                                <svg class="ui-icon text-tertiary" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                             </span>
                             Weniger individuelle Insellösungen je Projekt
                         </li>
@@ -3505,8 +3404,7 @@
                     <a href="mailto:info@prometo.app?subject=Prometo%20Beta-Kontakt"
                         class="inline-flex items-center gap-2 text-primary font-headline font-semibold text-sm group">
                         Beta-Kontakt aufnehmen
-                        <span
-                            class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                        <svg class="ui-icon text-base transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
                 </div>
 
@@ -3519,7 +3417,7 @@
                             <button type="button" class="faq-question" onclick="toggleFaq(this)">
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Orientiert sich Prometo an der DIN EN 12831?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
+                                    <svg class="ui-icon" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3539,7 +3437,7 @@
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Wie funktioniert
                                     der PDF-Import für Baupläne?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
+                                    <svg class="ui-icon" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3559,7 +3457,7 @@
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Erkennt Prometo jeden
                                     PDF-Grundriss automatisch?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
+                                    <svg class="ui-icon" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3579,7 +3477,7 @@
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Ist ein Einfamilienhaus
                                     immer in unter 7 Minuten berechnet?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
+                                    <svg class="ui-icon" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3599,7 +3497,7 @@
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Berechnet Prometo nur
                                     die Heizlast?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
+                                    <svg class="ui-icon" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3618,7 +3516,7 @@
                             <button type="button" class="faq-question" onclick="toggleFaq(this)">
                                 <span class="font-headline font-semibold text-white text-lg pr-4">Wann kann ich Prometo nutzen?</span>
                                 <span class="faq-icon">
-                                    <span class="material-symbols-outlined" style="font-size: 18px;" aria-hidden="true">+</span>
+                                    <svg class="ui-icon" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                                 </span>
                             </button>
                             <div class="faq-answer">
@@ -3661,7 +3559,7 @@
                     Gesucht werden SHK-Betriebe mit regelmäßigen EFH-, Sanierungs- oder Wärmepumpenprojekten,
                     die PDF-Aufmaß, Heizlast, Material und Abgleich mit ihrem heutigen Ablauf vergleichen.
                 </p>
-                <a href="/beta/" class="inline-flex mt-8 bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-lg hover:shadow-[0_0_30px_rgba(69,222,231,0.5)] transition-all" data-event="beta_cta_click" data-cta-position="beta_section">Kostenlos Beta testen</a>
+                <a href="/beta/" class="btn btn-primary mt-8 px-8 py-4 text-lg" data-event="beta_cta_click" data-cta-position="beta_section">Kostenlos Beta testen</a>
             </div>
 
             <!-- Centered form -->
@@ -3718,31 +3616,28 @@
                                     <div class="role-pill">
                                         <input type="radio" name="role" id="role-shk" value="SHK-Handwerker" />
                                         <label for="role-shk">
-                                            <span class="material-symbols-outlined"
-                                                style="font-size: 15px;" aria-hidden="true">⚒</span>
+                                            <svg class="ui-icon" style="width:15px;height:15px" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 7a3 3 0 00-4 4l-6 6 2 2 6-6a3 3 0 004-4l-2 2-2-2z"/></svg>
                                             SHK-Handwerker
                                         </label>
                                     </div>
                                     <div class="role-pill">
                                         <input type="radio" name="role" id="role-tga" value="TGA-Planer" />
                                         <label for="role-tga">
-                                            <span class="material-symbols-outlined"
-                                                style="font-size: 15px;" aria-hidden="true">⚙</span>
+                                            <svg class="ui-icon" style="width:15px;height:15px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>
                                             TGA-Planer
                                         </label>
                                     </div>
                                     <div class="role-pill">
                                         <input type="radio" name="role" id="role-energy" value="Energieberater" />
                                         <label for="role-energy">
-                                            <span class="material-symbols-outlined" style="font-size: 15px;" aria-hidden="true">◇</span>
+                                            <svg class="ui-icon" style="width:15px;height:15px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 9-9 9-9-9z"/></svg>
                                             Energieberater
                                         </label>
                                     </div>
                                     <div class="role-pill">
                                         <input type="radio" name="role" id="role-other" value="Sonstiges" />
                                         <label for="role-other">
-                                            <span class="material-symbols-outlined"
-                                                style="font-size: 15px;" aria-hidden="true">○</span>
+                                            <svg class="ui-icon" style="width:15px;height:15px" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.5"/></svg>
                                             Sonstiges
                                         </label>
                                     </div>
@@ -3751,18 +3646,17 @@
 
                             <!-- Submit -->
                             <button id="betaSubmitButton" type="submit"
-                                class="w-full bg-primary text-on-primary font-headline font-bold py-4 px-8 rounded-full text-base hover:shadow-[0_0_30px_rgba(69,222,231,0.5)] active:scale-95 transition-all flex items-center justify-center gap-2 group">
+                                class="w-full btn btn-primary py-4 px-8 text-base group">
                                 <span id="betaSubmitLabel">Beta-Zugang anfragen</span>
-                                <span
-                                    class="material-symbols-outlined transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                                <svg class="ui-icon text-xl transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                             </button>
                             <p id="betaFormStatus" role="status" aria-live="polite" class="text-center text-sm mt-4 font-body" style="display: none;">
                             </p>
 
-                            <p class="text-center text-gray-600 text-xs mt-5 font-body">
+                            <p class="text-center text-text-subtle text-xs mt-5 font-body">
                                 Kein Spam. Kein Abo. Nur eine Rückmeldung zum Beta-Zugang.
                             </p>
-                            <p class="text-center text-gray-600 text-xs mt-2 font-body">
+                            <p class="text-center text-text-subtle text-xs mt-2 font-body">
                                 Mit dem Absenden erklärst du dich mit der Verarbeitung deiner Daten gemäß unserer
                                 <a href="datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white transition-colors">Datenschutzerklärung</a> einverstanden.
                             </p>
@@ -3774,8 +3668,7 @@
                         class="flex flex-col items-center justify-center gap-4 py-8 text-center">
                         <div class="w-16 h-16 rounded-full flex items-center justify-center"
                             style="background: rgba(69,222,231,0.2); border: 1px solid rgba(69,222,231,0.4);">
-                            <span class="material-symbols-outlined text-primary"
-                                style="font-size: 32px;" aria-hidden="true">✓</span>
+                            <svg class="ui-icon text-primary" style="width:32px;height:32px" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4L19 7"/></svg>
                         </div>
                         <h3 class="text-white font-headline font-bold text-2xl">Anfrage abgeschickt</h3>
                         <p class="text-gray-400 max-w-sm font-body leading-relaxed">Wir haben deine Beta-Anfrage
@@ -3816,14 +3709,13 @@
                     <div class="flex flex-col sm:flex-row gap-5 justify-center">
                         <a
                             href="/beta/" data-event="beta_cta_click" data-cta-position="final_banner"
-                            class="bg-primary text-on-primary px-10 py-4 rounded-full font-headline font-bold text-lg hover:shadow-[0_0_40px_rgba(69,222,231,0.5)] active:scale-95 transition-all flex items-center justify-center gap-2 group">
+                            class="btn btn-primary px-10 py-4 text-lg group">
                             Kostenlos Beta testen
-                            <span
-                                class="material-symbols-outlined transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                            <svg class="ui-icon text-xl transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                         </a>
                     </div>
 
-                    <p class="text-gray-600 text-sm mt-8">
+                    <p class="text-text-subtle text-sm mt-8">
                         Kostenlos &nbsp;·&nbsp; Für echte SHK-Projekte &nbsp;·&nbsp; Beta
                     </p>
                 </div>
@@ -3841,15 +3733,15 @@
                 Um unsere Webseite für dich zu optimieren, erfassen wir anonymisierte Nutzungsdaten. Weitere Informationen findest du in unserer <a href="datenschutz.html" class="text-primary underline underline-offset-2 hover:text-white">Datenschutzerklärung</a>.
             </div>
             <div class="flex items-center gap-3 shrink-0">
-                <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 min-h-11 inline-flex items-center justify-center font-medium transition-colors text-sm">Ablehnen</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary px-6 py-2 min-h-11 text-sm">Akzeptieren</button>
             </div>
         </div>
     </div>
 
     <!-- Back to Top Button -->
     <button type="button" id="backToTop" aria-label="Nach oben scrollen">
-        <span class="material-symbols-outlined" style="font-size: 20px;" aria-hidden="true">↑</span>
+        <svg class="ui-icon" style="width:20px;height:20px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
     </button>
 
 
@@ -4194,10 +4086,10 @@
                 desc: 'PDF-Grundrisse auswählen und Raumdaten anschließend prüfen'
             },
             {
-                src: 'assets/prometo-screenshots/mobile/bauplan-import-review.webp',
-                alt: 'Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Smartphone',
-                title: 'Import-Review',
-                desc: 'Erkannte Räume vor der Übernahme prüfen und Import-Issues transparent nachvollziehen'
+                src: 'assets/prometo-screenshots/mobile/schnellberechnung-raeume.webp',
+                alt: 'Prometo Raum-Kontrolle mit aus dem PDF-Plan übernommenen Räumen auf dem Smartphone',
+                title: 'Räume kontrollieren',
+                desc: 'Aus dem PDF-Plan übernommene Räume mit Fläche und Raumtyp vor der Berechnung prüfen'
             },
             {
                 src: 'assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp',
@@ -4252,142 +4144,8 @@
                     const offset = 80;
                     const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-                    // Close mobile menu on link click
-                    closeMobileMenu({ restoreFocus: false });
                 }
             });
-        });
-
-        // ---- Hamburger Menu ----
-        const burgerBtn = document.getElementById('burgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        let lastFocusedElementBeforeMenu = null;
-
-        function getMobileMenuFocusableElements() {
-            if (!mobileMenu) {
-                return [];
-            }
-
-            return Array.from(
-                mobileMenu.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
-            ).filter((element) => !element.hasAttribute('hidden'));
-        }
-
-        function closeMobileMenu(options = {}) {
-            if (!burgerBtn || !mobileMenu) {
-                return;
-            }
-
-            mobileMenu.classList.remove('open');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            burgerBtn.classList.remove('open');
-            burgerBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-
-            if (options.restoreFocus) {
-                const focusTarget = lastFocusedElementBeforeMenu && typeof lastFocusedElementBeforeMenu.focus === 'function'
-                    ? lastFocusedElementBeforeMenu
-                    : burgerBtn;
-                focusTarget.focus();
-            }
-        }
-
-        function openMobileMenu() {
-            if (!burgerBtn || !mobileMenu) {
-                return;
-            }
-
-            lastFocusedElementBeforeMenu = document.activeElement instanceof HTMLElement
-                ? document.activeElement
-                : burgerBtn;
-
-            mobileMenu.classList.add('open');
-            mobileMenu.setAttribute('aria-hidden', 'false');
-            burgerBtn.classList.add('open');
-            burgerBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-
-            const focusableElements = getMobileMenuFocusableElements();
-            if (focusableElements.length) {
-                focusableElements[0].focus();
-            }
-        }
-
-        if (burgerBtn && mobileMenu) {
-            burgerBtn.addEventListener('click', () => {
-                const isOpen = mobileMenu.classList.contains('open');
-
-                if (isOpen) {
-                    closeMobileMenu({ restoreFocus: true });
-                    return;
-                }
-
-                openMobileMenu();
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (!mobileMenu.classList.contains('open')) {
-                    return;
-                }
-
-                if (event.key === 'Escape') {
-                    event.preventDefault();
-                    closeMobileMenu({ restoreFocus: true });
-                    return;
-                }
-
-                if (event.key !== 'Tab') {
-                    return;
-                }
-
-                const focusableElements = getMobileMenuFocusableElements();
-                if (!focusableElements.length) {
-                    event.preventDefault();
-                    burgerBtn.focus();
-                    return;
-                }
-
-                const firstElement = focusableElements[0];
-                const lastElement = focusableElements[focusableElements.length - 1];
-
-                if (event.shiftKey && document.activeElement === firstElement) {
-                    event.preventDefault();
-                    lastElement.focus();
-                    return;
-                }
-
-                if (!event.shiftKey && document.activeElement === lastElement) {
-                    event.preventDefault();
-                    firstElement.focus();
-                }
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth >= 768 && mobileMenu.classList.contains('open')) {
-                    closeMobileMenu({ restoreFocus: false });
-                }
-            });
-        }
-
-        // ---- Active Nav Link on Scroll ----
-        const sections = document.querySelectorAll('section[id], div[id]');
-        const navLinks = document.querySelectorAll('.nav-link[href^="#"], .mobile-nav-link[href^="#"]');
-
-        const navObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('nav-active');
-                        if (link.getAttribute('href') === '#' + entry.target.id) {
-                            link.classList.add('nav-active');
-                        }
-                    });
-                }
-            });
-        }, { rootMargin: '-30% 0px -60% 0px' });
-
-        document.querySelectorAll('#features, #showcase, #seo-hub, #zielgruppen, #faq').forEach(el => {
-            if (el) navObserver.observe(el);
         });
 
         // ---- Beta Form Submit ----

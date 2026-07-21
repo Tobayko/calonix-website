@@ -124,24 +124,80 @@
     </style>
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://prometo.app/"},
-            {"@type": "ListItem", "position": 2, "name": "Hydraulischer Abgleich", "item": "https://prometo.app/hydraulischer-abgleich/"}
-          ]
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "Prometo",
-          "url": "https://prometo.app/",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Webbrowser",
-          "description": "Heizlast, Volumenströme und hydraulischen Abgleich in einem verbundenen SHK-Workflow berechnen."
-        }
-      ]
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Hydraulischer Abgleich",
+                        "item": "https://prometo.app/hydraulischer-abgleich/"
+                    }
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Prometo",
+                "url": "https://prometo.app/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Webbrowser",
+                "description": "Heizlast, Volumenströme und hydraulischen Abgleich in einem verbundenen SHK-Workflow berechnen."
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/hydraulischer-abgleich/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Was ist hydraulischer Abgleich einfach erklärt?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Der hydraulische Abgleich verteilt das Heizungswasser so, dass jede Heizfläche die für ihren Raum benötigte Leistung bekommt. So werden Heizkörper oder Heizkreise nicht nur irgendwie warm, sondern passend zur Raumlast versorgt."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist hydraulischer Abgleich Pflicht?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Das hängt vom Gebäude und der konkreten Maßnahme ab. Nach aktuellem Stand ist der hydraulische Abgleich im GEG besonders für die Inbetriebnahme wassergeführter Heizungsanlagen in größeren Gebäuden relevant. Für Förderfälle können zusätzlich eigene Nachweisanforderungen gelten."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Braucht eine Wärmepumpe einen hydraulischen Abgleich?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "In der Praxis ja, denn gerade Wärmepumpen profitieren stark von sauber eingestellten Volumenströmen, passenden Heizflächen und einer plausiblen Raumverteilung."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was kostet ein hydraulischer Abgleich?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Das lässt sich ohne Projektdaten nicht seriös pauschal angeben. Der Aufwand hängt davon ab, ob Heizkörper oder Fußbodenheizung vorliegen, wie gut die Bestandsdaten sind und ob Ventile, Pumpe oder weitere Bauteile angepasst werden müssen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Welche Daten braucht man für einen sauberen Abgleich?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Typisch relevant sind Heizlast beziehungsweise Raumlast, Heizflächen, Systemtemperaturen, Ventile, Heizkreise, Verteiler, Kreislängen und die projektspezifischen Einstellwerte. Genau deshalb ist der Abgleich selten sinnvoll als völlig losgelöster Arbeitsschritt."
+                        }
+                    }
+                ]
+            }
+        ]
     }
     </script>
 </head>
@@ -287,9 +343,9 @@
     <main>
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-text-subtle">
                     <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
-                    <span class="mx-2 text-gray-600">/</span>
+                    <span class="mx-2 text-text-subtle">/</span>
                     <span aria-current="page">Hydraulischer Abgleich</span>
                 </nav>
 
@@ -661,7 +717,7 @@
                             Verteilerlogik in einem Projektmodell zusammen. Dadurch wird der Abgleich nicht als
                             isolierte Liste behandelt, sondern als Fortsetzung derselben Datenbasis.
                         </p>
-                        <p class="text-sm text-gray-500 leading-relaxed mb-6">
+                        <p class="text-sm text-text-subtle leading-relaxed mb-6">
                             Die gezeigten Projektparameter entstehen aus Projekt-, Material- und Systemdaten. Die
                             konkrete Ausprägung kann von jedem Unternehmen individuell angepasst werden. Eine
                             vollständige pumpen- oder druckverlustbasierte Netzberechnung wird damit nicht pauschal ersetzt.
@@ -691,7 +747,7 @@
                     <p><strong class="block text-white mb-2">Berechnung</strong>Systemtemperaturen und Heizkreise werden derselben Raum- und Etagenstruktur zugeordnet.</p>
                     <p><strong class="block text-white mb-2">Prüfung</strong>Volumenströme und Kreiswerte werden vor Einregulierung, Dokumentation und Ausführung fachlich kontrolliert.</p>
                 </div>
-                <p class="mt-6 text-sm text-gray-500">Beta-Grenze: Prometo ersetzt derzeit kein vollständiges Druckverlust- oder Pumpenauslegungsmodell. Projektspezifische Nachweise bleiben Aufgabe qualifizierter Fachpersonen.</p>
+                <p class="mt-6 text-sm text-text-subtle">Beta-Grenze: Prometo ersetzt derzeit kein vollständiges Druckverlust- oder Pumpenauslegungsmodell. Projektspezifische Nachweise bleiben Aufgabe qualifizierter Fachpersonen.</p>
             </div>
         </section>
 
@@ -797,7 +853,7 @@
 
         <section class="px-6 pb-10">
             <div class="max-w-screen-xl mx-auto">
-                <p class="text-xs text-gray-600 leading-relaxed">
+                <p class="text-xs text-text-subtle leading-relaxed">
                     Rechtliche und förderbezogene Anforderungen können sich ändern. Maßgeblich sind immer die
                     aktuellen Gesetzes- und Programmunterlagen. Die technische Verantwortung im konkreten Projekt bleibt
                     beim Anwender.
@@ -844,7 +900,7 @@
                 <button type="button" id="cookie-decline"
                     class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
                 <button type="button" id="cookie-accept"
-                    class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                    class="btn btn-primary px-6 py-2 text-sm">Akzeptieren</button>
             </div>
         </div>
     </div>

@@ -28,11 +28,63 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "@id": "https://prometo.app/autarc-reonic-alternative/#breadcrumb",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://prometo.app/" },
-            { "@type": "ListItem", "position": 2, "name": "Reonic und autarc Alternative", "item": "https://prometo.app/autarc-reonic-alternative/" }
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://prometo.app/autarc-reonic-alternative/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Startseite",
+                        "item": "https://prometo.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Reonic und autarc Alternative",
+                        "item": "https://prometo.app/autarc-reonic-alternative/"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://prometo.app/autarc-reonic-alternative/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Ist Prometo ein vollständiger Ersatz für Reonic oder autarc?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Nicht pauschal. Prometo setzt einen engeren Schwerpunkt auf vorhandene PDF-Grundrisse und den verbundenen SHK-Berechnungsworkflow. Breitere Plattformfunktionen von Reonic und autarc müssen separat gegen die eigenen Anforderungen geprüft werden."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Warum beginnt Prometo beim PDF?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Weil in vielen EFH-, Sanierungs- und Wärmepumpenprojekten bereits ein Grundriss vorliegt. Prometo nutzt ihn als Datenquelle, statt ihn nur neben einer neuen Raumerfassung anzuzeigen."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Muss die automatische Erkennung kontrolliert werden?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Raumgeometrien, Bauteile und weitere Planinformationen müssen vor der Berechnung bestätigt und bei Bedarf korrigiert werden."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Ist die Prometo Beta kostenlos?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Die aktuelle Beta ist kostenlos und richtet sich an SHK-Betriebe, die Prometo mit einem echten Projekt prüfen und konkretes Feedback geben."
+                        }
+                    }
+                ]
+            }
         ]
     }
     </script>
@@ -58,7 +110,7 @@
                     <div class="marketing-actions"><a class="marketing-button marketing-button--primary" href="/beta/" data-event="comparison_cta_click" data-cta-position="hero">Kostenlos Beta testen</a><a class="marketing-button marketing-button--secondary" href="#direktvergleich">Direktvergleich ansehen</a></div>
                     <p class="marketing-hero-note">Prometo behauptet nicht, schneller, günstiger oder pauschal besser zu sein. Die passende Lösung hängt vom Projektstart, Funktionsumfang und bestehenden Betriebsprozess ab.</p>
                 </div>
-                <figure class="marketing-media-card"><img src="/assets/prometo-screenshots/tablet/bauplan-import-review.webp" width="2560" height="1600" alt="Prometo Import-Review mit automatisch erkannten Räumen auf dem Tablet" fetchpriority="high"><figcaption><strong>Der Unterschied liegt am Anfang</strong>Vorhandenen PDF-Grundriss übernehmen, Räume kontrollieren und dieselben Daten weiterberechnen.</figcaption></figure>
+                <figure class="marketing-media-card"><img src="/assets/prometo-screenshots/tablet/schnellberechnung-richtwerte.webp" width="2560" height="1600" alt="Prometo Schnellberechnung auf dem Tablet mit aus dem PDF-Plan übernommenen Räumen und Richtwerten" fetchpriority="high"><figcaption><strong>Der Unterschied liegt am Anfang</strong>Vorhandenen PDF-Grundriss übernehmen, Räume kontrollieren und dieselben Daten weiterberechnen.</figcaption></figure>
             </div>
         </section>
 

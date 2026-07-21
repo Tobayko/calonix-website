@@ -129,9 +129,9 @@ const exactPages = {
     h1: 'Heizlastberechnung direkt aus dem PDF-Grundriss'
   },
   'digitales-aufmass/index.html': {
-    title: 'Digitales Aufmaß für Heizlastberechnung | Prometo',
-    description: 'Digitales Aufmaß für SHK: PDF-Grundrisse importieren, Räume und Flächen prüfen und die bestätigten Daten für Heizlastberechnung und hydraulischen Abgleich weiterverwenden.',
-    h1: 'Digitales Aufmaß für Heizlastberechnung'
+    title: 'Aufmaß App für PDF-Grundrisse: digitales Aufmaß | Prometo',
+    description: 'Aufmaß App für SHK: PDF-Grundriss importieren, Räume und Flächen prüfen und die geprüften Daten für Heizlast und hydraulischen Abgleich weiterverwenden.',
+    h1: 'Digitales Aufmaß aus dem PDF-Grundriss'
   },
   'hydraulischer-abgleich/index.html': {
     title: 'Hydraulischer Abgleich Software für SHK | Prometo',
@@ -139,9 +139,9 @@ const exactPages = {
     h1: 'Hydraulischen Abgleich direkt aus der Raumheizlast berechnen'
   },
   'fussbodenheizung-auslegen/index.html': {
-    title: 'Fußbodenheizung auslegen: Heizkreise & Material | Prometo',
-    description: 'Verlegeabstand, Heizkreise, Rohrlängen und Material aus der Raumheizlast ableiten. Fußbodenheizung im Prometo Workflow einfach auslegen.',
-    h1: 'Fußbodenheizung auslegen – von der Raumheizlast zum Material'
+    title: 'Fußbodenheizung Verlegeabstand & Auslegung | Prometo',
+    description: 'Verlegeabstand der Fußbodenheizung bestimmen: wann 10, 15 oder 20 cm passen und wie Heizkreise, Rohrlängen und Material aus der Raumheizlast folgen.',
+    h1: 'Fußbodenheizung auslegen: Verlegeabstand aus der Raumheizlast'
   },
   'heizlastberechnung/index.html': {
     title: 'Heizlastberechnung nach DIN EN 12831 | Prometo',

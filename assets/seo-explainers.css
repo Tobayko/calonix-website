@@ -92,10 +92,6 @@
     }
 }
 
-@media (max-width: 768px) {
-    .seo-explainer .flow-track,
-    .seo-explainer .flow-pulse,
-    .seo-explainer .moving-dot {
-        animation: none;
-    }
-}
+/* Kein pauschales Abschalten auf Mobile mehr: offset-path/opacity ist GPU-kompositierbar,
+   und die Zielgruppe prüft die Seite mobil auf der Baustelle — die einzige erklärende
+   Animation der Seite muss dort laufen. Accessibility deckt die reduced-motion-Regel ab. */

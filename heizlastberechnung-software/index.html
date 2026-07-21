@@ -112,23 +112,7 @@
             color: #fff;
         }
 
-        .compare-table th {
-            background: rgba(69, 222, 231, 0.08);
-            color: #6bf6ff;
-            font-size: 0.875rem;
-            padding: 0.75rem 1.25rem;
-        }
-
-        .compare-table td {
-            padding: 0.75rem 1.25rem;
-            border: 1px solid rgba(255,255,255,0.06);
-            font-size: 0.875rem;
-            vertical-align: top;
-        }
-
-        .compare-table tr:nth-child(even) td {
-            background: rgba(255,255,255,0.02);
-        }
+        /* .compare-table jetzt zentral in assets/page-effects.css (.data-table-System) */
 
         .step-num {
             width: 2.5rem;
@@ -472,9 +456,9 @@
         <!-- HERO -->
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-text-subtle">
                     <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
-                    <span class="mx-2 text-gray-600">/</span>
+                    <span class="mx-2 text-text-subtle">/</span>
                     <span aria-current="page">Heizlastberechnung Software</span>
                 </nav>
 
@@ -488,7 +472,7 @@
                             Prometo verbindet Raumdaten, Heizlast-Schätzung, Systementscheidung und hydraulischen
                             Abgleich in einem nachvollziehbaren Projekt-Workflow.
                         </p>
-                        <p class="text-xs text-gray-500 mb-4">
+                        <p class="text-xs text-text-subtle mb-4">
                             Beta-Inhalt · Berechnung und Ergebnisse fachlich prüfen
                         </p>
                         <div class="mb-8 p-5 rounded-2xl border border-primary/20 bg-primary/8 max-w-2xl">
@@ -644,32 +628,32 @@
                         <tbody>
                             <tr>
                                 <td class="text-gray-300 font-medium">Grundriss</td>
-                                <td class="text-gray-500">PDF separat, Räume manuell übertragen</td>
+                                <td class="text-text-subtle">PDF separat, Räume manuell übertragen</td>
                                 <td class="text-primary">Plan wird zur prüfbaren Raumdatenbasis</td>
                             </tr>
                             <tr>
                                 <td class="text-gray-300 font-medium">Aufmaß</td>
-                                <td class="text-gray-500">Fotos, Notizen, WhatsApp-Nachrichten</td>
+                                <td class="text-text-subtle">Fotos, Notizen, WhatsApp-Nachrichten</td>
                                 <td class="text-primary">Räume digital prüfen und strukturieren</td>
                             </tr>
                             <tr>
                                 <td class="text-gray-300 font-medium">Heizlast</td>
-                                <td class="text-gray-500">Separates Berechnungstool oder Tabelle</td>
+                                <td class="text-text-subtle">Separates Berechnungstool oder Tabelle</td>
                                 <td class="text-primary">Geprüfte Raumdaten für die Fachberechnung</td>
                             </tr>
                             <tr>
                                 <td class="text-gray-300 font-medium">Hydraulischer Abgleich</td>
-                                <td class="text-gray-500">Erneute Dateneingabe in anderes Tool</td>
+                                <td class="text-text-subtle">Erneute Dateneingabe in anderes Tool</td>
                                 <td class="text-primary">Eingaben für die weitere Ableitung vorbereiten</td>
                             </tr>
                             <tr>
                                 <td class="text-gray-300 font-medium">Material</td>
-                                <td class="text-gray-500">Später manuell zusammensuchen</td>
+                                <td class="text-text-subtle">Später manuell zusammensuchen</td>
                                 <td class="text-primary">Rohr- und Systemdaten für Stücklisten strukturieren</td>
                             </tr>
                             <tr>
                                 <td class="text-gray-300 font-medium">Büro und Baustelle</td>
-                                <td class="text-gray-500">Rückfragen per Telefon, unterschiedliche Stände</td>
+                                <td class="text-text-subtle">Rückfragen per Telefon, unterschiedliche Stände</td>
                                 <td class="text-primary">Gemeinsame, nachvollziehbare Projektbasis</td>
                             </tr>
                         </tbody>
@@ -1019,7 +1003,7 @@
             </div>
             <div class="flex items-center gap-3 shrink-0">
                 <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary px-6 py-2 text-sm">Akzeptieren</button>
             </div>
         </div>
     </div>

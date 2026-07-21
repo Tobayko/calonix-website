@@ -1,18 +1,86 @@
+/* Einheitliches Inline-SVG-Iconset (ersetzt Unicode-Dingbats/Icon-Font).
+   Erbt Farbe + Größe von Utility-Klassen (text-primary, text-lg) wie zuvor der Span. */
+.ui-icon {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.75;
+    flex: none;
+}
+
+/* Einheitliche Datentabelle — eine Definition statt 5 separat gepflegter Tabellen-Stile.
+   Neue Tabellen nutzen .data-table; die Legacy-Klassennamen aliassen darauf, damit die
+   HTML-Seiten nicht angefasst werden müssen. Horizontal-Linien + Zebra statt Vollgitter. */
+.data-table,
+.richtwert-table,
+.method-table,
+.metric-table,
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.richtwert-table th,
+.method-table th,
+.metric-table th,
+.compare-table th {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary, #45dee7);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-line, rgba(255, 255, 255, 0.08));
+    vertical-align: bottom;
+}
+
+.data-table td,
+.richtwert-table td,
+.method-table td,
+.metric-table td,
+.compare-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #dfe3e3;
+    font-size: 0.9rem;
+    vertical-align: top;
+}
+
+.data-table tr:nth-child(even) td,
+.richtwert-table tr:nth-child(even) td,
+.method-table tr:nth-child(even) td,
+.metric-table tr:nth-child(even) td,
+.compare-table tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.data-table tr:last-child td,
+.richtwert-table tr:last-child td,
+.method-table tr:last-child td,
+.metric-table tr:last-child td,
+.compare-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Nur opacity + transform animieren = GPU-kompositierbar. Kein filter:blur mehr
+   (nicht compositor-fähig, teuer pro Frame auf Low-End-Android der Baustellen-Zielgruppe). */
 .reveal {
     opacity: 0;
     transform: translate3d(0, 22px, 0) scale(0.985);
-    filter: blur(6px);
     transition:
-        opacity 0.72s cubic-bezier(0.2, 0.8, 0.2, 1),
-        transform 0.72s cubic-bezier(0.2, 0.8, 0.2, 1),
-        filter 0.72s cubic-bezier(0.2, 0.8, 0.2, 1);
+        opacity var(--duration-reveal, 0.72s) var(--ease-standard, cubic-bezier(0.2, 0.8, 0.2, 1)),
+        transform var(--duration-reveal, 0.72s) var(--ease-standard, cubic-bezier(0.2, 0.8, 0.2, 1));
     will-change: opacity, transform;
 }
 
 .reveal.is-visible {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
 }
 
 .reveal-delay-1 {

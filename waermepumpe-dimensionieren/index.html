@@ -171,25 +171,7 @@
             animation: fadeChart 0.7s ease forwards 0.74s, pulseDot 2.6s ease-in-out infinite 1.2s;
         }
 
-        .metric-table th,
-        .metric-table td {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 0.85rem 1rem;
-            text-align: left;
-            vertical-align: top;
-        }
-
-        .metric-table th {
-            color: #45dee7;
-            font-size: 0.78rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .metric-table td {
-            color: #dfe3e3;
-            font-size: 0.9rem;
-        }
+        /* .metric-table jetzt zentral in assets/page-effects.css (.data-table-System) */
 
         .faq-item summary {
             cursor: pointer;
@@ -520,9 +502,9 @@
     <main>
         <section class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto">
-                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-gray-500">
+                <nav aria-label="Breadcrumb" class="mb-8 text-sm text-text-subtle">
                     <a href="/" class="text-primary hover:text-white transition-colors">Startseite</a>
-                    <span class="mx-2 text-gray-600">/</span>
+                    <span class="mx-2 text-text-subtle">/</span>
                     <span aria-current="page">Wärmepumpe dimensionieren</span>
                 </nav>
 
@@ -541,7 +523,7 @@
                                 Eine Wärmepumpe wird ausgehend von der Gebäudeheizlast dimensioniert. Danach wird geprüft, welche Heizleistung sie bei relevanten Betriebspunkten wie A-7/W35 liefert, wie weit sie modulieren kann und wie COP, SCOP, JAZ und Bivalenzpunkt zur realen Anlage passen.
                             </p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-8">Zuletzt aktualisiert: <time datetime="2026-04-08">April 2026</time></p>
+                        <p class="text-xs text-text-subtle mb-8">Zuletzt aktualisiert: <time datetime="2026-04-08">April 2026</time></p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a href="/heizlast/"
                                 class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-base font-headline font-bold text-on-primary transition-all hover:shadow-[0_0_28px_rgba(69,222,231,0.35)]">
@@ -552,7 +534,7 @@
                                 Prometo Workflow ansehen
                             </a>
                         </div>
-                        <p class="mt-5 text-sm text-gray-500">
+                        <p class="mt-5 text-sm text-text-subtle">
                             English version available:
                             <a href="/en/heat-pump-sizing/" hreflang="en-US" class="text-primary hover:text-white transition-colors">Heat pump sizing</a>
                         </p>
@@ -757,7 +739,7 @@
                         <p class="text-lg text-gray-400 leading-relaxed mb-4">
                             Prometo verbindet PDF-Grundriss, raumweise Heizlast, spezifische Last, Bivalenzpunkt, Flächensystem und hydraulischen Abgleich in einem Projektmodell. So wird die Wärmepumpen-Auslegung nicht isoliert, sondern im Gebäudekontext vorbereitet.
                         </p>
-                        <p class="text-gray-500 leading-relaxed mb-6">
+                        <p class="text-text-subtle leading-relaxed mb-6">
                             Die konkrete Herstellerdimensionierung und Förderprüfung bleiben projektspezifisch. Prometo liefert die strukturierte technische Arbeitsgrundlage.
                         </p>
                         <div class="flex flex-wrap gap-4 text-sm">
@@ -809,7 +791,7 @@
 
         <section class="px-6 pb-10" id="hinweis">
             <div class="max-w-screen-xl mx-auto">
-                <p class="text-xs text-gray-600 leading-relaxed">
+                <p class="text-xs text-text-subtle leading-relaxed">
                     Schematische Darstellungen und Beispielkurven auf dieser Seite sind keine Herstellervergleiche. Für konkrete Projekte müssen reale Herstellerdatenblätter, Betriebspunkte, Einsatzgrenzen, aktuelle Förderbedingungen und die projektspezifische Heizlast geprüft werden. Alle Angaben ohne Gewähr.
                 </p>
             </div>
@@ -840,7 +822,7 @@
             </div>
             <div class="flex items-center gap-3 shrink-0">
                 <button type="button" id="cookie-decline" class="text-gray-400 hover:text-white px-4 py-2 font-medium transition-colors text-sm">Ablehnen</button>
-                <button type="button" id="cookie-accept" class="bg-primary text-on-primary px-6 py-2 rounded-full font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(69,222,231,0.4)] transition-all">Akzeptieren</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary px-6 py-2 text-sm">Akzeptieren</button>
             </div>
         </div>
     </div>
@@ -895,7 +877,7 @@
             sessionStorage.setItem('prometo_en_hint_seen', '1');
             const hint = document.createElement('div');
             hint.className = 'fixed left-4 right-4 top-20 z-50 mx-auto max-w-xl rounded-2xl border border-primary/25 bg-[#0b0e0e]/95 p-4 text-sm text-gray-200 shadow-2xl backdrop-blur-xl';
-            hint.innerHTML = '<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><span>Looking for the English version?</span><div class="flex items-center gap-3"><a class="font-headline font-bold text-primary hover:text-white" href="/en/heat-pump-sizing/" hreflang="en-US">Open English page</a><button type="button" class="text-gray-500 hover:text-white" aria-label="Close language hint">Close</button></div></div>';
+            hint.innerHTML = '<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><span>Looking for the English version?</span><div class="flex items-center gap-3"><a class="font-headline font-bold text-primary hover:text-white" href="/en/heat-pump-sizing/" hreflang="en-US">Open English page</a><button type="button" class="text-text-subtle hover:text-white" aria-label="Close language hint">Close</button></div></div>';
             const closeButton = hint.querySelector('button');
             closeButton.addEventListener('click', () => hint.remove());
             document.body.appendChild(hint);
