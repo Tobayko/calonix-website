@@ -1112,4 +1112,10 @@ Hinweis: die Workflow-Demo war vom Audit als „Kronjuwel" (klare Produkt-Erklä
 - Alle Volumenströme **rechnerisch gegen die Formel geprüft** (Python-Check, Rundung ≤1 l/h). Klar als Rechenbeispiel/kein Normnachweis markiert; Voreinstellung als ventilabhängiger Beispielwert gekennzeichnet.
 - Nutzt das neue `.data-table`-System + `.formula-box` + `text-text-subtle`-Token; horizontal scrollbar auf Mobile.
 
-Offen (bewusst, mit Nutzer abgestimmt): Breakpoint-Vereinheitlichung (nicht gewünscht), aussagekräftiger KI-Chat-Screenshot (Asset fehlt), EN-Pendant des Hydraulik-Beispiels (Übersetzung nötig).
+## Runde 10 (2026-07-21) — KI-Chat-Screenshot + EN-Hydraulik. Verifiziert build ✅ lint ✅ seo:check 40 ✅ test 5/5 ✅
+
+- **`ki-assistent`-Hero: echter Chat-Screenshot** (§4.3): das abstrakte Wissensgraph-SVG (`.assistant-svg`, ~178 Z.) ersetzt durch einen vom Nutzer gelieferten, aussagekräftigen Doku-Chat-Screenshot (echte Frage + ausführliche Antwort). Als PNG geliefert → zu WebP konvertiert (`fachassistent-chat-antwort.webp`, 1080×2400, 383 KB → 110 KB), im Glow-Panel als Phone gerahmt. Totes `.assistant-svg`-CSS entfernt.
+- **EN-Pendant des Hydraulik-Rechenbeispiels**: die Formel-Box + `.data-table` mit denselben (geprüften) Zahlen auf `en/hydraulic-balancing/` gespiegelt, englische Labels + englisches Zahlenformat (1,400 / 4.5 / 0.39 m³/h).
+- Nicht gespiegelt: `en/ai-assistant/` nutzt ein anderes (Marketing-)Template ohne Bild-Slot im Hero — kein sauberer 1:1-Tausch möglich; bewusst ausgelassen.
+
+Offen (bewusst, mit Nutzer abgestimmt): Breakpoint-Vereinheitlichung (nicht gewünscht).

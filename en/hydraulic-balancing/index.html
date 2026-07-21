@@ -402,6 +402,54 @@
             </div>
         </section>
 
+        <section class="px-6 pb-16 md:pb-24" aria-labelledby="en-abgleich-efh-title">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12">
+                <span class="badge mb-6">Worked example</span>
+                <h2 id="en-abgleich-efh-title" class="text-3xl md:text-5xl font-bold text-white mb-6">From verified room heat load to circuits and flow rates</h2>
+
+                <p class="text-gray-400 leading-relaxed max-w-3xl mb-6">Hydraulic balancing turns each room heat load into the <strong class="text-white">design flow rate</strong> per circuit and, from that, the <strong class="text-white">valve presetting</strong>. Prometo makes exactly these numbers visible. Worked example for a single-family house with radiators and a 10&nbsp;K spread (55/45&nbsp;°C):</p>
+
+                <div class="rounded-3xl border border-primary/20 bg-primary/8 p-5 mb-8 reveal">
+                    <p class="font-headline text-lg md:text-xl text-white mb-2">V&#775; = Q&#775; / (1.163 &middot; &Delta;&theta;)</p>
+                    <p class="text-sm text-text-subtle leading-relaxed">
+                        <strong class="text-white">V&#775;</strong> design flow rate [l/h] &middot;
+                        <strong class="text-white">Q&#775;</strong> room / emitter heat load [W] &middot;
+                        <strong class="text-white">&Delta;&theta;</strong> supply&minus;return spread [K] &middot;
+                        <strong class="text-white">1.163</strong> Wh/(kg&middot;K) &ndash; specific heat capacity of water
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto mb-4 reveal reveal-delay-1">
+                    <table class="data-table min-w-[640px]">
+                        <thead>
+                            <tr>
+                                <th scope="col">Room / circuit</th>
+                                <th scope="col">Heat load Q&#775; [W]</th>
+                                <th scope="col">Spread &Delta;&theta; [K]</th>
+                                <th scope="col">Design flow V&#775; [l/h]</th>
+                                <th scope="col">Valve presetting*</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Living room</td><td>1,400</td><td>10</td><td>120</td><td>4.5</td></tr>
+                            <tr><td>Kitchen</td><td>900</td><td>10</td><td>77</td><td>3.0</td></tr>
+                            <tr><td>Bathroom</td><td>700</td><td>10</td><td>60</td><td>2.5</td></tr>
+                            <tr><td>Bedroom</td><td>800</td><td>10</td><td>69</td><td>2.5</td></tr>
+                            <tr><td>Child&rsquo;s room</td><td>750</td><td>10</td><td>65</td><td>2.5</td></tr>
+                            <tr>
+                                <td class="font-headline font-bold text-white">Total / pump</td>
+                                <td class="font-headline font-bold text-white">4,550</td>
+                                <td class="text-text-subtle">&mdash;</td>
+                                <td class="font-headline font-bold text-primary">391</td>
+                                <td class="text-text-subtle">&asymp; 0.39 m³/h</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-text-subtle reveal reveal-delay-1">*The presetting depends on the valve type (example values). The calculated design flow rate is the decisive figure; the valve design differential pressure determines the actual step. Values are a worked example, not a standards proof.</p>
+            </div>
+        </section>
+
         <section class="px-6 pb-16 md:pb-24" id="faq">
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
