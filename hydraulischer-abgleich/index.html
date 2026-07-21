@@ -742,6 +742,48 @@
             <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12">
                 <span class="badge mb-6">EFH-Beispiel für den Abgleich</span>
                 <h2 id="abgleich-efh-title" class="text-3xl md:text-5xl font-bold text-white mb-6">Von der geprüften Raumheizlast zu Heizkreisen und Volumenströmen</h2>
+
+                <p class="text-gray-400 leading-relaxed max-w-3xl mb-6">Der hydraulische Abgleich rechnet aus jeder Raumheizlast den <strong class="text-white">Sollvolumenstrom</strong> je Heizkreis und daraus die <strong class="text-white">Ventil-Voreinstellung</strong>. Genau diese Werte macht Prometo sichtbar. Rechenbeispiel für ein Einfamilienhaus mit Heizkörpern und 10&nbsp;K Spreizung (55/45&nbsp;°C):</p>
+
+                <div class="formula-box mb-8 reveal">
+                    <p class="font-headline text-lg md:text-xl text-white mb-2">V&#775; = Q&#775; / (1,163 &middot; &Delta;&theta;)</p>
+                    <p class="text-sm text-text-subtle leading-relaxed">
+                        <strong class="text-white">V&#775;</strong> Sollvolumenstrom [l/h] &middot;
+                        <strong class="text-white">Q&#775;</strong> Raum- bzw. Heizflächenheizlast [W] &middot;
+                        <strong class="text-white">&Delta;&theta;</strong> Spreizung Vorlauf&minus;Rücklauf [K] &middot;
+                        <strong class="text-white">1,163</strong> Wh/(kg&middot;K) &ndash; spez. Wärmekapazität von Wasser
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto mb-4 reveal reveal-delay-1">
+                    <table class="data-table min-w-[640px]">
+                        <thead>
+                            <tr>
+                                <th scope="col">Raum / Heizkreis</th>
+                                <th scope="col">Heizlast Q&#775; [W]</th>
+                                <th scope="col">Spreizung &Delta;&theta; [K]</th>
+                                <th scope="col">Sollvolumenstrom V&#775; [l/h]</th>
+                                <th scope="col">Ventil-Voreinstellung*</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Wohnen</td><td>1.400</td><td>10</td><td>120</td><td>4,5</td></tr>
+                            <tr><td>Küche</td><td>900</td><td>10</td><td>77</td><td>3,0</td></tr>
+                            <tr><td>Bad</td><td>700</td><td>10</td><td>60</td><td>2,5</td></tr>
+                            <tr><td>Schlafen</td><td>800</td><td>10</td><td>69</td><td>2,5</td></tr>
+                            <tr><td>Kinderzimmer</td><td>750</td><td>10</td><td>65</td><td>2,5</td></tr>
+                            <tr>
+                                <td class="font-headline font-bold text-white">Summe / Pumpe</td>
+                                <td class="font-headline font-bold text-white">4.550</td>
+                                <td class="text-text-subtle">&mdash;</td>
+                                <td class="font-headline font-bold text-primary">391</td>
+                                <td class="text-text-subtle">&asymp; 0,39 m³/h</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-text-subtle mb-10 reveal reveal-delay-1">*Die Voreinstellung ist ventilabhängig (Beispielwerte). Maßgeblich ist der berechnete Sollvolumenstrom; der Auslegungs-Differenzdruck der Ventile bestimmt die konkrete Stufe. Werte sind ein Rechenbeispiel, kein Normnachweis.</p>
+
                 <div class="grid gap-6 md:grid-cols-3 text-gray-400 leading-relaxed">
                     <p><strong class="block text-white mb-2">Grundlage</strong>Kontrollierte Raumheizlasten und die tatsächlich geplanten Heizflächen des Einfamilienhauses.</p>
                     <p><strong class="block text-white mb-2">Berechnung</strong>Systemtemperaturen und Heizkreise werden derselben Raum- und Etagenstruktur zugeordnet.</p>

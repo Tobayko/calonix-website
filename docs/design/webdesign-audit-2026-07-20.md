@@ -1101,3 +1101,15 @@ Auf ausdrücklichen Nutzerwunsch: das **alte Hero-Visual mit dem animierten 3D-W
 - Die **Workflow-Demo vollständig entfernt**: Markup, ~358 Zeilen CSS (`.hero-workflow-stage`/`.workflow-*` + Keyframes) und die toten Mobile-/Reduced-Motion-Overrides. 0 Workflow-Referenzen verbleiben.
 
 Hinweis: die Workflow-Demo war vom Audit als „Kronjuwel" (klare Produkt-Erklärung) gelobt — der Würfel ist dekorativer/abstrakter. Bewusste Nutzerentscheidung; der Demo-Code liegt weiterhin in der Git-Historie (vor dieser Runde).
+
+## Runde 9 (2026-07-21) — Reveal-Fork + Hydraulik-Rechenbeispiel. Verifiziert build ✅ lint ✅ seo:check 40 ✅ test 5/5 ✅
+
+**Homepage-`.reveal`-Fork aufgelöst** (§3.1, kritisch): die Homepage nutzte einen eigenen Reveal-Vertrag (`.reveal.visible`, `translateY(40px)`, eigenes Easing) gegen den projektweiten (`.reveal.is-visible` in `page-effects.css`). Vereinheitlicht: Homepage-Reveal auf **denselben Vertrag** (`is-visible`) und dieselben Werte/Tokens (`translate3d(0,22px,0) scale(.985)`, `--duration-reveal`, `--ease-standard`) umgestellt — CSS-Selektor + beide `classList.add('visible')`-Stellen der `.reveal`-Elemente auf `is-visible`. `#backToTop.visible` (eigener Zustand) unangetastet. Blöcke sind jetzt zwischen Homepage und Unterseiten portabel ohne stillen Bruch.
+
+**`hydraulischer-abgleich`: Rechenweg mit Zahlen** (§4.6, kritisch): die Seite hatte 0 Zahlen/Formeln/Tabellen. In die EFH-Beispiel-Sektion ein **Rechenbeispiel** eingesetzt, das genau die im Abgleich berechneten Werte sichtbar macht:
+- **Formel-Box** (`.formula-box`): `V̇ = Q̇ / (1,163 · Δθ)` mit Legende (Standard-Physik, spez. Wärmekapazität Wasser).
+- **`.data-table`** (5 Räume, EFH mit Heizkörpern, Δθ 10 K): Heizlast → Sollvolumenstrom → Ventil-Voreinstellung je Heizkreis, plus Summe (4.550 W → 391 l/h ≈ 0,39 m³/h Pumpen-Betriebspunkt).
+- Alle Volumenströme **rechnerisch gegen die Formel geprüft** (Python-Check, Rundung ≤1 l/h). Klar als Rechenbeispiel/kein Normnachweis markiert; Voreinstellung als ventilabhängiger Beispielwert gekennzeichnet.
+- Nutzt das neue `.data-table`-System + `.formula-box` + `text-text-subtle`-Token; horizontal scrollbar auf Mobile.
+
+Offen (bewusst, mit Nutzer abgestimmt): Breakpoint-Vereinheitlichung (nicht gewünscht), aussagekräftiger KI-Chat-Screenshot (Asset fehlt), EN-Pendant des Hydraulik-Beispiels (Übersetzung nötig).
