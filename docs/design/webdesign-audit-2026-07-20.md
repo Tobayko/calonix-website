@@ -1090,3 +1090,14 @@ Nicht getauscht (bewusst): `ki-assistent`-Hero zeigt ein animiertes Wissensgraph
 - **H2-Rhythmus vereinheitlicht** (§4.1): die zwei zu kleinen Post-Hero-Überschriften (`home-flow-heading`, `topic-map-heading`, `text-3xl md:text-4xl`) auf den Standard `text-4xl md:text-5xl` der übrigen 7 Sektionen angehoben.
 
 Homepage dadurch von ~4865 auf 4569 Zeilen geschrumpft.
+
+## Runde 8 (2026-07-21) — Hero-Würfel auf Wunsch zurück. Verifiziert build ✅ lint ✅ seo:check 40 ✅ test 5/5 ✅
+
+Auf ausdrücklichen Nutzerwunsch: das **alte Hero-Visual mit dem animierten 3D-Würfel** ersetzt wieder die PDF-Workflow-Demo (die den Würfel in `6d6956f` abgelöst hatte). Wiederhergestellt aus `3bcc8a1`, bewusst auf **Tracks + Pakete + rotierenden Würfel** begrenzt (ohne die früheren Float-Labels/Glass-Cards/AI-Terminal, die zusätzliche Abhängigkeiten mitbrachten):
+- `.engine-container/.engine-float/.engine-cube` (6 `.cube-face`) + `.engine-core`, isometrisch (`rotateX(-30) rotateY(45)`), floatend, mit pulsierendem Core.
+- SVG-Datenflusslinien (`.path-animated`/`-fast`, `line-flow`) + `animateMotion`-Datenpakete entlang vier Bezier-Pfaden.
+- Maus-Interaktion (Würfel dreht mit dem Cursor) — nur wenn `canAnimate` (kein Reduced-Motion, kein Touch/Mobile).
+- Reduced-Motion-Guard ergänzt (Float/Core/Line-Animationen aus, Würfel statisch); Mobile skaliert (`scale(.66)`).
+- Die **Workflow-Demo vollständig entfernt**: Markup, ~358 Zeilen CSS (`.hero-workflow-stage`/`.workflow-*` + Keyframes) und die toten Mobile-/Reduced-Motion-Overrides. 0 Workflow-Referenzen verbleiben.
+
+Hinweis: die Workflow-Demo war vom Audit als „Kronjuwel" (klare Produkt-Erklärung) gelobt — der Würfel ist dekorativer/abstrakter. Bewusste Nutzerentscheidung; der Demo-Code liegt weiterhin in der Git-Historie (vor dieser Runde).
