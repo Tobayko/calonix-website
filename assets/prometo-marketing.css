@@ -622,6 +622,11 @@ body.marketing-body p {
     font-size: 0.88rem;
 }
 
+.marketing-table td[data-state="yes"] { color: var(--success); }
+.marketing-table td[data-state="yes"]::before { content: "✓ "; }
+.marketing-table td[data-state="no"] { color: var(--text-muted); }
+.marketing-table td[data-state="unclear"] { color: var(--warning); font-style: italic; }
+
 .marketing-table tr:last-child th,
 .marketing-table tr:last-child td {
     border-bottom: 0;
