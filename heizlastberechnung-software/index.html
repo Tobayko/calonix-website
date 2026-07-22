@@ -180,6 +180,129 @@
                 height: 25rem;
             }
         }
+
+        /* HERO WORKFLOW STAGE — crossfadende Screenshot-Sequenz (reines CSS, nur
+           opacity animiert = GPU-kompositierbar). Vier echte App-Screenshots
+           (PDF-Import -> Räume -> Richtwerte -> Heizlast) lösen sich per negativem
+           animation-delay gegenseitig ab, ein gemeinsamer Keyframe für alle vier. */
+        .hero-workflow-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-workflow-card::before {
+            content: "";
+            position: absolute;
+            inset: -10% 46% auto -8%;
+            height: 70%;
+            background: linear-gradient(135deg, rgba(69, 222, 231, 0.16), rgba(69, 222, 231, 0));
+            pointer-events: none;
+        }
+
+        .hero-workflow-stage {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: min(100%, 17rem);
+            aspect-ratio: 1080 / 2400;
+            margin-inline: auto;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #0b1010;
+        }
+
+        .hero-frame {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            animation: hero-frame-cycle 12s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+        }
+
+        .hero-frame--1 { animation-delay: 0s; }
+        .hero-frame--2 { animation-delay: -3s; }
+        .hero-frame--3 { animation-delay: -6s; }
+        .hero-frame--4 { animation-delay: -9s; }
+
+        @keyframes hero-frame-cycle {
+            0%, 3% { opacity: 0; }
+            6%, 21% { opacity: 1; }
+            25%, 100% { opacity: 0; }
+        }
+
+        .hero-workflow-steps {
+            position: relative;
+            z-index: 1;
+            margin-top: 1rem;
+        }
+
+        .hero-step-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1.15rem;
+        }
+
+        .hero-step {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: #9aa3a3;
+            font-size: 0.76rem;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .hero-step-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 999px;
+            background: #45dee7;
+            opacity: 0.25;
+            animation: hero-step-pulse 12s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+        }
+
+        .hero-step--1 .hero-step-dot { animation-delay: 0s; }
+        .hero-step--2 .hero-step-dot { animation-delay: -3s; }
+        .hero-step--3 .hero-step-dot { animation-delay: -6s; }
+        .hero-step--4 .hero-step-dot { animation-delay: -9s; }
+
+        @keyframes hero-step-pulse {
+            0%, 3% { opacity: 0.25; box-shadow: none; }
+            6%, 21% { opacity: 1; box-shadow: 0 0 10px rgba(69, 222, 231, 0.75); }
+            25%, 100% { opacity: 0.25; box-shadow: none; }
+        }
+
+        @media (max-width: 767px) {
+            .hero-workflow-stage {
+                max-width: min(100%, 14.5rem);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-frame {
+                animation: none;
+                opacity: 0;
+            }
+
+            .hero-frame--4 {
+                opacity: 1;
+            }
+
+            .hero-step-dot {
+                animation: none;
+                opacity: 0.25;
+                box-shadow: none;
+            }
+
+            .hero-step--4 .hero-step-dot {
+                opacity: 1;
+                box-shadow: 0 0 10px rgba(69, 222, 231, 0.75);
+            }
+        }
     </style>
 
     <script type="application/ld+json">
@@ -487,19 +610,19 @@
                         <!-- Trust-Leiste -->
                         <div class="grid grid-cols-2 gap-3 mb-8 max-w-xl">
                             <div class="flex items-center gap-3 text-sm text-gray-300">
-                                <span class="text-primary text-lg">✓</span>
+                                <svg class="ui-icon text-primary text-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
                                 <span>PDF-Grundriss importieren</span>
                             </div>
                             <div class="flex items-center gap-3 text-sm text-gray-300">
-                                <span class="text-primary text-lg">✓</span>
+                                <svg class="ui-icon text-primary text-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
                                 <span>Richtwerte und Lastkorridor prüfen</span>
                             </div>
                             <div class="flex items-center gap-3 text-sm text-gray-300">
-                                <span class="text-primary text-lg">✓</span>
+                                <svg class="ui-icon text-primary text-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
                                 <span>Systemtemperaturen dokumentieren</span>
                             </div>
                             <div class="flex items-center gap-3 text-sm text-gray-300">
-                                <span class="text-primary text-lg">✓</span>
+                                <svg class="ui-icon text-primary text-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
                                 <span>Heizkreiswerte nachvollziehen</span>
                             </div>
                         </div>
@@ -519,11 +642,21 @@
                     <div class="hero-visual reveal reveal-delay-2">
                         <div class="ambient-orb ambient-orb--a"></div>
                         <div class="ambient-orb ambient-orb--b"></div>
-                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6">
-                            <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
-                                alt="Prometo Heizlastberechnung Software – raumweise Heizlast und Bivalenzpunkt auf dem Smartphone"
-                                width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async"
-                                class="hero-device mx-auto rounded-[2rem] border border-white/8 w-full max-w-sm" />
+                        <div class="glass-panel hero-workflow-card rounded-[2rem] p-4 md:p-6">
+                            <div class="hero-workflow-stage" role="img" aria-label="Animierter Prometo-Workflow: PDF-Grundriss wird importiert, Räume werden erkannt, Richtwerte werden geprüft, Heizlast-Schätzung wird vorbereitet">
+                                <img class="hero-frame hero-frame--1" src="/assets/prometo-screenshots/android/phone/01-projektassistent-planimport.webp" alt="" width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async" />
+                                <img class="hero-frame hero-frame--2" src="/assets/prometo-screenshots/android/phone/02-raeume-aus-bauplan.webp" alt="" width="1080" height="2400" loading="lazy" decoding="async" />
+                                <img class="hero-frame hero-frame--3" src="/assets/prometo-screenshots/android/phone/03-richtwerte-heizlast.webp" alt="" width="1080" height="2400" loading="lazy" decoding="async" />
+                                <img class="hero-frame hero-frame--4" src="/assets/prometo-screenshots/android/phone/04-heizlast-schaetzergebnis.webp" alt="" width="1080" height="2400" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+                        <div class="glass-panel hero-workflow-steps rounded-3xl p-4">
+                            <div class="hero-step-row">
+                                <span class="hero-step hero-step--1"><span class="hero-step-dot" aria-hidden="true"></span>Grundriss</span>
+                                <span class="hero-step hero-step--2"><span class="hero-step-dot" aria-hidden="true"></span>Räume erkannt</span>
+                                <span class="hero-step hero-step--3"><span class="hero-step-dot" aria-hidden="true"></span>Richtwerte geprüft</span>
+                                <span class="hero-step hero-step--4"><span class="hero-step-dot" aria-hidden="true"></span>Heizlast bereit</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -581,83 +714,100 @@
 
                 <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     <div class="glass-panel rounded-3xl p-5 reveal">
-                        <p class="text-yellow-400 text-sm font-medium mb-2">Problem</p>
+                        <p class="flex items-center gap-2 text-yellow-400 text-sm font-medium mb-2"><svg class="ui-icon text-base shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16h-18z"/><path d="M12 10v4M12 17h.01"/></svg>Problem</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Kein Netz im Keller — Aufmaß kann nicht in die Software übertragen werden.</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-5 reveal reveal-delay-1">
-                        <p class="text-yellow-400 text-sm font-medium mb-2">Problem</p>
+                        <p class="flex items-center gap-2 text-yellow-400 text-sm font-medium mb-2"><svg class="ui-icon text-base shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16h-18z"/><path d="M12 10v4M12 17h.01"/></svg>Problem</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Plan liegt nur als PDF vor — Räume müssen manuell erfasst und abgetippt werden.</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-5 reveal reveal-delay-2">
-                        <p class="text-yellow-400 text-sm font-medium mb-2">Problem</p>
+                        <p class="flex items-center gap-2 text-yellow-400 text-sm font-medium mb-2"><svg class="ui-icon text-base shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16h-18z"/><path d="M12 10v4M12 17h.01"/></svg>Problem</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Heizlast, Aufmaß, Hydraulik und Material werden in getrennten Tools bearbeitet.</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-5 reveal">
-                        <p class="text-yellow-400 text-sm font-medium mb-2">Problem</p>
+                        <p class="flex items-center gap-2 text-yellow-400 text-sm font-medium mb-2"><svg class="ui-icon text-base shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16h-18z"/><path d="M12 10v4M12 17h.01"/></svg>Problem</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Büro und Baustelle arbeiten mit unterschiedlichen Projektständen — Rückfragen per Telefon.</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-5 reveal reveal-delay-1">
-                        <p class="text-yellow-400 text-sm font-medium mb-2">Problem</p>
+                        <p class="flex items-center gap-2 text-yellow-400 text-sm font-medium mb-2"><svg class="ui-icon text-base shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16h-18z"/><path d="M12 10v4M12 17h.01"/></svg>Problem</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Material muss später erneut übertragen werden — Übertragungsfehler entstehen.</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-5 reveal reveal-delay-2">
-                        <p class="text-yellow-400 text-sm font-medium mb-2">Problem</p>
+                        <p class="flex items-center gap-2 text-yellow-400 text-sm font-medium mb-2"><svg class="ui-icon text-base shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 16h-18z"/><path d="M12 10v4M12 17h.01"/></svg>Problem</p>
                         <p class="text-gray-300 text-sm leading-relaxed">Maße stimmen nicht mit der Baustelle überein — Korrekturen erfordern erneute Erfassung.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- VERGLEICHSBLOCK -->
-        <section class="px-6 py-14 md:py-20">
+        <!-- ZENTRALE PRODUKTFUNKTIONEN -->
+        <section class="px-6 py-14 md:py-20" aria-labelledby="produktfunktionen-heading">
             <div class="max-w-screen-xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
-                    Zielbild: weniger Brüche zwischen Plan, Aufmaß und Berechnung
+                <span class="badge mb-6">Produktfunktionen</span>
+                <h2 id="produktfunktionen-heading" class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
+                    Warum Prometo für SHK-Betriebe gebaut ist
                 </h2>
-                <p class="text-gray-400 max-w-2xl mb-10 reveal">Diese Abläufe werden im Beta-Aufbau schrittweise zusammengeführt.</p>
+                <p class="text-gray-400 max-w-2xl mb-14 reveal">Heizlastberechnung Software gibt es viele. Prometo denkt vom SHK-Projekt her — nicht von der Norm oder vom CRM.</p>
 
-                <div class="overflow-x-auto rounded-2xl reveal">
-                    <table class="compare-table w-full rounded-2xl overflow-hidden">
-                        <thead>
-                            <tr>
-                                <th class="text-left">Schritt</th>
-                                <th class="text-left text-gray-400 font-normal">Heute oft üblich</th>
-                                <th class="text-left">Ziel im Beta-Aufbau</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Grundriss</td>
-                                <td class="text-text-subtle">PDF separat, Räume manuell übertragen</td>
-                                <td class="text-primary">Plan wird zur prüfbaren Raumdatenbasis</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Aufmaß</td>
-                                <td class="text-text-subtle">Fotos, Notizen, WhatsApp-Nachrichten</td>
-                                <td class="text-primary">Räume digital prüfen und strukturieren</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Heizlast</td>
-                                <td class="text-text-subtle">Separates Berechnungstool oder Tabelle</td>
-                                <td class="text-primary">Geprüfte Raumdaten für die Fachberechnung</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Hydraulischer Abgleich</td>
-                                <td class="text-text-subtle">Erneute Dateneingabe in anderes Tool</td>
-                                <td class="text-primary">Eingaben für die weitere Ableitung vorbereiten</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Material</td>
-                                <td class="text-text-subtle">Später manuell zusammensuchen</td>
-                                <td class="text-primary">Rohr- und Systemdaten für Stücklisten strukturieren</td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-300 font-medium">Büro und Baustelle</td>
-                                <td class="text-text-subtle">Rückfragen per Telefon, unterschiedliche Stände</td>
-                                <td class="text-primary">Gemeinsame, nachvollziehbare Projektbasis</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="grid gap-12 lg:gap-20">
+                    <div class="grid gap-8 lg:grid-cols-2 lg:items-center reveal">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-3">PDF-Grundriss als natürlicher Start</h3>
+                            <p class="text-gray-400 leading-relaxed max-w-lg">
+                                Viele SHK-Projekte starten mit einem vorhandenen PDF-Grundriss. Prometo setzt genau
+                                dort an — mobil nutzbar für Baustelle und Büro, mit ausgewählten Offline-Abläufen
+                                im Beta-Aufbau.
+                            </p>
+                        </div>
+                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6"
+                            data-lightbox-title="PDF-Grundriss als natürlicher Start"
+                            data-lightbox-caption="PDF-Architektenpläne hochladen — Etagen und Räume werden automatisch übernommen und lassen sich vor der Berechnung prüfen.">
+                            <img src="/assets/prometo-screenshots/mobile/bauplan-import-review.webp"
+                                alt="Prometo Bauplan-Import auf dem Smartphone mit PDF-Grundriss und automatisch übernommenen Räumen"
+                                width="1080" height="2400" loading="lazy" decoding="async"
+                                class="hero-device mx-auto rounded-[2rem] border border-white/8 w-full max-w-sm" />
+                        </div>
+                    </div>
+
+                    <div class="grid gap-8 lg:grid-cols-2 lg:items-center reveal reveal-delay-1">
+                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6"
+                            data-lightbox-title="Durchgängiger Workflow für Bestand und Wärmepumpe"
+                            data-lightbox-caption="Raumweise Heizlast und Bivalenzpunkt bleiben Teil desselben Projektdatensatzes.">
+                            <img src="/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp"
+                                alt="Prometo Projektdetail mit raumweiser Heizlast und Bivalenzpunkt für die Wärmepumpe"
+                                width="1080" height="2400" loading="lazy" decoding="async"
+                                class="hero-device mx-auto rounded-[2rem] border border-white/8 w-full max-w-sm" />
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Durchgängiger Workflow für Bestand und Wärmepumpe</h3>
+                            <p class="text-gray-400 leading-relaxed max-w-lg">
+                                Raumdaten bilden die gemeinsame Grundlage für Heizlast, Hydraulik und Flächensystem
+                                — gerade im Bestand eine wichtige Basis für Wärmepumpen-Projekte und
+                                Systementscheidungen.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-8 lg:grid-cols-2 lg:items-center reveal reveal-delay-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Materialdaten normnah und transparent vorbereiten</h3>
+                            <p class="text-gray-400 leading-relaxed max-w-lg">
+                                Rohr- und Systemdaten werden als Grundlage für Stücklisten strukturiert, die
+                                Berechnungslogik bleibt an die DIN EN 12831-1 angelehnt. Annahmen und Eingaben
+                                bleiben dokumentiert und nachvollziehbar — die fachliche Prüfung bleibt beim
+                                Anwender.
+                            </p>
+                        </div>
+                        <div class="glass-panel hero-media-card rounded-[2rem] p-4 md:p-6"
+                            data-lightbox-title="Materialdaten normnah und transparent vorbereiten"
+                            data-lightbox-caption="Rohrlänge, Verteilerport und Einstellwert bleiben je Heizkreis dokumentiert.">
+                            <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
+                                alt="Prometo Heizkreisdetail im hydraulischen Abgleich mit Rohrlänge, Verteilerport und Einstellwert"
+                                width="1080" height="2400" loading="lazy" decoding="async"
+                                class="hero-device mx-auto rounded-[2rem] border border-white/8 w-full max-w-sm" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -799,39 +949,82 @@
             </div>
         </section>
 
-        <!-- DIFFERENZIERUNG -->
+        <!-- VORTEILE & FACHLICHE NACHVOLLZIEHBARKEIT -->
         <section class="px-6 py-14 md:py-20">
             <div class="max-w-screen-xl mx-auto">
+                <span class="badge mb-6">Vorteile im Beta-Aufbau</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 reveal">
-                    Warum Prometo für SHK-Betriebe gebaut ist
+                    Zielbild: weniger Brüche zwischen Plan, Aufmaß und Berechnung
                 </h2>
-                <p class="text-gray-400 max-w-2xl mb-10 reveal">Heizlastberechnung Software gibt es viele. Prometo denkt vom SHK-Projekt her — nicht von der Norm oder vom CRM.</p>
+                <p class="text-gray-400 max-w-2xl mb-10 reveal">Diese Abläufe werden im Beta-Aufbau schrittweise zusammengeführt.</p>
 
-                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    <div class="glass-panel rounded-3xl p-6 reveal">
-                        <h3 class="text-lg font-bold text-white mb-2">PDF-Grundriss als natürlicher Start</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Viele SHK-Projekte starten mit einem vorhandenen PDF-Grundriss. Prometo setzt genau dort an.</p>
-                    </div>
-                    <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-1">
-                        <h3 class="text-lg font-bold text-white mb-2">Mobile Baustellen-Tauglichkeit</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Mobile Datenerfassung für Baustelle und Büro. Ausgewählte Offline-Abläufe werden im Beta-Aufbau geprüft.</p>
-                    </div>
-                    <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-2">
-                        <h3 class="text-lg font-bold text-white mb-2">Durchgängiger Workflow</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Raumdaten als gemeinsame Grundlage für Heizlast, Hydraulik und Flächensystem vorbereiten.</p>
-                    </div>
-                    <div class="glass-panel rounded-3xl p-6 reveal">
-                        <h3 class="text-lg font-bold text-white mb-2">Bestand und Wärmepumpe</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Gerade im Bestand liefern geprüfte Raumdaten eine wichtige Grundlage für Wärmepumpen-Projekte und Systementscheidungen.</p>
-                    </div>
-                    <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-1">
-                        <h3 class="text-lg font-bold text-white mb-2">Materialdaten vorbereiten</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Rohr- und Systemdaten als Grundlage für Stücklisten strukturieren. Schnittstellen werden schrittweise geprüft.</p>
-                    </div>
-                    <div class="glass-panel rounded-3xl p-6 reveal reveal-delay-2">
-                        <h3 class="text-lg font-bold text-white mb-2">Normnah und transparent</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">Berechnungslogik angelehnt an DIN EN 12831-1. Annahmen und Eingaben bleiben dokumentiert und nachvollziehbar — fachliche Prüfung bleibt beim Anwender.</p>
-                    </div>
+                <div class="overflow-x-auto rounded-2xl reveal">
+                    <table class="compare-table w-full rounded-2xl overflow-hidden">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Schritt</th>
+                                <th class="text-left text-gray-400 font-normal">Heute oft üblich</th>
+                                <th class="text-left">Ziel im Beta-Aufbau</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Grundriss</td>
+                                <td class="text-text-subtle">PDF separat, Räume manuell übertragen</td>
+                                <td class="text-primary">Plan wird zur prüfbaren Raumdatenbasis</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Aufmaß</td>
+                                <td class="text-text-subtle">Fotos, Notizen, WhatsApp-Nachrichten</td>
+                                <td class="text-primary">Räume digital prüfen und strukturieren</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Heizlast</td>
+                                <td class="text-text-subtle">Separates Berechnungstool oder Tabelle</td>
+                                <td class="text-primary">Geprüfte Raumdaten für die Fachberechnung</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Hydraulischer Abgleich</td>
+                                <td class="text-text-subtle">Erneute Dateneingabe in anderes Tool</td>
+                                <td class="text-primary">Eingaben für die weitere Ableitung vorbereiten</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Material</td>
+                                <td class="text-text-subtle">Später manuell zusammensuchen</td>
+                                <td class="text-primary">Rohr- und Systemdaten für Stücklisten strukturieren</td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-300 font-medium">Büro und Baustelle</td>
+                                <td class="text-text-subtle">Rückfragen per Telefon, unterschiedliche Stände</td>
+                                <td class="text-primary">Gemeinsame, nachvollziehbare Projektbasis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+                    <article class="answer-panel reveal">
+                        <p class="answer-label">Fachlich nachvollziehbar</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Ja. Prometo orientiert sich an der Berechnungslogik der DIN EN 12831-1 und liefert eine
+                            strukturierte, nachvollziehbare Arbeitsgrundlage. Die fachliche Prüfung im konkreten
+                            Projekt bleibt beim Anwender.
+                        </p>
+                    </article>
+                    <ul class="grid gap-3 text-sm reveal reveal-delay-1">
+                        <li class="glass-panel rounded-2xl p-4 leading-relaxed text-gray-400">
+                            <strong class="block text-white mb-1">Lastkorridor statt Einzelwert</strong>
+                            Das Ergebnis wird ausdrücklich als indikative Schätzung und nicht als Normnachweis markiert.
+                        </li>
+                        <li class="glass-panel rounded-2xl p-4 leading-relaxed text-gray-400">
+                            <strong class="block text-white mb-1">Annahmen bleiben sichtbar</strong>
+                            Richtwertkorridor und verwendeter Wert bleiben als Demo-Annahmen nachvollziehbar.
+                        </li>
+                        <li class="glass-panel rounded-2xl p-4 leading-relaxed text-gray-400">
+                            <strong class="block text-white mb-1">Prüfung bleibt beim Anwender</strong>
+                            Die fachliche Berechnung und Bewertung bleibt in jedem Projekt erforderlich.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
