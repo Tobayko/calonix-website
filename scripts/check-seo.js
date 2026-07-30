@@ -121,7 +121,7 @@ const exactPages = {
   'index.html': {
     title: 'Aufmaß Software für SHK aus PDF-Grundrissen | Prometo',
     description: 'PDF-Grundriss hochladen, Räume und Geometrien automatisch erkennen und das geprüfte Aufmaß direkt für Heizlast, Material und Abgleich nutzen. Beta kostenlos.',
-    h1: 'Digitales Aufmaß direkt aus dem PDF-Grundriss.'
+    h1: 'Vom PDF-Grundriss zum vollständigen SHK-Workflow.'
   },
   'heizlastberechnung/app/index.html': {
     title: 'Heizlastberechnung App für SHK-Betriebe | Prometo',
