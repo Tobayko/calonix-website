@@ -1,0 +1,214 @@
+{
+  "prototypeUrl": "http://127.0.0.1:4173/",
+  "references": {
+    "currentWebsiteInitial": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/source-desktop-initial.png",
+    "currentWebsiteFocus": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/source-desktop-focus.png",
+    "previousEngineInitial": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/reference-previous-engine-initial.png",
+    "previousEngineTransition": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/reference-previous-engine-transition.png",
+    "previousEngineMobile": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/reference-previous-engine-mobile.png",
+    "renovationBuild": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/public/product/renovierungsaufbau-referenz.png"
+  },
+  "desktop": {
+    "sourceInitial": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/source-desktop-initial.png",
+    "sourceFocus": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/source-desktop-focus.png",
+    "previousInitial": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/reference-previous-engine-initial.png",
+    "previousTransition": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/reference-previous-engine-transition.png",
+    "prototypeAssembly": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-assembly.png",
+    "prototypeInitial": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-initial.png",
+    "prototypeFocus": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-focus.png",
+    "webgl": {
+      "canvasPresent": true,
+      "contextPresent": true,
+      "width": 1440,
+      "height": 900,
+      "renderer": "WebKit WebGL"
+    },
+    "modelExpanded": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-expanded.png",
+    "modelExpandedState": {
+      "scrollY": 0,
+      "storyProgress": "0.0000",
+      "heroOpacity": "1",
+      "heroZIndex": "auto",
+      "frameZIndex": "6",
+      "canvasZIndex": "2"
+    },
+    "prototypePipeStep": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-pipe-step.png",
+    "prototypeClipStep": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-clip-step.png",
+    "prototypeEdgeStripStep": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-edge-strip-step.png",
+    "prototypeBoardStep": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-board-step.png",
+    "prototypeTransition": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-board-step.png",
+    "prototypeSlabStep": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-slab-step.png",
+    "prototypeContinuation": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-continuation.png",
+    "initialComparison": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/comparison-desktop-initial.png",
+    "focusComparison": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/comparison-desktop-focus.png",
+    "transitionComparison": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/comparison-desktop-transition.png",
+    "websiteComparison": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/comparison-current-website.png",
+    "renovationComparison": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/comparison-renovation-build.png"
+  },
+  "mobile": {
+    "initial": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-mobile-initial.png",
+    "menu": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-mobile-menu.png",
+    "transition": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-mobile-transition.png",
+    "comparison": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/comparison-mobile-initial.png"
+  },
+  "reducedMotion": {
+    "screenshot": "/Users/tobiasburandt/Webseite Calonix/experiments/seamless-3d-transition/qa/prototype-desktop-reduced-motion.png",
+    "state": {
+      "matchesPreference": true,
+      "storyHeight": 900,
+      "detailDisplay": "none",
+      "horizontalOverflow": 0
+    }
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "interactions": {
+    "desktop": {
+      "toastVisible": true,
+      "trackedEvents": [
+        {
+          "event": "prototype_view",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:09:37.905Z"
+        },
+        {
+          "event": "three_scene_ready",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:09:38.207Z",
+          "layerCount": 8,
+          "pipeDimension": "17 × 2 mm",
+          "holeGridCm": 5,
+          "boardThicknessMm": 5,
+          "clipCount": 28,
+          "edgeStripSeparated": true,
+          "waterAnimation": false,
+          "visualMode": "opaque-wireframe",
+          "thermalWave": true,
+          "reducedMotion": false,
+          "webgl": true
+        },
+        {
+          "event": "three_interacted",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:09:59.829Z",
+          "timeToInteractionMs": 21924
+        },
+        {
+          "event": "three_model_toggled",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:04.396Z",
+          "state": "exploded"
+        },
+        {
+          "event": "three_model_toggled",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:12.438Z",
+          "state": "assembled"
+        },
+        {
+          "event": "component_focused",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:14.155Z",
+          "component": "pipe",
+          "position": 3
+        },
+        {
+          "event": "transition_started",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:14.155Z"
+        },
+        {
+          "event": "component_focused",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:17.638Z",
+          "component": "clips",
+          "position": 4
+        },
+        {
+          "event": "component_focused",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:21.398Z",
+          "component": "edgeStrip",
+          "position": 5
+        },
+        {
+          "event": "component_focused",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:25.140Z",
+          "component": "biofaser",
+          "position": 6
+        },
+        {
+          "event": "component_focused",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:28.777Z",
+          "component": "slab",
+          "position": 8
+        },
+        {
+          "event": "transition_completed",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:36.342Z"
+        },
+        {
+          "event": "cta_clicked",
+          "prototype": "seamless-3d-transition",
+          "timestamp": "2026-07-17T07:10:41.829Z",
+          "cta": "beta_test",
+          "location": "continuation"
+        }
+      ],
+      "horizontalOverflow": 0,
+      "keyboardOrder": [
+        {
+          "tag": "BODY",
+          "text": "MontageBauteileWorkflowKonzepttestTest startenDas 3D-Modell zeigt einen Renovier",
+          "href": null
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "#top"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Montage",
+          "href": null
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Bauteile",
+          "href": null
+        },
+        {
+          "tag": "A",
+          "text": "Workflow",
+          "href": "#system"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Test starten",
+          "href": null
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Montage ansehenarrow_downward",
+          "href": null
+        },
+        {
+          "tag": "BUTTON",
+          "text": "layersAufbau auffächern",
+          "href": null
+        }
+      ]
+    },
+    "mobile": {
+      "horizontalOverflow": 0,
+      "canvas": {
+        "present": true,
+        "width": 390,
+        "height": 844
+      }
+    }
+  }
+}

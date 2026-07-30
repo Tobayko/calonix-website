@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Aufmaß App für PDF-Grundrisse: digitales Aufmaß | Prometo</title>
+    <title>App für Aufmaß und Grundriss aus PDF | Prometo</title>
     <meta name="description"
-        content="Aufmaß App für SHK: PDF-Grundriss importieren, Räume und Flächen prüfen und die geprüften Daten für Heizlast und hydraulischen Abgleich weiterverwenden." />
+        content="App für Aufmaß und Grundriss: PDF importieren, Räume mobil auf Tablet, iPad, Android oder im Browser prüfen und in der Beta kostenlos testen." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -30,9 +30,9 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Aufmaß App für PDF-Grundrisse: digitales Aufmaß | Prometo" />
+    <meta property="og:title" content="App für Aufmaß und Grundriss aus PDF | Prometo" />
     <meta property="og:description"
-        content="PDF-Grundriss importieren, Raumdaten prüfen und die bestätigte Projektbasis für Heizlast und Abgleich weiterverwenden." />
+        content="PDF-Grundriss importieren, Raumdaten mobil prüfen und für Heizlast und hydraulischen Abgleich weiterverwenden." />
     <meta property="og:url" content="https://prometo.app/digitales-aufmass/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
     <meta property="og:image:alt" content="Prometo Import-Review mit erkannten Räumen nach Etagen auf dem Tablet" />
@@ -41,7 +41,7 @@
     <meta property="og:image:height" content="1600" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aufmaß App für PDF-Grundrisse: digitales Aufmaß | Prometo" />
+    <meta name="twitter:title" content="App für Aufmaß und Grundriss aus PDF | Prometo" />
     <meta name="twitter:description"
         content="PDF-Aufmaß mit Raumprüfung und direkter Weiterverwendung für Heizlastberechnung und hydraulischen Abgleich." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/bauplan-import-review.webp" />
@@ -191,7 +191,7 @@
         }
 
         .aufmass-hero-copy h1 {
-            max-width: 11ch;
+            max-width: 17ch;
             font-size: clamp(2.75rem, 4.4vw, 3.65rem);
             letter-spacing: -0.045em;
             overflow-wrap: break-word;
@@ -242,7 +242,7 @@
                 "name": "Prometo",
                 "url": "https://prometo.app/",
                 "applicationCategory": "BusinessApplication",
-                "operatingSystem": "Webbrowser",
+                "operatingSystem": "iOS, Android, Web",
                 "description": "Aufmaß App für SHK-Betriebe: PDF-Grundrisse importieren, Raumdaten prüfen und als Projektbasis für die Heizlastberechnung weiterverwenden.",
                 "isAccessibleForFree": true,
                 "featureList": [
@@ -300,15 +300,24 @@
                             "@type": "Answer",
                             "text": "Digitales Aufmaß endet nicht bei Kommentaren oder Markierungen. Der Unterschied zu klassischen PDF-Markup-Tools liegt darin, dass Aufmaßdaten später direkt in Heizlast- und Projektlogik übergehen können."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Unterstützt Prometo Import und Export von Plandateien?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Ja. Prometo importiert Grundrisse als PDF, JPG oder PNG und übernimmt Räume direkt aus dem Plan. Der geprüfte Plan lässt sich anschließend wieder als PDF exportieren, wahlweise mit den gewünschten Ebenen wie Räumen, Notizen oder Verteilerplanung."
+                        }
                     }
                 ]
             }
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
@@ -397,6 +406,10 @@
                             <strong>Leitfaden</strong>
                             <span>Praxisnah durch die Heizlastberechnung</span>
                         </a>
+                        <a class="site-nav-card" href="/shk-ausbildung/">
+                            <strong>SHK-Ausbildung</strong>
+                            <span>Praxiswissen für Ausbildung und Meisterschule</span>
+                        </a>
                     </div>
                 </details>
             </nav>
@@ -435,6 +448,7 @@
                         <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
                         <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
                         <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                        <a href="/shk-ausbildung/">SHK-Ausbildung</a>
                     </div>
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
@@ -460,10 +474,10 @@
                         <div class="aufmass-hero-copy">
                             <span class="aufmass-kicker">Lösung · PDF-Aufmaß für SHK</span>
                             <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
-                                Digitales Aufmaß aus dem <span class="text-primary">PDF-Grundriss</span>
+                                App für <span class="text-primary">Aufmaß und Grundriss</span>
                             </h1>
                             <p class="text-lg text-gray-300 leading-relaxed max-w-2xl">
-                                PDF-Grundriss importieren, Raumdaten prüfen und ohne doppelte Erfassung für die Heizlast weiterverwenden.
+                                PDF-Grundriss importieren, Raumdaten mobil auf der Baustelle prüfen und ohne doppelte Erfassung für die Heizlast weiterverwenden.
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <a href="/beta/" data-event="beta_cta_click" data-cta-position="hero"
@@ -584,6 +598,20 @@
             </div>
         </section>
 
+        <section class="px-6 pb-16 md:pb-24" id="geraete" aria-labelledby="aufmass-geraete-title">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-12 reveal lift-on-hover">
+                <span class="badge mb-6">Geräte &amp; Plattform</span>
+                <h2 id="aufmass-geraete-title" class="text-3xl md:text-5xl font-bold text-white mb-6">Auf welchen Geräten läuft die Aufmaß App?</h2>
+                <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
+                    Prometo läuft nativ auf iOS (iPhone und iPad) und Android (Smartphone und Tablet) sowie im Webbrowser am Bürorechner. Das mobile Aufmaß findet direkt auf der Baustelle statt, während dieselben Projektdaten im Browser weiterbearbeitet werden — ganz ohne separate Erfassung am Schreibtisch.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-4 text-sm">
+                    <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors">Heizlast auch mobil weiterrechnen</a>
+                    <a href="/app-workflows.html" class="text-primary hover:text-white transition-colors">Alle App-Workflows ansehen</a>
+                </div>
+            </div>
+        </section>
+
         <section id="planstudio" class="px-6 pb-16 md:pb-24">
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
@@ -689,6 +717,12 @@
                         <summary class="text-lg font-headline font-bold text-gray-200">Worin unterscheidet sich digitales Aufmaß von PDF-Markup?</summary>
                         <p class="mt-4 text-gray-400 leading-relaxed">
                             Digitales Aufmaß endet nicht bei Kommentaren oder Markierungen. Der Unterschied zu klassischen PDF-Markup-Tools liegt darin, dass Aufmaßdaten später direkt in Heizlast- und Projektlogik übergehen können.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-3 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Unterstützt Prometo Import und Export von Plandateien?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Ja. Prometo importiert Grundrisse als PDF, JPG oder PNG und übernimmt Räume direkt aus dem Plan. Der geprüfte Plan lässt sich anschließend wieder als PDF exportieren, wahlweise mit den gewünschten Ebenen wie Räumen, Notizen oder Verteilerplanung.
                         </p>
                     </details>
                 </div>

@@ -1,0 +1,243 @@
+- generic [active] [ref=e1]:
+  - link "Zum Inhalt springen" [ref=e2] [cursor=pointer]:
+    - /url: "#prometo-main-content"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Zur Startseite von Prometo" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Prometo" [ref=e6]
+      - navigation "Hauptnavigation" [ref=e7]:
+        - link "PDF-Aufmaß" [ref=e8] [cursor=pointer]:
+          - /url: /digitales-aufmass/
+        - link "Heizlastsoftware" [ref=e9] [cursor=pointer]:
+          - /url: /heizlastberechnung/app/
+        - link "Hydraulischer Abgleich" [ref=e10] [cursor=pointer]:
+          - /url: /hydraulischer-abgleich/
+        - link "Fußbodenheizung" [ref=e11] [cursor=pointer]:
+          - /url: /fussbodenheizung-auslegen/
+        - link "Vergleich" [ref=e12] [cursor=pointer]:
+          - /url: /heizlast-software-vergleich-shk/
+      - generic [ref=e13]:
+        - link "English version" [ref=e14] [cursor=pointer]:
+          - /url: /en/
+          - text: EN
+        - link "Kostenlos Beta testen" [ref=e15] [cursor=pointer]:
+          - /url: /beta/
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: PDF-Aufmaß für SHK-Betriebe · Kostenlose Beta
+        - heading "Digitales Aufmaß direkt aus dem PDF-Grundriss." [level=1] [ref=e21]
+        - paragraph [ref=e22]: Prometo erkennt Räume und Geometrien automatisch. Du kontrollierst das Aufmaß und nutzt die geprüften Daten direkt für Heizlast, Materialbedarf und hydraulischen Abgleich.
+        - generic [ref=e23]:
+          - link "Kostenlos Beta testen" [ref=e24] [cursor=pointer]:
+            - /url: /beta/
+          - link "Workflow ansehen" [ref=e25] [cursor=pointer]:
+            - /url: "#workflow"
+        - paragraph [ref=e26]: Bei einem geeigneten PDF-Grundriss kann ein typisches Einfamilienhaus in unter 7 Minuten bis zur Heizlast berechnet werden. Die tatsächliche Dauer hängt von Planqualität, Gebäudeumfang und notwendigem Korrekturbedarf ab.
+      - figure [ref=e27]:
+        - img "Prometo Import-Review auf dem Tablet mit automatisch erkannten und kontrollierbaren Räumen" [ref=e28]
+        - generic [ref=e29]:
+          - strong [ref=e30]: Raumerkennung mit Review
+          - text: Automatisch erkannte Räume bleiben vor der Berechnung vollständig kontrollierbar.
+    - region [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: Vom PDF-Aufmaß zur Berechnung
+          - heading "Einmal kontrollieren, direkt weiterrechnen." [level=2] [ref=e35]
+        - generic [ref=e36]:
+          - article [ref=e37]:
+            - generic [ref=e38]: "01"
+            - generic [ref=e39]:
+              - heading "Digitales PDF-Aufmaß" [level=3] [ref=e40]
+              - paragraph [ref=e41]: Räume, Geometrien und Planinformationen aus dem vorhandenen Grundriss übernehmen und vor der Nutzung prüfen.
+          - article [ref=e42]:
+            - generic [ref=e43]: "02"
+            - generic [ref=e44]:
+              - heading "Raumweise Heizlast" [level=3] [ref=e45]
+              - paragraph [ref=e46]: Geprüfte Raum- und Bauteildaten entlang der DIN EN 12831 in die Berechnung übernehmen.
+          - article [ref=e47]:
+            - generic [ref=e48]: "03"
+            - generic [ref=e49]:
+              - heading "Materialberechnung" [level=3] [ref=e50]
+              - paragraph [ref=e51]: Rohrlängen, Systemdaten und Materialpositionen aus Raum- und Systemeinstellungen ableiten.
+          - article [ref=e52]:
+            - generic [ref=e53]: "04"
+            - generic [ref=e54]:
+              - heading "Hydraulischer Abgleich" [level=3] [ref=e55]
+              - paragraph [ref=e56]: Raum- und Kreisvolumenströme sowie Einregelwerte aus den vorhandenen Projektdaten berechnen.
+    - region [ref=e57]:
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e60]: PDF-first Workflow
+          - heading "Vom vorhandenen Plan zum kontrollierten Raumaufmaß." [level=2] [ref=e61]
+          - paragraph [ref=e62]: Prometo nutzt den PDF-Grundriss als Startpunkt. Du bestätigst oder korrigierst Räume und Geometrien, bevor dieselben Daten in die Berechnung weiterlaufen.
+        - generic [ref=e63]:
+          - article [ref=e64]:
+            - heading "PDF-Grundriss hochladen" [level=3] [ref=e65]
+            - paragraph [ref=e66]: Geeigneten, lesbaren Grundriss direkt dem Projekt zuordnen.
+          - article [ref=e67]:
+            - heading "Räume automatisch erkennen" [level=3] [ref=e68]
+            - paragraph [ref=e69]: Raumstruktur und vorhandene Planinformationen werden übernommen.
+          - article [ref=e70]:
+            - heading "Daten kontrollieren" [level=3] [ref=e71]
+            - paragraph [ref=e72]: Raumgeometrien, Bauteile und Annahmen prüfen und bei Bedarf korrigieren.
+          - article [ref=e73]:
+            - heading "Ergebnisse berechnen" [level=3] [ref=e74]
+            - paragraph [ref=e75]: Heizlast, Materialbedarf und hydraulischen Abgleich aus derselben Projektbasis ableiten.
+    - region [ref=e76]:
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - generic [ref=e79]: Konkretes EFH-Beispiel
+          - generic [ref=e80]: < 7 Min.
+          - paragraph [ref=e81]: Vom geeigneten PDF-Grundriss bis zur berechneten Raumheizlast eines typischen Einfamilienhauses.
+          - paragraph [ref=e82]: Beispielwert für ein typisches Einfamilienhaus mit geeignetem PDF-Grundriss. Die tatsächliche Dauer hängt von Planqualität, Gebäudeumfang und notwendigem Korrekturbedarf ab.
+        - generic [ref=e83]:
+          - generic [ref=e84]:
+            - generic [ref=e85]: Was dabei passiert
+            - heading "Der Zeitgewinn entsteht vor der Berechnung." [level=2] [ref=e86]
+            - paragraph [ref=e87]: In vielen SHK-Betrieben werden Räume, Geometrien und Bauteile aus vorhandenen Plänen erneut in mehrere Programme übertragen. Prometo beginnt beim PDF und hält die Daten im weiteren Ablauf zusammen.
+          - list [ref=e88]:
+            - listitem [ref=e89]: Grundriss als vorhandene Projektquelle weiterverwenden
+            - listitem [ref=e90]: Erkannte Räume statt kompletter Neuerfassung kontrollieren
+            - listitem [ref=e91]: Raumdaten einmal prüfen und mehrfach weiterverwenden
+            - listitem [ref=e92]: Abweichungen und unsichere Angaben vor der Berechnung korrigieren
+    - region [ref=e93]:
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - generic [ref=e96]: Echte Produktoberfläche
+          - heading "Vom Import-Review bis zum Abgleich in derselben App." [level=2] [ref=e97]
+          - paragraph [ref=e98]: Die Ansichten stammen aus Prometo. Dargestellte Daten dienen der Produktdarstellung und müssen im jeweiligen Projekt fachlich geprüft werden.
+        - generic [ref=e99]:
+          - figure "Erkannte Räume und Geschosse kontrollieren." [ref=e100]:
+            - img "Prometo Import-Review mit erkannten Räumen und Geschossen" [ref=e101]
+          - figure "Raumdaten im Berechnungsweg prüfen." [ref=e103]:
+            - img "Prometo Raumliste für die Heizlastberechnung" [ref=e104]
+          - figure "Heizlast und Plausibilität auswerten." [ref=e106]:
+            - img "Prometo Ergebnisansicht der Heizlastberechnung" [ref=e107]
+          - figure "Heizkreise und Einstellwerte nachvollziehen." [ref=e109]:
+            - img "Prometo Heizkreisdetail im hydraulischen Abgleich" [ref=e110]
+        - link "Alle App-Workflows ansehen" [ref=e113] [cursor=pointer]:
+          - /url: /app-workflows.html
+    - region [ref=e114]:
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - generic [ref=e117]: Berechnete Ergebnisse und Exporte
+          - heading "Aus geprüften Raumdaten entstehen nutzbare Projektgrundlagen." [level=2] [ref=e118]
+          - paragraph [ref=e119]: Die Beta verbindet Berechnung und Folgearbeit. Exportformate und Ausgabetiefe werden weiter geprüft; einzelne Basisexporte sind noch nicht vollständig ausgebaut.
+        - generic [ref=e120]:
+          - article [ref=e121]:
+            - strong [ref=e122]: Raum- und Gebäudeheizlast
+            - paragraph [ref=e123]: Ergebnisübersichten für Räume, Geschosse und das Gebäude mit Plausibilitätsprüfung.
+          - article [ref=e124]:
+            - strong [ref=e125]: Materialbedarf
+            - paragraph [ref=e126]: Projektbezogene Stückliste aus Raum-, System- und Verlegeparametern.
+          - article [ref=e127]:
+            - strong [ref=e128]: Hydraulische Werte
+            - paragraph [ref=e129]: Soll-Volumenströme, Kreisübersichten, Verteileransichten und Einregelwerte.
+          - article [ref=e130]:
+            - strong [ref=e131]: Basisexporte
+            - paragraph [ref=e132]: PDF-Berichte sowie JSON-/CSV-Basisexporte; der genaue Umfang ist Teil der Beta-Prüfung.
+    - region [ref=e133]:
+      - generic [ref=e134]:
+        - generic [ref=e135]:
+          - generic [ref=e136]: Für SHK-Betriebe
+          - heading "Weniger Doppelerfassung zwischen Aufmaß, Berechnung und Auslegung." [level=2] [ref=e137]
+        - generic [ref=e138]:
+          - article [ref=e139]:
+            - heading "PDF direkt nutzen" [level=3] [ref=e140]
+            - paragraph [ref=e141]: Vorhandene Grundrisse werden zum Startpunkt, statt nur als visuelle Vorlage neben der Eingabemaske zu liegen.
+          - article [ref=e142]:
+            - heading "Kontrolle behalten" [level=3] [ref=e143]
+            - paragraph [ref=e144]: Automatische Erkennung ersetzt nicht die Prüfung. Unsichere Daten bleiben sichtbar und korrigierbar.
+          - article [ref=e145]:
+            - heading "Folgeschritte verbinden" [level=3] [ref=e146]
+            - paragraph [ref=e147]: Raumheizlast, Material und hydraulische Werte basieren auf derselben Projektstruktur.
+          - article [ref=e148]:
+            - heading "Praxisfeedback geben" [level=3] [ref=e149]
+            - paragraph [ref=e150]: Beta-Tester prüfen Prometo mit echten Projekten und melden Abweichungen direkt zurück.
+    - region [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - generic [ref=e154]: Für größere SHK-Teams
+          - heading "Einheitliche Projektdaten statt individueller Insellösungen." [level=2] [ref=e155]
+          - paragraph [ref=e156]: Prometo ist auch für Betriebe mit vielen Mitarbeitenden gedacht. Entscheidend ist dabei nicht eine separate Enterprise-Version, sondern ein konsistenter Berechnungsweg.
+        - list [ref=e157]:
+          - listitem [ref=e158]: Standardisierte Eingaben und Kontrollen über Projekte hinweg
+          - listitem [ref=e159]: Einheitliche Raum-, System- und Ergebnisdaten
+          - listitem [ref=e160]: Nachvollziehbare Übergaben zwischen Büro, Projektleitung und Baustelle
+          - listitem [ref=e161]: Skalierbare Prozesse ohne neue Datensilos pro Berechnungsschritt
+    - region [ref=e162]:
+      - generic [ref=e163]:
+        - generic [ref=e164]:
+          - generic [ref=e165]: Kostenlose Beta
+          - heading "Mit echten SHK-Projekten testen – mit klaren Grenzen." [level=2] [ref=e166]
+          - paragraph [ref=e167]: Gesucht werden SHK-Betriebe mit regelmäßigen EFH-, Sanierungs- oder Wärmepumpenprojekten, die ihren heutigen Berechnungsweg konkret mit Prometo vergleichen.
+          - link "Kostenlos Beta testen" [ref=e168] [cursor=pointer]:
+            - /url: /beta/
+        - generic [ref=e169]:
+          - strong [ref=e170]: Was Beta hier bedeutet
+          - paragraph [ref=e171]: Kernworkflow, Plan-Import, Raumerkennung, Berechnung und Folgeübergaben sind nutzbar. Automatisch erkannte Daten müssen kontrolliert werden. Einzelne Exportformate, Sonderfälle und Randbedingungen sind noch Gegenstand der fachlichen Prüfung.
+          - paragraph [ref=e172]: Die Beta ist kostenlos. Sie ersetzt nicht die Verantwortung qualifizierter Anwender für Eingaben, Plausibilität und projektspezifische Nachweise.
+    - region [ref=e173]:
+      - generic [ref=e174]:
+        - generic [ref=e175]:
+          - generic [ref=e176]: Klare Abgrenzung
+          - heading "PDF-first statt primär raumweiser Neuerfassung." [level=2] [ref=e177]
+          - paragraph [ref=e178]: "Prometo ist keine pauschal „bessere“ Plattform. Der Schwerpunkt ist ein anderer: vorhandene Grundrisse direkt weiterverwenden und Heizlast, Material sowie Abgleich in einem fokussierten Workflow verbinden."
+        - generic [ref=e179]:
+          - heading "Welche Lösung passt zu deinem Betrieb?" [level=3] [ref=e180]
+          - paragraph [ref=e181]: Der Vergleich ordnet Prometo, Reonic, autarc und Hottgenroth anhand offiziell belegbarer Funktionen ein – ohne erfundene Nachteile oder pauschale Leistungsversprechen.
+          - link "Heizlastsoftware vergleichen" [ref=e183] [cursor=pointer]:
+            - /url: /heizlast-software-vergleich-shk/
+    - region [ref=e184]:
+      - generic [ref=e185]:
+        - generic [ref=e186]:
+          - generic [ref=e187]: FAQ
+          - heading "Häufige Fragen zum digitalen Aufmaß mit Prometo." [level=2] [ref=e188]
+        - generic [ref=e189]:
+          - group [ref=e190]:
+            - generic "Für wen ist Prometo gedacht? +" [ref=e191] [cursor=pointer]
+          - group [ref=e192]:
+            - generic "Erkennt Prometo jeden PDF-Grundriss automatisch? +" [ref=e193] [cursor=pointer]
+          - group [ref=e194]:
+            - generic "Ist ein Einfamilienhaus immer in unter 7 Minuten berechnet? +" [ref=e195] [cursor=pointer]
+          - group [ref=e196]:
+            - generic "Berechnet Prometo nur die Heizlast? +" [ref=e197] [cursor=pointer]
+          - group [ref=e198]:
+            - generic "Ist die Beta wirklich kostenlos? +" [ref=e199] [cursor=pointer]
+          - group [ref=e200]:
+            - generic "Ist Prometo DIN-konform? +" [ref=e201] [cursor=pointer]
+    - generic [ref=e203]:
+      - generic [ref=e204]: Ein echtes Projekt statt Demo-Daten
+      - heading "Teste Prometo mit einem passenden PDF-Grundriss aus deinem SHK-Alltag." [level=2] [ref=e205]
+      - paragraph [ref=e206]: Die Beta ist kostenlos. Du erhältst einen fokussierten Testablauf und kannst Erkennung, Heizlast, Materialbedarf und hydraulischen Abgleich an einem realen Projekt prüfen.
+      - link "Kostenlos Beta testen" [ref=e207] [cursor=pointer]:
+        - /url: /beta/
+  - contentinfo [ref=e208]:
+    - generic [ref=e209]:
+      - generic [ref=e210]:
+        - img "Prometo" [ref=e211]
+        - paragraph [ref=e212]: Die PDF-first Aufmaß- und Heizlastsoftware für SHK-Betriebe.
+      - navigation "Fußnavigation" [ref=e213]:
+        - link "Heizlastberechnung App für SHK" [ref=e214] [cursor=pointer]:
+          - /url: /heizlastberechnung/app/
+        - link "Digitales Aufmaß aus PDF-Grundrissen" [ref=e215] [cursor=pointer]:
+          - /url: /digitales-aufmass/
+        - link "Hydraulischen Abgleich berechnen" [ref=e216] [cursor=pointer]:
+          - /url: /hydraulischer-abgleich/
+        - link "Beta" [ref=e217] [cursor=pointer]:
+          - /url: /beta/
+        - link "Datenschutz" [ref=e218] [cursor=pointer]:
+          - /url: /datenschutz.html
+        - link "Impressum" [ref=e219] [cursor=pointer]:
+          - /url: /impressum.html
+  - dialog "Datenschutzeinstellungen" [ref=e220]:
+    - paragraph [ref=e221]:
+      - text: Wir verwenden Google Analytics erst nach deiner Zustimmung, um die Nutzung der Website anonymisiert auszuwerten. Details stehen in der
+      - link "Datenschutzerklärung" [ref=e222] [cursor=pointer]:
+        - /url: /datenschutz.html
+      - text: .
+    - generic [ref=e223]:
+      - button "Ablehnen" [ref=e224] [cursor=pointer]
+      - button "Akzeptieren" [ref=e225] [cursor=pointer]

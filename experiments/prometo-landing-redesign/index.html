@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SHK Planungssoftware vom PDF bis zum Abgleich | Prometo</title>
+  <meta name="description" content="PDF-Grundriss hochladen, Räume prüfen und Heizlast, Flächenheizung, Material sowie hydraulischen Abgleich in einem Projekt bearbeiten. Beta kostenlos.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://prometo.app/">
+  <meta name="theme-color" content="#071111">
+  <link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+  <link rel="preload" href="styles.min.css" as="style">
+  <link rel="preload" href="assets/hero-verlegung.svg" as="image" type="image/svg+xml" fetchpriority="high">
+  <link rel="stylesheet" href="styles.min.css">
+  <script defer src="script.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Prometo",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Android, iOS",
+      "description": "Digitale SHK-Planungsplattform für PDF-Aufmaß, Heizlast, Flächenheizung, Material und hydraulischen Abgleich.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "Kostenlos während der Beta"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Erkennt Prometo jeden PDF-Grundriss automatisch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Die Erkennungsqualität hängt von Lesbarkeit, Maßstab und Planaufbau ab. Räume und Geometrien müssen vor der Berechnung kontrolliert und bei Bedarf korrigiert werden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist ein Einfamilienhaus immer in unter 7 Minuten berechnet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Unter sieben Minuten beschreibt einen typischen Anwendungsfall mit geeignetem PDF. Gebäudeumfang, Planqualität und Korrekturbedarf beeinflussen die Dauer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berechnet Prometo nur die Heizlast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Geprüfte Projektdaten werden für Flächenheizung, Material und hydraulischen Abgleich weiterverwendet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ersetzt Prometo die fachliche Prüfung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Prometo strukturiert Arbeitsschritte und Ergebnisse. Qualifizierte Anwender bleiben für Prüfung, Bewertung und Freigabe verantwortlich."
+          }
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Prometo Beta Startseite">
+        <img src="../../Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37">
+        <span>Beta</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Hauptnavigation">
+        <a href="#workflow">Workflow</a>
+        <a href="#demo">Produkt</a>
+        <details class="nav-products">
+          <summary>Produktmodule <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-products-menu">
+            <p>Prometo Module</p>
+            <a href="../../digitales-aufmass/"><span>01</span><b>Digitales Aufmaß</b><small>PDF zu Raumdaten</small></a>
+            <a href="../../heizlastberechnung/"><span>02</span><b>Heizlastberechnung</b><small>Raumweise nach DIN EN 12831</small></a>
+            <a href="../../fussbodenheizung-auslegen/"><span>03</span><b>Flächenheizung</b><small>Heizkreise und Rohrlängen</small></a>
+            <a href="../../hydraulischer-abgleich/"><span>04</span><b>Hydraulischer Abgleich</b><small>Volumenströme und Einregelwerte</small></a>
+            <a href="../../heizlastberechnung-software/"><span>05</span><b>SHK-Software</b><small>Ein Projektstand für alles</small></a>
+            <a href="../../ki-assistent/"><span>06</span><b>KI-Assistent</b><small>Mit eigenen Projektdaten arbeiten</small></a>
+            <a href="../../app-workflows.html"><span>07</span><b>Workflow-Demo</b><small>Sieben Schritte live ansehen</small></a>
+            <p>Weitere Prometo Seiten</p>
+            <a href="../../heizlast/"><span>08</span><b>Heizlast Wissen</b><small>Grundlagen und Praxis</small></a>
+            <a href="../../waermeerzeuger/"><span>09</span><b>Wärmeerzeuger</b><small>Systeme sicher auswählen</small></a>
+            <a href="../../waermepumpe-dimensionieren/"><span>10</span><b>Wärmepumpe dimensionieren</b><small>Passende Leistung berechnen</small></a>
+            <a href="../../heizlast-checkliste-shk/"><span>11</span><b>SHK-Checkliste</b><small>Heizlast vollständig vorbereiten</small></a>
+            <a href="../../heizlast-software-vergleich-shk/"><span>12</span><b>Software-Vergleich</b><small>SHK-Tools einordnen</small></a>
+            <a href="../../shk-ausbildung/"><span>13</span><b>SHK-Ausbildung</b><small>Wissen für den Berufsalltag</small></a>
+            <a href="../../autarc-reonic-alternative/"><span>14</span><b>Prometo Alternative</b><small>Für moderne SHK-Betriebe</small></a>
+          </div>
+        </details>
+        <a href="#funktionen">Funktionen</a>
+        <a href="#vertrauen">Transparenz</a>
+      </nav>
+
+      <a class="button button-small button-primary header-cta" href="../../beta/">Beta testen</a>
+
+      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile Navigation" hidden>
+      <a href="#workflow">Workflow</a>
+      <a href="#demo">Produkt</a>
+      <div class="mobile-module-links">
+        <span>Produktmodule</span>
+        <a href="../../digitales-aufmass/">Digitales Aufmaß</a>
+        <a href="../../heizlastberechnung/">Heizlastberechnung</a>
+        <a href="../../fussbodenheizung-auslegen/">Flächenheizung</a>
+        <a href="../../hydraulischer-abgleich/">Hydraulischer Abgleich</a>
+        <a href="../../heizlastberechnung-software/">SHK-Software</a>
+        <a href="../../ki-assistent/">KI-Assistent</a>
+        <a href="../../app-workflows.html">Workflow-Demo</a>
+        <a href="../../heizlast/">Heizlast Wissen</a>
+        <a href="../../waermeerzeuger/">Wärmeerzeuger</a>
+        <a href="../../waermepumpe-dimensionieren/">Wärmepumpe dimensionieren</a>
+        <a href="../../heizlast-checkliste-shk/">SHK-Checkliste</a>
+        <a href="../../heizlast-software-vergleich-shk/">Software-Vergleich</a>
+        <a href="../../shk-ausbildung/">SHK-Ausbildung</a>
+        <a href="../../autarc-reonic-alternative/">Prometo Alternative</a>
+      </div>
+      <a href="#funktionen">Funktionen</a>
+      <a href="#vertrauen">Transparenz</a>
+      <a class="button button-primary" href="../../beta/">Kostenlos Beta testen</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero blueprint-grid" id="top">
+      <img class="hero-heating-field" src="./assets/hero-verlegung.svg" alt="" aria-hidden="true" fetchpriority="high">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Planungsplattform für SHK-Betriebe</p>
+          <h1>Vom PDF-Grundriss zum vollständigen <em>SHK-Workflow.</em></h1>
+          <p class="hero-lead">Prometo erkennt Räume und Geometrien automatisch. Du kontrollierst die Projektdaten und nutzt sie direkt für Heizlast, Flächenheizung, Materialberechnung und hydraulischen Abgleich.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="../../beta/">
+              Kostenlos Beta testen
+              <span class="button-arrow" aria-hidden="true">
+                <svg viewBox="0 0 20 20">
+                  <path d="M5 15 15 5M8 5h7v7"/>
+                </svg>
+              </span>
+            </a>
+            <a class="button button-secondary" href="#workflow">Workflow ansehen <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-proof">
+            <span class="status-dot"></span>
+            <p><strong>Typischer Anwendungsfall:</strong> geeignetes PDF, Einfamilienhaus bis zur Heizlast in unter 7 Minuten.</p>
+          </div>
+        </div>
+
+        <div class="engine reveal reveal-delay" data-engine>
+          <div class="engine-toolbar">
+            <div>
+              <span class="micro-label">Prometo Engine</span>
+              <strong>EFH · Erdgeschoss</strong>
+            </div>
+            <div class="engine-state"><span></span><b data-engine-state>Räume erkannt</b></div>
+          </div>
+
+          <div class="engine-stage">
+            <div class="plan" data-plan>
+              <svg class="circuit-definitions" aria-hidden="true">
+                <defs>
+                  <symbol id="room-circuit-horizontal" viewBox="0 0 764.3 579.3">
+                    <g transform="translate(0 579.3) rotate(-90)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path class="circuit-return" pathLength="1" d="M257.8,532.3c53.1-1.8,60.7-45.8,60.7-86.3s-28.9-59.3-28.9-86.9v-118.5c0-22.9,16.4-54.7,57.7-54.7s57.7,32.2,57.7,54.7v268c0,55.5-25.9,81.4-81.4,81.4h-68.2c-55.5,0-81.4-25.9-81.4-81.5V151.8c0-55.5,25.9-81.4,81.4-81.4h183.7c55.5,0,81.4,25.9,81.4,81.4v472.4c0,55.5-25.9,81.4-81.4,81.4H139.3c-54.7,0-80.6-25.9-80.6-81.5V1"/>
+                      <path class="circuit-supply" pathLength="1" d="M1,1v680.8c0,55.7,25.9,81.5,80.6,81.5h415.4c55.5,0,81.4-25.9,81.4-81.4V94.1c0-55.5-25.9-81.4-81.4-81.4H197.8c-55.5,0-81.4,25.9-81.4,81.4v472.4c0,55.5,25.9,81.4,80.6,81.4h184.5c55.5,0,81.4-25.9,81.4-81.4V209.6c0-55.5-25.9-81.4-81.4-81.4h-68.2c-55.5,0-81.4,25.9-81.4,81.4,0,0,0,75.3,0,149.6s-28.9,45.7-28.9,86.6,1.3,85,54.8,86.6"/>
+                    </g>
+                  </symbol>
+                  <symbol id="room-circuit-vertical" viewBox="0 0 579.3 764.3">
+                    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path class="circuit-return" pathLength="1" d="M257.8,532.3c53.1-1.8,60.7-45.8,60.7-86.3s-28.9-59.3-28.9-86.9v-118.5c0-22.9,16.4-54.7,57.7-54.7s57.7,32.2,57.7,54.7v268c0,55.5-25.9,81.4-81.4,81.4h-68.2c-55.5,0-81.4-25.9-81.4-81.5V151.8c0-55.5,25.9-81.4,81.4-81.4h183.7c55.5,0,81.4,25.9,81.4,81.4v472.4c0,55.5-25.9,81.4-81.4,81.4H139.3c-54.7,0-80.6-25.9-80.6-81.5V1"/>
+                      <path class="circuit-supply" pathLength="1" d="M1,1v680.8c0,55.7,25.9,81.5,80.6,81.5h415.4c55.5,0,81.4-25.9,81.4-81.4V94.1c0-55.5-25.9-81.4-81.4-81.4H197.8c-55.5,0-81.4,25.9-81.4,81.4v472.4c0,55.5,25.9,81.4,80.6,81.4h184.5c55.5,0,81.4-25.9,81.4-81.4V209.6c0-55.5-25.9-81.4-81.4-81.4h-68.2c-55.5,0-81.4,25.9-81.4,81.4,0,0,0,75.3,0,149.6s-28.9,45.7-28.9,86.6,1.3,85,54.8,86.6"/>
+                    </g>
+                  </symbol>
+                </defs>
+              </svg>
+              <div class="scan-line"></div>
+              <div class="room room-living" data-room>
+                <span>Wohnen</span><small>28,4 m²</small>
+                <i class="heat">1.280 W</i>
+                <svg class="circuit circuit-wide" viewBox="0 0 764.3 579.3" aria-hidden="true">
+                  <use href="#room-circuit-horizontal"/>
+                </svg>
+              </div>
+              <div class="room room-kitchen" data-room>
+                <span>Küche</span><small>12,8 m²</small>
+                <i class="heat">690 W</i>
+                <svg class="circuit circuit-wide" viewBox="0 0 764.3 579.3" aria-hidden="true">
+                  <use href="#room-circuit-horizontal"/>
+                </svg>
+              </div>
+              <div class="room room-hall" data-room>
+                <span>Diele</span><small>8,6 m²</small>
+                <i class="heat">320 W</i>
+              </div>
+              <div class="room room-office" data-room>
+                <span>Arbeiten</span><small>11,9 m²</small>
+                <i class="heat">610 W</i>
+                <svg class="circuit circuit-tall" viewBox="0 0 579.3 764.3" aria-hidden="true">
+                  <use href="#room-circuit-vertical"/>
+                </svg>
+              </div>
+              <div class="room room-bath uncertain" data-room>
+                <span>Bad</span><small>9,2 m²</small>
+                <i class="heat">720 W</i>
+                <b>Maß prüfen</b>
+                <svg class="circuit circuit-tall" viewBox="0 0 579.3 764.3" aria-hidden="true">
+                  <use href="#room-circuit-vertical"/>
+                </svg>
+              </div>
+              <div class="plan-note note-a">A–01</div>
+              <div class="plan-note note-b">M 1:100</div>
+            </div>
+
+            <div class="engine-metrics">
+              <div><span>Räume</span><strong data-metric-rooms>9 erkannt</strong></div>
+              <div><span>Heizlast</span><strong data-metric-load>5,8 kW</strong></div>
+              <div><span>Heizkreise</span><strong data-metric-circuits>7 ausgelegt</strong></div>
+            </div>
+          </div>
+
+          <div class="engine-steps" role="group" aria-label="Darstellungsschritt wählen">
+            <button type="button" data-engine-step="scan"><span>01</span> PDF</button>
+            <button type="button" class="active" data-engine-step="rooms"><span>02</span> Räume</button>
+            <button type="button" data-engine-step="review"><span>03</span> Prüfen</button>
+            <button type="button" data-engine-step="load"><span>04</span> Heizlast</button>
+            <button type="button" data-engine-step="circuits"><span>05</span> Heizkreise</button>
+            <button type="button" data-engine-step="output"><span>06</span> Ergebnis</button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-rail" aria-hidden="true">
+        <span>PDF</span><i></i><span>Raumdaten</span><i></i><span>Heizlast</span><i></i><span>Flächenheizung</span><i></i><span>Material</span><i></i><span>Abgleich</span>
+      </div>
+    </section>
+
+    <section class="problem section-dark">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Ausgangslage</p>
+          <h2>Ein Projekt. Zu viele Programme. Zu viele doppelte Eingaben.</h2>
+          <p>Heute werden Räume, Maße und Ergebnisse zwischen PDF-Viewer, Tabellen und Einzelrechnern neu übertragen. Prometo startet mit einer Planbasis und reicht denselben geprüften Projektstand durch alle Folgeschritte.</p>
+        </div>
+
+        <div class="convergence reveal">
+          <div class="legacy-stack">
+            <p>HEUTE · GETRENNTE DATENSILOS</p>
+            <div class="legacy-lane">
+              <span>PDF</span><div><b>PDF-Viewer</b><small>Grundriss nur ansehen</small></div><em>Insel 01</em>
+            </div>
+            <div class="legacy-lane">
+              <span>RÄUME</span><div><b>Maße abschreiben</b><small>Räume manuell übertragen</small></div><em>erneute Eingabe</em>
+            </div>
+            <div class="legacy-lane">
+              <span>XLS</span><div><b>Raumliste pflegen</b><small>Änderungen nachführen</small></div><em>Insel 02</em>
+            </div>
+            <div class="legacy-lane">
+              <span>LAST</span><div><b>Einzelrechner öffnen</b><small>Gebäudedaten neu erfassen</small></div><em>Insel 03</em>
+            </div>
+            <div class="legacy-lane">
+              <span>MENGE</span><div><b>Material separat zählen</b><small>Ergebnisse erneut übertragen</small></div><em>Insel 04</em>
+            </div>
+            <div class="legacy-loop"><span>↻</span> Gleiche Projektdaten mehrfach eingeben und abgleichen</div>
+          </div>
+          <div class="transition-bridge" aria-hidden="true">
+            <span>STATT</span>
+            <div><i></i></div>
+            <b>1×<small>PDF-Import</small></b>
+          </div>
+          <div class="project-chain">
+            <p>MIT PROMETO · EINE PROJEKTKETTE</p>
+            <div class="project-chain-heading">
+              <img src="../../Logo/icon.svg" alt="" width="48" height="48">
+              <div><strong>Ein geprüfter Projektstand</strong><small>Jeder Schritt übernimmt Daten des vorherigen.</small></div>
+            </div>
+            <div class="project-flow">
+              <div class="project-node">
+                <span>01</span><b>PDF als Planbasis</b><small>einmal importiert</small>
+              </div>
+              <i class="flow-connector"></i>
+              <div class="project-node">
+                <span>02</span><b>Räume erkennen & prüfen</b><small>9 Räume · kontrollierbar</small>
+              </div>
+              <i class="flow-connector"></i>
+              <div class="project-node">
+                <span>03</span><b>Heizlast berechnen</b><small>5,8 kW · raumweise</small>
+              </div>
+              <i class="flow-connector"></i>
+              <div class="project-node">
+                <span>04</span><b>Heizkreise auslegen</b><small>7 Kreise · 612 m Rohr</small>
+              </div>
+            </div>
+            <div class="project-outputs">
+              <span><small>05</small>Material<b>28 Positionen</b></span>
+              <span><small>06</small>Hydraulik<b>4,3 l/min</b></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow section-light" id="workflow">
+      <div class="shell">
+        <div class="section-heading section-heading-dark reveal">
+          <p class="eyebrow eyebrow-dark"><span></span> Prometo Workflow</p>
+          <h2>Sieben Schritte. Ein durchgängiger Datenstand.</h2>
+          <p>Jeder Schritt übernimmt die geprüften Eingaben des vorherigen. Keine neue Raumliste, kein erneutes Übertragen, kein blinder Automatismus.</p>
+        </div>
+
+        <div class="workflow-layout">
+          <div class="workflow-list" role="tablist" aria-label="Workflow-Schritte">
+            <button type="button" class="workflow-step active" data-workflow-step="0" role="tab" aria-selected="true">
+              <span>01</span><div><strong>PDF als Projektbasis</strong><small>Vorhandenen Architektenplan hochladen.</small></div>
+            </button>
+            <button type="button" class="workflow-step" data-workflow-step="1" role="tab" aria-selected="false">
+              <span>02</span><div><strong>Räume erkennen</strong><small>Geschosse, Räume und Geometrien übernehmen.</small></div>
+            </button>
+            <button type="button" class="workflow-step" data-workflow-step="2" role="tab" aria-selected="false">
+              <span>03</span><div><strong>Angaben kontrollieren</strong><small>Unsicherheiten gezielt prüfen und korrigieren.</small></div>
+            </button>
+            <button type="button" class="workflow-step" data-workflow-step="3" role="tab" aria-selected="false">
+              <span>04</span><div><strong>Heizlast berechnen</strong><small>Raumweise Werte strukturiert ableiten.</small></div>
+            </button>
+            <button type="button" class="workflow-step" data-workflow-step="4" role="tab" aria-selected="false">
+              <span>05</span><div><strong>Flächenheizung auslegen</strong><small>Heizkreise, Abstände und Rohrlängen planen.</small></div>
+            </button>
+            <button type="button" class="workflow-step" data-workflow-step="5" role="tab" aria-selected="false">
+              <span>06</span><div><strong>Material ermitteln</strong><small>Mengen aus geprüften Planungsdaten erzeugen.</small></div>
+            </button>
+            <button type="button" class="workflow-step" data-workflow-step="6" role="tab" aria-selected="false">
+              <span>07</span><div><strong>Hydraulik vorbereiten</strong><small>Volumenströme und Einregelwerte bereitstellen.</small></div>
+            </button>
+          </div>
+
+          <div class="workflow-preview reveal">
+            <div class="app-frame tablet-mode">
+              <div class="app-bar">
+                <span>PROJEKT · EFH MUSTERWEG</span>
+                <b data-workflow-label>01 / PDF-IMPORT</b>
+              </div>
+              <img src="../../assets/prometo-screenshots/tablet/bauplan-import-ki-bereit.webp" alt="Prometo Bauplan-Import auf einem Tablet" data-workflow-image width="2560" height="1600">
+            </div>
+            <div class="data-transfer">
+              <div><span>Eingang</span><strong data-workflow-input>PDF-Grundriss · 2 Seiten</strong></div>
+              <i aria-hidden="true"></i>
+              <div><span>Ausgang</span><strong data-workflow-output>Plananalyse bereit</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo section-dark blueprint-grid" id="demo">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Interaktive Bauplan-Demo</p>
+          <h2>Plan ansehen. Ebene wechseln. Ergebnis nachvollziehen.</h2>
+          <p>Die Ansicht bleibt technisch lesbar: Original, erkannte Räume, Heizlast und Hydraulik sind klar getrennte, kontrollierbare Ebenen.</p>
+        </div>
+
+        <div class="demo-console reveal">
+          <div class="demo-sidebar" role="tablist" aria-label="Planebene wählen">
+            <button type="button" class="active" data-demo-view="plan" role="tab" aria-selected="true"><span>01</span>Planstruktur</button>
+            <button type="button" data-demo-view="rooms" role="tab" aria-selected="false"><span>02</span>Erkannte Räume</button>
+            <button type="button" data-demo-view="heat" role="tab" aria-selected="false"><span>03</span>Heizlast-Heatmap</button>
+            <button type="button" data-demo-view="hydraulic" role="tab" aria-selected="false"><span>04</span>Hydraulische Werte</button>
+          </div>
+          <div class="demo-viewport">
+            <div class="demo-topbar">
+              <div><span class="status-dot"></span><b data-demo-title>Planstruktur · Erdgeschoss</b></div>
+              <small data-demo-meta>Maßstab 1:100 · 9 Räume</small>
+            </div>
+            <div class="demo-canvas" data-demo-canvas>
+              <div class="demo-plan" data-demo-plan>
+                <div class="demo-room dr-1"><b>Wohnen</b><span>28,4 m²</span></div>
+                <div class="demo-room dr-2"><b>Küche</b><span>12,8 m²</span></div>
+                <div class="demo-room dr-3"><b>Diele</b><span>8,6 m²</span></div>
+                <div class="demo-room dr-4"><b>Arbeiten</b><span>11,9 m²</span></div>
+                <div class="demo-room dr-5"><b>Bad</b><span>9,2 m²</span><i>Prüfen</i></div>
+              </div>
+              <img src="../../assets/prometo-screenshots/tablet/projektdetail-heatmap.webp" alt="Prometo Heizlast-Heatmap" data-demo-image hidden width="2560" height="1600">
+            </div>
+            <div class="demo-footer">
+              <div><span>Projektstatus</span><b>7 von 9 Räumen freigegeben</b></div>
+              <div><span>Offene Prüfung</span><b class="warning">2 Angaben</b></div>
+              <div><span>Letzte Berechnung</span><b>heute · 10:42</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="data-system section-light">
+      <div class="shell data-grid">
+        <div class="section-heading section-heading-dark reveal">
+          <p class="eyebrow eyebrow-dark"><span></span> Gemeinsamer Projektkern</p>
+          <h2>Einmal erfassen. Kontrollieren. Durchgängig weiterarbeiten.</h2>
+          <p>Prometo ist kein Ordner voller Einzelrechner. Räume, Bauteile und Systemwerte bilden einen gemeinsamen Projektstand für alle Folgeschritte.</p>
+          <ul class="plain-checks">
+            <li>Änderung am Raum bleibt im Projekt sichtbar</li>
+            <li>Berechnungen greifen auf dieselben geprüften Werte zu</li>
+            <li>Ergebnisse bleiben für Büro und Baustelle nachvollziehbar</li>
+          </ul>
+        </div>
+
+        <div class="system-map reveal" aria-label="Verbundene Prometo Projektmodule">
+          <div class="system-column system-inputs">
+            <p>GEPRÜFTE PROJEKTBASIS</p>
+            <div class="system-node"><span>01</span><b>Gebäude</b><small>2 Geschosse</small></div>
+            <div class="system-node"><span>02</span><b>Räume</b><small>9 erkannt</small></div>
+            <div class="system-node"><span>03</span><b>Bauteile</b><small>34 geprüft</small></div>
+            <div class="system-orbit system-orbit-left" aria-hidden="true"><i></i></div>
+          </div>
+          <div class="system-core-wrap">
+            <i class="system-pipe system-pipe-in"></i>
+            <div class="system-core"><img src="../../Logo/icon.svg" alt="" width="44" height="44"><strong>Projektkern</strong><small>EFH Musterweg</small></div>
+            <span>Ein Datenstand</span>
+            <i class="system-pipe system-pipe-out"></i>
+          </div>
+          <div class="system-column system-outputs">
+            <p>BERECHNUNG & AUSGABE</p>
+            <div class="system-node"><span>04</span><b>Heizlast</b><small>5,8 kW</small></div>
+            <div class="system-node"><span>05</span><b>Heizkreise</b><small>7 Kreise</small></div>
+            <div class="system-node"><span>06</span><b>Material</b><small>28 Positionen</small></div>
+            <div class="system-node"><span>07</span><b>Hydraulik</b><small>4,3 l/min</small></div>
+            <div class="system-orbit system-orbit-right" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features section-light" id="funktionen">
+      <div class="shell">
+        <div class="section-heading section-heading-dark reveal">
+          <p class="eyebrow eyebrow-dark"><span></span> Funktionsbereiche</p>
+          <h2>Werkzeuge entlang realer SHK-Arbeitsschritte.</h2>
+          <p>Jedes Modul hat eine konkrete Aufgabe. Daten fließen weiter, statt an einer Modulgrenze neu erfasst zu werden.</p>
+        </div>
+
+        <div class="feature-composition">
+          <article class="feature-wide feature-import reveal">
+            <div>
+              <span class="feature-number">01 · PLANBASIS</span>
+              <h3>Digitales PDF-Aufmaß mit kontrollierbarer Raumerkennung</h3>
+              <p>Vorhandenen Grundriss als Projektbasis verwenden. Erkannte Räume, Maßstab und Geometrien vor jeder Berechnung fachlich prüfen.</p>
+              <div class="feature-data"><span>Eingang: PDF</span><i></i><span>Ausgang: geprüfte Raumstruktur</span></div>
+            </div>
+            <img src="../../assets/prometo-screenshots/tablet/bauplan-import-review.webp" alt="Prometo Import-Review auf dem Tablet" width="2560" height="1600">
+          </article>
+
+          <article class="feature-tall reveal">
+            <span class="feature-number">02 · BERECHNUNG</span>
+            <h3>Raumweise Heizlast</h3>
+            <p>Berechnungen strukturiert entlang der DIN EN 12831 vorbereiten und Ergebnisse raumweise plausibilisieren.</p>
+            <div class="metric-stack">
+              <div><span>Gebäude</span><b>5,8 kW</b></div>
+              <div><span>Spezifisch</span><b>44 W/m²</b></div>
+              <div><span>Räume</span><b>7 beheizt</b></div>
+            </div>
+          </article>
+
+          <article class="feature-circuit reveal">
+            <span class="feature-number">03 · FLÄCHENHEIZUNG</span>
+            <h3>Heizkreise und Rohrlängen auslegen</h3>
+            <p>Verlegeabstände, Kreise und Systemparameter aus Raum- und Heizlastdaten ableiten.</p>
+            <div class="circuit-visual" aria-hidden="true">
+              <div>
+                <svg viewBox="0 0 180 92"><path pathLength="1" d="M8 84V17Q8 8 17 8H22Q31 8 31 17V75Q31 84 40 84H45Q54 84 54 75V17Q54 8 63 8H68Q77 8 77 17V75Q77 84 86 84H91Q100 84 100 75V17Q100 8 109 8H114Q123 8 123 17V75Q123 84 132 84H137Q146 84 146 75V17Q146 8 155 8H172"/></svg>
+                <span>Mäander · Randzone</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 764.3 579.3"><use href="#room-circuit-horizontal"/></svg>
+                <span>Schnecke · gleichmäßige Fläche</span>
+              </div>
+            </div>
+            <strong>7 Kreise · 612 m Rohr</strong>
+          </article>
+
+          <article class="feature-material reveal">
+            <span class="feature-number">04 · MENGEN</span>
+            <h3>Material projektbezogen ermitteln</h3>
+            <div class="material-list">
+              <div><span>Rohr 16 × 2 mm</span><b>612 m</b></div>
+              <div><span>Randdämmstreifen</span><b>138 m</b></div>
+              <div><span>Verteiler 8-fach</span><b>1 Stk.</b></div>
+              <div><span>Befestigung</span><b>1.240 Stk.</b></div>
+            </div>
+          </article>
+
+          <article class="feature-wide feature-hydraulic reveal">
+            <div>
+              <span class="feature-number">05 · HYDRAULIK & DOKU</span>
+              <h3>Soll-Volumenströme, Verteiler und Einregelwerte im selben Projekt.</h3>
+              <p>Hydraulische Werte bauen auf geprüfter Heizlast und Auslegung auf. Projektdaten und Ergebnisse bleiben für Übergabe und Dokumentation verfügbar.</p>
+              <div class="feature-data"><span>Heizlast</span><i></i><span>Heizkreise</span><i></i><span>Volumenstrom</span></div>
+            </div>
+            <img src="../../assets/prometo-screenshots/tablet/hydraulischer-abgleich-og-verteiler.webp" alt="Hydraulischer Abgleich mit Heizkreisverteiler in Prometo" width="2560" height="1600">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-study section-dark">
+      <div class="shell">
+        <div class="case-header reveal">
+          <div>
+            <p class="eyebrow"><span></span> Beispielprojekt</p>
+            <h2>Einfamilienhaus Musterweg 12</h2>
+          </div>
+          <div class="case-progress">
+            <span>Projektfortschritt</span>
+            <strong>86 %</strong>
+            <i><b></b></i>
+          </div>
+        </div>
+        <div class="case-grid reveal">
+          <div class="case-plan">
+            <img src="../../assets/prometo-screenshots/tablet/projektdetail-heatmap.webp" alt="Projektübersicht mit Heizlast-Heatmap" width="2560" height="1600">
+            <span>PROJEKT · EFH · 148 m²</span>
+          </div>
+          <ol class="case-events">
+            <li class="done"><span>09:34</span><div><b>Grundriss hochgeladen</b><small>2 PDF-Seiten · Maßstab erkannt</small></div></li>
+            <li class="done"><span>09:35</span><div><b>9 Räume erkannt</b><small>7 beheizt · 2 Nebenräume</small></div></li>
+            <li class="attention"><span>09:36</span><div><b>2 Angaben markiert</b><small>Fenstermaß und Außenwand prüfen</small></div></li>
+            <li class="done"><span>09:39</span><div><b>Heizlast berechnet</b><small>5,8 kW · 44 W/m²</small></div></li>
+            <li class="done"><span>09:42</span><div><b>Heizkreise ausgelegt</b><small>7 Kreise · 612 m Rohr</small></div></li>
+            <li><span>offen</span><div><b>Hydraulik freigeben</b><small>Fachliche Plausibilisierung ausstehend</small></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="audiences section-light">
+      <div class="shell">
+        <div class="section-heading section-heading-dark reveal">
+          <p class="eyebrow eyebrow-dark"><span></span> Für den Betrieb gebaut</p>
+          <h2>Ein Projektstand. Unterschiedliche Aufgaben.</h2>
+        </div>
+        <div class="audience-grid">
+          <article class="reveal"><span>01</span><h3>Inhaber & Meister</h3><p>Weniger Insellösungen, schnellere Projektbearbeitung und nachvollziehbare Ergebnisse.</p></article>
+          <article class="reveal"><span>02</span><h3>Projektleitung & Kalkulation</h3><p>Heizlast, Flächenheizung, Material und Hydraulik in einem verbundenen Projekt.</p></article>
+          <article class="reveal"><span>03</span><h3>Technische Mitarbeiter</h3><p>Geführte Arbeitsschritte, klare Eingaben und kontrollierbare Berechnungsergebnisse.</p></article>
+          <article class="reveal"><span>04</span><h3>SHK-Teams</h3><p>Einheitliche Projektstruktur und bessere Übergaben zwischen Büro und Baustelle.</p></article>
+        </div>
+
+        <div class="device-story reveal">
+          <div class="device-copy">
+            <p class="eyebrow eyebrow-dark"><span></span> Büro bis Baustelle</p>
+            <h2>Projektstand dort prüfen, wo die Arbeit passiert.</h2>
+            <div class="device-points">
+              <div><span>01</span><p><b>Büro</b> Projekt anlegen und Grundriss importieren.</p></div>
+              <div><span>02</span><p><b>Tablet</b> Räume, Heizlast und Auslegung prüfen.</p></div>
+              <div><span>03</span><p><b>Baustelle</b> Werte und Projektstand mobil kontrollieren.</p></div>
+            </div>
+          </div>
+          <div class="devices">
+            <figure class="tablet-device"><img src="../../assets/prometo-screenshots/tablet/bauplan-import-review.webp" alt="Planprüfung in Prometo auf einem Tablet" width="2560" height="1600"><figcaption>Planprüfung · Tablet</figcaption></figure>
+            <figure class="phone-device"><img src="../../assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp" alt="Heizkreisdetails in Prometo auf einem Smartphone" width="1179" height="2556"><figcaption>Baustelle · Mobil</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust section-dark" id="vertrauen">
+      <div class="shell trust-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Fachliche Transparenz</p>
+          <h2>Automatisieren, wo es hilft. Kontrollieren, wo es zählt.</h2>
+          <p>Prometo macht erkannte Angaben und Berechnungsschritte sichtbar. Verantwortung und fachliche Plausibilisierung bleiben beim qualifizierten Anwender.</p>
+        </div>
+        <div class="trust-list reveal">
+          <div><span>01</span><p><b>Beta mit echtem Feedback</b> Prometo befindet sich in Entwicklung und wird mit SHK-Betrieben erprobt.</p></div>
+          <div><span>02</span><p><b>Erkennung bleibt kontrollierbar</b> Unsichere Angaben werden markiert und können korrigiert werden.</p></div>
+          <div><span>03</span><p><b>Fachliche Arbeitslogik</b> Eingaben und Prüfschritte orientieren sich an der DIN EN 12831.</p></div>
+          <div><span>04</span><p><b>Keine Blackbox-Freigabe</b> Ergebnisse müssen vor Verwendung fachlich plausibilisiert werden.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq section-light">
+      <div class="shell faq-grid">
+        <div class="section-heading section-heading-dark reveal">
+          <p class="eyebrow eyebrow-dark"><span></span> Häufige Fragen</p>
+          <h2>Was Betriebe vor dem Test wissen sollten.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>Erkennt Prometo jeden PDF-Grundriss automatisch?<span>+</span></summary>
+            <p>Nein. Erkennungsqualität hängt von Lesbarkeit, Maßstab und Planaufbau ab. Räume und Geometrien müssen vor der Berechnung kontrolliert und bei Bedarf korrigiert werden.</p>
+          </details>
+          <details>
+            <summary>Ist ein Einfamilienhaus immer in unter 7 Minuten berechnet?<span>+</span></summary>
+            <p>Nein. Unter sieben Minuten beschreibt einen typischen Anwendungsfall mit geeignetem PDF. Gebäudeumfang, Planqualität und Korrekturbedarf beeinflussen die Dauer.</p>
+          </details>
+          <details>
+            <summary>Berechnet Prometo nur die Heizlast?<span>+</span></summary>
+            <p>Nein. Geprüfte Projektdaten werden für Flächenheizung, Material und hydraulischen Abgleich weiterverwendet.</p>
+          </details>
+          <details>
+            <summary>Ersetzt Prometo die fachliche Prüfung?<span>+</span></summary>
+            <p>Nein. Prometo strukturiert Arbeitsschritte und Ergebnisse. Qualifizierte Anwender bleiben für Prüfung, Bewertung und Freigabe verantwortlich.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta blueprint-grid">
+      <img class="cta-circuit" src="./assets/hero-verlegung.svg" alt="" aria-hidden="true">
+      <div class="shell final-inner reveal">
+        <p class="eyebrow"><span></span> Kostenlose Beta</p>
+        <h2>Teste Prometo mit einem echten Projekt aus deinem Betrieb.</h2>
+        <p>Lade einen vorhandenen PDF-Grundriss hoch, kontrolliere die erkannten Räume und prüfe den Workflow von der Heizlast bis zum hydraulischen Abgleich.</p>
+        <a class="button button-primary" href="../../beta/">Kostenlos an der Beta teilnehmen <span aria-hidden="true">↗</span></a>
+        <div class="cta-notes"><span>Während der Beta kostenlos</span><span>Für reale SHK-Projekte</span><span>Direktes Feedback an Entwicklung</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <a class="brand" href="#top"><img src="../../Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37"></a>
+      <p>Digitale SHK-Planung aus einem gemeinsamen Projektstand.</p>
+      <div><a href="../../impressum.html">Impressum</a><a href="../../datenschutz.html">Datenschutz</a></div>
+    </div>
+  </footer>
+</body>
+</html>

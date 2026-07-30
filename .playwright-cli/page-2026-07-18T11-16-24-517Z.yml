@@ -1,0 +1,222 @@
+- generic [active] [ref=f3e1]:
+  - link "Zum Inhalt springen" [ref=f3e2] [cursor=pointer]:
+    - /url: "#prometo-main-content"
+  - banner [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - link "Zur Startseite von Prometo" [ref=f3e5] [cursor=pointer]:
+        - /url: /
+        - img "Prometo" [ref=f3e6]
+      - group [ref=f3e8]:
+        - generic "Menü öffnen" [ref=f3e9] [cursor=pointer]
+  - main [ref=f3e11]:
+    - generic [ref=f3e13]:
+      - generic [ref=f3e14]:
+        - generic [ref=f3e15]: Praxisbezug für SHK-Ausbildung · Separater Bereich
+        - heading "Heizlast und Aufmaß anhand echter Grundrisse vermitteln." [level=1] [ref=f3e16]
+        - paragraph [ref=f3e17]: Prometo ist professionelle SHK-Berechnungssoftware, keine Lern-App. Die Produktoberfläche macht sichtbar, wie aus einem PDF-Grundriss geprüfte Raumdaten, Heizlast, Materialbedarf und hydraulischer Abgleich entstehen.
+        - generic [ref=f3e18]:
+          - link "Kostenlos Beta testen" [ref=f3e19] [cursor=pointer]:
+            - /url: /beta/
+          - link "Workflow ansehen" [ref=f3e20] [cursor=pointer]:
+            - /url: "#workflow"
+        - paragraph [ref=f3e21]: Für Auszubildende, Berufsschulen, Meisterkurse und betriebliche Unterweisungen. Fachliche Anleitung, Kontrolle und Bewertung bleiben notwendig.
+      - figure [ref=f3e22]:
+        - img "Prometo Import-Review auf dem Tablet mit automatisch erkannten und kontrollierbaren Räumen" [ref=f3e23]
+        - generic [ref=f3e24]:
+          - strong [ref=f3e25]: Echte Produktoberfläche
+          - text: Automatisch erkannte Räume lassen sich gemeinsam prüfen, korrigieren und weiterberechnen.
+    - region [ref=f3e26]:
+      - generic [ref=f3e27]:
+        - generic [ref=f3e28]:
+          - generic [ref=f3e29]: Ein Projekt · vier Lernanlässe
+          - heading "Den vollständigen Datenweg am Grundriss nachvollziehen." [level=2] [ref=f3e30]
+        - generic [ref=f3e31]:
+          - article [ref=f3e32]:
+            - generic [ref=f3e33]: "01"
+            - generic [ref=f3e34]:
+              - heading "Grundriss und Aufmaß" [level=3] [ref=f3e35]
+              - paragraph [ref=f3e36]: Räume, Geometrien und Planinformationen erkennen, kontrollieren und fachlich einordnen.
+          - article [ref=f3e37]:
+            - generic [ref=f3e38]: "02"
+            - generic [ref=f3e39]:
+              - heading "Raumweise Heizlast" [level=3] [ref=f3e40]
+              - paragraph [ref=f3e41]: Verstehen, welche Raum- und Bauteildaten entlang der DIN EN 12831 in die Berechnung einfließen.
+          - article [ref=f3e42]:
+            - generic [ref=f3e43]: "03"
+            - generic [ref=f3e44]:
+              - heading "Materialzusammenhänge" [level=3] [ref=f3e45]
+              - paragraph [ref=f3e46]: Nachvollziehen, wie Rohrlängen, Systemdaten und Materialpositionen aus dem Projekt entstehen.
+          - article [ref=f3e47]:
+            - generic [ref=f3e48]: "04"
+            - generic [ref=f3e49]:
+              - heading "Hydraulischer Abgleich" [level=3] [ref=f3e50]
+              - paragraph [ref=f3e51]: Den Zusammenhang zwischen Raumheizlast, Volumenströmen, Heizkreisen und Einregelwerten erklären.
+    - region [ref=f3e52]:
+      - generic [ref=f3e53]:
+        - generic [ref=f3e54]:
+          - generic [ref=f3e55]: Praxisnaher Ablauf
+          - heading "Vom Plan zur begründeten fachlichen Entscheidung." [level=2] [ref=f3e56]
+          - paragraph [ref=f3e57]: Der PDF-Grundriss bildet eine gemeinsame Projektbasis. Lernende prüfen die erkannten Daten und sehen anschließend, welche Folgen Korrekturen für Berechnung und Auslegung haben.
+        - generic [ref=f3e58]:
+          - article [ref=f3e59]:
+            - heading "PDF-Grundriss hochladen" [level=3] [ref=f3e60]
+            - paragraph [ref=f3e61]: Einen geeigneten, lesbaren Grundriss als gemeinsame Ausgangslage verwenden.
+          - article [ref=f3e62]:
+            - heading "Räume automatisch erkennen" [level=3] [ref=f3e63]
+            - paragraph [ref=f3e64]: Erkannte Raumstrukturen und Planinformationen gemeinsam bewerten.
+          - article [ref=f3e65]:
+            - heading "Annahmen begründen" [level=3] [ref=f3e66]
+            - paragraph [ref=f3e67]: Raumgeometrien, Bauteile und Randbedingungen prüfen, diskutieren und korrigieren.
+          - article [ref=f3e68]:
+            - heading "Ergebnisse vergleichen" [level=3] [ref=f3e69]
+            - paragraph [ref=f3e70]: Heizlast, Materialbedarf und hydraulische Werte aus derselben Projektbasis nachvollziehen.
+    - region [ref=f3e71]:
+      - generic [ref=f3e72]:
+        - generic [ref=f3e73]:
+          - generic [ref=f3e74]: Konkretes EFH-Projekt
+          - generic [ref=f3e75]: 1 Projekt
+          - paragraph [ref=f3e76]: Ein geeigneter Einfamilienhaus-Grundriss verbindet Aufmaß, Heizlast, Material und Abgleich in einer durchgängigen Aufgabe.
+          - paragraph [ref=f3e77]: Automatisch erkannte Angaben sind Vorschläge. Sie müssen im Unterricht und im realen Projekt fachlich kontrolliert werden.
+        - generic [ref=f3e78]:
+          - generic [ref=f3e79]:
+            - generic [ref=f3e80]: Was dabei verständlich wird
+            - heading "Zusammenhänge statt isolierter Eingabemasken." [level=2] [ref=f3e81]
+            - paragraph [ref=f3e82]: Lernende sehen nicht nur ein Endergebnis. Sie verfolgen, wie Grundriss, Raumgeometrie, Bauteile und Systemdaten zusammenwirken und wo fachliche Kontrolle nötig ist.
+          - list [ref=f3e83]:
+            - listitem [ref=f3e84]: Raum- und Bauteildaten direkt am Grundriss besprechen
+            - listitem [ref=f3e85]: Automatische Erkennung kritisch prüfen statt ungeprüft übernehmen
+            - listitem [ref=f3e86]: Auswirkungen von Korrekturen auf Folgeergebnisse vergleichen
+            - listitem [ref=f3e87]: Grenzen, Unsicherheiten und fachliche Verantwortung benennen
+    - region [ref=f3e88]:
+      - generic [ref=f3e89]:
+        - generic [ref=f3e90]:
+          - generic [ref=f3e91]: Echte Produktoberfläche
+          - heading "Echte Arbeitsschritte statt vereinfachter Lernsimulation." [level=2] [ref=f3e92]
+          - paragraph [ref=f3e93]: Die Ansichten stammen aus Prometo. So lässt sich der reale Datenweg zeigen; dargestellte Werte bleiben projektbezogen zu prüfen.
+        - paragraph [ref=f3e94]: Seitlich wischen, um weitere Ansichten zu sehen.
+        - generic "Wischbare Prometo App-Ansichten" [ref=f3e95]:
+          - figure "Erkannte Räume und Geschosse kontrollieren." [ref=f3e96]:
+            - img "Prometo Import-Review mit erkannten Räumen und Geschossen" [ref=f3e97]
+          - figure "Raumdaten im Berechnungsweg prüfen." [ref=f3e99]:
+            - img "Prometo Raumliste für die Heizlastberechnung" [ref=f3e100]
+          - figure "Heizlast und Plausibilität auswerten." [ref=f3e102]:
+            - img "Prometo Ergebnisansicht der Heizlastberechnung" [ref=f3e103]
+          - figure "Heizkreise und Einstellwerte nachvollziehen." [ref=f3e105]:
+            - img "Prometo Heizkreisdetail im hydraulischen Abgleich" [ref=f3e106]
+        - link "Alle App-Workflows ansehen" [ref=f3e109] [cursor=pointer]:
+          - /url: /app-workflows.html
+    - region [ref=f3e110]:
+      - generic [ref=f3e111]:
+        - generic [ref=f3e112]:
+          - generic [ref=f3e113]: Sichtbare Lernergebnisse
+          - heading "Was sich an einem Projekt fachlich besprechen lässt." [level=2] [ref=f3e114]
+          - paragraph [ref=f3e115]: Prometo zeigt Eingaben und Ergebnisse in einem gemeinsamen Kontext. Dadurch werden Rückfragen, Varianten und Plausibilitätsprüfungen konkret.
+        - generic [ref=f3e116]:
+          - article [ref=f3e117]:
+            - strong [ref=f3e118]: Raum- und Gebäudeheizlast
+            - paragraph [ref=f3e119]: Ergebnisübersichten für Räume, Geschosse und Gebäude gemeinsam prüfen und vergleichen.
+          - article [ref=f3e120]:
+            - strong [ref=f3e121]: Materialbedarf
+            - paragraph [ref=f3e122]: Den Weg von Raum-, System- und Verlegeparametern zur projektbezogenen Stückliste erklären.
+          - article [ref=f3e123]:
+            - strong [ref=f3e124]: Hydraulische Werte
+            - paragraph [ref=f3e125]: Soll-Volumenströme, Kreisübersichten und Einregelwerte in Zusammenhang setzen.
+          - article [ref=f3e126]:
+            - strong [ref=f3e127]: Plausibilitätsfragen
+            - paragraph [ref=f3e128]: Abweichungen erkennen, Annahmen hinterfragen und notwendige Korrekturen begründen.
+    - region [ref=f3e129]:
+      - generic [ref=f3e130]:
+        - generic [ref=f3e131]:
+          - generic [ref=f3e132]: Für Ausbildung und Meisterschule
+          - heading "Praxissoftware als roter Faden durch die Berechnung." [level=2] [ref=f3e133]
+        - generic [ref=f3e134]:
+          - article [ref=f3e135]:
+            - heading "Am Grundriss erklären" [level=3] [ref=f3e136]
+            - paragraph [ref=f3e137]: Räume, Flächen und Bauteile bleiben sichtbar, während Eingaben und Ergebnisse besprochen werden.
+          - article [ref=f3e138]:
+            - heading "Fehler diskutieren" [level=3] [ref=f3e139]
+            - paragraph [ref=f3e140]: Automatische Erkennung wird bewusst kontrolliert. Unsichere Daten werden zum konkreten Prüfauftrag.
+          - article [ref=f3e141]:
+            - heading "Folgeschritte verbinden" [level=3] [ref=f3e142]
+            - paragraph [ref=f3e143]: Raumheizlast, Material und hydraulische Werte lassen sich innerhalb derselben Projektstruktur erklären.
+          - article [ref=f3e144]:
+            - heading "Praxisbezug herstellen" [level=3] [ref=f3e145]
+            - paragraph [ref=f3e146]: Ausbilder können dieselben Abläufe zeigen, die später im SHK-Betrieb fachlich kontrolliert werden.
+    - region [ref=f3e147]:
+      - generic [ref=f3e148]:
+        - generic [ref=f3e149]:
+          - generic [ref=f3e150]: Für Ausbilder und Betriebe
+          - heading "Ein gemeinsames Projekt für Theorie, Prüfung und Praxis." [level=2] [ref=f3e151]
+          - paragraph [ref=f3e152]: Die Ausbildungsseite ist ein separater Zugang zur professionellen Software. Sie verspricht keine Lernplattform, sondern zeigt, wie reale Projektdaten didaktisch genutzt werden können.
+        - list [ref=f3e153]:
+          - listitem [ref=f3e154]: Geeignet für Berufsschule, Meisterkurs und betriebliche Unterweisung
+          - listitem [ref=f3e155]: Einheitliche Raum-, System- und Ergebnisdaten als Gesprächsgrundlage
+          - listitem [ref=f3e156]: Aufgaben von Datenerfassung bis Plausibilitätsprüfung ableiten
+          - listitem [ref=f3e157]: Fachliche Verantwortung und Softwaregrenzen transparent behandeln
+    - region [ref=f3e158]:
+      - generic [ref=f3e159]:
+        - generic [ref=f3e160]:
+          - generic [ref=f3e161]: Kostenlose Beta
+          - heading "Im Ausbildungsalltag testen – mit klaren Grenzen." [level=2] [ref=f3e162]
+          - paragraph [ref=f3e163]: Gesucht werden Berufsschulen, Meisterkurse, Ausbilder und SHK-Betriebe, die einen realen PDF-Grundriss gemeinsam prüfen und den Ablauf fachlich bewerten.
+          - link "Kostenlos Beta testen" [ref=f3e164] [cursor=pointer]:
+            - /url: /beta/
+        - generic [ref=f3e165]:
+          - strong [ref=f3e166]: Was Beta hier bedeutet
+          - paragraph [ref=f3e167]: Plan-Import, Raumerkennung, Berechnung und Folgeübergaben sind nutzbar. Automatisch erkannte Daten müssen kontrolliert werden. Einzelne Sonderfälle und Randbedingungen sind noch Gegenstand der fachlichen Prüfung.
+          - paragraph [ref=f3e168]: Die Beta ist kostenlos. Sie ersetzt weder Unterricht noch die Anleitung und Bewertung durch qualifizierte Fachpersonen.
+    - region [ref=f3e169]:
+      - generic [ref=f3e170]:
+        - generic [ref=f3e171]:
+          - generic [ref=f3e172]: Klare Abgrenzung
+          - heading "Professionelle Software statt Lernsimulation." [level=2] [ref=f3e173]
+          - paragraph [ref=f3e174]: Prometo wurde für SHK-Betriebe entwickelt. Der Ausbildungsnutzen entsteht durch die sichtbaren Zusammenhänge und die kontrollierbare Produktoberfläche – nicht durch einen vereinfachten Lernmodus.
+        - generic [ref=f3e175]:
+          - heading "Wie läuft ein Projekt konkret ab?" [level=3] [ref=f3e176]
+          - paragraph [ref=f3e177]: Die Workflow-Seite zeigt Plan-Import, Raumprüfung, Heizlast und Abgleich Schritt für Schritt anhand der echten Produktoberfläche.
+          - link "App-Workflow ansehen" [ref=f3e179] [cursor=pointer]:
+            - /url: /app-workflows.html
+    - region [ref=f3e180]:
+      - generic [ref=f3e181]:
+        - generic [ref=f3e182]:
+          - generic [ref=f3e183]: FAQ
+          - heading "Häufige Fragen zu Prometo in der SHK-Ausbildung." [level=2] [ref=f3e184]
+        - generic [ref=f3e185]:
+          - group [ref=f3e186]:
+            - generic "Ist Prometo eine Lern-App? +" [ref=f3e187] [cursor=pointer]
+          - group [ref=f3e188]:
+            - generic "Für wen ist dieser Bereich gedacht? +" [ref=f3e189] [cursor=pointer]
+          - group [ref=f3e190]:
+            - generic "Ersetzt Prometo Unterricht oder fachliche Anleitung? +" [ref=f3e191] [cursor=pointer]
+          - group [ref=f3e192]:
+            - generic "Welche Inhalte lassen sich zeigen? +" [ref=f3e193] [cursor=pointer]
+          - group [ref=f3e194]:
+            - generic "Kann ein eigener Grundriss verwendet werden? +" [ref=f3e195] [cursor=pointer]
+          - group [ref=f3e196]:
+            - generic "Ist die Beta kostenlos? +" [ref=f3e197] [cursor=pointer]
+    - generic [ref=f3e199]:
+      - generic [ref=f3e200]: Praxisbezug für die Ausbildung
+      - heading "Teste Prometo mit einem geeigneten PDF-Grundriss aus Unterricht oder Betrieb." [level=2] [ref=f3e201]
+      - paragraph [ref=f3e202]: Die Beta ist kostenlos. Prüfe, wie sich Raumdaten, Heizlast, Materialbedarf und hydraulischer Abgleich mit deiner Lerngruppe nachvollziehen lassen.
+      - link "Kostenlos Beta testen" [ref=f3e203] [cursor=pointer]:
+        - /url: /beta/
+  - contentinfo [ref=f3e204]:
+    - generic [ref=f3e205]:
+      - generic [ref=f3e206]:
+        - img "Prometo" [ref=f3e207]
+        - paragraph [ref=f3e208]: Professionelle SHK-Software mit einem separaten Praxiszugang für Ausbildung und Meisterschule.
+      - navigation "Fußnavigation" [ref=f3e209]:
+        - link "Prometo für SHK-Betriebe" [ref=f3e210] [cursor=pointer]:
+          - /url: /
+        - link "Heizlastberechnung App für SHK" [ref=f3e211] [cursor=pointer]:
+          - /url: /heizlastberechnung/app/
+        - link "Digitales Aufmaß aus PDF-Grundrissen" [ref=f3e212] [cursor=pointer]:
+          - /url: /digitales-aufmass/
+        - link "Hydraulischen Abgleich berechnen" [ref=f3e213] [cursor=pointer]:
+          - /url: /hydraulischer-abgleich/
+        - link "Beta" [ref=f3e214] [cursor=pointer]:
+          - /url: /beta/
+        - link "Datenschutz" [ref=f3e215] [cursor=pointer]:
+          - /url: /datenschutz.html
+        - link "Impressum" [ref=f3e216] [cursor=pointer]:
+          - /url: /impressum.html

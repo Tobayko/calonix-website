@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396">
+  <g id="LinkedIn_Banner_EDITABLE_1584x396">
+    <rect id="Background" width="1584" height="396" rx="22" fill="#111414"/>
+    <rect id="Border" x="22" y="22" width="1540" height="352" rx="16" fill="none" stroke="#242A2A" stroke-width="2"/>
+    <circle id="Status_Dot" cx="58" cy="58" r="6" fill="#45DEE7"/>
+    <text id="Eyebrow" x="78" y="64" fill="#8A9393" font-family="Manrope, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="3">PROMETO.APP / FLÄCHENKLIMA</text>
+    <text id="Headline" x="52" y="153" fill="#DFE3E3" font-family="Space Grotesk, Arial, sans-serif" font-size="47" font-weight="700">Wärme, die man nicht sieht.</text>
+    <text id="Subline" x="52" y="198" fill="#BBC9CA" font-family="Manrope, Arial, sans-serif" font-size="19">Aber in jedem Raum spürt.</text>
+    <text id="Feature_Line" x="52" y="257" fill="#45DEE7" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1">FUSSBODEN  ·  WAND  ·  DECKE</text>
+    <rect id="CTA_Background" x="52" y="291" width="198" height="48" rx="10" fill="#45DEE7"/>
+    <text id="CTA_Label" x="77" y="322" fill="#003739" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="700">Mehr erfahren</text>
+    <g id="Room_Illustration">
+      <rect id="Room_Card" x="1025" y="43" width="455" height="310" rx="18" fill="#161B1B" stroke="#3C494A" stroke-width="2"/>
+      <text id="Room_Label" x="1053" y="79" fill="#8A9393" font-family="Manrope, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="3">RAUMANSICHT / WOHNEN</text>
+      <path id="Room_Outline" d="M1080 280V147h260v133M1080 280h335M1340 147l75 45v88" fill="none" stroke="#859394" stroke-width="3" stroke-linejoin="round"/>
+      <path id="Floor_Heat" d="M1104 266h276" fill="none" stroke="#45DEE7" stroke-width="7" stroke-linecap="round"/>
+      <path id="Floor_Loops" d="M1094 248h10M1126 248h10M1158 248h10M1190 248h10M1222 248h10M1254 248h10M1286 248h10M1318 248h10M1350 248h10" stroke="#45DEE7" stroke-width="3"/>
+      <path id="Wall_Heat" d="M1094 171V227M1116 171V227" stroke="#45DEE7" stroke-width="4" stroke-linecap="round"/>
+      <path id="Ceiling_Heat" d="M1360 171l33 20M1360 188l33 20M1360 205l33 20" stroke="#45DEE7" stroke-width="4" stroke-linecap="round"/>
+      <circle id="Legend_Dot_1" cx="1095" cy="288" r="5" fill="#45DEE7"/>
+      <text id="Legend_1" x="1109" y="293" fill="#BBC9CA" font-family="Manrope, Arial, sans-serif" font-size="12">Fußboden</text>
+      <circle id="Legend_Dot_2" cx="1095" cy="316" r="5" fill="#45DEE7"/>
+      <text id="Legend_2" x="1109" y="321" fill="#BBC9CA" font-family="Manrope, Arial, sans-serif" font-size="12">Wand &amp; Decke</text>
+      <text id="Temperature" x="1346" y="321" fill="#45DEE7" font-family="ui-monospace, Menlo, monospace" font-size="13">21,0 °C</text>
+    </g>
+  </g>
+</svg>

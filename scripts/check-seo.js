@@ -121,27 +121,27 @@ const exactPages = {
   'index.html': {
     title: 'Aufmaß Software für SHK aus PDF-Grundrissen | Prometo',
     description: 'PDF-Grundriss hochladen, Räume und Geometrien automatisch erkennen und das geprüfte Aufmaß direkt für Heizlast, Material und Abgleich nutzen. Beta kostenlos.',
-    h1: 'Digitales Aufmaß direkt aus dem PDF-Grundriss.'
+    h1: 'Vom PDF-Grundriss zum vollständigen SHK-Workflow.'
   },
   'heizlastberechnung/app/index.html': {
-    title: 'Heizlastberechnung App für SHK-Betriebe | Prometo',
-    description: 'Raumweise Heizlast aus dem PDF-Grundriss berechnen: Räume automatisch erkennen, Daten prüfen und Material sowie hydraulischen Abgleich weiterberechnen.',
+    title: 'Heizlastberechnung App: Räume aus PDF | Prometo',
+    description: 'Räume aus dem PDF-Grundriss übernehmen, Heizlast je Raum berechnen und Ergebnisse direkt für Material und hydraulischen Abgleich weiterverwenden.',
     h1: 'Heizlastberechnung direkt aus dem PDF-Grundriss'
   },
   'digitales-aufmass/index.html': {
-    title: 'Aufmaß App für PDF-Grundrisse: digitales Aufmaß | Prometo',
-    description: 'Aufmaß App für SHK: PDF-Grundriss importieren, Räume und Flächen prüfen und die geprüften Daten für Heizlast und hydraulischen Abgleich weiterverwenden.',
-    h1: 'Digitales Aufmaß aus dem PDF-Grundriss'
+    title: 'App für Aufmaß und Grundriss aus PDF | Prometo',
+    description: 'App für Aufmaß und Grundriss: PDF importieren, Räume mobil auf Tablet, iPad, Android oder im Browser prüfen und in der Beta kostenlos testen.',
+    h1: 'App für Aufmaß und Grundriss'
   },
   'hydraulischer-abgleich/index.html': {
-    title: 'Hydraulischer Abgleich Software für SHK | Prometo',
-    description: 'Heizlast, Volumenströme und hydraulischen Abgleich in einem Workflow berechnen. Für Heizkörper und Flächenheizung. Prometo Beta kostenlos testen.',
+    title: 'Hydraulischer Abgleich Verfahren A und B | Prometo',
+    description: 'Hydraulischer Abgleich: Verfahren A und B im Vergleich, Ablauf, Pflicht und Protokoll. Heizlast, Volumenströme und Abgleich in einem SHK-Workflow.',
     h1: 'Hydraulischen Abgleich direkt aus der Raumheizlast berechnen'
   },
   'fussbodenheizung-auslegen/index.html': {
-    title: 'Fußbodenheizung Verlegeabstand & Auslegung | Prometo',
-    description: 'Verlegeabstand der Fußbodenheizung bestimmen: wann 10, 15 oder 20 cm passen und wie Heizkreise, Rohrlängen und Material aus der Raumheizlast folgen.',
-    h1: 'Fußbodenheizung auslegen: Verlegeabstand aus der Raumheizlast'
+    title: 'Verlegeabstand Fußbodenheizung: Tabelle 10-30 cm | Prometo',
+    description: 'Verlegeabstand Fußbodenheizung in einer Tabelle für 10 bis 30 cm: Rohrbedarf je m², Rohrlänge, Heizkreise und Randzone aus der Raumheizlast berechnen.',
+    h1: 'Verlegeabstand Fußbodenheizung: Tabelle für 10 bis 30 cm'
   },
   'heizlastberechnung/index.html': {
     title: 'Heizlastberechnung nach DIN EN 12831 | Prometo',
@@ -150,7 +150,7 @@ const exactPages = {
   },
   'heizlast/index.html': {
     title: 'Heizlast einfach erklärt: Einheit & Bedeutung | Prometo',
-    description: 'Heizlast einfach erklärt: Bedeutung, Einheit, Einflussfaktoren und Abgrenzung zum Wärmebedarf – mit direktem Bezug zur SHK-Praxis.',
+    description: 'Heizlast einfach erklärt: Bedeutung, Einheit, Einflussfaktoren und Abgrenzung zum Heizwärmebedarf – inklusive Formel und Praxisbezug für SHK.',
     h1: 'Was ist die Heizlast?'
   },
   'heizlast-software-vergleich-shk/index.html': {
@@ -160,7 +160,7 @@ const exactPages = {
   },
   'autarc-reonic-alternative/index.html': {
     title: 'Reonic & autarc Alternative für PDF-Aufmaß | Prometo',
-    description: 'Prometo mit Reonic und autarc vergleichen: PDF-Aufmaß, Heizlast, Materialberechnung und hydraulischer Abgleich im transparenten Funktionsvergleich.',
+    description: 'Reonic oder autarc Alternative? Prometo startet beim PDF-Grundriss statt per LiDAR-Scan: sachlicher Funktionsvergleich für Heizlast und Abgleich.',
     h1: 'Prometo als PDF-first Alternative zu Reonic und autarc'
   },
   'app-workflows.html': {
@@ -174,7 +174,7 @@ const exactPages = {
   },
   'shk-ausbildung/index.html': {
     title: 'SHK-Ausbildung: Heizlast & Aufmaß praxisnah | Prometo',
-    description: 'PDF-Grundrisse, Raumdaten, Heizlast und hydraulischen Abgleich anschaulich in SHK-Ausbildung und Meisterschule einordnen. Prometo Beta kostenlos testen.',
+    description: 'PDF-Grundriss, Raumdaten, Heizlast und hydraulischer Abgleich anhand einer echten SHK-Software für Ausbildung und Meisterschule – Beta kostenlos testen.',
     h1: 'Heizlast und Aufmaß anhand echter Grundrisse vermitteln.'
   }
 };

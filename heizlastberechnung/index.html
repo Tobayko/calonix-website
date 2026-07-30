@@ -48,8 +48,10 @@
     <meta name="twitter:image:alt" content="Prometo Heizlast-Heatmap und Projektdetail für raumweise Heizlastberechnung auf dem Tablet" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="preload" href="/assets/site-navigation.css" as="style">
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="preload" href="/assets/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -200,9 +202,10 @@
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
@@ -291,6 +294,10 @@
                             <strong>Leitfaden</strong>
                             <span>Praxisnah durch die Heizlastberechnung</span>
                         </a>
+                        <a class="site-nav-card" href="/shk-ausbildung/">
+                            <strong>SHK-Ausbildung</strong>
+                            <span>Praxiswissen für Ausbildung und Meisterschule</span>
+                        </a>
                     </div>
                 </details>
             </nav>
@@ -329,6 +336,7 @@
                         <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
                         <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
                         <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                        <a href="/shk-ausbildung/">SHK-Ausbildung</a>
                     </div>
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
@@ -476,6 +484,48 @@
             </div>
         </section>
 
+        <!-- 3b. HUB-ORIENTIERUNG -->
+        <section class="px-6 pb-16 md:pb-24" id="orientierung">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Orientierung</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Welche Seite passt zu welcher Frage?
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Diese Seite bündelt den Heizlast-Workflow. Für Detailfragen führen diese Seiten gezielt weiter.
+                    </p>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                    <a href="/heizlast/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast: der Begriff</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Definition, Einheit und Abgrenzung zum Wärmebedarf.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Heizlast erklärt →</span>
+                    </a>
+                    <a href="/heizlastberechnung/din-12831/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">DIN EN 12831: die Norm</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Formeln, Beispielrechnung und normativer Rahmen.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Norm erklärt →</span>
+                    </a>
+                    <a href="/heizlastberechnung/schaetzwerte/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-2 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Schätzwerte: die Einordnung</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">m²-Werte für die erste grobe Orientierung.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Schätzung ansehen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/leitfaden/" class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Leitfaden: die Praxis</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Prozessleitfaden für SHK-Betriebe im Detail.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">Leitfaden lesen →</span>
+                    </a>
+                    <a href="/heizlastberechnung/app/" class="glass-panel rounded-2xl p-6 reveal lift-on-hover cursor-pointer flex flex-col gap-3 hover:border-primary/40 transition-colors group">
+                        <h3 class="text-base font-bold text-white group-hover:text-primary transition-colors">Heizlast App: die Software</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed flex-1">Mobiler Workflow für Büro und Baustelle.</p>
+                        <span class="text-primary text-sm font-headline font-semibold">App ansehen →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- 4. SO FUNKTIONIERT'S -->
         <section id="workflow" class="px-6 py-16 md:py-24">
             <div class="max-w-screen-xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -601,7 +651,7 @@
                         <img src="/assets/prometo-screenshots/mobile/projektdetail-heatmap.webp"
                             alt="Prometo Heizlast-Heatmap mit farbcodierter Raumverteilung auf dem Smartphone"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-top" />
+                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-top" srcset="/assets/prometo-screenshots/thumbs/projektdetail-heatmap.webp 216w, /assets/prometo-screenshots/thumbs-2x/projektdetail-heatmap.webp 640w, /assets/prometo-screenshots/mobile/projektdetail-heatmap.webp 1080w" sizes="(max-width: 640px) 216px, 384px" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">Raumweise Heatmap: Schwachstellen sehen</strong>
                             Farbcodierte Heizlastverteilung zeigt sofort, welche Räume besondere Aufmerksamkeit brauchen.
@@ -621,7 +671,7 @@
                         <img src="/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp"
                             alt="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet"
                             width="2560" height="1600" loading="lazy" decoding="async"
-                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-center" />
+                            class="w-full rounded-3xl border border-white/8 aspect-[9/19] object-cover object-center"  srcset="/assets/prometo-screenshots/tablet-2x/hydraulischer-abgleich-eg-verteiler.webp 1024w, /assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp 2560w" sizes="(max-width: 640px) 320px, 720px"/>
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">Tablet-Modus: Verteiler-Übersicht</strong>
                             Heizkreise, Raumwerte und Status gleichzeitig sichtbar – ideal für die Arbeit am Verteiler.
@@ -637,6 +687,60 @@
                         class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
                         Heizlast App für SHK ansehen
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="berechnung" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-8 max-w-3xl reveal">
+                    <span class="badge mb-6">Formel</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Heizlast berechnen: Formel und Rechenweg
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Die Heizlast eines Raumes ergibt sich aus der Summe von Transmissions- und Lüftungswärmeverlust: <strong class="text-white">Q = Q<sub>T</sub> + Q<sub>V</sub></strong>. Q<sub>T</sub> = U × A × ΔT beschreibt die Verluste über Bauteile, Q<sub>V</sub> = 0,34 × n × V × ΔT die Verluste über die Lüftung. Dabei ist U der Wärmedurchgangskoeffizient, A die Bauteilfläche, ΔT die Temperaturdifferenz innen/außen, n die Luftwechselrate und V das Raumvolumen.
+                    </p>
+                </div>
+                <div class="glass-panel rounded-[2rem] overflow-hidden reveal reveal-delay-1 mb-4">
+                    <div class="overflow-x-auto">
+                        <table class="data-table w-full min-w-[680px]">
+                            <caption class="sr-only">Rechenbeispiel: Heizlastberechnung für ein 18 m² Zimmer</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Bauteil</th>
+                                    <th scope="col">Fläche A [m²]</th>
+                                    <th scope="col">U-Wert [W/(m²·K)]</th>
+                                    <th scope="col">ΔT [K]</th>
+                                    <th scope="col">Anteil [W]</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Außenwand</td><td>22</td><td>0,35</td><td>32</td><td>246,4</td></tr>
+                                <tr><td>Fenster</td><td>4</td><td>1,10</td><td>32</td><td>140,8</td></tr>
+                                <tr><td>Lüftung (n = 0,5 1/h, V = 45 m³)</td><td>&mdash;</td><td>&mdash;</td><td>32</td><td>244,8</td></tr>
+                                <tr>
+                                    <td class="font-headline font-bold text-white">Summe Q</td>
+                                    <td class="text-text-subtle">&mdash;</td>
+                                    <td class="text-text-subtle">&mdash;</td>
+                                    <td class="text-text-subtle">&mdash;</td>
+                                    <td class="font-headline font-bold text-primary">632,0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="text-sm text-text-subtle mb-10 reveal">
+                    Ausführliche Herleitung mit Zwischenschritten:
+                    <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">DIN EN 12831 einfach erklärt</a>.
+                </p>
+
+                <div class="glass-panel rounded-3xl p-8 reveal reveal-delay-1">
+                    <h2 class="text-2xl font-bold text-white mb-4">Verfahren A und Verfahren B in der Heizlastberechnung</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Für den hydraulischen Abgleich unterscheiden Verfahren A und Verfahren B, wie die Volumenströme ermittelt werden. Verfahren A schätzt sie pauschal über Baujahr und Heizkörpertyp, Verfahren B berechnet sie aus genau der raumweisen Heizlast, die diese Seite erklärt. Wer die Heizlastberechnung sauber vorbereitet, hat damit die Datenbasis für den genaueren Verfahren-B-Nachweis. Siehe dazu
+                        <a href="/hydraulischer-abgleich/#verfahren" class="text-primary underline underline-offset-2">Verfahren A und B im hydraulischen Abgleich vergleichen</a>.
+                    </p>
                 </div>
             </div>
         </section>

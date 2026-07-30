@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4400" height="3600" viewBox="0 0 4400 3600">
+  <defs>
+    <style>
+      .page{fill:#f6f8fb}.ink{fill:#1f2933}.muted{fill:#71808f}.line{stroke:#dce5ec;stroke-width:2;fill:none}.card{fill:#fff;stroke:#dce5ec;stroke-width:2}.soft{fill:#eef5fb}.brand{fill:#2f6f89}.brand2{fill:#dff0f6}.accent{fill:#f0b85b}.ok{fill:#6dbb8f}.title{font:700 64px Inter,Arial,sans-serif}.h1{font:700 50px Inter,Arial,sans-serif}.h2{font:700 34px Inter,Arial,sans-serif}.body{font:500 25px Inter,Arial,sans-serif}.small{font:600 18px Inter,Arial,sans-serif}.tiny{font:600 13px Inter,Arial,sans-serif}.mini{font:500 11px Inter,Arial,sans-serif}.shadow{filter:url(#shadow)}
+    </style>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#1f2933" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <symbol id="UI-Phone" viewBox="0 0 270 560">
+    <rect class="card shadow" width="270" height="560" rx="18"/>
+    <rect x="18" y="16" width="234" height="34" rx="8" class="soft"/>
+    <circle cx="37" cy="33" r="6" class="brand"/>
+    <text x="52" y="38" class="tiny ink">CALONIX</text>
+    <rect x="18" y="72" width="234" height="86" rx="10" class="brand"/>
+    <text x="36" y="106" class="small" fill="#fff">Dashboard</text>
+    <text x="36" y="132" class="mini" fill="#dcecf2">Projektstatus und nächste Schritte</text>
+    <rect x="18" y="176" width="234" height="72" rx="10" class="card"/>
+    <text x="36" y="205" class="tiny muted">Heizlast</text>
+    <text x="36" y="229" class="small ink">Räume prüfen</text>
+    <rect x="18" y="262" width="234" height="72" rx="10" class="card"/>
+    <text x="36" y="291" class="tiny muted">Hydraulik</text>
+    <text x="36" y="315" class="small ink">Werte einstellen</text>
+    <rect x="18" y="348" width="234" height="72" rx="10" class="card"/>
+    <text x="36" y="377" class="tiny muted">Dokumente</text>
+    <text x="36" y="401" class="small ink">PDF fragen</text>
+    <rect x="18" y="468" width="234" height="54" rx="10" fill="#f9fbfd" stroke="#dce5ec" stroke-width="2"/>
+    <circle cx="68" cy="495" r="8" class="brand"/><circle cx="135" cy="495" r="8" class="muted"/><circle cx="202" cy="495" r="8" class="muted"/>
+  </symbol>
+
+  <g id="LinkedIn-Post-1080x1080" transform="translate(0 0)">
+    <rect class="page" width="1080" height="1080"/>
+    <text x="70" y="88" class="small brand">CALONIX</text>
+    <text x="70" y="180" class="title ink">SHK-Software,</text>
+    <text x="70" y="252" class="title brand">die jeder versteht.</text>
+    <text x="70" y="315" class="body muted">Heizlast, hydraulischer Abgleich und Dokumenten-Chat in einer ruhigen App.</text>
+    <g transform="translate(690 100)"><use href="#UI-Phone" width="270" height="560"/></g>
+    <g transform="translate(70 430)">
+      <rect class="card" width="540" height="116" rx="12"/><circle cx="56" cy="58" r="24" class="brand2"/><path d="M44 60h24M56 48v24" stroke="#2f6f89" stroke-width="5"/><text x="138" y="53" class="h2 ink">Heizlast</text><text x="138" y="84" class="small muted">Raum für Raum durchgehen</text>
+      <rect y="146" class="card" width="540" height="116" rx="12"/><circle cx="56" cy="204" r="24" class="brand2"/><path d="M42 196h28M42 212h28M52 188v16M62 204v16" stroke="#2f6f89" stroke-width="5" stroke-linecap="round"/><text x="138" y="199" class="h2 ink">Abgleich</text><text x="138" y="230" class="small muted">Einstellwerte klar anzeigen</text>
+      <rect y="292" class="card" width="540" height="116" rx="12"/><circle cx="56" cy="350" r="24" class="brand2"/><path d="M45 340h22m-22 14h34m-34 14h26" stroke="#2f6f89" stroke-width="5"/><text x="138" y="345" class="h2 ink">Dokumenten-Chat</text><text x="138" y="376" class="small muted">PDFs in einfachen Worten</text>
+    </g>
+    <rect x="70" y="900" width="285" height="58" rx="10" class="brand"/><text x="103" y="936" class="small" fill="#fff">Beta-Zugang sichern</text>
+    <text x="382" y="936" class="small muted">calonix.de</text>
+  </g>
+
+  <g id="LinkedIn-Ad-1200x627" transform="translate(1160 0)">
+    <rect class="page" width="1200" height="627"/>
+    <text x="56" y="76" class="small brand">HEIZLASTBERECHNUNG</text>
+    <text x="56" y="150" class="h1 ink">Keine Software erklären.</text>
+    <text x="56" y="208" class="h1 brand">Einfach Arbeit erledigen.</text>
+    <text x="56" y="270" class="body muted">Calonix führt Handwerker sauber durch Räume, Werte und Übergabe.</text>
+    <rect x="56" y="395" width="240" height="54" rx="10" class="brand"/><text x="91" y="429" class="small" fill="#fff">Demo anfragen</text>
+    <g transform="translate(810 45)"><use href="#UI-Phone" width="270" height="560"/></g>
+    <g transform="translate(420 350)">
+      <rect class="card shadow" width="310" height="150" rx="12"/>
+      <text x="24" y="45" class="tiny muted">Ergebnis</text>
+      <text x="24" y="88" class="h2 ink">1.8 kW</text>
+      <rect x="24" y="110" width="210" height="14" rx="7" class="brand2"/>
+    </g>
+  </g>
+
+  <g id="LinkedIn-Banner-1584x396" transform="translate(0 1160)">
+    <rect class="page" width="1584" height="396"/>
+    <text x="60" y="74" class="small brand">CALONIX</text>
+    <text x="60" y="155" class="h1 ink">Heizlast. Abgleich. Dokumente.</text>
+    <text x="60" y="210" class="body muted">Eine App, die auf der Baustelle verstanden wird.</text>
+    <rect x="60" y="270" width="240" height="52" rx="10" class="brand"/><text x="95" y="303" class="small" fill="#fff">Mehr erfahren</text>
+    <g transform="translate(1085 -90) scale(.86)"><use href="#UI-Phone" width="270" height="560"/></g>
+    <g transform="translate(820 90)">
+      <rect class="card shadow" width="230" height="90" rx="12"/><text x="24" y="38" class="tiny muted">Heizlast</text><text x="24" y="66" class="small ink">raumweise</text>
+      <rect y="110" class="card shadow" width="230" height="90" rx="12"/><text x="24" y="148" class="tiny muted">Abgleich</text><text x="24" y="176" class="small ink">einstellklar</text>
+    </g>
+  </g>
+
+  <g id="Story-Ad-1080x1920" transform="translate(1680 760)">
+    <rect class="page" width="1080" height="1920"/>
+    <text x="70" y="110" class="small brand">HYDRAULISCHER ABGLEICH</text>
+    <text x="70" y="205" class="title ink">Werte, die</text>
+    <text x="70" y="278" class="title brand">jeder Monteur findet.</text>
+    <text x="70" y="345" class="body muted">Kreis auswählen, Einstellwert sehen, dokumentieren.</text>
+    <g transform="translate(150 470)">
+      <rect class="card shadow" width="780" height="780" rx="18"/>
+      <text x="58" y="82" class="h2 ink">Verteiler EG</text>
+      <text x="58" y="118" class="small muted">4 Heizkreise</text>
+      <g transform="translate(58 185)">
+        <rect width="650" height="86" rx="10" class="soft"/><rect width="390" height="86" rx="10" class="brand2"/><text x="28" y="54" class="small ink">Bad</text><text x="515" y="54" class="small brand">1.2 l/min</text>
+        <rect y="118" width="650" height="86" rx="10" class="soft"/><rect y="118" width="520" height="86" rx="10" class="brand2"/><text x="28" y="172" class="small ink">Wohnen</text><text x="515" y="172" class="small brand">1.8 l/min</text>
+        <rect y="236" width="650" height="86" rx="10" class="soft"/><rect y="236" width="340" height="86" rx="10" class="brand2"/><text x="28" y="290" class="small ink">Schlafen</text><text x="515" y="290" class="small brand">0.9 l/min</text>
+        <rect y="354" width="650" height="86" rx="10" class="soft"/><rect y="354" width="580" height="86" rx="10" class="brand2"/><text x="28" y="408" class="small ink">Küche</text><text x="515" y="408" class="small brand">2.0 l/min</text>
+      </g>
+      <rect x="58" y="650" width="260" height="54" rx="10" class="brand"/><text x="92" y="684" class="small" fill="#fff">Bericht erstellen</text>
+    </g>
+    <text x="70" y="1630" class="body ink">So schlicht wie ein Datenblatt.</text>
+    <text x="70" y="1680" class="body muted">Nur schneller auf der Baustelle.</text>
+  </g>
+
+  <g id="Square-Ad-Dokumentenchat-1080x1080" transform="translate(0 1640)">
+    <rect class="page" width="1080" height="1080"/>
+    <text x="70" y="90" class="small brand">DOKUMENTEN-CHAT</text>
+    <text x="70" y="180" class="title ink">PDF fragen.</text>
+    <text x="70" y="252" class="title brand">Antwort verstehen.</text>
+    <text x="70" y="318" class="body muted">Für Bedienungsanleitungen, Angebote und technische Unterlagen.</text>
+    <g transform="translate(115 430)">
+      <rect class="card shadow" width="850" height="390" rx="18"/>
+      <rect x="50" y="50" width="230" height="290" rx="12" class="soft"/>
+      <rect x="82" y="86" width="115" height="12" rx="6" class="muted"/>
+      <rect x="82" y="122" width="150" height="12" rx="6" fill="#b8c5cf"/>
+      <rect x="82" y="158" width="130" height="12" rx="6" fill="#b8c5cf"/>
+      <rect x="82" y="252" width="95" height="42" rx="8" class="brand2"/>
+      <text x="350" y="92" class="small muted">Frage</text>
+      <rect x="350" y="112" width="420" height="62" rx="10" class="soft"/>
+      <text x="375" y="151" class="small ink">Was muss ich beachten?</text>
+      <text x="350" y="235" class="small muted">Antwort</text>
+      <rect x="350" y="255" width="420" height="72" rx="10" class="brand"/>
+      <text x="375" y="300" class="small" fill="#fff">Kurz und ohne Fachchinesisch.</text>
+    </g>
+    <text x="70" y="930" class="body ink">Nicht suchen. Fragen.</text>
+  </g>
+
+  <g id="Carousel-Cover-1080x1080" transform="translate(2920 0)">
+    <rect class="page" width="1080" height="1080"/>
+    <text x="70" y="90" class="small brand">LINKEDIN KARUSSELL</text>
+    <text x="70" y="180" class="title ink">3 Dinge, die</text>
+    <text x="70" y="252" class="title brand">SHK-Software können muss.</text>
+    <g transform="translate(70 420)">
+      <rect class="card" width="940" height="112" rx="12"/><text x="34" y="70" class="body ink">1. Heizlast verständlich vorbereiten</text>
+      <rect y="148" class="card" width="940" height="112" rx="12"/><text x="34" y="218" class="body ink">2. Abgleich ohne Ratespiel anzeigen</text>
+      <rect y="296" class="card" width="940" height="112" rx="12"/><text x="34" y="366" class="body ink">3. Dokumente in Sprache übersetzen</text>
+    </g>
+    <text x="70" y="940" class="small muted">calonix.de</text>
+  </g>
+
+  <g id="Animation-Storyboard-1080x1080" transform="translate(2920 1160)">
+    <rect class="page" width="1080" height="1080"/>
+    <text x="70" y="90" class="small brand">ANIMATION 6 SEK.</text>
+    <text x="70" y="170" class="h1 ink">Vom Plan zur</text>
+    <text x="70" y="230" class="h1 brand">klaren Empfehlung.</text>
+    <g transform="translate(70 330)">
+      <rect class="card" width="280" height="380" rx="14"/><text x="30" y="58" class="small brand">0-2s</text><text x="30" y="112" class="body ink">Plan</text><rect x="42" y="165" width="185" height="120" rx="8" class="soft"/><path d="M78 165v120M42 220h185" class="line"/><text x="30" y="330" class="tiny muted">PDF erscheint</text>
+      <rect x="400" class="card" width="280" height="380" rx="14"/><text x="430" y="58" class="small brand">2-4s</text><text x="430" y="112" class="body ink">Analyse</text><circle cx="540" cy="230" r="58" class="brand2"/><path d="M505 230h70M540 195v70" stroke="#2f6f89" stroke-width="7"/><text x="430" y="330" class="tiny muted">Werte füllen sich</text>
+      <rect x="800" class="card" width="280" height="380" rx="14"/><text x="830" y="58" class="small brand">4-6s</text><text x="830" y="112" class="body ink">Ergebnis</text><rect x="830" y="170" width="175" height="56" rx="10" class="brand"/><text x="858" y="205" class="small" fill="#fff">fertig</text><text x="830" y="330" class="tiny muted">CTA einblenden</text>
+    </g>
+  </g>
+</svg>

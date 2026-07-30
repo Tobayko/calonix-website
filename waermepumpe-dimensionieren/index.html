@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Wärmepumpe dimensionieren: Heizlast & Bivalenzpunkt | Prometo</title>
+    <title>Wärmepumpe auslegen: Heizlast & Bivalenzpunkt | Prometo</title>
     <meta name="description"
-        content="Wärmepumpe dimensionieren: Heizlastkurve, Leistungskurve, COP, SCOP, JAZ, Bivalenzpunkt, Vorlauf W35/W55 und Betriebspunkte A-7/W35 richtig einordnen." />
+        content="Wärmepumpe nach Heizlast auslegen: Norm-Außentemperatur, Sperrzeiten-Zuschlag, Warmwasseranteil und Bivalenzpunkt mit COP, SCOP und JAZ einordnen." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -30,9 +30,9 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Wärmepumpe dimensionieren: Heizlast & Bivalenzpunkt | Prometo" />
+    <meta property="og:title" content="Wärmepumpe auslegen: Heizlast & Bivalenzpunkt | Prometo" />
     <meta property="og:description"
-        content="Wärmepumpe richtig auslegen: Heizlast, Leistungskurve, COP, SCOP, JAZ, Vorlauftemperatur und Bivalenzpunkt fachlich einordnen." />
+        content="Von der Norm-Außentemperatur über Sperrzeiten und Warmwasseranteil bis zum Bivalenzpunkt fachlich einordnen." />
     <meta property="og:url" content="https://prometo.app/waermepumpe-dimensionieren/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
     <meta property="og:image:alt" content="Prometo Projektdetail mit Heizlast und Bivalenzpunkt als Grundlage für die Wärmepumpen-Dimensionierung" />
@@ -41,15 +41,17 @@
     <meta property="og:image:height" content="2400" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Wärmepumpe dimensionieren: Heizlast & Bivalenzpunkt | Prometo" />
+    <meta name="twitter:title" content="Wärmepumpe auslegen: Heizlast & Bivalenzpunkt | Prometo" />
     <meta name="twitter:description"
-        content="Heizlastkurve, Leistungskurve, COP, SCOP, JAZ und Bivalenzpunkt verständlich erklärt." />
+        content="Norm-Außentemperatur, Sperrzeiten, Warmwasseranteil und Bivalenzpunkt verständlich erklärt." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/projektdetail-bivalenzpunkt.webp" />
     <meta name="twitter:image:alt" content="Prometo Projektdetail mit Heizlast und Bivalenzpunkt als Grundlage für die Wärmepumpen-Dimensionierung" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="preload" href="/assets/site-navigation.css" as="style">
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="preload" href="/assets/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
@@ -278,7 +280,7 @@
                 "@type": "WebPage",
                 "@id": "https://prometo.app/waermepumpe-dimensionieren/#webpage",
                 "url": "https://prometo.app/waermepumpe-dimensionieren/",
-                "name": "Wärmepumpe dimensionieren: Heizlast & Bivalenzpunkt | Prometo",
+                "name": "Wärmepumpe auslegen: Heizlast & Bivalenzpunkt | Prometo",
                 "description": "Informationsseite zur Dimensionierung von Wärmepumpen mit Heizlastkurve, Leistungskurve, COP, SCOP, JAZ, Betriebspunkten und Bivalenzpunkt.",
                 "inLanguage": "de-DE",
                 "isPartOf": {
@@ -359,9 +361,10 @@
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
@@ -450,6 +453,10 @@
                             <strong>Leitfaden</strong>
                             <span>Praxisnah durch die Heizlast-Vorbereitung</span>
                         </a>
+                        <a class="site-nav-card" href="/shk-ausbildung/">
+                            <strong>SHK-Ausbildung</strong>
+                            <span>Praxiswissen für Ausbildung und Meisterschule</span>
+                        </a>
                     </div>
                 </details>
             </nav>
@@ -488,6 +495,7 @@
                         <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
                         <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
                         <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                        <a href="/shk-ausbildung/">SHK-Ausbildung</a>
                     </div>
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
@@ -628,6 +636,23 @@
                         </p>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="auslegung-heizlast">
+            <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                <span class="badge mb-6">Kurzantwort</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    Wärmepumpe nach Heizlast auslegen
+                </h2>
+                <p class="text-gray-400 leading-relaxed">
+                    Die Auslegung startet mit der Gebäudeheizlast bei Norm-Außentemperatur nach
+                    <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">DIN EN 12831</a>.
+                    Darauf werden ein Sperrzeiten-Zuschlag für zeitweise Netzabschaltungen durch den Netzbetreiber und
+                    ein Warmwasseranteil für die Trinkwassererwärmung aufgeschlagen. Der Bivalenzpunkt legt fest, ab
+                    welcher Außentemperatur ein Zusatzwärmeerzeuger unterstützt. Erst aus diesen vier Größen ergibt
+                    sich die passende Wärmepumpen-Leistung.
+                </p>
             </div>
         </section>
 

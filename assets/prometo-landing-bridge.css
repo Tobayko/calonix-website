@@ -1,0 +1,174 @@
+/* Shared visitor-page layer. Keeps editorial markup intact while applying Prometo landing template. */
+:root {
+  --prometo-ink: #071111;
+  --prometo-ink-2: #0c1818;
+  --prometo-ink-3: #132323;
+  --prometo-paper: #f2f3ee;
+  --prometo-cyan: #45dee7;
+  --prometo-cyan-bright: #7bf7ff;
+  --prometo-line: rgba(219, 247, 242, .14);
+  --prometo-radius: 10px;
+}
+
+html { background: var(--prometo-ink); }
+
+body.prometo-landing-page {
+  --shell: 1240px;
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 10px;
+  min-width: 320px;
+  color: #f4f7f4;
+  background:
+    radial-gradient(circle at 82% -8%, rgba(69, 222, 231, .09), transparent 31rem),
+    var(--prometo-ink);
+  font-family: Manrope, system-ui, sans-serif;
+  overflow-x: clip;
+}
+
+body.prometo-landing-page main {
+  position: relative;
+  overflow: clip;
+  background-image:
+    linear-gradient(rgba(69, 222, 231, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 222, 231, .025) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+body.prometo-landing-page main > section {
+  position: relative;
+  isolation: isolate;
+}
+
+body.prometo-landing-page main > section + section::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: max(1.25rem, calc((100% - 1240px) / 2));
+  left: max(1.25rem, calc((100% - 1240px) / 2));
+  height: 1px;
+  background: var(--prometo-line);
+  content: "";
+}
+
+body.prometo-landing-page main h1,
+body.prometo-landing-page main h2,
+body.prometo-landing-page main h3 {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  text-wrap: balance;
+}
+
+body.prometo-landing-page main > section:first-child h1 {
+  max-width: 13ch;
+  letter-spacing: -.055em;
+}
+
+body.prometo-landing-page .glass-panel,
+body.prometo-landing-page .seo-explainer,
+body.prometo-landing-page .answer-panel,
+body.prometo-landing-page .topic-map-card,
+body.prometo-landing-page .flow-step,
+body.prometo-landing-page .jump-link,
+body.prometo-landing-page .faq-item {
+  border-color: var(--prometo-line) !important;
+  border-radius: var(--prometo-radius) !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018)) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+body.prometo-landing-page .glass-panel:hover,
+body.prometo-landing-page .topic-map-card:hover,
+body.prometo-landing-page .jump-link:hover {
+  border-color: rgba(69, 222, 231, .42) !important;
+  background: rgba(69, 222, 231, .07) !important;
+  box-shadow: none !important;
+}
+
+body.prometo-landing-page .badge,
+body.prometo-landing-page .answer-label,
+body.prometo-landing-page .jump-nav-title {
+  color: var(--prometo-cyan) !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+body.prometo-landing-page .badge {
+  border-color: rgba(69, 222, 231, .4) !important;
+  border-radius: 4px !important;
+  background: rgba(69, 222, 231, .07) !important;
+}
+
+body.prometo-landing-page a.bg-primary,
+body.prometo-landing-page a[class~="bg-primary"] {
+  border-radius: 4px !important;
+  color: #013b3d !important;
+}
+
+body.prometo-landing-page .btn,
+body.prometo-landing-page .marketing-button,
+body.prometo-landing-page .site-cta,
+body.prometo-landing-page .site-mobile-cta {
+  border-radius: 4px !important;
+}
+
+body.prometo-landing-page .marketing-eyebrow,
+body.prometo-landing-page .marketing-media-card {
+  border-radius: var(--prometo-radius) !important;
+}
+
+body.prometo-landing-page main img {
+  height: auto;
+  object-fit: contain;
+}
+
+body.prometo-landing-page footer {
+  border-top: 1px solid var(--prometo-line);
+  background: #06100f;
+}
+
+body.prometo-landing-page :focus-visible {
+  outline: 3px solid var(--prometo-cyan);
+  outline-offset: 4px;
+}
+
+body.prometo-landing-page #cookie-banner {
+  left: auto !important;
+  width: min(720px, calc(100% - 2rem));
+  padding: 1rem !important;
+}
+
+body.prometo-landing-page #cookie-banner > div {
+  max-width: none !important;
+  border-color: rgba(69, 222, 231, .28) !important;
+  border-radius: var(--prometo-radius) !important;
+  background: rgba(7, 17, 17, .97) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .28) !important;
+  backdrop-filter: blur(16px) !important;
+}
+
+@media (max-width: 760px) {
+  body.prometo-landing-page main > section:first-child h1 { max-width: 14ch; }
+
+  body.prometo-landing-page main > section + section::before {
+    right: 1.5rem;
+    left: 1.5rem;
+  }
+
+  body.prometo-landing-page #cookie-banner {
+    right: 0 !important;
+    left: 0 !important;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.prometo-landing-page *,
+  body.prometo-landing-page *::before,
+  body.prometo-landing-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

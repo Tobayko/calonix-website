@@ -202,3 +202,62 @@ Diese Datei ist das dauerhafte Gedächtnis der wöchentlichen SEO-Routine für
   Für kommerzielle Begriffe wie `hydraulischer abgleich` (50.000/Monat laut
   Keyword-Planner, aktuell Position 51–79) ist fehlende Domain-Autorität die
   wahrscheinlichste Ursache, nicht die On-Page-Qualität.
+
+### 2026-07-30
+
+- Datenquelle: CSV-Export „Leistung in der Google Suche 2026-07-30" (letzte
+  3 Monate, Suchtyp Web) plus die beiden Keyword-Planner-Exporte vom
+  2026-07-30. Kein GSC-MCP verbunden.
+- Ausgangslage: 8 Klicks, 1.343 Impressionen über 24 Seiten. Stärkste Seiten
+  `/digitales-aufmass/` (297 Impr., Pos. 53,4), `/fussbodenheizung-auslegen/`
+  (233, 39,8), `/heizlast/` (159, 62,3), `/heizlastberechnung/` (131, 69,7),
+  `/hydraulischer-abgleich/` (88, 67,1). Klicknah bereits:
+  `/` (Pos. 8,4), `/autarc-reonic-alternative/` (6,1),
+  `/heizlastberechnung/app/` (11,0), `/heizlastberechnung/schaetzwerte/`
+  (11,2), `/waermepumpe-dimensionieren/` (8,1), `/ki-assistent/` bei
+  `ki-assistent für klimatechnik` (20,9).
+- Technischer Fund und Fix: `index.html` hatte **kein** hreflang, obwohl
+  `/en/` einseitig auf die Startseite verwies. Das hreflang-Cluster der
+  einzigen Seite mit Klicks war damit unvollständig. Drei `link
+  rel=alternate` ergänzt; `npm run i18n:check` ist dadurch erstmals fehlerfrei.
+- Umgesetzt wurde erneut ein **großer** Lauf über 18 DE-Seiten in drei
+  Themen-Clustern, ausdrücklich auf Wunsch und damit erneut abweichend von der
+  Ein-Änderung-pro-Lauf-Regel. Schwerpunkt war exakte Long-Tail-Abdeckung
+  statt Textmenge:
+  - `/fussbodenheizung-auslegen/`: Richtwert-Tabelle nach Verlegeabstand
+    10/15/20/25/30 cm (Rohrbedarf je m² = 100 / Abstand in cm), Rohr- und
+    Heizkreislängen-Rechnung, Randzone, Verlegemuster, Wärmepumpen-Bezug.
+    Title, H1 und Description auf `verlegeabstand … tabelle` geschärft.
+  - `/hydraulischer-abgleich/`: Vergleichstabelle Verfahren A/B,
+    Wärmepumpen-Block, Abgrenzung thermischer Abgleich, Protokollinhalte,
+    zwei neue FAQ-Einträge. Title auf `Verfahren A und B` geschärft.
+  - `/digitales-aufmass/`: Title und H1 auf `app für aufmaß und grundriss`
+    (106 Impressionen) ausgerichtet, Geräte-Antwortblock, FAQ zu Import und
+    Export von Plandateien.
+  - `/heizlastberechnung/`: Formel- und Rechenwegabschnitt für
+    `berechnung heizlast` (5.000/Monat) plus Hub-Block, der die Rollen von
+    `/heizlast/`, `/din-12831/`, `/schaetzwerte/`, `/leitfaden/` und `/app/`
+    trennt.
+  - Kleinere Antwortblöcke und Snippet-Schärfungen auf `/heizlast/`,
+    `/din-12831/`, `/schaetzwerte/`, `/leitfaden/`, `/heizlastberechnung/app/`,
+    `/heizlastberechnung-software/`, `/ki-assistent/`, `/waermeerzeuger/`
+    (EE-Wärmeerzeuger, Biomasse), `/waermepumpe-dimensionieren/`,
+    `/autarc-reonic-alternative/`, `/heizlast-software-vergleich-shk/`.
+  - Organization- und WebSite-JSON-LD auf der Startseite ergänzt; `sameAs`
+    absichtlich weggelassen, weil keine echten Profil-Links existieren.
+- Bewusst **nicht** gemacht: keine neuen URLs. Ohne Backlinks verteilt jede
+  neue Seite die vorhandene Autorität, statt sie zu bündeln; die Abdeckung
+  läuft deshalb über Abschnitte auf Seiten, die schon Impressionen haben.
+  `kosten hydraulischer abgleich` (5.000/Monat) wurde übersprungen, weil es
+  Endkunden-Intent ohne kommerziellen Wert für Prometo ist.
+- **Folge für die Messung:** Wie beim Lauf vom 2026-07-20 sind auch diesmal
+  zu viele Seiten gleichzeitig geändert, um Einzeleffekte zu trennen. Bewertet
+  wird deshalb nur auf Cluster-Ebene.
+- Nächste Bewertung frühestens 2026-09-10 (sechs Wochen). Zu prüfen:
+  Position und Impressionen von `fußbodenheizung verlegeabstand` (heute 52,97),
+  `verlegeabstand fußbodenheizung tabelle` (45,36),
+  `app für aufmaß und grundriss` (52,38), `hydraulischer abgleich verfahren`
+  (57,60) und `ki-assistent für klimatechnik` (20,89).
+- Unverändertes Grundproblem: keine Backlinks. Die Head-Terms bleiben ohne
+  Domain-Autorität außer Reichweite; der Lauf zielt bewusst auf Long-Tail
+  und Antwort-Extrahierbarkeit.

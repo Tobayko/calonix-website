@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
     <title>Heizlast einfach erklärt: Einheit &amp; Bedeutung | Prometo</title>
     <meta name="description"
-        content="Heizlast einfach erklärt: Bedeutung, Einheit, Einflussfaktoren und Abgrenzung zum Wärmebedarf – mit direktem Bezug zur SHK-Praxis." />
+        content="Heizlast einfach erklärt: Bedeutung, Einheit, Einflussfaktoren und Abgrenzung zum Heizwärmebedarf – inklusive Formel und Praxisbezug für SHK." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -48,8 +48,10 @@
     <meta name="twitter:image:alt" content="Prometo zeigt Heizlast-Heatmap und raumweise Heizlast im Projekt auf dem Tablet" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="preload" href="/assets/site-navigation.css" as="style">
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="preload" href="/assets/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -144,6 +146,13 @@
                         "item": "https://prometo.app/heizlast/"
                     }
                 ]
+            },
+            {
+                "@type": "DefinedTerm",
+                "@id": "https://prometo.app/heizlast/#definedterm",
+                "name": "Heizlast",
+                "description": "Die Heizlast ist die maximale Wärmeleistung in Watt oder Kilowatt, die ein Gebäude oder Raum bei Normaußentemperatur benötigt, um die gewünschte Innentemperatur zu halten. Sie setzt sich aus Transmissions- und Lüftungswärmeverlusten zusammen und ist die zentrale Auslegungsgröße für Wärmeerzeuger und Heizflächen.",
+                "url": "https://prometo.app/heizlast/"
             },
             {
                 "@type": "FAQPage",
@@ -258,9 +267,10 @@
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
@@ -349,6 +359,10 @@
                             <strong>Leitfaden</strong>
                             <span>Praxisnah durch die Heizlastberechnung</span>
                         </a>
+                        <a class="site-nav-card" href="/shk-ausbildung/">
+                            <strong>SHK-Ausbildung</strong>
+                            <span>Praxiswissen für Ausbildung und Meisterschule</span>
+                        </a>
                     </div>
                 </details>
             </nav>
@@ -387,6 +401,7 @@
                         <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
                         <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
                         <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                        <a href="/shk-ausbildung/">SHK-Ausbildung</a>
                     </div>
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
@@ -582,31 +597,11 @@
                     </div>
                 </div>
 
-                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    <div class="glass-panel rounded-2xl p-6 reveal lift-on-hover">
-                        <h3 class="text-base font-bold text-white mb-2">Raumheizlast</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Wärmeverlust eines einzelnen Raums — Basis für Heizkörper- und Flächenheizungsauslegung.
-                        </p>
-                    </div>
-                    <div class="glass-panel rounded-2xl p-6 reveal reveal-delay-1 lift-on-hover">
-                        <h3 class="text-base font-bold text-white mb-2">Gebäudeheizlast</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Summe aller Raumheizlasten — bestimmt die Wärmepumpen- und Kesseldimensionierung.
-                        </p>
-                    </div>
-                    <div class="glass-panel rounded-2xl p-6 reveal reveal-delay-2 lift-on-hover">
-                        <h3 class="text-base font-bold text-white mb-2">Heizlast Einheit: W, kW und W/m²</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Räume in <strong class="text-white">Watt</strong>, Gebäude in <strong class="text-white">Kilowatt</strong>. Spezifische Last in W/m² als Schnellvergleich.
-                        </p>
-                    </div>
-                    <div class="glass-panel rounded-2xl p-6 reveal reveal-delay-3 lift-on-hover">
-                        <h3 class="text-base font-bold text-white mb-2">Last ≠ Leistung</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            <strong class="text-white">Heizlast</strong> = Bedarf des Gebäudes. <strong class="text-white">Heizleistung</strong> = Können des Erzeugers. Beide müssen passen.
-                        </p>
-                    </div>
+                <div id="heizlast-vs-heizwaermebedarf" class="glass-panel rounded-3xl p-8 reveal mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Heizlast vs. Heizwärmebedarf: was ist der Unterschied?</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Die Heizlast ist eine <strong class="text-white">Leistung</strong> in Watt oder Kilowatt: der Wert für den kältesten Auslegungsfall, nach dem Wärmeerzeuger und Heizflächen dimensioniert werden. Der Heizwärmebedarf ist dagegen eine <strong class="text-white">Energiemenge</strong> in Kilowattstunden über ein Jahr oder eine Heizperiode. Beide Größen hängen zusammen, beantworten aber unterschiedliche Fragen: Heizlast bestimmt die Gerätegröße, Heizwärmebedarf den Energieverbrauch und die Betriebskosten.
+                    </p>
                 </div>
             </div>
         </section>
@@ -736,12 +731,13 @@
                 <div class="glass-panel rounded-3xl overflow-hidden reveal mb-8">
                     <div class="overflow-x-auto">
                         <table class="richtwert-table w-full min-w-[600px]">
+                            <caption class="sr-only">Spezifische Heizlast: Richtwerte in W/m² nach Gebäudestandard</caption>
                             <thead>
                                 <tr>
-                                    <th>Gebäudezustand</th>
-                                    <th>Orientierungswerte (W/m²)</th>
-                                    <th>Beispiel 150 m²</th>
-                                    <th>Hinweise</th>
+                                    <th scope="col">Gebäudezustand</th>
+                                    <th scope="col">Orientierungswerte (W/m²)</th>
+                                    <th scope="col">Beispiel 150 m²</th>
+                                    <th scope="col">Hinweise</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -800,6 +796,28 @@
                         class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-headline font-semibold text-white transition-colors hover:border-primary hover:text-primary">
                         Schätzwerte und Orientierungsbereiche im Detail
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7b. HEIZLAST IN KWH UMRECHNEN -->
+        <section class="px-6 pb-16 md:pb-24" id="kwh-umrechnen">
+            <div class="max-w-screen-xl mx-auto grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+                <div class="reveal">
+                    <span class="badge mb-6">Häufige Verwechslung</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Heizlast in kWh umrechnen: geht das direkt?
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Nein, nicht direkt. Die Heizlast ist eine <strong class="text-white">Leistung</strong> in kW, kWh ist eine <strong class="text-white">Energiemenge</strong>. Umgerechnet wird nur über die Zeit, konkret über die Vollbenutzungsstunden: Energiebedarf [kWh/a] = Heizlast [kW] × Vollbenutzungsstunden [h/a]. Für Wohngebäude in Deutschland werden dafür häufig 1.800–2.000 Vollbenutzungsstunden pro Jahr als Richtwert angesetzt.
+                    </p>
+                </div>
+                <div class="formula-box reveal">
+                    <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Rechenbeispiel</p>
+                    <p class="text-white font-headline text-lg mb-2">8 kW × 1.900 h/a ≈ 15.200 kWh/a</p>
+                    <p class="text-sm text-text-subtle leading-relaxed">
+                        Eine Gebäudeheizlast von 8 kW ergibt bei 1.900 Vollbenutzungsstunden einen überschlägigen Jahresenergiebedarf von rund 15.200 kWh. Der tatsächliche Verbrauch hängt zusätzlich von Nutzerverhalten, Witterung und Warmwasseranteil ab.
+                    </p>
                 </div>
             </div>
         </section>

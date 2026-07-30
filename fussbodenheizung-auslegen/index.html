@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Fußbodenheizung Verlegeabstand &amp; Auslegung | Prometo</title>
+    <title>Verlegeabstand Fußbodenheizung: Tabelle 10-30 cm | Prometo</title>
     <meta name="description"
-        content="Verlegeabstand der Fußbodenheizung bestimmen: wann 10, 15 oder 20 cm passen und wie Heizkreise, Rohrlängen und Material aus der Raumheizlast folgen." />
+        content="Verlegeabstand Fußbodenheizung in einer Tabelle für 10 bis 30 cm: Rohrbedarf je m², Rohrlänge, Heizkreise und Randzone aus der Raumheizlast berechnen." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -30,9 +30,9 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Fußbodenheizung Verlegeabstand &amp; Auslegung | Prometo" />
+    <meta property="og:title" content="Verlegeabstand Fußbodenheizung: Tabelle 10-30 cm | Prometo" />
     <meta property="og:description"
-        content="Von der Raumheizlast zu Verlegeabstand, Heizkreisen, Rohrlängen und Material in einem verbundenen Workflow." />
+        content="Rohrbedarf je m², Rohrlänge und Heizkreise für 10 bis 30 cm Verlegeabstand aus der Raumheizlast ableiten." />
     <meta property="og:url" content="https://prometo.app/fussbodenheizung-auslegen/" />
     <meta property="og:image"
         content="https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" />
@@ -43,17 +43,19 @@
     <meta property="og:image:height" content="2400" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Fußbodenheizung Verlegeabstand &amp; Auslegung | Prometo" />
+    <meta name="twitter:title" content="Verlegeabstand Fußbodenheizung: Tabelle 10-30 cm | Prometo" />
     <meta name="twitter:description"
-        content="Raumheizlast, Verlegeabstand, Heizkreise, Rohrlängen und Material zusammenhängend auslegen." />
+        content="Verlegeabstand-Tabelle mit Rohrbedarf je m², Rohrlänge und Heizkreisen aus der Raumheizlast." />
     <meta name="twitter:image"
         content="https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" />
     <meta name="twitter:image:alt"
         content="Prometo Schnellberechnung mit Heizlast-Ergebnis auf dem Smartphone als Grundlage für die Flächensystem-Auslegung" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="preload" href="/assets/site-navigation.css" as="style">
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="preload" href="/assets/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -231,9 +233,10 @@
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
@@ -322,6 +325,10 @@
                             <strong>Leitfaden</strong>
                             <span>Praxisnah durch die Heizlastberechnung</span>
                         </a>
+                        <a class="site-nav-card" href="/shk-ausbildung/">
+                            <strong>SHK-Ausbildung</strong>
+                            <span>Praxiswissen für Ausbildung und Meisterschule</span>
+                        </a>
                     </div>
                 </details>
             </nav>
@@ -360,6 +367,7 @@
                         <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
                         <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
                         <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                        <a href="/shk-ausbildung/">SHK-Ausbildung</a>
                     </div>
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
@@ -384,10 +392,10 @@
                     <div class="reveal">
                         <span class="badge mb-6">Fußbodenheizung auslegen</span>
                         <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                            Fußbodenheizung auslegen: Verlegeabstand aus der Raumheizlast
+                            Verlegeabstand Fußbodenheizung: Tabelle für 10 bis 30 cm
                         </h1>
                         <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-4">
-                            Prometo übernimmt die Raumheizlast in die Flächenheizungs-Auslegung. Verlegeabstand, Heizkreise, Rohrlängen und Material werden aus Raum, System und verfügbarer Fläche zusammengeführt.
+                            Richtwert-Tabelle für den Verlegeabstand, dazu Rohrlänge, Heizkreise und Randzone berechnen. Grundlage bleibt in jedem Projekt die raumweise Heizlast.
                         </p>
                         <div class="mb-8 p-4 rounded-2xl border border-white/10 bg-white/5">
                             <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Vom Ergebnis zum Material</p>
@@ -431,7 +439,7 @@
                             <img src="/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp"
                                 alt="Prometo Schnellberechnung mit Heizlast-Ergebnis auf dem Smartphone als Grundlage für die Flächensystem-Auslegung"
                                 width="1080" height="2400" loading="eager" fetchpriority="high" decoding="async"
-                                class="mx-auto rounded-[2rem] border border-white/8 w-full max-w-sm" />
+                                class="mx-auto rounded-[2rem] border border-white/8 w-full max-w-sm" srcset="/assets/prometo-screenshots/thumbs/schnellberechnung-heizlast-ergebnis.webp 216w, /assets/prometo-screenshots/thumbs-2x/schnellberechnung-heizlast-ergebnis.webp 640w, /assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp 1080w" sizes="(max-width: 640px) 216px, 384px" />
                         </div>
                     </div>
                 </div>
@@ -496,6 +504,8 @@
                     <div class="jump-links">
                         <a href="#eingaben" class="jump-link">Welche Eingaben vorliegen müssen</a>
                         <a href="#verlegeabstand" class="jump-link">Verlegeabstand und Heizkreise</a>
+                        <a href="#norm" class="jump-link">Richtwert-Tabelle 10 bis 30 cm</a>
+                        <a href="#rohrlaenge" class="jump-link">Rohrlänge berechnen</a>
                         <a href="#waermeerzeuger" class="jump-link">Wärmeerzeuger und Flächenheizung</a>
                         <a href="#prometo" class="jump-link">So unterstützt Prometo</a>
                     </div>
@@ -606,66 +616,137 @@
                 <div class="p-8 md:p-10">
                     <span class="badge mb-6">Verlegeabstand</span>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Verlegeabstand Fußbodenheizung: 10 cm, 15 cm oder 20 cm?
+                        Verlegeabstand Fußbodenheizung: Richtwerte
                     </h2>
                     <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">
-                        Der Verlegeabstand hängt von Raumheizlast, Bodenaufbau, Rohrdimension, Systemtemperaturen,
-                        verfügbarer Fläche und hydraulischen Randbedingungen ab. Die folgende Tabelle ist eine
-                        Orientierung für typische Planungsfälle.
+                        Der Rohrbedarf je Quadratmeter ergibt sich rechnerisch aus 100 geteilt durch den Verlegeabstand
+                        in Zentimetern. Welcher Abstand passt, hängt zusätzlich von Bodenaufbau, Rohrdimension,
+                        Systemtemperatur und Oberbelag ab – die folgende Tabelle ist eine Orientierung.
                     </p>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full min-w-[720px]">
+                        <caption class="sr-only">Verlegeabstand Fußbodenheizung: Rohrbedarf je m², typischer Einsatzfall und relative Wärmeabgabe</caption>
                         <thead>
                             <tr class="border-y border-white/8">
-                                <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-text-subtle">Raumtyp</th>
-                                <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-text-subtle">Typischer Verlegeabstand</th>
-                                <th class="px-6 py-5 text-left text-sm uppercase tracking-widest text-text-subtle">Hinweis</th>
+                                <th scope="col" class="px-6 py-5 text-left text-sm uppercase tracking-widest text-text-subtle">Verlegeabstand (cm)</th>
+                                <th scope="col" class="px-6 py-5 text-left text-sm uppercase tracking-widest text-text-subtle">Rohrbedarf (m je m²)</th>
+                                <th scope="col" class="px-6 py-5 text-left text-sm uppercase tracking-widest text-text-subtle">Typischer Einsatzfall</th>
+                                <th scope="col" class="px-6 py-5 text-left text-sm uppercase tracking-widest text-text-subtle">Wärmeabgabe (relativ)</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm md:text-base">
                             <tr class="border-b border-white/6">
-                                <td class="px-6 py-5 text-white font-semibold">Bad</td>
-                                <td class="px-6 py-5 text-gray-300">10 cm</td>
-                                <td class="px-6 py-5 text-gray-400">höhere Leistung und höhere Komfortanforderung</td>
+                                <td class="px-6 py-5 text-white font-semibold">10</td>
+                                <td class="px-6 py-5 text-gray-300">10,0 m/m² zzgl. Anbindeleitung</td>
+                                <td class="px-6 py-5 text-gray-400">Randzone, Bad</td>
+                                <td class="px-6 py-5 text-gray-400">höher</td>
                             </tr>
                             <tr class="border-b border-white/6">
-                                <td class="px-6 py-5 text-white font-semibold">Wohnraum</td>
-                                <td class="px-6 py-5 text-gray-300">10–15 cm</td>
-                                <td class="px-6 py-5 text-gray-400">abhängig von Heizlast und Bodenaufbau</td>
+                                <td class="px-6 py-5 text-white font-semibold">15</td>
+                                <td class="px-6 py-5 text-gray-300">6,7 m/m² zzgl. Anbindeleitung</td>
+                                <td class="px-6 py-5 text-gray-400">Wohnraum bei niedriger Systemtemperatur</td>
+                                <td class="px-6 py-5 text-gray-400">mittel bis höher</td>
                             </tr>
                             <tr class="border-b border-white/6">
-                                <td class="px-6 py-5 text-white font-semibold">Schlafraum</td>
-                                <td class="px-6 py-5 text-gray-300">15 cm</td>
-                                <td class="px-6 py-5 text-gray-400">meist geringere Norm-Innentemperatur</td>
+                                <td class="px-6 py-5 text-white font-semibold">20</td>
+                                <td class="px-6 py-5 text-gray-300">5,0 m/m² zzgl. Anbindeleitung</td>
+                                <td class="px-6 py-5 text-gray-400">gut gedämmter Raum</td>
+                                <td class="px-6 py-5 text-gray-400">mittel</td>
                             </tr>
                             <tr class="border-b border-white/6">
-                                <td class="px-6 py-5 text-white font-semibold">Flur</td>
-                                <td class="px-6 py-5 text-gray-300">15–20 cm</td>
-                                <td class="px-6 py-5 text-gray-400">abhängig von Nutzung und verfügbarer Fläche</td>
+                                <td class="px-6 py-5 text-white font-semibold">25</td>
+                                <td class="px-6 py-5 text-gray-300">4,0 m/m² zzgl. Anbindeleitung</td>
+                                <td class="px-6 py-5 text-gray-400">Nebenraum mit geringer Raumheizlast</td>
+                                <td class="px-6 py-5 text-gray-400">niedrig bis mittel</td>
                             </tr>
                             <tr>
-                                <td class="px-6 py-5 text-white font-semibold">Randzone</td>
-                                <td class="px-6 py-5 text-gray-300">enger</td>
-                                <td class="px-6 py-5 text-gray-400">bei großen Fenstern oder Außenwandbereichen sinnvoll</td>
+                                <td class="px-6 py-5 text-white font-semibold">30</td>
+                                <td class="px-6 py-5 text-gray-300">3,3 m/m² zzgl. Anbindeleitung</td>
+                                <td class="px-6 py-5 text-gray-400">Nebenraum</td>
+                                <td class="px-6 py-5 text-gray-400">niedriger</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="p-8 md:p-10 border-t border-white/8">
                     <p class="text-gray-300 leading-relaxed mb-5">
-                        Der Verlegeabstand allein ersetzt keine vollständige Auslegung. Entscheidend sind Heizlast,
-                        Bodenaufbau, Rohrdimension, Systemtemperaturen, verfügbare Fläche und hydraulische
-                        Randbedingungen.
+                        Die Wärmestromdichte ist nur eine Größenordnung: Sie hängt zusätzlich von Systemtemperatur,
+                        Bodenaufbau und Oberbelag ab. Der Verlegeabstand allein ersetzt keine vollständige Auslegung –
+                        Grundlage bleibt die
+                        <a href="/heizlastberechnung/" class="text-primary underline underline-offset-2">Heizlastberechnung je Raum</a>.
                     </p>
                     <div class="flex flex-wrap gap-4 text-sm">
-                        <a href="/heizlastberechnung/" class="text-primary hover:text-white transition-colors">Heizlastberechnung</a>
+                        <a href="/heizlast/" class="text-primary hover:text-white transition-colors">Heizlast einfach erklärt</a>
                         <a href="/heizlast-checkliste-shk/" class="text-primary hover:text-white transition-colors">Heizlast-Checkliste SHK</a>
                         <a href="/digitales-aufmass/" class="text-primary hover:text-white transition-colors">Digitales Aufmaß</a>
                         <a href="/heizlastberechnung/app/" class="text-primary hover:text-white transition-colors">Heizlastberechnung App</a>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="rohrlaenge">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                    <span class="badge mb-6">Berechnung</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Rohrlänge und Heizkreislänge berechnen
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Die Rohrlänge je Raum ergibt sich aus Heizfläche mal Rohrbedarf je m² plus Anbindeleitung zum
+                        Verteiler. Beispiel: 15 m² bei 15 cm Verlegeabstand ergeben rund 15 × 6,7 m/m² = 100 m Rohr
+                        zuzüglich Anbindeleitung.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Als Praxisgrenze gilt je nach Rohrdimension und zulässigem Druckverlust häufig ein Bereich von
+                        etwa 80 bis 120 m je Heizkreis – ein Richtwert, der herstellerabhängig abweicht. Größere Räume
+                        werden deshalb auf mehrere Kreise aufgeteilt statt in einem einzigen Kreis verlegt.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal reveal-delay-1 lift-on-hover">
+                    <span class="badge mb-6">Randzone</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Randzone und Abstand zur Wand
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Im Fensterbereich und an Außenwänden wird häufig ein engerer Verlegeabstand gewählt, weil dort
+                        die Wärmeverluste höher sind. Üblich ist außerdem ein Randabstand von einigen Zentimetern zur
+                        Wand, damit Randdämmstreifen und Bewegungsfugen wirken können – die genaue Vorgabe folgt aus
+                        Systemzulassung und Herstellervorgaben.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="verlegemuster">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
+                    <span class="badge mb-6">Verlegemuster</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Schnecke oder Mäander: welches Verlegemuster?
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Die Schnecke (Doppelmäander) führt Vor- und Rücklaufrohr abwechselnd nebeneinander und ergibt
+                        dadurch eine gleichmäßigere Oberflächentemperatur. Der einfache Mäander ist leichter zu
+                        verlegen, erzeugt aber ein deutlicheres Temperaturgefälle vom Vorlauf zum Rücklauf.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-[2rem] p-8 md:p-10 reveal reveal-delay-1 lift-on-hover">
+                    <span class="badge mb-6">Wärmepumpe</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Verlegeabstand bei Wärmepumpe
+                    </h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Eine niedrige Vorlauftemperatur verlangt für dieselbe Heizlast tendenziell einen engeren
+                        Verlegeabstand, damit die Wärmestromdichte trotzdem erreicht wird. Details zur passenden
+                        <a href="/waermepumpe-dimensionieren/" class="text-primary underline underline-offset-2">Wärmepumpe nach Heizlast dimensionieren</a>.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="px-6 pb-16 md:pb-24" id="normbezug">
             <div class="max-w-screen-xl mx-auto">
                 <div class="mb-10 max-w-3xl reveal">
                     <span class="badge mb-6">Normbezug</span>

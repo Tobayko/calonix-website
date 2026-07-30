@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Hydraulischer Abgleich Software für SHK | Prometo</title>
+    <title>Hydraulischer Abgleich Verfahren A und B | Prometo</title>
     <meta name="description"
-        content="Heizlast, Volumenströme und hydraulischen Abgleich in einem Workflow berechnen. Für Heizkörper und Flächenheizung. Prometo Beta kostenlos testen." />
+        content="Hydraulischer Abgleich: Verfahren A und B im Vergleich, Ablauf, Pflicht und Protokoll. Heizlast, Volumenströme und Abgleich in einem SHK-Workflow." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -30,9 +30,9 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Hydraulischer Abgleich Software für SHK | Prometo" />
+    <meta property="og:title" content="Hydraulischer Abgleich Verfahren A und B | Prometo" />
     <meta property="og:description"
-        content="Heizlast, Raum- und Kreisvolumenströme sowie hydraulischen Abgleich in einem verbundenen SHK-Workflow berechnen." />
+        content="Verfahren A und B im Vergleich, Ablauf, Pflicht und Protokoll für den hydraulischen Abgleich." />
     <meta property="og:url" content="https://prometo.app/hydraulischer-abgleich/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp" />
     <meta property="og:image:alt" content="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet" />
@@ -41,15 +41,17 @@
     <meta property="og:image:height" content="1600" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hydraulischer Abgleich Software für SHK | Prometo" />
+    <meta name="twitter:title" content="Hydraulischer Abgleich Verfahren A und B | Prometo" />
     <meta name="twitter:description"
         content="Von der Raumheizlast zu Volumenströmen, Verteilern und Einregelwerten in Prometo." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp" />
     <meta name="twitter:image:alt" content="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="preload" href="/assets/site-navigation.css" as="style">
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="preload" href="/assets/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -194,15 +196,32 @@
                             "@type": "Answer",
                             "text": "Typisch relevant sind Heizlast beziehungsweise Raumlast, Heizflächen, Systemtemperaturen, Ventile, Heizkreise, Verteiler, Kreislängen und die projektspezifischen Einstellwerte. Genau deshalb ist der Abgleich selten sinnvoll als völlig losgelöster Arbeitsschritt."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was ist der Unterschied zwischen Verfahren A und Verfahren B?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Verfahren A schätzt Volumenströme grob über Baujahr und Heizkörpertyp und ist damit schnell, aber ungenauer. Verfahren B berechnet sie aus der raumweisen Heizlast nach DIN EN 12831 und gilt als genauer. In vielen Förderprogrammen ist Verfahren B die geforderte Nachweisform."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Was ist der Unterschied zwischen thermischem und hydraulischem Abgleich?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Der hydraulische Abgleich stellt Volumenströme über Ventile und Pumpe ein. Der thermische Abgleich justiert danach Heizkurve und Regelparameter im laufenden Betrieb. Beide Begriffe sind keine Synonyme: Ohne sauberen hydraulischen Abgleich bleibt eine rein thermische Nachregelung wenig wirksam."
+                        }
                     }
                 ]
             }
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
@@ -291,6 +310,10 @@
                             <strong>Leitfaden</strong>
                             <span>Praxisnah durch die Heizlastberechnung</span>
                         </a>
+                        <a class="site-nav-card" href="/shk-ausbildung/">
+                            <strong>SHK-Ausbildung</strong>
+                            <span>Praxiswissen für Ausbildung und Meisterschule</span>
+                        </a>
                     </div>
                 </details>
             </nav>
@@ -329,6 +352,7 @@
                         <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
                         <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
                         <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                        <a href="/shk-ausbildung/">SHK-Ausbildung</a>
                     </div>
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
@@ -405,7 +429,7 @@
                             <img src="/assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp"
                                 alt="Prometo Hydraulischer Abgleich mit EG-Verteiler und Raumübersicht auf dem Tablet"
                                 width="2560" height="1600" loading="eager" fetchpriority="high" decoding="async"
-                                class="mx-auto rounded-[2rem] border border-white/8 w-full" />
+                                class="mx-auto rounded-[2rem] border border-white/8 w-full"  srcset="/assets/prometo-screenshots/tablet-2x/hydraulischer-abgleich-eg-verteiler.webp 1024w, /assets/prometo-screenshots/tablet/hydraulischer-abgleich-eg-verteiler.webp 2560w" sizes="(max-width: 640px) 320px, 720px"/>
                         </div>
                         <div class="hero-chip hero-chip--top">
                             <strong>Raumlast als Basis</strong>
@@ -427,8 +451,10 @@
                         <a href="#definition" class="jump-link">Was ist das?</a>
                         <a href="#nutzen" class="jump-link">Warum ist es wichtig?</a>
                         <a href="#ablauf" class="jump-link">Ablauf in Schritten</a>
+                        <a href="#verfahren" class="jump-link">Verfahren A oder B</a>
                         <a href="#pflicht" class="jump-link">Pflicht und Förderung</a>
                         <a href="#waermepumpe" class="jump-link">Wärmepumpe und FBH</a>
+                        <a href="#protokoll" class="jump-link">Protokoll</a>
                         <a href="#faq" class="jump-link">FAQ</a>
                     </div>
                 </div>
@@ -535,7 +561,7 @@
                 </div>
                 <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
-                        <h3 class="text-xl font-bold text-white mb-3">Gleichmaessigere Raumtemperaturen</h3>
+                        <h3 class="text-xl font-bold text-white mb-3">Gleichmäßigere Raumtemperaturen</h3>
                         <p class="text-gray-400 leading-relaxed">
                             Weniger Überversorgung in günstigen Kreisen, weniger Unterversorgung in schwierigen
                             Räumen.
@@ -599,7 +625,7 @@
                         <p class="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-2">Schritt 3</p>
                         <h3 class="text-xl font-bold text-white mb-3">Verteilung und Einstellungen ableiten</h3>
                         <p class="text-gray-400 leading-relaxed">
-                            Ziel ist, dass die Verteilung zur Raumlast passt. Gerade hier zaehlen Delta-T, Vorlauf,
+                            Ziel ist, dass die Verteilung zur Raumlast passt. Gerade hier zählen Delta-T, Vorlauf,
                             Rücklauf, Kreislängen und Heizflächenlogik.
                         </p>
                     </article>
@@ -612,6 +638,65 @@
                         </p>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <section id="verfahren" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="mb-10 max-w-3xl reveal">
+                    <span class="badge mb-6">Methodik</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Verfahren A oder Verfahren B: Unterschied und Auswahl
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Verfahren A und Verfahren B sind die beiden anerkannten Methoden für den hydraulischen Abgleich nach VdZ-Fachregel. Verfahren A schätzt Volumenströme über Baujahr und Heizkörpertyp, Verfahren B berechnet sie aus der raumweisen Heizlast. Verfahren B gilt als genauer und ist in vielen Förderprogrammen die geforderte Nachweisform.
+                    </p>
+                </div>
+                <div class="glass-panel rounded-[2rem] overflow-hidden reveal reveal-delay-1">
+                    <div class="overflow-x-auto">
+                        <table class="data-table w-full min-w-[680px]">
+                            <caption class="sr-only">Verfahren A und Verfahren B im hydraulischen Abgleich im Vergleich</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Merkmal</th>
+                                    <th scope="col">Verfahren A</th>
+                                    <th scope="col">Verfahren B</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Datenbasis</td>
+                                    <td>Baujahr, Heizkörpertyp, pauschale Annahmen</td>
+                                    <td>Raumweise Heizlast nach DIN EN 12831</td>
+                                </tr>
+                                <tr>
+                                    <td>Genauigkeit</td>
+                                    <td>Überschlägig</td>
+                                    <td>Raumgenau</td>
+                                </tr>
+                                <tr>
+                                    <td>Aufwand</td>
+                                    <td>Gering, schnell umsetzbar</td>
+                                    <td>Höher, mit Raumdatenerfassung</td>
+                                </tr>
+                                <tr>
+                                    <td>Förderfähigkeit / Nachweis</td>
+                                    <td>Je nach Programm eingeschränkt anerkannt</td>
+                                    <td>Von VdZ-Fachregel und vielen Förderprogrammen gefordert</td>
+                                </tr>
+                                <tr>
+                                    <td>Typischer Einsatzfall</td>
+                                    <td>Einfache Bestandsanlagen, kleinere Maßnahmen</td>
+                                    <td>Wärmepumpen, Sanierung, fördernahe Projekte</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="text-sm text-text-subtle mt-4 reveal">
+                    Prometo berechnet Soll-Volumenströme auf Basis der geprüften Raumheizlast und damit entlang der Logik von Verfahren B. Siehe dazu
+                    <a href="/heizlastberechnung/" class="text-primary underline underline-offset-2">Heizlastberechnung als Datenbasis für den Abgleich</a>.
+                </p>
             </div>
         </section>
 
@@ -639,7 +724,7 @@
                     <h2 class="text-2xl font-bold text-white mb-4">Verfahren und Nachweis</h2>
                     <p class="text-gray-400 leading-relaxed">
                         In der Praxis begegnen SHK-Betrieben VdZ-Formulare, Verfahren A und B sowie
-                        dokumentationsfaehige Einstellwerte. Welche Variante konkret gefordert ist, prüfst du immer am
+                        dokumentationsfähige Einstellwerte. Welche Variante konkret gefordert ist, prüfst du immer am
                         aktuellen Nachweisrahmen und nicht an alten Angebotsmustern oder vereinfachten Faustwerten.
                     </p>
                 </article>
@@ -671,6 +756,10 @@
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Warum hydraulischer Abgleich bei Wärmepumpe und Fußbodenheizung besonders wichtig ist
                     </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Wärmepumpen arbeiten mit niedrigeren Vorlauftemperaturen und kleinerer Spreizung als klassische Kessel. Das lässt weniger Spielraum für falsch eingestellte Volumenströme: Kleine Abweichungen wirken sich stärker auf Raumtemperatur und Effizienz aus. Ein sauberer Abgleich auf Basis der Raumheizlast ist deshalb Voraussetzung für einen stabilen Betrieb. Mehr dazu in
+                        <a href="/waermepumpe-dimensionieren/" class="text-primary underline underline-offset-2">Wärmepumpe anhand der Heizlast dimensionieren</a>.
+                    </p>
                 </div>
                 <div class="grid gap-6 md:grid-cols-3">
                     <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
@@ -700,13 +789,30 @@
             </div>
         </section>
 
+        <section id="protokoll" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-6 md:grid-cols-2">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">Thermischer Abgleich: eigener Begriff, keine Synonymform</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Der thermische Abgleich ist kein anderes Wort für den hydraulischen Abgleich. Er beschreibt die Feinjustierung von Heizkurve, Regelparametern und Raumthermostaten im laufenden Betrieb, nachdem die Volumenströme bereits hydraulisch eingestellt sind. Ohne einen sauberen hydraulischen Abgleich als Basis bleibt eine rein thermische Nachregelung wenig wirksam.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">Was gehört ins Protokoll des hydraulischen Abgleichs?</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Ein Nachweis muss die raumweise Heizlast, die berechneten Soll-Volumenströme je Heizkreis oder Heizkörper, die eingestellten Ventil- beziehungsweise Voreinstellwerte und die Pumpeneinstellung dokumentieren. Ohne diese Angaben lässt sich der Abgleich später weder nachvollziehen noch für Förderung oder Gewährleistung belegen.
+                    </p>
+                </article>
+            </div>
+        </section>
+
         <section class="px-6 pb-16 md:pb-24" id="prometo">
             <div class="max-w-screen-xl mx-auto glass-panel rounded-[2rem] p-8 md:p-10 reveal lift-on-hover">
                 <div class="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
                     <img src="/assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp"
                         alt="Prometo Heizkreisdetail mit Port-Zuordnung auf dem Smartphone"
                         width="1080" height="2400" loading="lazy" decoding="async"
-                        class="w-full max-w-sm mx-auto rounded-[2rem] border border-white/8" />
+                        class="w-full max-w-sm mx-auto rounded-[2rem] border border-white/8" srcset="/assets/prometo-screenshots/thumbs/hydraulischer-abgleich-heizkreisdetail.webp 216w, /assets/prometo-screenshots/thumbs-2x/hydraulischer-abgleich-heizkreisdetail.webp 640w, /assets/prometo-screenshots/mobile/hydraulischer-abgleich-heizkreisdetail.webp 1080w" sizes="(max-width: 640px) 216px, 384px" />
                     <div>
                         <span class="badge mb-6">Prometo im Einsatz</span>
                         <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
@@ -840,6 +946,23 @@
                             Typisch relevant sind Heizlast beziehungsweise Raumlast, Heizflächen, Systemtemperaturen,
                             Ventile, Heizkreise, Verteiler, Kreislängen und die projektspezifischen Einstellwerte. Genau deshalb ist
                             der Abgleich selten sinnvoll als völlig losgelöster Arbeitsschritt.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-1 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist der Unterschied zwischen Verfahren A und Verfahren B?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Verfahren A schätzt Volumenströme grob über Baujahr und Heizkörpertyp und ist damit schnell,
+                            aber ungenauer. Verfahren B berechnet sie aus der raumweisen Heizlast nach DIN EN 12831 und
+                            gilt als genauer. In vielen Förderprogrammen ist Verfahren B die geforderte Nachweisform.
+                        </p>
+                    </details>
+                    <details class="faq-item glass-panel rounded-3xl p-6 reveal reveal-delay-2 lift-on-hover">
+                        <summary class="text-lg font-headline font-bold text-gray-200">Was ist der Unterschied zwischen thermischem und hydraulischem Abgleich?</summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            Der hydraulische Abgleich stellt Volumenströme über Ventile und Pumpe ein. Der thermische
+                            Abgleich justiert danach Heizkurve und Regelparameter im laufenden Betrieb. Beide Begriffe
+                            sind keine Synonyme: Ohne sauberen hydraulischen Abgleich bleibt eine rein thermische
+                            Nachregelung wenig wirksam.
                         </p>
                     </details>
                 </div>

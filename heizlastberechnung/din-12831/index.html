@@ -48,8 +48,10 @@
     <meta name="twitter:image:alt" content="Prometo Projektdetail mit Heizlastergebnissen und Bivalenzpunkt-Diagramm auf dem Smartphone" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="preload" href="/assets/site-navigation.css" as="style">
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="preload" href="/assets/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -295,9 +297,10 @@
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
@@ -386,6 +389,10 @@
                             <strong>Leitfaden</strong>
                             <span>Praxisnah durch die Heizlast-Vorbereitung</span>
                         </a>
+                        <a class="site-nav-card" href="/shk-ausbildung/">
+                            <strong>SHK-Ausbildung</strong>
+                            <span>Praxiswissen für Ausbildung und Meisterschule</span>
+                        </a>
                     </div>
                 </details>
             </nav>
@@ -424,6 +431,7 @@
                         <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
                         <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
                         <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                        <a href="/shk-ausbildung/">SHK-Ausbildung</a>
                     </div>
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
@@ -554,6 +562,7 @@
                     <p id="din-jump-nav-title" class="jump-nav-title">Direkt zu den wichtigsten Abschnitten</p>
                     <div class="jump-links">
                         <a href="#grundlagen" class="jump-link">Überschlag und Methode</a>
+                        <a href="#normrahmen" class="jump-link">Norm und Hüllflächenverfahren</a>
                         <a href="#formeln" class="jump-link">Formeln für Transmission und Lüftung</a>
                         <a href="#beispiel" class="jump-link">Beispielrechnung für einen Raum</a>
                         <a href="#einordnung" class="jump-link">Praktische Einordnung der Vereinfachung</a>
@@ -579,6 +588,24 @@
                     <p class="text-gray-400 leading-relaxed">
                         In der vereinfachten Darstellung ist ΔT die Differenz zwischen Innen- und Außentemperatur.
                         Beispiel: 20 °C innen und -12 °C außen ergeben ΔT = 32 K.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="normrahmen" class="px-6 pb-8 md:pb-12">
+            <div class="max-w-screen-xl mx-auto grid gap-6 lg:grid-cols-2">
+                <article class="glass-panel rounded-3xl p-8 reveal lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">DIN EN 12831-1 und DIN/TS 12831-1: was ist der Unterschied?</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        DIN EN 12831-1 ist die europäische Grundnorm für die Heizlastberechnung. Deutschland ergänzt sie um das nationale Beiblatt DIN/TS 12831-1, das länderspezifische Randbedingungen wie Normaußentemperaturen und Berechnungsdetails festlegt. Für eine Heizlastberechnung nach deutschem Standard braucht es beide Dokumente gemeinsam, nicht nur die europäische Grundnorm allein.
+                    </p>
+                </article>
+                <article class="glass-panel rounded-3xl p-8 reveal reveal-delay-1 lift-on-hover">
+                    <h2 class="text-2xl font-bold text-white mb-4">Hüllflächenverfahren: vereinfachtes Verfahren mit Grenzen</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Das Hüllflächenverfahren schätzt die Gebäudeheizlast über die gesamte wärmeübertragende Hüllfläche und einen pauschalen Verlustkoeffizienten, ohne jeden Raum einzeln zu betrachten. Es liefert eine schnelle Gebäudekennzahl, ersetzt aber keine raumweise Berechnung für Heizflächen, Wärmepumpe oder hydraulischen Abgleich. Für die erste grobe Einordnung siehe
+                        <a href="/heizlastberechnung/schaetzwerte/" class="text-primary underline underline-offset-2">Heizlast anhand von Schätzwerten einordnen</a>.
                     </p>
                 </article>
             </div>

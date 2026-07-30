@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
-    <title>Heizlast schätzen: m²-Werte, Grenzen & bessere Vorbereitung</title>
+    <title>Heizlast schätzen: m²-Werte & Verbrauch berechnen</title>
     <meta name="description"
-        content="Heizlast überschlägig schätzen: typische m²-Werte, Grenzen der Schätzung und welche Daten für eine bessere Heizlast-Vorbereitung nötig sind." />
+        content="Heizlast schätzen: m²-Werte und Verbrauch nutzen, Fehlerquellen vermeiden – für eine schnelle erste Einordnung vor der raumweisen Berechnung." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -30,9 +30,9 @@
     <meta property="og:locale" content="de_DE" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Prometo" />
-    <meta property="og:title" content="Heizlast schätzen: m²-Werte, Grenzen & bessere Vorbereitung" />
+    <meta property="og:title" content="Heizlast schätzen: m²-Werte & Verbrauch berechnen" />
     <meta property="og:description"
-        content="Heizlast überschlägig schätzen: typische m²-Werte, Grenzen der Schätzung und welche Daten für eine bessere Heizlast-Vorbereitung nötig sind." />
+        content="Heizlast schätzen: m²-Werte und Verbrauch nutzen, Fehlerquellen vermeiden – für eine schnelle erste Einordnung vor der raumweisen Berechnung." />
     <meta property="og:url" content="https://prometo.app/heizlastberechnung/schaetzwerte/" />
     <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" />
     <meta property="og:image:alt" content="Prometo Schnellberechnung mit Heizlast-Schätzergebnis in drei Szenarien auf dem Smartphone" />
@@ -41,15 +41,17 @@
     <meta property="og:image:height" content="2400" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Heizlast schätzen: m²-Werte, Grenzen & bessere Vorbereitung" />
+    <meta name="twitter:title" content="Heizlast schätzen: m²-Werte & Verbrauch berechnen" />
     <meta name="twitter:description"
-        content="Heizlast überschlägig schätzen: typische m²-Werte, Grenzen der Schätzung und welche Daten für eine bessere Heizlast-Vorbereitung nötig sind." />
+        content="Heizlast schätzen: m²-Werte und Verbrauch nutzen, Fehlerquellen vermeiden." />
     <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp" />
     <meta name="twitter:image:alt" content="Prometo Schnellberechnung mit Heizlast-Schätzergebnis in drei Szenarien auf dem Smartphone" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="preload" href="/assets/site-navigation.css" as="style">
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="preload" href="/assets/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -180,8 +182,8 @@
                 "@type": "WebPage",
                 "@id": "https://prometo.app/heizlastberechnung/schaetzwerte/#webpage",
                 "url": "https://prometo.app/heizlastberechnung/schaetzwerte/",
-                "name": "Heizlast schätzen: m²-Werte, Grenzen & bessere Vorbereitung",
-                "description": "Heizlast überschlägig schätzen: typische m²-Werte, Grenzen der Schätzung und welche Daten für eine bessere Heizlast-Vorbereitung nötig sind.",
+                "name": "Heizlast schätzen: m²-Werte & Verbrauch berechnen",
+                "description": "Heizlast schätzen: m²-Werte und Verbrauch nutzen, Fehlerquellen vermeiden – für eine schnelle erste Einordnung vor der raumweisen Berechnung.",
                 "inLanguage": "de-DE",
                 "isPartOf": {
                     "@id": "https://prometo.app/#website"
@@ -255,8 +257,8 @@
             {
                 "@type": "Article",
                 "@id": "https://prometo.app/heizlastberechnung/schaetzwerte/#article",
-                "headline": "Heizlast schätzen: m²-Werte, Grenzen und bessere Vorbereitung",
-                "description": "Heizlast überschlägig schätzen: typische m²-Werte, Grenzen der Schätzung und welche Daten für eine bessere Heizlast-Vorbereitung nötig sind.",
+                "headline": "Heizlast schätzen: m²-Werte und Verbrauch berechnen",
+                "description": "Heizlast schätzen: m²-Werte und Verbrauch nutzen, Fehlerquellen vermeiden – für eine schnelle erste Einordnung vor der raumweisen Berechnung.",
                 "author": {
                     "@type": "Organization",
                     "@id": "https://prometo.app/#organization"
@@ -274,9 +276,10 @@
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
@@ -365,6 +368,10 @@
                             <strong>Leitfaden</strong>
                             <span>Praxisnah durch die Heizlast-Vorbereitung</span>
                         </a>
+                        <a class="site-nav-card" href="/shk-ausbildung/">
+                            <strong>SHK-Ausbildung</strong>
+                            <span>Praxiswissen für Ausbildung und Meisterschule</span>
+                        </a>
                     </div>
                 </details>
             </nav>
@@ -403,6 +410,7 @@
                         <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
                         <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
                         <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                        <a href="/shk-ausbildung/">SHK-Ausbildung</a>
                     </div>
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
@@ -552,6 +560,7 @@
                         <a href="#tabelle" class="jump-link">Einordnung nach Gebäudezustand</a>
                         <a href="#bessere-vorbereitung" class="jump-link">Bessere Vorbereitung statt nur m²-Wert</a>
                         <a href="#beispiele" class="jump-link">Praxisnahe Anwendungsfälle</a>
+                        <a href="#verbrauch" class="jump-link">Heizlast aus dem Verbrauch berechnen</a>
                         <a href="#grenzen" class="jump-link">Grenzen der Überschlagsrechnung</a>
                         <a href="#faq" class="jump-link">FAQ zur frühen Einordnung</a>
                     </div>
@@ -596,7 +605,7 @@
                         <img src="/assets/prometo-screenshots/tablet/schnellberechnung-richtwerte.webp"
                             alt="Prometo Schnellberechnung auf dem Tablet mit anpassbaren Schätzparametern und Slidern"
                             width="2560" height="1600" loading="lazy" decoding="async"
-                            class="w-full rounded-3xl border border-white/8" />
+                            class="w-full rounded-3xl border border-white/8"  srcset="/assets/prometo-screenshots/tablet-2x/schnellberechnung-richtwerte.webp 1024w, /assets/prometo-screenshots/tablet/schnellberechnung-richtwerte.webp 2560w" sizes="(max-width: 640px) 320px, 720px"/>
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">3. Parameter verfeinern</strong>
                             Auf dem Tablet lassen sich Schätzparameter raumspezifisch mit Schiebereglern nachjustieren.
@@ -606,7 +615,7 @@
                         <img src="/assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp"
                             alt="Prometo Heizlast-Schätzergebnis mit optimistisch, mittel und konservativ auf dem Smartphone"
                             width="1080" height="2400" loading="lazy" decoding="async"
-                            class="w-full rounded-3xl border border-white/8" />
+                            class="w-full rounded-3xl border border-white/8" srcset="/assets/prometo-screenshots/thumbs/schnellberechnung-heizlast-ergebnis.webp 216w, /assets/prometo-screenshots/thumbs-2x/schnellberechnung-heizlast-ergebnis.webp 640w, /assets/prometo-screenshots/mobile/schnellberechnung-heizlast-ergebnis.webp 1080w" sizes="(max-width: 640px) 216px, 384px" />
                         <figcaption class="mt-4 text-sm leading-relaxed text-gray-400">
                             <strong class="block text-white font-headline font-bold mb-1">4. Ergebnis vergleichen</strong>
                             Drei Lastkorridore machen die Größenordnung für Angebot und Systementscheidung sofort sichtbar.
@@ -737,6 +746,33 @@
                             sollte die nächste Stufe eine strukturierte Berechnung sein.
                         </p>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="verbrauch" class="px-6 pb-16 md:pb-24">
+            <div class="max-w-screen-xl mx-auto grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+                <div class="reveal">
+                    <span class="badge mb-6">Aus dem Verbrauch</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Heizlast aus dem Verbrauch berechnen
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed mb-6">
+                        Aus dem Jahresverbrauch lässt sich die Heizlast überschlagen, indem der Energieverbrauch durch die Vollbenutzungsstunden geteilt wird: <strong class="text-white">Heizlast [kW] ≈ Jahresverbrauch [kWh/a] ÷ Vollbenutzungsstunden [h/a]</strong>. Für Wohngebäude werden häufig 1.800–2.000 Vollbenutzungsstunden angesetzt. Das Ergebnis ist nur ein Richtwert, keine raumweise Berechnung.
+                    </p>
+                    <ul class="space-y-2 text-gray-400 leading-relaxed">
+                        <li><strong class="text-white">Nutzerverhalten:</strong> Heizgewohnheiten und Abwesenheiten verschieben den realen Verbrauch nach oben oder unten.</li>
+                        <li><strong class="text-white">Warmwasseranteil:</strong> Muss vom Gesamtverbrauch abgezogen werden, sonst wird die Heizlast überschätzt.</li>
+                        <li><strong class="text-white">Witterungsbereinigung:</strong> Ein besonders mildes oder kaltes Jahr verzerrt den Wert ohne Abgleich über Gradtagszahlen.</li>
+                    </ul>
+                </div>
+                <div class="formula-box reveal reveal-delay-1">
+                    <p class="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-3">Rechenbeispiel</p>
+                    <p class="text-white font-headline text-lg mb-2">18.000 kWh/a ÷ 1.900 h/a ≈ 9,5 kW</p>
+                    <p class="text-sm text-text-subtle leading-relaxed">
+                        Ein Jahresverbrauch von 18.000 kWh Gas ergibt bei 1.900 Vollbenutzungsstunden eine überschlägige Heizlast von rund 9,5 kW. Für eine belastbare Auslegung bleibt die raumweise Berechnung nach
+                        <a href="/heizlastberechnung/din-12831/" class="text-primary underline underline-offset-2">DIN EN 12831</a> maßgeblich.
+                    </p>
                 </div>
             </div>
         </section>

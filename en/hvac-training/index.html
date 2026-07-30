@@ -40,8 +40,10 @@
     <meta property="og:image:height" content="1600" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="preload" href="/assets/site-navigation.css" as="style">
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="preload" href="/assets/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
@@ -164,9 +166,10 @@
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/en/" class="site-brand" aria-label="Go to Prometo home">
@@ -224,7 +227,7 @@
                         <img src="/assets/prometo-screenshots/tablet/schnellberechnung-richtwerte.webp"
                             alt="Prometo import review with detected rooms as a training example"
                             width="2560" height="1600" loading="eager" fetchpriority="high" decoding="async"
-                            class="w-full rounded-3xl border border-white/8" />
+                            class="w-full rounded-3xl border border-white/8"  srcset="/assets/prometo-screenshots/tablet-2x/schnellberechnung-richtwerte.webp 1024w, /assets/prometo-screenshots/tablet/schnellberechnung-richtwerte.webp 2560w" sizes="(max-width: 640px) 320px, 720px"/>
                     </div>
                 </div>
             </div>

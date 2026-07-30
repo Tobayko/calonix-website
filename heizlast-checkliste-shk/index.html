@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ" />
     <title>Heizlast-Checkliste für SHK-Betriebe & Ausbildung | Prometo</title>
     <meta name="description"
-        content="Welche Daten braucht man aus einem Grundriss für die Heizlast-Vorbereitung? Checkliste für SHK-Betriebe, Azubis, Berufsschulen und Meisterkurse." />
+        content="Checkliste für die Heizlast-Vorbereitung: Welche Raumdaten aus dem Grundriss nötig sind – für SHK-Betriebe, Azubis, Berufsschulen und Meisterkurse." />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#0b0e0e" />
@@ -48,8 +48,10 @@
     <meta name="twitter:image:alt" content="Prometo Grundriss-Import als Grundlage für strukturierte Raumdaten" />
 
     <link rel="preload" href="/assets/tailwind.css" as="style" />
+    <link rel="preload" href="/assets/site-navigation.css" as="style">
     <link rel="stylesheet" href="/assets/site-navigation.css" />
     <link rel="stylesheet" href="/assets/seo-explainers.css" />
+    <link rel="preload" href="/assets/tailwind.css" as="style">
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <link rel="stylesheet" href="/assets/prometo-gallery.css" />
@@ -224,9 +226,10 @@
         ]
     }
     </script>
+  <link rel="stylesheet" href="/assets/prometo-landing-bridge.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen prometo-landing-page">
     <header class="site-header" data-prometo-site-nav>
         <div class="site-nav-shell">
             <a href="/" class="site-brand" aria-label="Zur Startseite von Prometo">
@@ -315,6 +318,10 @@
                             <strong>Leitfaden</strong>
                             <span>Praxisnah durch die Heizlast-Vorbereitung</span>
                         </a>
+                        <a class="site-nav-card" href="/shk-ausbildung/">
+                            <strong>SHK-Ausbildung</strong>
+                            <span>Praxiswissen für Ausbildung und Meisterschule</span>
+                        </a>
                     </div>
                 </details>
             </nav>
@@ -353,6 +360,7 @@
                         <a href="/heizlastberechnung/schaetzwerte/">Heizlast schätzen</a>
                         <a href="/heizlastberechnung/din-12831/">DIN EN 12831</a>
                         <a href="/heizlastberechnung/leitfaden/">Leitfaden</a>
+                        <a href="/shk-ausbildung/">SHK-Ausbildung</a>
                     </div>
                     <div class="site-mobile-section">
                         <span class="site-mobile-section-title">Sprache</span>
@@ -407,7 +415,7 @@
                         <img src="/assets/prometo-screenshots/tablet/schnellberechnung-richtwerte.webp"
                             alt="Prometo Schnellberechnung auf dem Tablet mit aus dem PDF-Plan übernommenen Räumen und Richtwerten"
                             width="2560" height="1600" loading="eager" fetchpriority="high" decoding="async"
-                            class="w-full rounded-3xl border border-white/8" />
+                            class="w-full rounded-3xl border border-white/8"  srcset="/assets/prometo-screenshots/tablet-2x/schnellberechnung-richtwerte.webp 1024w, /assets/prometo-screenshots/tablet/schnellberechnung-richtwerte.webp 2560w" sizes="(max-width: 640px) 320px, 720px"/>
                     </div>
                 </div>
             </div>

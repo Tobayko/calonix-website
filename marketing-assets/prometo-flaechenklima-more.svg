@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3780" height="1900" viewBox="0 0 3780 1900">
+  <defs>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="18" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="smGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      .t{font-family:'Space Grotesk',Arial,sans-serif;font-weight:700;fill:#DFE3E3;letter-spacing:0}
+      .b{font-family:Manrope,Arial,sans-serif;font-weight:400;fill:#BBC9CA;letter-spacing:0}
+      .l{font-family:Manrope,Arial,sans-serif;font-weight:700;fill:#8A9393;letter-spacing:3px}
+      .m{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;fill:#BBC9CA;letter-spacing:0}
+      .cyan{fill:#45DEE7}.dark{fill:#003739}
+    </style>
+  </defs>
+
+  <!-- LINKEDIN HERO BANNER -->
+  <g id="LinkedIn_Banner_Flaechenklima_1584x396" transform="translate(0 0)">
+    <rect width="1584" height="396" rx="22" fill="#111414"/>
+    <rect x="22" y="22" width="1540" height="352" rx="16" fill="none" stroke="#242A2A" stroke-width="2"/>
+    <circle cx="58" cy="58" r="6" fill="#45DEE7" filter="url(#smGlow)"/>
+    <text x="78" y="64" class="l" font-size="13">PROMETO.APP / FLÄCHENKLIMA</text>
+    <text x="52" y="153" class="t" font-size="47">Wärme, die man nicht sieht.</text>
+    <text x="52" y="198" class="b" font-size="19">Aber in jedem Raum spürt.</text>
+    <text x="52" y="257" class="b cyan" font-size="16">FUSSBODEN  ·  WAND  ·  DECKE</text>
+    <rect x="52" y="291" width="198" height="48" rx="10" fill="#45DEE7"/>
+    <text x="77" y="322" class="b dark" font-size="16" font-weight="700">Mehr erfahren</text>
+    <g transform="translate(1025 43)">
+      <rect width="455" height="310" rx="18" fill="#161B1B" stroke="#3C494A" stroke-width="2"/>
+      <text x="28" y="36" class="l" font-size="10">RAUMANSICHT / WOHNEN</text>
+      <path d="M55 237V104h260v133M55 237h335M315 104l75 45v88" fill="none" stroke="#859394" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M79 223h276" stroke="#45DEE7" stroke-width="7" stroke-linecap="round" filter="url(#smGlow)"/>
+      <path d="M69 205h10M101 205h10M133 205h10M165 205h10M197 205h10M229 205h10M261 205h10M293 205h10M325 205h10" stroke="#45DEE7" stroke-width="3"/>
+      <path d="M69 128V184M91 128V184" stroke="#45DEE7" stroke-width="4" stroke-linecap="round"/>
+      <path d="M335 128l33 20M335 145l33 20M335 162l33 20" stroke="#45DEE7" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="70" cy="245" r="5" fill="#45DEE7"/><text x="84" y="250" class="b" font-size="12">Fußboden</text>
+      <circle cx="70" cy="273" r="5" fill="#45DEE7"/><text x="84" y="278" class="b" font-size="12">Wand &amp; Decke</text>
+      <text x="322" y="275" class="m cyan" font-size="13">21,0 °C</text>
+    </g>
+  </g>
+
+  <!-- LINKEDIN POST: THREE SURFACES -->
+  <g id="LinkedIn_Post_Drei_Flaechen_1200x627" transform="translate(0 480)">
+    <rect width="1200" height="627" rx="24" fill="#111414"/>
+    <rect x="30" y="30" width="1140" height="567" rx="18" fill="none" stroke="#242A2A" stroke-width="2"/>
+    <circle cx="61" cy="62" r="6" fill="#45DEE7" filter="url(#smGlow)"/>
+    <text x="82" y="68" class="l" font-size="14">PROMETO / FLÄCHENKLIMA</text>
+    <text x="60" y="151" class="t" font-size="48">Ein Raum. Drei Flächen.</text>
+    <text x="60" y="195" class="b" font-size="20">Eine angenehm gleichmäßige Temperatur.</text>
+    <g transform="translate(60 270)">
+      <rect width="335" height="205" rx="16" fill="#161B1B" stroke="#3C494A" stroke-width="2"/>
+      <path d="M32 145h271" stroke="#45DEE7" stroke-width="7" stroke-linecap="round" filter="url(#smGlow)"/>
+      <path d="M42 126h10M74 126h10M106 126h10M138 126h10M170 126h10M202 126h10M234 126h10M266 126h10" stroke="#45DEE7" stroke-width="3"/>
+      <text x="28" y="48" class="l" font-size="11">01</text><text x="28" y="84" class="t" font-size="25">Fußboden</text><text x="28" y="180" class="b" font-size="14">Wärme von unten.</text>
+    </g>
+    <g transform="translate(432 270)">
+      <rect width="335" height="205" rx="16" fill="#161B1B" stroke="#3C494A" stroke-width="2"/>
+      <path d="M66 65v99M91 65v99" stroke="#45DEE7" stroke-width="6" stroke-linecap="round" filter="url(#smGlow)"/>
+      <path d="M118 65v99M143 65v99" stroke="#45DEE7" stroke-width="3" stroke-linecap="round"/>
+      <text x="28" y="48" class="l" font-size="11">02</text><text x="28" y="192" class="t" font-size="25">Wand</text><text x="154" y="192" class="b" font-size="14">Ohne kalte Ecken.</text>
+    </g>
+    <g transform="translate(804 270)">
+      <rect width="335" height="205" rx="16" fill="#161B1B" stroke="#3C494A" stroke-width="2"/>
+      <path d="M34 70h267" stroke="#45DEE7" stroke-width="7" stroke-linecap="round" filter="url(#smGlow)"/>
+      <path d="M44 91h10M76 91h10M108 91h10M140 91h10M172 91h10M204 91h10M236 91h10M268 91h10" stroke="#45DEE7" stroke-width="3"/>
+      <text x="28" y="142" class="l" font-size="11">03</text><text x="28" y="180" class="t" font-size="25">Decke</text><text x="28" y="199" class="b" font-size="14">Leise. Gleichmäßig.</text>
+    </g>
+    <text x="60" y="550" class="m" font-size="14">prometo.app</text>
+  </g>
+
+  <!-- INSTAGRAM POST: COMFORT -->
+  <g id="Instagram_Post_Waerme_1080x1080" transform="translate(1280 480)">
+    <rect width="1080" height="1080" rx="32" fill="#111414"/>
+    <rect x="32" y="32" width="1016" height="1016" rx="24" fill="none" stroke="#242A2A" stroke-width="2"/>
+    <circle cx="59" cy="59" r="6" fill="#45DEE7" filter="url(#smGlow)"/>
+    <text x="82" y="65" class="l" font-size="16">PROMETO / FLÄCHENKLIMA</text>
+    <text x="60" y="175" class="t" font-size="72">Einfach</text>
+    <text x="60" y="255" class="t" font-size="72">angenehm.</text>
+    <text x="62" y="300" class="b" font-size="24">Keine kalten Ecken. Kein Rätselraten.</text>
+    <rect x="60" y="363" width="960" height="407" rx="22" fill="#161B1B" stroke="#3C494A" stroke-width="2"/>
+    <text x="94" y="414" class="l" font-size="13">RAUMKLIMA / WOHNEN</text>
+    <path d="M130 682V500h370v182M130 682h635M500 500l200 110v72" fill="none" stroke="#859394" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M160 665h550" stroke="#45DEE7" stroke-width="9" stroke-linecap="round" filter="url(#glow)"/>
+    <path d="M166 642h14M205 642h14M244 642h14M283 642h14M322 642h14M361 642h14M400 642h14M439 642h14M478 642h14M517 642h14M556 642h14M595 642h14M634 642h14" stroke="#45DEE7" stroke-width="4"/>
+    <path d="M154 529V615M183 529V615" stroke="#45DEE7" stroke-width="6" stroke-linecap="round"/>
+    <path d="M534 529l104 58M534 551l104 58" stroke="#45DEE7" stroke-width="6" stroke-linecap="round"/>
+    <rect x="94" y="805" width="892" height="74" rx="12" fill="#003739" stroke="#45DEE7" stroke-width="2"/>
+    <circle cx="129" cy="842" r="7" fill="#45DEE7"/><text x="153" y="850" class="b" font-size="18" fill="#DFE3E3">21,0 °C · gleichmäßig im ganzen Raum</text>
+    <text x="60" y="1000" class="m" font-size="14">prometo.app</text>
+  </g>
+
+  <!-- INSTAGRAM POST: PLAN WITH CONFIDENCE -->
+  <g id="Instagram_Post_Planung_1080x1080" transform="translate(2480 480)">
+    <rect width="1080" height="1080" rx="32" fill="#111414"/>
+    <rect x="32" y="32" width="1016" height="1016" rx="24" fill="none" stroke="#242A2A" stroke-width="2"/>
+    <circle cx="59" cy="59" r="6" fill="#45DEE7" filter="url(#smGlow)"/>
+    <text x="82" y="65" class="l" font-size="16">PROMETO / PLANUNG</text>
+    <text x="60" y="170" class="t" font-size="66">Planst du Fläche?</text>
+    <text x="60" y="244" class="t" font-size="66">Dann plan sie klar.</text>
+    <text x="62" y="290" class="b" font-size="23">Weniger nachfragen. Sicher entscheiden.</text>
+    <g transform="translate(60 360)">
+      <rect width="960" height="117" rx="16" fill="#161B1B" stroke="#3C494A" stroke-width="2"/>
+      <circle cx="42" cy="58" r="17" fill="#003739" stroke="#45DEE7" stroke-width="2"/><text x="36" y="64" class="t cyan" font-size="16">1</text>
+      <text x="88" y="53" class="t" font-size="23">Heizlast prüfen</text><text x="88" y="84" class="b" font-size="16">Raum für Raum.</text>
+      <text x="754" y="70" class="m cyan" font-size="14">BEREIT</text>
+    </g>
+    <g transform="translate(60 503)">
+      <rect width="960" height="117" rx="16" fill="#161B1B" stroke="#3C494A" stroke-width="2"/>
+      <circle cx="42" cy="58" r="17" fill="#003739" stroke="#45DEE7" stroke-width="2"/><text x="35" y="64" class="t cyan" font-size="16">2</text>
+      <text x="88" y="53" class="t" font-size="23">Flächen abgleichen</text><text x="88" y="84" class="b" font-size="16">Fußboden, Wand und Decke.</text>
+      <text x="754" y="70" class="m cyan" font-size="14">KLAR</text>
+    </g>
+    <g transform="translate(60 646)">
+      <rect width="960" height="117" rx="16" fill="#161B1B" stroke="#3C494A" stroke-width="2"/>
+      <circle cx="42" cy="58" r="17" fill="#003739" stroke="#45DEE7" stroke-width="2"/><text x="35" y="64" class="t cyan" font-size="16">3</text>
+      <text x="88" y="53" class="t" font-size="23">Unterlagen fragen</text><text x="88" y="84" class="b" font-size="16">Antworten direkt finden.</text>
+      <text x="754" y="70" class="m cyan" font-size="14">FERTIG</text>
+    </g>
+    <rect x="60" y="836" width="226" height="62" rx="10" fill="#45DEE7"/><text x="86" y="875" class="b dark" font-size="17" font-weight="700">Mehr erfahren</text>
+    <text x="60" y="1000" class="m" font-size="14">prometo.app</text>
+  </g>
+</svg>
