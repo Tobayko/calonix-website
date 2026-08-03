@@ -272,3 +272,28 @@ Diese Datei ist das dauerhafte Gedächtnis der wöchentlichen SEO-Routine für
 - Unveränderter Engpass: keine Backlink-Daten. Für `hydraulischer abgleich`
   (50.000/Monat laut Keyword-Planner, Seite aktuell Position 65,7) ist
   fehlende Domain-Autorität die wahrscheinlichste Ursache, nicht On-Page.
+
+#### Nachtrag 2026-08-03, nach Deploy gemessen
+
+- Lighthouse 13.4.1 lokal gegen `https://prometo.app/`, nicht die
+  PageSpeed-API (dort war das Tageskontingent erschöpft).
+- **Erster Messlauf deckte einen echten Fehler auf:** Desktop-Performance 83
+  bei CLS 0,345, größtes verschobenes Element `.hero::after`. Ursache: Der
+  Startseite fehlten die Font-Preloads für Space Grotesk und Manrope, die
+  jede andere Seite bereits hat. Durch `font-display:swap` reflowte der Hero
+  beim Font-Tausch. Mobil war CLS 0, der Fehler war nur auf Desktop sichtbar.
+- Nach dem Preload-Fix (Commit `Font-Preloads ergaenzen gegen Layout-Shift`):
+  - Desktop: 100 Performance, 100 Barrierefreiheit, 100 Best Practices,
+    100 SEO. FCP 0,5 s, LCP 0,6 s, Speed Index 0,7 s, TBT 0 ms, CLS 0.
+  - Mobil: 100 / 100 / 100 / 100. FCP 1,1 s, LCP 1,3 s, Speed Index 1,1 s,
+    TBT 0 ms, CLS 0.
+  - Zum Vergleich vorher mobil: Performance 98, Speed Index 4,0 s.
+- Zusätzlich korrigiert: Der zuerst gesetzte H1 „Digitales Aufmaß aus dem
+  PDF-Grundriss – und daraus der komplette SHK-Workflow." begann wortgleich
+  mit dem H1 von `/digitales-aufmass/` und hätte die gerade aufgelöste
+  Kannibalisierung auf H1-Ebene fortgesetzt. Zudem brach er auf Desktop über
+  sieben Zeilen um. Neu: „Ein Grundriss. Vom Aufmaß bis zum Abgleich."
+- `scripts/check-seo.js` enthält Soll-Werte für Title, Description und H1 der
+  Startseite. Diese Datei muss bei jeder Metadatenänderung mitgezogen werden,
+  sonst schlägt `npm run seo:check` fehl. Aktuell grün, ebenso `npm run lint`
+  und `npm test` (5 Tests).
