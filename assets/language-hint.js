@@ -45,7 +45,7 @@
 
     sessionStorage.setItem("prometo_en_hint_seen", "1");
     const hint = document.createElement("div");
-    hint.className = "fixed left-4 right-4 top-20 z-50 mx-auto max-w-xl rounded-2xl border border-primary/25 bg-[#0b0e0e]/95 p-4 text-sm text-gray-200 shadow-2xl backdrop-blur-xl";
+    hint.className = "fixed left-4 right-4 top-20 z-50 mx-auto max-w-xl rounded-2xl border border-primary/25 bg-[#071111]/95 p-4 text-sm text-gray-200 shadow-2xl backdrop-blur-xl";
     hint.innerHTML = '<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><span>Looking for the English version?</span><div class="flex items-center gap-3"><a class="font-headline font-bold text-primary hover:text-white" href="' + englishPath + '" hreflang="en-US">Open English page</a><button type="button" class="text-gray-500 hover:text-white" aria-label="Close language hint">Close</button></div></div>';
     const closeButton = hint.querySelector("button");
     closeButton.addEventListener("click", () => hint.remove());

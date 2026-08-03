@@ -53,7 +53,7 @@
             "textarea:focus-visible,",
             "summary:focus-visible,",
             "[role='button']:focus-visible {",
-            "    outline: 3px solid #6bf6ff;",
+            "    outline: 3px solid #45dee7;",
             "    outline-offset: 4px;",
             "    box-shadow: 0 0 0 6px rgba(69, 222, 231, 0.18);",
             "}",

@@ -96,7 +96,9 @@ h3 {
    Pill-Badge mit Glow-Punkt. Selektor greift, weil diese Datei nach dem
    seitenspezifischen <style>-Block geladen wird. */
 .badge,
-.aufmass-kicker {
+.aufmass-kicker,
+.answer-label,
+.jump-nav-title {
     display: flex;
     align-items: center;
     gap: 0.65rem;
@@ -114,8 +116,16 @@ h3 {
     text-transform: uppercase;
 }
 
+/* .answer-label ist ein <p> im .answer-panel; die dortige Regel
+   ".answer-panel p" (0,1,1) schlägt den Klassenselektor oben. */
+.answer-panel .answer-label {
+    color: var(--cyan);
+}
+
 .badge::before,
-.aufmass-kicker::before {
+.aufmass-kicker::before,
+.answer-label::before,
+.jump-nav-title::before {
     content: "";
     width: 26px;
     height: 1px;

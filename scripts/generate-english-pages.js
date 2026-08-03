@@ -847,7 +847,7 @@ function render(page) {
     <meta name="description" content="${esc(page.description)}" />
     <meta name="robots" content="${robots}" />
     <meta name="googlebot" content="${robots}" />
-    <meta name="theme-color" content="#0b0e0e" />
+    <meta name="theme-color" content="#071111" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="canonical" href="${page.enUrl}" />
     <link rel="alternate" hreflang="de-DE" href="${page.deUrl}" />
@@ -879,19 +879,18 @@ function render(page) {
     <link rel="stylesheet" href="/assets/tailwind.css" />
     <link rel="stylesheet" href="/assets/page-effects.css" />
     <style>
-        body { background: radial-gradient(circle at top, rgba(69, 222, 231, 0.12), transparent 42%), linear-gradient(180deg, #0b0e0e 0%, #0f1414 100%); color: #dfe3e3; font-family: 'Manrope', sans-serif; }
+        body { background: #071111; color: #f4f7f4; font-family: 'Manrope', sans-serif; }
         h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
-        .glass-panel { background: rgba(23, 28, 28, 0.72); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-        .badge { display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 999px; padding: 0.5rem 0.9rem; font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6bf6ff; background: rgba(69, 222, 231, 0.08); border: 1px solid rgba(69, 222, 231, 0.18); }
-        .badge::before { content: ""; width: 0.45rem; height: 0.45rem; border-radius: 999px; background: #45dee7; box-shadow: 0 0 16px rgba(69, 222, 231, 0.7); }
+        .glass-panel { background: rgba(12, 24, 24, 0.72); border: 1px solid rgba(219, 247, 242, 0.14); border-radius: 10px; box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
         .faq-item summary { cursor: pointer; list-style: none; }
         .faq-item summary::-webkit-details-marker { display: none; }
     </style>
     <script type="application/ld+json">${JSON.stringify(jsonLd, null, 8)}</script>
+    <link rel="stylesheet" href="/assets/prometo-design-system.css?v=20260803" />
 </head>
 
 <body class="min-h-screen">
-    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#0b0e0e]/85 backdrop-blur-xl">
+    <header class="sticky top-0 z-50 border-b border-white/6 bg-[#071111]/90 backdrop-blur-xl">
         <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
             <a href="/en/" class="inline-flex items-center gap-3" aria-label="Prometo home">
                 <img src="/Logo/Wort-Bild.svg" alt="Prometo" width="230" height="37" fetchpriority="high" decoding="async" class="h-8 w-auto brightness-0 invert" />
@@ -996,7 +995,7 @@ function render(page) {
         </section>
     </main>
 
-    <footer class="border-t border-white/6 bg-[#0b0e0e]">
+    <footer class="border-t border-white/6 bg-[#050c0c]">
         <div class="max-w-screen-xl mx-auto px-6 py-10 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div class="text-sm text-gray-400">© 2026 Prometo · HVAC software for heat load calculation, digital takeoff and planning workflows</div>
             <div class="flex flex-wrap gap-4 text-sm text-gray-400">

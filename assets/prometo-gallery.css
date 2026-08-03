@@ -94,7 +94,7 @@ figure img[src^="/assets/prometo-screenshots/"][width="2560"][height="1600"] {
 
 .prometo-shot__zoom::before {
     content: "+";
-    color: #6bf6ff;
+    color: #45dee7;
     font-size: 0.9rem;
     line-height: 1;
 }
