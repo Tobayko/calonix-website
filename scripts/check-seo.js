@@ -119,9 +119,9 @@ for (const [description, matches] of descriptions) {
 
 const exactPages = {
   'index.html': {
-    title: 'Aufmaß Software für SHK aus PDF-Grundrissen | Prometo',
-    description: 'PDF-Grundriss hochladen, Räume und Geometrien automatisch erkennen und das geprüfte Aufmaß direkt für Heizlast, Material und Abgleich nutzen. Beta kostenlos.',
-    h1: 'Vom PDF-Grundriss zum vollständigen SHK-Workflow.'
+    title: 'Prometo: SHK-Planungssoftware vom Grundriss bis zum Abgleich',
+    description: 'Ein Grundriss, ein Projektstand: digitales Aufmaß, Heizlast nach DIN EN 12831, Flächenheizung und hydraulischer Abgleich für SHK-Betriebe und TGA-Planung.',
+    h1: 'Ein Grundriss. Vom Aufmaß bis zum Abgleich.'
   },
   'heizlastberechnung/app/index.html': {
     title: 'Heizlastberechnung App für SHK-Betriebe | Prometo',
