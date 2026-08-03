@@ -19,16 +19,34 @@
     top: 0;
     z-index: 60;
     border-bottom: 1px solid transparent;
-    background: linear-gradient(#071111e0, #07111194, transparent);
     color: #dfe3e3;
+    transition: border-color 250ms ease;
+}
+
+/* Hintergrund + Blur bewusst auf einem ::before statt direkt auf .site-header:
+   backdrop-filter macht das Element, auf dem es steht, per Spezifikation zum
+   containing block fuer position:fixed-Nachfahren (u.a. .site-mobile-panel).
+   Vorsorglich vermieden, damit .site-header nicht unbeabsichtigt zur
+   Bezugsbox fuer fixe Elemente wird - der eigentliche Mobile-Menue-Bug
+   (Panel erscheint am Seitenanfang statt im Viewport) lag an
+   overflow-x:clip auf html/body im Landing-CSS, siehe dort. */
+.site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(#071111e0, #07111194, transparent);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    transition: background 250ms ease, border-color 250ms ease;
+    transition: background 250ms ease;
 }
 
 /* Angeglichen an .site-header.scrolled im Landing-Design (site-navigation.js togglet diese Klasse beim Scrollen) */
 .site-header.scrolled {
     border-bottom-color: var(--line);
+}
+
+.site-header.scrolled::before {
     background: #071111e6;
 }
 
