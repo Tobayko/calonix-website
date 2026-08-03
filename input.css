@@ -3,20 +3,24 @@
 @source "./**/*.js";
 
 
-/* ── Custom Theme ── */
+/* ── Custom Theme ──
+   Farbwerte auf das Landing-Design-System (experiments/prometo-landing-redesign)
+   ausgerichtet, damit Startseite und Unterseiten dieselbe Farbgebung nutzen:
+   --ink #071111, --ink-2 #0c1818, --ink-3 #132323, --cyan-ink #013b3d,
+   --cyan-bright #7bf7ff. ── */
 @theme {
-  --color-surface-container-high: #262b2b;
-  --color-on-primary: #003739;
-  --color-surface-container-low: #171c1c;
-  --color-surface-dim: #0f1414;
+  --color-surface-container-high: #1b2a29;
+  --color-on-primary: #013b3d;
+  --color-surface-container-low: #132323;
+  --color-surface-dim: #0c1818;
   --color-on-tertiary-fixed: #001f23;
   --color-on-surface-variant: #bbc9ca;
   --color-on-primary-container: #004a4e;
-  --color-primary-fixed: #6bf6ff;
-  --color-background: #0b0e0e;
+  --color-primary-fixed: #7bf7ff;
+  --color-background: #071111;
   --color-primary: #45dee7;
   --color-tertiary: #79d9e6;
-  --color-surface: #0f1414;
+  --color-surface: #0c1818;
   --color-outline-variant: #3c494a;
 
   --font-family-headline: 'Space Grotesk', sans-serif;
@@ -28,8 +32,8 @@
    CSS (page-effects.css u.a.) per var() verfügbar sind statt tree-geshakt. ── */
 @theme static {
   /* Text-/Neutral-Rollen — ersetzen text-gray-* (Kontrast AA-geprüft auf #0b0e0e) */
-  --color-text: #f5fbfb;            /* 17.6:1 — Fließtext hell */
-  --color-text-subtle: #90a1a3;    /* 7.15:1 — Meta/Caption, ersetzt gray-400/500/600 */
+  --color-text: #f4f7f4;            /* Landing --text — Fließtext hell */
+  --color-text-subtle: #a8b6b4;    /* Landing --text-soft — Meta/Caption, ersetzt gray-400/500/600 */
   /* Semantik-Rollen (kein neuer Hex, alle bereits im Code vorkommend) */
   --color-success: #7cf2bf;
   --color-on-success: #00381d;
@@ -39,22 +43,30 @@
   --color-on-danger: #4a0000;
   --color-info: #6bf6ff;
   --color-on-info: #001f23;
-  /* Linien — 2 Rollen statt border-white/5..10 + border-primary/20..40 Varianz */
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-strong: rgba(69, 222, 231, 0.24);
-  /* Radien — benannte Skala, deckt rounded-2xl/3xl/[2rem] ab */
-  --radius-sm: 0.75rem;
-  --radius-md: 1rem;
-  --radius-lg: 1.5rem;
-  --radius-xl: 2rem;
+  /* Linien — 2 Rollen statt border-white/5..10 + border-primary/20..40 Varianz.
+     --color-line entspricht jetzt dem Landing-Token --line (leicht cyan-getönt). */
+  --color-line: rgba(219, 247, 242, 0.14);
+  --color-line-strong: rgba(69, 222, 231, 0.35);
+  /* Radien — auf die kantige Landing-Skala gezogen: Panels/Karten 10px (--radius
+     der Landingpage), Buttons 4px. Deckt rounded-sm..3xl ab, damit die vorhandenen
+     Tailwind-Utilities im Markup ohne HTML-Änderung die neue Skala erben. */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 10px;
+  --radius-xl: 10px;
+  --radius-2xl: 10px;
+  --radius-3xl: 10px;
+  --radius-4xl: 10px;
   /* Schatten — 1 Glow statt 7 Ad-hoc-Varianten */
   --shadow-glow: 0 0 24px rgba(69, 222, 231, 0.4);
   --shadow-card: 0 28px 80px rgba(0, 0, 0, 0.34);
-  /* Motion-System — Dauern + Easing als Tokens (bisher 58 Ad-hoc-Werte) */
-  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Motion-System — Dauern + Easing als Tokens (bisher 58 Ad-hoc-Werte).
+     Werte auf die Landingpage angeglichen: dort läuft das Reveal mit
+     650ms und Default-Easing (ease), Hover-Transitions mit 180ms. */
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
   --duration-fast: 180ms;
   --duration-base: 350ms;
-  --duration-reveal: 720ms;
+  --duration-reveal: 650ms;
 }
 
 /* ── Button-Komponente: eine Button-Sprache statt 10 Utility-Strings + 6 Glow-Werten.
@@ -66,7 +78,9 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 9999px;
+    /* Landing-Buttons sind kantig (4px), nicht pillenförmig. */
+    border-radius: 4px;
+    min-height: 52px;
     font-family: var(--font-family-headline);
     font-weight: 700;
     cursor: pointer;
@@ -80,9 +94,10 @@
   .btn:active { transform: scale(0.97); }
   .btn:focus-visible { outline: 2px solid rgba(107, 246, 255, 0.7); outline-offset: 2px; }
   .btn-primary { background-color: var(--color-primary); color: var(--color-on-primary); }
-  .btn-primary:hover { box-shadow: var(--shadow-glow); }
-  .btn-secondary { border: 1px solid var(--color-line); color: #ffffff; background-color: transparent; }
-  .btn-secondary:hover { border-color: var(--color-line-strong); background-color: rgba(255, 255, 255, 0.05); }
+  /* Landing: Hover hellt auf --cyan-bright auf und hebt um 2px, kein Glow-Schatten. */
+  .btn-primary:hover { background-color: var(--color-primary-fixed); transform: translateY(-2px); }
+  .btn-secondary { border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff; background-color: transparent; }
+  .btn-secondary:hover { border-color: var(--color-primary); color: var(--color-primary); transform: translateY(-2px); }
 }
 
 /* ── Space Grotesk (local) ── */

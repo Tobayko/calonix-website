@@ -202,3 +202,73 @@ Diese Datei ist das dauerhafte Gedächtnis der wöchentlichen SEO-Routine für
   Für kommerzielle Begriffe wie `hydraulischer abgleich` (50.000/Monat laut
   Keyword-Planner, aktuell Position 51–79) ist fehlende Domain-Autorität die
   wahrscheinlichste Ursache, nicht die On-Page-Qualität.
+
+### 2026-08-03 — Startseiten-Optimierung, Abweichung von der Ein-Schritt-Routine
+
+- Auslöser: ausdrücklicher Auftrag zur SEO-Optimierung mit Fokus auf die
+  Startseite. Datenquelle war der CSV-Export „Leistung in der Google Suche
+  2026-08-03" plus der Keyword-Planner-Export vom selben Tag. **Kein**
+  GSC-MCP; in dieser Sitzung war kein Search-Console-Connector verbunden.
+- Datenlage: letzte 3 Monate (02.05. bis 02.08.2026), 10 Klicks, 1.295
+  Impressionen, 24 Seiten- und 145 Query-Zeilen.
+- Wichtiger Vorbehalt: Alle 145 Query-Zeilen weisen 0 Klicks aus, die
+  Gesamtsumme ist 10. Die klickstarken Queries sind durch den
+  GSC-Datenschutzfilter ausgeblendet. CTR-Analysen auf Query-Ebene sind mit
+  diesem Export nicht möglich.
+- Zentraler Befund: Der bisherige Startseiten-Title „Aufmaß Software für SHK
+  aus PDF-Grundrissen" konkurrierte direkt mit `/digitales-aufmass/`
+  („Aufmaß App für PDF-Grundrisse: digitales Aufmaß", 322 Impressionen,
+  Position 52,0) und mit `/heizlastberechnung-software/`. Die Startseite kam
+  auf nur 71 Impressionen bei Position 8,3.
+- Entscheidung: Aufmaß-Autorität auf `/digitales-aufmass/` bündeln. Die
+  Startseite bekommt die Plattform-Ebene („SHK-Planungssoftware vom Grundriss
+  bis zum Abgleich") und verlinkt kontextuell auf die vier Modulseiten.
+- Geänderte Dateien (nur diese drei): `index.html`,
+  `experiments/prometo-landing-redesign/styles.min.css`, `sitemap-pages.xml`.
+  Die weiteren 43 geänderten Dateien im Working Tree stammen aus einer
+  parallelen Design-System-Sitzung und wurden hier nicht angefasst.
+- Technische Änderungen an `index.html`:
+  - `hreflang` de-DE / en-US / x-default ergänzt. Die Startseite hatte
+    **keine** Alternates, `/en/` verwies aber auf sie zurück. Das Cluster war
+    einseitig und wurde von Google damit vermutlich ignoriert.
+  - Schema von zwei losen Objekten auf einen `@graph` umgestellt:
+    Organization, WebSite, WebPage, SoftwareApplication (mit `url`,
+    `publisher`, `featureList`, `offers.url`), FAQPage. Alle über `@id`
+    verknüpft. JSON validiert.
+  - `assets/beta-home-form.css` minifiziert in `styles.min.css` übernommen und
+    den zweiten render-blockierenden Stylesheet-Request entfernt. Die
+    Quelldatei bleibt vorerst liegen, wird aber von keiner Seite mehr geladen.
+  - Ergänzt: `referrer`, `apple-touch-icon`, `manifest`, `og:image:type`,
+    `og:image:width/height`, `og:locale:alternate`.
+- Inhaltliche Änderungen an `index.html`:
+  - Title (60 Zeichen), Description (154 Zeichen), OG/Twitter neu.
+  - H1 auf „Digitales Aufmaß aus dem PDF-Grundriss – und daraus der komplette
+    SHK-Workflow." geändert.
+  - Neuer Abschnitt „Digitales Aufmaß" direkt hinter dem Hero, mit vier
+    kontextuellen internen Links auf `/digitales-aufmass/`,
+    `/heizlastberechnung/`, `/fussbodenheizung-auslegen/` und
+    `/hydraulischer-abgleich/`. Vorher hatte die Startseite im `<main>`
+    **null** kontextuelle interne Links auf Modulseiten, nur Navigation.
+  - Zielgruppenkarten neu belegt: Handwerksbetrieb, Projektleitung, TGA-Planer,
+    Großhandel & Systempartner. Dazu ein Fließtextblock zu allen dreien.
+  - FAQ von 4 auf 9 Fragen erweitert, sichtbarer Text und FAQPage-Schema
+    programmatisch auf Deckungsgleichheit geprüft.
+  - Sichtbarer Text 1.238 auf 1.778 Wörter.
+- Nicht umgesetzt auf Wunsch: OCI-Punchout und Großhandels-Anbindung werden
+  nicht als Feature genannt, weil laut Betreiber noch nicht fertig.
+- Offen und nicht messbar in dieser Sitzung: PageSpeed. Die
+  PageSpeed-Insights-API meldete „Quota exceeded", die Chrome-Extension war
+  nicht verbunden. Die Änderungen entfernen einen blockierenden Request und
+  fügen keinen neuen hinzu, der Score muss nach dem Deploy aber verifiziert
+  werden.
+- Hypothese, kein Ergebnis: Die Auflösung der Title-Überschneidung und die
+  vier neuen internen Links sollen `/digitales-aufmass/` von Position 52
+  nach vorne bringen. Frühestens 2026-09-14 bewertbar.
+- Kontrollpunkte für 2026-09-14: Position von `/digitales-aufmass/` (heute
+  52,0), Position der Query `app für aufmaß und grundriss` (heute 48,8,
+  113 Impressionen), Impressionen der Startseite (heute 71) und
+  hreflang-Fehler im GSC-Bericht „Internationale Ausrichtung" (heute
+  vermutlich „Keine zurückverweisenden Tags").
+- Unveränderter Engpass: keine Backlink-Daten. Für `hydraulischer abgleich`
+  (50.000/Monat laut Keyword-Planner, Seite aktuell Position 65,7) ist
+  fehlende Domain-Autorität die wahrscheinlichste Ursache, nicht On-Page.

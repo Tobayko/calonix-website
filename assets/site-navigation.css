@@ -1,12 +1,35 @@
+/* Tokens aus dem Landing-Redesign (index.html / experiments/prometo-landing-redesign).
+   Bewusst auf .site-header statt :root gesetzt: assets/prometo-marketing.css
+   definiert auf mehreren Unterseiten ebenfalls :root{--line;--shell;...} mit
+   leicht abweichenden Werten. Ein :root-Block hier würde je nach Ladereihenfolge
+   von deren Werten überschrieben (oder sie überschreiben) und z. B. die Shell-
+   Breite dieser Datei unbeabsichtigt verändern. Scoping auf .site-header hält
+   die Werte für die Navigation verbindlich, ohne fremde Seitenbereiche zu berühren. */
 .site-header {
-    position: sticky;
+    --ink: #071111;
+    --ink-2: #0c1818;
+    --ink-3: #132323;
+    --cyan: #45dee7;
+    --cyan-bright: #7bf7ff;
+    --cyan-ink: #013b3d;
+    --line: rgba(219, 247, 242, 0.14);
+    --shell: 1240px;
+
+    position: sticky; /* bewusst sticky statt fixed: Unterseiten haben kein Hero-Top-Padding wie die Landingpage */
     top: 0;
     z-index: 60;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    background: rgba(11, 14, 14, 0.86);
+    border-bottom: 1px solid transparent;
+    background: linear-gradient(#071111e0, #07111194, transparent);
     color: #dfe3e3;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: background 250ms ease, border-color 250ms ease;
+}
+
+/* Angeglichen an .site-header.scrolled im Landing-Design (site-navigation.js togglet diese Klasse beim Scrollen) */
+.site-header.scrolled {
+    border-bottom-color: var(--line);
+    background: #071111e6;
 }
 
 .site-header a {
@@ -18,7 +41,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    max-width: 1440px;
+    min-height: 78px;
+    max-width: var(--shell);
     margin: 0 auto;
     padding: 0.85rem 1.5rem;
 }
@@ -27,19 +51,33 @@
     display: inline-flex;
     flex: 0 0 auto;
     align-items: center;
+    gap: 0.75rem;
     min-width: 0;
 }
 
 .site-brand img {
-    width: 9.5rem;
+    width: 154px;
     height: auto;
     filter: brightness(0) invert(1);
+}
+
+/* Beta-Pill neben dem Logo, exakt im Stil von .brand span im Landing-Redesign */
+.site-brand::after {
+    content: "Beta";
+    flex: 0 0 auto;
+    color: var(--cyan);
+    border: 1px solid rgba(69, 222, 231, 0.4);
+    border-radius: 999px;
+    padding: 0.2rem 0.48rem;
+    font: 700 0.62rem/1 "Space Grotesk", sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .site-desktop-nav {
     display: none;
     align-items: center;
-    gap: 0.35rem;
+    gap: 1.7rem;
     color: #9ca8a8;
     font-family: "Space Grotesk", sans-serif;
     font-size: 0.875rem;
@@ -50,26 +88,27 @@
 .site-nav-trigger {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    min-height: 2.5rem;
-    border-radius: 999px;
-    padding: 0 0.9rem;
-    color: #aeb8b8;
-    transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+    gap: 0.35rem;
+    min-height: 2.75rem;
+    border-radius: 0;
+    padding: 0;
+    color: #bec8c6;
+    font-size: 0.83rem;
+    background: none;
+    transition: color 180ms ease;
 }
 
 .site-nav-link:hover,
 .site-nav-link:focus-visible,
 .site-nav-trigger:hover,
-.site-nav-trigger:focus-visible,
-.site-nav-link[aria-current="page"] {
-    background: rgba(69, 222, 231, 0.09);
-    color: #ffffff;
+.site-nav-trigger:focus-visible {
+    background: none;
+    color: var(--cyan-bright);
     outline: none;
 }
 
 .site-nav-link[aria-current="page"] {
-    color: #6bf6ff;
+    color: var(--cyan);
 }
 
 .site-nav-group {
@@ -98,8 +137,8 @@
 }
 
 .site-nav-group[open] .site-nav-trigger {
-    background: rgba(69, 222, 231, 0.1);
-    color: #ffffff;
+    background: none;
+    color: var(--cyan-bright);
 }
 
 .site-nav-group[open] .site-nav-trigger::after {
@@ -115,14 +154,14 @@
     width: min(760px, calc(100vw - 2rem));
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.45rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.5rem;
+    border: 1px solid rgba(69, 222, 231, 0.18);
+    border-radius: 12px;
     padding: 0.65rem;
-    background: rgba(12, 18, 18, 0.96);
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+    background: #071111f5;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
     transform: translateX(-50%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 .site-nav-group:last-of-type .site-nav-panel {
@@ -134,8 +173,8 @@
 .site-nav-card {
     display: block;
     min-width: 0;
-    border: 1px solid transparent;
-    border-radius: 0.5rem;
+    border: 1px solid rgba(219, 247, 242, 0.08);
+    border-radius: 7px;
     padding: 0.8rem 0.85rem;
     color: #dfe3e3;
     transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
@@ -144,13 +183,13 @@
 .site-nav-card:hover,
 .site-nav-card:focus-visible,
 .site-nav-card[aria-current="page"] {
-    border-color: rgba(69, 222, 231, 0.22);
+    border-color: rgba(69, 222, 231, 0.35);
     background: rgba(69, 222, 231, 0.08);
     outline: none;
 }
 
 .site-nav-card:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .site-nav-card strong {
@@ -171,7 +210,7 @@
 }
 
 .site-nav-card[aria-current="page"] strong {
-    color: #6bf6ff;
+    color: var(--cyan);
 }
 
 .site-nav-actions {
@@ -184,9 +223,9 @@
     display: none;
     align-items: center;
     justify-content: center;
-    min-height: 2.25rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 2.625rem;
+    border-radius: 4px;
+    border: 1px solid var(--line);
     padding: 0 0.75rem;
     color: #aeb8b8;
     font-family: "Space Grotesk", sans-serif;
@@ -197,9 +236,9 @@
 
 .site-lang-link:hover,
 .site-lang-link:focus-visible {
-    border-color: rgba(69, 222, 231, 0.4);
+    border-color: var(--cyan);
     background: rgba(69, 222, 231, 0.06);
-    color: #ffffff;
+    color: var(--cyan);
     outline: none;
 }
 
@@ -207,22 +246,21 @@
     display: none;
     align-items: center;
     justify-content: center;
-    min-height: 2.5rem;
-    border-radius: 999px;
-    padding: 0 1.05rem;
-    background: #45dee7;
-    color: #003739;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.85rem;
-    font-weight: 800;
+    min-height: 2.625rem;
+    border-radius: 4px;
+    padding: 0.7rem 1rem;
+    background: var(--cyan);
+    color: var(--cyan-ink);
+    font: 700 0.78rem/1 "Space Grotesk", sans-serif;
     white-space: nowrap;
-    transition: box-shadow 180ms ease, transform 180ms ease;
+    transition: background 180ms ease, transform 180ms ease;
 }
 
 .site-cta:hover,
 .site-cta:focus-visible {
-    color: #003739;
-    box-shadow: 0 0 24px rgba(69, 222, 231, 0.36);
+    background: var(--cyan-bright);
+    color: var(--cyan-ink);
+    transform: translateY(-2px);
     outline: none;
 }
 
@@ -231,8 +269,8 @@
 }
 
 /* Sichtbarer Tastatur-Fokus für alle interaktiven Nav-Elemente (WCAG 2.4.11).
-   Gewinnt gegen die outline:none der hover/focus-Regeln durch spätere Position;
-   Muster identisch zu prometo-gallery.css. */
+   Gewinnt gegen die outline:none der hover/focus-Regeln durch spätere Position.
+   Werte an das Landing-Redesign angeglichen (:focus-visible{outline:3px solid var(--cyan)}). */
 .site-nav-link:focus-visible,
 .site-nav-trigger:focus-visible,
 .site-nav-card:focus-visible,
@@ -240,8 +278,8 @@
 .site-cta:focus-visible,
 .site-mobile-toggle:focus-visible,
 .site-mobile-panel a:focus-visible {
-    outline: 2px solid rgba(107, 246, 255, 0.7);
-    outline-offset: 2px;
+    outline: 3px solid var(--cyan);
+    outline-offset: 4px;
 }
 
 .site-mobile-nav {
@@ -250,12 +288,12 @@
 
 .site-mobile-toggle {
     display: inline-grid;
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 44px;
+    height: 44px;
     place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
     color: #ffffff;
     cursor: pointer;
 }
@@ -266,7 +304,7 @@
     display: block;
     width: 1.1rem;
     height: 2px;
-    border-radius: 999px;
+    border-radius: 10px;
     background: currentColor;
     content: "";
     transition: transform 180ms ease, opacity 180ms ease;
@@ -292,21 +330,23 @@
     transform: translateY(-0.12rem) rotate(90deg);
 }
 
+/* Kantenbündiges Dropdown statt schwebender Karte, analog .mobile-nav im Landing-Redesign */
 .site-mobile-panel {
     position: fixed;
-    top: 4.45rem;
-    right: 1rem;
-    left: 1rem;
-    max-height: calc(100vh - 6rem);
+    top: 78px;
+    right: 0;
+    left: 0;
+    max-height: calc(100vh - 78px);
     overflow-y: auto;
     overscroll-behavior: contain;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.5rem;
-    padding: 0.8rem;
-    background: rgba(12, 18, 18, 0.98);
-    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    padding: 1rem 1.25rem 1.4rem;
+    background: #071111fa;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 .site-mobile-section {
@@ -314,13 +354,13 @@
 }
 
 .site-mobile-section + .site-mobile-section {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid var(--line);
 }
 
 .site-mobile-section-title {
     display: block;
     padding: 0.45rem 0.3rem;
-    color: #6bf6ff;
+    color: var(--cyan);
     font-family: "Space Grotesk", sans-serif;
     font-size: 0.72rem;
     font-weight: 800;
@@ -330,19 +370,18 @@
 
 .site-mobile-panel a {
     display: block;
-    border-radius: 0.5rem;
-    padding: 0.72rem 0.8rem;
-    color: #dfe3e3;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
+    border-radius: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0.9rem 0;
+    color: #c1ccca;
+    font: 600 0.9rem/1 "Space Grotesk", sans-serif;
 }
 
 .site-mobile-panel a:hover,
 .site-mobile-panel a:focus-visible,
 .site-mobile-panel a[aria-current="page"] {
-    background: rgba(69, 222, 231, 0.08);
-    color: #ffffff;
+    background: none;
+    color: var(--cyan-bright);
 }
 
 /* Body-Scroll-Sperre bei offenem mobilem Menü (via site-navigation.js) */
@@ -351,14 +390,37 @@ body.nav-scroll-lock {
 }
 
 .site-mobile-panel a[aria-current="page"] {
-    color: #6bf6ff;
+    color: var(--cyan);
 }
 
 .site-mobile-panel .site-mobile-cta {
     margin-top: 0.55rem;
-    background: #45dee7;
-    color: #003739;
+    border-radius: 4px;
+    border-bottom: 0;
+    padding: 0.7rem 1rem;
+    background: var(--cyan);
+    color: var(--cyan-ink);
+    font-weight: 700;
     text-align: center;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.site-mobile-panel .site-mobile-cta:hover,
+.site-mobile-panel .site-mobile-cta:focus-visible {
+    background: var(--cyan-bright);
+    color: var(--cyan-ink);
+    transform: translateY(-2px);
+}
+
+/* Sehr kleine Breakpoints: Logo verkleinern, Beta-Pill ausblenden (Platzmangel) */
+@media (max-width: 380px) {
+    .site-brand img {
+        width: 132px;
+    }
+
+    .site-brand::after {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
@@ -388,6 +450,6 @@ body.nav-scroll-lock {
     }
 
     .site-desktop-nav {
-        gap: 0.5rem;
+        gap: 1.7rem;
     }
 }

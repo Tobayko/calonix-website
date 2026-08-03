@@ -1,0 +1,281 @@
+/* ============================================================================
+   Prometo Design-System — Angleichung der Unterseiten an die Landingpage.
+
+   Die Landingpage (index.html) nutzt experiments/prometo-landing-redesign/
+   styles.min.css, die Unterseiten nutzen assets/tailwind.css. Diese Datei
+   zieht die Unterseiten optisch auf dasselbe System: Farbgebung, Radien,
+   Typografie, Buttons, Footer und Bewegungsverhalten.
+
+   WICHTIG — Einbindung: Diese Datei MUSS als letztes Stylesheet direkt vor
+   </head> stehen, also NACH dem seitenspezifischen <style>-Block. Sonst
+   gewinnt der spätere Inline-Block bei gleicher Spezifität und die
+   Angleichung greift nicht.
+   ========================================================================= */
+
+:root {
+    /* Tokens 1:1 aus dem Landing-Design-System */
+    --ink: #071111;
+    --ink-2: #0c1818;
+    --ink-3: #132323;
+    --text: #f4f7f4;
+    --text-soft: #a8b6b4;
+    --cyan: #45dee7;
+    --cyan-bright: #7bf7ff;
+    --cyan-ink: #013b3d;
+    --line: rgba(219, 247, 242, 0.14);
+    --shell: 1240px;
+    --radius: 10px;
+    --radius-button: 4px;
+}
+
+/* ── Hintergrund ──────────────────────────────────────────────────────────
+   Vorher: radial-gradient(cyan-Glow) + linear-gradient(#0b0e0e → #0f1414).
+   Die Landingpage ist flach --ink mit einem 42px-Blueprint-Raster. */
+body {
+    background: var(--ink);
+    color: var(--text);
+}
+
+/* Blueprint-Raster als eigener Fixed-Layer statt als body-background, damit
+   das Raster beim Scrollen nicht mitläuft (wie im Landing-Hero) und der
+   Drift nur background-position animiert (compositor-freundlich). */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(69, 222, 231, 0.043) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(69, 222, 231, 0.043) 1px, transparent 1px);
+    background-size: 42px 42px;
+    animation: prometo-grid-drift 24s linear infinite;
+}
+
+@keyframes prometo-grid-drift {
+    to {
+        background-position: 42px 42px;
+    }
+}
+
+/* ── Container ────────────────────────────────────────────────────────────
+   Landing: .shell = min(100% - 2.5rem, 1240px). Unterseiten nutzen
+   max-w-screen-xl (Tailwind-Default 1280px). */
+.max-w-screen-xl {
+    max-width: var(--shell);
+}
+
+/* ── Sektions-Rhythmus ────────────────────────────────────────────────────
+   Landing arbeitet mit clamp(5.5rem, 9vw, 9rem). Für Content-Seiten mit
+   vielen Sektionen etwas kompakter gehalten, aber deutlich näher an der
+   Landingpage als die bisherigen py-16/py-24 (64/96px).
+   [class] hebt die Spezifität über die Tailwind-Utility (0,1,0). */
+main > section[class] {
+    padding-block: clamp(4.5rem, 7vw, 7.5rem);
+}
+
+/* ── Typografie ───────────────────────────────────────────────────────────
+   Landing: h1 -0.065em, h2 -0.05em bei sehr großen Graden. Unterseiten
+   setzen kleinere Schriftgrade, daher leicht reduzierte Werte — optisch
+   dieselbe dichte Space-Grotesk-Anmutung. */
+h1 {
+    letter-spacing: -0.055em;
+}
+
+h2 {
+    letter-spacing: -0.045em;
+}
+
+h3 {
+    letter-spacing: -0.03em;
+}
+
+/* ── Eyebrow statt Pill-Badge ─────────────────────────────────────────────
+   Die Landingpage nutzt über jeder Sektion einen flachen cyanfarbenen
+   Uppercase-Text mit kurzem Strich davor. Die Unterseiten hatten dafür ein
+   Pill-Badge mit Glow-Punkt. Selektor greift, weil diese Datei nach dem
+   seitenspezifischen <style>-Block geladen wird. */
+.badge,
+.aufmass-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: fit-content;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: var(--cyan);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.badge::before,
+.aufmass-kicker::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    flex: none;
+    border-radius: 0;
+    background: currentColor;
+    box-shadow: none;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────
+   Landing: .button{border-radius:4px;min-height:52px;font:700 .9rem/1
+   'Space Grotesk'} — kantig, nicht pillenförmig. Die Unterseiten-CTAs sind
+   rounded-full. Zwei Klassen im Selektor (0,2,0) schlagen die Tailwind-
+   Utilities (0,1,0), ohne rounded-full für echte Pills (Chips, Punkte,
+   Sprachwechsler) global zu zerstören. */
+a.rounded-full.bg-primary,
+button.rounded-full.bg-primary,
+a.rounded-full.border,
+button.rounded-full.border {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    min-height: 52px;
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-button);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease;
+}
+
+a.rounded-full.bg-primary,
+button.rounded-full.bg-primary {
+    background: var(--cyan);
+    color: var(--cyan-ink);
+    border: 1px solid transparent;
+}
+
+a.rounded-full.bg-primary:hover,
+button.rounded-full.bg-primary:hover {
+    /* Landing: Aufhellen + 2px Lift statt Glow-Schatten. */
+    background: var(--cyan-bright);
+    box-shadow: none;
+    transform: translateY(-2px);
+}
+
+a.rounded-full.border,
+button.rounded-full.border {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+a.rounded-full.border:hover,
+button.rounded-full.border:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    transform: translateY(-2px);
+}
+
+/* ── Panels ──────────────────────────────────────────────────────────────
+   Glass-Panel an --ink-2 gekoppelt und auf den Landing-Radius (10px)
+   gezogen; die Radius-Utilities selbst kommen über die Theme-Tokens in
+   input.css (--radius-lg/xl/2xl/3xl = 10px). */
+.glass-panel {
+    background: rgba(12, 24, 24, 0.72);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.formula-box,
+.answer-panel {
+    border-radius: var(--radius);
+    border: 1px solid rgba(69, 222, 231, 0.16);
+    background: rgba(69, 222, 231, 0.06);
+}
+
+.jump-link,
+.formula-pill,
+.flow-step,
+.topic-map-card {
+    border-radius: var(--radius);
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────
+   Landing: background #050c0c, cyan-getönte Trennlinie, 1240px-Container.
+   footer[class] (0,1,1) schlägt die Tailwind-Utility bg-[#0b0e0e] (0,1,0). */
+footer[class] {
+    background: #050c0c;
+    border-top: 1px solid var(--line);
+}
+
+footer[class] > div {
+    max-width: var(--shell);
+}
+
+/* ── Bewegung ────────────────────────────────────────────────────────────
+   Landing: translateY(24px), 650ms, Default-Easing, Delay-Schrittweite
+   0.12s. Dauer und Easing kommen bereits über die Theme-Tokens
+   (--duration-reveal / --ease-standard) aus input.css; hier bleiben
+   Distanz, Delay-Staffelung und Hover-Lift. */
+.reveal {
+    transform: translate3d(0, 24px, 0);
+}
+
+.reveal.is-visible {
+    transform: translate3d(0, 0, 0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.24s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.36s;
+}
+
+/* Landing hebt alle interaktiven Flächen einheitlich um 2px an. */
+.lift-on-hover:hover,
+.topic-map-card:hover,
+.jump-link:hover {
+    transform: translateY(-2px);
+}
+
+/* ── Fokus ───────────────────────────────────────────────────────────────
+   Landing: outline 3px solid --cyan, offset 4px. */
+:focus-visible {
+    outline: 3px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+    }
+
+    .reveal,
+    .reveal.is-visible {
+        transform: none;
+    }
+
+    .lift-on-hover:hover,
+    .topic-map-card:hover,
+    .jump-link:hover,
+    a.rounded-full.bg-primary:hover,
+    a.rounded-full.border:hover,
+    button.rounded-full.bg-primary:hover,
+    button.rounded-full.border:hover {
+        transform: none;
+    }
+}

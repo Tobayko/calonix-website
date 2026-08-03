@@ -3,82 +3,190 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aufmaß Software für SHK aus PDF-Grundrissen | Prometo</title>
-  <meta name="description" content="PDF-Grundriss hochladen, Räume und Geometrien automatisch erkennen und das geprüfte Aufmaß direkt für Heizlast, Material und Abgleich nutzen. Beta kostenlos.">
+  <title>Prometo: SHK-Planungssoftware vom Grundriss bis zum Abgleich</title>
+  <meta name="description" content="Ein Grundriss, ein Projektstand: digitales Aufmaß, Heizlast nach DIN EN 12831, Flächenheizung und hydraulischer Abgleich für SHK-Betriebe und TGA-Planung.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://prometo.app/">
+  <link rel="alternate" hreflang="de-DE" href="https://prometo.app/">
+  <link rel="alternate" hreflang="en-US" href="https://prometo.app/en/">
+  <link rel="alternate" hreflang="x-default" href="https://prometo.app/">
   <meta name="theme-color" content="#071111">
   <meta name="google-site-verification" content="6mKTmjxum120PQpW8ywo2vEvDUL25xBNT1ke12Zb2tQ">
   <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Prometo">
-  <meta property="og:title" content="Aufmaß Software für SHK aus PDF-Grundrissen | Prometo">
-  <meta property="og:description" content="PDF-Aufmaß, Heizlast, Materialberechnung und hydraulischen Abgleich in einem durchgängigen Workflow für SHK-Betriebe verbinden.">
+  <meta property="og:title" content="Prometo: SHK-Planungssoftware vom Grundriss bis zum Abgleich">
+  <meta property="og:description" content="Digitales Aufmaß, Heizlast, Flächenheizung, Material und hydraulischer Abgleich aus einem geprüften Projektstand – für SHK-Betriebe und TGA-Planung.">
   <meta property="og:url" content="https://prometo.app/">
   <meta property="og:image" content="https://prometo.app/assets/prometo-screenshots/tablet/projektdetail-heatmap.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="2560">
+  <meta property="og:image:height" content="1600">
   <meta property="og:image:alt" content="Prometo Projektdetail mit Heizlast-Heatmap und SHK-Projektansicht auf dem Tablet">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Aufmaß Software für SHK aus PDF-Grundrissen | Prometo">
-  <meta name="twitter:description" content="PDF-Grundriss hochladen, Räume automatisch erkennen, Aufmaß kontrollieren und direkt weiterberechnen.">
+  <meta name="twitter:title" content="Prometo: SHK-Planungssoftware vom Grundriss bis zum Abgleich">
+  <meta name="twitter:description" content="Grundriss einlesen, Räume prüfen, Heizlast und hydraulischen Abgleich aus demselben Projektstand rechnen.">
   <meta name="twitter:image" content="https://prometo.app/assets/prometo-screenshots/tablet/projektdetail-heatmap.webp">
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+  <link rel="manifest" href="./site.webmanifest">
   <link rel="preload" href="experiments/prometo-landing-redesign/styles.min.css" as="style">
   <link rel="preload" href="experiments/prometo-landing-redesign/assets/hero-verlegung.svg" as="image" type="image/svg+xml" fetchpriority="high">
   <link rel="stylesheet" href="experiments/prometo-landing-redesign/styles.min.css">
-  <link rel="stylesheet" href="assets/beta-home-form.css">
   <script defer src="landing-script.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Prometo",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web, Android, iOS",
-      "description": "Digitale SHK-Planungsplattform für PDF-Aufmaß, Heizlast, Flächenheizung, Material und hydraulischen Abgleich.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR",
-        "description": "Kostenlos während der Beta"
-      }
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "Erkennt Prometo jeden PDF-Grundriss automatisch?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nein. Die Erkennungsqualität hängt von Lesbarkeit, Maßstab und Planaufbau ab. Räume und Geometrien müssen vor der Berechnung kontrolliert und bei Bedarf korrigiert werden."
+          "@type": "Organization",
+          "@id": "https://prometo.app/#organization",
+          "name": "Prometo",
+          "url": "https://prometo.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://prometo.app/#logo",
+            "url": "https://prometo.app/Logo/Wort-Bild.svg",
+            "contentUrl": "https://prometo.app/Logo/Wort-Bild.svg",
+            "width": 230,
+            "height": 37,
+            "caption": "Prometo"
+          },
+          "image": { "@id": "https://prometo.app/#logo" },
+          "description": "Prometo entwickelt eine Planungsplattform für SHK-Betriebe und TGA-Planung: digitales Aufmaß aus dem Grundriss, Heizlastberechnung, Flächenheizung, Materialermittlung und hydraulischer Abgleich in einem Projektstand."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://prometo.app/#website",
+          "url": "https://prometo.app/",
+          "name": "Prometo",
+          "inLanguage": "de-DE",
+          "publisher": { "@id": "https://prometo.app/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://prometo.app/#webpage",
+          "url": "https://prometo.app/",
+          "name": "Prometo: SHK-Planungssoftware vom Grundriss bis zum Abgleich",
+          "description": "Ein Grundriss, ein Projektstand: digitales Aufmaß, Heizlast nach DIN EN 12831, Flächenheizung und hydraulischer Abgleich für SHK-Betriebe und TGA-Planung.",
+          "inLanguage": "de-DE",
+          "isPartOf": { "@id": "https://prometo.app/#website" },
+          "about": { "@id": "https://prometo.app/#organization" },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://prometo.app/assets/prometo-screenshots/tablet/projektdetail-heatmap.webp",
+            "width": 2560,
+            "height": 1600
           }
         },
         {
-          "@type": "Question",
-          "name": "Ist ein Einfamilienhaus immer in unter 7 Minuten berechnet?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nein. Unter sieben Minuten beschreibt einen typischen Anwendungsfall mit geeignetem PDF. Gebäudeumfang, Planqualität und Korrekturbedarf beeinflussen die Dauer."
+          "@type": "SoftwareApplication",
+          "@id": "https://prometo.app/#software",
+          "name": "Prometo",
+          "url": "https://prometo.app/",
+          "applicationCategory": "BusinessApplication",
+          "applicationSubCategory": "SHK- und TGA-Planungssoftware",
+          "operatingSystem": "Web, Android, iOS",
+          "inLanguage": "de-DE",
+          "publisher": { "@id": "https://prometo.app/#organization" },
+          "description": "Digitale SHK-Planungsplattform für digitales Aufmaß aus dem PDF-Grundriss, raumweise Heizlast nach DIN EN 12831, Flächenheizung, Materialermittlung und hydraulischen Abgleich.",
+          "featureList": [
+            "Digitales Aufmaß aus vorhandenen PDF-Grundrissen",
+            "Raumweise Heizlastberechnung entlang DIN EN 12831",
+            "Auslegung von Flächenheizung, Heizkreisen und Rohrlängen",
+            "Materialermittlung aus geprüften Planungsdaten",
+            "Soll-Volumenströme und Einregelwerte für den hydraulischen Abgleich",
+            "Projektstand auf Desktop, Tablet und Smartphone"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://prometo.app/#beta-form",
+            "description": "Kostenlos während der Beta"
           }
         },
         {
-          "@type": "Question",
-          "name": "Berechnet Prometo nur die Heizlast?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nein. Geprüfte Projektdaten werden für Flächenheizung, Material und hydraulischen Abgleich weiterverwendet."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ersetzt Prometo die fachliche Prüfung?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nein. Prometo strukturiert Arbeitsschritte und Ergebnisse. Qualifizierte Anwender bleiben für Prüfung, Bewertung und Freigabe verantwortlich."
-          }
+          "@type": "FAQPage",
+          "@id": "https://prometo.app/#faq",
+          "isPartOf": { "@id": "https://prometo.app/#webpage" },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Erkennt Prometo jeden PDF-Grundriss automatisch?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nein. Die Erkennungsqualität hängt von Lesbarkeit, Maßstab und Planaufbau ab. Räume und Geometrien müssen vor der Berechnung kontrolliert und bei Bedarf korrigiert werden."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Brauche ich für das digitale Aufmaß einen Vor-Ort-Termin mit Lasermessgerät?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Für die Planbasis nicht. Prometo liest den vorhandenen Architekten- oder Bestandsplan als PDF ein und leitet daraus Räume und Geometrien ab. Ein Aufmaß vor Ort bleibt sinnvoll, wenn kein belastbarer Plan existiert oder der Bestand vom Plan abweicht. Gemessene Werte lassen sich im Projekt korrigieren."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Läuft Prometo auf Tablet und Smartphone?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Prometo läuft im Browser sowie auf Android und iOS. Planprüfung und Auslegung sind auf Desktop und Tablet ausgelegt, Projektstand und Heizkreiswerte lassen sich mobil auf der Baustelle kontrollieren."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Nach welcher Norm wird die Heizlast berechnet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Eingaben und Prüfschritte orientieren sich an der DIN EN 12831. Die Berechnung erfolgt raumweise und bleibt nachvollziehbar. Die fachliche Plausibilisierung und Freigabe der Ergebnisse liegt beim qualifizierten Anwender."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Eignet sich Prometo auch für Mehrfamilienhäuser und Nichtwohngebäude?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Die raumweise Systematik ist nicht auf das Einfamilienhaus beschränkt. Bei Mehrfamilienhäusern und Nichtwohngebäuden steigen Raumzahl, Nutzungsprofile und Prüfaufwand entsprechend, und die Angaben je Raum sollten fachlich kontrolliert werden."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ist ein Einfamilienhaus immer in unter 7 Minuten berechnet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nein. Unter sieben Minuten beschreibt einen typischen Anwendungsfall mit geeignetem PDF. Gebäudeumfang, Planqualität und Korrekturbedarf beeinflussen die Dauer."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Berechnet Prometo nur die Heizlast?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nein. Geprüfte Projektdaten werden für Flächenheizung, Material und hydraulischen Abgleich weiterverwendet."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Was kostet Prometo während der Beta?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Die Beta ist kostenlos, ohne Abo und ohne Kreditkarte. Im Gegenzug erwarten wir Rückmeldungen aus echten Projekten. Ein Preismodell für die Zeit nach der Beta steht noch nicht fest."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ersetzt Prometo die fachliche Prüfung?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nein. Prometo strukturiert Arbeitsschritte und Ergebnisse. Qualifizierte Anwender bleiben für Prüfung, Bewertung und Freigabe verantwortlich."
+              }
+            }
+          ]
         }
       ]
     }
@@ -159,9 +267,9 @@
       <img class="hero-heating-field" src="./experiments/prometo-landing-redesign/assets/hero-verlegung.svg" alt="" aria-hidden="true" fetchpriority="high">
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> Planungsplattform für SHK-Betriebe</p>
-          <h1>Vom PDF-Grundriss zum vollständigen <em>SHK-Workflow.</em></h1>
-          <p class="hero-lead">Prometo erkennt Räume und Geometrien automatisch. Du kontrollierst die Projektdaten und nutzt sie direkt für Heizlast, Flächenheizung, Materialberechnung und hydraulischen Abgleich.</p>
+          <p class="eyebrow"><span></span> Planungsplattform für SHK-Betriebe und TGA-Planung</p>
+          <h1>Digitales Aufmaß aus dem PDF-Grundriss – und daraus der <em>komplette SHK-Workflow.</em></h1>
+          <p class="hero-lead">Prometo liest den vorhandenen Grundriss, erkennt Räume und Geometrien und macht daraus einen Projektstand, den du kontrollierst. Heizlast, Flächenheizung, Material und hydraulischer Abgleich rechnen danach mit denselben geprüften Werten – im Handwerksbetrieb wie in der Fachplanung.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#beta-form">
               Kostenlos Beta testen
@@ -263,6 +371,23 @@
       </div>
       <div class="hero-rail" aria-hidden="true">
         <span>PDF</span><i></i><span>Raumdaten</span><i></i><span>Heizlast</span><i></i><span>Flächenheizung</span><i></i><span>Material</span><i></i><span>Abgleich</span>
+      </div>
+    </section>
+
+    <section class="section-light" id="digitales-aufmass" aria-labelledby="aufmass-title">
+      <div class="shell">
+        <div class="section-heading section-heading-dark mb-0 reveal">
+          <p class="eyebrow eyebrow-dark"><span></span> Digitales Aufmaß</p>
+          <h2 id="aufmass-title">Der Plan ist das Aufmaß – wenn er stimmt.</h2>
+          <p>Beim digitalen Aufmaß entsteht die Raumliste aus dem Grundriss, der ohnehin im Projekt liegt. Prometo liest das PDF, erkennt Geschosse, Räume und Geometrien und legt die Maße als prüfbare Werte ab. Was unsicher ist, wird markiert statt stillschweigend gerundet.</p>
+          <p>Das ersetzt kein Aufmaß vor Ort, wenn der Bestand vom Plan abweicht. Es nimmt aber den Teil weg, der bisher am meisten Zeit kostet: Räume abschreiben, Flächen im Taschenrechner addieren und dieselben Maße später in der Heizlast erneut eintippen. Auf dem Tablet lässt sich der Projektstand direkt auf der Baustelle gegen die Realität halten.</p>
+          <ul class="plain-checks">
+            <li>Maßstab, Räume und Geometrien bleiben einzeln kontrollierbar – <a class="prose-link" href="./digitales-aufmass/">so läuft das digitale Aufmaß im Detail</a></li>
+            <li>Die geprüften Raumdaten gehen ohne Neueingabe in die <a class="prose-link" href="./heizlastberechnung/">raumweise Heizlastberechnung</a></li>
+            <li>Aus derselben Fläche entstehen <a class="prose-link" href="./fussbodenheizung-auslegen/">Heizkreise, Verlegeabstände und Rohrlängen</a></li>
+            <li>Am Ende stehen Volumenströme und Einregelwerte für den <a class="prose-link" href="./hydraulischer-abgleich/">hydraulischen Abgleich</a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -569,10 +694,17 @@
           <h2>Ein Projektstand. Unterschiedliche Aufgaben.</h2>
         </div>
         <div class="audience-grid">
-          <article class="reveal"><span>01</span><h3>Inhaber & Meister</h3><p>Weniger Insellösungen, schnellere Projektbearbeitung und nachvollziehbare Ergebnisse.</p></article>
-          <article class="reveal"><span>02</span><h3>Projektleitung & Kalkulation</h3><p>Heizlast, Flächenheizung, Material und Hydraulik in einem verbundenen Projekt.</p></article>
-          <article class="reveal"><span>03</span><h3>Technische Mitarbeiter</h3><p>Geführte Arbeitsschritte, klare Eingaben und kontrollierbare Berechnungsergebnisse.</p></article>
-          <article class="reveal"><span>04</span><h3>SHK-Teams</h3><p>Einheitliche Projektstruktur und bessere Übergaben zwischen Büro und Baustelle.</p></article>
+          <article class="reveal"><span>01</span><h3>Handwerksbetrieb & SHK-Meister</h3><p>Ein Projekt statt fünf Programme. Weniger Doppeleingaben, schnellere Angebote, nachvollziehbare Ergebnisse.</p></article>
+          <article class="reveal"><span>02</span><h3>Projektleitung & Kalkulation</h3><p>Heizlast, Flächenheizung, Material und Hydraulik hängen an einem Projektstand. Mengen passen zur tatsächlichen Auslegung.</p></article>
+          <article class="reveal"><span>03</span><h3>TGA-Planer & Fachplanung</h3><p>Raumweise Berechnung entlang der DIN EN 12831, auch bei Mehrfamilienhaus und Nichtwohngebäude. Annahmen bleiben belegbar.</p></article>
+          <article class="reveal"><span>04</span><h3>Großhandel & Systempartner</h3><p>Materiallisten entstehen aus geprüfter Auslegung statt aus Schätzung. Systeme und Sortimente lassen sich im Projekt abbilden.</p></article>
+        </div>
+
+        <div class="section-heading section-heading-dark mb-0 reveal" style="margin-top:clamp(3rem,6vw,5rem)">
+          <h2>Handwerk, Fachplanung und Großhandel arbeiten am selben Projekt.</h2>
+          <p>Im SHK-Betrieb zählt, dass ein Projekt am Stück durchläuft: Grundriss rein, Heizlast raus, Material und Einregelwerte gleich mit. Wer dafür drei Programme öffnet, überträgt dreimal dieselben Zahlen – und jede Übertragung ist eine Fehlerquelle.</p>
+          <p>In der Fachplanung kommt Nachvollziehbarkeit dazu. Prometo rechnet raumweise entlang der DIN EN 12831, auch bei Mehrfamilienhäusern und Nichtwohngebäuden. Jede Annahme bleibt sichtbar und lässt sich gegenüber Bauherr und ausführendem Betrieb belegen. Wo mehrere Beteiligte am selben Gebäude arbeiten, liegt der geprüfte Stand an einer Stelle statt in drei Tabellenversionen.</p>
+          <p>Für Großhandel und Systemhersteller entsteht dabei etwas, das heute meist fehlt: eine Materialliste, die aus der geprüften Auslegung stammt – mit Rohrlängen, Verteilergrößen und Positionen, die zum geplanten System passen und nicht zur groben Schätzung. Wer eigene Systeme oder Sortimente in Prometo abbilden möchte, meldet sich über das <a class="prose-link" href="#beta-form">Beta-Formular</a>.</p>
         </div>
 
         <div class="device-story reveal">
@@ -621,12 +753,32 @@
             <p>Nein. Erkennungsqualität hängt von Lesbarkeit, Maßstab und Planaufbau ab. Räume und Geometrien müssen vor der Berechnung kontrolliert und bei Bedarf korrigiert werden.</p>
           </details>
           <details>
+            <summary>Brauche ich für das digitale Aufmaß einen Vor-Ort-Termin mit Lasermessgerät?<span>+</span></summary>
+            <p>Für die Planbasis nicht. Prometo liest den vorhandenen Architekten- oder Bestandsplan als PDF ein und leitet daraus Räume und Geometrien ab. Ein Aufmaß vor Ort bleibt sinnvoll, wenn kein belastbarer Plan existiert oder der Bestand vom Plan abweicht. Gemessene Werte lassen sich im Projekt korrigieren.</p>
+          </details>
+          <details>
+            <summary>Läuft Prometo auf Tablet und Smartphone?<span>+</span></summary>
+            <p>Ja. Prometo läuft im Browser sowie auf Android und iOS. Planprüfung und Auslegung sind auf Desktop und Tablet ausgelegt, Projektstand und Heizkreiswerte lassen sich mobil auf der Baustelle kontrollieren.</p>
+          </details>
+          <details>
+            <summary>Nach welcher Norm wird die Heizlast berechnet?<span>+</span></summary>
+            <p>Eingaben und Prüfschritte orientieren sich an der DIN EN 12831. Die Berechnung erfolgt raumweise und bleibt nachvollziehbar. Die fachliche Plausibilisierung und Freigabe der Ergebnisse liegt beim qualifizierten Anwender.</p>
+          </details>
+          <details>
+            <summary>Eignet sich Prometo auch für Mehrfamilienhäuser und Nichtwohngebäude?<span>+</span></summary>
+            <p>Ja. Die raumweise Systematik ist nicht auf das Einfamilienhaus beschränkt. Bei Mehrfamilienhäusern und Nichtwohngebäuden steigen Raumzahl, Nutzungsprofile und Prüfaufwand entsprechend, und die Angaben je Raum sollten fachlich kontrolliert werden.</p>
+          </details>
+          <details>
             <summary>Ist ein Einfamilienhaus immer in unter 7 Minuten berechnet?<span>+</span></summary>
             <p>Nein. Unter sieben Minuten beschreibt einen typischen Anwendungsfall mit geeignetem PDF. Gebäudeumfang, Planqualität und Korrekturbedarf beeinflussen die Dauer.</p>
           </details>
           <details>
             <summary>Berechnet Prometo nur die Heizlast?<span>+</span></summary>
             <p>Nein. Geprüfte Projektdaten werden für Flächenheizung, Material und hydraulischen Abgleich weiterverwendet.</p>
+          </details>
+          <details>
+            <summary>Was kostet Prometo während der Beta?<span>+</span></summary>
+            <p>Die Beta ist kostenlos, ohne Abo und ohne Kreditkarte. Im Gegenzug erwarten wir Rückmeldungen aus echten Projekten. Ein Preismodell für die Zeit nach der Beta steht noch nicht fest.</p>
           </details>
           <details>
             <summary>Ersetzt Prometo die fachliche Prüfung?<span>+</span></summary>
