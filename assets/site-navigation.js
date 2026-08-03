@@ -16,6 +16,10 @@
     const header = document.querySelector("[data-prometo-site-nav]");
     if (!header) return;
 
+    const setScrolled = () => header.classList.toggle("scrolled", window.scrollY > 20);
+    setScrolled();
+    window.addEventListener("scroll", setScrolled, { passive: true });
+
     const details = Array.from(header.querySelectorAll("details"));
     const pagePath = normalizePath(window.location.pathname);
 

@@ -1,28 +1,7 @@
 (() => {
+  // Header-Scroll-Zustand und Mobile-Menü werden von /assets/site-navigation.js
+  // gesteuert (gemeinsame Navigations-Komponente, identisch zu allen Unterseiten).
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const header = document.querySelector("[data-header]");
-  const menuButton = document.querySelector(".menu-toggle");
-  const mobileMenu = document.querySelector("#mobile-menu");
-
-  const setHeader = () => header?.classList.toggle("scrolled", window.scrollY > 20);
-  setHeader();
-  window.addEventListener("scroll", setHeader, { passive: true });
-
-  menuButton?.addEventListener("click", () => {
-    const open = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!open));
-    menuButton.setAttribute("aria-label", open ? "Menü öffnen" : "Menü schließen");
-    mobileMenu.hidden = open;
-    document.body.classList.toggle("menu-open", !open);
-  });
-
-  mobileMenu?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.hidden = true;
-      menuButton?.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
-    });
-  });
 
   const reveals = document.querySelectorAll(".reveal");
   if (reducedMotion || !("IntersectionObserver" in window)) {
