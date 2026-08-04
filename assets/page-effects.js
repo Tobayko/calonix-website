@@ -54,3 +54,48 @@
         observer.observe(element);
     });
 })();
+
+(function () {
+    var videos = document.querySelectorAll("video[data-lazy-video]");
+
+    if (!videos.length) {
+        return;
+    }
+
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function load(video) {
+        var source = video.querySelector("source[data-src]");
+        if (source) {
+            source.src = source.dataset.src;
+            source.removeAttribute("data-src");
+            video.load();
+        }
+        if (reducedMotion) {
+            video.controls = true;
+        } else {
+            video.play().catch(function () {});
+        }
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        videos.forEach(load);
+        return;
+    }
+
+    var observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    load(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.35 }
+    );
+
+    videos.forEach(function (video) {
+        observer.observe(video);
+    });
+})();
