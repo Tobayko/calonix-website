@@ -106,6 +106,121 @@
             background: linear-gradient(180deg, rgba(69, 222, 231, 0.08), rgba(15, 20, 20, 0.72));
             box-shadow: 0 30px 90px rgba(0, 0, 0, 0.22);
         }
+
+        #workflow-flow {
+            overflow: visible;
+        }
+
+        #workflow-flow .workflow-flow-line {
+            stroke: rgba(219, 247, 242, 0.15);
+            stroke-width: 2;
+        }
+
+        #workflow-flow .workflow-flow-route {
+            stroke: url(#workflow-flow-gradient);
+            stroke-width: 3;
+            stroke-dasharray: 10 18;
+        }
+
+        #workflow-flow .workflow-stage {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: workflow-stage-focus 6.4s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+        }
+
+        #workflow-flow .workflow-stage--2 { animation-delay: -4.8s; }
+        #workflow-flow .workflow-stage--3 { animation-delay: -3.2s; }
+        #workflow-flow .workflow-stage--4 { animation-delay: -1.6s; }
+
+        #workflow-flow .workflow-stage-card {
+            fill: rgba(13, 23, 24, 0.92);
+            stroke: rgba(219, 247, 242, 0.14);
+            stroke-width: 1.25;
+        }
+
+        #workflow-flow .workflow-stage-accent {
+            fill: rgba(69, 222, 231, 0.08);
+            stroke: rgba(69, 222, 231, 0.3);
+            stroke-width: 1;
+        }
+
+        #workflow-flow .workflow-stage-index {
+            fill: #7bf7ff;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+
+        #workflow-flow .workflow-stage-title {
+            fill: #f4f7f4;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        #workflow-flow .workflow-stage-copy {
+            fill: #a8b6b4;
+            font-family: 'Manrope', sans-serif;
+            font-size: 12px;
+        }
+
+        #workflow-flow .workflow-stage-status {
+            fill: #6bf6ff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.11em;
+        }
+
+        #workflow-flow .workflow-icon {
+            fill: none;
+            stroke: #7bf7ff;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.75;
+        }
+
+        #workflow-flow .workflow-signal {
+            offset-path: path("M 190 150 C 212 102 254 102 278 150 S 406 198 472 150 S 600 102 666 150");
+            offset-rotate: 0deg;
+            animation: workflow-signal 6.4s linear infinite;
+            filter: url(#workflow-signal-glow);
+        }
+
+        #workflow-flow .workflow-signal--secondary {
+            animation-delay: -2.14s;
+        }
+
+        #workflow-flow .workflow-signal--tertiary {
+            animation-delay: -4.28s;
+        }
+
+        @keyframes workflow-signal {
+            0% { offset-distance: 0%; opacity: 0; }
+            8%, 92% { opacity: 1; }
+            100% { offset-distance: 100%; opacity: 0; }
+        }
+
+        @keyframes workflow-stage-focus {
+            0%, 18%, 100% { opacity: 0.76; transform: scale(1); }
+            7%, 12% { opacity: 1; transform: scale(1.035); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #workflow-flow .workflow-flow-route,
+            #workflow-flow .workflow-stage,
+            #workflow-flow .workflow-signal {
+                animation: none;
+            }
+
+            #workflow-flow .workflow-stage {
+                opacity: 1;
+                transform: none;
+            }
+
+            #workflow-flow .workflow-signal { opacity: 0; }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -353,31 +468,64 @@
                             sondern als Raumdaten sichtbar gemacht und vor der weiteren Heizlastberechnung geprüft.
                         </p>
                     </div>
-                    <svg viewBox="0 0 840 260" role="img" aria-labelledby="workflow-flow-svg-title workflow-flow-svg-desc">
+                    <svg id="workflow-flow" viewBox="0 0 840 270" role="img" aria-labelledby="workflow-flow-svg-title workflow-flow-svg-desc">
                         <title id="workflow-flow-svg-title">Prometo App Workflow vom PDF-Grundriss zur Heizlastberechnung</title>
-                        <desc id="workflow-flow-svg-desc">Animierte Grafik mit vier Schritten: PDF-Grundriss, Raumprüfung, Heizlastberechnung und Abgleich.</desc>
-                        <path class="flow-track" d="M80 150 C180 72 280 72 380 150 S580 228 760 150" fill="none" />
-                        <circle class="moving-dot" r="7" fill="#45dee7" />
-                        <circle class="moving-dot moving-dot--slow" r="5" fill="#ffffff" />
-                        <g class="flow-node flow-pulse">
-                            <rect x="28" y="82" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="103" y="126" text-anchor="middle" class="step-label">PDF</text>
-                            <text x="103" y="153" text-anchor="middle" class="step-copy">Grundriss</text>
+                        <desc id="workflow-flow-svg-desc">Ein leuchtendes Signal wandert durch vier Arbeitsstufen: PDF-Grundriss, Raumprüfung, Heizlast und hydraulischer Abgleich.</desc>
+                        <defs>
+                            <linearGradient id="workflow-flow-gradient" x1="190" y1="0" x2="666" y2="0" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#45dee7" stop-opacity="0.22" />
+                                <stop offset="0.5" stop-color="#7bf7ff" stop-opacity="0.95" />
+                                <stop offset="1" stop-color="#45dee7" stop-opacity="0.22" />
+                            </linearGradient>
+                            <filter id="workflow-signal-glow" x="-300%" y="-300%" width="700%" height="700%">
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                            </filter>
+                        </defs>
+                        <path class="workflow-flow-line" d="M190 150 C212 102 254 102 278 150 S406 198 472 150 S600 102 666 150" fill="none" />
+                        <path class="workflow-flow-route" d="M190 150 C212 102 254 102 278 150 S406 198 472 150 S600 102 666 150" fill="none" />
+                        <circle class="workflow-signal" cx="0" cy="0" r="6" fill="#7bf7ff" />
+                        <circle class="workflow-signal workflow-signal--secondary" cx="0" cy="0" r="4" fill="#45dee7" />
+                        <circle class="workflow-signal workflow-signal--tertiary" cx="0" cy="0" r="3" fill="#ffffff" />
+                        <g class="workflow-stage workflow-stage--1">
+                            <rect class="workflow-stage-card" x="18" y="62" width="172" height="176" rx="20" />
+                            <rect class="workflow-stage-accent" x="36" y="82" width="36" height="36" rx="10" />
+                            <path class="workflow-icon" d="M49 90h11l6 6v15H49zM60 90v7h7M53 105h9M53 110h7" />
+                            <text class="workflow-stage-index" x="88" y="98">01</text>
+                            <text class="workflow-stage-title" x="36" y="143">PDF</text>
+                            <text class="workflow-stage-copy" x="36" y="163">Grundriss importieren</text>
+                            <path d="M36 190h58" stroke="rgba(219,247,242,0.14)" stroke-width="1" />
+                            <text class="workflow-stage-status" x="36" y="214">EINGANGSDATEN</text>
                         </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="236" y="82" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
-                            <text x="311" y="126" text-anchor="middle" class="step-label">Räume</text>
-                            <text x="311" y="153" text-anchor="middle" class="step-copy">prüfen</text>
+                        <g class="workflow-stage workflow-stage--2">
+                            <rect class="workflow-stage-card" x="208" y="62" width="172" height="176" rx="20" />
+                            <rect class="workflow-stage-accent" x="226" y="82" width="36" height="36" rx="10" />
+                            <path class="workflow-icon" d="M235 91h8v8h-8zM247 91h8v8h-8zM235 103h8v8h-8zM247 103h8v8h-8z" />
+                            <text class="workflow-stage-index" x="278" y="98">02</text>
+                            <text class="workflow-stage-title" x="226" y="143">Räume</text>
+                            <text class="workflow-stage-copy" x="226" y="163">erkennen &amp; prüfen</text>
+                            <path d="M226 190h58" stroke="rgba(219,247,242,0.14)" stroke-width="1" />
+                            <text class="workflow-stage-status" x="226" y="214">FACHCHECK</text>
                         </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="444" y="82" width="150" height="132" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
-                            <text x="519" y="126" text-anchor="middle" class="step-label">Heizlast</text>
-                            <text x="519" y="153" text-anchor="middle" class="step-copy">vorbereiten</text>
+                        <g class="workflow-stage workflow-stage--3">
+                            <rect class="workflow-stage-card" x="398" y="62" width="172" height="176" rx="20" />
+                            <rect class="workflow-stage-accent" x="416" y="82" width="36" height="36" rx="10" />
+                            <path class="workflow-icon" d="M425 109v-8a9 9 0 0 1 18 0v8M421 109h26M426 109v5M434 109v5M442 109v5" />
+                            <text class="workflow-stage-index" x="468" y="98">03</text>
+                            <text class="workflow-stage-title" x="416" y="143">Heizlast</text>
+                            <text class="workflow-stage-copy" x="416" y="163">fundiert berechnen</text>
+                            <path d="M416 190h58" stroke="rgba(219,247,242,0.14)" stroke-width="1" />
+                            <text class="workflow-stage-status" x="416" y="214">ERGEBNIS</text>
                         </g>
-                        <g class="flow-node flow-pulse">
-                            <rect x="652" y="82" width="150" height="132" rx="24" fill="rgba(69,222,231,0.08)" stroke="rgba(69,222,231,0.28)" />
-                            <text x="727" y="126" text-anchor="middle" class="step-label">Abgleich</text>
-                            <text x="727" y="153" text-anchor="middle" class="step-copy">strukturieren</text>
+                        <g class="workflow-stage workflow-stage--4">
+                            <rect class="workflow-stage-card" x="588" y="62" width="172" height="176" rx="20" />
+                            <rect class="workflow-stage-accent" x="606" y="82" width="36" height="36" rx="10" />
+                            <path class="workflow-icon" d="M615 91v20M621 91v20M627 91v20M611 97h20M611 105h20" />
+                            <text class="workflow-stage-index" x="658" y="98">04</text>
+                            <text class="workflow-stage-title" x="606" y="143">Abgleich</text>
+                            <text class="workflow-stage-copy" x="606" y="163">sauber übergeben</text>
+                            <path d="M606 190h58" stroke="rgba(219,247,242,0.14)" stroke-width="1" />
+                            <text class="workflow-stage-status" x="606" y="214">ÜBERGABE</text>
                         </g>
                     </svg>
                 </div>
